@@ -1,0 +1,9 @@
+{
+  "docs": {
+    "Overview": ["welcome", "getting-started"],
+    "Contributing": ["contributing"]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}

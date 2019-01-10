@@ -1,0 +1,43 @@
+{
+  "version-0.20-docs": {
+    "CITA": [
+      "version-0.20-welcome",
+      "version-0.20-getting-started",
+      {
+        "label": "Configuration",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-configuration/config-overview",
+          "version-0.20-configuration/chain-configuration",
+          "version-0.20-configuration/microservice-configuration"
+        ]
+      }
+    ],
+    "Toolchain": [
+      {
+        "label": "SDK",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-toolchain/js-sdk",
+          "version-0.20-toolchain/java-sdk",
+          "version-0.20-toolchain/swift-sdk",
+          "version-0.20-toolchain/ruby-sdk"
+        ]
+      }
+    ],
+    "MultiLeveltNavs": [
+      "version-0.20-1",
+      {
+        "type": "subcategory",
+        "label": "2",
+        "ids": [
+          "version-0.20-welcome",
+          "version-0.20-getting-started"
+        ]
+      }
+    ],
+    "Contributing": [
+      "version-0.20-contributing"
+    ]
+  }
+}

@@ -9,49 +9,54 @@
 // site configuration options.
 
 // List of projects/orgs using your project for the users page.
-const users = [{
-  caption: 'User1',
-  // You will need to prepend the image path with your baseUrl
-  // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-  image: '/img/docusaurus.svg',
-  infoLink: 'https://www.facebook.com',
-  pinned: true,
-}, ];
+const users = [
+  // {
+  // caption: 'User1',
+  // // You will need to prepend the image path with your baseUrl
+  // // if it is not '/', like: '/test-site/img/docusaurus.svg'.
+  // image: '/img/docusaurus.svg',
+  // infoLink: 'https://www.facebook.com',
+  // pinned: true,
+  // },
+];
+const baseUrl = '/cita-documents/'
 
 const siteConfig = {
-  title: 'Test Site', // Title for your website.
+  title: 'CITAHub Doc Test', // Title for your website.
   tagline: 'A website for testing',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'http://ezcook.de', // Your website URL
+  baseUrl, // Base URL for your project */
+  customDocsPath: 'docs/',
+  docsUrl: '',
+  // blogsUrl: 'toolchain',
+  // blogSideBarCount: 'ALL',
+  // blogSidebarTitle: {
+  //   default: 'CITA Toolchain',
+  //   all: 'All blog posts'
+  // },
+
   // customDocsPath: 'en/',
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'test-site',
-  organizationName: 'facebook',
+  projectName: 'cita-documents',
+  organizationName: 'keith-cy',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
-  headerLinks: [{
-      doc: 'welcome',
-      label: 'Docs'
-    },
+  headerLinks: [
     // {
-    //   doc: 'doc4',
-    //   label: 'API'
+    //   doc: 'welcome',
+    //   label: 'Docs'
     // },
     {
-      page: 'help',
-      label: 'Help'
+      page: 'community',
+      label: 'Community',
     },
-    // {
-    //   blog: true,
-    //   label: 'Blog'
-    // },
     {
       language: true
     },
@@ -61,17 +66,17 @@ const siteConfig = {
   ],
 
   // If you have users set above, you add it here:
-  users,
+  // users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
-  favicon: 'img/favicon.png',
+  headerIcon: 'img/citahub_logo.svg',
+  footerIcon: 'img/citahub_logo.svg',
+  favicon: 'img/citahub_logo.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#2E8555',
-    secondaryColor: '#205C3B',
+    primaryColor: '#505050',
+    secondaryColor: '#595656',
   },
 
   /* Custom fonts for website */
@@ -97,7 +102,7 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: ['https://buttons.github.io/buttons.js', baseUrl + 'javascript/index.js'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
@@ -117,6 +122,18 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
+  scrollToTop: true,
+  algolia: {
+    apiKey: "4fdec42fee0b2bd9e2c44248e1945f19",
+    indexName: "test",
+    placeholder: "Ask me Anything",
+    algoliaOptions: {
+      algoliaOptions: {
+        // "start_urls": ["./docs"],
+        facetFilters: ["language:LANGUAGE", "version:VERSION"]
+      }
+    } // Optional, if provided by Algolia
+  },
 };
 
 module.exports = siteConfig;

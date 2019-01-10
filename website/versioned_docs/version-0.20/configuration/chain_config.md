@@ -1,7 +1,8 @@
 ---
-id: chain-configuration
+id: version-0.20-chain-configuration
 title: Chain Configuration
 sidebar_label: Chain Configuration
+original_id: chain-configuration
 ---
 
 # Chain Configuration

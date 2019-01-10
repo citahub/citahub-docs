@@ -1,7 +1,8 @@
 ---
-id: microservice-configuration
+id: version-0.20-microservice-configuration
 title: Microservice Configuration
 sidebar_label: Microservice Configuration
+original_id: microservice-configuration
 ---
 
 # Microservice Configuration

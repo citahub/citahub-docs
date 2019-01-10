@@ -1,9 +1,35 @@
 {
   "docs": {
-    "Overview": ["welcome", "getting-started"],
+    "CITA": [
+      "welcome",
+      "getting-started",
+      {
+        "label": "Configuration",
+        "type": "subcategory",
+        "ids": [
+          "configuration/config-overview",
+          "configuration/chain-configuration",
+          "configuration/microservice-configuration"
+        ]
+      }
+    ],
+    "Toolchain": [{
+      "label": "SDK",
+      "type": "subcategory",
+      "ids": [
+        "toolchain/js-sdk",
+        "toolchain/java-sdk",
+        "toolchain/swift-sdk",
+        "toolchain/ruby-sdk"
+      ]
+    }],
+    "MultiLeveltNavs": [
+      "1", {
+        "type": "subcategory",
+        "label": "2",
+        "ids": ["welcome", "getting-started"]
+      }
+    ],
     "Contributing": ["contributing"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
   }
 }

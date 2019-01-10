@@ -1,7 +1,8 @@
 ---
-id: config-overview
+id: version-0.20-config-overview
 title: Config Overview
 sidebar_label: Config Overview
+original_id: config-overview
 ---
 
 # Configuration

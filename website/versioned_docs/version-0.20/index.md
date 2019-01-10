@@ -1,7 +1,8 @@
 ---
-id: welcome
+id: version-0.20-welcome
 title: Overview
 sidebar_label: Overview
+original_id: welcome
 ---
 
 This is version 0.30

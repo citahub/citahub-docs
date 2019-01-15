@@ -19,12 +19,12 @@ const users = [
   // pinned: true,
   // },
 ];
-const baseUrl = '/cita-documents/'
+const baseUrl = '/citahub-docs/'
 
 const siteConfig = {
-  title: 'CITAHub Doc Test', // Title for your website.
-  tagline: 'A website for testing',
-  url: 'http://ezcook.de', // Your website URL
+  title: 'CITAHub Doc', // Title for your website.
+  tagline: 'Documents of CITAHub',
+  url: 'https://docs.citahub.com/', // Your website URL
   baseUrl, // Base URL for your project */
   customDocsPath: 'docs/',
   docsUrl: '',
@@ -41,8 +41,8 @@ const siteConfig = {
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'cita-documents',
-  organizationName: 'keith-cy',
+  projectName: 'citahub-docs',
+  organizationName: 'cryptape',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'

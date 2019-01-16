@@ -1,7 +1,7 @@
 ---
 id: version-0.20-role-management
 title: Role Manegement Contract Interface
-sidebar_label: Role Manegement Contract Interface
+sidebar_label: Role Manegement Contract
 original_id: role-management
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: version-0.20-group
 title: Group Contract Interface
-sidebar_label: Group Contract Interface
+sidebar_label: Group Contract
 original_id: group
 ---
 

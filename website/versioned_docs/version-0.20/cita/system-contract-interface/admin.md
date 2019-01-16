@@ -1,7 +1,7 @@
 ---
 id: version-0.20-admin
 title: Admin Contract Interface
-sidebar_label: Admin Contract Interface
+sidebar_label: Admin Contract
 original_id: admin
 ---
 

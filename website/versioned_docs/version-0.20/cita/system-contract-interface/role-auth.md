@@ -1,7 +1,7 @@
 ---
 id: version-0.20-role-auth
 title: Role-auth Contract Interface
-sidebar_label: Role-auth Contract Interface
+sidebar_label: Role-auth Contract
 original_id: role-auth
 ---
 

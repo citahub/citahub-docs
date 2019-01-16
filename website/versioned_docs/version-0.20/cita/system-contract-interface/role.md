@@ -1,7 +1,7 @@
 ---
 id: version-0.20-role
 title: Role Contract Interface
-sidebar_label: Role Contract Interface
+sidebar_label: Role Contract
 original_id: role
 ---
 

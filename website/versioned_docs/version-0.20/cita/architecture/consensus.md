@@ -5,8 +5,6 @@ sidebar_label: Consensus
 original_id: consensus
 ---
 
-# 共识
-
 CITA的共识模块主要是保证多个节点对于交易的顺序和Block的内容达成一致。在众多的分布式算法中，
 我们选择实现了非拜占庭容错的Raft算法和拜占庭容错的的CITA-BFT算法。
 

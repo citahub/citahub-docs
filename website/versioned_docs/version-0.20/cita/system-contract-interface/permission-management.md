@@ -1,7 +1,7 @@
 ---
 id: version-0.20-permission-management
 title: Permission Management Contract Interface
-sidebar_label: Permission Node Management Contract Interface
+sidebar_label: Permission Management Contract
 original_id: permission-management
 ---
 

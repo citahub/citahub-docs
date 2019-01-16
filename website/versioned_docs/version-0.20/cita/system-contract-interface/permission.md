@@ -1,7 +1,7 @@
 ---
 id: version-0.20-permission
 title: Permission Contract Interface
-sidebar_label: Permission Contract Interface
+sidebar_label: Permission Contract
 original_id: permission
 ---
 

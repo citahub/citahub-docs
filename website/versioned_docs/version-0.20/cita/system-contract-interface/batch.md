@@ -1,7 +1,7 @@
 ---
 id: version-0.20-batch
 title: Batch Transaction Contract Interface
-sidebar_label: Batch Transaction Contract Interface
+sidebar_label: Batch Transaction Contract
 original_id: batch
 ---
 

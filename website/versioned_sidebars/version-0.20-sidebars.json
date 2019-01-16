@@ -98,7 +98,7 @@
         ]
       }
     ],
-    "Toolchain": [
+    "CITA Toolchain": [
       {
         "label": "CITA-CLI",
         "type": "subcategory",
@@ -153,7 +153,8 @@
       }
     ],
     "Contributing": [
-      "version-0.20-contributing"
+      "version-0.20-contributing",
+      "version-0.20-roadmap"
     ]
   }
 }

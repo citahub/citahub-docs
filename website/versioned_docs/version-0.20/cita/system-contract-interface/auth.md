@@ -1,7 +1,7 @@
 ---
 id: version-0.20-auth
 title: Auth Contract Interface
-sidebar_label: Auth Contract Interface
+sidebar_label: Auth Contract
 original_id: auth
 ---
 

@@ -1,11 +1,9 @@
 ---
 id: version-0.20-auto-exec
-title: Auto-exec Contract Interface
-sidebar_label: Auto-exec Contract Interface
+title: Auto-exec Contract
+sidebar_label: Auto-exec
 original_id: auto-exec
 ---
-
-# 自动执行合约接口
 
 <h2 class="hover-list">Auto Exec</h2>
 

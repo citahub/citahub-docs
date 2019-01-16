@@ -1,7 +1,7 @@
 ---
 id: version-0.20-group-management
 title: Group Management Contract Interface
-sidebar_label: Group Management Contract Interface
+sidebar_label: Group Management Contract
 original_id: group-management
 ---
 

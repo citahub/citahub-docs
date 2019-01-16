@@ -5,8 +5,6 @@ sidebar_label: Getting Started
 original_id: getting-started
 ---
 
-# Getting Started
-
 ## Dependencies
 
 ### System platform requirements

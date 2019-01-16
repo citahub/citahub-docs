@@ -1,7 +1,7 @@
 ---
 id: version-0.20-quota-price
 title: Quota Price Contract Interface
-sidebar_label: Quota Price Contract Interface
+sidebar_label: Quota Price Contract
 original_id: quota-price
 ---
 

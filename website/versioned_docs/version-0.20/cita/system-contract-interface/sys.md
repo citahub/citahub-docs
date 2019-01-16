@@ -1,7 +1,7 @@
 ---
 id: version-0.20-sys
 title: System configuration Contract Interface
-sidebar_label: System configuration Contract Interface
+sidebar_label: System configuration Contract
 original_id: sys
 ---
 

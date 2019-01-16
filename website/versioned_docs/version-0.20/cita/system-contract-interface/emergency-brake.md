@@ -1,7 +1,7 @@
 ---
 id: version-0.20-emergency-brake
 title: Emergency-brake Contract Interface
-sidebar_label: Emergency-brake Contract Interface
+sidebar_label: Emergency-brake Contract
 original_id: emergency-brake
 ---
 

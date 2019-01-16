@@ -1,7 +1,7 @@
 ---
 id: version-0.20-all-groups
 title: All-groups Contract Interface
-sidebar_label: All-groups Contract Interface
+sidebar_label: All-groups Contract
 original_id: all-groups
 ---
 

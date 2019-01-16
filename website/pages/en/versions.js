@@ -33,7 +33,7 @@ function Versions(props) {
               <tr>
                 <th>{latestVersion}</th>
                 <td>
-                  <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}/${language}/welcome`}>Documentation</a>
+                  <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/welcome`}>Documentation</a>
                 </td>
               </tr>
             </tbody>
@@ -50,7 +50,9 @@ function Versions(props) {
                     <tr>
                       <th>{version}</th>
                       <td>
-                        <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}/${language}/welcome`}>Documentation</a>
+                        <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
+                          Documentation
+                        </a>
                       </td>
                     </tr>
                   ),

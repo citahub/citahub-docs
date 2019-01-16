@@ -1,7 +1,12 @@
 ---
 id: batch-tx
+<<<<<<< HEAD:docs/cita/system-management/batch-tx.md
+title: Batch Transaction
+sidebar_label: Batch Transaction
+=======
 title: 批量交易
 sidebar_label: 批量交易
+>>>>>>> master:docs/cita/system-management/batch-tx.md
 ---
 
 `CITA` 支持批量交易，目前只能进行批量合约的调用。

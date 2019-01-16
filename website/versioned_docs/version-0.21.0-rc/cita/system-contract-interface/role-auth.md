@@ -7,24 +7,24 @@ original_id: role-auth
 
 <h2 class="hover-list">Role Authorization</h2>
 
-* [queryRoles](#queryRoles)
-* [queryAccounts](#queryAccounts)
+- [queryRoles](#queryRoles)
+- [queryAccounts](#queryAccounts)
 
-***
+---
 
 ### queryRoles
 
 查询某一账户的所有角色。
 
-* Parameters
+- Parameters
 
-    `address` - The account address
+  `address` - The account address
 
-* Returns
+- Returns
 
-    `address[]` - The roles of the account
+  `address[]` - The roles of the account
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement queryRoles --account 0x101e99e1a654a99308175042aff4833a6528be74
@@ -44,15 +44,15 @@ output:
 
 查询某一角色下的所有账户。
 
-* Parameters
+- Parameters
 
-    `address` - The role address
+  `address` - The role address
 
-* Returns
+- Returns
 
-    `address[]` - The accounts address
+  `address[]` - The accounts address
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement queryAccounts --address 0x558c280233cee856fb53931eb18747a40e688a43

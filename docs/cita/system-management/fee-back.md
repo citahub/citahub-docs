@@ -1,7 +1,12 @@
 ---
 id: fee-back
+<<<<<<< HEAD:docs/cita/system-management/fee-back.md
+title: Fee Back
+sidebar_label: Fee Back
+=======
 title: 出块奖励返回
 sidebar_label: 出块奖励返回
+>>>>>>> master:docs/cita/system-management/fee-back.md
 ---
 
 ## 简述

@@ -1,7 +1,12 @@
 ---
 id: rpc-error-code
+<<<<<<< HEAD:docs/cita/rpc-guide/rpc-error-code.md
+title: JSON RPC error code
+sidebar_label: JSON RPC error code
+=======
 title: JSON RPC 错误码 
 sidebar_label: JSON RPC 错误码
+>>>>>>> master:docs/cita/rpc-guide/rpc-error-code.md
 ---
 
 ## JSON RPC标准错误码

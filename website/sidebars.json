@@ -149,6 +149,9 @@
         ]
       }
     ],
-    "Contributing": ["contributing"]
+    "Contributing": [
+      "contributing",
+      "roadmap"
+    ]
   }
 }

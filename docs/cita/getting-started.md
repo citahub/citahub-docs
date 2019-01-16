@@ -1,287 +1,222 @@
 ---
 id: getting-started
-title: 快速入门
-sidebar_label: 快速入门
+title: Getting Started
+sidebar_label: Getting Started
 ---
 
-CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
+## Dependencies
 
-> * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
-> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [AppChain 测试链](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain), 也可以使用万云提供的 [BaaS服务](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
+### System platform requirements
 
-## 依赖
+CITA is developed based on the stable version of Ubuntu 16.04 and runs robustly on this version.
 
-### 系统平台要求
+It is recommended to use docker to compile and deploy CITA to ensure a consistent environment.
 
-系统需支持 Docker 的安装。
+### Install docker
 
-CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-build/)
-。
-因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。
+see [online information](https://docs.docker.com/install/).
 
-### 安装 Docker
+### Get Docker Image
 
-参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/install/)。
+CITA docker image is hosted on [DockerHub](https://hub.docker.com/r/cita/cita-build/)
 
-可使用下面的命令来检查 Docker 是否已经成功安装：
+This can be obtained directly from the DockerHub using the `docker pull` command. See [online information](https://docs.docker.com/engine/reference/commandline/pull/).
 
-```
-$ sudo docker run hello-world
-```
+For intranet environments, you can also use `docker save` and `docker load` command to deliver image.
 
-### 获取 Docker 镜像
+### Get source code
 
-CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-build/)。
-
-可以使用 `docker pull` 命令直接从 DockerHub 获取， 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/image/pull.html)。
-
-对于内网环境，也可以通过 `docker save` 和 `docker load` 传递镜像， 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/image/other.html)。
-
-## 编译 CITA
-
->下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 [CITA 正式发布版本](https://github.com/cryptape/cita/releases)，直接下载你想要的版本发布包然后部署即可。
-
-### 获取源码
-
-从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
+Download CITA source code from Github repository, and switch to CITA source directory.
 
 ```shell
-$ git clone https://github.com/cryptape/cita.git
-$ cd cita
-$ git submodule init
-$ git submodule update
+git clone https://github.com/cryptape/cita.git
+cd cita
+git submodule init
+git submodule update
 ```
 
-### 编译源代码
+### Docker env and daemon
 
-可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）
+In the root directory of the source code, we provide `env.sh` script，which encapsulates docker-related operations.
+
+Running this script with actual commands that you want to run inside docker container environment as arguments.
+
+For example：
 
 ```shell
-$ ./env.sh make debug
+./env.sh make debug
 ```
 
-或者
+This means running`make debug`in docker container.
+
+Running`./env.sh` without any arguments will directly get a shell in docker container.
+
+If container is already created by root user, running `./env.sh` without any arguments by a non-root user will get the following error:
 
 ```shell
-$ ./env.sh make release
+$ ./env.sh
+  error: failed switching to "user": unable to find user user: no matching entries in passwd file
 ```
 
-编译生成的文件在发布件目录 `target/install` 下，生产环境下只需要这个目录即可。
+We should keep same user all the time.
 
-> **Docker env 和 daemon 使用说明**
-> 
-> * 在源码根目录下，我们提供了 `env.sh` 脚本，封装了 Docker 相关的操作。
-运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。
-例如：
-> 
->   ```shell
->   $ ./env.sh make debug
->   ```
->
->   即表示在 Docker 环境中运行 `make debug`。
-> * 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
-> * 还提供了 `daemon.sh`，用法同 `env.sh`，效果是后台运行。
+We also provided`daemon.sh`, same usage as`env.sh`，but run in background.
 
-> **Notice**
->
-> * 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误：
->
->   ```shell
->   $ ./env.sh
->   error: failed switching to "user": unable to find user user: no matching entries in passwd file
->   ``` 
->   因此要保证操作使用的始终是同一个系统用户。
-> * 如果出现 Docker 相关的报错，可以执行如下命令并重试：  
->   ```shell
->   docker kill $(docker ps -a -q)
->   ```
-
-## 部署CITA
-
-### 配置节点
-
-* 先切换到发布件目录
-
-  * 如果之前选择从源码开始编译：
-
-    ```shell
-    $ cd target/install
-    ```
-  * 如果之前选择下载编译好的发布包：
-   
-    ```shell
-    $ cd cita_secp256k1_sha3/
-    ```
-     
-* 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
-
-  ```shell
-  $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
-  ```
-
-  节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
-
-  * test-chain/0
-  * test-chain/1
-  * test-chain/2
-  * test-chain/3
-
-* 执行以下命令依次配置四个节点
-
-  ```shell
-  $ ./env.sh ./bin/cita setup test-chain/0
-  $ ./env.sh ./bin/cita setup test-chain/1
-  $ ./env.sh ./bin/cita setup test-chain/2
-  $ ./env.sh ./bin/cita setup test-chain/3
-  ```
-
-> **Note** 
->
-> * 生产环境中，用户需要根据实际情况更改默认配置。使用命令 `./scripts/create_cita_config.py -h` 来获得详细帮助信息，允许自定义的配置包括：
->   * 系统管理员账户
->   * 出块时间间隔
->   * 累积多少历史交易量后进行重复交易的检查
->   * 系统合约详细参数
->   * 共识节点地址
->
->   该工具更详细的使用说明请参考 [Config Tool](./chain/config_tool)。
-> * 对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。
-> * 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool的功能和用法](./chain/config_tool)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：
->
->   ```shell
->   $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
->   ```
->
->   运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个Docker 里运行。
-
-### 启动节点
-
-执行以下命令依次启动四个节点，该命令正常情况下不会返回，节点后台运行。
+If there are some docker-related errors, you can try again after executing the following command：
 
 ```shell
-$ ./daemon.sh ./bin/cita start test-chain/0
-$ ./daemon.sh ./bin/cita start test-chain/1
-$ ./daemon.sh ./bin/cita start test-chain/2
-$ ./daemon.sh ./bin/cita start test-chain/3
+docker kill $(docker ps -a -q)
 ```
 
-### 停止节点
+## Compile
 
-以“0”节点为例，执行以下命令即可停止“0”节点：
+You can choose the compilation method according to your needs (Debug or Release)
 
 ```shell
-$ ./env.sh ./bin/cita stop test-chain/0
+./env.sh make debug
 ```
 
-### 其他操作
-
-更多其他操作使用以下命令查看帮助信息：
+or
 
 ```shell
-$ ./env.sh ./bin/cita help
+./env.sh make release
 ```
 
->**Notice**
->
-> * 请不要先进到 bin 目录，再执行以上的部署操作，错误示范：
->
->   ```shell
->   $ cd bin
->   $ ./env.sh .cita setup test-chain/0
->   ```
->
-> * 请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。
-> * 请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突
+The generated file is under the`target/install`. You only need to operate under this directory in production environment.。
 
-### 使用docker-compose
+## Generate node configuration
 
-前面运行节点的方法，是将所有节点放在同一个容器中，并且容器没有做网络隔离。
+Switch to release directory at first:
 
-对于复杂的测试场景，会造成一些不便。
-
-使用`docker-compose`可以让每个节点单独一个容器，网络也是隔离的。
-
-##### 安装docker-compose
-
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
+```shell
+cd target/install
 ```
 
-##### 准备发布件
+The`create_cita_config.py`in the release directory is used to generate the node configuration file, including the Genesis block configuration, node-related configuration, network connection configuration, and private key configuration.
 
-```
-latest_release_tag=$(curl --silent "https://api.github.com/repos/cryptape/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-echo "latest release tag: $latest_release_tag"
-wget https://github.com/cryptape/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
-tar zxvf cita_secp256k1_sha3.tar.gz
-cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node0
-cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node1
-cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
-cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
+The tool defaults to generate a Demo with 4 local nodes:
 
-wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_test/docker-compose.yaml
+```shell
+./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
-##### 启动
+In the production environment, user needs to change the default configuration according to the actual situation.
 
-```
-USER_ID=`id -u $USER` docker-compose up
-```
+Use`create_cita_config.py -h`to get detailed help information, allowing custom configurations to include:
 
-后台启动
+- System administrator account
+- Network list, in the format of`IP1:PORT1,IP2:PORT2,IP3:PORT3 ... IPn:PORTn`
+- Blocking interval
+- Check for repeated transactions after accumulating a certain amount of historical transactions
+- System contract detailed parameter values
+- Consensus node address
 
-```
-USER_ID=`id -u $USER` docker-compose up -d
-```
+After the node initialization, the node configuration file will be generated in the release directory. The generated node directory is:
 
-##### 停止
+- test-chain/0
+- test-chain/1
+- test-chain/2
+- test-chain/3
 
-```
-docker-compose down
-```
+## Run nodes
 
-##### 进入容器内执行命令
+The commands of operation the nodes are the same. Take`test-chain/0`as an example.
 
-```
-docker-compose exec node0 /usr/bin/gosu user /bin/bash
-```
+1. Configure the node:
 
-##### 日志
+   ```shell
+   ./env.sh ./bin/cita setup test-chain/0
+   ```
 
-容器默认输出的是`chain`微服务的日志
+2. Start the node：
 
-```
-docker-compose logs -f
-```
+   This command does not return normally, so it needs to run in the background.
 
-也可以直接到挂载目录下查看所有微服务的日志
+   ```shell
+   ./daemon.sh ./bin/cita start test-chain/0
+   ```
 
-```
-tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
-```
+3. Stop the node：
 
-## 验证
+   ```shell
+   ./env.sh ./bin/cita stop test-chain/0
+   ```
 
-* 查询节点个数
+4. Other operations
+
+   use help for detailed information：
+
+   ```shell
+   ./env.sh ./bin/cita help
+   ```
+
+## Docker-compose quick start
+
+1. Get the binaries and docker-compose configuration
+
+   ```
+   latest_release_tag=$(curl --silent "https://api.github.com/repos/cryptape/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+   echo "latest release tag: $latest_release_tag"
+   wget https://github.com/cryptape/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
+   tar zxvf cita_secp256k1_sha3.tar.gz
+   cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node0
+   cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node1
+   cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
+   cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
+
+   wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_test/docker-compose.yaml
+   ```
+
+2. Start and stop nodes
+
+   ```
+   USER_ID=`id -u $USER` docker-compose up -d
+   docker-compose down
+   ```
+
+3. Run commands inside the containers
+
+   ```
+   docker-compose exec node0 /usr/bin/gosu user /bin/bash
+   ```
+
+4. Fetch the logs
+
+   The default logs of a container are generated by the `cita-chain` microservice.
+
+   ```
+   docker-compose logs -f
+   ```
+
+   You can also access logs of all microservices in the path where the directory is mounted in the container.
+
+   ```
+   tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
+   ```
+
+## Verification
+
+**_Need to be executed after the test environment is set up_**
+
+- Query the number of nodes.
 
   Request:
 
   ```shell
   ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
   ```
+
   Result:
 
   ```shell
   {
-    "jsonrpc": "2.0",
-    "id": 74,
-    "result": "0x3"
+      "jsonrpc": "2.0",
+      "id": 74,
+      "result": "0x3"
   }
   ```
 
-* 查询当前块高度。
+- Query the current block height.
 
   Request:
 
@@ -293,14 +228,24 @@ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
 
   ```shell
   {
-    "jsonrpc": "2.0",
-    "id": 83,
-    "result": "0x8"
+      "jsonrpc": "2.0",
+      "id": 83,
+      "result": "0x8"
   }
   ```
 
-  返回块高度，表示节点已经开始正常出块。
+  Return the block height, indicating that the node has started to block out normally.
 
-!> 在发布件目录(target/install)下运行节点时，可选择使用`./env.sh`
+## multiple chains
 
-更多 API（如合约调用、交易查询）请参见[RPC 调用](./rpc_guide/rpc)。
+To plan related port configuration for deploy multiple chains on different servers, Reference [config_tool](../chain/config_tool).
+
+Deploying multiple chains on the one server, in addition to planning port configuration, due to the `rabbmitmq` system service limitation, multiple chains can only be run in one docker. Generate a new chain based on the directory where the `test-chain` :
+
+```shell
+./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
+```
+
+Run test2-chain is the same as the test-chain, and can only be run in the same docker.
+
+More APIs (such as contract calls, transaction queries),please check[RPC calls](../rpc_guide/rpc)。

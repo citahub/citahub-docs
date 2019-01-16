@@ -7,31 +7,31 @@ original_id: sys
 
 <h2 class="hover-list">System Config</h2>
 
-* [setChainName](#setChainName)
-* [setOperator](#setOperator)
-* [setWebsite](#setWebsite)
-* [getPermissionCheck](#getPermissionCheck)
-* [getSendTxPermissionCheck](#getSendTxPermissionCheck)
-* [getCreateContractPermissionCheck](#getCreateContractPermissionCheck)
-* [getQuotaCheck](#getQuotaCheck)
-* [getFeeBackPlatformCheck](#getFeeBackPlatformCheck)
-* [getChainOwner](#getChainOwner)
+- [setChainName](#setChainName)
+- [setOperator](#setOperator)
+- [setWebsite](#setWebsite)
+- [getPermissionCheck](#getPermissionCheck)
+- [getSendTxPermissionCheck](#getSendTxPermissionCheck)
+- [getCreateContractPermissionCheck](#getCreateContractPermissionCheck)
+- [getQuotaCheck](#getQuotaCheck)
+- [getFeeBackPlatformCheck](#getFeeBackPlatformCheck)
+- [getChainOwner](#getChainOwner)
 
-***
+---
 
 ### setChainName
 
 设置链名称。
 
-* Parameters
+- Parameters
 
-    `String chainName` - The Chain name
+  `String chainName` - The Chain name
 
-* Returns
+- Returns
 
-    `None`
+  `None`
 
-* Example
+- Example
 
 ```shell
 $ scm SysConfig setChainName \
@@ -43,15 +43,15 @@ $ scm SysConfig setChainName \
 
 设置运营方。
 
-* Parameters
+- Parameters
 
-    `String operator` - The Chain operator
+  `String operator` - The Chain operator
 
-* Returns
+- Returns
 
-    `None`
+  `None`
 
-* Example
+- Example
 
 ```shell
  $ scm SysConfig setOperator \
@@ -63,15 +63,15 @@ $ scm SysConfig setChainName \
 
 设置运营方地址。
 
-* Parameters
+- Parameters
 
-    `String website` - The Operator website
+  `String website` - The Operator website
 
-* Returns
+- Returns
 
-    `None`
+  `None`
 
-* Example
+- Example
 
 ```shell
 $ scm SysConfig setWebsite \
@@ -83,15 +83,15 @@ $ scm SysConfig setWebsite \
 
 查询调用合约权限是否开启， 默认关闭。
 
-* Parameters
+- Parameters
 
-    `height(Optional)`
+  `height(Optional)`
 
-* Returns
+- Returns
 
-    `bool` - True, if permission check, otherwise false.
+  `bool` - True, if permission check, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm SysConfig getPermissionCheck
@@ -101,15 +101,15 @@ $ scm SysConfig getPermissionCheck
 
 查询发送交易权限是否开启, 默认关闭。
 
-* Parameters
+- Parameters
 
-    `height(Optional)`
+  `height(Optional)`
 
-* Returns
+- Returns
 
-    `bool` - True, if permission check, otherwise false.
+  `bool` - True, if permission check, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm SysConfig getSendTxPermissionCheck
@@ -119,15 +119,15 @@ $ scm SysConfig getSendTxPermissionCheck
 
 查询创建合约权限是否开启, 默认关闭。
 
-* Parameters
+- Parameters
 
-    `height(Optional)`
+  `height(Optional)`
 
-* Returns
+- Returns
 
-    `bool` - True, if permission check, otherwise false.
+  `bool` - True, if permission check, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm SysConfig getCreateContractPermissionCheck
@@ -137,15 +137,15 @@ $ scm SysConfig getCreateContractPermissionCheck
 
 查询 quota 检查是否开启， 默认关闭。
 
-* Parameters
+- Parameters
 
-    `height(Optional)`
+  `height(Optional)`
 
-* Returns
+- Returns
 
-    `bool` - True, if permission check, otherwise false.
+  `bool` - True, if permission check, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm SysConfig getQuotaCheck
@@ -155,15 +155,15 @@ $ scm SysConfig getQuotaCheck
 
 查询出块激励返回开关是否开启， 默认关闭。
 
-* Parameters
+- Parameters
 
-    `height(Optional)`
+  `height(Optional)`
 
-* Returns
+- Returns
 
-    `bool` - True, if permission check, otherwise false.
+  `bool` - True, if permission check, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm SysConfig getFeeBackPlatformCheck
@@ -173,15 +173,15 @@ $ scm SysConfig getFeeBackPlatformCheck
 
 查询链的持有者地址。
 
-* Parameters
+- Parameters
 
-    `height(Optional)`
+  `height(Optional)`
 
-* Returns
+- Returns
 
-    `address` - The chain owner's address
+  `address` - The chain owner's address
 
-* Example
+- Example
 
 ```shell
 $ scm SysConfig getChainOwner

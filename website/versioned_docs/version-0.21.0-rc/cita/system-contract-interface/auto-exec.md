@@ -5,44 +5,42 @@ sidebar_label: 自动执行合约接口
 original_id: auto-exec
 ---
 
-# 自动执行合约接口
-
 <h2 class="hover-list">Auto Exec</h2>
 
-* [register](#register)
-* [autoExec](#autoExec)
-* [contAddr](#contAddr)
+- [register](#register)
+- [autoExec](#autoExec)
+- [contAddr](#contAddr)
 
 ### register
 
 注册自动执行合约，只能管理员调用，新注册的地址会覆盖旧地址。
 
-* Parameters
+- Parameters
 
-    `address` - The address to be setted
+  `address` - The address to be setted
 
-* Returns
+- Returns
 
-    None
+  None
 
 ### autoExec
 
 仅供底层调用的接口，不对用户开放。
 
-* Parameters
+- Parameters
 
-    None
+  None
 
-* Returns
+- Returns
 
-    None
+  None
 
 ### contAddr
 
-* Parameters
+- Parameters
 
-    None
+  None
 
-* Returns
+- Returns
 
-    `address` - The address of the registerd contract
+  `address` - The address of the registerd contract

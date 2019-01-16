@@ -7,20 +7,18 @@ original_id: all-groups
 
 <h2 class="hover-list">Admin Management</h2>
 
-* [queryGroups](#queryGroups)
+- [queryGroups](#queryGroups)
 
-***
+---
 
 ### queryGroups
 
 查询当前所有组
 
-* Parameters
+- Parameters
 
-    `None`
+  `None`
 
-* Returns
+- Returns
 
-    `address[]` - 组地址列表
-
-
+  `address[]` - 组地址列表

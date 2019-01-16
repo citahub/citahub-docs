@@ -7,29 +7,29 @@ original_id: node
 
 <h2 class="hover-list">Node Management</h2>
 
-* [approveNode](#approveNode)
-* [deleteNode](#deleteNode)
-* [listNode](#listNode)
-* [setStake](#setStake)
-* [getStatus](#getStatus)
-* [listStake](#listStake)
-* [stakePermillage](#stakePermillage)
+- [approveNode](#approveNode)
+- [deleteNode](#deleteNode)
+- [listNode](#listNode)
+- [setStake](#setStake)
+- [getStatus](#getStatus)
+- [listStake](#listStake)
+- [stakePermillage](#stakePermillage)
 
-***
+---
 
 ### approveNode
 
 确认共识节点。
 
-* Parameters
+- Parameters
 
-    `address` - The new node address
+  `address` - The new node address
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false
+  `bool` - True, if successfully, otherwise false
 
-* Example
+- Example
 
 ```shell
 $ scm NodeManager approveNode \
@@ -41,15 +41,15 @@ $ scm NodeManager approveNode \
 
 删除共识节点。
 
-* Parameters
+- Parameters
 
-    `address` - The node address
+  `address` - The node address
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false
+  `bool` - True, if successfully, otherwise false
 
-* Example
+- Example
 
 ```shell
 $ scm NodeManager deleteNode \
@@ -61,15 +61,15 @@ $ scm NodeManager deleteNode \
 
 共识节点列表。
 
-* Parameters
+- Parameters
 
-    `None`
+  `None`
 
-* Returns
+- Returns
 
-    `address[]` - The consensus nodes
+  `address[]` - The consensus nodes
 
-* Example
+- Example
 
 ```shell
 $ scm NodeManager listNode
@@ -79,16 +79,16 @@ $ scm NodeManager listNode
 
 设置共识节点 stake 。
 
-* Parameters
+- Parameters
 
-    `address` - The node address to be setted
-    `uint64` - The stake to be setted
+  `address` - The node address to be setted
+  `uint64` - The stake to be setted
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false
+  `bool` - True, if successfully, otherwise false
 
-* Example
+- Example
 
 ```shell
 $ scm NodeManager setStake \
@@ -101,15 +101,15 @@ $ scm NodeManager setStake \
 
 获取共识节点状态。
 
-* Parameters
+- Parameters
 
-    `address` - The node address
+  `address` - The node address
 
-* Returns
+- Returns
 
-    `uint8` - 0: closed, 1: started
+  `uint8` - 0: closed, 1: started
 
-* Example
+- Example
 
 ```shell
 $ scm NodeManager getStatus --address 0xae0f69a2d95146d104365e0502a0d521717ced7f
@@ -119,15 +119,15 @@ $ scm NodeManager getStatus --address 0xae0f69a2d95146d104365e0502a0d521717ced7f
 
 共识节点 stake 列表。
 
-* Parameters
+- Parameters
 
-    None
+  None
 
-* Returns
+- Returns
 
-    `uint64[]` - The node stakes list
+  `uint64[]` - The node stakes list
 
-* Example
+- Example
 
 ```shell
 $ scm NodeManager listStake
@@ -137,15 +137,15 @@ $ scm NodeManager listStake
 
 共识节点出块权重千分比。
 
-* Parameters
+- Parameters
 
-    `address` - The node address
+  `address` - The node address
 
-* Returns
+- Returns
 
-    `uint64` - The node stake permillage
+  `uint64` - The node stake permillage
 
-* Example
+- Example
 
 ```shell
 $ scm NodeManager stakePermillage --address 0xae0f69a2d95146d104365e0502a0d521717ced7f

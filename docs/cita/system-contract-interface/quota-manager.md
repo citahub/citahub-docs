@@ -1,7 +1,12 @@
 ---
 id: quota-manager
+<<<<<<< HEAD:docs/cita/system-contract-interface/quota-manager.md
+title: Quota Management Contract Interface
+sidebar_label: Quota Management Contract
+=======
 title: 配额管理合约接口
 sidebar_label: 配额管理合约接口
+>>>>>>> master:docs/cita/system-contract-interface/quota-manager.md
 ---
 
 <h2 class="hover-list">Quota Management</h2>

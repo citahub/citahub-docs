@@ -7,32 +7,32 @@ original_id: role-management
 
 <h2 class="hover-list">Role Management</h2>
 
-* [newRole](#newRole)
-* [updateRoleName](#updateRoleName)
-* [addPermissions](#addPermissions)
-* [deletePermissions](#deletePermissions)
-* [setRole](#setRole)
-* [cancelRole](#cancelRole)
-* [clearRole](#clearRole)
-* [deleteRole](#deleteRole)
+- [newRole](#newRole)
+- [updateRoleName](#updateRoleName)
+- [addPermissions](#addPermissions)
+- [deletePermissions](#deletePermissions)
+- [setRole](#setRole)
+- [cancelRole](#cancelRole)
+- [clearRole](#clearRole)
+- [deleteRole](#deleteRole)
 
-***
+---
 
 ### newRole
 
 新建角色。
 
-* Parameters
+- Parameters
 
-    `bytes32` - The role name
+  `bytes32` - The role name
 
-    `address[]` - The permissions
+  `address[]` - The permissions
 
-* Returns
+- Returns
 
-    `address` - The role address
+  `address` - The role address
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement newRole \
@@ -41,7 +41,7 @@ $ scm RoleManagement newRole \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-回执output:
+回执 output:
 
 ```json
 {
@@ -100,17 +100,17 @@ $ scm RoleManagement newRole \
 
 更新角色名称。
 
-* Parameters
+- Parameters
 
-    `bytes32` - The role name
+  `bytes32` - The role name
 
-    `address` - The role address
+  `address` - The role address
 
-* Returns
+- Returns
 
-    `bool`
+  `bool`
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement updateRoleName \
@@ -123,22 +123,22 @@ $ scm RoleManagement updateRoleName \
 
 为角色添加权限。
 
-* Parameters
+- Parameters
 
-    `address` - The role address
+  `address` - The role address
 
-    `address[]` - The role permissions
+  `address[]` - The role permissions
 
-* Returns
+- Returns
 
-    `bool`
+  `bool`
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement addPermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
-        --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \ 
+        --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
@@ -146,20 +146,20 @@ $ scm RoleManagement addPermissions \
 
 删除权限。
 
-* Parameters
+- Parameters
 
-    `address` - The role address
+  `address` - The role address
 
-    `address[]` - The permissions
+  `address[]` - The permissions
 
-* Returns
+- Returns
 
-    `bool`
+  `bool`
 
-* Example
+- Example
 
 ```shell
-$ scm RoleManagement deletePermissions \ 
+$ scm RoleManagement deletePermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
         --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e66 \
@@ -169,17 +169,17 @@ $ scm RoleManagement deletePermissions \
 
 为某一个账户设置角色。
 
-* Parameters
+- Parameters
 
-    `address` - The account address
+  `address` - The account address
 
-    `address` - The role address
+  `address` - The role address
 
-* Returns
+- Returns
 
-    `bool`
+  `bool`
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement setRole \
@@ -192,17 +192,17 @@ $ scm RoleManagement setRole \
 
 清除某个账户的指定权限
 
-* Parameters
+- Parameters
 
-    `address` - The account address
+  `address` - The account address
 
-    `address` - The role address
+  `address` - The role address
 
-* Returns
+- Returns
 
-    `bool`
+  `bool`
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement cancelRole \
@@ -215,15 +215,15 @@ $ scm RoleManagement cancelRole \
 
 清除某个账户的所有权限。
 
-* Parameters
+- Parameters
 
-    `address` - The account address
+  `address` - The account address
 
-* Returns
+- Returns
 
-    `bool`
+  `bool`
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement clearRole \
@@ -235,15 +235,15 @@ $ scm RoleManagement clearRole \
 
 删除角色。
 
-* Parameters
+- Parameters
 
-    `address` - The role address
+  `address` - The role address
 
-* Returns
+- Returns
 
-    `bool`
+  `bool`
 
-* Example
+- Example
 
 ```shell
 $ scm RoleManagement deleteRole \

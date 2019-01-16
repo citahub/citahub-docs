@@ -1,7 +1,12 @@
 ---
 id: role-auth
+<<<<<<< HEAD:docs/cita/system-contract-interface/role-auth.md
+title: Role-auth Contract Interface
+sidebar_label: Role-auth Contract
+=======
 title: 角色授权合约接口
 sidebar_label: 角色授权合约接口
+>>>>>>> master:docs/cita/system-contract-interface/role-auth.md
 ---
 
 <h2 class="hover-list">Role Authorization</h2>

@@ -1,18 +1,19 @@
 ---
 id: config-overview
-title: 概述
-sidebar_label: 概述
+title: Config Overview
+sidebar_label: Config Overview
 ---
 
-在本章节中，将为你详细介绍链级配置和各微服务配置的相关内容。
+In this chapter, we will illustrate how to config the chain itself and the microservices under each node.
 
-[链级配置](./configuration/chain_config)主要是指链自身的一些属性、系统合约、RPC接口、节点间网络连接等的配置，需要用户在**起链前**进行初始化配置。
-在链级配置这篇文档中，将为你详细介绍链的各个可配置项；然后通过具体的操作示例，演示如何起链前对链进行初始化配置；并带你详细了解初始化配置后文件的目录结构；最后，将通过具体示例，演示起链后如何修改个别配置。
-相信阅读完此文档后，你将可以自己定制一条满足你需求的链。
+[Chain Configuration](./configuration/chain_config) means the configuration of some attributes of the chain itself, system contracts, RPC interfaces, network connections between nodes, etc.. And please notice that many configurable items can only be changed before starting the chain.
+This document will introduce the configurable items of the chain;
+Then through a specific operation example, demonstrate how to initialize the chain before starting it;
+And take you in detail to understand the directory structure of the file after the initial configuration;
+Finally, an operation example will be used to demonstrate how to modify some particular configurations after starting the chain.
+Though this document, you will be able to customize a chain that meets your needs.
 
-[微服务配置](./configuration/service_config)主要是指各微服务的配置。CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network，各组件之间通过消息总线交换信息相互协作。
-各节点运维人员可根据系统运行情况（微服务负载情况等）进行配置调整，优化性能。
-当前只有 network 微服务可以在不停链的情况下，进行配置调整，其他模块需要停链后进行操作。当修改配置后，支持自动刷新。
-在[微服务配置](./configuration/service_config)这篇文档中，将为你详细介绍各个微服务的可配置项。
-
-
+[Microservice Configuration](./configuration/service_config) mainly refers to the configuration of each microservices. In CITA, functionalities of a blockchain node are decoupled into six microservices, including RPC, Auth, Consensus, Chain, Executor，Network. These six microservices coordinate with eath other via a message queue.
+It is flexible for operation and maintenance personnel to perform configuration adjustments based on system operation (microservice load conditions, etc.) to optimize performance.
+Currently, only network microservices can be adjusted in the runtime while other modules need to be operated after stopping the chain. Automatic refresh is supported when the configuration is modified.
+In this document, we will illustrate in detail about the configurable items of each microservice.

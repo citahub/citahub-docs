@@ -1,7 +1,12 @@
 ---
 id: emergency-brake
+<<<<<<< HEAD:docs/cita/system-management/emergency-brake.md
+title: Emergency Brake
+sidebar_label: Emergency Brake
+=======
 title: 紧急制动
 sidebar_label: 紧急制动
+>>>>>>> master:docs/cita/system-management/emergency-brake.md
 ---
 
 ## 简述

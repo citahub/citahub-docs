@@ -1,10 +1,16 @@
 ---
 id: transaction-process
+<<<<<<< HEAD:docs/cita/architecture/transaction-process.md
+title: Transaction Process
+sidebar_label: Transaction Process
+---
+=======
 title: 交易处理
 sidebar_label: 交易处理
 ---
 
 # 交易处理
+>>>>>>> master:docs/cita/architecture/transaction-process.md
 
 CITA采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用Protobuf格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。
 

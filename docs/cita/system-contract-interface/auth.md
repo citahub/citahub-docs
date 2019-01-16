@@ -1,7 +1,12 @@
 ---
 id: auth
+<<<<<<< HEAD:docs/cita/system-contract-interface/auth.md
+title: Auth Contract Interface
+sidebar_label: Auth Contract
+=======
 title: 授权管理合约接口
 sidebar_label: 授权管理合约接口
+>>>>>>> master:docs/cita/system-contract-interface/auth.md
 ---
 
 # 授权管理合约接口

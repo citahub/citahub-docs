@@ -1,7 +1,12 @@
 ---
 id: contracts
+<<<<<<< HEAD:docs/cita/system-management/contracts.md
+title: System Contract Overview
+sidebar_label: System Contract Overview
+=======
 title: 系统合约
 sidebar_label: 系统合约
+>>>>>>> master:docs/cita/system-management/contracts.md
 ---
 
 CITA 链生成时，通过系统合约来生成创世块，并作为链的最基本配置。拥有权限的管理员可以发送交易修改创世块的部分配置，所以了解系统合约至关重要。

@@ -1,7 +1,12 @@
 ---
 id: glossary
+<<<<<<< HEAD:docs/cita/reference/glossary.md
+title: Glossary
+sidebar_label: Glossary
+=======
 title: 词汇表
 sidebar_label: 词汇表
+>>>>>>> master:docs/cita/reference/glossary.md
 ---
 
 ## 区块链

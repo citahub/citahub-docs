@@ -1,8 +1,8 @@
 {
   "scripts": {
     "cita:sync": "git submodule update --remote",
-    "crowdin-upload": "crowdin --config crowdin.yaml upload sources --auto-update",
-    "crowdin-download": "crowdin --config crowdin.yaml download"
+    "crowdin:upload": "crowdin --config crowdin.yaml upload sources --auto-update",
+    "crowdin:download": "crowdin --config crowdin.yaml download"
   },
   "devDependencies": {
     "docusaurus-init": "^1.0.2"

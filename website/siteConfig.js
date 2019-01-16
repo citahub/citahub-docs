@@ -22,7 +22,7 @@ const users = [
 const baseUrl = '/citahub-docs/'
 
 const siteConfig = {
-  title: 'CITAHub Doc', // Title for your website.
+  title: 'CITAHub Docs', // Title for your website.
   tagline: 'Documents of CITAHub',
   url: 'https://docs.citahub.com/', // Your website URL
   baseUrl, // Base URL for your project */

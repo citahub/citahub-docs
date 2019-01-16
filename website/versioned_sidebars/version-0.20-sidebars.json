@@ -1,38 +1,154 @@
 {
   "version-0.20-docs": {
+    "Welcome": [
+      "version-0.20-welcome"
+    ],
     "CITA": [
-      "version-0.20-welcome",
-      "version-0.20-getting-started",
+      "version-0.20-cita/cita-intro",
+      "version-0.20-cita/getting-started",
       {
         "label": "Configuration",
         "type": "subcategory",
         "ids": [
-          "version-0.20-configuration/config-overview",
-          "version-0.20-configuration/chain-configuration",
-          "version-0.20-configuration/microservice-configuration"
+          "version-0.20-cita/configuration/config-overview",
+          "version-0.20-cita/configuration/chain-configuration",
+          "version-0.20-cita/configuration/microservice-configuration"
+        ]
+      },
+      {
+        "label": "System Management",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-cita/system-management/contracts",
+          "version-0.20-cita/system-management/node",
+          "version-0.20-cita/system-management/permission",
+          "version-0.20-cita/system-management/user",
+          "version-0.20-cita/system-management/quota",
+          "version-0.20-cita/system-management/price",
+          "version-0.20-cita/system-management/log",
+          "version-0.20-cita/system-management/snapshot",
+          "version-0.20-cita/system-management/batch-tx",
+          "version-0.20-cita/system-management/emergency-brake",
+          "version-0.20-cita/system-management/amend",
+          "version-0.20-cita/system-management/fee-back",
+          "version-0.20-cita/system-management/version",
+          "version-0.20-cita/system-management/auto-exec"
+        ]
+      },
+      {
+        "label": "JSON-RPC",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-cita/rpc-guide/rpc-types",
+          "version-0.20-cita/rpc-guide/rpc",
+          "version-0.20-cita/rpc-guide/rpc-error-code"
+        ]
+      },
+      {
+        "label": "System Contract Interface",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-cita/system-contract-interface/sys-interface)",
+          "version-0.20-cita/system-contract-interface/node",
+          "version-0.20-cita/system-contract-interface/auth",
+          "version-0.20-cita/system-contract-interface/permission",
+          "version-0.20-cita/system-contract-interface/role-management",
+          "version-0.20-cita/system-contract-interface/role-auth",
+          "version-0.20-cita/system-contract-interface/role.md",
+          "version-0.20-cita/system-contract-interface/group-management",
+          "version-0.20-cita/system-contract-interface/group",
+          "version-0.20-cita/system-contract-interface/all-groups",
+          "version-0.20-cita/system-contract-interface/quota_manager",
+          "version-0.20-cita/system-contract-interface/quota_price",
+          "version-0.20-cita/system-contract-interface/batch",
+          "version-0.20-cita/system-contract-interface/emergency-brake",
+          "version-0.20-cita/system-contract-interface/admin",
+          "version-0.20-cita/system-contract-interface/auto-exec",
+          "version-0.20-cita/system-contract-interface/error"
+        ]
+      },
+      {
+        "label": "Aechitecture",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-cita/architecture/architecture",
+          "version-0.20-cita/architecture/components",
+          "version-0.20-cita/architecture/consensus",
+          "version-0.20-cita/architecture/transaction_process",
+          "version-0.20-cita/architecture/view"
+        ]
+      },
+      "version-0.20-cita/crosschain/crosschain-contract-example",
+      {
+        "label": "Protocol Upgrade",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-cita/protocol-upgrade/overview",
+          "version-0.20-cita/protocol-upgrade/v0",
+          "version-0.20-cita/protocol-upgrade/v1"
+        ]
+      },
+      {
+        "label": "Reference",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-cita/reference/addresses",
+          "version-0.20-cita/reference/glossary",
+          "version-0.20-cita/reference/glossary"
         ]
       }
     ],
     "Toolchain": [
       {
+        "label": "CITA-CLI",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-toolchian/cli/cli-intro"
+        ]
+      },
+      {
         "label": "SDK",
         "type": "subcategory",
         "ids": [
-          "version-0.20-toolchain/js-sdk",
-          "version-0.20-toolchain/java-sdk",
-          "version-0.20-toolchain/swift-sdk",
-          "version-0.20-toolchain/ruby-sdk"
+          "version-0.20-toolchain/sdk/js-sdk",
+          "version-0.20-toolchain/sdk/java-sdk",
+          "version-0.20-toolchain/sdk/swift-sdk",
+          "version-0.20-toolchain/sdk/ruby-sdk"
         ]
-      }
-    ],
-    "MultiLeveltNavs": [
-      "version-0.20-1",
+      },
       {
+        "label": "Rebirth",
         "type": "subcategory",
-        "label": "2",
         "ids": [
-          "version-0.20-welcome",
-          "version-0.20-getting-started"
+          "version-0.20-toolchain/rebirth/rebirth-intro"
+        ]
+      },
+      {
+        "label": "Cyton",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-toolchain/cyton/cyton-intro"
+        ]
+      },
+      {
+        "label": "Microscope",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-toolchain/microscope/microscope-intro"
+        ]
+      },
+      {
+        "label": "CITA-IDE",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-toolchain/ide/ide-intro"
+        ]
+      },
+      {
+        "label": "CITA Truffle Box",
+        "type": "subcategory",
+        "ids": [
+          "version-0.20-toolchain/truffle-box/truffle-box-intro"
         ]
       }
     ],

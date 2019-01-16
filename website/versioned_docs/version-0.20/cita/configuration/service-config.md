@@ -5,8 +5,6 @@ sidebar_label: Microservice Configuration
 original_id: microservice-configuration
 ---
 
-# Microservice Configuration
-
 The most notable feature of CITA is the microservice architecture, that is, in CITA, functionalities of a node are decoupled into six microservices, including RPC, Auth, Consensus, Chain, Executor, Network. These six microservices coordinating with each other via message queue to complete the node's task.
 
 Let's take a look at the configuration files which are .toml files under the `test-chain/*/` path. (`test-chain` is the default name of the chain).

@@ -5,8 +5,6 @@ sidebar_label: Chain Configuration
 original_id: chain-configuration
 ---
 
-# Chain Configuration
-
 After unzipping the release package, or compiling the source code, don't hurry to start the node. Before that, an important step is that we need to initialize the chain before starting it.
 In the initialization process, all the configuration information will be written into the genesis block. Once the genesis block is generated, in SysConfig, only three items `chainName`, `operator`, `website` can be modified while the other items can no longer be changed. So please carefully set each configuration item.
 In CITA, we provide the Config Tool to help you initialize the chain, and we also offer a command line tool named CITA-CLI to help you modify several specific configurations while the chain is already running.

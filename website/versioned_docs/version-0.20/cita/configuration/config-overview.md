@@ -5,8 +5,6 @@ sidebar_label: Config Overview
 original_id: config-overview
 ---
 
-# Configuration
-
 In this chapter, we will illustrate how to config the chain itself and the microservices under each node.
 
 [Chain Configuration](./configuration/chain_config) means the configuration of some attributes of the chain itself, system contracts, RPC interfaces, network connections between nodes, etc.. And please notice that many configurable items can only be changed before starting the chain.

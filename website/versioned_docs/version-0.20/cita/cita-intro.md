@@ -5,13 +5,10 @@ sidebar_label: Overview
 original_id: welcome
 ---
 
-This is version 0.30
-
 # Welcome
 
-<translate>CITA（ Cryptape Inter-enterprise Trust Automation ）is a smart contract supported blockchain framework,
-aiming to provide a stable, efficient, flexible and future-oriented platform for enterprise-level blockchain applications. </translate>
-In CITA, functionalities of a blockchain node are decoupled into six microservices, including RPC, Auth, Consensus, Chain, Executor，Network.
+CITA（ Cryptape Inter-enterprise Trust Automation ）is a smart contract supported blockchain framework,
+aiming to provide a stable, efficient, flexible and future-oriented platform for enterprise-level blockchain applications. In CITA, functionalities of a blockchain node are decoupled into six microservices, including RPC, Auth, Consensus, Chain, Executor，Network.
 Microservices coordinate with eath other via message queue. By configuring and customizing the services, CITA can meet all the needs of enterprise users.
 
 ## Our priorities：

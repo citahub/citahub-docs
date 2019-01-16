@@ -4,8 +4,6 @@ title: Contributing
 sidebar_label: Contributing
 ---
 
-# 贡献代码
-
 CITA 是一个开源项目，任何人都可以参与 CITA 并贡献代码。
 
 以下是参与 CITA 并贡献的具体流程：

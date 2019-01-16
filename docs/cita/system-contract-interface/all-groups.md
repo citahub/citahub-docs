@@ -1,0 +1,25 @@
+---
+id: all-groups
+title: All-groups Contract Interface
+sidebar_label: All-groups Contract
+---
+
+<h2 class="hover-list">Admin Management</h2>
+
+* [queryGroups](#queryGroups)
+
+***
+
+### queryGroups
+
+查询当前所有组
+
+* Parameters
+
+    `None`
+
+* Returns
+
+    `address[]` - 组地址列表
+
+

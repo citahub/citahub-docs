@@ -1,10 +1,16 @@
 ---
 id: autu-exec
+<<<<<<< HEAD:docs/cita/system-management/auto-exec.md
 title: Auto Execution
 sidebar_label: Auto Execution
 ---
 
 # 自动执行
+=======
+title: 自动执行
+sidebar_label: 自动执行
+---
+>>>>>>> master:docs/cita/system-management/auto-exec.md
 
 `CITA` 自动执行合约。
 

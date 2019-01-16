@@ -66,38 +66,37 @@
         ]
       },
       {
-        "label": "Aechitecture",
+        "label": "Architecture",
         "type": "subcategory",
-        "ids": [ 
+        "ids": [
           "cita/architecture/architecture",
           "cita/architecture/components",
           "cita/architecture/consensus",
           "cita/architecture/transaction_process",
-          "cita/architecture/view" 
+          "cita/architecture/view"
         ]
       },
       "cita/crosschain/crosschain-contract-example",
       {
         "label": "Protocol Upgrade",
         "type": "subcategory",
-        "ids": [ 
+        "ids": [
           "cita/protocol-upgrade/overview",
           "cita/protocol-upgrade/v0",
           "cita/protocol-upgrade/v1"
         ]
-      }, 
+      },
       {
         "label": "Reference",
         "type": "subcategory",
-        "ids": [ 
+        "ids": [
           "cita/reference/addresses",
           "cita/reference/glossary",
           "cita/reference/glossary"
         ]
-      } 
+      }
     ],
-    "CITA Toolchain": [
-      {
+    "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": [

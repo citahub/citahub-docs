@@ -1,7 +1,12 @@
 ---
 id: permission-management
+<<<<<<< HEAD:docs/cita/system-contract-interface/permission-management.md
 title: Permission Management Contract Interface
 sidebar_label: Permission Management Contract
+=======
+title: 权限管理合约接口
+sidebar_label: 权限管理合约接口
+>>>>>>> master:docs/cita/system-contract-interface/permission-management.md
 ---
 
 <h2 class="hover-list">Permission Management</h2>

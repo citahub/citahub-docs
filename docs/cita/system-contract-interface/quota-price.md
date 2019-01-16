@@ -1,7 +1,12 @@
 ---
 id: quota-price
+<<<<<<< HEAD:docs/cita/system-contract-interface/quota-price.md
 title: Quota Price Contract Interface
 sidebar_label: Quota Price Contract
+=======
+title: 配额价格管理合约接口
+sidebar_label: 配额价格管理合约接口
+>>>>>>> master:docs/cita/system-contract-interface/quota-price.md
 ---
 
 <h2 class="hover-list">Price Management</h2>

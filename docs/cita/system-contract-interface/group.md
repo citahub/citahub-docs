@@ -1,7 +1,12 @@
 ---
 id: group
+<<<<<<< HEAD:docs/cita/system-contract-interface/group.md
 title: Group Contract Interface
 sidebar_label: Group Contract
+=======
+title: 组合约接口
+sidebar_label: 组合约接口
+>>>>>>> master:docs/cita/system-contract-interface/group.md
 ---
 
 <h2 class="hover-list">Users Management</h2>

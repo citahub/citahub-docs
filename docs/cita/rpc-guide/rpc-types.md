@@ -1,7 +1,12 @@
 ---
 id: rpc-types
+<<<<<<< HEAD:docs/cita/rpc-guide/rpc-types.md
 title: JSON RPC Types and Return value
 sidebar_label: JSON RPC Types and Return value
+=======
+title: JSON RPC 参数和返回值
+sidebar_label: JSON RPC 参数和返回值
+>>>>>>> master:docs/cita/rpc-guide/rpc-types.md
 ---
 
 ## JSON-RPC support

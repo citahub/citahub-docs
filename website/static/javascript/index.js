@@ -1,5 +1,7 @@
 window.onload = () => {
-  document.querySelector("a[href='/citahub-docs/en']").setAttribute('href', '/citahub-docs/')
+  const welcome = '/welcome'
+  const logoEl = document.querySelector(".fixedHeaderContainer a[href^='/citahub-docs/']")
+  logoEl.setAttribute('href', logoEl.href + welcome)
 
   // add coppase effect to sidebar
   const sidebarNavs = document.querySelectorAll('.navGroup.subNavGroup')

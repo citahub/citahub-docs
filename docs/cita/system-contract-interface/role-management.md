@@ -1,7 +1,12 @@
 ---
 id: role-management
+<<<<<<< HEAD:docs/cita/system-contract-interface/role-management.md
 title: Role Manegement Contract Interface
 sidebar_label: Role Manegement Contract
+=======
+title: 角色管理合约接口
+sidebar_label: 角色管理合约接口
+>>>>>>> master:docs/cita/system-contract-interface/role-management.md
 ---
 
 <h2 class="hover-list">Role Management</h2>

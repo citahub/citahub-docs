@@ -1,7 +1,12 @@
 ---
 id: group-management
+<<<<<<< HEAD:docs/cita/system-contract-interface/group-management.md
 title: Group Management Contract Interface
 sidebar_label: Group Management Contract 
+=======
+title: 组管理合约接口
+sidebar_label: 组管理合约接口
+>>>>>>> master:docs/cita/system-contract-interface/group-management.md
 ---
 
 <h2 class="hover-list">Group Management</h2>

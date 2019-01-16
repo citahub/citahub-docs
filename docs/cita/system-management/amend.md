@@ -1,7 +1,12 @@
 ---
 id: amend
+<<<<<<< HEAD:docs/cita/system-management/amend.md
 title: Data Amend
 sidebar_label: Data Amend
+=======
+title: 数据订正
+sidebar_label: 数据订正
+>>>>>>> master:docs/cita/system-management/amend.md
 ---
 
 ## 简述

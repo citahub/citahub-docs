@@ -1,7 +1,12 @@
 ---
 id: sys
+<<<<<<< HEAD:docs/cita/system-contract-interface/sys.md
 title: System configuration Contract Interface
 sidebar_label: System configuration Contract
+=======
+title: 系统配置合约接口
+sidebar_label: 系统配置合约接口
+>>>>>>> master:docs/cita/system-contract-interface/sys.md
 ---
 
 <h2 class="hover-list">System Config</h2>

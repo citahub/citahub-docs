@@ -1,7 +1,12 @@
 ---
 id: addresses
+<<<<<<< HEAD:docs/cita/reference/addresses.md
 title: System Contract Address 
 sidebar_label: System Contract Address 
+=======
+title: 系统保留地址列表 
+sidebar_label: 系统保留地址列表
+>>>>>>> master:docs/cita/reference/addresses.md
 ---
 
 !> **系统保留地址更改！**

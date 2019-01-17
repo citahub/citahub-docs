@@ -46,7 +46,7 @@ const siteConfig = {
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
-
+  editUrl: 'https://github.com/cryptape/citahub-docs/edit/master/docs/',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     // {
@@ -92,7 +92,7 @@ const siteConfig = {
     ]
   },
   */
-
+  translationRecruitingLink: 'https://crowdin.com/project/citahub-docs',
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
 

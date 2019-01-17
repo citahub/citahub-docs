@@ -1,12 +1,7 @@
 ---
 id: architecture
-<<<<<<< HEAD:docs/cita/architecture/architecture.md
-title: Architecture
-sidebar_label: Architecture
-=======
 title: 系统架构
 sidebar_label: 系统架构
->>>>>>> master:docs/cita/architecture/architecture.md
 ---
 
 ## 微服务

@@ -1,11 +1,7 @@
 ---
-title: Cyton Introduction
+title: Cyton 简介
 id: cyton-intro
-<<<<<<< HEAD
-sidebar_label: Cyton Introduction
-=======
 sidebar_label: Cyton 简介
->>>>>>> master
 ---
 
 Coming soon

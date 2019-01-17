@@ -1,13 +1,12 @@
 ---
 id: welcome
-<<<<<<< HEAD
-title: Welcome
-sidebar_label: CITAHub Docs Overview
+title: CITAHub 文档概览
+sidebar_label: CITAHub 文档概览
 ---
 
 我们提供了一套完整的开源的区块链解决方案，CITA 作为底层区块链内核；围绕 CITA, 我们提供了一系列开源的工具链来完善基础设施，以方便运营方，开发者以及终端用户能够快速应用起来，包括：Dapp 钱包Cyton，区块链浏览器 Microscope，多平台SDK 等。
 
-![welcome page](assets/first-page.jpg)
+![](assets/first-page.jpg)
 
 ## CITA | 区块链内核
 
@@ -50,9 +49,3 @@ ReBirth 是一个提供区块链数据缓存服务的服务器端组件。它通
 [![](https://img.shields.io/badge/nervosj-GitHub-lightgrey.svg)](https://github.com/cryptape/nervosj/)
 
 考虑到签名、报文拼装，abi调用等复杂操作，区块链操作对于绝大多数开发者来说都有不小的难度。为此，我们提供了多平台SDK进一步降低开发门槛。目前正在维护的开源SDK包括 JavaScript、Java、Android、Swift 等多个版本，方便开发者使用。用户也可以同时使用以太坊的web3 SDK，使得同一个 DApp 前端同时支持以太坊网络和 CITA 网络的业务操作。
-=======
-title: CITAHub Overview
----
-
-coming soon
->>>>>>> master

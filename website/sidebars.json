@@ -5,7 +5,7 @@
       "cita/cita-intro",
       "cita/getting-started",
       {
-        "label": "Configuration",
+        "label": "配置",
         "type": "subcategory",
         "ids": [
           "cita/configuration/config-overview",
@@ -14,7 +14,7 @@
         ]
       },
       {
-        "label": "System Management",
+        "label": "系统管理",
         "type": "subcategory",
         "ids": [
           "cita/system-management/contracts",
@@ -43,7 +43,7 @@
         ]
       },
       {
-        "label": "System Contract Interface",
+        "label": "系统合约接口",
         "type": "subcategory",
         "ids": [
           "cita/system-contract-interface/sys-interface)",
@@ -66,37 +66,38 @@
         ]
       },
       {
-        "label": "Architecture",
+        "label": "架构设计",
         "type": "subcategory",
-        "ids": [
+        "ids": [ 
           "cita/architecture/architecture",
           "cita/architecture/components",
           "cita/architecture/consensus",
           "cita/architecture/transaction_process",
-          "cita/architecture/view"
+          "cita/architecture/view" 
         ]
       },
       "cita/crosschain/crosschain-contract-example",
       {
-        "label": "Protocol Upgrade",
+        "label": "协议升级",
         "type": "subcategory",
-        "ids": [
+        "ids": [ 
           "cita/protocol-upgrade/overview",
           "cita/protocol-upgrade/v0",
           "cita/protocol-upgrade/v1"
         ]
-      },
+      }, 
       {
-        "label": "Reference",
+        "label": "参考",
         "type": "subcategory",
-        "ids": [
+        "ids": [ 
           "cita/reference/addresses",
           "cita/reference/glossary",
           "cita/reference/glossary"
         ]
-      }
+      } 
     ],
-    "Toolchain": [{
+    "Toolchain": [
+      {
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": [

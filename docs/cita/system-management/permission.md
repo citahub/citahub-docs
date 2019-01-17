@@ -1,12 +1,7 @@
 ---
 id: permission
-<<<<<<< HEAD:docs/cita/system-management/permission.md
-title: Permission management
-sidebar_label: Permission management
-=======
 title: 权限管理
 sidebar_label: 权限管理
->>>>>>> master:docs/cita/system-management/permission.md
 ---
 
 CITA实现了对账户的权限管理，并支持基于角色的权限管理。

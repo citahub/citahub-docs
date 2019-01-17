@@ -1,13 +1,13 @@
 ---
 id: version-0.20-welcome
-title: Welcome
-sidebar_label: CITAHub Docs Overview
+title: CITAHub 文档概览
+sidebar_label: CITAHub 文档概览
 original_id: welcome
 ---
 
 我们提供了一套完整的开源的区块链解决方案，CITA 作为底层区块链内核；围绕 CITA, 我们提供了一系列开源的工具链来完善基础设施，以方便运营方，开发者以及终端用户能够快速应用起来，包括：Dapp 钱包Cyton，区块链浏览器 Microscope，多平台SDK 等。
 
-![welcome page](assets/first-page.jpg)
+![](assets/first-page.jpg)
 
 ## CITA | 区块链内核
 

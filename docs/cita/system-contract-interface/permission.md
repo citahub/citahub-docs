@@ -1,12 +1,7 @@
 ---
 id: permission
-<<<<<<< HEAD:docs/cita/system-contract-interface/permission.md
-title: Permission Contract Interface
-sidebar_label: Permission Contract
-=======
 title: 权限合约接口
 sidebar_label: 权限合约接口
->>>>>>> master:docs/cita/system-contract-interface/permission.md
 ---
 
 <h2 class="hover-list">Permission</h2>

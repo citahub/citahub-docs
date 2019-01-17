@@ -1,16 +1,8 @@
 ---
 id: view
-<<<<<<< HEAD:docs/cita/architecture/view.md
-title: View
-sidebar_label: View
----
-=======
 title: 视图
 sidebar_label: 视图
 ---
-
-# 视图
->>>>>>> master:docs/cita/architecture/view.md
 
 ## 账号
 

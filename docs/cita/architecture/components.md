@@ -1,12 +1,7 @@
 ---
 id: components
-<<<<<<< HEAD:docs/cita/architecture/components.md
-title: Components
-sidebar_label: Components
-=======
 title: 系统组件
 sidebar_label: 系统组件
->>>>>>> master:docs/cita/architecture/components.md
 ---
 
 ## RPC

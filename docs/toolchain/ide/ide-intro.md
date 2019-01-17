@@ -1,14 +1,7 @@
 ---
-title: CITA IDE Introduction
+title: CITA IDE 简介
 id: ide-intro
-<<<<<<< HEAD
-sidebar_label: CITA IDE Introduction
+sidebar_label: CITA IDE 简介
 ---
 
 Coming soon
-=======
-sidebar_label: CITA IDE Overview
----
-
-Coming soon
->>>>>>> master

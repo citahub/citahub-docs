@@ -1,12 +1,7 @@
 ---
 id: emergency-brake
-<<<<<<< HEAD:docs/cita/system-contract-interface/emergency-brake.md
-title: Emergency-brake Contract Interface
-sidebar_label: Emergency-brake Contract
-=======
 title: 紧急制动合约接口
 sidebar_label: 紧急制动合约接口
->>>>>>> master:docs/cita/system-contract-interface/emergency-brake.md
 ---
 
 <h2 class="hover-list">Emergency brake</h2>

@@ -1,14 +1,7 @@
 ---
 title: Microscope Introduction
 id: microscope-intro
-<<<<<<< HEAD
-sidebar_label: Microscope Introduction
+sidebar_label: Microscope 简介
 ---
 
 Coming soon
-=======
-sidebar_label: Microscope Overview
----
-
-Coming soon
->>>>>>> master

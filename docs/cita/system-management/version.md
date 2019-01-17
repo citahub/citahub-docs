@@ -1,12 +1,7 @@
 ---
 id: version
-<<<<<<< HEAD:docs/cita/system-management/version.md
-title: Protocol version management
-sidebar_label: Protocol version management
-=======
 title: 协议版本号管理
 sidebar_label: 协议版本号管理
->>>>>>> master:docs/cita/system-management/version.md
 ---
 
 CITA use protocol version number to activate hard fork for upgrading. This

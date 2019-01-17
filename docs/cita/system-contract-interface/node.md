@@ -1,12 +1,7 @@
 ---
 id: node
-<<<<<<< HEAD:docs/cita/system-contract-interface/node.md
-title: Consensus Node Management Contract Interface
-sidebar_label: Node Management Contract
-=======
 title: 共识节点管理合约接口
 sidebar_label: 共识节点管理合约接口
->>>>>>> master:docs/cita/system-contract-interface/node.md
 ---
 
 <h2 class="hover-list">Node Management</h2>

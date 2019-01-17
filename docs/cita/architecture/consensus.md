@@ -1,16 +1,8 @@
 ---
 id: consensus
-<<<<<<< HEAD:docs/cita/architecture/consensus.md
-title: Cpnsensus
-sidebar_label: Consensus
----
-=======
 title: 共识
 sidebar_label: 共识
 ---
-
-# 共识
->>>>>>> master:docs/cita/architecture/consensus.md
 
 CITA的共识模块主要是保证多个节点对于交易的顺序和Block的内容达成一致。在众多的分布式算法中，
 我们选择实现了非拜占庭容错的Raft算法和拜占庭容错的的CITA-BFT算法。

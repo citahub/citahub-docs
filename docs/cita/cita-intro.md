@@ -1,58 +1,52 @@
 ---
-id: welcome
-title: Overview
-sidebar_label: Overview
+id: cita-intro
+title: Welcome to CITA
+sidebar_label: 关于 CITA
 ---
 
-# Welcome
+CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级应用的支持智能合约的区块链框架，
+旨在为企业级区块链应用提供一个稳固、高效、灵活、可适应未来的运行平台。
+CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network。各组件之间通过消息总线交换信息相互协作。
+通过配置和定制相应的服务，CITA 能够满足企业级用户的全部需要。
 
-CITA（ Cryptape Inter-enterprise Trust Automation ）is a smart contract supported blockchain framework,
-aiming to provide a stable, efficient, flexible and future-oriented platform for enterprise-level blockchain applications. In CITA, functionalities of a blockchain node are decoupled into six microservices, including RPC, Auth, Consensus, Chain, Executor，Network.
-Microservices coordinate with eath other via message queue. By configuring and customizing the services, CITA can meet all the needs of enterprise users.
+## CITA 的亮点
 
-## Our priorities：
+- **水平扩展性**
 
-- **Horizontal scalability**
+  在 CITA 的微服务架构中，“节点”是一个逻辑概念，有可能是一台服务器（一台服务器上面运行一组微服务），
+  也有可能是一组服务器组成的集群，同时 CITA 还支持部署在云服务器上，充分利用了各种服务器硬件来提升处理能力。
+  节点与节点之间通过P2P通信，节点内部各模块通过消息总线通信，这一点与 Fabric 仅仅在共识模块运用消息总线通信完全不同。
 
-  With the microservice architecture, a logical node can be easily scaled to a cluster of servers.
-  Node administrators can increase system capacity simply by adding more PC servers on high load.
-  The administrator can even use dedicated servers to provide services for hot-spot accounts.
-  Outside one node's boundary, nodes communicate with each other using P2P network;
-  Inside each node, microservices communicate with each other by messaging queue
-  (Note this is completely different from Fabric which uses a messaging queue only as consensus process).
+- **组件可插拔**
 
-- **Pluggable and Customizable Components**
+  松耦合的微服务架构，便于各组件将来平滑迁移至更好的算法（比如新的共识算法）或者更好的技术方案（比如新的DB或者新的隐私方案）；
+  也有利于针对一些具体的业务场景，定制一些特定的功能。
 
-  CITA's microservices are loosely coupled and their communications are only via the message queue.
-  Hence, it‘s flexible to improve current components with better algorithms (such as new consensus algorithms) or more appropriate technical solutions (such as new DBs or new privacy solutions).
-  Moreover, business logic is extremely complicated in enterprise applications.
-  With CITA, you can easily customize your blockchain with the certain feature to fit your own business requirements.
+- **高性能**
 
-- **High Performance**
+  微服务架构将 Chain 与 Executor 独立出来，Executor 仅负责计算和执行交易，Chain 负责存储交易，
+  使得计算和存储分离，极大程度的提高了交易处理能力；
+  编程语言采用 Rust，Rust 强调并秉持零开销抽象的理念在提供诸多高级语言特性的同时，没有引入额外的开销，性能可以媲美 C++。
+  最新版本的交易性能已经可以达到 15,000+ TPS（数据来自 CITA 0.16 版本，在四台 32 核，64G 的云服务器上部署 4 个节点，每台服务器配置百兆带宽）
 
-  In CITA, consensus and transaction execution are decoupled as separate microservices.
-  The consensus service is only responsible for transaction ordering, which can finish independently before transaction execution, thus increase transaction processing performance.
-  In additional, CITA also includes lots of other optimizations to fully utilize multi-cores and multi-servers' computing power.
-  To this end, it utilizes the Rust language, a hybrid imperative/OO/functional language with an emphasis on efficiency.
+- **稳定可靠**
 
-- **Resiliency and Reliability**
+  CITA 提供快照工具来对区块链的数据进行备份，可在较短时间内恢复链数据。
+  同时，Rust 借鉴了编程语言领域最新的研究成果，针对 C++中最头疼的内存问题（内存泄漏，野指针）进行编译器静态检查。
+  只要代码编译通过，就可以保证没有以上问题，大大提高了应用运行阶段的可靠性。
 
-  CITA provides tools to backup blockchain data by taking snapshot, which can help you to resync the blockchain data in a short time.
-  And through Rust’s language-level memory and thread guarantees and a disciplined approach to exception-handling, we can state with a high degree of certainty that our code cannot crash, hang or bomb-out unexpectedly.
+- **兼容性**
 
-- **Compatibility**
+  CITA上支持使用 Solidity，Go 语言，Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppeling，Remix 等）。
 
-  CITA supports the use of Solidity, Go, and Rust to develop smart contracts. It also supports all Ethereum development tools (Truffle, Zeppelin, Remix, etc.).
+- **链间互动**
 
-- **Chain Interoperability**
+  在区块链世界里，各种各样的链在不断的涌现出来。这些链如何互相配合形成区块链网络？
+  CITA 目前提供了一个简单的跨链协议来支持主链与侧链之间的通信。我们也正对跨链通信做更多的探索，旨在扩大在各种链上运行的应用程序的价值。
 
-  We perceive that independent blockchains are constantly emerging nowadays and even more in the future.
-  How do these chains interoperate with each other to form blockchain network? CITA Support cross-chain communication by providing a simple cross-chain protocol currently.
-  More explorations are undertaking in CITA, aiming to amplify the value of applications running on the various chains.
+- **工程经验**
 
-- **Engineering Experience**
+  CITA 现在已经在银行，证券，票据等实际生产环境中运行，这其中我们积累了大量工程经验。
 
-  There're many CITA networks running in banks, payment and insurance production environment, with Cryptape or CITA Integration Provider's technical support. CITA has accumulated a lot of engineering experience.
-
-It’s recommended for first-time users to begin by going through the [Getting Started](./chain/getting_started) section in order to gain familiarity with how to build a simple chain and how to run a node.
-Once comfortable, continue exploring the system management, technical specifications, APIs, etc.
+如果你是第一次使用 CITA 的用户，我们建议你从[快速入门](./getting_started)开始，在这一章节中我们将带你熟悉如果快速的搭建起一条简单的链并运行其中的节点。
+这以后，你可以继续探索关于 CITA 的更多内容。

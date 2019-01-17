@@ -53,16 +53,9 @@ const siteConfig = {
     //   doc: 'welcome',
     //   label: 'Docs'
     // },
-    {
-      page: 'community',
-      label: 'Community',
-    },
-    {
-      language: true
-    },
-    {
-      search: true,
-    }
+    {page: 'community', label: 'Community'},
+    {language: true},
+    {search: true},
   ],
 
   // If you have users set above, you add it here:

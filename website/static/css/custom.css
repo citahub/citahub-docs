@@ -4,6 +4,10 @@
   white-space: nowrap;
 }
 
+a.navItem {
+  font-weight: 500 !important;
+}
+
 .navGroup.subNavGroup h4 {
   display: block;
   cursor: default;

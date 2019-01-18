@@ -4,6 +4,10 @@
   white-space: nowrap;
 }
 
+.fixedHeaderContainer header h3 {
+  font-size: 14px;
+}
+
 .navGroup.subNavGroup h4 {
   display: block;
   cursor: default;

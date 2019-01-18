@@ -6,9 +6,14 @@
  */
 
 const languages = [{
-    enabled: true,
+    enabled: false,
     name: 'English',
     tag: 'en',
+  },
+  {
+    enabled: true,
+    name: 'English',
+    tag: 'en-US',
   },
   {
     enabled: false,

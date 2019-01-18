@@ -5,71 +5,70 @@
     "previous": "Previous",
     "tagline": "Documents of CITAHub",
     "docs": {
-      "_sidebar": {
-        "title": "_sidebar"
-      },
       "cita/architecture/architecture": {
-        "title": "系统架构"
+        "title": "架构设计"
       },
       "cita/architecture/components": {
         "title": "系统组件"
       },
       "cita/architecture/consensus": {
-        "title": "共识"
+        "title": "Consensus"
       },
       "cita/architecture/transaction-process": {
-        "title": "交易处理"
+        "title": "Transaction Process"
       },
       "cita/architecture/view": {
-        "title": "视图"
+        "title": "View"
       },
       "cita/cita-intro": {
-        "title": "CITA 概览"
+        "title": "Welcome to CITA"
       },
       "cita/configuration/chain-configuration": {
-        "title": "链级配置"
+        "title": "Chain Configuration"
       },
       "cita/configuration/config-overview": {
-        "title": "概述"
+        "title": "Configuration Overview"
       },
       "cita/configuration/microservice-configuration": {
-        "title": "微服务配置"
+        "title": "Microservice Configuration"
       },
       "cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约的编写及操作示例"
+        "title": "Crosschain Contract Example",
+        "sidebar_label": "Crosschain"
       },
       "cita/getting-started": {
-        "title": "快速入门"
+        "title": "快速入门",
+        "siebar_label": "快速入门"
       },
       "cita/protocol-upgrade/overview": {
-        "title": "协议升级概述"
+        "title": "Protocol Upgrade Overview"
       },
       "cita/protocol-upgrade/v0": {
-        "title": "v0 协议"
+        "title": "v0 Protocol"
       },
       "cita/protocol-upgrade/v1": {
-        "title": "v1 协议"
+        "title": "v1 Protocol"
       },
       "cita/reference/addresses": {
-        "title": "系统保留地址列表"
+        "title": "Reserved System Addresses"
       },
       "cita/reference/faq": {
         "title": "FAQ"
       },
       "cita/reference/glossary": {
-        "title": "词汇表"
+        "title": "Glossary"
       },
       "cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC 错误码"
+        "title": "JSON RPC Error Code"
       },
       "cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC 参数和返回值"
+        "title": "JSON RPC Types"
       },
       "cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       },
       "cita/system-contract-interface/admin": {
-        "title": "管理员管理合约接口"
+        "title": "Admin Contract Interface"
       },
       "cita/system-contract-interface/all-groups": {
         "title": "所有组合约接口"
@@ -165,25 +164,36 @@
         "title": "协议版本号管理"
       },
       "contributing": {
-        "title": "Contributing"
+        "title": "Contributing",
+        "sidebar_label": "贡献代码"
       },
       "welcome": {
-        "title": "CITAHub Overview"
+        "title": "CITAHub 文档概览",
+        "sidebar_label": "CITAHub 文档概览"
+      },
+      "roadmap": {
+        "title": "Roadmap",
+        "sidebar_label": "开发路线图"
       },
       "toolchain/cli/cli-intro": {
-        "title": "CITA-CLI 简介"
+        "title": "CLI 简介",
+        "sidebar_label": "CITA-CLI 简介"
       },
       "toolchain/cyton/cyton-intro": {
-        "title": "Cyton 简介"
+        "title": "Cyton 简介",
+        "sidebar_label": "Cyton 简介"
       },
       "toolchain/ide/ide-intro": {
-        "title": "CITA IDE Overview"
+        "title": "CITA IDE 简介",
+        "sidebar_label": "CITA IDE 简介"
       },
       "toolchain/microscope/microscope-intro": {
-        "title": "Microscope Overview"
+        "title": "Microscope Introduction",
+        "sidebar_label": "Microscope 简介"
       },
       "toolchain/rebirth/rebirth-intro": {
-        "title": "Rebirth 简介"
+        "title": "Rebirth Introduction",
+        "sidebar_label": "Rebirth 简介"
       },
       "toolchain/sdk/java-sdk": {
         "title": "CITA Java SDK"
@@ -198,198 +208,215 @@
         "title": "CITA Swift SDK"
       },
       "toolchain/truffle-box/truffle-box-intro": {
-        "title": "CITA Truffle Box 简介"
+        "title": "CITA Truffle Box Introduction",
+        "sidebar_label": "CITA Truffle Box 简介"
       },
-      "version-0.21.0-rc-architecture": {
-        "title": "系统架构"
+      "version-0.20-architecture": {
+        "title": "Architecture"
       },
-      "version-0.21.0-rc-components": {
-        "title": "系统组件"
+      "version-0.20-components": {
+        "title": "System Components"
       },
-      "version-0.21.0-rc-consensus": {
-        "title": "共识"
+      "version-0.20-consensus": {
+        "title": "Consensus"
       },
-      "version-0.21.0-rc-transaction-process": {
-        "title": "交易处理"
+      "version-0.20-transaction-process": {
+        "title": "Transaction Process"
       },
-      "version-0.21.0-rc-view": {
-        "title": "视图"
+      "version-0.20-view": {
+        "title": "View"
       },
-      "version-0.21.0-rc-cita-intro": {
-        "title": "CITA 概述"
+      "version-0.20-cita-intro": {
+        "title": "Welcome to CITA"
       },
-      "version-0.21.0-rc-chain-configuration": {
-        "title": "链级配置"
+      "version-0.20-chain-configuration": {
+        "title": "Chain Configuration"
       },
-      "version-0.21.0-rc-config-overview": {
-        "title": "概述"
+      "version-0.20-config-overview": {
+        "title": "Configuration Overview"
       },
-      "version-0.21.0-rc-microservice-configuration": {
-        "title": "微服务配置"
+      "version-0.20-microservice-configuration": {
+        "title": "Microservice Configuration"
       },
-      "version-0.21.0-rc-crosschain-contract-example": {
-        "title": "跨链合约的编写及操作示例"
+      "version-0.20-crosschain-contract-example": {
+        "title": "Crosschain Contract Example",
+        "sidebar_label": "Crosschain"
       },
-      "version-0.21.0-rc-getting-started": {
-        "title": "Getting Started"
+      "version-0.20-getting-started": {
+        "title": "快速入门",
+        "siebar_label": "快速入门"
       },
-      "version-0.21.0-rc-overview": {
-        "title": "协议升级概述"
+      "version-0.20-overview": {
+        "title": "Protocol Upgrade Overview"
       },
-      "version-0.21.0-rc-v0": {
-        "title": "v0 协议"
+      "version-0.20-v0": {
+        "title": "v0 Protocol"
       },
-      "version-0.21.0-rc-v1": {
-        "title": "v1 协议"
+      "version-0.20-v1": {
+        "title": "v1 Protocol"
       },
-      "version-0.21.0-rc-addresses": {
-        "title": "系统保留地址列表"
+      "version-0.20-addresses": {
+        "title": "Reserved System Addresses"
       },
-      "version-0.21.0-rc-faq": {
+      "version-0.20-faq": {
         "title": "FAQ"
       },
-      "version-0.21.0-rc-glossary": {
-        "title": "词汇表"
+      "version-0.20-glossary": {
+        "title": "Glossary"
       },
-      "version-0.21.0-rc-rpc-error-code": {
-        "title": "JSON RPC 错误码"
+      "version-0.20-rpc-error-code": {
+        "title": "JSON RPC Error Code"
       },
-      "version-0.21.0-rc-rpc-types": {
-        "title": "JSON RPC 参数和返回值"
+      "version-0.20-rpc-types": {
+        "title": "JSON RPC Types"
       },
-      "version-0.21.0-rc-rpc": {
+      "version-0.20-rpc": {
         "title": "JSON RPC"
       },
-      "version-0.21.0-rc-admin": {
-        "title": "管理员管理合约接口"
+      "version-0.20-admin": {
+        "title": "Admin Contract Interface"
       },
-      "version-0.21.0-rc-all-groups": {
+      "version-0.20-all-groups": {
         "title": "所有组合约接口"
       },
-      "version-0.21.0-rc-auth": {
+      "version-0.20-auth": {
         "title": "授权管理合约接口"
       },
-      "version-0.21.0-rc-auto-exec": {
+      "version-0.20-auto-exec": {
         "title": "自动执行合约接口"
       },
-      "version-0.21.0-rc-batch": {
+      "version-0.20-batch": {
         "title": "批量交易合约接口"
       },
-      "version-0.21.0-rc-emergency-brake": {
+      "version-0.20-emergency-brake": {
         "title": "紧急制动"
       },
-      "version-0.21.0-rc-error": {
+      "version-0.20-error": {
         "title": "系统合约错误类型"
       },
-      "version-0.21.0-rc-group-management": {
+      "version-0.20-group-management": {
         "title": "组管理合约接口"
       },
-      "version-0.21.0-rc-group": {
+      "version-0.20-group": {
         "title": "组合约接口"
       },
-      "version-0.21.0-rc-node": {
+      "version-0.20-node": {
         "title": "节点管理"
       },
-      "version-0.21.0-rc-permission-management": {},
-      "version-0.21.0-rc-permission": {
+      "version-0.20-permission-management": {
+        "title": "权限管理合约接口"
+      },
+      "version-0.20-permission": {
         "title": "权限管理"
       },
-      "version-0.21.0-rc-quota-manager": {
+      "version-0.20-quota-manager": {
         "title": "配额管理合约接口"
       },
-      "version-0.21.0-rc-quota-price": {
+      "version-0.20-quota-price": {
         "title": "配额价格管理合约接口"
       },
-      "version-0.21.0-rc-role-auth": {
+      "version-0.20-role-auth": {
         "title": "角色授权合约接口"
       },
-      "version-0.21.0-rc-role-management": {
+      "version-0.20-role-management": {
         "title": "角色管理合约接口"
       },
-      "version-0.21.0-rc-role": {
+      "version-0.20-role": {
         "title": "角色合约接口"
       },
-      "version-0.21.0-rc-sys": {
+      "version-0.20-sys": {
         "title": "系统配置合约接口"
       },
-      "version-0.21.0-rc-amend": {
+      "version-0.20-amend": {
         "title": "数据订正"
       },
-      "version-0.21.0-rc-autu-exec": {
+      "version-0.20-autu-exec": {
         "title": "自动执行"
       },
-      "version-0.21.0-rc-batch-tx": {
+      "version-0.20-batch-tx": {
         "title": "批量交易"
       },
-      "version-0.21.0-rc-contracts": {
+      "version-0.20-contracts": {
         "title": "系统合约"
       },
-      "version-0.21.0-rc-fee-back": {
+      "version-0.20-fee-back": {
         "title": "出块奖励返回"
       },
-      "version-0.21.0-rc-log": {
+      "version-0.20-log": {
         "title": "日志管理"
       },
-      "version-0.21.0-rc-price": {
+      "version-0.20-price": {
         "title": "配额价格管理"
       },
-      "version-0.21.0-rc-quota": {
+      "version-0.20-quota": {
         "title": "配额管理"
       },
-      "version-0.21.0-rc-snapshot": {
+      "version-0.20-snapshot": {
         "title": "快照"
       },
-      "version-0.21.0-rc-user": {
+      "version-0.20-user": {
         "title": "用户管理"
       },
-      "version-0.21.0-rc-version": {
+      "version-0.20-version": {
         "title": "协议版本号管理"
       },
-      "version-0.21.0-rc-contributing": {
-        "title": "Contributing"
+      "version-0.20-contributing": {
+        "title": "Contributing",
+        "sidebar_label": "贡献代码"
       },
-      "version-0.21.0-rc-welcome": {
-        "title": "CITAHub 概览"
+      "version-0.20-welcome": {
+        "title": "CITAHub 文档概览",
+        "sidebar_label": "CITAHub 文档概览"
       },
-      "version-0.21.0-rc-cli-intro": {
-        "title": "CITA-CLI 简介"
+      "version-0.20-roadmap": {
+        "title": "Roadmap",
+        "sidebar_label": "开发路线图"
       },
-      "version-0.21.0-rc-cyton-intro": {
-        "title": "Cyton 简介"
+      "version-0.20-cli-intro": {
+        "title": "CLI 简介",
+        "sidebar_label": "CITA-CLI 简介"
       },
-      "version-0.21.0-rc-ide-intro": {
-        "title": "CITA IDE Overview"
+      "version-0.20-cyton-intro": {
+        "title": "Cyton 简介",
+        "sidebar_label": "Cyton 简介"
       },
-      "version-0.21.0-rc-microscope-intro": {
-        "title": "Microscope Overview"
+      "version-0.20-ide-intro": {
+        "title": "CITA IDE 简介",
+        "sidebar_label": "CITA IDE 简介"
       },
-      "version-0.21.0-rc-rebirth-intro": {
-        "title": "Rebirth 简介"
+      "version-0.20-microscope-intro": {
+        "title": "Microscope 简介",
+        "sidebar_label": "Microscope 简介"
       },
-      "version-0.21.0-rc-java-sdk": {
+      "version-0.20-rebirth-intro": {
+        "title": "Rebirth Introduction",
+        "sidebar_label": "Rebirth 简介"
+      },
+      "version-0.20-java-sdk": {
         "title": "CITA Java SDK"
       },
-      "version-0.21.0-rc-js-sdk": {
+      "version-0.20-js-sdk": {
         "title": "CITA JavaScript SDK"
       },
-      "version-0.21.0-rc-ruby-sdk": {
+      "version-0.20-ruby-sdk": {
         "title": "CITA Ruby SDK"
       },
-      "version-0.21.0-rc-swift-sdk": {
+      "version-0.20-swift-sdk": {
         "title": "CITA Swift SDK"
       },
-      "version-0.21.0-rc-truffle-box-intro": {
-        "title": "CITA Truffle Box 简介"
+      "version-0.20-truffle-box-intro": {
+        "title": "CITA Truffle Box Introduction",
+        "sidebar_label": "CITA Truffle Box 简介"
       }
     },
     "links": {
-      "Community": "Community"
+      "Community": "社区"
     },
     "categories": {
       "Welcome": "Welcome",
       "CITA": "CITA",
-      "Toolchain": "Toolchain",
-      "Contributing": "Contributing"
+      "Toolchain": "工具链",
+      "Contributing": "贡献代码"
     }
   },
   "pages-strings": {

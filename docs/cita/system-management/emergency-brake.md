@@ -1,7 +1,6 @@
 ---
 id: emergency-brake
 title: 紧急制动
-sidebar_label: 紧急制动
 ---
 
 ## 简述
@@ -29,7 +28,7 @@ c19d93fb: state()
 
 ### 操作示例
 
-*首先需要启动一条链，具体方法见快速入门部分*
+_首先需要启动一条链，具体方法见快速入门部分_
 
 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
@@ -48,6 +47,7 @@ cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
   "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
 }
 ```
+
 可以看到，当前链未开启紧急制动模式
 
 - 开启紧急制动模式并确认：
@@ -60,6 +60,7 @@ cita-cli scm EmergencyBrake setState \
 ```
 
 输出：
+
 ```json
 {
   "id": 3,
@@ -76,6 +77,7 @@ cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
 ```
 
 输出：
+
 ```json
 {
   "id": 1,
@@ -83,6 +85,7 @@ cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
   "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
 }
 ```
+
 可以确认，当前状态已经改为紧急制动模式
 
 - 用随机私钥发送转账交易，确认紧急制动功能正常：
@@ -92,15 +95,17 @@ cita-cli key create
 ```
 
 输出：
+
 ```json
 {
-    "address": "0xdd7342f637100daac32dc42823e111bcfc90943d",
-    "private": "0xf2c9b7ebd64c079928e6873f6b2f0551ecedf87d4a1cab30851b8592aa4b2396",
-    "public": "0x24ff15c562d4cd61c8d041fa960bd6ee88313ad5eb5359fa0f66cac787b3010c8bb2d508ccf218f0ac58b9c318d7ae90508486ad568bf538562831db2da3faea"
+  "address": "0xdd7342f637100daac32dc42823e111bcfc90943d",
+  "private": "0xf2c9b7ebd64c079928e6873f6b2f0551ecedf87d4a1cab30851b8592aa4b2396",
+  "public": "0x24ff15c562d4cd61c8d041fa960bd6ee88313ad5eb5359fa0f66cac787b3010c8bb2d508ccf218f0ac58b9c318d7ae90508486ad568bf538562831db2da3faea"
 }
 ```
 
 任意私钥发送交易被拒绝
+
 ```bash
 cita-cli transfer \
     --address 0x23e2aef1f034f4e2db0ede35bfd92999a4b081d9 \
@@ -110,6 +115,7 @@ cita-cli transfer \
 ```
 
 输出：
+
 ```json
 {
   "error": {
@@ -122,6 +128,7 @@ cita-cli transfer \
 ```
 
 超管发送交易，正常执行
+
 ```bash
 $ cita-cli transfer \
       --address 0xdd7342f637100daac32dc42823e111bcfc90943d \
@@ -131,6 +138,7 @@ $ cita-cli transfer \
 ```
 
 输出：
+
 ```json
 {
   "id": 3,
@@ -152,6 +160,7 @@ cita-cli scm EmergencyBrake setState \
 ```
 
 输出：
+
 ```json
 {
   "id": 3,
@@ -168,6 +177,7 @@ cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
 ```
 
 输出：
+
 ```json
 {
   "id": 1,
@@ -187,6 +197,7 @@ cita-cli transfer \
 ```
 
 输出：
+
 ```json
 {
   "id": 3,

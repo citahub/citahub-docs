@@ -1,42 +1,41 @@
 ---
 id: version-0.20-permission-management
 title: 权限管理合约接口
-sidebar_label: 权限管理合约接口
 original_id: permission-management
 ---
 
 <h2 class="hover-list">Permission Management</h2>
 
-* [newPermission](#newPermission)
-* [deletePermission](#deletePermission)
-* [updatePermissionName](#updatePermissionName)
-* [addResources](#addResources)
-* [deleteResources](#deleteResources)
-* [setAuthorizations](#setAuthorizations)
-* [setAuthorization](#setAuthorization)
-* [cancelAuthorizations](#cancelAuthorizations)
-* [cancelAuthorization](#cancelAuthorization)
-* [clearAuthorization](#clearAuthorization)
+- [newPermission](#newPermission)
+- [deletePermission](#deletePermission)
+- [updatePermissionName](#updatePermissionName)
+- [addResources](#addResources)
+- [deleteResources](#deleteResources)
+- [setAuthorizations](#setAuthorizations)
+- [setAuthorization](#setAuthorization)
+- [cancelAuthorizations](#cancelAuthorizations)
+- [cancelAuthorization](#cancelAuthorization)
+- [clearAuthorization](#clearAuthorization)
 
-***
+---
 
 ### newPermission
 
 创建新权限。
 
-* Parameters
+- Parameters
 
-    `bytes32` - The permission name
+  `bytes32` - The permission name
 
-    `address[]`- The contracts of resource
+  `address[]`- The contracts of resource
 
-    `bytes4[]` - The function signature of the resource
+  `bytes4[]` - The function signature of the resource
 
-* Returns
+- Returns
 
-    `address` - New permission's address.
+  `address` - New permission's address.
 
-* Example
+- Example
 
 ```shell
 $ scm PermissionManagement newPermission \
@@ -70,9 +69,7 @@ output:
         "blockNumber": "0x583d",
         "data": "0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000010000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc000000000000000000000000000000000000000000000000000000000000000160fe47b100000000000000000000000000000000000000000000000000000000",
         "logIndex": "0x0",
-        "topics": [
-          "0xb533e8b79dc7485ba7e4435e3395df911c1a3c767225941003d88a7812d216f7"
-        ],
+        "topics": ["0xb533e8b79dc7485ba7e4435e3395df911c1a3c767225941003d88a7812d216f7"],
         "transactionHash": "0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e0212279981b548c9884f018b8f",
         "transactionIndex": "0x0",
         "transactionLogIndex": "0x0"
@@ -107,31 +104,31 @@ output:
 
 删除权限。
 
-* Parameters
+- Parameters
 
-    `address` - The permission address
+  `address` - The permission address
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ### updatePermissionName
 
 更新权限名称。
 
-* Parameters
+- Parameters
 
-    `address` - The permission address
+  `address` - The permission address
 
-    `bytes32`  - The permission name
+  `bytes32` - The permission name
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
  $ scm PermissionManagement updatePermissionName \
@@ -144,18 +141,19 @@ output:
 
 添加资源。
 
-* Parameters
+- Parameters
 
-    `address` - The permission address
+  `address` - The permission address
 
-    `address[]` - The contracts of resource
+  `address[]` - The contracts of resource
 
-    `bytes4[]` - The function signature of resource
-* Returns
+  `bytes4[]` - The function signature of resource
 
-    `bool` - True, if successfully, otherwise false.
+- Returns
 
-* Example
+  `bool` - True, if successfully, otherwise false.
+
+- Example
 
 ```shell
 $ scm PermissionManagement addResources \
@@ -169,19 +167,19 @@ $ scm PermissionManagement addResources \
 
 删除资源。
 
-* Parameters
+- Parameters
 
-    `address` - The permission address
+  `address` - The permission address
 
-    `address[]` - The contracts of resource
+  `address[]` - The contracts of resource
 
-    `bytes4[]` - The function signature of resource
+  `bytes4[]` - The function signature of resource
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm PermissionManagement deleteResources \
@@ -195,17 +193,17 @@ $ scm PermissionManagement deleteResources \
 
 多次授权。
 
-* Parameters
+- Parameters
 
-    `address` - The account to be setted
+  `address` - The account to be setted
 
-    `address[]` - The permissions to be setted
+  `address[]` - The permissions to be setted
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm PermissionManagement setAuthorizations \
@@ -218,17 +216,17 @@ $ scm PermissionManagement setAuthorizations \
 
 授权。
 
-* Parameters
+- Parameters
 
-    `address` - The account to be setted
+  `address` - The account to be setted
 
-    `address` - The permission to be setted
+  `address` - The permission to be setted
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm PermissionManagement setAuthorization \
@@ -241,17 +239,17 @@ $ scm PermissionManagement setAuthorization \
 
 取消多次授权。
 
-* Parameters
+- Parameters
 
-    `address` - The account address
+  `address` - The account address
 
-    `address[]` - The permissions to be canceled
+  `address[]` - The permissions to be canceled
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm PermissionManagement cancelAuthorizations \
@@ -264,17 +262,17 @@ $ scm PermissionManagement cancelAuthorizations \
 
 取消授权
 
-* Parameters
+- Parameters
 
-    `address` - The account address
+  `address` - The account address
 
-    `address` - The permission to be canceled
+  `address` - The permission to be canceled
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm PermissionManagement cancelAuthorization \
@@ -287,12 +285,12 @@ $ scm PermissionManagement cancelAuthorization \
 
 取消账户的所有授权。
 
-* Parameters
+- Parameters
 
-    `address` - The account's address
+  `address` - The account's address
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example

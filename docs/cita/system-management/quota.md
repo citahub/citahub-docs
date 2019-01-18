@@ -1,22 +1,22 @@
 ---
 id: quota
 title: 配额管理
-sidebar_label: 配额管理
 ---
 
 ## 简述
 
 cita 中的配额数量存在两个限制：
-* `BQL(BlockQuotaLimit)` : 表示块配额的最大值， 默认 1073741824
-* `AQL(AccountQuotaLimit)` : 表示账户配额的最大值， 默认 268435456
+
+- `BQL(BlockQuotaLimit)` : 表示块配额的最大值， 默认 1073741824
+- `AQL(AccountQuotaLimit)` : 表示账户配额的最大值， 默认 268435456
 
 我们可以通过配额管理合约实现对区块以及账户配额消耗上限的管理:
 
-* 设置区块配额上限(BQL)
-* 设置账号配额上限(AQL):
+- 设置区块配额上限(BQL)
+- 设置账号配额上限(AQL):
 
-    - 默认的账号配额上限
-    - 设置指定账号配额上限
+  - 默认的账号配额上限
+  - 设置指定账号配额上限
 
 ## 操作示例
 
@@ -25,11 +25,13 @@ cita 中的配额数量存在两个限制：
 ### 块配额操作
 
 确保你的链正常运行，查询默认块配额，进入 cita-cli 交互式模式，输入命令：
+
 ```shell
 $ scm QuotaManager getBQL
 ```
 
 输出：
+
 ```json
 {
   "id": 1,
@@ -45,11 +47,13 @@ scm QuotaManager setBQL --quota-limit 0x0000000000000000000000000000000000000000
 ```
 
 查询修改后的块配额：
+
 ```shell
 $ scm QuotaManager getBQL
 ```
 
 输出：
+
 ```json
 {
   "id": 1,
@@ -58,16 +62,19 @@ $ scm QuotaManager getBQL
   "
 }
 ```
+
 默认块配额已更新。
 
 ### 账户配额操作
 
 确保你的链正常运行，查询默认账户配额，进入 cita-cli 交互式模式，输入命令：
+
 ```shell
 $ scm QuotaManager getDefaultAQL
 ```
 
 输出：
+
 ```json
 {
   "id": 1,
@@ -83,11 +90,13 @@ $ scm QuotaManager setDefaultAQL --quota-limit 0x0000000000000000000000000000000
 ```
 
 查询修改后的账户配额：
+
 ```shell
 $ scm QuotaManager getDefaultAQL
 ```
 
 输出：
+
 ```json
 {
   "id": 1,
@@ -95,4 +104,5 @@ $ scm QuotaManager getDefaultAQL
   "result": "0x0000000000000000000000000000000000000000000000000000000020000000"
 }
 ```
+
 默认账户配额已更新。

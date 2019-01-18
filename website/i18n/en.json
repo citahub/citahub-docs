@@ -6,212 +6,161 @@
     "tagline": "Documents of CITAHub",
     "docs": {
       "cita/architecture/architecture": {
-        "title": "系统架构",
-        "sidebar_label": "系统架构"
+        "title": "Architecture"
       },
       "cita/architecture/components": {
-        "title": "系统组件",
-        "sidebar_label": "系统组件"
+        "title": "System Components"
       },
       "cita/architecture/consensus": {
-        "title": "共识",
-        "sidebar_label": "共识"
+        "title": "Consensus"
       },
       "cita/architecture/transaction-process": {
-        "title": "交易处理",
-        "sidebar_label": "交易处理"
+        "title": "Transaction Process"
       },
       "cita/architecture/view": {
-        "title": "视图",
-        "sidebar_label": "视图"
+        "title": "View"
       },
       "cita/cita-intro": {
-        "title": "Welcome to CITA",
-        "sidebar_label": "关于 CITA"
+        "title": "Welcome to CITA"
       },
       "cita/configuration/chain-configuration": {
-        "title": "链级配置",
-        "sidebar_label": "链级配置"
+        "title": "Chain Configuration"
       },
       "cita/configuration/config-overview": {
-        "title": "概述",
-        "sidebar_label": "概述"
+        "title": "Configuration Overview"
       },
       "cita/configuration/microservice-configuration": {
-        "title": "微服务配置",
-        "sidebar_label": "微服务配置"
+        "title": "Microservice Configuration"
       },
       "cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约的编写及操作示例",
-        "sidebar_label": "跨链"
+        "title": "Crosschain Contract Example",
+        "sidebar_label": "Crosschain"
       },
       "cita/getting-started": {
-        "title": "快速入门",
-        "sidebar_label": "快速入门"
+        "title": "Getting Started"
       },
       "cita/protocol-upgrade/overview": {
-        "title": "协议升级概述",
-        "sidebar_label": "协议升级概述"
+        "title": "Protocol Upgrade Overview"
       },
       "cita/protocol-upgrade/v0": {
-        "title": "v0 协议",
-        "sidebar_label": "v0 协议"
+        "title": "v0 Protocol"
       },
       "cita/protocol-upgrade/v1": {
-        "title": "v1 协议",
-        "sidebar_label": "v1 协议"
+        "title": "v1 Protocol"
       },
       "cita/reference/addresses": {
-        "title": "系统保留地址列表",
-        "sidebar_label": "系统保留地址列表"
+        "title": "Reserved System Addresses"
       },
       "cita/reference/faq": {
-        "title": "FAQ",
-        "sidebar_label": "FAQ"
+        "title": "FAQ"
       },
       "cita/reference/glossary": {
-        "title": "词汇表",
-        "sidebar_label": "词汇表"
+        "title": "Glossary"
       },
       "cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC 错误码",
-        "sidebar_label": "JSON RPC 错误码"
+        "title": "JSON RPC Error Code"
       },
       "cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC 参数和返回值",
-        "sidebar_label": "JSON RPC 参数和返回值"
+        "title": "JSON RPC Types"
       },
       "cita/rpc-guide/rpc": {
-        "title": "JSON RPC",
-        "sidebar_label": "JSON RPC"
+        "title": "JSON RPC"
       },
       "cita/system-contract-interface/admin": {
-        "title": "管理员管理合约接口",
-        "sidebar_label": "管理员管理合约接口"
+        "title": "Admin Contract Interface"
       },
       "cita/system-contract-interface/all-groups": {
-        "title": "所有组合约接口",
-        "sidebar_label": "所有组合约接口"
+        "title": "所有组合约接口"
       },
       "cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口",
-        "sidebar_label": "授权管理合约接口"
+        "title": "授权管理合约接口"
       },
       "cita/system-contract-interface/auto-exec": {
-        "title": "自动执行合约接口",
-        "sidebar_label": "自动执行合约接口"
+        "title": "自动执行合约接口"
       },
       "cita/system-contract-interface/batch": {
-        "title": "批量交易合约接口",
-        "sidebar_label": "批量交易合约接口"
+        "title": "批量交易合约接口"
       },
       "cita/system-contract-interface/emergency-brake": {
-        "title": "紧急制动合约接口",
-        "sidebar_label": "紧急制动合约接口"
+        "title": "紧急制动合约接口"
       },
       "cita/system-contract-interface/error": {
-        "title": "系统合约错误类型",
-        "sidebar_label": "系统合约错误类型"
+        "title": "系统合约错误类型"
       },
       "cita/system-contract-interface/group-management": {
-        "title": "组管理合约接口",
-        "sidebar_label": "组管理合约接口"
+        "title": "组管理合约接口"
       },
       "cita/system-contract-interface/group": {
-        "title": "组合约接口",
-        "sidebar_label": "组合约接口"
+        "title": "组合约接口"
       },
       "cita/system-contract-interface/node": {
-        "title": "共识节点管理合约接口",
-        "sidebar_label": "共识节点管理合约接口"
+        "title": "共识节点管理合约接口"
       },
       "cita/system-contract-interface/permission-management": {
-        "title": "权限管理合约接口",
-        "sidebar_label": "权限管理合约接口"
+        "title": "权限管理合约接口"
       },
       "cita/system-contract-interface/permission": {
-        "title": "权限合约接口",
-        "sidebar_label": "权限合约接口"
+        "title": "权限合约接口"
       },
       "cita/system-contract-interface/quota-manager": {
-        "title": "配额管理合约接口",
-        "sidebar_label": "配额管理合约接口"
+        "title": "配额管理合约接口"
       },
       "cita/system-contract-interface/quota-price": {
-        "title": "配额价格管理合约接口",
-        "sidebar_label": "配额价格管理合约接口"
+        "title": "配额价格管理合约接口"
       },
       "cita/system-contract-interface/role-auth": {
-        "title": "角色授权合约接口",
-        "sidebar_label": "角色授权合约接口"
+        "title": "角色授权合约接口"
       },
       "cita/system-contract-interface/role-management": {
-        "title": "角色管理合约接口",
-        "sidebar_label": "角色管理合约接口"
+        "title": "角色管理合约接口"
       },
       "cita/system-contract-interface/role": {
-        "title": "角色合约接口",
-        "sidebar_label": "角色合约接口"
+        "title": "角色合约接口"
       },
       "cita/system-contract-interface/sys": {
-        "title": "系统配置合约接口",
-        "sidebar_label": "系统配置合约接口"
+        "title": "系统配置合约接口"
       },
       "cita/system-management/amend": {
-        "title": "数据订正",
-        "sidebar_label": "数据订正"
+        "title": "数据订正"
       },
       "cita/system-management/autu-exec": {
-        "title": "自动执行",
-        "sidebar_label": "自动执行"
+        "title": "自动执行"
       },
       "cita/system-management/batch-tx": {
-        "title": "批量交易",
-        "sidebar_label": "批量交易"
+        "title": "批量交易"
       },
       "cita/system-management/contracts": {
-        "title": "系统合约",
-        "sidebar_label": "系统合约"
+        "title": "系统合约"
       },
       "cita/system-management/emergency-brake": {
-        "title": "紧急制动",
-        "sidebar_label": "紧急制动"
+        "title": "紧急制动"
       },
       "cita/system-management/fee-back": {
-        "title": "出块奖励返回",
-        "sidebar_label": "出块奖励返回"
+        "title": "出块奖励返回"
       },
       "cita/system-management/log": {
-        "title": "日志管理",
-        "sidebar_label": "日志管理"
+        "title": "日志管理"
       },
       "cita/system-management/node": {
-        "title": "节点管理",
-        "sidebar_label": "节点管理"
+        "title": "节点管理"
       },
       "cita/system-management/permission": {
-        "title": "权限管理",
-        "sidebar_label": "权限管理"
+        "title": "权限管理"
       },
       "cita/system-management/price": {
-        "title": "配额价格管理",
-        "sidebar_label": "配额价格管理"
+        "title": "配额价格管理"
       },
       "cita/system-management/quota": {
-        "title": "配额管理",
-        "sidebar_label": "配额管理"
+        "title": "配额管理"
       },
       "cita/system-management/snapshot": {
-        "title": "快照",
-        "sidebar_label": "快照"
+        "title": "快照"
       },
       "cita/system-management/user": {
-        "title": "用户管理",
-        "sidebar_label": "用户管理"
+        "title": "用户管理"
       },
       "cita/system-management/version": {
-        "title": "协议版本号管理",
-        "sidebar_label": "协议版本号管理"
+        "title": "协议版本号管理"
       },
       "contributing": {
         "title": "Contributing",
@@ -262,200 +211,152 @@
         "sidebar_label": "CITA Truffle Box 简介"
       },
       "version-0.20-architecture": {
-        "title": "系统架构",
-        "sidebar_label": "系统架构"
+        "title": "Architecture"
       },
       "version-0.20-components": {
-        "title": "系统组件",
-        "sidebar_label": "系统组件"
+        "title": "System Components"
       },
       "version-0.20-consensus": {
-        "title": "共识",
-        "sidebar_label": "共识"
+        "title": "Consensus"
       },
       "version-0.20-transaction-process": {
-        "title": "交易处理",
-        "sidebar_label": "交易处理"
+        "title": "Transaction Process"
       },
       "version-0.20-view": {
-        "title": "视图",
-        "sidebar_label": "视图"
+        "title": "View"
       },
       "version-0.20-cita-intro": {
-        "title": "Welcome to CITA",
-        "sidebar_label": "关于 CITA"
+        "title": "Welcome to CITA"
       },
       "version-0.20-chain-configuration": {
-        "title": "链级配置",
-        "sidebar_label": "链级配置"
+        "title": "Chain Configuration"
       },
       "version-0.20-config-overview": {
-        "title": "概述",
-        "sidebar_label": "概述"
+        "title": "Configuration Overview"
       },
       "version-0.20-microservice-configuration": {
-        "title": "微服务配置",
-        "sidebar_label": "微服务配置"
+        "title": "Microservice Configuration"
       },
       "version-0.20-crosschain-contract-example": {
-        "title": "跨链合约的编写及操作示例",
-        "sidebar_label": "跨链"
+        "title": "Crosschain Contract Example",
+        "sidebar_label": "Crosschain"
       },
       "version-0.20-getting-started": {
-        "title": "快速入门",
-        "sidebar_label": "快速入门"
+        "title": "Getting Started"
       },
       "version-0.20-overview": {
-        "title": "协议升级概述",
-        "sidebar_label": "协议升级概述"
+        "title": "Protocol Upgrade Overview"
       },
       "version-0.20-v0": {
-        "title": "v0 协议",
-        "sidebar_label": "v0 协议"
+        "title": "v0 Protocol"
       },
       "version-0.20-v1": {
-        "title": "v1 协议",
-        "sidebar_label": "v1 协议"
+        "title": "v1 Protocol"
       },
       "version-0.20-addresses": {
-        "title": "系统保留地址列表",
-        "sidebar_label": "系统保留地址列表"
+        "title": "Reserved System Addresses"
       },
       "version-0.20-faq": {
-        "title": "FAQ",
-        "sidebar_label": "FAQ"
+        "title": "FAQ"
       },
       "version-0.20-glossary": {
-        "title": "词汇表",
-        "sidebar_label": "词汇表"
+        "title": "Glossary"
       },
       "version-0.20-rpc-error-code": {
-        "title": "JSON RPC 错误码",
-        "sidebar_label": "JSON RPC 错误码"
+        "title": "JSON RPC Error Code"
       },
       "version-0.20-rpc-types": {
-        "title": "JSON RPC 参数和返回值",
-        "sidebar_label": "JSON RPC 参数和返回值"
+        "title": "JSON RPC Types"
       },
       "version-0.20-rpc": {
-        "title": "JSON RPC",
-        "sidebar_label": "JSON RPC"
+        "title": "JSON RPC"
       },
       "version-0.20-admin": {
-        "title": "管理员管理合约接口",
-        "sidebar_label": "管理员管理合约接口"
+        "title": "Admin Contract Interface"
       },
       "version-0.20-all-groups": {
-        "title": "所有组合约接口",
-        "sidebar_label": "所有组合约接口"
+        "title": "所有组合约接口"
       },
       "version-0.20-auth": {
-        "title": "授权管理合约接口",
-        "sidebar_label": "授权管理合约接口"
+        "title": "授权管理合约接口"
       },
       "version-0.20-auto-exec": {
-        "title": "自动执行合约接口",
-        "sidebar_label": "自动执行合约接口"
+        "title": "自动执行合约接口"
       },
       "version-0.20-batch": {
-        "title": "批量交易合约接口",
-        "sidebar_label": "批量交易合约接口"
+        "title": "批量交易合约接口"
       },
       "version-0.20-emergency-brake": {
-        "title": "紧急制动",
-        "sidebar_label": "紧急制动"
+        "title": "紧急制动"
       },
       "version-0.20-error": {
-        "title": "系统合约错误类型",
-        "sidebar_label": "系统合约错误类型"
+        "title": "系统合约错误类型"
       },
       "version-0.20-group-management": {
-        "title": "组管理合约接口",
-        "sidebar_label": "组管理合约接口"
+        "title": "组管理合约接口"
       },
       "version-0.20-group": {
-        "title": "组合约接口",
-        "sidebar_label": "组合约接口"
+        "title": "组合约接口"
       },
       "version-0.20-node": {
-        "title": "节点管理",
-        "sidebar_label": "节点管理"
+        "title": "节点管理"
       },
       "version-0.20-permission-management": {
-        "title": "权限管理合约接口",
-        "sidebar_label": "权限管理合约接口"
+        "title": "权限管理合约接口"
       },
       "version-0.20-permission": {
-        "title": "权限管理",
-        "sidebar_label": "权限管理"
+        "title": "权限管理"
       },
       "version-0.20-quota-manager": {
-        "title": "配额管理合约接口",
-        "sidebar_label": "配额管理合约接口"
+        "title": "配额管理合约接口"
       },
       "version-0.20-quota-price": {
-        "title": "配额价格管理合约接口",
-        "sidebar_label": "配额价格管理合约接口"
+        "title": "配额价格管理合约接口"
       },
       "version-0.20-role-auth": {
-        "title": "角色授权合约接口",
-        "sidebar_label": "角色授权合约接口"
+        "title": "角色授权合约接口"
       },
       "version-0.20-role-management": {
-        "title": "角色管理合约接口",
-        "sidebar_label": "角色管理合约接口"
+        "title": "角色管理合约接口"
       },
       "version-0.20-role": {
-        "title": "角色合约接口",
-        "sidebar_label": "角色合约接口"
+        "title": "角色合约接口"
       },
       "version-0.20-sys": {
-        "title": "系统配置合约接口",
-        "sidebar_label": "系统配置合约接口"
+        "title": "系统配置合约接口"
       },
       "version-0.20-amend": {
-        "title": "数据订正",
-        "sidebar_label": "数据订正"
+        "title": "数据订正"
       },
       "version-0.20-autu-exec": {
-        "title": "自动执行",
-        "sidebar_label": "自动执行"
+        "title": "自动执行"
       },
       "version-0.20-batch-tx": {
-        "title": "批量交易",
-        "sidebar_label": "批量交易"
+        "title": "批量交易"
       },
       "version-0.20-contracts": {
-        "title": "系统合约",
-        "sidebar_label": "系统合约"
+        "title": "系统合约"
       },
       "version-0.20-fee-back": {
-        "title": "出块奖励返回",
-        "sidebar_label": "出块奖励返回"
+        "title": "出块奖励返回"
       },
       "version-0.20-log": {
-        "title": "日志管理",
-        "sidebar_label": "日志管理"
+        "title": "日志管理"
       },
       "version-0.20-price": {
-        "title": "配额价格管理",
-        "sidebar_label": "配额价格管理"
+        "title": "配额价格管理"
       },
       "version-0.20-quota": {
-        "title": "配额管理",
-        "sidebar_label": "配额管理"
+        "title": "配额管理"
       },
       "version-0.20-snapshot": {
-        "title": "快照",
-        "sidebar_label": "快照"
+        "title": "快照"
       },
       "version-0.20-user": {
-        "title": "用户管理",
-        "sidebar_label": "用户管理"
+        "title": "用户管理"
       },
       "version-0.20-version": {
-        "title": "协议版本号管理",
-        "sidebar_label": "协议版本号管理"
+        "title": "协议版本号管理"
       },
       "version-0.20-contributing": {
         "title": "Contributing",

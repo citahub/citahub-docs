@@ -1,30 +1,29 @@
 ---
 id: version-0.20-quota-price
 title: 配额价格管理合约接口
-sidebar_label: 配额价格管理合约接口
 original_id: quota-price
 ---
 
 <h2 class="hover-list">Price Management</h2>
 
-* [setQuotaPrice](#setQuotaPrice)
-* [getQuotaPrice](#getQuotaPrice)
+- [setQuotaPrice](#setQuotaPrice)
+- [getQuotaPrice](#getQuotaPrice)
 
-***
+---
 
 ### setQuotaPrice
 
 设置 `quota price`，默认为 1。
 
-* Parameters
+- Parameters
 
-    `uint` - The setting quota price
+  `uint` - The setting quota price
 
-* Returns
+- Returns
 
-    `bool` - True if success,other false.
+  `bool` - True if success,other false.
 
-* Example
+- Example
 
 ```shell
 $ cita-cli scm PriceManager setQuotaPrice \
@@ -36,15 +35,15 @@ $ cita-cli scm PriceManager setQuotaPrice \
 
 查询当前链 quota price。
 
-* Parameters
+- Parameters
 
-    None
+  None
 
-* Returns
+- Returns
 
-    `uint` - The quota price
+  `uint` - The quota price
 
-* Example
+- Example
 
 ```shell
 $ cita-cli scm PriceManager getQuotaPrice

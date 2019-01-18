@@ -1,50 +1,49 @@
 ---
 id: version-0.20-admin
-title: 管理员管理合约接口
-sidebar_label: 管理员管理合约接口
+title: Admin Contract Interface
 original_id: admin
 ---
 
 <h2 class="hover-list">Admin Management</h2>
 
-* [admin](#admin)
-* [isAdmin](#isAdmin)
-* [update](#update)
+- [admin](#admin)
+- [isAdmin](#isAdmin)
+- [update](#update)
 
-***
+---
 
 ### admin
 
 查询当前的管理员账户地址
 
-* Parameters
+- Parameters
 
-    `None`
+  `None`
 
-* Returns
+- Returns
 
-    `address` - 管理员地址
+  `address` - 管理员地址
 
 ### isAdmin
 
 判断账户是否是管理员
 
-* Parameters
+- Parameters
 
-    `address` - 待判断的管理员地址
+  `address` - 待判断的管理员地址
 
-* Returns
+- Returns
 
-    `bool` - 是管理员则为真，反之则反
+  `bool` - 是管理员则为真，反之则反
 
 ### update
 
 更新管理员账户
 
-* Parameters
+- Parameters
 
-    `address` - 待更新的管理员地址
+  `address` - 待更新的管理员地址
 
-* Returns
+- Returns
 
-    `bool` - 更新成功则为真，反之则反
+  `bool` - 更新成功则为真，反之则反

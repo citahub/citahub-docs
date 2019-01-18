@@ -1,28 +1,27 @@
 ---
 id: emergency-brake
 title: 紧急制动合约接口
-sidebar_label: 紧急制动合约接口
 ---
 
 <h2 class="hover-list">Emergency brake</h2>
 
-* [setState](#setState)
+- [setState](#setState)
 
-***
+---
 
 ### setState
 
 开启紧急制动模式。
 
-* Parameters
+- Parameters
 
-    `bool state` - state
+  `bool state` - state
 
-* Returns
+- Returns
 
-    `None`
+  `None`
 
-* Example
+- Example
 
 ```shell
 $ cita-cli scm EmergencyBrake setState \

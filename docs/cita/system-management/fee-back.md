@@ -1,20 +1,21 @@
 ---
 id: fee-back
 title: 出块奖励返回
-sidebar_label: 出块奖励返回
 ---
 
 ## 简述
+
 CITA 中存在两种经济模型：`Quota` 和 `Charge` 模型，默认经济模型 `Quota` ，没有余额概念。
 在具有余额的 `Charge` 经济模型中，出块奖励默认返还给共识节点，但运营方可以通过设置 `checkFeeBackPlatform` 和 `chainOwner`，将出块奖励返还给自己。
 
-出块奖励 = quotaUsed * quotaPrice, 其中 `quotaPrice` 默认为 1000000，`quotaUsed` 在交易回执中可以获取。
+出块奖励 = quotaUsed \* quotaPrice, 其中 `quotaPrice` 默认为 1000000，`quotaUsed` 在交易回执中可以获取。
 
 > 0.20 版本之前的默认 `quotaPrice` 是 1
 
 ### 操作示例
 
 首先配置链的时候要注意三点：
+
 - 配置经济模型
 - 设置奖励返回开关
 - 设置运营方地址
@@ -24,11 +25,11 @@ $ ./env.sh ./scripts/create_cita_config.py create \
         --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" \
         --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" \
         --contract_arguments "SysConfig.checkFeeBackPlatform=true" \
-        --contract_arguments "SysConfig.chainOwner=0x36a60d575b0dee0423abb6a57dbc6ca60bf47545" \  
+        --contract_arguments "SysConfig.chainOwner=0x36a60d575b0dee0423abb6a57dbc6ca60bf47545" \
         --contract_arguments "SysConfig.economicalModel=1"
 ```
 
-*接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示*。
+_接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示_。
 
 查看管理员和运营方地址余额
 
@@ -37,6 +38,7 @@ $ rpc getBalance --address "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"
 ```
 
 管理员余额输出：
+
 ```json
 {
   "id": 1,
@@ -50,6 +52,7 @@ $ rpc getBalance --address "0x36a60d575b0dee0423abb6a57dbc6ca60bf47545"
 ```
 
 运营方余额输出：
+
 ```json
 {
   "id": 1,
@@ -71,6 +74,7 @@ $ rpc getTransactionReceipt --hash "0x39c4cd332892fb5db11c250275b9a130bf3c087ebd
 ```
 
 回执输出：
+
 ```json
 {
   "id": 1,
@@ -81,8 +85,7 @@ $ rpc getTransactionReceipt --hash "0x39c4cd332892fb5db11c250275b9a130bf3c087ebd
     "contractAddress": "0x27ec3678e4d61534ab8a87cf8feb8ac110ddeda5",
     "cumulativeQuotaUsed": "0x1a004",
     "errorMessage": null,
-    "logs": [
-    ],
+    "logs": [],
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
     "quotaUsed": "0x1a004",
     "root": null,
@@ -90,7 +93,6 @@ $ rpc getTransactionReceipt --hash "0x39c4cd332892fb5db11c250275b9a130bf3c087ebd
     "transactionIndex": "0x0"
   }
 }
-
 ```
 
 再来查一下余额：
@@ -100,6 +102,7 @@ $ rpc getBalance --address "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"
 ```
 
 管理员余额输出：
+
 ```json
 {
   "id": 1,
@@ -113,6 +116,7 @@ $ rpc getBalance --address "0x36a60d575b0dee0423abb6a57dbc6ca60bf47545"
 ```
 
 运营方余额输出：
+
 ```json
 {
   "id": 1,

@@ -1,7 +1,6 @@
 ---
 id: version-0.20-auth
 title: 授权管理合约接口
-sidebar_label: 授权管理合约接口
 original_id: auth
 ---
 
@@ -9,49 +8,49 @@ original_id: auth
 
 <h2 class="hover-list">Authorization Management</h2>
 
-* [queryPermissions](#queryPermissions)
-* [queryAccounts](#queryAccounts)
-* [queryAllAccounts](#queryAllAccounts)
-* [checkResource](#checkResource)
-* [checkPermission](#checkPermission)
+- [queryPermissions](#queryPermissions)
+- [queryAccounts](#queryAccounts)
+- [queryAllAccounts](#queryAllAccounts)
+- [checkResource](#checkResource)
+- [checkPermission](#checkPermission)
 
-***
+---
 
 ### queryPermissions
 
 查询账户拥有的权限
 
-* Parameters
+- Parameters
 
-    `address` - 待查询的账户地址
+  `address` - 待查询的账户地址
 
-* Returns
+- Returns
 
-    `address[]` - 权限地址列表
+  `address[]` - 权限地址列表
 
 ### queryAccounts
 
 查询拥有某个权限的所有账户
 
-* Parameters
+- Parameters
 
-    `address` - 待查询的权限地址
+  `address` - 待查询的权限地址
 
-* Returns
+- Returns
 
-    `address[]` - 账户地址列表
+  `address[]` - 账户地址列表
 
 ### queryAllAccounts
 
 查询拥有权限的所有账户
 
-* Parameters
+- Parameters
 
-    `address` - 待查询的权限地址
+  `address` - 待查询的权限地址
 
-* Returns
+- Returns
 
-    `address[]` - 账户地址列表
+  `address[]` - 账户地址列表
 
 ### checkResource
 
@@ -59,11 +58,11 @@ original_id: auth
 
 ### checkPermission
 
-* Parameters
+- Parameters
 
-    `address` - 待判断的账户地址
-    `address` - 待判断的权限地址
+  `address` - 待判断的账户地址
+  `address` - 待判断的权限地址
 
-* Returns
+- Returns
 
-    `bool` - 账户拥有权限则为真，反之则反
+  `bool` - 账户拥有权限则为真，反之则反

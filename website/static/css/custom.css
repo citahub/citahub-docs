@@ -8,6 +8,10 @@ a.navItem {
   font-weight: 500 !important;
 }
 
+.fixedHeaderContainer header h3 {
+  font-size: 14px;
+}
+
 .navGroup.subNavGroup h4 {
   display: block;
   cursor: default;
@@ -23,16 +27,30 @@ a.navItem {
   max-height: none;
 }
 
+blockquote {
+  background-color: #FEF3F3;
+  border-left-color: #FDDDDC;
+}
+
 footer {
   display: none;
 }
 
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
 
-@media only screen and (min-width: 1024px) {}
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    max-width: 1400px;
+  }
+}
 
 @media only screen and (max-width: 1023px) {}
 
 @media only screen and (min-width: 1400px) {}
 
-@media only screen and (min-width: 1500px) {}
+@media only screen and (min-width: 1500px) {
+  /* .wrapper {
+    max-width: 1400px;
+  } */
+}

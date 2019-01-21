@@ -6,6 +6,7 @@
 
 a.navItem {
   font-weight: 500 !important;
+  color: #000 !important;
 }
 
 .fixedHeaderContainer header h3 {

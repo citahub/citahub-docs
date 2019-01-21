@@ -8,6 +8,7 @@
 const React = require('react')
 
 const CompLibrary = require('../../core/CompLibrary')
+const translate = require('../../server/translate.js').translate
 
 const Container = CompLibrary.Container
 
@@ -26,42 +27,65 @@ function Versions(props) {
           <header className="postHeader">
             <h1>{siteConfig.title} Versions</h1>
           </header>
-          <p>New versions of this project are released every so often.</p>
-          <h3 id="latest">Current version (Stable)</h3>
+          <p>
+            <translate>CITA adopted a time-based release cadence.</translate>
+          </p>
+          <ul>
+            <li>
+              <translate>
+                To see what changes are coming and provide better feedback to CITA contributors, use the latest release
+                candidate when possible.
+              </translate>
+            </li>
+            <li>
+              <translate>In production environment, we highly recommend to use stable version.</translate>
+            </li>
+          </ul>
+          <p>
+            <translate>
+              Please be notice, the version number of toolchains may not consistent with CITA, since they are separate
+              program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't
+              worry about the version confusion.
+            </translate>
+          </p>
+          <h3 id="latest">Latest</h3>
           <table className="versions">
             <tbody>
               <tr>
-                <th>{latestVersion}</th>
+                <th>{/*latestVersion*/}Develop</th>
                 <td>
                   <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/welcome`}>Documentation</a>
+                </td>
+                <td>
+                  <a href="https://github.com/cryptape/cita/compare/develop...master" alt="compare" target="_blank">
+                    Commits since version {latestVersion}
+                  </a>
                 </td>
               </tr>
             </tbody>
           </table>
-          <p>This is the version that is configured automatically when you first install this project.</p>
-          <h3 id="rc">Pre-release versions</h3>
-          <p>Other text describing this section.</p>
-          <h3 id="archive">Past Versions</h3>
+          <p><translate>This is the version that is configured automatically when you first install this project.</translate></p>
+          <h3 id="archive">Stable Versions</h3>
           <table className="versions">
             <tbody>
-              {versions.map(
-                version =>
-                  version !== latestVersion && (
-                    <tr>
-                      <th>{version}</th>
-                      <td>
-                        <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
-                          Documentation
-                        </a>
-                      </td>
-                    </tr>
-                  ),
-              )}
+              {versions.map(version => (
+                // version !== latestVersion &&
+                <tr>
+                  <th>{version}</th>
+                  <td>
+                    <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
+                      Documentation
+                    </a>
+                  </td>
+                  <td>
+                    <a href={`https://github.com/cryptape/cita/tree/${version}`} alt="Release Note" target="_blank">
+                      Release Note
+                    </a>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
-          <p>
-            You can find past versions of this project on <a href={repoUrl}>GitHub</a>.
-          </p>
         </div>
       </Container>
     </div>

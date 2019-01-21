@@ -654,6 +654,11 @@
     "Training|no description given": "Training",
     "Check our past|no description given": "Check our past",
     "Training activity|no description given": "Training activity",
+    "CITA adopted a time-based release cadence.|no description given": "CITA adopted a time-based release cadence.",
+    "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.|no description given": "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.",
+    "In production environment, we highly recommend to use stable version.|no description given": "In production environment, we highly recommend to use stable version.",
+    "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.|no description given": "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.",
+    "This is the version that is configured automatically when you first install this project.|no description given": "This is the version that is configured automatically when you first install this project.",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"

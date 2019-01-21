@@ -1,6 +1,6 @@
 ---
 id: architecture
-title: 架构设计
+title: Architecture
 ---
 ## 微服务
 

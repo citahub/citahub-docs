@@ -27,6 +27,18 @@ a.navItem {
   max-height: none;
 }
 
+table.versions td,
+table.versions th,
+table.versions tr {
+  border: none;
+  padding-left: 0;
+}
+
+table.versions td,
+table.versions th {
+  text-align: left;
+}
+
 blockquote {
   background-color: #FEF3F3;
   border-left-color: #FDDDDC;

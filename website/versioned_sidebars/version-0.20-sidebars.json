@@ -7,7 +7,7 @@
       "version-0.20-cita/cita-intro",
       "version-0.20-cita/getting-started",
       {
-        "label": "配置",
+        "label": "Configuration",
         "type": "subcategory",
         "ids": [
           "version-0.20-cita/configuration/config-overview",
@@ -16,7 +16,7 @@
         ]
       },
       {
-        "label": "系统管理",
+        "label": "System Management",
         "type": "subcategory",
         "ids": [
           "version-0.20-cita/system-management/contracts",
@@ -45,7 +45,7 @@
         ]
       },
       {
-        "label": "系统合约接口",
+        "label": "System Contract Interface",
         "type": "subcategory",
         "ids": [
           "version-0.20-cita/system-contract-interface/sys-interface)",
@@ -68,7 +68,7 @@
         ]
       },
       {
-        "label": "架构设计",
+        "label": "Architecture",
         "type": "subcategory",
         "ids": [
           "version-0.20-cita/architecture/architecture",
@@ -80,7 +80,7 @@
       },
       "version-0.20-cita/crosschain/crosschain-contract-example",
       {
-        "label": "协议升级",
+        "label": "Protocol Upgrade",
         "type": "subcategory",
         "ids": [
           "version-0.20-cita/protocol-upgrade/overview",
@@ -89,7 +89,7 @@
         ]
       },
       {
-        "label": "参考",
+        "label": "Reference",
         "type": "subcategory",
         "ids": [
           "version-0.20-cita/reference/addresses",
@@ -117,7 +117,7 @@
         ]
       },
       {
-        "label": "Rebirth",
+        "label": "ReBirth",
         "type": "subcategory",
         "ids": [
           "version-0.20-toolchain/rebirth/rebirth-intro"

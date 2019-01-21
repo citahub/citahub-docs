@@ -1,7 +1,6 @@
 ---
 id: autu-exec
 title: 自动执行
-sidebar_label: 自动执行
 ---
 
 `CITA` 自动执行合约。
@@ -26,7 +25,7 @@ f95b72de: contAddr()
 
 ## 操作示例
 
-*首先需要启动一条链，具体方法见快速入门部分*
+_首先需要启动一条链，具体方法见快速入门部分_
 
 其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/AutoExec.sol)函数签名如下:
 
@@ -39,17 +38,16 @@ Function signatures:
 
 其中：
 
-* `autoExec()`： 为自动执行的入口，实现对 x 加一
-* `x()`： 表示获取x数值
+- `autoExec()`： 为自动执行的入口，实现对 x 加一
+- `x()`： 表示获取 x 数值
 
 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
-
 ### 部署测试合约
 
-*使用默认私钥进行演示*
+_使用默认私钥进行演示_
 
-* 发送交易
+- 发送交易
 
 ```bash
 $ cita-cli rpc sendRawTransaction \
@@ -70,7 +68,7 @@ $ cita-cli rpc sendRawTransaction \
 }
 ```
 
-* 获取交易回执
+- 获取交易回执
 
 ```bash
 $ cita-cli rpc getTransactionReceipt \
@@ -90,8 +88,7 @@ $ cita-cli rpc getTransactionReceipt \
     "contractAddress": "0xd48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b",
     "cumulativeQuotaUsed": "0x1711d",
     "errorMessage": null,
-    "logs": [
-    ],
+    "logs": [],
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
     "quotaUsed": "0x1711d",
     "root": null,
@@ -128,7 +125,7 @@ $ cita-cli rpc call \
 
 调用 `register` 接口对测试合约进行注册。预期结果为 x 数值随块的增加而增加。
 
-* 发送交易
+- 发送交易
 
 ```bash
 $ cita-cli rpc senRawTransaction \
@@ -151,7 +148,7 @@ $ cita-cli rpc senRawTransaction \
 }
 ```
 
-* 获取交易回执
+- 获取交易回执
 
 ```bash
 $ cita-cli rpc getTransactionReceipt \
@@ -197,7 +194,6 @@ $ cita-cli rpc getTransactionReceipt \
 ```
 
 这里从 `logs` 已经可以看出测试合约已经注册成功。
-
 
 ### 验证结果
 

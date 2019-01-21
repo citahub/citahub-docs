@@ -1,7 +1,6 @@
 ---
 id: rpc
 title: JSON RPC
-sidebar_label: JSON RPC
 ---
 
 !> **Methods Name Changed ！**

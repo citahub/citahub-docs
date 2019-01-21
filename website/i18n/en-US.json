@@ -3,247 +3,196 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Documents of CITAHub",
+    "tagline": "Documents of Citahub",
     "docs": {
       "cita/architecture/architecture": {
-        "title": "系统架构",
-        "sidebar_label": "系统架构"
+        "title": "Architecture"
       },
       "cita/architecture/components": {
-        "title": "系统组件",
-        "sidebar_label": "系统组件"
+        "title": "System components"
       },
       "cita/architecture/consensus": {
-        "title": "共识",
-        "sidebar_label": "共识"
+        "title": "Consensus"
       },
       "cita/architecture/transaction-process": {
-        "title": "交易处理",
-        "sidebar_label": "交易处理"
+        "title": "Transaction Process"
       },
       "cita/architecture/view": {
-        "title": "视图",
-        "sidebar_label": "视图"
+        "title": "View"
       },
       "cita/cita-intro": {
-        "title": "Welcome to CITA",
-        "sidebar_label": "关于 CITA"
+        "title": "Welcome to CITA"
       },
       "cita/configuration/chain-configuration": {
-        "title": "链级配置",
-        "sidebar_label": "链级配置"
+        "title": "Chain Configuration"
       },
       "cita/configuration/config-overview": {
-        "title": "概述",
-        "sidebar_label": "概述"
+        "title": "Configuration Overview"
       },
       "cita/configuration/microservice-configuration": {
-        "title": "微服务配置",
-        "sidebar_label": "微服务配置"
+        "title": "Microservice Configuration"
       },
       "cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约的编写及操作示例",
-        "sidebar_label": "跨链"
+        "title": "Crosschain Contract Example",
+        "sidebar_label": "Crosschain"
       },
       "cita/getting-started": {
-        "title": "快速入门",
-        "sidebar_label": "快速入门"
+        "title": "Getting Started"
       },
       "cita/protocol-upgrade/overview": {
-        "title": "协议升级概述",
-        "sidebar_label": "协议升级概述"
+        "title": "Protocol Upgrade Overview"
       },
       "cita/protocol-upgrade/v0": {
-        "title": "v0 协议",
-        "sidebar_label": "v0 协议"
+        "title": "V0 protocol"
       },
       "cita/protocol-upgrade/v1": {
-        "title": "v1 协议",
-        "sidebar_label": "v1 协议"
+        "title": "V1 protocol"
       },
       "cita/reference/addresses": {
-        "title": "系统保留地址列表",
-        "sidebar_label": "系统保留地址列表"
+        "title": "Reserved System Addresses"
       },
       "cita/reference/faq": {
-        "title": "FAQ",
-        "sidebar_label": "FAQ"
+        "title": "FAQ"
       },
       "cita/reference/glossary": {
-        "title": "词汇表",
-        "sidebar_label": "词汇表"
+        "title": "Glossary"
       },
       "cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC 错误码",
-        "sidebar_label": "JSON RPC 错误码"
+        "title": "JSON RPC Error Code"
       },
       "cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC 参数和返回值",
-        "sidebar_label": "JSON RPC 参数和返回值"
+        "title": "JSON RPC Types"
       },
       "cita/rpc-guide/rpc": {
-        "title": "JSON RPC",
-        "sidebar_label": "JSON RPC"
+        "title": "JSON RPC"
       },
       "cita/system-contract-interface/admin": {
-        "title": "管理员管理合约接口",
-        "sidebar_label": "管理员管理合约接口"
+        "title": "Admin Contract Interface"
       },
       "cita/system-contract-interface/all-groups": {
-        "title": "所有组合约接口",
-        "sidebar_label": "所有组合约接口"
+        "title": "All Group Contract Interface"
       },
       "cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口",
-        "sidebar_label": "授权管理合约接口"
+        "title": "Auth Contract Interface"
       },
       "cita/system-contract-interface/auto-exec": {
-        "title": "自动执行合约接口",
-        "sidebar_label": "自动执行合约接口"
+        "title": "Auto Execution Contract Interface"
       },
       "cita/system-contract-interface/batch": {
-        "title": "批量交易合约接口",
-        "sidebar_label": "批量交易合约接口"
+        "title": "Batch Transaction Contract Interface"
       },
       "cita/system-contract-interface/emergency-brake": {
-        "title": "紧急制动合约接口",
-        "sidebar_label": "紧急制动合约接口"
+        "title": "Emergency Brake Contract Interface"
       },
       "cita/system-contract-interface/error": {
-        "title": "系统合约错误类型",
-        "sidebar_label": "系统合约错误类型"
+        "title": "System Contract Error Types"
       },
       "cita/system-contract-interface/group-management": {
-        "title": "组管理合约接口",
-        "sidebar_label": "组管理合约接口"
+        "title": "Group Management Contract Interface"
       },
       "cita/system-contract-interface/group": {
-        "title": "组合约接口",
-        "sidebar_label": "组合约接口"
+        "title": "Group Contract Interface"
       },
       "cita/system-contract-interface/node": {
-        "title": "共识节点管理合约接口",
-        "sidebar_label": "共识节点管理合约接口"
+        "title": "Node Management Contract Interface"
       },
       "cita/system-contract-interface/permission-management": {
-        "title": "权限管理合约接口",
-        "sidebar_label": "权限管理合约接口"
+        "title": "Auth Management Contract Interface"
       },
       "cita/system-contract-interface/permission": {
-        "title": "权限合约接口",
-        "sidebar_label": "权限合约接口"
+        "title": "Permission Contract Interface"
       },
       "cita/system-contract-interface/quota-manager": {
-        "title": "配额管理合约接口",
-        "sidebar_label": "配额管理合约接口"
+        "title": "Quota Management Contract Interface"
       },
       "cita/system-contract-interface/quota-price": {
-        "title": "配额价格管理合约接口",
-        "sidebar_label": "配额价格管理合约接口"
+        "title": "Quota Price Management Contract Interface"
       },
       "cita/system-contract-interface/role-auth": {
-        "title": "角色授权合约接口",
-        "sidebar_label": "角色授权合约接口"
+        "title": "Role Auth Contract Interface"
       },
       "cita/system-contract-interface/role-management": {
-        "title": "角色管理合约接口",
-        "sidebar_label": "角色管理合约接口"
+        "title": "Role Management Contract Interface"
       },
       "cita/system-contract-interface/role": {
-        "title": "角色合约接口",
-        "sidebar_label": "角色合约接口"
+        "title": "Role Contract Interface"
       },
       "cita/system-contract-interface/sys": {
-        "title": "系统配置合约接口",
-        "sidebar_label": "系统配置合约接口"
+        "title": "System Configuration Contract Interface"
       },
       "cita/system-management/amend": {
-        "title": "数据订正",
-        "sidebar_label": "数据订正"
+        "title": "Amend"
       },
       "cita/system-management/autu-exec": {
-        "title": "自动执行",
-        "sidebar_label": "自动执行"
+        "title": "Auto Execution"
       },
       "cita/system-management/batch-tx": {
-        "title": "批量交易",
-        "sidebar_label": "批量交易"
+        "title": "Batch Transactions"
       },
       "cita/system-management/contracts": {
-        "title": "系统合约",
-        "sidebar_label": "系统合约"
+        "title": "System Contracts"
       },
       "cita/system-management/emergency-brake": {
-        "title": "紧急制动",
-        "sidebar_label": "紧急制动"
+        "title": "Emergency Brake"
       },
       "cita/system-management/fee-back": {
-        "title": "出块奖励返回",
-        "sidebar_label": "出块奖励返回"
+        "title": "Fee Back"
       },
       "cita/system-management/log": {
-        "title": "日志管理",
-        "sidebar_label": "日志管理"
+        "title": "Log Management"
       },
       "cita/system-management/node": {
-        "title": "节点管理",
-        "sidebar_label": "节点管理"
+        "title": "Node Management"
       },
       "cita/system-management/permission": {
-        "title": "权限管理",
-        "sidebar_label": "权限管理"
+        "title": "Permission Management"
       },
       "cita/system-management/price": {
-        "title": "配额价格管理",
-        "sidebar_label": "配额价格管理"
+        "title": "price"
       },
       "cita/system-management/quota": {
-        "title": "配额管理",
-        "sidebar_label": "配额管理"
+        "title": "Quota Management"
       },
       "cita/system-management/snapshot": {
-        "title": "快照",
-        "sidebar_label": "快照"
+        "title": "Snapshot"
       },
       "cita/system-management/user": {
-        "title": "用户管理",
-        "sidebar_label": "用户管理"
+        "title": "User Management"
       },
       "cita/system-management/version": {
-        "title": "协议版本号管理",
-        "sidebar_label": "协议版本号管理"
+        "title": "Protocol Version Management"
       },
       "contributing": {
         "title": "Contributing",
-        "sidebar_label": "贡献代码"
+        "sidebar_label": "Contribution Code"
       },
       "welcome": {
-        "title": "CITAHub 文档概览",
-        "sidebar_label": "CITAHub 文档概览"
+        "title": "Citahub Documentation Overview",
+        "sidebar_label": "Citahub Documentation Overview"
       },
       "roadmap": {
         "title": "Roadmap",
-        "sidebar_label": "开发路线图"
+        "sidebar_label": "Development Roadmap"
       },
       "toolchain/cli/cli-intro": {
-        "title": "CLI 简介",
-        "sidebar_label": "CITA-CLI 简介"
+        "title": "Introduction to the CLI",
+        "sidebar_label": "CITA-CLI Introduction"
       },
       "toolchain/cyton/cyton-intro": {
-        "title": "Cyton 简介",
-        "sidebar_label": "Cyton 简介"
+        "title": "Cyton Introduction",
+        "sidebar_label": "Cyton Introduction"
       },
       "toolchain/ide/ide-intro": {
-        "title": "CITA IDE 简介",
-        "sidebar_label": "CITA IDE 简介"
+        "title": "Introduction to CITA IDE",
+        "sidebar_label": "Introduction to CITA IDE"
       },
       "toolchain/microscope/microscope-intro": {
         "title": "Microscope Introduction",
-        "sidebar_label": "Microscope 简介"
+        "sidebar_label": "Microscope Introduction"
       },
       "toolchain/rebirth/rebirth-intro": {
         "title": "Rebirth Introduction",
-        "sidebar_label": "Rebirth 简介"
+        "sidebar_label": "Rebirth Introduction"
       },
       "toolchain/sdk/java-sdk": {
         "title": "CITA Java SDK"
@@ -259,235 +208,187 @@
       },
       "toolchain/truffle-box/truffle-box-intro": {
         "title": "CITA Truffle Box Introduction",
-        "sidebar_label": "CITA Truffle Box 简介"
+        "sidebar_label": "Introduction to CITA Truffle Box"
       },
       "version-0.20-architecture": {
-        "title": "系统架构",
-        "sidebar_label": "系统架构"
+        "title": "Architecture"
       },
       "version-0.20-components": {
-        "title": "系统组件",
-        "sidebar_label": "系统组件"
+        "title": "System components"
       },
       "version-0.20-consensus": {
-        "title": "共识",
-        "sidebar_label": "共识"
+        "title": "Consensus"
       },
       "version-0.20-transaction-process": {
-        "title": "交易处理",
-        "sidebar_label": "交易处理"
+        "title": "Transaction Process"
       },
       "version-0.20-view": {
-        "title": "视图",
-        "sidebar_label": "视图"
+        "title": "View"
       },
       "version-0.20-cita-intro": {
-        "title": "Welcome to CITA",
-        "sidebar_label": "关于 CITA"
+        "title": "Welcome to CITA"
       },
       "version-0.20-chain-configuration": {
-        "title": "链级配置",
-        "sidebar_label": "链级配置"
+        "title": "Chain Configuration"
       },
       "version-0.20-config-overview": {
-        "title": "概述",
-        "sidebar_label": "概述"
+        "title": "Configuration Overview"
       },
       "version-0.20-microservice-configuration": {
-        "title": "微服务配置",
-        "sidebar_label": "微服务配置"
+        "title": "Microservice Configuration"
       },
       "version-0.20-crosschain-contract-example": {
-        "title": "跨链合约的编写及操作示例",
-        "sidebar_label": "跨链"
+        "title": "Crosschain Contract Example",
+        "sidebar_label": "Crosschain"
       },
       "version-0.20-getting-started": {
-        "title": "快速入门",
-        "sidebar_label": "快速入门"
+        "title": "Getting Started"
       },
       "version-0.20-overview": {
-        "title": "协议升级概述",
-        "sidebar_label": "协议升级概述"
+        "title": "Protocol Upgrade Overview"
       },
       "version-0.20-v0": {
-        "title": "v0 协议",
-        "sidebar_label": "v0 协议"
+        "title": "V0 protocol"
       },
       "version-0.20-v1": {
-        "title": "v1 协议",
-        "sidebar_label": "v1 协议"
+        "title": "V1 protocol"
       },
       "version-0.20-addresses": {
-        "title": "系统保留地址列表",
-        "sidebar_label": "系统保留地址列表"
+        "title": "Reserved System Addresses"
       },
       "version-0.20-faq": {
-        "title": "FAQ",
-        "sidebar_label": "FAQ"
+        "title": "FAQ"
       },
       "version-0.20-glossary": {
-        "title": "词汇表",
-        "sidebar_label": "词汇表"
+        "title": "Glossary"
       },
       "version-0.20-rpc-error-code": {
-        "title": "JSON RPC 错误码",
-        "sidebar_label": "JSON RPC 错误码"
+        "title": "JSON RPC Error Code"
       },
       "version-0.20-rpc-types": {
-        "title": "JSON RPC 参数和返回值",
-        "sidebar_label": "JSON RPC 参数和返回值"
+        "title": "JSON RPC Types"
       },
       "version-0.20-rpc": {
-        "title": "JSON RPC",
-        "sidebar_label": "JSON RPC"
+        "title": "JSON RPC"
       },
       "version-0.20-admin": {
-        "title": "管理员管理合约接口",
-        "sidebar_label": "管理员管理合约接口"
+        "title": "Admin Contract Interface"
       },
       "version-0.20-all-groups": {
-        "title": "所有组合约接口",
-        "sidebar_label": "所有组合约接口"
+        "title": "All Group Contract Interface"
       },
       "version-0.20-auth": {
-        "title": "授权管理合约接口",
-        "sidebar_label": "授权管理合约接口"
+        "title": "Auth Contract Interface"
       },
       "version-0.20-auto-exec": {
-        "title": "自动执行合约接口",
-        "sidebar_label": "自动执行合约接口"
+        "title": "Auto Execution Contract Interface"
       },
       "version-0.20-batch": {
-        "title": "批量交易合约接口",
-        "sidebar_label": "批量交易合约接口"
+        "title": "Batch Transaction Contract Interface"
       },
       "version-0.20-emergency-brake": {
-        "title": "紧急制动",
-        "sidebar_label": "紧急制动"
+        "title": "Emergency Brake"
       },
       "version-0.20-error": {
-        "title": "系统合约错误类型",
-        "sidebar_label": "系统合约错误类型"
+        "title": "System Contract Error Types"
       },
       "version-0.20-group-management": {
-        "title": "组管理合约接口",
-        "sidebar_label": "组管理合约接口"
+        "title": "Group Management Contract Interface"
       },
       "version-0.20-group": {
-        "title": "组合约接口",
-        "sidebar_label": "组合约接口"
+        "title": "Group Contract Interface"
       },
       "version-0.20-node": {
-        "title": "节点管理",
-        "sidebar_label": "节点管理"
+        "title": "Node Management"
       },
       "version-0.20-permission-management": {
-        "title": "权限管理合约接口",
-        "sidebar_label": "权限管理合约接口"
+        "title": "Auth Management Contract Interface"
       },
       "version-0.20-permission": {
-        "title": "权限管理",
-        "sidebar_label": "权限管理"
+        "title": "Permission Management"
       },
       "version-0.20-quota-manager": {
-        "title": "配额管理合约接口",
-        "sidebar_label": "配额管理合约接口"
+        "title": "Quota Management Contract Interface"
       },
       "version-0.20-quota-price": {
-        "title": "配额价格管理合约接口",
-        "sidebar_label": "配额价格管理合约接口"
+        "title": "Quota Price Management Contract Interface"
       },
       "version-0.20-role-auth": {
-        "title": "角色授权合约接口",
-        "sidebar_label": "角色授权合约接口"
+        "title": "Role Auth Contract Interface"
       },
       "version-0.20-role-management": {
-        "title": "角色管理合约接口",
-        "sidebar_label": "角色管理合约接口"
+        "title": "Role Management Contract Interface"
       },
       "version-0.20-role": {
-        "title": "角色合约接口",
-        "sidebar_label": "角色合约接口"
+        "title": "Role Contract Interface"
       },
       "version-0.20-sys": {
-        "title": "系统配置合约接口",
-        "sidebar_label": "系统配置合约接口"
+        "title": "System Configuration Contract Interface"
       },
       "version-0.20-amend": {
-        "title": "数据订正",
-        "sidebar_label": "数据订正"
+        "title": "Amend"
       },
       "version-0.20-autu-exec": {
-        "title": "自动执行",
-        "sidebar_label": "自动执行"
+        "title": "Auto Execution"
       },
       "version-0.20-batch-tx": {
-        "title": "批量交易",
-        "sidebar_label": "批量交易"
+        "title": "Batch Transaction"
       },
       "version-0.20-contracts": {
-        "title": "系统合约",
-        "sidebar_label": "系统合约"
+        "title": "System Contracts"
       },
       "version-0.20-fee-back": {
-        "title": "出块奖励返回",
-        "sidebar_label": "出块奖励返回"
+        "title": "Fee Back"
       },
       "version-0.20-log": {
-        "title": "日志管理",
-        "sidebar_label": "日志管理"
+        "title": "Log Management"
       },
       "version-0.20-price": {
-        "title": "配额价格管理",
-        "sidebar_label": "配额价格管理"
+        "title": "price"
       },
       "version-0.20-quota": {
-        "title": "配额管理",
-        "sidebar_label": "配额管理"
+        "title": "Quota Management"
       },
       "version-0.20-snapshot": {
-        "title": "快照",
-        "sidebar_label": "快照"
+        "title": "Snapshot"
       },
       "version-0.20-user": {
-        "title": "用户管理",
-        "sidebar_label": "用户管理"
+        "title": "User Management"
       },
       "version-0.20-version": {
-        "title": "协议版本号管理",
-        "sidebar_label": "协议版本号管理"
+        "title": "Protocol Version Management"
       },
       "version-0.20-contributing": {
-        "title": "Contributing",
-        "sidebar_label": "贡献代码"
+        "title": "Contribution Code",
+        "sidebar_label": "Contribution Code"
       },
       "version-0.20-welcome": {
-        "title": "CITAHub 文档概览",
-        "sidebar_label": "CITAHub 文档概览"
+        "title": "Citahub Documentation Overview",
+        "sidebar_label": "Citahub Documentation Overview"
       },
       "version-0.20-roadmap": {
-        "title": "Roadmap",
-        "sidebar_label": "开发路线图"
+        "title": "Road Map",
+        "sidebar_label": "Development Roadmap"
       },
       "version-0.20-cli-intro": {
-        "title": "CLI 简介",
-        "sidebar_label": "CITA-CLI 简介"
+        "title": "Introduction to the CLI",
+        "sidebar_label": "CITA-CLI Introduction"
       },
       "version-0.20-cyton-intro": {
-        "title": "Cyton 简介",
-        "sidebar_label": "Cyton 简介"
+        "title": "Cyton Introduction",
+        "sidebar_label": "Cyton Introduction"
       },
       "version-0.20-ide-intro": {
-        "title": "CITA IDE 简介",
-        "sidebar_label": "CITA IDE 简介"
+        "title": "Introduction to CITA IDE",
+        "sidebar_label": "Introduction to CITA IDE"
       },
       "version-0.20-microscope-intro": {
         "title": "Microscope Introduction",
-        "sidebar_label": "Microscope 简介"
+        "sidebar_label": "Microscope Introduction"
       },
       "version-0.20-rebirth-intro": {
         "title": "Rebirth Introduction",
-        "sidebar_label": "Rebirth 简介"
+        "sidebar_label": "Rebirth Introduction"
       },
       "version-0.20-java-sdk": {
         "title": "CITA Java SDK"
@@ -503,7 +404,200 @@
       },
       "version-0.20-truffle-box-intro": {
         "title": "CITA Truffle Box Introduction",
-        "sidebar_label": "CITA Truffle Box 简介"
+        "sidebar_label": "Introduction to CITA Truffle Box"
+      },
+      "version-0.20-cita/architecture/architecture": {
+        "title": "Structural Design"
+      },
+      "version-0.20-cita/architecture/components": {
+        "title": "System Components"
+      },
+      "version-0.20-cita/architecture/consensus": {
+        "title": "Consensus"
+      },
+      "version-0.20-cita/architecture/transaction-process": {
+        "title": "Transaction Process"
+      },
+      "version-0.20-cita/architecture/view": {
+        "title": "View"
+      },
+      "version-0.20-cita/cita-intro": {
+        "title": "Welcome to CITA"
+      },
+      "version-0.20-cita/configuration/chain-configuration": {
+        "title": "Chain level configuration"
+      },
+      "version-0.20-cita/configuration/config-overview": {
+        "title": "Configuration Overview"
+      },
+      "version-0.20-cita/configuration/microservice-configuration": {
+        "title": "Microservice Configuration"
+      },
+      "version-0.20-cita/crosschain/crosschain-contract-example": {
+        "title": "Example of a cross-chain contract",
+        "sidebar_label": "Cross-chain"
+      },
+      "version-0.20-cita/getting-started": {
+        "title": "Getting Started"
+      },
+      "version-0.20-cita/protocol-upgrade/overview": {
+        "title": "Overview of Protocol Upgrades"
+      },
+      "version-0.20-cita/protocol-upgrade/v0": {
+        "title": "v0 Protocol"
+      },
+      "version-0.20-cita/protocol-upgrade/v1": {
+        "title": "v1 Protocol"
+      },
+      "version-0.20-cita/reference/addresses": {
+        "title": "Retain system addresses"
+      },
+      "version-0.20-cita/reference/faq": {
+        "title": "FAQ"
+      },
+      "version-0.20-cita/reference/glossary": {
+        "title": "Glossary"
+      },
+      "version-0.20-cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC Code"
+      },
+      "version-0.20-cita/rpc-guide/rpc-types": {
+        "title": "JSON RPC Type"
+      },
+      "version-0.20-cita/rpc-guide/rpc": {
+        "title": "JSON RPC"
+      },
+      "version-0.20-cita/system-contract-interface/admin": {
+        "title": "Administrator Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/all-groups": {
+        "title": "All Group Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/auth": {
+        "title": "Auth Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/auto-exec": {
+        "title": "Auto Execution Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/batch": {
+        "title": "Batch Transaction Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/emergency-brake": {
+        "title": "Emergency Brake Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/error": {
+        "title": "System Contract Error Types"
+      },
+      "version-0.20-cita/system-contract-interface/group-management": {
+        "title": "Group Management Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/group": {
+        "title": "Group Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/node": {
+        "title": "Node Management Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/permission-management": {
+        "title": "Auth Management Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/permission": {
+        "title": "Permission Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/quota-manager": {
+        "title": "Quota Management Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/quota-price": {
+        "title": "Quota Price Management Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/role-auth": {
+        "title": "Role Auth Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/role-management": {
+        "title": "Role Management Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/role": {
+        "title": "Role Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/sys": {
+        "title": "System Configuration Contract Interface"
+      },
+      "version-0.20-cita/system-management/amend": {
+        "title": "Amend"
+      },
+      "version-0.20-cita/system-management/autu-exec": {
+        "title": "Auto Execution"
+      },
+      "version-0.20-cita/system-management/batch-tx": {
+        "title": "Batch Transactions"
+      },
+      "version-0.20-cita/system-management/contracts": {
+        "title": "System Contracts"
+      },
+      "version-0.20-cita/system-management/emergency-brake": {
+        "title": "Emergency Brake"
+      },
+      "version-0.20-cita/system-management/fee-back": {
+        "title": "Fee Back"
+      },
+      "version-0.20-cita/system-management/log": {
+        "title": "Log Management"
+      },
+      "version-0.20-cita/system-management/node": {
+        "title": "Node Management"
+      },
+      "version-0.20-cita/system-management/permission": {
+        "title": "Permission Management"
+      },
+      "version-0.20-cita/system-management/price": {
+        "title": "price"
+      },
+      "version-0.20-cita/system-management/quota": {
+        "title": "Quota Management"
+      },
+      "version-0.20-cita/system-management/snapshot": {
+        "title": "Snapshot"
+      },
+      "version-0.20-cita/system-management/user": {
+        "title": "User Management"
+      },
+      "version-0.20-cita/system-management/version": {
+        "title": "Protocol Version Management"
+      },
+      "version-0.20-toolchain/cli/cli-intro": {
+        "title": "Introduction to the CLI",
+        "sidebar_label": "CITA-CLI Introduction"
+      },
+      "version-0.20-toolchain/cyton/cyton-intro": {
+        "title": "Cyton Introduction",
+        "sidebar_label": "Cyton Introduction"
+      },
+      "version-0.20-toolchain/ide/ide-intro": {
+        "title": "Introduction to CITA IDE",
+        "sidebar_label": "Introduction to CITA IDE"
+      },
+      "version-0.20-toolchain/microscope/microscope-intro": {
+        "title": "Microscope Introduction",
+        "sidebar_label": "Microscope Introduction"
+      },
+      "version-0.20-toolchain/rebirth/rebirth-intro": {
+        "title": "Rebirth Introduction",
+        "sidebar_label": "Rebirth Introduction"
+      },
+      "version-0.20-toolchain/sdk/java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.20-toolchain/sdk/js-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.20-toolchain/sdk/ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.20-toolchain/sdk/swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.20-toolchain/truffle-box/truffle-box-intro": {
+        "title": "Introduction to CITA Truffle Box",
+        "sidebar_label": "Introduction to CITA Truffle Box"
       }
     },
     "links": {
@@ -513,10 +607,53 @@
       "Welcome": "Welcome",
       "CITA": "CITA",
       "Toolchain": "Toolchain",
-      "Contributing": "Contributing"
+      "Contributing": "Contributing",
+      "Configuration": "Configuration",
+      "System Management": "System Management",
+      "JSON-RPC": "JSON-RPC",
+      "System Contract Interface": "System Contract Interface",
+      "Architecture": "Architecture",
+      "Protocol Upgrade": "Protocol Upgrade",
+      "Reference": "Reference"
     }
   },
   "pages-strings": {
+    "We aim to build a closed - loop community to connect operators, developers and users.|no description given": "We aim to build a closed - loop community to connect operators, developers and users.",
+    "Where to get help|no description given": "Where to get help",
+    "If you need help with CITA, the right place to go depends on the type of help that you need.|no description given": "If you need help with CITA, the right place to go depends on the type of help that you need.",
+    "For technical problem:|no description given": "For technical problem:",
+    "talks.citahub.com|no description given": "talks.citahub.com",
+    "would be a perfect place to get help, no matter having a code-level questions or being stuck with a specific error.|no description given": "would be a perfect place to get help, no matter having a code-level questions or being stuck with a specific error.",
+    "Looking for the solution for your organization|no description given": "Looking for the solution for your organization",
+    "Please make a apply to join|no description given": "Please make a apply to join",
+    "our community|no description given": "our community",
+    "Our team can offer dedicated support technicians to assist you in developing with CITA stack.What can we do for you ?|no description given": "Our team can offer dedicated support technicians to assist you in developing with CITA stack.What can we do for you ?",
+    "Advisory services: Tap into our extensive experience(Coming soon) in blockchain architecture and ensure you make the right decisions.|no description given": "Advisory services: Tap into our extensive experience(Coming soon) in blockchain architecture and ensure you make the right decisions.",
+    "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise.No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.|no description given": "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise.No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.",
+    "How to contribute|no description given": "How to contribute",
+    "Read|no description given": "Read",
+    "contributing.md|no description given": "contributing.md",
+    "for the first.|no description given": "for the first.",
+    "Please keep in mind nor is code the only way to contribute to the project, we strongly value documentation and gladly accept improvements to the documentation.|no description given": "Please keep in mind nor is code the only way to contribute to the project, we strongly value documentation and gladly accept improvements to the documentation.",
+    "Generally, CITA uses:|no description given": "Generally, CITA uses:",
+    "CITA improvement proposal for planning major changes|no description given": "CITA improvement proposal for planning major changes",
+    "Github issue and Github Project to create, organize and track logical issues, including bugs and improvement|no description given": "Github issue and Github Project to create, organize and track logical issues, including bugs and improvement",
+    "docs.citahub.com for documentation|no description given": "docs.citahub.com for documentation",
+    "Github pull requests to manage the review and merge of specific code or docs changes|no description given": "Github pull requests to manage the review and merge of specific code or docs changes",
+    "That is, Github issue and CIP are used to describe what should be fixed or changed, and high - level approaches, and pull requests describe how to implement that change in the project 's source code.|no description given": "That is, Github issue and CIP are used to describe what should be fixed or changed, and high - level approaches, and pull requests describe how to implement that change in the project 's source code.",
+    "If you want to join our core team, please apply in|no description given": "If you want to join our core team, please apply in",
+    "CITAHub|no description given": "CITAHub",
+    "Staying up to date|no description given": "Staying up to date",
+    "official channel|no description given": "official channel",
+    "Coming soon|no description given": "Coming soon",
+    "CIPs and RFCs|no description given": "CIPs and RFCs",
+    "Rocking in Community|no description given": "Rocking in Community",
+    "Forum|no description given": "Forum",
+    "talks.citahub.com Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.|no description given": "talks.citahub.com Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.",
+    "Meetups|no description given": "Meetups",
+    "Training|no description given": "Training",
+    "Check our past|no description given": "Check our past",
+    "Training activity|no description given": "Training activity",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"

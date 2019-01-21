@@ -1,7 +1,6 @@
 ---
 id: version-0.20-price
 title: 配额价格管理
-sidebar_label: 配额价格管理
 original_id: price
 ---
 
@@ -19,23 +18,24 @@ original_id: price
 > 0.20 版本之前的默认 `quotaPrice` 是 1
 
 首先查询当前的 `quotaPrice`：
+
 ```bash
 $ cita-cli scm PriceManager getQuotaPrice
 ```
 
 输出：
+
 ```json
 {
   "id": 1,
   "jsonrpc": "2.0",
   "result": "0x00000000000000000000000000000000000000000000000000000000000f4240"
 }
-
 ```
 
 得到 `quotaPrice` 是十六进制的默认值。
 
-修改 `quotaPrice`， 我们把 `quotaPrice` 由 1000000  改为 2000000：
+修改 `quotaPrice`， 我们把 `quotaPrice` 由 1000000 改为 2000000：
 
 ```bash
 $ cita-cli scm PriceManager setQuotaPrice \
@@ -50,6 +50,7 @@ $ cita-cli scm PriceManager getQuotaPrice
 ```
 
 输出：
+
 ```json
 {
   "id": 1,

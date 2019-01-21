@@ -1,7 +1,6 @@
 ---
 id: user
 title: 用户管理
-sidebar_label: 用户管理
 ---
 
 CITA 实现了基于组的用户管理，组之间为树形的关系，可对应企业的组织结构。
@@ -10,12 +9,12 @@ CITA 实现了基于组的用户管理，组之间为树形的关系，可对应
 
 对于组的管理，用户在拥有系统内置的权限的前提下，还对权限作用的范围做了约束：
 
-* 一个组内的用户可作用于本组及本组所有子组
+- 一个组内的用户可作用于本组及本组所有子组
 
 相对应的鉴权流程增加对组的权限的鉴定，过程如下：
 
-* 对用户的权限进行鉴定
-* 对用户所在组的权限进行鉴定
+- 对用户的权限进行鉴定
+- 对用户所在组的权限进行鉴定
 
 ## 操作示例
 
@@ -32,7 +31,6 @@ $ scm GroupManagement newGroup \
 ```
 
 默认 `origin` 是 `0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009`，我们要生成组名字的十六进制表示 `7770660000000000000000000000000000000000000000000000000000000000`，我们要添加到本用户组内的用户有两个，分别是 `e1c4021742730ded647590a1686d5c4bfcbae0b0`， `45a50f45cb81c8aedeab917ea0cd3c9178ebdcae`
-
 
 回执输出:
 
@@ -101,6 +99,7 @@ $ scm GroupManagement newGroup \
   }
 }
 ```
+
 到这里，我们已经成功新建了一个用户组。从 `log` 中可知，新用户组的地址是: `0xce6cd8f8562e31d44b1101986204cec34b1df025`。
 
 让我们查询一下所有组信息，看看是否添加成功，命令输入：
@@ -122,11 +121,13 @@ $ scm GroupManagement queryGroups
 可以看到 `0xce6cd8f8562e31d44b1101986204cec34b1df025` 已添加。
 
 接着我们根据组地址，来查询组名字，输入命令：
+
 ```shell
 $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 ```
 
 回执输出：
+
 ```json
 {
   "id": 1,
@@ -138,11 +139,13 @@ $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 可以看到，结果和我们新建组的输入信息一致，厉害了。看看组内都有那些用户吧，输入命令：
 
 查询组用户
+
 ```shell
 $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 ```
 
 回执输出：
+
 ```json
 {
   "id": 1,
@@ -150,16 +153,19 @@ $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
   "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000e1c4021742730ded647590a1686d5c4bfcbae0b000000000000000000000000045a50f45cb81c8aedeab917ea0cd3c9178ebdcae"
 }
 ```
+
 我们在新建组时添加的两个用户已经添加进来了。
 
 因为组之间是树型关系，所以我们也可以根据父组地址，查询子用户组的信息，命令如下：
 
 查询子用户组的地址：
+
 ```shell
 $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 ```
 
 回执输出：
+
 ```json
 {
   "id": 1,
@@ -169,11 +175,13 @@ $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 ```
 
 查询子用户组个数:
+
 ```shell
 $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 ```
 
 回执输出：
+
 ```json
 {
   "id": 1,
@@ -183,10 +191,13 @@ $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF02000
 ```
 
 反过来，我们也可以根据子用户组地址，来向上查询父用户组的信息，命令如下：
+
 ```shell
 $ scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 ```
+
 回执输出：
+
 ```json
 {
   "id": 1,

@@ -119,7 +119,7 @@ const siteConfig = {
   algolia: {
     apiKey: "4fdec42fee0b2bd9e2c44248e1945f19",
     indexName: "test",
-    placeholder: "Ask me Anything",
+    placeholder: "Search",
     algoliaOptions: {
       algoliaOptions: {
         // "start_urls": ["./docs"],

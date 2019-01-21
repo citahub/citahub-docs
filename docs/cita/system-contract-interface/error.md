@@ -1,7 +1,6 @@
 ---
 id: error
 title: 系统合约错误类型
-sidebar_label: 系统合约错误类型
 ---
 
 当在调用系统合约接口的时候，可以通过查看交易回执中日志信息来获得具体执行过程中的错误类型。
@@ -14,38 +13,38 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 其中:
 
-* `errorType`: 错误类型，存储在 `topics` 字段中
-* `msg`: 错误信息，存储在 `data` 中，遵循 [ABI规范](https://solidity.readthedocs.io/en/latest/abi-spec.html)
+- `errorType`: 错误类型，存储在 `topics` 字段中
+- `msg`: 错误信息，存储在 `data` 中，遵循 [ABI 规范](https://solidity.readthedocs.io/en/latest/abi-spec.html)
 
-***
+---
 
- | 错误码    | 错误类型        | 错误信息                                         |
- | :-------- | :-------------- | :----------------------------------------------- |
- | 0         | NotAdmin        | Not the admin account                            |
- | 1         | OutOfBaseLimit  | The value is out of base limit                   |
- | 2         | OutOfBlockLimit | The value is out of block limit                  |
- | 3         | NoParentChain   | Has no parent chain (deprecation)                |
- | 4         | NoSideChain     | has no side chain                                |
- | 5         | NotOneOperate   | should operate one time in a block (deprecation) |
- | 6         | NotClose        | node does not close                              |
- | 7         | NotStart        | node does not start                              |
- | 8         | NotReady        | node does not start (deprecation)                |
+| 错误码 | 错误类型        | 错误信息                                         |
+| :----- | :-------------- | :----------------------------------------------- |
+| 0      | NotAdmin        | Not the admin account                            |
+| 1      | OutOfBaseLimit  | The value is out of base limit                   |
+| 2      | OutOfBlockLimit | The value is out of block limit                  |
+| 3      | NoParentChain   | Has no parent chain (deprecation)                |
+| 4      | NoSideChain     | has no side chain                                |
+| 5      | NotOneOperate   | should operate one time in a block (deprecation) |
+| 6      | NotClose        | node does not close                              |
+| 7      | NotStart        | node does not start                              |
+| 8      | NotReady        | node does not start (deprecation)                |
 
 ## Example
 
 <h2 class="hover-list">ErrorType</h2>
 
-* [NotAdmin](#NotAdmin)
-* [OutOfBaseLimit](#OutOfBaseLimit)
-* [OutOfBlockLimit](#OutOfBlockLimit)
-* [NoParentChain](#NoParentChain)
-* [NoSideChain](#NoSideChain)
-* [NotOneOperate](#NotOneOperate)
-* [NotClose](#NotClose)
-* [NotStart](#NotStart)
-* [NotReady](#NotReady)
+- [NotAdmin](#NotAdmin)
+- [OutOfBaseLimit](#OutOfBaseLimit)
+- [OutOfBlockLimit](#OutOfBlockLimit)
+- [NoParentChain](#NoParentChain)
+- [NoSideChain](#NoSideChain)
+- [NotOneOperate](#NotOneOperate)
+- [NotClose](#NotClose)
+- [NotStart](#NotStart)
+- [NotReady](#NotReady)
 
-***
+---
 
 ### NotAdmin
 
@@ -85,23 +84,24 @@ event ErrorLog(ErrorType indexed errorType, string msg);
   }
 }
 ```
+
 其中：
 
-* `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000000`
-* `logs.data` 为错误信息。
-    对 data 进行解码：
-    ```bash
-    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000154e6f74207468652061646d696e206163636f756e740000000000000000000000
-    ```
-    输出如下：
-    ```json
-    [
-      {
-        "string": "Not the admin account"
-      }
-    ]
+- `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000000`
+- `logs.data` 为错误信息。
+  对 data 进行解码：
+  ```bash
+  $ cita-cli ethabi decode params \
+    --type string \
+    --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000154e6f74207468652061646d696e206163636f756e740000000000000000000000
+  ```
+  输出如下：
+  ```json
+  [
+    {
+      "string": "Not the admin account"
+    }
+  ]
   ```
 
 ### OutOfBaseLimit
@@ -145,22 +145,22 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 其中：
 
-* `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000001`
-* `logs.data` 为错误信息。
-    对 data 进行解码：
-    ```bash
-    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000
-    ```
-    输出如下：
-    ```json
-    [
-      {
-        "string": "The value is out of base limit"
-      }
-    ]
-    ```
+- `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000001`
+- `logs.data` 为错误信息。
+  对 data 进行解码：
+  ```bash
+  $ cita-cli ethabi decode params \
+    --type string \
+    --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000
+  ```
+  输出如下：
+  ```json
+  [
+    {
+      "string": "The value is out of base limit"
+    }
+  ]
+  ```
 
 ### OutOfBlockLimit
 
@@ -203,22 +203,22 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 其中：
 
-* `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000002`
-* `logs.data` 为错误信息。
-    对 data 进行解码：
-    ```bash
-    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001f5468652076616c7565206973206f7574206f6620626c6f636b206c696d697400
-    ```
-    输出如下：
-    ```json
-    [
-      {
-        "string": "The value is out of block limit"
-      }
-    ]
-    ```
+- `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000002`
+- `logs.data` 为错误信息。
+  对 data 进行解码：
+  ```bash
+  $ cita-cli ethabi decode params \
+    --type string \
+    --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001f5468652076616c7565206973206f7574206f6620626c6f636b206c696d697400
+  ```
+  输出如下：
+  ```json
+  [
+    {
+      "string": "The value is out of block limit"
+    }
+  ]
+  ```
 
 ### NoParentChain
 
@@ -265,22 +265,22 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 其中：
 
-* `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000004`
-* `logs.data` 为错误信息。
-    对 data 进行解码：
-    ```bash
-    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000
-    ```
-    输出如下：
-    ```json
-    [
-      {
-        "string": "has no side chain"
-      }
-    ]
-    ```
+- `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000004`
+- `logs.data` 为错误信息。
+  对 data 进行解码：
+  ```bash
+  $ cita-cli ethabi decode params \
+    --type string \
+    --data 0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000
+  ```
+  输出如下：
+  ```json
+  [
+    {
+      "string": "has no side chain"
+    }
+  ]
+  ```
 
 ### NotOneOperate
 
@@ -327,22 +327,23 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 其中：
 
-* `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000006`
-* `logs.data` 为错误信息。
-    对 data 进行解码：
-    ```bash
-    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000
-    ```
-    输出如下：
-    ```json
-    [
-      {
-        "string": "node does not close"
-      }
-    ]
-    ```
+- `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000006`
+- `logs.data` 为错误信息。
+  对 data 进行解码：
+  ```bash
+  $ cita-cli ethabi decode params \
+    --type string \
+    --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000
+  ```
+  输出如下：
+  ```json
+  [
+    {
+      "string": "node does not close"
+    }
+  ]
+  ```
+
 ### NotStart
 
 交易回执：
@@ -384,22 +385,22 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 其中：
 
-* `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000007`
-* `logs.data` 为错误信息。
-    对 data 进行解码：
-    ```bash
-    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000
-    ```
-    输出如下：
-    ```json
-    [
-      {
-        "string": "node does not start"
-      }
-    ]
-    ```
+- `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000007`
+- `logs.data` 为错误信息。
+  对 data 进行解码：
+  ```bash
+  $ cita-cli ethabi decode params \
+    --type string \
+    --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000
+  ```
+  输出如下：
+  ```json
+  [
+    {
+      "string": "node does not start"
+    }
+  ]
+  ```
 
 ### NotReady
 

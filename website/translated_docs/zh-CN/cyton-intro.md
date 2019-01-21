@@ -1,5 +1,5 @@
 ---
-title: Cyton Introduction
+title: Cyton 简介
 id: cyton-intro
 sidebar_label: Cyton 简介
 ---

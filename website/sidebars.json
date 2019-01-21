@@ -5,7 +5,7 @@
       "cita/cita-intro",
       "cita/getting-started",
       {
-        "label": "配置",
+        "label": "Configuration",
         "type": "subcategory",
         "ids": [
           "cita/configuration/config-overview",
@@ -14,7 +14,7 @@
         ]
       },
       {
-        "label": "系统管理",
+        "label": "System Management",
         "type": "subcategory",
         "ids": [
           "cita/system-management/contracts",
@@ -43,7 +43,7 @@
         ]
       },
       {
-        "label": "系统合约接口",
+        "label": "System Contract Interface",
         "type": "subcategory",
         "ids": [
           "cita/system-contract-interface/sys-interface)",
@@ -66,38 +66,37 @@
         ]
       },
       {
-        "label": "架构设计",
+        "label": "Architecture",
         "type": "subcategory",
-        "ids": [ 
+        "ids": [
           "cita/architecture/architecture",
           "cita/architecture/components",
           "cita/architecture/consensus",
           "cita/architecture/transaction_process",
-          "cita/architecture/view" 
+          "cita/architecture/view"
         ]
       },
       "cita/crosschain/crosschain-contract-example",
       {
-        "label": "协议升级",
+        "label": "Protocol Upgrade",
         "type": "subcategory",
-        "ids": [ 
+        "ids": [
           "cita/protocol-upgrade/overview",
           "cita/protocol-upgrade/v0",
           "cita/protocol-upgrade/v1"
         ]
-      }, 
+      },
       {
-        "label": "参考",
+        "label": "Reference",
         "type": "subcategory",
-        "ids": [ 
+        "ids": [
           "cita/reference/addresses",
           "cita/reference/glossary",
           "cita/reference/glossary"
         ]
-      } 
+      }
     ],
-    "Toolchain": [
-      {
+    "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": [
@@ -115,7 +114,7 @@
         ]
       },
       {
-        "label": "Rebirth",
+        "label": "ReBirth",
         "type": "subcategory",
         "ids": [
           "toolchain/rebirth/rebirth-intro"

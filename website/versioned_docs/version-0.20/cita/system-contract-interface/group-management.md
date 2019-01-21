@@ -1,39 +1,38 @@
 ---
 id: version-0.20-group-management
 title: 组管理合约接口
-sidebar_label: 组管理合约接口
 original_id: group-management
 ---
 
 <h2 class="hover-list">Group Management</h2>
 
-* [newGroup](#newGroup)
-* [deleteGroup](#deleteGroup)
-* [updateGroupName](#updateGroupName)
-* [addAccounts](#addAccounts)
-* [deleteAccounts](#deleteAccounts)
-* [checkScope](#checkScope)
-* [queryGroups](#queryGroups)
+- [newGroup](#newGroup)
+- [deleteGroup](#deleteGroup)
+- [updateGroupName](#updateGroupName)
+- [addAccounts](#addAccounts)
+- [deleteAccounts](#deleteAccounts)
+- [checkScope](#checkScope)
+- [queryGroups](#queryGroups)
 
-***
+---
 
 ### newGroup
 
 创建一个用户组。
 
-* Parameters
+- Parameters
 
-    `address` - The sender's origin group
+  `address` - The sender's origin group
 
-    `bytes32` -  The name of group
+  `bytes32` - The name of group
 
-    `address[]` - The accounts of group
+  `address[]` - The accounts of group
 
-* Returns
+- Returns
 
-    `address` - The group address
+  `address` - The group address
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement newGroup \
@@ -107,25 +106,25 @@ $ scm GroupManagement newGroup \
     "transactionIndex": "0x0"
   }
 }
-
 ```
+
 从 log 中可知，新用户组的地址是: 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 ### deleteGroup
 
 删除用户组。
 
-* Parameters
+- Parameters
 
-    `address` - The sender's orgin group
+  `address` - The sender's orgin group
 
-    `address` -  The target group to be deleted
+  `address` - The target group to be deleted
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement deleteGroup \
@@ -138,19 +137,19 @@ $ scm GroupManagement deleteGroup \
 
 更新用户组名称。
 
-* Parameters
+- Parameters
 
-    `address` - The sender's orgin group
+  `address` - The sender's orgin group
 
-    `address` -  The target group to be deleted
+  `address` - The target group to be deleted
 
-    `bytes32` - The new name to be updated
+  `bytes32` - The new name to be updated
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement updateGroupName \
@@ -163,19 +162,19 @@ $ scm GroupManagement updateGroupName \
 
 添加用户。
 
-* Parameters
+- Parameters
 
-    `address` - The sender's orgin group
+  `address` - The sender's orgin group
 
-    `address` -  The target group to be deleted
+  `address` - The target group to be deleted
 
-    `address[]` - The accounts to be added
+  `address[]` - The accounts to be added
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Examplee
+- Examplee
 
 ```shell
  $ scm GroupManagement addAccounts \
@@ -188,19 +187,19 @@ $ scm GroupManagement updateGroupName \
 
 删除用户。
 
-* Parameters
+- Parameters
 
-    `address` - The sender's orgin group
+  `address` - The sender's orgin group
 
-    `address` -  The target group to be deleted
+  `address` - The target group to be deleted
 
-    `address[]` - The accounts to be added
+  `address[]` - The accounts to be added
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement deleteAccounts \
@@ -212,17 +211,17 @@ $ scm GroupManagement deleteAccounts \
 
 ### checkScope
 
-* Parameters
+- Parameters
 
-    `address` - The sender's orgin group
+  `address` - The sender's orgin group
 
-    `address` -  The target group to be deleted
+  `address` - The target group to be deleted
 
-* Returns
+- Returns
 
-    `bool` - True, if successfully, otherwise false.
+  `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement checkScope \
@@ -234,15 +233,15 @@ $ scm GroupManagement checkScope \
 
 查询所有组。
 
-* Parameters
+- Parameters
 
-    `None`
+  `None`
 
-* Returns
+- Returns
 
-    `address[]` - All groups address
+  `address[]` - All groups address
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement queryGroups

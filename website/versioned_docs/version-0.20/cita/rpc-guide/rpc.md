@@ -1,7 +1,6 @@
 ---
 id: version-0.20-rpc
 title: JSON RPC
-sidebar_label: JSON RPC
 original_id: rpc
 ---
 

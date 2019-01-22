@@ -24,17 +24,26 @@ function Versions(props) {
     <div className="docMainWrapper wrapper">
       <Container className="mainContainer versionsContainer">
         <div className="post">
-          <header className="postHeader">
-            <h1>{siteConfig.title} Versions</h1>
-          </header>
-          <p>
-            <translate>CITA adopted a time-based release cadence.</translate>
-          </p>
-          <ul>
-            <li>
+          <article>
+            <p>
+              <translate>CITA adopted a time-based release cadence.</translate>
+            </p>
+            <ul>
+              <li>
+                <translate>
+                  To see what changes are coming and provide better feedback to CITA contributors, use the latest
+                  release candidate when possible.
+                </translate>
+              </li>
+              <li>
+                <translate>In production environment, we highly recommend to use stable version.</translate>
+              </li>
+            </ul>
+            <p>
               <translate>
-                To see what changes are coming and provide better feedback to CITA contributors, use the latest release
-                candidate when possible.
+                Please be notice, the version number of toolchains may not consistent with CITA, since they are separate
+                program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so
+                don't worry about the version confusion.
               </translate>
             </li>
             <li>

@@ -27,6 +27,10 @@ a.navItem {
   max-height: none;
 }
 
+.post article a {
+  color: #C71810;
+}
+
 table.versions td,
 table.versions th,
 table.versions tr {

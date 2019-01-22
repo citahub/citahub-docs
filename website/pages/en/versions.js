@@ -24,9 +24,6 @@ function Versions(props) {
     <div className="docMainWrapper wrapper">
       <Container className="mainContainer versionsContainer">
         <div className="post">
-          <header className="postHeader">
-            <h1>{siteConfig.title} Versions</h1>
-          </header>
           <p>
             <translate>CITA adopted a time-based release cadence.</translate>
           </p>

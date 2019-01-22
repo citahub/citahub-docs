@@ -58,32 +58,36 @@ function Versions(props) {
                 </td>
                 <td>
                   <a href="https://github.com/cryptape/cita/compare/develop...master" alt="compare" target="_blank">
-                    Commits since version {latestVersion}
+                    Commits since version {versions[0]}
                   </a>
                 </td>
               </tr>
             </tbody>
           </table>
-          <p><translate>This is the version that is configured automatically when you first install this project.</translate></p>
+          <p>
+            <translate>
+              This is the version that is configured automatically when you first install this project.
+            </translate>
+          </p>
           <h3 id="archive">Stable Versions</h3>
           <table className="versions">
             <tbody>
-              {versions.map(version => (
-                // version !== latestVersion &&
-                <tr>
-                  <th>{version}</th>
-                  <td>
-                    <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
-                      Documentation
-                    </a>
-                  </td>
-                  <td>
-                    <a href={`https://github.com/cryptape/cita/tree/${version}`} alt="Release Note" target="_blank">
-                      Release Note
-                    </a>
-                  </td>
-                </tr>
-              ))}
+              {version !== latestVersion &&
+                versions.map(version => (
+                  <tr>
+                    <th>{version}</th>
+                    <td>
+                      <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
+                        Documentation
+                      </a>
+                    </td>
+                    <td>
+                      <a href={`https://github.com/cryptape/cita/tree/${version}`} alt="Release Note" target="_blank">
+                        Release Note
+                      </a>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

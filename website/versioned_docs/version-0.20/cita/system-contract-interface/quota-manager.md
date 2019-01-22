@@ -6,29 +6,28 @@ original_id: quota-manager
 
 <h2 class="hover-list">Quota Management</h2>
 
-- [setBQL](#setBQL)
-- [setDefaultAQL](#setDefaultAQL)
-- [setAQL](#setAQL)
-- [getAccounts](#getAccounts)
-- [getQuotas](#getQuotas)
-- [getBQL](#getBQL)
-- [getDefaultAQL](#getDefaultAQL)
-- [getAQL](#getAQL)
-- [getAutoExecAQL](#getAQL)
+* [setBQL](#setBQL)
+* [setDefaultAQL](#setDefaultAQL)
+* [setAQL](#setAQL)
+* [getAccounts](#getAccounts)
+* [getQuotas](#getQuotas)
+* [getBQL](#getBQL)
+* [getDefaultAQL](#getDefaultAQL)
+* [getAQL](#getAQL)
 
 ### setBQL
 
 设置区块配额上限。
 
-- Parameters
+* Parameters
 
-  `uint` - The value to be setted
+    `uint value` - The value to be setted
 
-- Returns
+* Returns
 
-  `bool` - True, if successfully, otherwise false.
+    `bool` - True, if successfully, otherwise false.
 
-- Example
+* Example
 
 ```shell
 $ scm QuotaManager setBQL \
@@ -40,15 +39,15 @@ $ scm QuotaManager setBQL \
 
 设置默认账号配额上限
 
-- Parameters
+* Parameters
 
-  None
+    `None`
 
-- Returns
+* Returns
 
-  `uint` - The value
+    `uint value` - The value
 
-- Example
+* Example
 
 ```shell
 $ scm QuotaManager setDefaultAQL \
@@ -60,35 +59,33 @@ $ scm QuotaManager setDefaultAQL \
 
 设置指定账号配额上限。
 
-- Parameters
+* Parameters
 
-  `uint` - The value to be setted
+    `uint value` - The value to be setted
 
-- Returns
+* Returns
 
-  `bool` - True, if successfully, otherwise false.
+    `bool` - True, if successfully, otherwise false.
 
-- Example
+* Example
 
 ```shell
-$ scm QuotaManager setAQL \
-    --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 \
-    --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+$ scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523
 ```
 
 ### getAccounts
 
 查询所有指定账号。
 
-- Parameters
+* Parameters
 
-  None
+    `None`
 
-- Returns
+* Returns
 
-  `address[]` - The accounts that have AQL
+    `address[] accounts` - The accounts that have AQL
 
-- Example
+* Example
 
 ```shell
 $ scm QuotaManager getAccounts
@@ -98,15 +95,15 @@ $ scm QuotaManager getAccounts
 
 查询所有指定账号的配额上限。
 
-- Parameters
+* Parameters
 
-  None
+    `None`
 
-- Returns
+* Returns
 
-  `uint[]` - The accounts' quotas
+    `uint[] value` - The accounts' quotas
 
-- Example
+* Example
 
 ```shell
 $ scm QuotaManager getQuotas
@@ -116,15 +113,15 @@ $ scm QuotaManager getQuotas
 
 查询默认块配额。
 
-- Parameters
+* Parameters
 
-  None
+    `None`
 
-- Returns
+* Returns
 
-  `uint` - The value
+    `uint value` - The value
 
-- Example
+* Example
 
 ```shell
 $ scm QuotaManager getBQL
@@ -138,19 +135,20 @@ $ scm QuotaManager getBQL
 }
 ```
 
+
 ### getDefaultAQL
 
 查询默认账户配额。
 
-- Parameters
+* Parameters
 
-  None
+    `None`
 
-- Returns
+* Returns
 
-  `uint` - The value
+    `uint value` - The value
 
-- Example
+* Example
 
 ```shell
 $ scm QuotaManager getDefaultAQL
@@ -168,15 +166,15 @@ $ scm QuotaManager getDefaultAQL
 
 查询某一账户配额。
 
-- Parameters
+* Parameters
 
-  `address` - The account address
+    `address account` - The account address
 
-- Returns
+* Returns
 
-  `uint value` - The account quota value
+    `uint value` - The account quota value
 
-- Example
+* Example
 
 ```shell
 $ scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523
@@ -189,15 +187,3 @@ $ scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523
   "result": "0x0000000000000000000000000000000000000000000000000000000040000000"
 }
 ```
-
-### getAutoExecQL
-
-查询自动执行配额限制。
-
-- Parameters
-
-  None
-
-- Returns
-
-  `uint` - The autoExec quota limit value

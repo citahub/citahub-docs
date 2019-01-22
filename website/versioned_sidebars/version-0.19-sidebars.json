@@ -1,0 +1,131 @@
+{
+  "version-0.19-docs": {
+    "Welcome": [
+      "version-0.19-welcome"
+    ],
+    "CITA": [
+      "version-0.19-cita/cita-intro",
+      {
+        "label": "快速入门",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-cita/chain/getting-started",
+          "version-0.19-cita/chain/config-tool"
+        ]
+      },
+      {
+        "label": "系统管理",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-cita/system-management/node",
+          "version-0.19-cita/system-management/permission",
+          "version-0.19-cita/system-management/user",
+          "version-0.19-cita/system-management/quota",
+          "version-0.19-cita/system-management/log",
+          "version-0.19-cita/system-management/sys",
+          "version-0.19-cita/system-management/snapshot",
+          "version-0.19-cita/system-management/batch-tx",
+          "version-0.19-cita/system-management/emergency-brake",
+          "version-0.19-cita/system-management/amend",
+          "version-0.19-cita/system-management/fee-back"
+        ]
+      },
+      {
+        "label": "JSON-RPC",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-cita/rpc-guide/rpc-types",
+          "version-0.19-cita/rpc-guide/rpc",
+          "version-0.19-cita/rpc-guide/rpc-error-code"
+        ]
+      },
+      {
+        "label": "架构设计",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-cita/architecture/architecture",
+          "version-0.19-cita/architecture/components",
+          "version-0.19-cita/architecture/consensus",
+          "version-0.19-cita/architecture/transaction-process",
+          "version-0.19-cita/architecture/view"
+        ]
+      },
+      "version-0.19-cita/crosschain/crosschain-contract-example",
+      {
+        "label": "协议升级",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-cita/protocol-upgrade/overview",
+          "version-0.19-cita/protocol-upgrade/v0",
+          "version-0.19-cita/protocol-upgrade/v1"
+        ]
+      },
+      {
+        "label": "参考",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-cita/reference/addresses",
+          "version-0.19-cita/reference/glossary",
+          "version-0.19-cita/reference/glossary"
+        ]
+      }
+    ],
+    "Toolchain": [
+      {
+        "label": "CITA-CLI",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-toolchian/cli/cli-intro"
+        ]
+      },
+      {
+        "label": "SDK",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-toolchain/sdk/js-sdk",
+          "version-0.19-toolchain/sdk/java-sdk",
+          "version-0.19-toolchain/sdk/swift-sdk",
+          "version-0.19-toolchain/sdk/ruby-sdk"
+        ]
+      },
+      {
+        "label": "Rebirth",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-toolchain/rebirth/rebirth-intro"
+        ]
+      },
+      {
+        "label": "Cyton",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-toolchain/cyton/cyton-intro"
+        ]
+      },
+      {
+        "label": "Microscope",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-toolchain/microscope/microscope-intro"
+        ]
+      },
+      {
+        "label": "CITA-IDE",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-toolchain/ide/ide-intro"
+        ]
+      },
+      {
+        "label": "CITA Truffle Box",
+        "type": "subcategory",
+        "ids": [
+          "version-0.19-toolchain/truffle-box/truffle-box-intro"
+        ]
+      }
+    ],
+    "Contributing": [
+      "version-0.19-contributing"
+    ]
+  }
+}

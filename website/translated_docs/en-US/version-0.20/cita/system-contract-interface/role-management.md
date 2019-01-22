@@ -1,9 +1,9 @@
 ---
 id: version-0.20-role-management
 title: 角色管理合约接口
-sidebar_label: 角色管理合约接口
 original_id: role-management
 ---
+
 
 <h2 class="hover-list">Role Management</h2>
 
@@ -16,21 +16,21 @@ original_id: role-management
 - [clearRole](#clearRole)
 - [deleteRole](#deleteRole)
 
----
+* * *
 
 ### newRole
 
 新建角色。
 
 - Parameters
-
-  `bytes32` - The role name
-
-  `address[]` - The permissions
+    
+    `bytes32` - The role name
+    
+    `address[]` - The permissions
 
 - Returns
-
-  `address` - The role address
+    
+    `address` - The role address
 
 - Example
 
@@ -101,14 +101,14 @@ $ scm RoleManagement newRole \
 更新角色名称。
 
 - Parameters
-
-  `bytes32` - The role name
-
-  `address` - The role address
+    
+    `bytes32` - The role name
+    
+    `address` - The role address
 
 - Returns
-
-  `bool`
+    
+    `bool`
 
 - Example
 
@@ -124,14 +124,14 @@ $ scm RoleManagement updateRoleName \
 为角色添加权限。
 
 - Parameters
-
-  `address` - The role address
-
-  `address[]` - The role permissions
+    
+    `address` - The role address
+    
+    `address[]` - The role permissions
 
 - Returns
-
-  `bool`
+    
+    `bool`
 
 - Example
 
@@ -147,14 +147,14 @@ $ scm RoleManagement addPermissions \
 删除权限。
 
 - Parameters
-
-  `address` - The role address
-
-  `address[]` - The permissions
+    
+    `address` - The role address
+    
+    `address[]` - The permissions
 
 - Returns
-
-  `bool`
+    
+    `bool`
 
 - Example
 
@@ -170,14 +170,14 @@ $ scm RoleManagement deletePermissions \
 为某一个账户设置角色。
 
 - Parameters
-
-  `address` - The account address
-
-  `address` - The role address
+    
+    `address` - The account address
+    
+    `address` - The role address
 
 - Returns
-
-  `bool`
+    
+    `bool`
 
 - Example
 
@@ -193,14 +193,14 @@ $ scm RoleManagement setRole \
 清除某个账户的指定权限
 
 - Parameters
-
-  `address` - The account address
-
-  `address` - The role address
+    
+    `address` - The account address
+    
+    `address` - The role address
 
 - Returns
-
-  `bool`
+    
+    `bool`
 
 - Example
 
@@ -216,12 +216,12 @@ $ scm RoleManagement cancelRole \
 清除某个账户的所有权限。
 
 - Parameters
-
-  `address` - The account address
+    
+    `address` - The account address
 
 - Returns
-
-  `bool`
+    
+    `bool`
 
 - Example
 
@@ -236,12 +236,12 @@ $ scm RoleManagement clearRole \
 删除角色。
 
 - Parameters
-
-  `address` - The role address
+    
+    `address` - The role address
 
 - Returns
-
-  `bool`
+    
+    `bool`
 
 - Example
 

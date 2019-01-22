@@ -3,8 +3,8 @@ id: rpc
 title: JSON RPC
 ---
 
-!> **Methods Name Changed ！**
-For the user of V0.16 and older versions: Please pay attention that we deprecated the pre-fix in the name of JSON-RPC interfaces, which makes it looks more tidy and easier to use.
+!> **接口名称更改！**
+老版本用户请注意，为了让接口更加清晰明了，最新版本的CITA去掉了0.16及更老版本中接口的前缀。
 
 <h2 class="hover-list">JSON-RPC</h2>
 
@@ -30,7 +30,6 @@ For the user of V0.16 and older versions: Please pay attention that we deprecate
 * [getMetaData](#getmetadata)
 * [getBlockHeader](#getblockheader)
 * [getStateProof](#getstateproof)
-* [getStorageAt](#getstorageat)
 
 ***
 
@@ -65,6 +64,7 @@ For the user of V0.16 and older versions: Please pay attention that we deprecate
 ***
 
 ### blockNumber
+
 返回当前块高度。
 
 * Parameters
@@ -608,7 +608,6 @@ params: [
 
     * hash: `Data32` - hash of the transaction.
     * content: `Data` 交易内容.
-    * from: `Data20` - address of the transaction sender.
     * blockHash: `Data32` - hash of the block where this transaction was in. null when its not in block.
     * blockNumber: `Quantity` - block number where this transaction was in. null when its not in block.
     * index: `Quantity` - integer of the transactions index position in the block. null when its not in block.
@@ -628,7 +627,6 @@ params: [
         "result": {
             "hash": "0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236",
             "content": "0x0a9b0412013018fface20420f73b2a8d046060604052341561000f57600080fd5b5b60646000819055507f8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3336064604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b5b610178806100956000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b1146100495780636d4ce63c1461006c575b600080fd5b341561005457600080fd5b61006a6004808035906020019091905050610095565b005b341561007757600080fd5b61007f610142565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055507ffd28ec3ec2555238d8ad6f9faf3e4cd10e574ce7e7ef28b73caa53f9512f65b93382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b50565b6000805490505b905600a165627a7a72305820631927ec00e7a86b68950c2304ba2614a8dcb84780b339fc2bfe442bba418ce800291241884bfdfd8e417ab286fd761d42b71a9544071d91084c56f9063471ce82e266122a8f9a24614e1cf75070eea301bf1e7a65857def86093b6892e09ae7d0bcdff901",
-            "from": "0x5b073e9233944b5e729e46d618f0d8edf3d9c34a",
             "blockNumber": "0x1da3",
             "blockHash": "0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329",
             "index": "0x0"
@@ -779,7 +777,7 @@ c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f7574
 
 ```bash
 $ cita-cli store abi \
-    --code 0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000 \
+    --content 0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000 \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
     --address 0x5839153e0efe76efe0c974b728c4f49ca7ed75cc \
     --url http://127.0.0.1:1337
@@ -825,12 +823,12 @@ $ cita-cli rpc getAbi \
 
 * Parameters
 
-    1. `Data20` - address.
+    1. `Data` - address.
     2. `BlockNumber` - `BlockNumber`
 
 * Returns
 
-    `Quantity` - the balance from the given address.
+    `Data` - the balance from the given address.
 
 * Example
 
@@ -1051,7 +1049,6 @@ params: [
 
 * Returns
     * `chainId`, `Integer` - Deal with transaction replay attack
-    * `chainIdV1`, `Quantity` - ChainId in version 1
     * `chainName`, `String` - Chain name
     * `operator`, `String` - Chain operator
     * `genesisTimestamp`, `Integer` - Genesis timestamp
@@ -1070,35 +1067,35 @@ params: [
 
     ```json
     {
-        "id": 1,
         "jsonrpc": "2.0",
+        "id": 1,
         "result": {
-            "blockInterval": 3000,
-            "chainId": 0,
-            "chainIdV1": "0x1",
+            "chainId": 1,
             "chainName": "test-chain",
-            "economicalModel": 1,
-            "genesisTimestamp": 1541058686340,
             "operator": "test-operator",
-            "tokenAvatar": "https://cdn.cryptape.com/icon_appchain.png",
-            "tokenName": "Nervos AppChain Test Token",
-            "tokenSymbol": "NATT",
+            "website": "https://www.example.com",
+            "genesisTimestamp": 1528076976075,
             "validators": [
-                "0xc489d5cb6f497e4708cc8c3805473b9528f83c7a",
-                "0x497c68f02bbe335cc879356af120371ebf6cbc29",
-                "0x6fbb4c8bb76ace631d634545fe39cbee979dd08e",
-                "0x3c0f681e13f18b51d5350823eae45cb502231cf4"
+                "0x18e79b84cd3e5801e7f3dc66546b3b46af812cbd",
+                "0x5bb02723557a4633cebfa3f83b1ecb657002f444",
+                "0xafbf170735a3535f141cd929f67296de50842638",
+                "0xdd321f6586f2c5ceb4ae3ce28d0bd92fb631d3ae"
             ],
+            "blockInterval": 3000,
+            "tokenName": "tokenName",
+            "tokenSymbol": "tokenSymbol",
+            "tokenAvatar": "tokenAvatar",
             "version": 1,
-            "website": "https://www.example.com"
+            "economicalModel": 0
         }
     }
     ```
+
 ***
 
 ### getBlockHeader
 
-Get block header by block number. For sidechain.
+根据高度获取块头，侧链功能使用。
 
 * Parameters
 
@@ -1131,7 +1128,7 @@ params: [
 
 ### getStateProof
 
-Get proof of a special variable at special block number. For sidechain.
+获取合约中一个变量在指定高度的值的证明。侧链功能使用。
 
 * Parameters
 

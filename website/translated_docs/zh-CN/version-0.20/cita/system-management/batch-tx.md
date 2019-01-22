@@ -1,10 +1,8 @@
 ---
 id: version-0.20-batch-tx
 title: 批量交易
-sidebar_label: 批量交易
 original_id: batch-tx
 ---
-
 `CITA` 支持批量交易，目前只能进行批量合约的调用。
 
 ## 简述
@@ -20,13 +18,14 @@ original_id: batch-tx
     ======= batch_tx.sol:BatchTx =======
     Function signatures:
     82cc3327: multiTxs(bytes)
+    
 
 ### 数据组装规则
 
 参数类型为 `bytes`，encode 规则和 ABI 一致。拼装规则如下:
 
 - 二十字节的目标调用合约的地址
-- 四字节的目标合约的调用数据的长度
+- 四字节的目标合约的调用数据的长度 
   - 四字节的函数签名
   - ABI 格式编码的函数参数
 - 目标合约的调用数据(第一条交易信息结束)
@@ -42,10 +41,11 @@ original_id: batch-tx
     897c71052abad4ca9a5059f070d5a3a119d1e1ec
     00000004
     2d910f2c
+    
 
 ## 操作示例
 
-_首先需要启动一条链，具体方法见快速入门部分_
+*首先需要启动一条链，具体方法见快速入门部分*
 
 其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/test_batch_tx.sol)函数签名如下:
 
@@ -53,6 +53,7 @@ _首先需要启动一条链，具体方法见快速入门部分_
     Function signatures:
     2d910f2c: AddOne()
     0c55699c: x()
+    
 
 其中：
 
@@ -237,6 +238,7 @@ $ cita-cli rpc getTransactionReceipt \
         "transactionIndex": "0x0"
       }
     }
+    
 
 这里从 `logs` 已经可以看出两条交易都已经执行成功
 

@@ -1,9 +1,9 @@
 ---
 id: version-0.20-permission
 title: 权限合约接口
-sidebar_label: 权限合约接口
 original_id: permission
 ---
+
 
 <h2 class="hover-list">Permission</h2>
 
@@ -12,21 +12,21 @@ original_id: permission
 - [queryName](#queryName)
 - [queryResource](#queryResource)
 
----
+* * *
 
 ### inPermission
 
 检查资源是否在 permission 中。
 
 - Parameters
-
-  `address` - The contract address of the resource
-
-  `bytes4` - The function signature of the resource
+    
+    `address` - The contract address of the resource
+    
+    `bytes4` - The function signature of the resource
 
 - Returns
-
-  `bool` - True, if successfully, otherwise false.
+    
+    `bool` - True, if successfully, otherwise false.
 
 - Example
 
@@ -48,16 +48,16 @@ $ scm Permission inPermission \
 ### queryInfo
 
 - Parameters
-
-  None
+    
+    None
 
 - Returns
-
-  `bytes32 permission` - The permission name
-
-  `address[] cont` - The contract address of the resource
-
-  `bytes4[] func` - The function signature of the resource
+    
+    `bytes32 permission` - The permission name
+    
+    `address[] cont` - The contract address of the resource
+    
+    `bytes4[] func` - The function signature of the resource
 
 - Example
 
@@ -76,12 +76,12 @@ $ scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dc
 ### queryName
 
 - Parameters
-
-  None
+    
+    None
 
 - Returns
-
-  `bytes32` - The permission name
+    
+    `bytes32` - The permission name
 
 - Example
 
@@ -100,12 +100,12 @@ $ scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dc
 ### queryResource
 
 - Parameters
-
-  None
+    
+    None
 
 - Returns
-
-  `bool` - True, if successfully, otherwise false.
+    
+    `bool` - True, if successfully, otherwise false.
 
 - Example
 

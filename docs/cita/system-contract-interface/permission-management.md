@@ -3,293 +3,119 @@ id: permission-management
 title: 权限管理合约接口
 ---
 
-<h2 class="hover-list">Permission Management</h2>
+<h2 class="hover-list">Permission</h2>
 
-- [newPermission](#newPermission)
-- [deletePermission](#deletePermission)
-- [updatePermissionName](#updatePermissionName)
-- [addResources](#addResources)
-- [deleteResources](#deleteResources)
-- [setAuthorizations](#setAuthorizations)
-- [setAuthorization](#setAuthorization)
-- [cancelAuthorizations](#cancelAuthorizations)
-- [cancelAuthorization](#cancelAuthorization)
-- [clearAuthorization](#clearAuthorization)
+* [inPermission](#inPermission)
+* [queryInfo](#queryInfo)
+* [queryName](#queryName)
+* [queryResource](#queryResource)
 
----
+***
 
-### newPermission
+### inPermission
 
-创建新权限。
+检查资源是否在 permission 中。
 
-- Parameters
+* Parameters
 
-  `bytes32` - The permission name
+    `address contract` - The contract address of the resource
 
-  `address[]`- The contracts of resource
+    `bytes4 function-hash` -  The function signature of the resource
 
-  `bytes4[]` - The function signature of the resource
+* Returns
 
-- Returns
+    `bool` - True, if successfully, otherwise false.
 
-  `address` - New permission's address.
-
-- Example
+* Example
 
 ```shell
-$ scm PermissionManagement newPermission \
-        --name 0000000000000000000000000000000000000000000000000000000060fe47b1 \
-        --contracts '[5839153e0efe76efe0c974b728c4f49ca7ed75cc]' \
-        --function-hashes '[60fe47b1]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6\
+$ scm Permission inPermission \
+        --contract 0x1e041ec9a18590924d84a1f011eb0749c03fc41a \
+        --function-hash 0x60fe47b1 \
+        --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
 ```
-
-```shell
-$ rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e0212279981b548c9884f018b8f
-```
-
-output:
 
 ```json
 {
   "id": 1,
   "jsonrpc": "2.0",
-  "result": {
-    "blockHash": "0xd2e2d34783d9d30505ed23d90dca7c11ce42eda99306a153ad9e72095832ba26",
-    "blockNumber": "0x583d",
-    "contractAddress": null,
-    "cumulativeGasUsed": "0x1b25fd",
-    "errorMessage": null,
-    "gasUsed": "0x1b25fd",
-    "logs": [
-      {
-        "address": "0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee",
-        "blockHash": "0xd2e2d34783d9d30505ed23d90dca7c11ce42eda99306a153ad9e72095832ba26",
-        "blockNumber": "0x583d",
-        "data": "0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000010000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc000000000000000000000000000000000000000000000000000000000000000160fe47b100000000000000000000000000000000000000000000000000000000",
-        "logIndex": "0x0",
-        "topics": ["0xb533e8b79dc7485ba7e4435e3395df911c1a3c767225941003d88a7812d216f7"],
-        "transactionHash": "0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e0212279981b548c9884f018b8f",
-        "transactionIndex": "0x0",
-        "transactionLogIndex": "0x0"
-      },
-      {
-        "address": "0xffffffffffffffffffffffffffffffffff020005",
-        "blockHash": "0xd2e2d34783d9d30505ed23d90dca7c11ce42eda99306a153ad9e72095832ba26",
-        "blockNumber": "0x583d",
-        "data": "0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000010000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc000000000000000000000000000000000000000000000000000000000000000160fe47b100000000000000000000000000000000000000000000000000000000",
-        "logIndex": "0x1",
-        "topics": [
-          "0x792f7322d94960c6e90863b5aef39075ca54620cfa13a822081d733f79c48f91",
-          "0x000000000000000000000000ca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee",
-          "0x0000000000000000000000000000000000000000000000000000000060fe47b1"
-        ],
-        "transactionHash": "0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e0212279981b548c9884f018b8f",
-        "transactionIndex": "0x0",
-        "transactionLogIndex": "0x1"
-      }
-    ],
-    "logsBloom": "0x00000000000000020000000000000000000000000000008000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000080000000000000000040000000000000000040000000000000000001000000000000000000000000000000000000000000000000008000000800000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000200000000000000000000000000000000000000000000000000000000000000000000100000000000000000000100000000000000000000000000000800000002000000000000100000000100000",
-    "root": null,
-    "transactionHash": "0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e0212279981b548c9884f018b8f",
-    "transactionIndex": "0x0"
-  }
+  "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
 }
 ```
 
-从 logs[0] 中获得新权限的地址为 `0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee`
+### queryInfo
 
-### deletePermission
+* Parameters
 
-删除权限。
+    `address permission` - The permission address
 
-- Parameters
+* Returns
 
-  `address` - The permission address
+    `bytes32 permission` - The permission name
 
-- Returns
+    `address[] cont` - The contract address of the resource
 
-  `bool` - True, if successfully, otherwise false.
+    `bytes4[] func` - The function signature of the resource
 
-- Example
-
-### updatePermissionName
-
-更新权限名称。
-
-- Parameters
-
-  `address` - The permission address
-
-  `bytes32` - The permission name
-
-- Returns
-
-  `bool` - True, if successfully, otherwise false.
-
-- Example
+* Example
 
 ```shell
- $ scm PermissionManagement updatePermissionName \
-        --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
-        --name 0000000000000000000000000000000000000000000000000000000060fe47b2 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+$ scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
 ```
 
-### addResources
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0x0000000000000000000000000000000000000000000000000000000060fe47b2000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000020000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc0000000000000000000000001e041ec9a18590924d84a1f011eb0749c03fc41a000000000000000000000000000000000000000000000000000000000000000260fe47b10000000000000000000000000000000000000000000000000000000060fe47b100000000000000000000000000000000000000000000000000000000"
+}
+```
 
-添加资源。
+### queryName
 
-- Parameters
+* Parameters
 
-  `address` - The permission address
+    `address permission` - The permission address
 
-  `address[]` - The contracts of resource
+* Returns
 
-  `bytes4[]` - The function signature of resource
+    `bytes32 name` - The permission name
 
-- Returns
-
-  `bool` - True, if successfully, otherwise false.
-
-- Example
+* Example
 
 ```shell
-$ scm PermissionManagement addResources \
-        --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
-        --contracts '[1e041ec9a18590924d84a1f011eb0749c03fc41a]' \
-        --function-hashes '[60fe47b1]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+$ scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
 ```
 
-### deleteResources
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0x0000000000000000000000000000000000000000000000000000000060fe47b2"
+}
+```
 
-删除资源。
+### queryResource
 
-- Parameters
+* Parameters
 
-  `address` - The permission address
+    `address permission` - The permission address
 
-  `address[]` - The contracts of resource
+* Returns
 
-  `bytes4[]` - The function signature of resource
+    `bool` - True, if successfully, otherwise false.
 
-- Returns
-
-  `bool` - True, if successfully, otherwise false.
-
-- Example
+* Example
 
 ```shell
-$ scm PermissionManagement deleteResources \
-        --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
-        --contracts '[1e041ec9a18590924d84a1f011eb0749c03fc41a]' \
-        --function-hashes '[60fe47b1]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+$ scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
 ```
 
-### setAuthorizations
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000020000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc0000000000000000000000001e041ec9a18590924d84a1f011eb0749c03fc41a000000000000000000000000000000000000000000000000000000000000000260fe47b10000000000000000000000000000000000000000000000000000000060fe47b100000000000000000000000000000000000000000000000000000000"
+}
 
-多次授权。
-
-- Parameters
-
-  `address` - The account to be setted
-
-  `address[]` - The permissions to be setted
-
-- Returns
-
-  `bool` - True, if successfully, otherwise false.
-
-- Example
-
-```shell
-$ scm PermissionManagement setAuthorizations \
-    --permissions '[ffffffffffffffffffffffffffffffffff021000,ffffffffffffffffffffffffffffffffff021001]' \
-    --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
-    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
-
-### setAuthorization
-
-授权。
-
-- Parameters
-
-  `address` - The account to be setted
-
-  `address` - The permission to be setted
-
-- Returns
-
-  `bool` - True, if successfully, otherwise false.
-
-- Example
-
-```shell
-$ scm PermissionManagement setAuthorization \
-        --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
-        --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-```
-
-### cancelAuthorizations
-
-取消多次授权。
-
-- Parameters
-
-  `address` - The account address
-
-  `address[]` - The permissions to be canceled
-
-- Returns
-
-  `bool` - True, if successfully, otherwise false.
-
-- Example
-
-```shell
-$ scm PermissionManagement cancelAuthorizations \
-    --permissions '[ffffffffffffffffffffffffffffffffff021000,ffffffffffffffffffffffffffffffffff021001]' \
-    --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
-    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-```
-
-### cancelAuthorization
-
-取消授权
-
-- Parameters
-
-  `address` - The account address
-
-  `address` - The permission to be canceled
-
-- Returns
-
-  `bool` - True, if successfully, otherwise false.
-
-- Example
-
-```shell
-$ scm PermissionManagement cancelAuthorization \
-        --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
-        --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-```
-
-### clearAuthorization
-
-取消账户的所有授权。
-
-- Parameters
-
-  `address` - The account's address
-
-- Returns
-
-  `bool` - True, if successfully, otherwise false.
-
-- Example

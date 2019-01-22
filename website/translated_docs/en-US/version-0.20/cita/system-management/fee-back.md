@@ -1,9 +1,8 @@
 ---
 id: version-0.20-fee-back
-title: Fee Back
+title: 出块奖励返回
 original_id: fee-back
 ---
-
 ## 简述
 
 CITA 中存在两种经济模型：`Quota` 和 `Charge` 模型，默认经济模型 `Quota` ，没有余额概念。 在具有余额的 `Charge` 经济模型中，出块奖励默认返还给共识节点，但运营方可以通过设置 `checkFeeBackPlatform` 和 `chainOwner`，将出块奖励返还给自己。
@@ -14,7 +13,11 @@ CITA 中存在两种经济模型：`Quota` 和 `Charge` 模型，默认经济模
 
 ### 操作示例
 
-首先配置链的时候要注意三点： - 配置经济模型 - 设置奖励返回开关 - 设置运营方地址
+首先配置链的时候要注意三点：
+
+- 配置经济模型
+- 设置奖励返回开关
+- 设置运营方地址
 
 ```bash
 $ ./env.sh ./scripts/create_cita_config.py create \
@@ -25,7 +28,7 @@ $ ./env.sh ./scripts/create_cita_config.py create \
         --contract_arguments "SysConfig.economicalModel=1"
 ```
 
-_接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示_。
+*接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示*。
 
 查看管理员和运营方地址余额
 

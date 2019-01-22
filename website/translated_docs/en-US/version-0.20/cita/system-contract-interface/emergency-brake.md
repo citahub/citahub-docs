@@ -1,27 +1,27 @@
 ---
 id: version-0.20-emergency-brake
 title: 紧急制动合约接口
-sidebar_label: 紧急制动合约接口
 original_id: emergency-brake
 ---
+
 
 <h2 class="hover-list">Emergency brake</h2>
 
 - [setState](#setState)
 
----
+* * *
 
 ### setState
 
 开启紧急制动模式。
 
 - Parameters
-
-  `bool state` - state
+    
+    `bool state` - state
 
 - Returns
-
-  `None`
+    
+    `None`
 
 - Example
 

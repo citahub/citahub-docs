@@ -2,7 +2,7 @@
   "localized-strings": {
     "docs": {
       "version-0.20-cita/architecture/architecture": {
-        "title": "结构设计"
+        "title": "架构设计"
       },
       "version-0.20-cita/architecture/components": {
         "title": "系统组件"

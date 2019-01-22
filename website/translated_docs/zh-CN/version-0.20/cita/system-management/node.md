@@ -1,10 +1,8 @@
 ---
 id: version-0.20-node
 title: 节点管理
-sidebar_label: 节点管理
 original_id: node
 ---
-
 CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，共识完成后即被确认为合法区块。普通节点不参与共识，只同步和验证链上所有的原始数据。
 
 公有链没有节点准入机制，意味着任何节点都可以接入链并同步其全部的数据，在满足一定的条件下都可以参加共识。而 CITA 对于共识节点和普通节点都进行了准入管理。 对于身份验证失败的节点，即使该节点能够在网络层与其他 CITA 节点连通，这些 CITA 节点也会拒绝与之建立通讯会话，如此可避免信息泄漏。
@@ -20,37 +18,37 @@ CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为
 ### 添加普通节点（以下以 4 号节点举例）
 
 1. 假设目前的工作目录在 `../cita/target/install/` 下：
-
-   ```bash
-   $ pwd
-   ../cita/target/install
-   $ ls test-chain/
+    
+    ```bash
+    $ pwd
+    ../cita/target/install
+    $ ls test-chain/
      0  1  2  3  template
-   ```
-
-   template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
+    ```
+    
+    template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
 
 2. 生成新 node：
-
-   ```bash
-   $ ./scripts/create_cita_config.py append --chain_name test-chain --node "127.0.0.1:4004"
-   $ ls test-chain/
+    
+    ```bash
+    $ ./scripts/create_cita_config.py append --chain_name test-chain --node "127.0.0.1:4004"
+    $ ls test-chain/
      0  1  2  3  4  template
-   ```
+    ```
 
-   - append 子命令，在指定链中增加对应 ip 地址的节点
-   - 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
+- append 子命令，在指定链中增加对应 ip 地址的节点
+- 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
 
-3. 启动新节点：
-
-   对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
-
-   新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
-
-   ```bash
-   $ ./bin/cita setup test-chain/4
-   $ ./bin/cita start test-chain/4
-   ```
+1. 启动新节点：
+    
+    对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
+    
+    新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
+    
+    ```bash
+    $ ./bin/cita setup test-chain/4
+    $ ./bin/cita start test-chain/4
+    ```
 
 ### 删除普通节点
 
@@ -93,7 +91,7 @@ Function signatures:
     645b8b1b: status(address)
 ```
 
-_首先需要启动一条链，具体方法见快速入门部分_
+*首先需要启动一条链，具体方法见快速入门部分*
 
 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
@@ -185,12 +183,14 @@ $ cita-cli rpc getTransactionReceipt \
         "transactionIndex": "0x0"
       }
     }
+    
 
 从 `log` 中可以看出本次操作的相关信息。
 
 #### 查看当前的共识节点数
 
     $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
+    
 
 输出：
 

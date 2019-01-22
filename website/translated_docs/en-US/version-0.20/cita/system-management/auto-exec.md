@@ -1,9 +1,8 @@
 ---
 id: version-0.20-autu-exec
-title: Auto Execution
+title: 自动执行
 original_id: autu-exec
 ---
-
 `CITA` 自动执行合约。
 
 ## 简述
@@ -21,10 +20,11 @@ original_id: autu-exec
     844cbc43: autoExec()
     f95b72de: contAddr()
     4420e486: register(address)
+    
 
 ## 操作示例
 
-_首先需要启动一条链，具体方法见快速入门部分_
+*首先需要启动一条链，具体方法见快速入门部分*
 
 其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/AutoExec.sol)函数签名如下:
 
@@ -32,6 +32,7 @@ _首先需要启动一条链，具体方法见快速入门部分_
     Function signatures:
     844cbc43: autoExec()
     0c55699c: x()
+    
 
 其中：
 
@@ -42,7 +43,7 @@ _首先需要启动一条链，具体方法见快速入门部分_
 
 ### 部署测试合约
 
-_使用默认私钥进行演示_
+*使用默认私钥进行演示*
 
 - 发送交易
 
@@ -187,6 +188,7 @@ $ cita-cli rpc getTransactionReceipt \
         "transactionIndex": "0x0"
       }
     }
+    
 
 这里从 `logs` 已经可以看出测试合约已经注册成功。
 

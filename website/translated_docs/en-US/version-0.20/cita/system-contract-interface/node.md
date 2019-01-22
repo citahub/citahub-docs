@@ -1,9 +1,9 @@
 ---
 id: version-0.20-node
 title: 共识节点管理合约接口
-sidebar_label: 共识节点管理合约接口
 original_id: node
 ---
+
 
 <h2 class="hover-list">Node Management</h2>
 
@@ -15,19 +15,19 @@ original_id: node
 - [listStake](#listStake)
 - [stakePermillage](#stakePermillage)
 
----
+* * *
 
 ### approveNode
 
 确认共识节点。
 
 - Parameters
-
-  `address` - The new node address
+    
+    `address` - The new node address
 
 - Returns
-
-  `bool` - True, if successfully, otherwise false
+    
+    `bool` - True, if successfully, otherwise false
 
 - Example
 
@@ -42,12 +42,12 @@ $ scm NodeManager approveNode \
 删除共识节点。
 
 - Parameters
-
-  `address` - The node address
+    
+    `address` - The node address
 
 - Returns
-
-  `bool` - True, if successfully, otherwise false
+    
+    `bool` - True, if successfully, otherwise false
 
 - Example
 
@@ -62,12 +62,12 @@ $ scm NodeManager deleteNode \
 共识节点列表。
 
 - Parameters
-
-  `None`
+    
+    `None`
 
 - Returns
-
-  `address[]` - The consensus nodes
+    
+    `address[]` - The consensus nodes
 
 - Example
 
@@ -80,12 +80,12 @@ $ scm NodeManager listNode
 设置共识节点 stake 。
 
 - Parameters
-
-  `address` - The node address to be setted `uint64` - The stake to be setted
+    
+    `address` - The node address to be setted `uint64` - The stake to be setted
 
 - Returns
-
-  `bool` - True, if successfully, otherwise false
+    
+    `bool` - True, if successfully, otherwise false
 
 - Example
 
@@ -101,12 +101,12 @@ $ scm NodeManager setStake \
 获取共识节点状态。
 
 - Parameters
-
-  `address` - The node address
+    
+    `address` - The node address
 
 - Returns
-
-  `uint8` - 0: closed, 1: started
+    
+    `uint8` - 0: closed, 1: started
 
 - Example
 
@@ -119,12 +119,12 @@ $ scm NodeManager getStatus --address 0xae0f69a2d95146d104365e0502a0d521717ced7f
 共识节点 stake 列表。
 
 - Parameters
-
-  None
+    
+    None
 
 - Returns
-
-  `uint64[]` - The node stakes list
+    
+    `uint64[]` - The node stakes list
 
 - Example
 
@@ -137,12 +137,12 @@ $ scm NodeManager listStake
 共识节点出块权重千分比。
 
 - Parameters
-
-  `address` - The node address
+    
+    `address` - The node address
 
 - Returns
-
-  `uint64` - The node stake permillage
+    
+    `uint64` - The node stake permillage
 
 - Example
 

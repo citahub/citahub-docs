@@ -3,11 +3,10 @@ id: version-0.20-rpc-types
 title: JSON RPC Types
 original_id: rpc-types
 ---
-
 ## JSON-RPC support
 
 |                |   CITA   |
-| -------------- | :------: |
+| -------------- |:--------:|
 | JSON-RPC 1.0   | &#x2713; |
 | JSON-RPC 2.0   | &#x2713; |
 | Batch requests | &#x2713; |
@@ -22,7 +21,7 @@ original_id: rpc-types
 大整数类型。
 
 - As Parameters
-
+  
   - `0x` 开头的十六进制的字符串（仅包含 `0-9` 和 `a-f` 字符）。
   - 必须为字符串格式，即左右有双引号。
   - 不可以为空字符串。
@@ -31,9 +30,9 @@ original_id: rpc-types
   - （不建议） 目前兼容使用大写 `A-F` 字符。
   - （不建议） 目前兼容十进制字符串（不用 `0x` 开头且仅含有字符 `0-9` ）。
   - （不建议） 目前兼容数据高位填充 `0` 。
-
+  
   - Examples:
-
+    
     - (Good) `"0xab5801a7"`
     - (Bad) `"0Xab5801a7"`
     - (Bad) `"0xAB5801A7"`
@@ -44,7 +43,7 @@ original_id: rpc-types
     - (Wrong) `"ab5801a7"`
 
 - As Returns
-
+  
   `0x` 前缀的、紧凑型的、十六进制小写字符串。
 
 ### `Integer`
@@ -52,18 +51,18 @@ original_id: rpc-types
 一般整数类型。
 
 - As Parameters
-
+  
   - 十进制数值。
-
+  
   - Examples:
-
+    
     - (Good) `2874671527`
     - (Wrong) `"2874671527"`
     - (Wrong) `"0xab5801a7"`
     - (Wrong) `0xab5801a7`
 
 - As Returns
-
+  
   - 十进制数值。
 
 ### `Data`
@@ -71,15 +70,15 @@ original_id: rpc-types
 不定长二进制数据类型。
 
 - As Parameters
-
+  
   - `0x` 开头的十六进制的字符串（仅包含 `0-9` 和 `a-f` 字符）。
   - 必须为偶数个字符。
   - 使用 `0x` 表示空数据。
   - （不建议） 目前兼容使用大写 `0X` 开头。
   - （不建议） 目前兼容使用大写 `A-F` 字符。
-
+  
   - Examples:
-
+    
     - (Good) `"0x"`
     - (Bad) `"0Xab5801a7"`
     - (Bad) `"0xAB5801A7"`
@@ -89,7 +88,7 @@ original_id: rpc-types
     - (Wrong) `"ab5801a7"`
 
 - As Returns
-
+  
   - `0x` 开头的十六进制的字符串（仅包含 `0-9` 和 `a-f` 字符）。
 
 ### `Data20` / `Data32`
@@ -97,16 +96,16 @@ original_id: rpc-types
 定长二进制数据。 `Data20` 为 20 字节， `Data32` 为 32 字节。
 
 - As Parameters
-
+  
   - `0x` 开头的十六进制的定长字符串（仅包含 `0-9` 和 `a-f` 字符）。
-  - 需要补 `0` 填充完整。
+  - 需要补 `0` 填充完整。 
     - `Data20` 有 40 个字符（不包括前缀）。
     - `Data32` 有 64 个字符（不包括前缀）。
   - （不建议） 目前兼容使用大写 `0X` 开头。
   - （不建议） 目前兼容使用大写 `A-F` 字符。
-
+  
   - Examples:
-
+    
     - (Good) `"0x00000000000000000000000000000000ab5801a7"`
     - (Bad) `"0X00000000000000000000000000000000ab5801a7"`
     - (Bad) `"0x00000000000000000000000000000000AB5801A7"`
@@ -114,7 +113,7 @@ original_id: rpc-types
     - (Wrong) `0x00000000000000000000000000000000ab5801a7`
 
 - As Returns
-
+  
   - `0x` 开头的十六进制的定长字符串（仅包含 `0-9` 和 `a-f` 字符）。
 
 ### `Boolean`
@@ -130,13 +129,13 @@ original_id: rpc-types
 标签类型，由特定字符串或数字组成的枚举类型。
 
 - `BlockTag`
-
+  
   - `String` `"earliest"` - for the earliest/genesis block.
   - `String` `"latest"` - for the latest mined block.
   - `String` `"pending"` - for the pending state/transactions.
 
 - `EconomicalModel`
-
+  
   - `Integer` `0` - the quota economical model.
   - `Integer` `1` - the charge economical model.
 
@@ -171,7 +170,7 @@ Topics are order-dependent. A transaction with a log with topics [A, B] will be 
 
 - `version` - Version of Block(0 default)
 - `hash` - The hash value of block
-- `header`- Block header
+- `header`- Block header 
   - `timestamp` - The timestamp of block
   - `prevHash`- hash value of previous block
   - `number` - 块高(十六进制)
@@ -179,12 +178,12 @@ Topics are order-dependent. A transaction with a log with topics [A, B] will be 
   - `transactionsRoot` - 交易树根
   - `receiptsRoot`- 回执树根
   - `gasUsed`- The amount of gas used in the block
-  - `proof`-
-    - `BFT`
+  - `proof`- 
+    - `BFT` 
       - `proposal`- 提议内容的 hash
       - `height` - 块高(十进制)
       - `round` - 投票轮数
       - `commits`- 投票人地址和投票内容签名
   - `proposer`- 提议者
-- `body`- block body
+- `body`- block body 
   - `transactions`- 交易列表

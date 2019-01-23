@@ -1,7 +1,7 @@
 ---
 id: version-0.17-welcome
-title: CITAHub 文档概览
-sidebar_label: CITAHub 文档概览
+title: Overview
+sidebar_label: Overview
 original_id: welcome
 ---
 

@@ -1,7 +1,6 @@
 ---
 id: version-0.17-contributing
 title: Contributing
-sidebar_label: 贡献代码
 original_id: contributing
 ---
 

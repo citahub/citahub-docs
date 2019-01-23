@@ -1,7 +1,6 @@
 ---
 id: version-0.17-contributing
 title: Contributing
-sidebar_label: 贡献代码
 original_id: contributing
 ---
 CITA 是一个开源项目，任何人都可以参与 CITA 并贡献代码。

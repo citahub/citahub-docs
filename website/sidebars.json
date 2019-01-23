@@ -43,7 +43,7 @@
         ]
       },
       {
-        "label": "System Contract Interface",
+        "label": "系统合约接口",
         "type": "subcategory",
         "ids": [
           "cita/system-contract-interface/sys-interface",
@@ -66,7 +66,7 @@
         ]
       },
       {
-        "label": "Architecture",
+        "label": "架构设计",
         "type": "subcategory",
         "ids": [ 
           "cita/architecture/architecture",
@@ -78,7 +78,7 @@
       },
       "cita/crosschain/crosschain-contract-example",
       {
-        "label": "protocol-upgrade",
+        "label": "协议升级",
         "type": "subcategory",
         "ids": [ 
           "cita/protocol-upgrade/overview",
@@ -87,7 +87,7 @@
         ]
       }, 
       {
-        "label": "Reference",
+        "label": "参考",
         "type": "subcategory",
         "ids": [ 
           "cita/reference/addresses",
@@ -150,6 +150,9 @@
         ]
       }
     ],
-    "Contributing": ["contributing"]
+    "Contributing": [
+      "contributing",
+      "roadmap"
+    ]
   }
 }

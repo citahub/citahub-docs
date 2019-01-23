@@ -23,8 +23,8 @@
       "cita/cita-intro": {
         "title": "Welcome to CITA"
       },
-      "cita/configuration/chain-config": {
-        "title": "cita/configuration/chain-config"
+      "cita/configuration/chain-configuration": {
+        "title": "Chain Configuration"
       },
       "cita/configuration/config-overview": {
         "title": "Configuration Overview"
@@ -75,6 +75,9 @@
       "cita/system-contract-interface/auth": {
         "title": "Authorization Management Contract"
       },
+      "cita/system-contract-interface/auto-exec": {
+        "title": "Auto Execution Contract"
+      },
       "cita/system-contract-interface/batch": {
         "title": "Batch Transaction Contract"
       },
@@ -102,8 +105,17 @@
       "cita/system-contract-interface/quota-manager": {
         "title": "Quota Management Contract"
       },
+      "cita/system-contract-interface/quota-price": {
+        "title": "Quota Price Management Contract"
+      },
+      "cita/system-contract-interface/role-auth": {
+        "title": "Role Authorization Contract"
+      },
       "cita/system-contract-interface/role-management": {
         "title": "Role management Contract"
+      },
+      "cita/system-contract-interface/role": {
+        "title": "Role Contract"
       },
       "cita/system-contract-interface/sys": {
         "title": "System Configuration Contract"
@@ -151,8 +163,7 @@
         "title": "Protocol Management"
       },
       "contributing": {
-        "title": "Contributing",
-        "sidebar_label": "Contribution"
+        "title": "Contributing"
       },
       "welcome": {
         "title": "CITAHub Docs Overview",
@@ -275,12 +286,11 @@
         "sidebar_label": "About TXTOOL"
       },
       "version-0.17-contributing": {
-        "title": "Contributing",
-        "sidebar_label": "Contribution"
+        "title": "Contributing"
       },
       "version-0.17-welcome": {
-        "title": "CITAHub Docs Overview",
-        "sidebar_label": "CITAHub Docs Overview"
+        "title": "Overview",
+        "sidebar_label": "Overview"
       },
       "version-0.17-roadmap": {
         "title": "Roadmap",
@@ -429,6 +439,70 @@
       "version-0.19-quota": {
         "title": "Quota Management",
         "sidebar_label": "Quota Management"
+      },
+      "version-0.20.1-consensus": {
+        "title": "Consensus"
+      },
+      "version-0.20.1-chain-configuration": {
+        "title": "Chain Configuration"
+      },
+      "version-0.20.1-microservice-configuration": {
+        "title": "Microservice Configuration"
+      },
+      "version-0.20.1-crosschain-contract-example": {
+        "title": "Crosschain Contract Example",
+        "sidebar_label": "Crosschain"
+      },
+      "version-0.20.1-getting-started": {
+        "title": "Getting Started"
+      },
+      "version-0.20.1-addresses": {
+        "title": "Reserved System Addresses"
+      },
+      "version-0.20.1-rpc": {
+        "title": "JSON RPC"
+      },
+      "version-0.20.1-admin": {
+        "title": "Admin Contract Interface"
+      },
+      "version-0.20.1-all-groups": {
+        "title": "All-groups System Contract"
+      },
+      "version-0.20.1-auth": {
+        "title": "Authorization Management Contract"
+      },
+      "version-0.20.1-auto-exec": {
+        "title": "Auto Execution Contract"
+      },
+      "version-0.20.1-batch": {
+        "title": "Batch Transaction Contract"
+      },
+      "version-0.20.1-error": {
+        "title": "System Contract Error Type"
+      },
+      "version-0.20.1-group-management": {
+        "title": "Group Management Contract"
+      },
+      "version-0.20.1-permission-management": {
+        "title": "Permission Management Contract"
+      },
+      "version-0.20.1-quota-manager": {
+        "title": "Quota Management Contract"
+      },
+      "version-0.20.1-quota-price": {
+        "title": "Quota Price Management Contract"
+      },
+      "version-0.20.1-role-auth": {
+        "title": "Role Authorization Contract"
+      },
+      "version-0.20.1-role": {
+        "title": "Role Contract"
+      },
+      "version-0.20.1-contracts": {
+        "title": "System Contracts"
+      },
+      "version-0.20.1-permission": {
+        "title": "Permission Management"
       },
       "version-0.20-architecture": {
         "title": "Architecture"
@@ -769,7 +843,7 @@
       },
       "version-0.20-toolchain/truffle-box/truffle-box-intro": {
         "title": "CITA Truffle Box Introduction",
-        "sidebar_label": "CITA Truffle Box 简介"
+        "sidebar_label": "CITA Truffle Box Introduction"
       }
     },
     "links": {
@@ -790,21 +864,22 @@
     }
   },
   "pages-strings": {
-    "We aim to build a closed - loop community to connect operators, developers and users.|no description given": "We aim to build a closed - loop community to connect operators, developers and users.",
+    "CITA Community|no description given": "CITA Community",
+    "We aim to build a closed-loop community to connect operators, developers and users.|no description given": "We aim to build a closed-loop community to connect operators, developers and users.",
     "Where to get help|no description given": "Where to get help",
     "If you need help with CITA, the right place to go depends on the type of help that you need.|no description given": "If you need help with CITA, the right place to go depends on the type of help that you need.",
-    "For technical problem:|no description given": "For technical problem:",
-    "talks.citahub.com|no description given": "talks.citahub.com",
+    "For technical problem|no description given": "For technical problem",
+    "CITAHub Talk|no description given": "CITAHub Talk",
     "would be a perfect place to get help, no matter having a code-level questions or being stuck with a specific error.|no description given": "would be a perfect place to get help, no matter having a code-level questions or being stuck with a specific error.",
     "Looking for the solution for your organization|no description given": "Looking for the solution for your organization",
-    "Please make a apply to join|no description given": "Please make a apply to join",
+    "Please apply to join|no description given": "Please apply to join",
     "our community|no description given": "our community",
-    "Our team can offer dedicated support technicians to assist you in developing with CITA stack.What can we do for you ?|no description given": "Our team can offer dedicated support technicians to assist you in developing with CITA stack.What can we do for you ?",
+    "Our team can offer dedicated support technicians to assist you in developing with CITA stack. What can we do for you?|no description given": "Our team can offer dedicated support technicians to assist you in developing with CITA stack. What can we do for you?",
     "Advisory services: Tap into our extensive experience(Coming soon) in blockchain architecture and ensure you make the right decisions.|no description given": "Advisory services: Tap into our extensive experience(Coming soon) in blockchain architecture and ensure you make the right decisions.",
-    "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise.No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.|no description given": "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise.No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.",
+    "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise. No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.|no description given": "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise. No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.",
     "How to contribute|no description given": "How to contribute",
     "Read|no description given": "Read",
-    "contributing.md|no description given": "contributing.md",
+    "contributing guide|no description given": "contributing guide",
     "for the first.|no description given": "for the first.",
     "Please keep in mind nor is code the only way to contribute to the project, we strongly value documentation and gladly accept improvements to the documentation.|no description given": "Please keep in mind nor is code the only way to contribute to the project, we strongly value documentation and gladly accept improvements to the documentation.",
     "Generally, CITA uses:|no description given": "Generally, CITA uses:",
@@ -821,7 +896,7 @@
     "CIPs and RFCs|no description given": "CIPs and RFCs",
     "Rocking in Community|no description given": "Rocking in Community",
     "Forum|no description given": "Forum",
-    "talks.citahub.com Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.|no description given": "talks.citahub.com Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.",
+    "Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.|no description given": "Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.",
     "Meetups|no description given": "Meetups",
     "Training|no description given": "Training",
     "Check our past|no description given": "Check our past",
@@ -830,7 +905,6 @@
     "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.|no description given": "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.",
     "In production environment, we highly recommend to use stable version.|no description given": "In production environment, we highly recommend to use stable version.",
     "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.|no description given": "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.",
-    "This is the version that is configured automatically when you first install this project.|no description given": "This is the version that is configured automatically when you first install this project.",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"

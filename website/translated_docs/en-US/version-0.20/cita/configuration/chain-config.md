@@ -1,28 +1,115 @@
 ---
-id: version-0.20-chain-configuration
-title: Chain Configuration
-sidebar_label: Chain Configuration
-original_id: chain-configuration
+id: version-0.20-chain-config
+title: chain-config
+original_id: chain-config
 ---
+按照快速搭链的教程编译成功后，我们可以在启动节点前，对链进行配置。本文档主要介绍如何配置链自身的一些属性、RPC接口、节点间网络连接，并通过具体的操作示例，教你如何搭建你自己的链。
 
-# Chain Configuration
+## 配置项
 
-After unzipping the release package, or compiling the source code, don't hurry to start the node. Before that, an important step is that we need to initialize the chain before starting it.
-In the initialization process, all the configuration information will be written into the genesis block. Once the genesis block is generated, in SysConfig, only three items `chainName`, `operator`, `website` can be modified while the other items can no longer be changed. So please carefully set each configuration item.
-In CITA, we provide the Config Tool to help you initialize the chain, and we also offer a command line tool named CITA-CLI to help you modify several specific configurations while the chain is already running.
+按照快速搭链的教程编译成功后，`test-chain/template` 目录下的 `init_data.yml` 中记录了链的配置项内容如下， 下面我们一一解释：
 
-This document will introduce the configurable items in CITA, including the attributes of the chain itself, system contracts, RPC interfaces, network connections between nodes, etc.;
-Then through a specific operation example, demonstrate how to initialize the chain before starting it;
-And take you in detail to understand the directory structure of the file after the initial configuration;
-Finally, an operation example will be used to demonstrate how to modify some particular configurations after starting the chain.
-Though this document, you will be able to customize a chain that meets your needs.
+    -Contracts:
+     -SysConfig:
+       delayBlockNumber: 1
+       checkPermission: false
+       checkSendTxPermission: false
+       checkCreateContractPermission: false
+       checkQuota: false
+       checkFeeBackPlatform:false
+       chainOwner: '0x0000000000000000000000000000000000000000'
+       chainName: test-chain
+       chainId: 1
+       operator: test-operator
+       website: https://www.example.com (https://www.example.com/)
+       blockInterval: 3000
+       economicalModel: 0
+       name: Nervos AppChain Test Token
+       symbol: NATT
+       avatar: https://avatars1.githubusercontent.com/u/35361817
+     -QuotaManager:
+       admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
+     -NodeManager:
+       nodes:
+       '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
+       stakes:
+       0
+     -ChainManager:
+       parentChainId: 0
+       parentChainAuthorities: []
+     -Authorization:
+       superAdmin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
+     -Group:
+       parent: '0x0000000000000000000000000000000000000000'
+       name: rootGroup
+       accounts:
+       '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
+     -Admin:
+       admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
+     -VersionManager:
+       version: 1
+    
 
-## Configurable Items
+* `SysConfig` : 初始化一些系统信息 
+    * `delayBlockNumber` : 表示系统合约在几个块之后生效，默认为 1 个块。当前此功能已废弃。
+    * `checkPermission` : 合约调用权限检查开关
+    * `checkSendTxPermission` : 发送交易权限检查开关
+    * `checkCreateContractPermission` : 创建合约权限检查开关
+    * `checkQuota` : 配额检查开关
+    * `checkFeeBackPlatform` : 出块激励选择开关，默认为 false，表示返回给共识节点，为 true 时返回给运营方地址( chainOwner )
+    * `chainOwner` : 运营方地址，结合 checkFeeBackPlatform 一块使用
+    * `chainName` : 链的名字
+    * `chainId` : 链 Id
+    * `operator` : 运营方名称
+    * `website` : 运营方网站
+    * `blockInterval` ： 出块间隔，默认 3 秒
+    * `economicalModel`： 经济模型(稍后会做详细介绍)
+    * `name` : Token 名称
+    * `symbol` : Token 符号
+    * `avatar` : Token 图标链接
+* `QuotaManager` : 初始化管理员地址 
+    * `admin` : 默认管理员地址
+* `NodeManager` : 初始化共识节点 
+    * `nodes` : 共识节点地址
+    * `stakes` : 共识节点对应的出块权重
+* `ChainManager` : 初始化链的一些信息，用于跨链。 
+    * `parentChainId` : 父链 ID
+    * `parentChainAuthorities` : 父链的共识节点列表
+* `Authorization` : 初始化管理员地址 
+    * `superAdmin` : 管理员地址
+* `Group` : 初始化用户组 
+    * `parent` : 父组的地址
+    * `name` : 组的名称
+    * `accounts` : 组内用户列表
+* `Admin` : 管理员 
+    * `admin` : 管理员地址
+* `VersionManager` : 协议版本号 
+    * `version` : 协议版本号
 
-Run the following command to view each configurable item:
+创世块一旦生成，只有 `chainName`，`operator`，`website` 这三项可以在链运行之后再进行修改，其他项均不可再修改。
+
+## 经济模型选择
+
+CITA 中存在两种经济模型，Quota(默认) 和 Charge。
+
+`economicalModel = 0` 表示 Quota 模型, 交易不需要手续费，quota 免费设置， 无余额概念，交易不扣除余额。
+
+`economicalModel = 1` 表示 Charge 模型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额。
+
+## 配置工具
+
+在 `docker` 环境下，我们使用 `./scripts/create_cita_config.py` 来构建一条链， 有两种模式：
+
+* create: 创建全新的一条链
+* append: 为已运行链新增一个节点
+
+可通过运行命令 `./env.sh scripts/create_cita_config.py -h` 了解更多。
+
+### Create 配置
 
 ```shell
 $ ./env.sh ./scripts/create_cita_config.py create --help
+
 usage: create_cita_config.py create [-h]
                                     [--authorities AUTHORITY[,AUTHORITY[,AUTHORITY[,AUTHORITY[, ...]]]]]
                                     [--chain_name CHAIN_NAME]
@@ -37,218 +124,89 @@ usage: create_cita_config.py create [-h]
                                     [--enable_tls]
 ```
 
-Explain it one by one:
+必要参数解释：
 
-> **Notice**
-> If you want to start the chain, it is strictly required to configure `super_admin` and `nodes`, since for these two, system does not provide any default configuration.
+* `chain_name` : 指定链的名字，cita 支持侧链后，通过 chain_name 生成不同的链配置，默认为 test-chain
+* `nodes` : 指定节点的 ip 地址和端口
+* `super_admin` : 指定超级管理员地址
+* `contract_arguments` : 设定系统合约的默认值，这个参数具体的信息请详细查看系统合约文档
+* `enable_tls` : 指定节点间数据是否使用tls(Transport Layer Security)加密传输，不加此选项默认为不加密传输
 
-### `--authorities` write the addresses of the consensus nodes to the genesis block
+注意事项：
 
-- For security concerns, we highly recommend: generate each private key and address independently by each consensus node. The private key must be kept by node self while the address should be handed over to the administrator who takes responsibility to start the chain. After receiving all the addresses，administrator can use this command to write all these addresses to the genesis block. After starting the chain, `test-chain/*/privkey` file would be empty, and each consensus node fills in its private key individually.
-- If no parameters are passed, the private key/address pair corresponding to the number of nodes is automatically generated by default: the address is written into the chain; the private key is stored in the `test-chain/*/privkey` file of each consensus node.
+1. 配置工具会创建以 `chain_name` 为名称的文件夹，如果没有传递该参数则默认为 `test-chain` 。该文件夹里面再按节点序号创建 0，1，2 等节点文件夹，分别存放每个节点的配置文件。
+2. 为了方便测试时多个节点在同一台服务器上运行。 grpc，jsonrpc，ws_port 等参数指定的端口号是一个起始端口号。 节点实际使用的端口号，按照节点排列顺序顺延，即 port+n（ n 为节点序号）。 比如总共 4 个节点，传递 grpc_port 参数为 7000 。则 test-chain/0 的 grpc 端口号为 7000，test-chain/1 的 grpc 端口号为 7001 等等。
+3. CITA有一些保留端口，设置节点网络端口，或者自定义端口的时候要避免产生端口冲突。保留端口有： 
+    * 默认的 `grpc` 端口：5000 到 5000 + N（N 为节点总数,以下相同）
+    * 默认的 `jsonrpc` 端口：1337 到 1337 + N
+    * 默认的 `websocket` 端口：4337 到 4337+N
+    * 默认的 `rabbitmq` 端口：4369(epmd)/25672(Erlang distribution)/5671，5672(AMQP)/15672(management plugin)
+4. `--enable_tls`为可选选项，创建链时加上此选项，会在network.toml配置文件中增加`enable = true`和每个peer中`common_name = ${chain_name}.cita`的配置项，否则network.toml中不会生成前面两个配置项。
 
-### `--chain_name` specify the name of the chain
+### 操作示例
 
-- After executing this command, a folder named `chain_name` will be generated. Inside this folder, several folders such as 0, 1, and 2 will be created according to the node number, in which the node configuration files will be stored.
-- If you don't pass the `chain_name` parameter, the default chain name would be `test-chain`.
-
-### `--nodes` specify the IP and the port of each node
-
-Each node needs to provide IP and port, so to connect to others. When passing the parameter, IP and port are separated by a colon, and different nodes are separated by commas. Finally, a corresponding number of consensus nodes will be generated according to how many network addresses are passed in this parameter (the maximum limit is 256). The node numbers will start from 0 and then increment according to the order of the network addresses in the parameters.
-
-### `--super_admin` specify the address of the super administrator
-
-This account has the highest authority to manage the running status of the entire chain. Users ** must ** set up the super administrator by self.
-
-### `--contract_arguments` specify configuration of the chain itself and the configuration of the system contract
-
-We can find an example configuration file `init_data.yml` in the `test-chain/template` directory. Each configuration item is as follows:
-
-```
--Contracts:
- -SysConfig:
-   delayBlockNumber: 1
-   checkCallPermission: false
-   checkSendTxPermission: false
-   checkCreateContractPermission: false
-   checkQuota: false
-   checkFeeBackPlatform:false
-   chainOwner: '0x0000000000000000000000000000000000000000'
-   chainName: test-chain
-   chainId: 1
-   operator: test-operator
-   website: https://www.example.com (https://www.example.com/)
-   blockInterval: 3000
-   economicalModel: 0
-   name: Nervos AppChain Test Token
-   symbol: NATT
-   avatar: https://cdn.cryptape.com/icon_appchain.png
- -QuotaManager:
-   admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -NodeManager:
-   nodes:
-   '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
-   stakes:
-   0
- -ChainManager:
-   parentChainId: 0
-   parentChainAuthorities: []
- -Authorization:
-   superAdmin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -Group:
-   parent: '0x0000000000000000000000000000000000000000'
-   name: rootGroup
-   accounts:
-   '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -Admin:
-   admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -VersionManager:
-   version: 1
-```
-
-- `SysConfig` : initialize some system information
-  - `delayBlockNumber` : indicates that the system contract takes effect after several blocks. The default is 1 block. Deprecation now.
-  - `checkCallPermission` : contract call permission switch
-  - `checkSendTxPermission` : send transaction permission switch
-  - `checkCreateContractPermission` : contract create permission switch
-  - `checkQuota` : quota switch
-  - `checkFeeBackPlatform` : feeback switch, the default is `false`, which means return to the address of consensus node, while `true` means return to a certain address set by chain owner
-  - `autoExec` : autoExec switch, the default is `false`. while `true` means turn on the autoExec feature
-  - `chainOwner` : a certain address set by chain owner, used when `checkFeeBackPlatform` is `true`
-  - `chainName` : the name of the chain
-  - `chainId` : chain Id
-  - `operator` : operator name
-  - `website` : operator website
-  - `blockInterval` : block interval, default is 3 seconds
-  - `economicalModel`: economic model. There are two economic models designed in CITA, Quota (default) and Charge. `economicalModel = 0` is building the Quota model, which means the transaction can be accepted only if the quota required for this transaction is not exceed the account limit and block limit set by administrator. More details can be refered to [Quota Management](./system_management/quota). `economicalModel = 1` is building the Charge model, which means the transaction requires a fee. The single-step deduction mode is executed for each step of the transaction. More details can be refered to [Quota Price Management](./system_management/quota_price).
-  - `name` : token name
-  - `symbol` : token symbol
-  - `avatar` : link of token icon
-- `QuotaManager` : initialize the administrator address
-  - `admin` : default administrator address
-- `NodeManager` : initialize consensus node management contract
-  - `nodes` : consensus node address
-  - `stakes` : the weight of consensus nodes to produce the block
-- `ChainManager` : initialize some information for cross-chain
-  - `parentChainId` : parent chain ID
-  - `parentChainAuthorities` : list of consensus nodes for the parent chain
-- `Authorization` : initialize the administrator address
-  - `superAdmin` : administrator address
-- `Group` : initialize user group
-  - `parent` : the address of the parent group
-  - `name` : the name of the group
-  - `accounts` : list of users in the group
-- `Admin` : administrator
-  - `admin` : administrator address
-- `VersionManager` : protocol version
-  - `version` : protocol version number
-- `PriceManager` : quota price management contract
-  - `quotaPrice` : quota price value
-
-### `--time_stamp` specify the start timestamp
-
-- The value passed in this parameter is the number of milliseconds since 1970-1-1. The default is to take the current time. If the time is set as future time, the block cannot be produced successfully after starting the chain.
-- This value can be viewed in genesis.son file after the initialization.
-
-### `--resource_dir` specify the resource directory
-
-- In addition to the arrays in the Genesis block, the chain sometimes needs to carry some additional data (such as zero-knowledge proof). But because the data is too large to fit into the Genesis block, you can specify a separate resource directory by passing parameters here.
-- After specifying this parameter, one more resource directory will be generated. The files in the user-specified directory will be copied in. Then, the configuration tool will calculate the hash value of all files in the directory as the prevhash field in `genesis.json`. The prevhash default is all 0.
-
-### `--grpc_port`、`jsonrpc_port`、`ws_port` specify the starting port number
-
-- The port number specified by the parameters gRPC, JSON-RPC, WebSocket, etc. is a starting port number. The port number actually used by the node is deferred according to the order of nodes, that is, port+n (n is the node number). For example, a total of 4 nodes, passing the grpc_port parameter to 7000. The gRPC port number of test-chain/0 is 7000, the gRPC port number of test-chain/1 is 7001, and same in after.
-- grpc_port is stored in `test-chain/*/executor.toml` ，jsonrpc port and ws port are stored in `test-chain/*/jsonrpc.toml`.
-- CITA has some reserved ports, so it is necessary to avoid port conflicts when setting node network ports, or custom ports. Reserved ports are:
-  - Default `grpc` port: 5000 to 5000 + N (N is the total number of nodes, the same below)
-  - Default `jsonrpc` port: 1337 to 1337 + N
-  - Default `websocket` port: 4337 to 4337+N
-  - Default `rabbitmq` port: 4369(epmd)/25672(Erlang distribution)/5671,5672(AMQP)/15672(management plugin)
-
-### `--enable_tls` whether to enable communication encryption
-
-- Specifies whether the data transferred between nodes is encrypted using TLS (Transport Layer Security). Without this option, the default is unencrypted transmission.
-- Adding this option when creating a chain will add `enable = true` to the network.toml and `common_name = ${chain_name}.cita` in each peer. Otherwise the configuration items are not generated in `network.toml`.
-
-## Initial configuration operation example
-
-The following is the command to start a most basic chain with four nodes. The default port is 4000, 4001, 4002, 4003. The economic model is `Quota`, and all permission controls are closed.
+以下是最基础起链命令，该命令生成一条包含四个节点的新链，端口默认 4000 , 4001 , 4002 , 4003， 默认超级管理员，经济模型为 `Quota`, 所有权限控制关闭。
 
 ```shell
 $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
-The following command is to generate a chain with quite advanced configurations:
+接下来演示来生成一条高级配置的链, 命令如下：
 
 ```shell
-$ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.checkSendTxPermission=true SysConfig.checkCallPermission=true SysConfig.economicalModel=1 SysConfig.checkFeeBackPlatform=true SysConfig.chainOwner=0x9a6bd7272edb238f13002911d8c93dd6bb646d15
+$ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.checkSendTxPermission=true SysConfig.checkPermission=true SysConfig.economicalModel=1 SysConfig.checkFeeBackPlatform=true SysConfig.chainOwner=0x9a6bd7272edb238f13002911d8c93dd6bb646d15
 ```
 
-The above command generates one chain with four nodes. The port defaults to 4000, 4001, 4002, 4003. The super administrator address is `0xab159a4817542585c93f01cfce9cfe6cd4cbd26a`. The operator address is
-`0x9a6bd7272edb238f13002911d8c93dd6bb646d15`. The economic model is `Charge`. The transaction fee returns to the operator. All permission switches are on.
+上述命令，生成一条包含四个节点，端口默认 4000 , 4001 , 4002 , 4003， 超级管理员地址 `0xab159a4817542585c93f01cfce9cfe6cd4cbd26a`， 运营方地址 `0x9a6bd7272edb238f13002911d8c93dd6bb646d15`， 经济模型 `Charge`， 出块激励返回运营方，权限全开的链。
 
-## Directory structure after initialized configuration
+### 配置超级管理员帐户地址
 
-The directory structure for creating four consensus nodes by `create` is as follows:
+```shell
+$ ./env.sh ./scripts/create_cita_config.py create --super_admin=0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523 ...
+```
+
+上述命令行参数中的 `--super_admin` 参数，用于设置超级管理员账户地址，该账户拥有最高权限，用来管理整条链的运行状态。用户**必须**设置超级管理员。
+
+CITA 提供了 `create_key_addr` 命令工具，可以很方便的生成私钥和对应的地址，下面使用 secp256k1_sha3 版本为例：
+
+```shell
+$ ./env.sh bin/create_key_addr key addr
+$ cat key addr
+0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523
+```
+
+上述命令建立两个文件，key 和 addr 。key 文件内的是私钥，addr 文件内的是对应的地址。
+
+### Append 配置
+
+演示如何增加 1 个节点，我们需要指定已经创建过的 `chain_name`， 命令如下：
+
+```shell
+$ ./env.sh ./scripts/create_cita_config.py append --chain_name test-chain --node "127.0.0.1:4004"
+$ ls test-chain/
+  0  1  2  3  4  template
+```
+
+注意：每次只能增加一个节点，且增加的为普通节点。如何把普通接点升级为共识节点，请参考 `节点管理`。
+
+## 链目录结构
+
+采用 `create` 默认创建 4 个共识节点的目录结构如下:
 
 ```bash
-$ ls test-chain/
-0 1 2 3 template
+$ ls test—chain/
+  0  1  2  3  template
 $ ls 0
-address     consensus.toml  forever.toml       logs
-auth.toml   data            genesis.json       network.toml
-chain.toml  executor.toml   jsonrpc.toml       privkey
+  auth.toml executor.toml jsonrpc.toml chain.toml forever.toml logs
+  consensus.toml network.toml genesis.json privkey data
 ```
 
-According to the given parameters, 4 nodes are generated. `test-chain/*` contains the configuration file of the nodes, as follows:
+相对应给出的参数，生成 4 个节点，`test-chain/*` 里面包含节点的配置文件，具体如下：
 
-- `privkey` : stores private key
-- `address` : stores address
-- `*.toml` : microservice configuration file, please refer to the microservice description for details.
-- `genesis.json` : genesis block file, in which, `timestamp` is in seconds; `prevhash` refers to the previous block hash, here is the default value; and `alloc` refers to the contract content deployed to the Genesis block;
-- The `test-chain/template` ：template files, including the consensus node address in `test-chain/template/authorities.list`, and the system contract generation parameter in `test-chain/template/init_data.yml`, node Port address in `test-chain/template/nodes.list` and other information
-- `logs` : log information
-- `data` : data storage
-
-## Modify some particular configuration
-
-After the chain is started, that is, once the Genesis block is generated, in SysConfig, only `chainName`, `operator`, `website` can be modified at runtime. In the following operation example, we use [cita-cli](https://github.com/cryptape/cita-cli) to demonstrate how to modifying `chainName` by administrator:
-
-Make sure your chain is up running, and enter the command:
-
-```shell
-$ scm SysConfig setChainName --chain-name "AAA" --admin-private \ 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
-```
-
-After checking the transaction receipt, we successfully changed the chain name from the default `test-chain` to `AAA`.
-
-We can query the changed result by `getMeta`, as shown in the following:
-
-```shell
-$ rpc getMetaData
-```
-
-Get the output:
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "blockInterval": 3000,
-    "chainId": 1,
-    "chainName": "AAA",
-    "economicalModel": 1,
-    "genesisTimestamp": 1538101178583,
-    "operator": "test-operator",
-    "tokenAvatar": "https://cdn.cryptape.com/icon_appchain.png",
-    "tokenName": "Nervos AppChain Test Token",
-    "tokenSymbol": "NATT",
-    "validators": ["0x185e7072f53574666cf8ed8ec080e09b7e39c98f"],
-    "version": 1,
-    "website": "https://www.example.com"
-  }
-}
-```
-
-`chainName` is changed.
+* `privkey` : 存放私钥
+* `*.toml` : 各个微服务配置文件，详细说明见微服务说明
+* `genesis.json` ： 生成 genesis 块文件， 其中 timestamp 为时间戳，秒为单位；prevhash 指前一个块哈希，这里是默认值；而 alloc 指部署到创世块的合约内容；
+* `test-chain/template` 目录下是模板文件，包括这个链的共识节点地址 `test-chain/template/authorities.list`，系统合约生成参数 `test-chain/template/init_data.yml`, 节点端口地址 `test-chain/template/nodes.list` 等信息
+* `logs` : 记录链运行的日志信息
+* `data` : 数据存储

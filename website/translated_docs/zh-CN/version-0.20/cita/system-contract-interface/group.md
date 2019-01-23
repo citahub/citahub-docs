@@ -1,9 +1,9 @@
 ---
 id: version-0.20-group
 title: 组合约接口
-sidebar_label: 组合约接口
 original_id: group
 ---
+
 
 <h2 class="hover-list">Users Management</h2>
 
@@ -14,21 +14,21 @@ original_id: group
 - [queryChildLength](#queryChildLength)
 - [queryParent](#queryParent)
 
----
+* * *
 
 ### queryInfo
 
 查询组信息。
 
 - Parameters
-
-  `address` - The group address
+    
+    `address` - The group address
 
 - Returns
-
-  `bytes32` - The name of group
-
-  `address[]` - The accounts of group
+    
+    `bytes32` - The name of group
+    
+    `address[]` - The accounts of group
 
 - Example
 
@@ -41,12 +41,12 @@ $ scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 查询组名字。
 
 - Parameters
-
-  `address` - The group address
+    
+    `address` - The group address
 
 - Returns
-
-  `bytes32` - The name of group
+    
+    `bytes32` - The name of group
 
 - Example
 
@@ -59,12 +59,12 @@ $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 查询组内所有用户。
 
 - Parameters
-
-  `address` - The group address
+    
+    `address` - The group address
 
 - Returns
-
-  `address[]` - All accounts address
+    
+    `address[]` - All accounts address
 
 - Example
 
@@ -77,12 +77,12 @@ $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 查询子组。
 
 - Parameters
-
-  `address` - The group address
+    
+    `address` - The group address
 
 - Returns
-
-  `address` - The children of group
+    
+    `address` - The children of group
 
 - Example
 
@@ -95,12 +95,12 @@ $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 查询子组个数。
 
 - Parameters
-
-  `address` - The group address
+    
+    `address` - The group address
 
 - Returns
-
-  `uint` - The number of the children group
+    
+    `uint` - The number of the children group
 
 - Example
 
@@ -113,12 +113,12 @@ $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF02000
 查询父组。
 
 - Parameters
-
-  `address` - The group address
+    
+    `address` - The group address
 
 - Returns
-
-  `address` - The parent of the group
+    
+    `address` - The parent of the group
 
 - Example
 

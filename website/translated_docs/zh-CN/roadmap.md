@@ -1,6 +1,6 @@
 ---
 id: roadmap
 title: Roadmap
-sidebar_label: 开发路线图
+sidebar_label: Roadmap
 ---
 Coming soon

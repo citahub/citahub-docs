@@ -48,7 +48,7 @@
         "label": "System Contract Interface",
         "type": "subcategory",
         "ids": [
-          "version-0.20-cita/system-contract-interface/sys-interface)",
+          "version-0.20-cita/system-contract-interface/sys-interface",
           "version-0.20-cita/system-contract-interface/node",
           "version-0.20-cita/system-contract-interface/auth",
           "version-0.20-cita/system-contract-interface/permission",
@@ -58,8 +58,8 @@
           "version-0.20-cita/system-contract-interface/group-management",
           "version-0.20-cita/system-contract-interface/group",
           "version-0.20-cita/system-contract-interface/all-groups",
-          "version-0.20-cita/system-contract-interface/quota_manager",
-          "version-0.20-cita/system-contract-interface/quota_price",
+          "version-0.20-cita/system-contract-interface/quota-manager",
+          "version-0.20-cita/system-contract-interface/quota-price",
           "version-0.20-cita/system-contract-interface/batch",
           "version-0.20-cita/system-contract-interface/emergency-brake",
           "version-0.20-cita/system-contract-interface/admin",
@@ -74,13 +74,13 @@
           "version-0.20-cita/architecture/architecture",
           "version-0.20-cita/architecture/components",
           "version-0.20-cita/architecture/consensus",
-          "version-0.20-cita/architecture/transaction_process",
+          "version-0.20-cita/architecture/transaction-process",
           "version-0.20-cita/architecture/view"
         ]
       },
       "version-0.20-cita/crosschain/crosschain-contract-example",
       {
-        "label": "Protocol Upgrade",
+        "label": "Protocol-upgrade",
         "type": "subcategory",
         "ids": [
           "version-0.20-cita/protocol-upgrade/overview",
@@ -117,7 +117,7 @@
         ]
       },
       {
-        "label": "ReBirth",
+        "label": "Rebirth",
         "type": "subcategory",
         "ids": [
           "version-0.20-toolchain/rebirth/rebirth-intro"
@@ -153,8 +153,7 @@
       }
     ],
     "Contributing": [
-      "version-0.20-contributing",
-      "version-0.20-roadmap"
+      "version-0.20-contributing"
     ]
   }
 }

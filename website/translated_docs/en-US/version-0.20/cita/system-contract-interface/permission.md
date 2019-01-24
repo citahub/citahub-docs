@@ -1,6 +1,6 @@
 ---
 id: version-0.20-permission
-title: 权限合约接口
+title: Permission Contract Interface
 original_id: permission
 ---
 

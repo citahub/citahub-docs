@@ -2,163 +2,175 @@
   "localized-strings": {
     "docs": {
       "version-0.17-cita/chain/getting-started": {
-        "title": "快速入门"
-      },
-      "version-0.17-cita/system-management/user": {
-        "title": "用户管理"
-      },
-      "version-0.17-cita/system-management/quota": {
-        "title": "配额管理"
+        "title": "Getting Started"
       },
       "version-0.17-cita/system-management/log": {
-        "title": "日志管理"
+        "title": "Log Management"
+      },
+      "version-0.17-cita/system-management/user": {
+        "title": "User Management"
+      },
+      "version-0.17-cita/system-management/quota": {
+        "title": "Quota Management"
       },
       "version-0.17-cita/system-management/snapshot": {
-        "title": "快照"
+        "title": "Snapshot"
       },
       "version-0.17-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC 参数和返回值"
+        "title": "JSON RPC Types"
       },
       "version-0.17-cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC 错误码"
-      },
-      "version-0.17-cita/architecture/components": {
-        "title": "系统组件"
-      },
-      "version-0.17-cita/architecture/consensus": {
-        "title": "共识"
+        "title": "JSON RPC Error Code"
       },
       "version-0.17-cita/architecture/transaction-process": {
-        "title": "交易处理"
+        "title": "Transaction Processing"
+      },
+      "version-0.17-cita/architecture/consensus": {
+        "title": "Consensus"
+      },
+      "version-0.17-cita/architecture/components": {
+        "title": "System Components"
       },
       "version-0.17-cita/architecture/view": {
-        "title": "视图"
+        "title": "View"
+      },
+      "version-0.17-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "version-0.17-cita/cita-intro": {
+        "title": "About CITA"
+      },
+      "version-0.17-cita/txtool": {
+        "title": "About Txtool"
       },
       "version-0.18-cita/system-management/log": {
-        "title": "日志管理"
-      },
-      "version-0.18-cita/system-management/sys": {
-        "title": "系统配置"
-      },
-      "version-0.18-cita/system-management/snapshot": {
-        "title": "快照"
+        "title": "Log Management"
       },
       "version-0.18-cita/system-management/batch-tx": {
-        "title": "批量交易"
+        "title": "Batch Transactions"
+      },
+      "version-0.18-cita/system-management/system": {
+        "title": "System Configuration"
+      },
+      "version-0.18-cita/system-management/snapshot": {
+        "title": "Snapshot"
       },
       "version-0.18-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC 参数和返回值"
-      },
-      "version-0.18-cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC 错误码"
+        "title": "JSON RPC Types"
       },
       "version-0.18-cita/reference/addresses": {
-        "title": "系统保留地址列表"
+        "title": "Reserved System Addresses"
+      },
+      "version-0.18-cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC Error Code"
       },
       "version-0.18-cita/reference/glossary": {
-        "title": "词汇表"
+        "title": "Glossary"
       },
       "version-0.19-cita/chain/getting-started": {
-        "title": "快速入门"
+        "title": "Getting Started"
+      },
+      "version-0.18-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
       },
       "version-0.19-cita/system-management/quota": {
-        "title": "配额管理"
-      },
-      "version-0.19-cita/system-management/batch-tx": {
-        "title": "批量交易"
+        "title": "Quota Management"
       },
       "version-0.19-cita/system-management/emergency-brake": {
-        "title": "紧急制动"
+        "title": "Emergency Brake"
       },
-      "version-0.19-cita/system-management/amend": {
-        "title": "数据订正"
+      "version-0.19-cita/system-management/batch-tx": {
+        "title": "Batch Transactions"
       },
       "version-0.19-cita/system-management/fee-back": {
-        "title": "出块奖励返回"
+        "title": "Fee Back"
+      },
+      "version-0.19-cita/system-management/amend": {
+        "title": "Amend"
       },
       "version-0.19-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC 参数和返回值"
+        "title": "JSON RPC Types"
+      },
+      "version-0.19-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Examples"
       },
       "version-0.19-cita/reference/addresses": {
-        "title": "系统保留地址列表"
+        "title": "Reserved System Addresses"
+      },
+      "version-0.20-cita/configuration/microservice-configuration": {
+        "title": "Microservice Configuration"
       },
       "version-0.20-cita/configuration/config-overview": {
         "title": "Configuration Overview"
       },
       "version-0.20-cita/system-management/contracts": {
-        "title": "系统合约"
+        "title": "System Contracts"
       },
       "version-0.20-cita/system-management/user": {
-        "title": "用户管理"
-      },
-      "version-0.20-cita/system-management/quota": {
-        "title": "配额管理"
+        "title": "User Management"
       },
       "version-0.20-cita/system-management/price": {
-        "title": "配额价格管理"
+        "title": "Quota Price Management"
       },
       "version-0.20-cita/system-management/log": {
-        "title": "日志管理"
+        "title": "Log Management"
+      },
+      "version-0.20-cita/system-management/quota": {
+        "title": "Quota Management"
       },
       "version-0.20-cita/system-management/snapshot": {
-        "title": "快照"
-      },
-      "version-0.20-cita/system-management/emergency-brake": {
-        "title": "紧急制动"
+        "title": "Snapshot"
       },
       "version-0.20-cita/system-management/batch-tx": {
-        "title": "批量交易"
+        "title": "Batch Transactions"
       },
-      "version-0.20-cita/system-management/fee-back": {
-        "title": "出块奖励返回"
+      "version-0.20-cita/system-management/emergency-brake": {
+        "title": "Emergency Brake"
       },
       "version-0.20-cita/system-management/amend": {
-        "title": "数据订正"
+        "title": "Amend"
+      },
+      "version-0.20-cita/system-management/version": {
+        "title": "Version Management"
+      },
+      "version-0.20-cita/system-management/fee-back": {
+        "title": "Fee Back"
       },
       "version-0.20-cita/system-management/auto-exec": {
-        "title": "自动执行"
+        "title": "Auto Execution"
       },
       "version-0.20-cita/rpc-guide/rpc-types": {
         "title": "JSON RPC Types"
       },
       "version-0.20-cita/system-contract-interface/node": {
-        "title": "共识节点管理a合约接口"
+        "title": "Consensus Node Management Contract Interface"
       },
       "version-0.20-cita/rpc-guide/rpc-error-code": {
         "title": "JSON RPC Error Code"
       },
-      "version-0.20-cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口"
+      "version-0.20-cita/system-contract-interface/group": {
+        "title": "Group Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/permission": {
-        "title": "权限合约接口"
+        "title": "Permission Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/role-management": {
-        "title": "角色管理合约接口"
-      },
-      "version-0.20-cita/system-contract-interface/group": {
-        "title": "组合约接口"
-      },
-      "version-0.20-cita/system-contract-interface/all-groups": {
-        "title": "所有组合约接口"
+        "title": "Role Management Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/quota-manager": {
-        "title": "配额管理合约接口"
+        "title": "Quota Management Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/batch": {
-        "title": "批量交易合约接口"
-      },
-      "version-0.20-cita/system-management/version": {
-        "title": "协议版本号管理"
+        "title": "Batch Transactions Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/emergency-brake": {
-        "title": "紧急制动合约接口"
+        "title": "Emergency Brake Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/admin": {
         "title": "Admin Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/error": {
-        "title": "系统合约错误类型"
+        "title": "System Contract Error Code"
       },
       "version-0.20-cita/architecture/components": {
         "title": "System Components"
@@ -166,110 +178,266 @@
       "version-0.20-cita/architecture/consensus": {
         "title": "Consensus"
       },
+      "version-0.20-cita/system-contract-interface/auth": {
+        "title": "Auth Management Contract Interface"
+      },
       "version-0.20-cita/architecture/transaction-process": {
         "title": "Transaction Process"
-      },
-      "version-0.20-cita/architecture/view": {
-        "title": "View"
-      },
-      "version-0.20-cita/protocol-upgrade/overview": {
-        "title": "Protocol Upgrade Overview"
-      },
-      "version-0.20-cita/protocol-upgrade/v0": {
-        "title": "v0 Protocol"
       },
       "version-0.20-cita/protocol-upgrade/v1": {
         "title": "v1 Protocol"
       },
+      "version-0.20-cita/architecture/view": {
+        "title": "View"
+      },
       "version-0.20-cita/reference/addresses": {
         "title": "Reserved System Addresses"
+      },
+      "version-0.20-cita/protocol-upgrade/overview": {
+        "title": "Protocol Upgrade Overview"
       },
       "version-0.20-cita/reference/glossary": {
         "title": "Glossary"
       },
-      "version-0.20.1-cita/system-management/contracts": {
-        "title": "系统合约"
+      "version-0.20-cita/protocol-upgrade/v0": {
+        "title": "v0 Protocol"
       },
-      "version-0.20.1-cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口"
+      "version-0.20-cita/cita-intro": {
+        "title": "Welcome to CITA"
+      },
+      "version-0.20-cita/getting-started": {
+        "title": "Getting Started"
+      },
+      "version-0.20-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "version-0.20.1-cita/system-management/contracts": {
+        "title": "System Contracts"
       },
       "version-0.20.1-cita/system-contract-interface/role-auth": {
-        "title": "角色授权合约接口"
+        "title": "Role Auth Contract Interface"
       },
-      "version-0.20.1-cita/system-contract-interface/group-management": {
-        "title": "组管理合约接口"
+      "version-0.20.1-cita/system-contract-interface/auth": {
+        "title": "Auth Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/all-groups": {
-        "title": "所有组合约接口"
+        "title": "All-Group Contract Interface"
+      },
+      "version-0.20.1-cita/system-contract-interface/group-management": {
+        "title": "Group Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/quota-manager": {
-        "title": "配额管理合约接口"
+        "title": "Quota Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/quota-price": {
-        "title": "配额价格管理合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/batch": {
-        "title": "批量交易合约接口"
+        "title": "Quota Price Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/admin": {
         "title": "Admin Contract Interface"
       },
+      "version-0.20.1-cita/system-contract-interface/batch": {
+        "title": "Batch Transactions Contract Interface"
+      },
       "version-0.20.1-cita/system-contract-interface/auto-exec": {
-        "title": "自动执行合约接口"
+        "title": "Auto Execution Contract Interface"
       },
       "version-0.20.1-cita/architecture/consensus": {
         "title": "Consensus"
       },
+      "cita/configuration/config-overview": {
+        "title": "Configuration Overview"
+      },
       "version-0.20.1-cita/reference/addresses": {
         "title": "Reserved System Addresses"
       },
+      "version-0.20.1-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "cita/system-management/contracts": {
+        "title": "系统合约"
+      },
+      "cita/system-management/user": {
+        "title": "用户管理"
+      },
+      "cita/system-management/quota": {
+        "title": "配额管理"
+      },
+      "cita/system-management/price": {
+        "title": "配额价格管理"
+      },
+      "cita/system-management/snapshot": {
+        "title": "快照"
+      },
+      "cita/system-management/log": {
+        "title": "日志管理"
+      },
+      "cita/system-management/batch-tx": {
+        "title": "批量交易"
+      },
+      "cita/system-management/emergency-brake": {
+        "title": "紧急制动"
+      },
+      "cita/system-management/amend": {
+        "title": "数据订正"
+      },
+      "cita/system-management/fee-back": {
+        "title": "出块奖励返回"
+      },
+      "cita/system-management/version": {
+        "title": "协议版本号管理"
+      },
+      "cita/system-management/auto-exec": {
+        "title": "自动执行"
+      },
+      "cita/rpc-guide/rpc-types": {
+        "title": "JSON RPC Types"
+      },
+      "cita/system-contract-interface/node": {
+        "title": "共识节点管理合约接口"
+      },
+      "cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC Error Code"
+      },
+      "cita/system-contract-interface/auth": {
+        "title": "授权管理合约接口"
+      },
+      "cita/system-contract-interface/role-auth": {
+        "title": "角色授权合约接口"
+      },
+      "cita/system-contract-interface/permission": {
+        "title": "权限合约接口"
+      },
+      "cita/system-contract-interface/group": {
+        "title": "组合约接口"
+      },
+      "cita/system-contract-interface/group-management": {
+        "title": "组管理合约接口"
+      },
+      "cita/system-contract-interface/all-groups": {
+        "title": "所有组合约接口"
+      },
+      "cita/system-contract-interface/quota-price": {
+        "title": "配额价格管理合约接口"
+      },
+      "cita/system-contract-interface/batch": {
+        "title": "批量交易合约接口"
+      },
+      "cita/system-contract-interface/quota-manager": {
+        "title": "配额管理合约接口"
+      },
+      "cita/system-contract-interface/emergency-brake": {
+        "title": "紧急制动合约接口"
+      },
+      "cita/system-contract-interface/admin": {
+        "title": "Admin Contract Interface"
+      },
+      "cita/system-contract-interface/auto-exec": {
+        "title": "自动执行合约接口"
+      },
+      "cita/architecture/components": {
+        "title": "System Components"
+      },
+      "cita/architecture/consensus": {
+        "title": "Consensus"
+      },
+      "cita/architecture/transaction-process": {
+        "title": "Transaction Process"
+      },
+      "cita/protocol-upgrade/overview": {
+        "title": "Protocol Upgrade Overview"
+      },
+      "cita/protocol-upgrade/v0": {
+        "title": "v0 Protocol"
+      },
+      "cita/protocol-upgrade/v1": {
+        "title": "v1 Protocol"
+      },
+      "cita/reference/addresses": {
+        "title": "Reserved System Addresses"
+      },
+      "cita/architecture/view": {
+        "title": "View"
+      },
+      "cita/reference/glossary": {
+        "title": "Glossary"
+      },
+      "cita/cita-intro": {
+        "title": "Welcome to CITA"
+      },
+      "cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "cita/system-contract-interface/role-management": {
+        "title": "角色管理合约接口"
+      },
+      "version-0.17-cita/chain/config-tool": {
+        "title": "Chain Configuration"
+      },
       "version-0.17-cita/system-management/node": {
-        "title": "节点管理a"
+        "title": "Node Management"
       },
       "version-0.17-cita/architecture/architecture": {
-        "title": "系统架构"
+        "title": "Architecture"
       },
       "version-0.18-cita/chain/getting-started": {
-        "title": "快速入门"
+        "title": "Getting Started"
       },
       "version-0.18-cita/chain/config-tool": {
-        "title": "链级配置"
+        "title": "Chain Level Configuration"
       },
       "version-0.19-cita/chain/config-tool": {
-        "title": "链级配置"
+        "title": "Chain Level Configuration"
       },
       "version-0.19-cita/system-management/node": {
-        "title": "节点管理a"
+        "title": "Node Management"
       },
       "version-0.20-cita/system-management/node": {
-        "title": "节点管理a"
+        "title": "Node Management"
       },
       "version-0.20-cita/system-contract-interface/group-management": {
-        "title": "组管理合约接口"
+        "title": "Group Management Contract Interface"
       },
       "version-0.20-cita/architecture/architecture": {
         "title": "Architecture"
       },
-      "version-0.20.1-cita/system-contract-interface/error": {
+      "cita/system-management/node": {
+        "title": "节点管理"
+      },
+      "cita/architecture/architecture": {
+        "title": "Architecture"
+      },
+      "cita/system-contract-interface/error": {
         "title": "系统合约错误类型"
       },
+      "cita/getting-started": {
+        "title": "Getting Started"
+      },
+      "version-0.20.1-cita/getting-started": {
+        "title": "Getting Started"
+      },
+      "version-0.20.1-cita/system-contract-interface/error": {
+        "title": "System Contract Error Code"
+      },
       "version-0.18-cita/system-management/node": {
-        "title": "节点管理a"
+        "title": "Node Management"
       },
       "version-0.20-cita/system-management/permission": {
-        "title": "权限管理"
+        "title": "Permission Management"
       },
       "version-0.20.1-cita/system-management/permission": {
+        "title": "Permission Management"
+      },
+      "cita/system-management/permission": {
         "title": "权限管理"
       },
       "version-0.17-cita/system-management/permission": {
-        "title": "权限管理"
+        "title": "Permission Management"
       },
       "version-0.18-cita/system-management/permission": {
-        "title": "权限管理"
+        "title": "Permission Management"
       },
       "version-0.19-cita/system-management/permission": {
-        "title": "权限管理"
+        "title": "Permission Management"
       },
       "version-0.17-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
@@ -283,18 +451,23 @@
       "version-0.18-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       },
+      "cita/rpc-guide/rpc": {
+        "title": "JSON RPC"
+      },
       "version-0.20.1-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       }
     },
     "categories": {
+      "Getting Started": "Getting Started",
       "Configuration": "Configuration",
       "System Management": "System Management",
       "JSON-RPC": "JSON-RPC",
       "System Contract Interface": "System Contract Interface",
       "Architecture": "Architecture",
       "Protocol Upgrade": "Protocol Upgrade",
-      "Reference": "Reference"
+      "Reference": "Reference",
+      "Protocol-upgrade": "Protocol Upgrade"
     }
   }
 }

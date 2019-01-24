@@ -6,7 +6,7 @@
     "CITA": [
       "version-0.18-cita/cita-intro",
       {
-        "label": "快速入门",
+        "label": "Getting Started",
         "type": "subcategory",
         "ids": [
           "version-0.18-cita/chain/getting-started",
@@ -14,15 +14,15 @@
         ]
       },
       {
-        "label": "系统管理",
+        "label": "System Management",
         "type": "subcategory",
         "ids": [
           "version-0.18-cita/system-management/node",
           "version-0.18-cita/system-management/permission",
-          "version-0.18-cita/system-management/user",
-          "version-0.18-cita/system-management/quota",
+          "version-0.17-cita/system-management/user",
+          "version-0.17-cita/system-management/quota",
           "version-0.18-cita/system-management/log",
-          "version-0.18-cita/system-management/sys",
+          "version-0.18-cita/system-management/system",
           "version-0.18-cita/system-management/snapshot",
           "version-0.18-cita/system-management/batch-tx"
         ]
@@ -37,19 +37,19 @@
         ]
       },
       {
-        "label": "架构设计",
+        "label": "Architecture",
         "type": "subcategory",
         "ids": [
-          "version-0.18-cita/architecture/architecture",
-          "version-0.18-cita/architecture/components",
-          "version-0.18-cita/architecture/consensus",
-          "version-0.18-cita/architecture/transaction-process",
-          "version-0.18-cita/architecture/view"
+          "version-0.17-cita/architecture/architecture",
+          "version-0.17-cita/architecture/components",
+          "version-0.17-cita/architecture/consensus",
+          "version-0.17-cita/architecture/transaction-process",
+          "version-0.17-cita/architecture/view"
         ]
       },
       "version-0.18-cita/crosschain/crosschain-contract-example",
       {
-        "label": "参考",
+        "label": "Reference",
         "type": "subcategory",
         "ids": [
           "version-0.18-cita/reference/addresses",
@@ -58,8 +58,7 @@
         ]
       }
     ],
-    "Toolchain": [
-      {
+    "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": [
@@ -77,7 +76,7 @@
         ]
       },
       {
-        "label": "Rebirth",
+        "label": "ReBirth",
         "type": "subcategory",
         "ids": [
           "version-0.18-toolchain/rebirth/rebirth-intro"

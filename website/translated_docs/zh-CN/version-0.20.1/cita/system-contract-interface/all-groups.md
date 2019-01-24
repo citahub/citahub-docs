@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-all-groups
-title: 所有组合约接口
+title: All-Group Contract Interface
 original_id: all-groups
 ---
 

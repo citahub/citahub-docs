@@ -1,28 +1,27 @@
 ---
 id: version-0.17-rpc-error-code
-title: JSON RPC 错误码
-sidebar_label: JSON RPC 错误码
+title: JSON RPC Error Code
 original_id: rpc-error-code
 ---
 
-## JSON RPC标准错误码
+## JSON RPC 标准错误码
 
- | 错误码              | 错误消息        | 描述              |
- | ----------------  | :------------ | :---------------|
- | -32700             | 解析错误        | 非Json格式数据     |
- | -32600             | 请求错误        | 含有错误的请求值    |
- | -32601             | 请求服务方法错误 | 调用方法不存在或错误 |
- | -32602             | 非法参数        | 调用方法参数错误    |
- | -32603             | 内部错误        | 内部错误(NotReady)           |
- | -32003             | 查询类错误      | 见示例             |
- | -32006             | 交易认证类错误   | 见示例(InvalidNonce,Dup,InvalidUntilBlock,BadSig,Buy)             |
- | -32099             | 请求超时        | 见示例(system time out,please resend)             |
+| 错误码 | 错误消息         | 描述                                                  |
+| ------ | :--------------- | :---------------------------------------------------- |
+| -32700 | 解析错误         | 非 Json 格式数据                                      |
+| -32600 | 请求错误         | 含有错误的请求值                                      |
+| -32601 | 请求服务方法错误 | 调用方法不存在或错误                                  |
+| -32602 | 非法参数         | 调用方法参数错误                                      |
+| -32603 | 内部错误         | 内部错误(NotReady)                                    |
+| -32003 | 查询类错误       | 见示例                                                |
+| -32006 | 交易认证类错误   | 见示例(InvalidNonce,Dup,InvalidUntilBlock,BadSig,Buy) |
+| -32099 | 请求超时         | 见示例(system time out,please resend)                 |
 
 ## 错误示例
 
 ### 交易错误
 
-``` json
+```json
 //request 发送交易
 curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
 
@@ -106,7 +105,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 
 ### 请求超时
 
-``` json
+```json
 //request 发送交易
 curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
    //result
@@ -122,7 +121,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 
 ### 请求错误
 
-``` json
+```json
 //request 应发送POST请求，而不是GET请求
 curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"1"}' 127.0.0.1:1337 | jq
 
@@ -139,7 +138,7 @@ curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"1"}' 1
 
 ### 调用方法错误
 
-``` json
+```json
 //request
 curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337 | jq
 
@@ -156,7 +155,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}'
 
 ### 非法参数
 
-``` json
+```json
 //request 参数不能是十进制整数,需要是十六进制
 curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[249, true],"id":1}' 127.0.0.1:1337 | jq
 
@@ -188,7 +187,7 @@ curl -X POST -d '{"jsonrpc":"2.0","method":"getTransaction","params":["0x0063187
 
 ### 其他错误信息
 
-``` json
+```json
 //request 交易个数为０或者地址不正确
 curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["5b073e9233944b5e729e46d618f0d8edf3d9c342",2],"id":1}' 127.0.0.1:1337 | jq
 

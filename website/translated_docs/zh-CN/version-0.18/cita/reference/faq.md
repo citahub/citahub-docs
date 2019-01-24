@@ -2,7 +2,7 @@
 id: version-0.18-faq
 title: FAQ
 sidebar_label: FAQ
-original_id: faq
+original_id: FAQ
 ---
 ## CITA 是如何防止双花的？
 

@@ -1,7 +1,7 @@
 ---
 id: version-0.20.1-crosschain-contract-example
-title: Crosschain Contract Example
-sidebar_label: Crosschain
+title: 跨链合约示例
+sidebar_label: 跨链
 original_id: crosschain-contract-example
 ---
 ## 跨链合约编写

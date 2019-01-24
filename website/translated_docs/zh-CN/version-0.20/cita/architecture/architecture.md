@@ -1,6 +1,6 @@
 ---
 id: version-0.20-architecture
-title: Architecture
+title: 架构设计
 original_id: architecture
 ---
 ## 微服务

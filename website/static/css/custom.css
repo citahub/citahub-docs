@@ -18,15 +18,15 @@ a.navItem {
   cursor: default;
 }
 
-.navGroup.subNavGroup h4+ul {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-}
+/* .navGroup.subNavGroup h4+ul { */
+/* max-height: 0; */
+/* overflow: hidden; */
+/* transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); */
+/* } */
 
-.navGroup.subNavGroup h4.expand+ul {
-  max-height: none;
-}
+/* .navGroup.subNavGroup h4.expand+ul { */
+/* max-height: none; */
+/* } */
 
 .post article a {
   color: #C71810;

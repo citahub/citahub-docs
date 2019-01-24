@@ -1,7 +1,6 @@
 ---
 id: version-0.17-txtool
-title: TXTOOL
-sidebar_label: 关于 TXTOOL
+title: About Txtool
 original_id: txtool
 ---
 
@@ -63,13 +62,13 @@ optional arguments:
   --no-newcrypto
 ```
 
-* 使用 secp256k1 签名算法和 sha3 hash算法
+- 使用 secp256k1 签名算法和 sha3 hash 算法
 
 ```shell
 python3 generate_account.py
 ```
 
-* 使用 ed25519 签名算法和blake2b hash算法
+- 使用 ed25519 签名算法和 blake2b hash 算法
 
 ```shell
 python3 generate_account.py --newcrypto

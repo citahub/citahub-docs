@@ -1,6 +1,6 @@
 ---
 id: version-0.20-contracts
-title: 系统合约
+title: System Contracts
 original_id: contracts
 ---
 

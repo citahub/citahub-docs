@@ -1,7 +1,6 @@
 ---
 id: version-0.17-quota
-title: 配额管理
-sidebar_label: 配额管理
+title: Quota Management
 original_id: quota
 ---
  
@@ -10,18 +9,18 @@ original_id: quota
 
 通过配额管理合约实现对区块(中的视图）以及用户配额消耗上限的管理:
 
-* 设置区块配额上限即为每个区块设置统一的配额上限;
-* 设置账号配额上限包括:
+- 设置区块配额上限即为每个区块设置统一的配额上限;
+- 设置账号配额上限包括:
     
-    * 默认的账号配额上限，全局设置，即若账号未指定配额上限，默认为此值;
-    * 设置指定账号配额上限，可针对不同用户灵活分配对应的配额上限。
+    - 默认的账号配额上限，全局设置，即若账号未指定配额上限，默认为此值;
+    - 设置指定账号配额上限，可针对不同用户灵活分配对应的配额上限。
 
-## 配额管理合约接口
+## Quota Management Contract Interface
 
 说明:
 
-* BQL: BlockQuotaLimit 缩写
-* AQL: AccountQuotaLimit 缩写
+- BQL: BlockQuotaLimit 缩写
+- AQL: AccountQuotaLimit 缩写
 
 <table>
   <tr>

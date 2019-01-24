@@ -1,14 +1,13 @@
 ---
 id: version-0.17-rpc-error-code
-title: JSON RPC 错误码
-sidebar_label: JSON RPC 错误码
+title: JSON RPC Error Code
 original_id: rpc-error-code
 ---
-## JSON RPC标准错误码
+## JSON RPC 标准错误码
 
 | 错误码    | 错误消息     | 描述                                                 |
 | ------ |:-------- |:-------------------------------------------------- |
-| -32700 | 解析错误     | 非Json格式数据                                          |
+| -32700 | 解析错误     | 非 Json 格式数据                                        |
 | -32600 | 请求错误     | 含有错误的请求值                                           |
 | -32601 | 请求服务方法错误 | 调用方法不存在或错误                                         |
 | -32602 | 非法参数     | 调用方法参数错误                                           |

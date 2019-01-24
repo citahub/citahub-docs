@@ -6,7 +6,7 @@
     "CITA": [
       "version-0.19-cita/cita-intro",
       {
-        "label": "快速入门",
+        "label": "Getting Started",
         "type": "subcategory",
         "ids": [
           "version-0.19-cita/chain/getting-started",
@@ -14,16 +14,16 @@
         ]
       },
       {
-        "label": "系统管理",
+        "label": "System Management",
         "type": "subcategory",
         "ids": [
           "version-0.19-cita/system-management/node",
           "version-0.19-cita/system-management/permission",
-          "version-0.19-cita/system-management/user",
+          "version-0.17-cita/system-management/user",
           "version-0.19-cita/system-management/quota",
-          "version-0.19-cita/system-management/log",
-          "version-0.19-cita/system-management/sys",
-          "version-0.19-cita/system-management/snapshot",
+          "version-0.18-cita/system-management/log",
+          "version-0.18-cita/system-management/system",
+          "version-0.18-cita/system-management/snapshot",
           "version-0.19-cita/system-management/batch-tx",
           "version-0.19-cita/system-management/emergency-brake",
           "version-0.19-cita/system-management/amend",
@@ -36,23 +36,23 @@
         "ids": [
           "version-0.19-cita/rpc-guide/rpc-types",
           "version-0.19-cita/rpc-guide/rpc",
-          "version-0.19-cita/rpc-guide/rpc-error-code"
+          "version-0.18-cita/rpc-guide/rpc-error-code"
         ]
       },
       {
-        "label": "架构设计",
+        "label": "Architecture",
         "type": "subcategory",
         "ids": [
-          "version-0.19-cita/architecture/architecture",
-          "version-0.19-cita/architecture/components",
-          "version-0.19-cita/architecture/consensus",
-          "version-0.19-cita/architecture/transaction-process",
-          "version-0.19-cita/architecture/view"
+          "version-0.17-cita/architecture/architecture",
+          "version-0.17-cita/architecture/components",
+          "version-0.17-cita/architecture/consensus",
+          "version-0.17-cita/architecture/transaction-process",
+          "version-0.17-cita/architecture/view"
         ]
       },
       "version-0.19-cita/crosschain/crosschain-contract-example",
       {
-        "label": "协议升级",
+        "label": "Protocol Upgrade",
         "type": "subcategory",
         "ids": [
           "version-0.19-cita/protocol-upgrade/overview",
@@ -61,12 +61,11 @@
         ]
       },
       {
-        "label": "参考",
+        "label": "Reference",
         "type": "subcategory",
         "ids": [
           "version-0.19-cita/reference/addresses",
-          "version-0.19-cita/reference/glossary",
-          "version-0.19-cita/reference/glossary"
+          "version-0.18-cita/reference/glossary"
         ]
       }
     ],
@@ -88,7 +87,7 @@
         ]
       },
       {
-        "label": "Rebirth",
+        "label": "ReBirth",
         "type": "subcategory",
         "ids": [
           "version-0.19-toolchain/rebirth/rebirth-intro"

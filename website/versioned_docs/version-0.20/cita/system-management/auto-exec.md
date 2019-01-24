@@ -1,6 +1,6 @@
 ---
 id: version-0.20-autu-exec
-title: 自动执行
+title: Auto Execution
 original_id: autu-exec
 ---
 

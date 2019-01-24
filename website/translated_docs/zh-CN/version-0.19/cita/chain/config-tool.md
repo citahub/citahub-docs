@@ -1,7 +1,6 @@
 ---
 id: version-0.19-config-tool
-title: 链级配置
-sidebar_label: 链级配置
+title: Chain Level Configuration
 original_id: config-tool
 ---
 ## 主要功能
@@ -52,7 +51,15 @@ optional arguments:
   --ws_port WS_PORT     websocket port for this chain
 ```
 
-注意： 1. 配置工具会创建以chain_name为名称的文件夹，如果没有传递该参数则默认为 `test-chain` 。该文件夹里面再按节点序号创建0，1，2等节点文件夹，分别存放每个节点的配置文件。 2. 为了方便测试时多个节点在同一台服务器上运行。 grpc，jsonrpc，ws_port等参数指定的端口号是一个起始端口号。 节点实际使用的端口号，按照节点排列顺序顺延，即port+n（n为节点序号）。 比如总共4个节点，传递grpc_port参数为7000。则test-chain/0的grpc端口号为7000，test-chain/1的grpc端口号为7001，等等。 3. CITA有一些保留端口，设置节点网络端口，或者自定义端口的时候要避免产生端口冲突。保留端口有： - 默认的grpc端口：5000到5000+N（N为节点总数,以下相同） - 默认的jsonrpc端口：1337到1337+N - 默认的websocket端口：4337到4337+N - 默认的rabbitmq端口：4369(epmd)/25672(Erlang distribution)/5671，5672(AMQP)/15672(management plugin)
+注意：
+
+1. 配置工具会创建以 chain_name 为名称的文件夹，如果没有传递该参数则默认为 `test-chain` 。该文件夹里面再按节点序号创建 0，1，2 等节点文件夹，分别存放每个节点的配置文件。
+2. 为了方便测试时多个节点在同一台服务器上运行。 grpc，jsonrpc，ws_port 等参数指定的端口号是一个起始端口号。 节点实际使用的端口号，按照节点排列顺序顺延，即 port+n（n 为节点序号）。 比如总共 4 个节点，传递 grpc_port 参数为 7000。则 test-chain/0 的 grpc 端口号为 7000，test-chain/1 的 grpc 端口号为 7001，等等。
+3. CITA 有一些保留端口，设置节点网络端口，或者自定义端口的时候要避免产生端口冲突。保留端口有： 
+  - 默认的 grpc 端口：5000 到 5000+N（N 为节点总数,以下相同）
+  - 默认的 jsonrpc 端口：1337 到 1337+N
+  - 默认的 websocket 端口：4337 到 4337+N
+  - 默认的 rabbitmq 端口：4369(epmd)/25672(Erlang distribution)/5671，5672(AMQP)/15672(management plugin)
 
 参数解释：
 
@@ -62,14 +69,13 @@ optional arguments:
 
 - `contract_arguments` : 设定系统合约的默认值，这个参数具体的信息请详细查看系统合约文档
   
-  例如：
-  
-      - `--contract_arguments "SysConfig.chainId=1"` 链的 chain_id 值设为1，默认为随机数
-      - `--contract_arguments "SysConfig.economicalModel=0"` 链的经济模型设为 quota，默认为 quota(0), 其他选项有 charge(1)
-        (***此模型下只有`super_admin`账户及节点地址有余额***)
-      - `--contract_arguments "SysConfig.checkFeeBackPlatform=true"` 交易激励返回链的持有者（运营方），为 false 时，交易激励返回共识节点
-      - `--contract_arguments "SysConfig.chainOwner=0x0000000000000000000000000000000000000000"` 运营方地址，默认全0
+          例如：
       
+  
+  - `--contract_arguments "SysConfig.chainId=1"` 链的 chain_id 值设为 1，默认为随机数
+  - `--contract_arguments "SysConfig.economicalModel=0"` 链的经济模型设为 quota，默认为 quota(0), 其他选项有 charge(1) (***此模型下只有`super_admin`账户及节点地址有余额***)
+  - `--contract_arguments "SysConfig.checkFeeBackPlatform=true"` 交易激励返回链的持有者（运营方），为 false 时，交易激励返回共识节点
+  - `--contract_arguments "SysConfig.chainOwner=0x0000000000000000000000000000000000000000"` 运营方地址，默认全 0
 
 ## setup
 
@@ -84,7 +90,7 @@ $ ls test-chain/
 相对应给出的参数，生成 4 个节点，`test-chain/*` 里面包含节点的配置文件，具体如下：
 
 - 生成私钥和地址，私钥存放在 `test-chain/*/privkey`，其中 `*` 为节点号；而所有节点地址都存放在 `test-chain/template/authorities`；
-- 生成网络配置文件，存放在 `test-chain/*/network.toml`，文件内容主要为总节点数、本地节点端口以及其它节点的ip和端口号；
+- 生成网络配置文件，存放在 `test-chain/*/network.toml`，文件内容主要为总节点数、本地节点端口以及其它节点的 ip 和端口号；
 - 生成 genesis 块文件，存放在 `test-chain/*/genesis.json`， 其中 timestamp 为时间戳，秒为单位；prevhash 指前一个块哈希，这里是默认值；而 alloc 指部署到创世块的合约内容；
 - 生成节点配置文件，存放在 `test-chain/*/consensus.toml`，主要包含共识算法的相关参数；
 - 生成 jsonrpc 配置文件，存放在 `test-chain/*/jsonrpc.toml`，主要包含 jsonrpc 模块的相关参数。
@@ -137,8 +143,8 @@ grpc_port = 5000
 其中:
 
 - `prooftype`: 表示当前使用的共识算法，0 表示采用的 Poa 算法、1 表示采用的 Raft 算法、2 表示采用的 CITA-BFT 算法，默认采用 CITA-BFT 算法。
-- `journaldb_type`: 表示当前使用的 JournalDB 算法，有 "archive" "light" "fast" "basic" 等4种类型，默认是 archive。
-- `grpc_port`: grpc端口
+- `journaldb_type`: 表示当前使用的 JournalDB 算法，有 "archive" "light" "fast" "basic" 等 4 种类型，默认是 archive。
+- `grpc_port`: grpc 端口
 
 #### cita-auth
 
@@ -169,13 +175,13 @@ grpc_port = 5000
 
 其中：
 
-- `enabled`: 表示开启ntp
+- `enabled`: 表示开启 ntp
 - `threshold`: 表示时间偏移的阀值
-- `address`: 表示ntp服务器地址
+- `address`: 表示 ntp 服务器地址
 
 ## 系统合约
 
-系统合约是从 genesis 块开始就部署到链上的用来实现特定功能的合约，它的合约地址写在genesis 块里，是固定的地址。
+系统合约是从 genesis 块开始就部署到链上的用来实现特定功能的合约，它的合约地址写在 genesis 块里，是固定的地址。
 
 CITA 里主要的系统合约有配置合约、共识节点管理合约、配额管理合约、权限管理合约及用户管理合约等。
 
@@ -183,7 +189,7 @@ CITA 里主要的系统合约有配置合约、共识节点管理合约、配额
 
 其中:
 
-- `0xffffffffffffffffffffffffffffffffff020000`: 代表配置合约SysConfig。
+- `0xffffffffffffffffffffffffffffffffff020000`: 代表配置合约 SysConfig。
 - `0xffffffffffffffffffffffffffffffffff020001`: 代表共识节点管理系统合约地址。
 - `0xffffffffffffffffffffffffffffffffff020003`: 代表配额管理系统合约地址。
 - `0xffffffffffffffffffffffffffffffffff020002`: 代表链信息管理系统合约地址。

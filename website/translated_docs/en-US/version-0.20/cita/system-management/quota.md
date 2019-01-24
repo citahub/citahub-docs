@@ -1,6 +1,6 @@
 ---
 id: version-0.20-quota
-title: 配额管理
+title: Quota Management
 original_id: quota
 ---
 ## 简述

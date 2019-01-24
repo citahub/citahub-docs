@@ -1,6 +1,6 @@
 ---
 id: version-0.20-snapshot
-title: 快照
+title: Snapshot
 original_id: snapshot
 ---
 # 快照

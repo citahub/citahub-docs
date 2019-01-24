@@ -1,7 +1,6 @@
 ---
 id: version-0.18-addresses
-title: 系统保留地址列表
-sidebar_label: 系统保留地址列表
+title: 保留系统地址列表
 original_id: addresses
 ---
 !> **系统保留地址更改！** 老版本用户请注意，为了让地址更加规范，最新版本的 CITA 将 0.16 版本及之前版本中无规律的系统保留地址规范到了一个地址段内。
@@ -54,7 +53,7 @@ original_id: addresses
 | 0xffffffffffffffffffffffffffffffffff020009 |          |
 | 0xffffffffffffffffffffffffffffffffff02000a | 用户组管理    |
 | 0xffffffffffffffffffffffffffffffffff02000b | 创建用户组    |
-| 0xffffffffffffffffffffffffffffffffff02000c | admin管理  |
+| 0xffffffffffffffffffffffffffffffffff02000c | admin 管理 |
 | 0xffffffffffffffffffffffffffffffffff02000d | 角色授权     |
 | 0xffffffffffffffffffffffffffffffffff02000e | 批量交易     |
 | 0xffffffffffffffffffffffffffffffffff021000 | 发送交易     |

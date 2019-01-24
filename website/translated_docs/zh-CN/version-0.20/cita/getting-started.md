@@ -1,6 +1,6 @@
 ---
 id: version-0.20-getting-started
-title: Getting Started
+title: 快速开始
 original_id: getting-started
 ---
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。

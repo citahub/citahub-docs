@@ -1,6 +1,6 @@
 ---
 id: version-0.20-group
-title: 组合约接口
+title: Group Contract Interface
 original_id: group
 ---
 

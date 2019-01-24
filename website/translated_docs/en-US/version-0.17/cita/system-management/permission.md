@@ -1,18 +1,17 @@
 ---
 id: version-0.17-permission
-title: 权限管理
-sidebar_label: 权限管理
+title: Permission Management
 original_id: permission
 ---
-CITA实现了对账户的权限管理，并支持基于角色的权限管理。
+CITA 实现了对账户的权限管理，并支持基于角色的权限管理。
 
-CITA通过智能合约的方式来对权限进行管理。
+CITA 通过智能合约的方式来对权限进行管理。
 
 ## 账户概述
 
-* 账户(account)： 链上唯一的标识，权限管理的主体对象。 
-    * 外部账户： 拥有公私钥对，可发送交易的用户。
-    * 合约账户： 拥有相关的代码(code)及存储(storage)。
+- 账户(account)： 链上唯一的标识，权限管理的主体对象。 
+  - 外部账户： 拥有公私钥对，可发送交易的用户。
+  - 合约账户： 拥有相关的代码(code)及存储(storage)。
 
 目前权限管理针对外部账户进行细粒度管理。CITA 默认集成了 superAdmin 账户，拥有权限管理涉及到的所有权限。在 CITA 启动前可以对 superAdmin 进行配置。 在权限系统开启时，由用户生成的外部账户，在 CITA 系统中没有任何权限，需要 superAdmin 对其进行授权。
 
@@ -26,25 +25,25 @@ CITA通过智能合约的方式来对权限进行管理。
 
 用户可自定义权限，其中系统内置了几种权限(禁止对其进行删除操作)，如下所示：
 
-* `sendTx`: 表示发交易的权限
-* `createContract`: 表示创建合约的权限
-* `newPermission`: 表示创建一个新的权限的权限
-* `deletePermission`: 表示删除一个权限的权限
-* `updatePermission`: 表示更新一个权限的权限
-* `setAuth`: 表示对账号进行授权的权限
-* `cancelAuth`: 表示对帐号取消授权的权限
-* `newRole`: 表示创建一个新的角色的权限
-* `deleteRole`: 表示删除一个角色的权限
-* `updateRole`: 表示更新一个角色的权限
-* `setRole`: 表示对账号授予角色的权限
-* `cancelRole`: 表示对帐号取消授予的角色的权限
-* `newGroup`: 表示创建一个新的组的权限
-* `deleteGroup`: 表示删除一个组的权限
-* `updateGroup`: 表示更新一个组的权限
+- `sendTx`: 表示发交易的权限
+- `createContract`: 表示创建合约的权限
+- `newPermission`: 表示创建一个新的权限的权限
+- `deletePermission`: 表示删除一个权限的权限
+- `updatePermission`: 表示更新一个权限的权限
+- `setAuth`: 表示对账号进行授权的权限
+- `cancelAuth`: 表示对帐号取消授权的权限
+- `newRole`: 表示创建一个新的角色的权限
+- `deleteRole`: 表示删除一个角色的权限
+- `updateRole`: 表示更新一个角色的权限
+- `setRole`: 表示对账号授予角色的权限
+- `cancelRole`: 表示对帐号取消授予的角色的权限
+- `newGroup`: 表示创建一个新的组的权限
+- `deleteGroup`: 表示删除一个组的权限
+- `updateGroup`: 表示更新一个组的权限
 
 系统内置了 superAdmin 的帐号，其拥有以上所有权限，可对其进行正常的权限管理。默认配置情况下其他普通账户也拥有以上权限，建议在初始化 CITA 系统前对权限管理进行配置。
 
-### 权限管理合约接口
+### Permission Management Contract Interface
 
 #### 操作类接口
 
@@ -314,28 +313,29 @@ CITA通过智能合约的方式来对权限进行管理。
 
 ### 修改系统配置
 
-* 演示中 superAdmin 密钥对如下： 
-    * 公钥： `0x9dcd6b234e2772c5451fd4ccf7582f4283140697`
-    * 私钥： `993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9`
+- 演示中 superAdmin 密钥对如下： 
+  - 公钥： `0x9dcd6b234e2772c5451fd4ccf7582f4283140697`
+  - 私钥： `993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9`
 
-* 通过以下命令生成各节点。
-    
-    ```shell
-    $ ./scripts/create_cita_config.py create --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" \
-                                             --super_admin "0x9dcd6b234e2772c5451fd4ccf7582f4283140697" \
-                                             --contract_arguments SysConfig.checkPermission=true
-    ```
+- 通过以下命令生成各节点。
+  
+          ``` shell
+          $ ./scripts/create_cita_config.py create --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" \
+                                                   --super_admin "0x9dcd6b234e2772c5451fd4ccf7582f4283140697" \
+                                                   --contract_arguments SysConfig.checkPermission=true
+          ```
+      
 
-用户生成普通账户，由super_admin账户对其进行授权，实现权限管理。使用super_admin的私钥调用的接口由管理员执行，使用用户john的私钥由用户john执行。
+用户生成普通账户，由 super_admin 账户对其进行授权，实现权限管理。使用 super_admin 的私钥调用的接口由管理员执行，使用用户 john 的私钥由用户 john 执行。
 
 ### 生成普通账户
 
-用户可以自己生成公私钥对。也可以使用CITA提供的工具`create_key_addr`生成。例如用户john通过工具生成如下密钥。
+用户可以自己生成公私钥对。也可以使用 CITA 提供的工具`create_key_addr`生成。例如用户 john 通过工具生成如下密钥。
 
 根据输入的字符串"john"使用`./bin/create_key_addr /tmp/privKey "john"`命令生成账户地址:
 
-* `/tmp/privKey`文件内容为工具生成的私钥
-* `john`为当前目录下生成以之命名的文件记录账户地址。
+- `/tmp/privKey`文件内容为工具生成的私钥
+- `john`为当前目录下生成以之命名的文件记录账户地址。
 
 ```shell
 $./bin/create_key_addr /tmp/privKey "john"
@@ -347,7 +347,7 @@ a71f68fd5f0a64c0a66737357ec6e491c5bab8e001f8d7116252c22a9a4f03b4
 
 ### 部署合约
 
-拥有私钥用户john需要部署如下合约，默认时用户john没有部署权限，需要由superAdmin授权。
+拥有私钥用户 john 需要部署如下合约，默认时用户 john 没有部署权限，需要由 superAdmin 授权。
 
 合约内容：
 
@@ -374,7 +374,7 @@ contract Advance {
 
 #### 获得合约的字节码
 
-用户john执行如下操作：
+用户 john 执行如下操作：
 
 ```shell
 $solc /home/king/work/doc/Advance.sol --bin
@@ -382,7 +382,7 @@ Binary:
 606060405260008055341561001357600080fd5b60f2806100216000396000f3006060604052600436106053576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f2be91f1460585780636d4ce63c14606a578063d826f88f146090575b600080fd5b3415606257600080fd5b606860a2565b005b3415607457600080fd5b607a60b4565b6040518082815260200191505060405180910390f35b3415609a57600080fd5b60a060bd565b005b60016000808282540192505081905550565b60008054905090565b600080819055505600a165627a7a72305820906dc3fa7444ee6bea2e59c94fe33064e84166909760c82401f65dfecbd307d50029
 ```
 
-得到合约字节码后，就可以将其部署到CITA链上了，部署的方法已经用python脚本封装，只需要传入私钥和字节码即可。python脚本存放的位置为`scripts/txtool/txtool`，具体安装和使用方法可以参考目录下的`README.md`文件。
+得到合约字节码后，就可以将其部署到 CITA 链上了，部署的方法已经用 python 脚本封装，只需要传入私钥和字节码即可。python 脚本存放的位置为`scripts/txtool/txtool`，具体安装和使用方法可以参考目录下的`README.md`文件。
 
 ```shell
 ######用户john部署合约
@@ -404,7 +404,7 @@ $python3 send_tx.py
 }
 ```
 
-其中`--privkey`为用户john的账号私钥，`--code`为`Advance.sol`的字节码。 status为OK，默认配置时表示合约已经发送成功。但此时我们已修改了默认配置，打开权限管理，首先需要获得发送交易及创建合约的权限。
+其中`--privkey`为用户 john 的账号私钥，`--code`为`Advance.sol`的字节码。 status 为 OK，默认配置时表示合约已经发送成功。但此时我们已修改了默认配置，打开权限管理，首先需要获得发送交易及创建合约的权限。
 
 这种情况获得的回执并没有合约地址(`contractAddress:null`)、并且`errorMessage:"No transaction permission."`，表示此账户还未获得发送交易的权限。回执信息如下：
 
@@ -427,33 +427,35 @@ $python3 get_receipt.py
 
 #### 部署合约
 
-由于用户john的账户没有部署权限，需要通过superAdmin对其授sendTx发送交易及createContract创建合约权限。
+由于用户 john 的账户没有部署权限，需要通过 superAdmin 对其授 sendTx 发送交易及 createContract 创建合约权限。
 
-* 授予发送交易权限
-    
-    ```shell
-    ######调用系统合约setAuthorization对用户john授予sendTx权限，createContract对应的ID为0x1，ID作为setAuthorization的第二个参数
-    $python3 make_tx.py --privkey "993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9" --to "ffffffffffffffffffffffffffffffffff020004" --code "0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000001"
-    $python3 send_tx.py
-    $python3 get_receipt.py
-    ```
+- 授予发送交易权限
+  
+          ```shell
+          ######调用系统合约setAuthorization对用户john授予sendTx权限，createContract对应的ID为0x1，ID作为setAuthorization的第二个参数
+          $python3 make_tx.py --privkey "993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9" --to "ffffffffffffffffffffffffffffffffff020004" --code "0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000001"
+          $python3 send_tx.py
+          $python3 get_receipt.py
+          ```
+      
 
-其中`--to`为权限管理的系统合约地址，`--code`前`0x0f5aa9f3`为系统合约的setAuthorization接口，其后紧跟需要授权地址和所授权限。`0x1`表示sendTx发送权限。
+其中`--to`为权限管理的系统合约地址，`--code`前`0x0f5aa9f3`为系统合约的 setAuthorization 接口，其后紧跟需要授权地址和所授权限。`0x1`表示 sendTx 发送权限。
 
-* 授予创建合约权限
-    
-    ```shell
-    ######调用系统合约setAuthorization对用户john授予createContract权限，createContract对应的ID为0x2，ID作为setAuthorization的第二个参数
-    $python3 make_tx.py --privkey "993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9" --to "ffffffffffffffffffffffffffffffffff020004" --code "0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000002"
-    $python3 send_tx.py
-    $python3 get_receipt.py
-    ```
+- 授予创建合约权限
+  
+          ```shell
+          ######调用系统合约setAuthorization对用户john授予createContract权限，createContract对应的ID为0x2，ID作为setAuthorization的第二个参数
+          $python3 make_tx.py --privkey "993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9" --to "ffffffffffffffffffffffffffffffffff020004" --code "0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000002"
+          $python3 send_tx.py
+          $python3 get_receipt.py
+          ```
+      
 
-其中`--to`为权限管理的系统合约地址，`--code`前`0x0f5aa9f3`为系统合约的setAuthorization接口，其后紧跟需要授权地址和所授权限。0x2表示createContract创建合约权限。
+其中`--to`为权限管理的系统合约地址，`--code`前`0x0f5aa9f3`为系统合约的 setAuthorization 接口，其后紧跟需要授权地址和所授权限。0x2 表示 createContract 创建合约权限。
 
-* 再次部署合约
+- 再次部署合约
 
-权限授予成功后用户john重做第一步，成功获得合约地址，表示合约部署成功。成功回执信息如下：
+权限授予成功后用户 john 重做第一步，成功获得合约地址，表示合约部署成功。成功回执信息如下：
 
 ```shell
 ######再次部署合约
@@ -475,11 +477,11 @@ $python3 send_tx.py
 }
 ```
 
-回执`errorMessage`返回值为null，此时Advance合约由用户john成功部署到CITA链上。但是此时的合约还没有用户能够使用(superAdmin除外)，用户john需要调用Advance合约还需要superAdmin用户给予授权。
+回执`errorMessage`返回值为 null，此时 Advance 合约由用户 john 成功部署到 CITA 链上。但是此时的合约还没有用户能够使用(superAdmin 除外)，用户 john 需要调用 Advance 合约还需要 superAdmin 用户给予授权。
 
 ### 生成新的权限
 
-通过superAdmin授予用户john的账户newPermission权限，回执中`errorMessage`返回值为`null`，表示成功生成新权限。
+通过 superAdmin 授予用户 john 的账户 newPermission 权限，回执中`errorMessage`返回值为`null`，表示成功生成新权限。
 
 ```shell
 ######调用系统合约的newPermission生成新的权限
@@ -532,13 +534,13 @@ $python3 get_receipt.py
 
 其中
 
-* `--privkey` 为superAdmin的私钥
-* `--to` 为权限管理的合约地址
-* `--code` 前`0xfc4a089c`为newPermission接口hash值，后面为接口输入的参数 ("Advance_function",["0x47113fea5720d201b31ecf82a7da5ea3ed150255"],["0x4f2be91f"])， `0x47113fea5720d201b31ecf82a7da5ea3ed150255`为部署合约时生成的合约地址，`0x4f2be91f`为合约的add()方法。 执行成功从get_receipt.py回执logsi[0].address获得新的权限地址`0x3682affa243cb9536cb6989307c54e388198e709`。目前newPermission方法新生成的权限地址记录在`logs[0].address`中。
+- `--privkey` 为 superAdmin 的私钥
+- `--to` 为权限管理的合约地址
+- `--code` 前`0xfc4a089c`为 newPermission 接口 hash 值，后面为接口输入的参数 ("Advance_function",["0x47113fea5720d201b31ecf82a7da5ea3ed150255"],["0x4f2be91f"])， `0x47113fea5720d201b31ecf82a7da5ea3ed150255`为部署合约时生成的合约地址，`0x4f2be91f`为合约的 add()方法。 执行成功从 get_receipt.py 回执 logsi[0].address 获得新的权限地址`0x3682affa243cb9536cb6989307c54e388198e709`。目前 newPermission 方法新生成的权限地址记录在`logs[0].address`中。
 
 ### 使用新权限
 
-给用户john授予新的权限使其可以调用Advance.sol合约中的add方法。
+给用户 john 授予新的权限使其可以调用 Advance.sol 合约中的 add 方法。
 
 ```shell
 ######调用系统合约setAuthorization对用户john授予newPermission新生成的权限
@@ -547,7 +549,7 @@ $python3 send_tx.py
 $python3 get_receipt.py
 ```
 
-用户john获得权限后就能使用Advance.add方法，`errorMessage:null`表示成功调用。
+用户 john 获得权限后就能使用 Advance.add 方法，`errorMessage:null`表示成功调用。
 
 ```shell
 #####用户john调用Advance合约的add方法
@@ -569,7 +571,7 @@ $python3 get_receipt.py
 }
 ```
 
-用户john通过合约的get方法可以获得add方法的结果。
+用户 john 通过合约的 get 方法可以获得 add 方法的结果。
 
 ```shell
 $curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"to":"0x47113fea5720d201b31ecf82a7da5ea3ed150255","data":"0x6d4ce63c"}, "latest"],"id":2}' 127.0.0.1:1337|jq
@@ -580,13 +582,13 @@ $curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"to":"0x47113f
 }
 ```
 
-其中`to`参数为john之前部署成功后的合约地址、`data`为合约的get方法。result成功返回调用add方法的结果。
+其中`to`参数为 john 之前部署成功后的合约地址、`data`为合约的 get 方法。result 成功返回调用 add 方法的结果。
 
-致此用户john获得sendTx、createContract以及0x3682affa243cb9536cb6989307c54e388198e709新权限。操作类接口的其它接口如添加删除资源等参照以上调用方式使用。
+致此用户 john 获得 sendTx、createContract 以及 0x3682affa243cb9536cb6989307c54e388198e709 新权限。操作类接口的其它接口如添加删除资源等参照以上调用方式使用。
 
 ### 查询账户权限
 
-查询账户权限非发送交易方式，调用合约内容直接调用jsonrpc中的`call`接口。
+查询账户权限非发送交易方式，调用合约内容直接调用 jsonrpc 中的`call`接口。
 
 ```shell
 ######调用系统合约queryPermissions方法查询用户john权限
@@ -598,12 +600,12 @@ $curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"to":"0xffffff
 }
 ```
 
-其中params中:
+其中 params 中:
 
-* `to`参数，为queryPermissions所在系统合约地址；
-* `data`为调用`call`的输入参数，由queryPermissions的hash和queryPermissions参数组成。
+- `to`参数，为 queryPermissions 所在系统合约地址；
+- `data`为调用`call`的输入参数，由 queryPermissions 的 hash 和 queryPermissions 参数组成。
 
-result返回给用户john的所有权限，包括sendTx、createContract以及0x3682affa243cb9536cb6989307c54e388198e709新权限。
+result 返回给用户 john 的所有权限，包括 sendTx、createContract 以及 0x3682affa243cb9536cb6989307c54e388198e709 新权限。
 
 ```shell
 ######调用系统合约queryResource方法查询新权限0x3682affa243cb9536cb6989307c54e388198e709内容
@@ -615,7 +617,7 @@ $curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"to":"0x3682af
 }
 ```
 
-result返回新权限包括john部署的合约地址及相应add方法。
+result 返回新权限包括 john 部署的合约地址及相应 add 方法。
 
 查询类接口的其它接口参照以上调用方式使用。
 
@@ -623,13 +625,13 @@ result返回新权限包括john部署的合约地址及相应add方法。
 
 在权限之上封装了一层更贴近于现实生活中的角色类型，角色包含多种权限。可对用户赋予角色，则用户拥有角色内的所有权限。
 
-* 角色的增删改等相关操作独立于权限管理。操作需要权限管理赋予相应权限，不会造成权限管理的变动。
-* 关于角色的授权操作： 授予角色时会调用权限管理的授权接口，所以会造成权限管理的变动。 ***建议角色的授权与权限的授权二者选其一，应该尽量避免同时使用***
-* 关于角色的鉴权： 鉴权是在底层操作，底层没有角色的概念，鉴权与权限管理统一。
+- 角色的增删改等相关操作独立于权限管理。操作需要权限管理赋予相应权限，不会造成权限管理的变动。
+- 关于角色的授权操作： 授予角色时会调用权限管理的授权接口，所以会造成权限管理的变动。 ***建议角色的授权与权限的授权二者选其一，应该尽量避免同时使用***
+- 关于角色的鉴权： 鉴权是在底层操作，底层没有角色的概念，鉴权与权限管理统一。
 
 用户可自定义角色。
 
-### 角色管理合约接口
+### Role management Contract Interface
 
 合约接口调用方式与权限管理方式一致。
 

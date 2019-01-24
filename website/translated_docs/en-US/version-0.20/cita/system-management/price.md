@@ -1,6 +1,6 @@
 ---
 id: version-0.20-price
-title: 配额价格管理
+title: Quota Price Management
 original_id: price
 ---
 ## 简述

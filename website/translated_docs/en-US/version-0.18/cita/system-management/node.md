@@ -1,7 +1,7 @@
 ---
 id: version-0.18-node
-title: 节点管理
-sidebar_label: 节点管理
+title: Node Management
+sidebar_label: Node Management
 original_id: node
 ---
 CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，共识完成后即被确认为合法区块。普通节点不参与共识，只同步和验证链上所有的原始数据。
@@ -70,7 +70,7 @@ CITA 作为一个面向企业级应用的区块链框架，需要保证监管方
 - 设置共识节点权重；
 - 获取共识节点权重千分比。
 
-### 共识节点管理合约接口
+### Consensus Node Management Contract Interface
 
 <table>
   <tr>

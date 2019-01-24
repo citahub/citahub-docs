@@ -1,7 +1,6 @@
 ---
-title: Microscope Introduction
 id: version-0.17-microscope-intro
-sidebar_label: Microscope 简介
+title: Microscope Introduction
 original_id: microscope-intro
 ---
 

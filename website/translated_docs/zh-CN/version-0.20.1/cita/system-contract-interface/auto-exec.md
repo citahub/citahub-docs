@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-auto-exec
-title: 自动执行合约接口
+title: Auto Execution Contract Interface
 original_id: auto-exec
 ---
 # 自动执行合约接口

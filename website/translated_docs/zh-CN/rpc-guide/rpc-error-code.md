@@ -3,18 +3,19 @@ id: rpc-error-code
 title: JSON RPC 错误码
 sidebar_label: JSON RPC 错误码
 ---
-## JSON RPC标准错误码
 
-| 错误码    | 错误消息     | 描述                                                 |
-| ------ |:-------- |:-------------------------------------------------- |
-| -32700 | 解析错误     | 非Json格式数据                                          |
-| -32600 | 请求错误     | 含有错误的请求值                                           |
-| -32601 | 请求服务方法错误 | 调用方法不存在或错误                                         |
-| -32602 | 非法参数     | 调用方法参数错误                                           |
-| -32603 | 内部错误     | 内部错误(NotReady)                                     |
-| -32003 | 查询类错误    | 见示例                                                |
-| -32006 | 交易认证类错误  | 见示例(InvalidNonce,Dup,InvalidUntilBlock,BadSig,Buy) |
-| -32099 | 请求超时     | 见示例(system time out,please resend)                 |
+## JSON RPC 标准错误码
+
+| 错误码 | 错误消息         | 描述                                                  |
+| ------ | :--------------- | :---------------------------------------------------- |
+| -32700 | 解析错误         | 非 Json 格式数据                                      |
+| -32600 | 请求错误         | 含有错误的请求值                                      |
+| -32601 | 请求服务方法错误 | 调用方法不存在或错误                                  |
+| -32602 | 非法参数         | 调用方法参数错误                                      |
+| -32603 | 内部错误         | 内部错误(NotReady)                                    |
+| -32003 | 查询类错误       | 见示例                                                |
+| -32006 | 交易认证类错误   | 见示例(InvalidNonce,Dup,InvalidUntilBlock,BadSig,Buy) |
+| -32099 | 请求超时         | 见示例(system time out,please resend)                 |
 
 ## 错误示例
 
@@ -28,12 +29,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "InvalidUntilBlock"//交易valid_until_block过时.
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32006,
+    "message": "InvalidUntilBlock" //交易valid_until_block过时.
+  }
 }
 ```
 
@@ -45,12 +46,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "Dup"//重复交易
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32006,
+    "message": "Dup" //重复交易
+  }
 }
 ```
 
@@ -62,12 +63,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "InvalidNonce"//非法nonce
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32006,
+    "message": "InvalidNonce" //非法nonce
+  }
 }
 ```
 
@@ -79,12 +80,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "Busy"//处理交易繁忙
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32006,
+    "message": "Busy" //处理交易繁忙
+  }
 }
 ```
 
@@ -96,12 +97,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "BadSig"//签名错误
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32006,
+    "message": "BadSig" //签名错误
+  }
 }
 ```
 
@@ -113,12 +114,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32603,
-        "message": "NotReady"//内部错误
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32603,
+    "message": "NotReady" //内部错误
+  }
 }
 ```
 
@@ -132,12 +133,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32099,
-        "message": "system time out,please resend"
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32099,
+    "message": "system time out,please resend"
+  }
 }
 ```
 
@@ -151,12 +152,12 @@ curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"1"}' 1
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": "1",
-    "error": {
-        "code": -32600,
-        "message": "Invalid request"
-    }
+  "jsonrpc": "2.0",
+  "id": "1",
+  "error": {
+    "code": -32600,
+    "message": "Invalid request"
+  }
 }
 ```
 
@@ -170,12 +171,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}'
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": "74",
-    "error": {
-        "code": -32601,
-        "message": "Method not found"
-    }
+  "jsonrpc": "2.0",
+  "id": "74",
+  "error": {
+    "code": -32601,
+    "message": "Method not found"
+  }
 }
 ```
 
@@ -189,12 +190,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[249,
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32602,
-        "message": "Invalid params: invalid type: integer `249`, expected a hex block number or 'latest', 'earliest'."
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32602,
+    "message": "Invalid params: invalid type: integer `249`, expected a hex block number or 'latest', 'earliest'."
+  }
 }
 ```
 
@@ -206,12 +207,12 @@ curl -X POST -d '{"jsonrpc":"2.0","method":"getTransaction","params":["0x0063187
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 2,
-    "error": {
-        "code": -32602,
-        "message": "invalid JsonRpc params length"
-    }
+  "jsonrpc": "2.0",
+  "id": 2,
+  "error": {
+    "code": -32602,
+    "message": "invalid JsonRpc params length"
+  }
 }
 ```
 
@@ -225,9 +226,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x0"
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x0"
 }
 ```
 
@@ -239,9 +240,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["ea4f6bc98b45
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": null
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": null
 }
 ```
 
@@ -253,9 +254,9 @@ curl -X POST -d '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[99999,tr
 ```json
 // Result
 {
-    "jsonrpc": "2.0",
-    "id": 2,
-    "result": null
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": null
 }
 ```
 

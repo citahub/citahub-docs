@@ -1,6 +1,6 @@
 ---
 id: version-0.20-overview
-title: Protocol Upgrade Overview
+title: 协议升级概览
 original_id: overview
 ---
 因为区块链去中心化的特性，节点之间并不确定相互使用的是同一个软件版本，甚至是同一个实现（比如以太坊的 geth 和 parity）。

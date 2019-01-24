@@ -1,13 +1,12 @@
 ---
 id: version-0.19-getting-started
-title: 快速入门
-sidebar_label: 快速入门
+title: 快速开始
 original_id: getting-started
 ---
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
-> * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
-> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [AppChain 测试链](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain), 也可以使用万云提供的 [BaaS服务](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
+> - 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
+> - 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [AppChain 测试链](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain), 也可以使用万云提供的 [BaaS 服务](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
 
 ## 依赖
 
@@ -67,7 +66,7 @@ $ ./env.sh make release
 
 > **Docker env 和 daemon 使用说明**
 > 
-> * 在源码根目录下，我们提供了 `env.sh` 脚本，封装了 Docker 相关的操作。 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。 例如：
+> - 在源码根目录下，我们提供了 `env.sh` 脚本，封装了 Docker 相关的操作。 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。 例如：
 >     
 >     ```shell
 >     $ ./env.sh make debug
@@ -75,13 +74,14 @@ $ ./env.sh make release
 >     
 >     即表示在 Docker 环境中运行 `make debug`。
 > 
-> * 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
-> * 国内用户请使用 `env_cn.sh`，提供了编译时的国内镜像加速。
-> * 还提供了 `daemon.sh`，用法同 `env.sh`，效果是后台运行。
+> - 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
+> 
+> - 国内用户请使用 `env_cn.sh`，提供了编译时的国内镜像加速。
+> - 还提供了 `daemon.sh`，用法同 `env.sh`，效果是后台运行。
 > 
 > **Notice**
 > 
-> * 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误：
+> - 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误：
 >     
 >     ```shell
 >     $ ./env.sh
@@ -91,27 +91,29 @@ $ ./env.sh make release
 >     
 >     因此要保证操作使用的始终是同一个系统用户。
 > 
-> * 如果出现 Docker 相关的报错，可以执行如下命令并重试：  
->         shell
->         docker kill $(docker ps -a -q)
+> - 如果出现 Docker 相关的报错，可以执行如下命令并重试：
+>     
+>     ```shell
+>     docker kill $(docker ps -a -q)
+>     ```
 
-## 部署CITA
+## 部署 CITA
 
 ### 配置节点
 
-* 先切换到发布件目录
+- 先切换到发布件目录
     
-    * 如果之前选择从源码开始编译：
+    - 如果之前选择从源码开始编译：
     ```shell
     $ cd target/install
     ```
     
-    * 如果之前选择下载编译好的发布包：
+    - 如果之前选择下载编译好的发布包：
     ```shell
     $ cd cita_secp256k1_sha3/
     ```
 
-* 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
+- 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
     
     ```shell
     $ ./env.sh ./scripts/create_cita_config.py create --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
@@ -119,12 +121,12 @@ $ ./env.sh make release
     
     节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
     
-    * test-chain/0
-    * test-chain/1
-    * test-chain/2
-    * test-chain/3
+    - test-chain/0
+    - test-chain/1
+    - test-chain/2
+    - test-chain/3
 
-* 执行以下命令依次配置四个节点
+- 执行以下命令依次配置四个节点
     
     ```shell
     $ ./env.sh ./bin/cita setup test-chain/0
@@ -135,24 +137,25 @@ $ ./env.sh make release
 
 > **Note**
 > 
-> * 生产环境中，用户需要根据实际情况更改默认配置。使用命令 `./scripts/create_cita_config.py -h` 来获得详细帮助信息，允许自定义的配置包括：
+> - 生产环境中，用户需要根据实际情况更改默认配置。使用命令 `./scripts/create_cita_config.py -h` 来获得详细帮助信息，允许自定义的配置包括：
 >     
->     * 系统管理员账户
->     * 出块时间间隔
->     * 累积多少历史交易量后进行重复交易的检查
->     * 系统合约详细参数
->     * 共识节点地址
+>     - 系统管理员账户
+>     - 出块时间间隔
+>     - 累积多少历史交易量后进行重复交易的检查
+>     - 系统合约详细参数
+>     - 共识节点地址
 >     
 >     该工具更详细的使用说明请参考 [Config Tool](./chain/config_tool)。
 > 
-> * 对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。
-> * 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool的功能和用法](./chain/config_tool)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：
+> - 对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。
+> 
+> - 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool 的功能和用法](./chain/config_tool)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个 Docker 里运行。基于上面 test-chain 链所在的目录，生成一条新链：
 >     
 >     ```shell
 >     $ ./env.sh ./scripts/create_cita_config.py create --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
 >     ```
 >     
->     运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个Docker 里运行。
+>     运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个 Docker 里运行。
 
 ### 启动节点
 
@@ -183,20 +186,20 @@ $ ./env.sh ./bin/cita help
 
 > **Notice**
 > 
-> * 请不要先进到 bin 目录，再执行以上的部署操作，错误示范：
+> - 请不要先进到 bin 目录，再执行以上的部署操作，错误示范：
 >     
 >     ```shell
 >     $ cd bin
 >     $ ./env.sh .cita setup test-chain/0
 >     ```
 > 
-> * 请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。
+> - 请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。
 > 
-> * 请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突
+> - 请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突
 
 ## 验证
 
-* 查询节点个数
+- 查询节点个数
     
     Request:
     
@@ -214,7 +217,7 @@ $ ./env.sh ./bin/cita help
     }
     ```
 
-* 查询当前块高度。
+- 查询当前块高度。
     
     Request:
     

@@ -1,7 +1,6 @@
 ---
 id: version-0.19-emergency-brake
-title: 紧急制动
-sidebar_label: 紧急制动
+title: Emergency Brake
 original_id: emergency-brake
 ---
 ## 简述
@@ -98,9 +97,9 @@ cita-cli key create
 
 ```json
 {
-    "address": "0xdd7342f637100daac32dc42823e111bcfc90943d",
-    "private": "0xf2c9b7ebd64c079928e6873f6b2f0551ecedf87d4a1cab30851b8592aa4b2396",
-    "public": "0x24ff15c562d4cd61c8d041fa960bd6ee88313ad5eb5359fa0f66cac787b3010c8bb2d508ccf218f0ac58b9c318d7ae90508486ad568bf538562831db2da3faea"
+  "address": "0xdd7342f637100daac32dc42823e111bcfc90943d",
+  "private": "0xf2c9b7ebd64c079928e6873f6b2f0551ecedf87d4a1cab30851b8592aa4b2396",
+  "public": "0x24ff15c562d4cd61c8d041fa960bd6ee88313ad5eb5359fa0f66cac787b3010c8bb2d508ccf218f0ac58b9c318d7ae90508486ad568bf538562831db2da3faea"
 }
 ```
 

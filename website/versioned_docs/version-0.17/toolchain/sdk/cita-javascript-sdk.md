@@ -1,6 +1,6 @@
 ---
-title: CITA JavaScript SDK
 id: version-0.17-js-sdk
+title: CITA JavaScript SDK
 original_id: js-sdk
 ---
 

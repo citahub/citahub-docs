@@ -1,6 +1,6 @@
 ---
 id: version-0.20-amend
-title: 数据订正
+title: Amend
 original_id: amend
 ---
 ## 简述

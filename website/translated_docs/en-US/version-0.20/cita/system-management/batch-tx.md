@@ -1,6 +1,6 @@
 ---
 id: version-0.20-batch-tx
-title: 批量交易
+title: Batch Transactions
 original_id: batch-tx
 ---
 `CITA` 支持批量交易，目前只能进行批量合约的调用。
@@ -155,7 +155,7 @@ $ cita-cli rpc call \
 
 数值为 0
 
-### 批量交易
+### Batch Transaction
 
 测试批量调用测试合约的 `AddOne()` 函数，预期结构为 x 数值变为 2 。
 

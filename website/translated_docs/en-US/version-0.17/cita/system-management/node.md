@@ -1,7 +1,6 @@
 ---
 id: version-0.17-node
-title: 节点管理
-sidebar_label: 节点管理
+title: Node Management
 original_id: node
 ---
 CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，再广播至其他节点，共识完成后即被确认为合法区块。普通节点不参与共识，只同步链上所有的原始数据。
@@ -10,7 +9,7 @@ CITA 中节点分为共识节点和普通节点，交易由共识节点排序并
 
 ## 普通节点管理 (白名单)
 
-目前 CITA 对于普通节点的准入管理采用白名单的方式。每个节点本地保存白名单配置文件，其中记录着允许连接的p2p通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。
+目前 CITA 对于普通节点的准入管理采用白名单的方式。每个节点本地保存白名单配置文件，其中记录着允许连接的 p2p 通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。
 
 普通节点的管理，包括添加和删除。下面我们将用具体的示例来阐述。
 
@@ -22,7 +21,7 @@ CITA 中节点分为共识节点和普通节点，交易由共识节点排序并
     $ pwd
     ../cita/target/install
     $ ls test-chain/
-      0  1  2  3  template
+     0  1  2  3  template
     ```
     
     template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
@@ -32,13 +31,13 @@ CITA 中节点分为共识节点和普通节点，交易由共识节点排序并
     ```bash
     $ ./scripts/create_cita_config.py append --node "127.0.0.1:4004"
     $ ls test-chain/
-      0  1  2  3  4  template
+     0  1  2  3  4  template
     ```
-    
-    - append 子命令，在指定链中增加对应 ip 地址的节点
-    - 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
 
-3. 启动新节点：
+- append 子命令，在指定链中增加对应 ip 地址的节点
+- 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
+
+1. 启动新节点：
     
     对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
     
@@ -65,7 +64,7 @@ CITA 作为一个面向企业级应用的区块链框架，需要保证监管方
 - 删除操作只可由管理员执行;
 - 获得共识节点列表。
 
-### 共识节点管理合约接口
+### Consensus Node Management Contract Interface
 
 <table>
   <tr>
@@ -138,7 +137,7 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffff
 ```
 
 - to 为共识节点管理合约地址
-- data 为listNode（）的Function signature
+- data 为 listNode（）的 Function signature
 
 返回值为目前的共识节点地址列表。
 
@@ -153,11 +152,11 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffff
     ```bash
     $ python3 make_tx.py --to "ffffffffffffffffffffffffffffffffff020001" --code "dd4c97a000000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e" --privkey "5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6"
     ```
-    
-    - privkey 是私钥，用来签证，确认交易信息合法，系统默认的几个私钥可以看 [系统合约相关](./chain/admintool)
-    - code 前 8 位是函数 hash 值，即 newNode 对应的 hash，后面 64 位是函数的参数 address 的值，即节点地址，不足 64 位用 0 补齐。
 
-2. 发送交易
+- privkey 是私钥，用来签证，确认交易信息合法，系统默认的几个私钥可以看 [系统合约相关](./chain/admintool)
+- code 前 8 位是函数 hash 值，即 newNode 对应的 hash，后面 64 位是函数的参数 address 的值，即节点地址，不足 64 位用 0 补齐。
+
+1. 发送交易
     
     ```bash
     $ python3 send_tx.py
@@ -165,41 +164,41 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffff
     <-- {"jsonrpc":"2.0","id":1,"result":{"hash":"0xd6b38b125efcacb8d59379eef9394e3d9d4f7bb4151e53f0c2c50682f9f037b4","status":"OK"}} (200 OK)
     ```
 
-3. 获取回执
+2. 获取回执
     
     ```bash
     $ python3 get_receipt.py
     {
-      "contractAddress": null,
-      "cumulativeGasUsed": "0xcf15",
-      "logs": [
-        {
-          "blockHash": "0x17b24208a3f9af4d8ef65aa385116fc35e789477026bdc7a0fbef162047bdf98",
-          "transactionHash": "0xd6b38b125efcacb8d59379eef9394e3d9d4f7bb4151e53f0c2c50682f9f037b4",
-          "transactionIndex": "0x0",
-          "topics": [
-            "0x5d55f24dd047ef52a5f36ddefc8c424e4b26c8415d8758be1bbb88b5c65e04eb",
-            "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
-          ],
-          "blockNumber": "0x9b",
-          "address": "0xffffffffffffffffffffffffffffffffff020001",
-          "transactionLogIndex": "0x0",
-          "logIndex": "0x0",
-          "data": "0x"
-        }
-      ],
-      "blockHash": "0x17b24208a3f9af4d8ef65aa385116fc35e789477026bdc7a0fbef162047bdf98",
-      "transactionHash": "0xd6b38b125efcacb8d59379eef9394e3d9d4f7bb4151e53f0c2c50682f9f037b4",
-      "root": null,
-      "errorMessage": null,
-      "blockNumber": "0x9b",
-      "logsBloom": "0x00000000000000020040000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000010000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000",
-      "transactionIndex": "0x0",
-      "gasUsed": "0xcf15"
+     "contractAddress": null,
+     "cumulativeGasUsed": "0xcf15",
+     "logs": [
+       {
+         "blockHash": "0x17b24208a3f9af4d8ef65aa385116fc35e789477026bdc7a0fbef162047bdf98",
+         "transactionHash": "0xd6b38b125efcacb8d59379eef9394e3d9d4f7bb4151e53f0c2c50682f9f037b4",
+         "transactionIndex": "0x0",
+         "topics": [
+           "0x5d55f24dd047ef52a5f36ddefc8c424e4b26c8415d8758be1bbb88b5c65e04eb",
+           "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
+         ],
+         "blockNumber": "0x9b",
+         "address": "0xffffffffffffffffffffffffffffffffff020001",
+         "transactionLogIndex": "0x0",
+         "logIndex": "0x0",
+         "data": "0x"
+       }
+     ],
+     "blockHash": "0x17b24208a3f9af4d8ef65aa385116fc35e789477026bdc7a0fbef162047bdf98",
+     "transactionHash": "0xd6b38b125efcacb8d59379eef9394e3d9d4f7bb4151e53f0c2c50682f9f037b4",
+     "root": null,
+     "errorMessage": null,
+     "blockNumber": "0x9b",
+     "logsBloom": "0x00000000000000020040000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000010000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000",
+     "transactionIndex": "0x0",
+     "gasUsed": "0xcf15"
     }
     ```
 
-4. 查看当前的共识节点数
+3. 查看当前的共识节点数
     
     ```bash
     $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffffffffffffffffffffffffffffffff020001", "data":"0x609df32f"}, "latest"],"id":2}' 127.0.0.1:1337
@@ -223,7 +222,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffff
 ```
 
 - to 为共识节点管理合约地址
-- data 为listNode（）的Function signature
+- data 为 listNode（）的 Function signature
 
 返回值为目前的共识节点地址列表（可以看到新添加的共识节点地址 `59a316df602568957f47973332f1f85ae1e2e75e`）
 
@@ -238,55 +237,55 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffff
     
     $ python3 make_tx.py --to "ffffffffffffffffffffffffffffffffff020001" --code "2d4ede9300000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e" --privkey "5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6"
     ```
-    
-    - privkey 是私钥，用来签证，确认交易信息合法，系统默认的几个私钥可以看 [系统合约相关](../getting_started/admintool/index.html#_5)
-    - code 前 8 位是函数 hash 值，即 deleteNode 对应的 hash，后面 64 位是函数的参数 address 的值，即节点地址，不足 64 位用 0 补齐。
+
+- privkey 是私钥，用来签证，确认交易信息合法，系统默认的几个私钥可以看 [系统合约相关](../getting_started/admintool/index.html#_5)
+- code 前 8 位是函数 hash 值，即 deleteNode 对应的 hash，后面 64 位是函数的参数 address 的值，即节点地址，不足 64 位用 0 补齐。
     
     生成的交易信息存放在 `../output/transaction/deploycode` 中
 
-2. 发送交易
+1. 发送交易
     
     ```bash
-    $ python3 send_tx.py 
+    $ python3 send_tx.py
     --> {"jsonrpc": "2.0", "method": "sendRawTransaction", "params": ["0x0a83010a2866666666666666666666666666666666666666666666666666666666666666666666303230303031120656415a39553718c0843d20e7032a242d4ede9300000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e3220000000000000000000000000000000000000000000000000000000000000000038011241958dc34c4524e928193902732e9b9445eb585577b5b1d78267b75423951580f31964bcd8b979a25d6cfa1578f012a3f69df91fabd0ce83289fbe9f65cbffaf4a01"], "id": 1}
     ```
 
-3. 获取回执
+2. 获取回执
     
     ```bash
-    $ python3 get_receipt.py 
+    $ python3 get_receipt.py
     {
-      "transactionHash": "0x80fb09bb710a1d742e19fb5195ea95faa4c192c9f1802055ecaf2d687b21cecd",
-      "transactionIndex": "0x0",
-      "blockHash": "0x8b962b7af8332819bcfa54285c9c8553004fe2757362474c1e5dba200094aed8",
-      "blockNumber": "0x195",
-      "cumulativeGasUsed": "0x4fc6",
-      "gasUsed": "0x4fc6",
-      "contractAddress": null,
-      "logs": [
-          {
-            "address": "0xffffffffffffffffffffffffffffffffff020001",
-            "topics": [
-            "0x74976f07ac4bfb6a02b2dbd3bc158d4984ee6027d938e870692126ca9e1931d5",
-            "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
-            ],
-            "data": "0x",
-            "blockHash": "0x8b962b7af8332819bcfa54285c9c8553004fe2757362474c1e5dba200094aed8",
-            "blockNumber": "0x195",
-            "transactionHash": "0x80fb09bb710a1d742e19fb5195ea95faa4c192c9f1802055ecaf2d687b21cecd",
-            "transactionIndex": "0x0",
-            "logIndex": "0x0",
-            "transactionLogIndex": "0x0"
-          }
-      ],
-      "root": null,
-      "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000400000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-      "errorMessage": null
+     "transactionHash": "0x80fb09bb710a1d742e19fb5195ea95faa4c192c9f1802055ecaf2d687b21cecd",
+     "transactionIndex": "0x0",
+     "blockHash": "0x8b962b7af8332819bcfa54285c9c8553004fe2757362474c1e5dba200094aed8",
+     "blockNumber": "0x195",
+     "cumulativeGasUsed": "0x4fc6",
+     "gasUsed": "0x4fc6",
+     "contractAddress": null,
+     "logs": [
+         {
+           "address": "0xffffffffffffffffffffffffffffffffff020001",
+           "topics": [
+           "0x74976f07ac4bfb6a02b2dbd3bc158d4984ee6027d938e870692126ca9e1931d5",
+           "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
+           ],
+           "data": "0x",
+           "blockHash": "0x8b962b7af8332819bcfa54285c9c8553004fe2757362474c1e5dba200094aed8",
+           "blockNumber": "0x195",
+           "transactionHash": "0x80fb09bb710a1d742e19fb5195ea95faa4c192c9f1802055ecaf2d687b21cecd",
+           "transactionIndex": "0x0",
+           "logIndex": "0x0",
+           "transactionLogIndex": "0x0"
+         }
+     ],
+     "root": null,
+     "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000400000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+     "errorMessage": null
     }
     
     ```
 
-4. 查看当前的共识节点数
+3. 查看当前的共识节点数
     
     ```bash
     $  curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffffffffffffffffffffffffffffffff020001", "data":"0x609df32f"}, "latest"],"id":2}' 127.0.0.1:1337

@@ -1,13 +1,13 @@
 ---
 id: version-0.20-batch
-title: 批量交易合约接口
+title: Batch Transactions Contract Interface
 original_id: batch
 ---
 
 
 <h2 class="hover-list">Emergency brake</h2>
 
-* [setState](#setState)
+- [setState](#setState)
 
 * * *
 
@@ -15,15 +15,15 @@ original_id: batch
 
 开启紧急制动模式。
 
-* Parameters
+- Parameters
     
     `bool state` - state
 
-* Returns
+- Returns
     
     `None`
 
-* Example
+- Example
 
 ```shell
 $ cita-cli scm EmergencyBrake setState \

@@ -1,6 +1,6 @@
 ---
 id: version-0.20-node
-title: 节点管理
+title: Node Management
 original_id: node
 ---
 CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，共识完成后即被确认为合法区块。普通节点不参与共识，只同步和验证链上所有的原始数据。

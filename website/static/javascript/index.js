@@ -1,7 +1,7 @@
 const githubBase = 'https://github.com/cryptape/cita/blob/develop/docs/zh-CN/'
 
 function addEditOnGithub() {
-  const match = window.location.pathname.split(/zh-CN\/cita\//)
+  const match = window.location.pathname.split(/zh-CN\/next\/cita\//)
   if (match.length === 2) {
     const hEl = document.querySelector('header.postHeader')
     const eBtn = document.createElement('a')
@@ -14,6 +14,14 @@ function addEditOnGithub() {
     hEl.prepend(eBtn)
   }
 }
+
+function translateEnUs() {
+  const l = document.querySelector('.postHeader a[href$=en-US]')
+  if (l) {
+    l.setAttribute('href', l.href.slice(0, -3))
+  }
+  console.log(l)
+}
 window.onload = () => {
   const welcome = '/welcome'
   const logoEl = document.querySelector(".fixedHeaderContainer a[href^='/citahub-docs/']")
@@ -21,18 +29,19 @@ window.onload = () => {
 
   // add edit on github
   addEditOnGithub()
+  translateEnUs()
 
   // add coppase effect to sidebar
-  const sidebarNavs = document.querySelectorAll('.navGroup.subNavGroup')
-  sidebarNavs.forEach(nav => {
-    const title = nav.querySelector('h4')
-    title.addEventListener('click', () => {
-      title.classList.toggle('expand')
-    })
-    if (
-      Array.from(nav.querySelectorAll('a')).some(link => link.href === window.location.href)
-    ) {
-      title.classList.add('expand')
-    }
-  })
+  // const sidebarNavs = document.querySelectorAll('.navGroup.subNavGroup')
+  // sidebarNavs.forEach(nav => {
+  //   const title = nav.querySelector('h4')
+  //   title.addEventListener('click', () => {
+  //     title.classList.toggle('expand')
+  //   })
+  //   if (
+  //     Array.from(nav.querySelectorAll('a')).some(link => link.href === window.location.href)
+  //   ) {
+  //     title.classList.add('expand')
+  //   }
+  // })
 }

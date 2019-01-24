@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-role-auth
-title: 角色授权合约接口
+title: Role Auth Contract Interface
 original_id: role-auth
 ---
 

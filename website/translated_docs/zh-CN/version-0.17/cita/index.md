@@ -1,7 +1,6 @@
 ---
 id: version-0.17-cita-intro
-title: Overview
-sidebar_label: 关于 CITA
+title: About CITA
 original_id: cita-intro
 ---
 CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级应用的支持智能合约的区块链框架， 旨在为企业级区块链应用提供一个稳固、高效、灵活、可适应未来的运行平台。 CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network。各组件之间通过消息总线交换信息相互协作。 通过配置和定制相应的服务，CITA 能够满足企业级用户的全部需要。
@@ -10,11 +9,11 @@ CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级�
 
 - **水平扩展性**
     
-    在 CITA 的微服务架构中，“节点”是一个逻辑概念，有可能是一台服务器（一台服务器上面运行一组微服务）， 也有可能是一组服务器组成的集群，同时 CITA 还支持部署在云服务器上，充分利用了各种服务器硬件来提升处理能力。 节点与节点之间通过P2P通信，节点内部各模块通过消息总线通信，这一点与 Fabric 仅仅在共识模块运用消息总线通信完全不同。
+    在 CITA 的微服务架构中，“节点”是一个逻辑概念，有可能是一台服务器（一台服务器上面运行一组微服务）， 也有可能是一组服务器组成的集群，同时 CITA 还支持部署在云服务器上，充分利用了各种服务器硬件来提升处理能力。 节点与节点之间通过 P2P 通信，节点内部各模块通过消息总线通信，这一点与 Fabric 仅仅在共识模块运用消息总线通信完全不同。
 
 - **组件可插拔**
     
-    松耦合的微服务架构，便于各组件将来平滑迁移至更好的算法（比如新的共识算法）或者更好的技术方案（比如新的DB或者新的隐私方案）； 也有利于针对一些具体的业务场景，定制一些特定的功能。
+    松耦合的微服务架构，便于各组件将来平滑迁移至更好的算法（比如新的共识算法）或者更好的技术方案（比如新的 DB 或者新的隐私方案）； 也有利于针对一些具体的业务场景，定制一些特定的功能。
 
 - **高性能**
     
@@ -26,7 +25,7 @@ CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级�
 
 - **兼容性**
     
-    CITA上支持使用 Solidity，Go 语言，Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppeling，Remix 等）。
+    CITA 上支持使用 Solidity，Go 语言，Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppeling，Remix 等）。
 
 - **链间互动**
     

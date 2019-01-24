@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-group-management
-title: 组管理合约接口
+title: Group Management Contract Interface
 original_id: group-management
 ---
 

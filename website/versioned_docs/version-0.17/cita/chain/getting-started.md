@@ -1,7 +1,6 @@
 ---
 id: version-0.17-getting-started
-title: 快速入门
-sidebar_label: 快速入门
+title: Getting Started
 original_id: getting-started
 ---
 
@@ -52,13 +51,14 @@ git submodule update
 
 不带任何参数运行`./env.sh`，将直接获取一个 docker 容器环境的 shell。
 
-如果docker容器是被root用户创建的，后续非root用户使用`./env.sh`会出现如下错误：
+如果 docker 容器是被 root 用户创建的，后续非 root 用户使用`./env.sh`会出现如下错误：
 
 ```shell
 $ ./env.sh
   docker container cita_run_cita_secp256k1_sha3 is already running
   error: failed switching to "user": unable to find user user: no matching entries in passwd file
 ```
+
 要保证操作使用的始终是同一个系统用户。
 
 我们还提供了`daemon.sh`，用法同`env.sh`，效果是后台运行。
@@ -72,7 +72,6 @@ docker kill $(docker ps -a -q)
 ## 编译
 
 可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）
-
 
 ```shell
 ./env.sh make debug
@@ -106,21 +105,21 @@ cd target/install
 
 使用命令`./scripts/create_cita_config.py -h`来获得详细帮助信息，允许自定义的配置包括：
 
-* 系统管理员账户
-* 网络列表，按照`IP1:PORT1,IP2:PORT2,IP3:PORT3 ... IPn:PORTn`的格式
-* 出块时间间隔
-* 累积多少历史交易量后进行重复交易的检查
-* 系统合约详细参数
-* 共识节点地址
+- 系统管理员账户
+- 网络列表，按照`IP1:PORT1,IP2:PORT2,IP3:PORT3 ... IPn:PORTn`的格式
+- 出块时间间隔
+- 累积多少历史交易量后进行重复交易的检查
+- 系统合约详细参数
+- 共识节点地址
 
 节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
 
-* test-chain/0
-* test-chain/1
-* test-chain/2
-* test-chain/3
+- test-chain/0
+- test-chain/1
+- test-chain/2
+- test-chain/3
 
-> ***<font color=red>注意</font>***
+> **_<font color=red>注意</font>_**
 > 对于多服务器部署，选择一台服务器执行命令之后把相关节点目录进行拷贝。
 > 不可多服务器都执行配置脚本。
 
@@ -156,9 +155,9 @@ cd target/install
     ./env.sh ./bin/cita help
     ```
 
-> ***<font color=red>注意</font>***
-> 不可到bin目录然后执行`./cita setup/start/stop test-chain/0`。
-> 虽然cita在docker中运行，但是容器并没有做网络隔离。因此请勿在一台服务器上运行多个容器。也不要同时在host系统里面运行cita以及相关的rabbitmq等软件，以免造成端口冲突。
+> **_<font color=red>注意</font>_**
+> 不可到 bin 目录然后执行`./cita setup/start/stop test-chain/0`。
+> 虽然 cita 在 docker 中运行，但是容器并没有做网络隔离。因此请勿在一台服务器上运行多个容器。也不要同时在 host 系统里面运行 cita 以及相关的 rabbitmq 等软件，以免造成端口冲突。
 
 ## 测试
 
@@ -204,50 +203,50 @@ cd target/install
     ./env.sh ./tests/integrate_test/cita_byzantinetest.sh
     ```
 
-> ***<font color=red>注意</font>***
+> **_<font color=red>注意</font>_**
 > 必须使用`./env.sh`
 
 ## 验证
 
-* 查询节点个数
+- 查询节点个数
 
-    Request:
+  Request:
 
-    ```shell
-    ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
-    ```
+  ```shell
+  ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
+  ```
 
-    Result:
+  Result:
 
-    ```shell
-    {
-      "jsonrpc": "2.0",
-      "id": 74,
-      "result": "0x3"
-    }
-    ```
+  ```shell
+  {
+    "jsonrpc": "2.0",
+    "id": 74,
+    "result": "0x3"
+  }
+  ```
 
-* 查询当前块高度。
+- 查询当前块高度。
 
-    Request:
+  Request:
 
-    ```shell
-    ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
-    ```
+  ```shell
+  ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+  ```
 
-    Result:
+  Result:
 
-    ```shell
-    {
-      "jsonrpc": "2.0",
-      "id": 83,
-      "result": "0x8"
-    }
-    ```
+  ```shell
+  {
+    "jsonrpc": "2.0",
+    "id": 83,
+    "result": "0x8"
+  }
+  ```
 
-    返回块高度，表示节点已经开始正常出块。
+  返回块高度，表示节点已经开始正常出块。
 
-> ***<font color=red>注意</font>***
+> **_<font color=red>注意</font>_**
 > 在发布件目录(target/install)下运行节点。
 > 可选择使用`./env.sh`
 

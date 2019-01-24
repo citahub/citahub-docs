@@ -6,7 +6,7 @@
     "CITA": [
       "version-0.17-cita/cita-intro",
       {
-        "label": "快速入门",
+        "label": "Getting Started",
         "type": "subcategory",
         "ids": [
           "version-0.17-cita/chain/getting-started",
@@ -14,7 +14,7 @@
         ]
       },
       {
-        "label": "系统管理",
+        "label": "System Management",
         "type": "subcategory",
         "ids": [
           "version-0.17-cita/system-management/node",
@@ -35,7 +35,7 @@
         ]
       },
       {
-        "label": "架构设计",
+        "label": "Architecture",
         "type": "subcategory",
         "ids": [
           "version-0.17-cita/architecture/architecture",
@@ -47,7 +47,7 @@
       },
       "version-0.17-cita/crosschain/crosschain-contract-example",
       {
-        "label": "参考",
+        "label": "Reference",
         "type": "subcategory",
         "ids": [
           "version-0.17-cita/reference/addresses",
@@ -57,8 +57,7 @@
       },
       "version-0.17-cita/txtool"
     ],
-    "Toolchain": [
-      {
+    "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": [
@@ -76,7 +75,7 @@
         ]
       },
       {
-        "label": "Rebirth",
+        "label": "ReBirth",
         "type": "subcategory",
         "ids": [
           "version-0.17-toolchain/rebirth/rebirth-intro"

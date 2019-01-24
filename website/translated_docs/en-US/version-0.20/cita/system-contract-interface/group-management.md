@@ -1,28 +1,28 @@
 ---
 id: version-0.20-group-management
-title: 组管理合约接口
+title: Group Management Contract Interface
 original_id: group-management
 ---
 
 
 <h2 class="hover-list">Users Management</h2>
 
-* [queryInfo](#queryInfo)
-* [queryName](#queryName)
-* [queryAccounts](#queryAccounts)
-* [queryChild](#queryChild)
-* [queryChildLength](#queryChildLength)
-* [queryParent](#queryParent)
+- [queryInfo](#queryInfo)
+- [queryName](#queryName)
+- [queryAccounts](#queryAccounts)
+- [queryChild](#queryChild)
+- [queryChildLength](#queryChildLength)
+- [queryParent](#queryParent)
 
 * * *
 
 ### queryInfo
 
-* Parameters
+- Parameters
     
     `address permission` - The permission address
 
-* Returns
+- Returns
     
     `bytes32 permission` - The permission name
     
@@ -30,7 +30,7 @@ original_id: group-management
     
     `bytes4[] func` - The function signature of the resource
 
-* Example
+- Example
 
 ```shell
 $ scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
@@ -46,15 +46,15 @@ $ scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dc
 
 ### queryName
 
-* Parameters
+- Parameters
     
     `address permission` - The permission address
 
-* Returns
+- Returns
     
     `bytes32 name` - The permission name
 
-* Example
+- Example
 
 ```shell
 $ scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
@@ -70,15 +70,15 @@ $ scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dc
 
 ### queryResource
 
-* Parameters
+- Parameters
     
     `address permission` - The permission address
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
@@ -90,7 +90,6 @@ $ scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29
   "jsonrpc": "2.0",
   "result": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000020000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc0000000000000000000000001e041ec9a18590924d84a1f011eb0749c03fc41a000000000000000000000000000000000000000000000000000000000000000260fe47b10000000000000000000000000000000000000000000000000000000060fe47b100000000000000000000000000000000000000000000000000000000"
 }
-
 ```
 
 ### newRole
@@ -137,7 +136,7 @@ $ scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29
 
 创建一个用户组。
 
-* Parameters
+- Parameters
     
     `address origin` - The sender's origin group
     
@@ -145,11 +144,11 @@ $ scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29
     
     `address[] accounts` - The accounts of group
 
-* Returns
+- Returns
     
     `address` - The group address
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement newGroup \
@@ -223,7 +222,6 @@ $ scm GroupManagement newGroup \
     "transactionIndex": "0x0"
   }
 }
-
 ```
 
 从 log 中可知，新用户组的地址是: 0xce6cd8f8562e31d44b1101986204cec34b1df025
@@ -232,17 +230,17 @@ $ scm GroupManagement newGroup \
 
 删除用户组。
 
-* Parameters
+- Parameters
     
     `address origin` - The sender's orgin group
     
     `address target` - The target group to be deleted
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement deleteGroup \
@@ -255,7 +253,7 @@ $ scm GroupManagement deleteGroup \
 
 更新用户组名称。
 
-* Parameters
+- Parameters
     
     `address origin` - The sender's orgin group
     
@@ -263,11 +261,11 @@ $ scm GroupManagement deleteGroup \
     
     `bytes32 name` - The new name to be updated
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement updateGroupName \
@@ -280,7 +278,7 @@ $ scm GroupManagement updateGroupName \
 
 添加用户。
 
-* Parameters
+- Parameters
     
     `address origin` - The sender's orgin group
     
@@ -288,11 +286,11 @@ $ scm GroupManagement updateGroupName \
     
     `address[] accounts` - The accounts to be added
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Examplee
+- Examplee
 
 ```shell
  $ scm GroupManagement addAccounts \
@@ -305,7 +303,7 @@ $ scm GroupManagement updateGroupName \
 
 删除用户。
 
-* Parameters
+- Parameters
     
     `address origin` - The sender's orgin group
     
@@ -313,11 +311,11 @@ $ scm GroupManagement updateGroupName \
     
     `address[] accounts` - The accounts to be added
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement deleteAccounts \
@@ -329,17 +327,17 @@ $ scm GroupManagement deleteAccounts \
 
 ### checkScope
 
-* Parameters
+- Parameters
     
     `address origin` - The sender's orgin group
     
     `address target` - The target group to be deleted
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement checkScope \
@@ -351,15 +349,15 @@ $ scm GroupManagement checkScope \
 
 查询所有组。
 
-* Parameters
+- Parameters
     
     `None`
 
-* Returns
+- Returns
     
     `address[]` - All groups address
 
-* Example
+- Example
 
 ```shell
 $ scm GroupManagement queryGroups
@@ -369,17 +367,17 @@ $ scm GroupManagement queryGroups
 
 查询组信息。
 
-* Parameters
+- Parameters
     
     `address group` - The group address
 
-* Returns
+- Returns
     
     `bytes32 name` - The name of group
     
     `address[] accounts` - The accounts of group
 
-* Example
+- Example
 
 ```shell
 $ scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
@@ -389,15 +387,15 @@ $ scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 查询组名字。
 
-* Parameters
+- Parameters
     
     `address group` - The group address
 
-* Returns
+- Returns
     
     `bytes32 name` - The name of group
 
-* Example
+- Example
 
 ```shell
 $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
@@ -407,15 +405,15 @@ $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 查询组内所有用户。
 
-* Parameters
+- Parameters
     
     `address group` - The group address
 
-* Returns
+- Returns
     
     `address[]` - All accounts address
 
-* Example
+- Example
 
 ```shell
 $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
@@ -425,15 +423,15 @@ $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 查询子组。
 
-* Parameters
+- Parameters
     
     `address group` - The group address
 
-* Returns
+- Returns
     
     `address` - The children of group
 
-* Example
+- Example
 
 ```shell
 $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
@@ -443,15 +441,15 @@ $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 
 查询子组个数。
 
-* Parameters
+- Parameters
     
     `address group` - The group address
 
-* Returns
+- Returns
     
     `uint` - The number of the children group
 
-* Example
+- Example
 
 ```shell
 $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
@@ -461,15 +459,15 @@ $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF02000
 
 查询父组。
 
-* Parameters
+- Parameters
     
     `address group` - The group address
 
-* Returns
+- Returns
     
     `address` - The parent of the group
 
-* Example
+- Example
 
 ```shell
 $ scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025

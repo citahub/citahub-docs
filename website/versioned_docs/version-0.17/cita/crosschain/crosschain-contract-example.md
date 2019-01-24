@@ -1,7 +1,6 @@
 ---
 id: version-0.17-crosschain-contract-example
-title: 跨链合约的编写及操作示例
-sidebar_label: 跨链
+title: Crosschain Contract Example
 original_id: crosschain-contract-example
 ---
 
@@ -53,10 +52,10 @@ solc --hashes cross_chain_token.sol
 
 目前，侧链使用系统合约 [ChainManager](https://github.com/cryptape/cita/blob/develop/scripts/contracts/system/chain_manager.sol) 进行管理。
 
-* 生成侧链的验证节点的私钥，使用侧链的验证节点地址，在主链上使用系统合约 `ChainManager` 的方法 `newSideChain` 进行新建侧链，得到侧链的 Id 。
-* 在主链上使用系统合约 `ChainManager` 的方法 `enableSideChain` 启动指定 Id 的侧链。
-* 新建侧链，创世块里的系统合约 `ChainManager` 构造时，使用上一个步骤申请的侧链 Id 、主链的 Id 和主链的验证节点地址作为参数。
-* 启动侧链即可。
+- 生成侧链的验证节点的私钥，使用侧链的验证节点地址，在主链上使用系统合约 `ChainManager` 的方法 `newSideChain` 进行新建侧链，得到侧链的 Id 。
+- 在主链上使用系统合约 `ChainManager` 的方法 `enableSideChain` 启动指定 Id 的侧链。
+- 新建侧链，创世块里的系统合约 `ChainManager` 构造时，使用上一个步骤申请的侧链 Id 、主链的 Id 和主链的验证节点地址作为参数。
+- 启动侧链即可。
 
 ### 部署跨链合约
 
@@ -80,42 +79,42 @@ cita-relayer-parser -c SEND_CHAIN_ID -t TX_HASH -f relayer-parser.json
 
 其中配置文件 `relayer-parser.json` 目前主要有 2 个参数：
 
-* 工具使用的私钥。
-* 所有相关链的 JsonRPC 网络地址，使用 Id 作为索引。
+- 工具使用的私钥。
+- 所有相关链的 JsonRPC 网络地址，使用 Id 作为索引。
 
 范例如下：
 
 ```json
 {
-    "private_key": "0x1111111111111111111111111111111111111111111111111111111111111111",
-    "chains": [
-        {
-            "id": 1,
-            "servers": [
-                { "url": "http://127.0.0.1:11337", "timeout": { "secs": 30, "nanos": 0 } },
-                { "url": "http://127.0.0.1:11338", "timeout": { "secs": 30, "nanos": 0 } },
-                { "url": "http://127.0.0.1:11339", "timeout": { "secs": 30, "nanos": 0 } },
-                { "url": "http://127.0.0.1:11340", "timeout": { "secs": 30, "nanos": 0 } }
-            ]
-        },
-        {
-            "id": 2,
-            "servers": [
-                { "url": "http://127.0.0.1:21337", "timeout": { "secs": 30, "nanos": 0 } },
-                { "url": "http://127.0.0.1:21338", "timeout": { "secs": 30, "nanos": 0 } },
-                { "url": "http://127.0.0.1:21339", "timeout": { "secs": 30, "nanos": 0 } },
-                { "url": "http://127.0.0.1:21340", "timeout": { "secs": 30, "nanos": 0 } }
-            ]
-        }
-    ]
+  "private_key": "0x1111111111111111111111111111111111111111111111111111111111111111",
+  "chains": [
+    {
+      "id": 1,
+      "servers": [
+        { "url": "http://127.0.0.1:11337", "timeout": { "secs": 30, "nanos": 0 } },
+        { "url": "http://127.0.0.1:11338", "timeout": { "secs": 30, "nanos": 0 } },
+        { "url": "http://127.0.0.1:11339", "timeout": { "secs": 30, "nanos": 0 } },
+        { "url": "http://127.0.0.1:11340", "timeout": { "secs": 30, "nanos": 0 } }
+      ]
+    },
+    {
+      "id": 2,
+      "servers": [
+        { "url": "http://127.0.0.1:21337", "timeout": { "secs": 30, "nanos": 0 } },
+        { "url": "http://127.0.0.1:21338", "timeout": { "secs": 30, "nanos": 0 } },
+        { "url": "http://127.0.0.1:21339", "timeout": { "secs": 30, "nanos": 0 } },
+        { "url": "http://127.0.0.1:21340", "timeout": { "secs": 30, "nanos": 0 } }
+      ]
+    }
+  ]
 }
 ```
 
 该工具主要做的任务为：
 
-* 根据入参，去发送链上查询跨链交易的交易证明数据。
-* 根据跨链交易的交易证明数据，得到转移 token 的接收链的 Id 。
-* 发送证明到接收链上，完成 token 转移。
+- 根据入参，去发送链上查询跨链交易的交易证明数据。
+- 根据跨链交易的交易证明数据，得到转移 token 的接收链的 Id 。
+- 发送证明到接收链上，完成 token 转移。
 
 ### 验证跨链是否成功
 

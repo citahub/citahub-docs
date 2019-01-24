@@ -1,6 +1,6 @@
 ---
 id: version-0.20-log
-title: 日志管理
+title: Log Management
 original_id: log
 ---
 # 日志管理

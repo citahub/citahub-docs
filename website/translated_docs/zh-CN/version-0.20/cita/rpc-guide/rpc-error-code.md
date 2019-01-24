@@ -1,6 +1,6 @@
 ---
 id: version-0.20-rpc-error-code
-title: JSON RPC Error Code
+title: JSON RPC 错误类型
 original_id: rpc-error-code
 ---
 ## JSON RPC 标准错误码

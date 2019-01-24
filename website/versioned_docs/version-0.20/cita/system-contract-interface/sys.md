@@ -1,6 +1,6 @@
 ---
 id: version-0.20-sys
-title: 系统配置合约接口
+title: System Configuration Contract Interface
 original_id: sys
 ---
 

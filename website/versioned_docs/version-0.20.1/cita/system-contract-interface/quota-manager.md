@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-quota-manager
-title: 配额管理合约接口
+title: Quota Management Contract Interface
 original_id: quota-manager
 ---
 

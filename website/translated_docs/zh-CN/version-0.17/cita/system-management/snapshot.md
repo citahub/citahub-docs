@@ -1,7 +1,6 @@
 ---
 id: version-0.17-snapshot
-title: 快照
-sidebar_label: 快照
+title: Snapshot
 original_id: snapshot
 ---
 ## 快照功能概述

@@ -1,6 +1,6 @@
 ---
 id: version-0.20-node
-title: 节点管理
+title: Node Management
 original_id: node
 ---
 

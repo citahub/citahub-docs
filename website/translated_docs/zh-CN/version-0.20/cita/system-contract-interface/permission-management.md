@@ -1,16 +1,16 @@
 ---
 id: version-0.20-permission-management
-title: 权限管理合约接口
+title: Permission Management Contract Interface
 original_id: permission-management
 ---
 
 
 <h2 class="hover-list">Permission</h2>
 
-* [inPermission](#inPermission)
-* [queryInfo](#queryInfo)
-* [queryName](#queryName)
-* [queryResource](#queryResource)
+- [inPermission](#inPermission)
+- [queryInfo](#queryInfo)
+- [queryName](#queryName)
+- [queryResource](#queryResource)
 
 * * *
 
@@ -18,17 +18,17 @@ original_id: permission-management
 
 检查资源是否在 permission 中。
 
-* Parameters
+- Parameters
     
     `address contract` - The contract address of the resource
     
     `bytes4 function-hash` - The function signature of the resource
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm Permission inPermission \
@@ -47,11 +47,11 @@ $ scm Permission inPermission \
 
 ### queryInfo
 
-* Parameters
+- Parameters
     
     `address permission` - The permission address
 
-* Returns
+- Returns
     
     `bytes32 permission` - The permission name
     
@@ -59,7 +59,7 @@ $ scm Permission inPermission \
     
     `bytes4[] func` - The function signature of the resource
 
-* Example
+- Example
 
 ```shell
 $ scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
@@ -75,15 +75,15 @@ $ scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dc
 
 ### queryName
 
-* Parameters
+- Parameters
     
     `address permission` - The permission address
 
-* Returns
+- Returns
     
     `bytes32 name` - The permission name
 
-* Example
+- Example
 
 ```shell
 $ scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
@@ -99,15 +99,15 @@ $ scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dc
 
 ### queryResource
 
-* Parameters
+- Parameters
     
     `address permission` - The permission address
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
@@ -119,5 +119,4 @@ $ scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29
   "jsonrpc": "2.0",
   "result": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000020000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc0000000000000000000000001e041ec9a18590924d84a1f011eb0749c03fc41a000000000000000000000000000000000000000000000000000000000000000260fe47b10000000000000000000000000000000000000000000000000000000060fe47b100000000000000000000000000000000000000000000000000000000"
 }
-
 ```

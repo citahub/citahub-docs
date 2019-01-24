@@ -1,34 +1,34 @@
 ---
 id: version-0.20-quota-manager
-title: 配额管理合约接口
+title: Quota Management Contract Interface
 original_id: quota-manager
 ---
 
 
 <h2 class="hover-list">Quota Management</h2>
 
-* [setBQL](#setBQL)
-* [setDefaultAQL](#setDefaultAQL)
-* [setAQL](#setAQL)
-* [getAccounts](#getAccounts)
-* [getQuotas](#getQuotas)
-* [getBQL](#getBQL)
-* [getDefaultAQL](#getDefaultAQL)
-* [getAQL](#getAQL)
+- [setBQL](#setBQL)
+- [setDefaultAQL](#setDefaultAQL)
+- [setAQL](#setAQL)
+- [getAccounts](#getAccounts)
+- [getQuotas](#getQuotas)
+- [getBQL](#getBQL)
+- [getDefaultAQL](#getDefaultAQL)
+- [getAQL](#getAQL)
 
 ### setBQL
 
 设置区块配额上限。
 
-* Parameters
+- Parameters
     
     `uint value` - The value to be setted
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm QuotaManager setBQL \
@@ -40,15 +40,15 @@ $ scm QuotaManager setBQL \
 
 设置默认账号配额上限
 
-* Parameters
+- Parameters
     
     `None`
 
-* Returns
+- Returns
     
     `uint value` - The value
 
-* Example
+- Example
 
 ```shell
 $ scm QuotaManager setDefaultAQL \
@@ -60,15 +60,15 @@ $ scm QuotaManager setDefaultAQL \
 
 设置指定账号配额上限。
 
-* Parameters
+- Parameters
     
     `uint value` - The value to be setted
 
-* Returns
+- Returns
     
     `bool` - True, if successfully, otherwise false.
 
-* Example
+- Example
 
 ```shell
 $ scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523
@@ -78,15 +78,15 @@ $ scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523
 
 查询所有指定账号。
 
-* Parameters
+- Parameters
     
     `None`
 
-* Returns
+- Returns
     
     `address[] accounts` - The accounts that have AQL
 
-* Example
+- Example
 
 ```shell
 $ scm QuotaManager getAccounts
@@ -96,15 +96,15 @@ $ scm QuotaManager getAccounts
 
 查询所有指定账号的配额上限。
 
-* Parameters
+- Parameters
     
     `None`
 
-* Returns
+- Returns
     
     `uint[] value` - The accounts' quotas
 
-* Example
+- Example
 
 ```shell
 $ scm QuotaManager getQuotas
@@ -114,15 +114,15 @@ $ scm QuotaManager getQuotas
 
 查询默认块配额。
 
-* Parameters
+- Parameters
     
     `None`
 
-* Returns
+- Returns
     
     `uint value` - The value
 
-* Example
+- Example
 
 ```shell
 $ scm QuotaManager getBQL
@@ -140,15 +140,15 @@ $ scm QuotaManager getBQL
 
 查询默认账户配额。
 
-* Parameters
+- Parameters
     
     `None`
 
-* Returns
+- Returns
     
     `uint value` - The value
 
-* Example
+- Example
 
 ```shell
 $ scm QuotaManager getDefaultAQL
@@ -166,15 +166,15 @@ $ scm QuotaManager getDefaultAQL
 
 查询某一账户配额。
 
-* Parameters
+- Parameters
     
     `address account` - The account address
 
-* Returns
+- Returns
     
     `uint value` - The account quota value
 
-* Example
+- Example
 
 ```shell
 $ scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523

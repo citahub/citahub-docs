@@ -98,8 +98,7 @@
         ]
       }
     ],
-    "Toolchain": [
-      {
+    "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": [
@@ -117,7 +116,7 @@
         ]
       },
       {
-        "label": "Rebirth",
+        "label": "ReBirth",
         "type": "subcategory",
         "ids": [
           "version-0.20-toolchain/rebirth/rebirth-intro"

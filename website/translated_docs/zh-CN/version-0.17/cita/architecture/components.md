@@ -1,7 +1,6 @@
 ---
 id: version-0.17-components
 title: 系统组件
-sidebar_label: 系统组件
 original_id: components
 ---
 ## RPC

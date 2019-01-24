@@ -1,6 +1,6 @@
 ---
 id: version-0.20-admin
-title: Admin Contract Interface
+title: 管理员合约接口
 original_id: admin
 ---
 

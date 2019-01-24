@@ -1,7 +1,7 @@
 ---
 id: version-0.20-glossary
 title: Glossary
-original_id: glossary
+original_id: 词汇表
 ---
 ## 区块链
 

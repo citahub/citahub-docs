@@ -1,6 +1,6 @@
 ---
 id: version-0.20-config-overview
-title: Configuration Overview
+title: 配置概览
 original_id: config-overview
 ---
 在本章节中，将为你详细介绍链级配置和各微服务配置的相关内容。

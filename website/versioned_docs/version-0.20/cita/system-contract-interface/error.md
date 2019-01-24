@@ -1,6 +1,6 @@
 ---
 id: version-0.20-error
-title: 系统合约错误类型
+title: System Contract Error Code
 original_id: error
 ---
 

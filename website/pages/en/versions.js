@@ -54,11 +54,11 @@ function Versions(props) {
               <tr>
                 <th>{/*latestVersion*/}Develop</th>
                 <td>
-                  <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/welcome`}>Documentation</a>
+                  <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/next/welcome`}>Documentation</a>
                 </td>
                 <td>
                   <a href="https://github.com/cryptape/cita/compare/develop...master" alt="compare" target="_blank">
-                    Commits since version {versions[1]}
+                    Commits since version {versions[0]}
                   </a>
                 </td>
               </tr>

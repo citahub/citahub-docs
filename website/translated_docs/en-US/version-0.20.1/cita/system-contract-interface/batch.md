@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-batch
-title: 批量交易合约接口
+title: Batch Transactions Contract Interface
 original_id: batch
 ---
 

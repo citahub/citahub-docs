@@ -1,7 +1,6 @@
 ---
 id: version-0.17-snapshot
-title: 快照
-sidebar_label: 快照
+title: Snapshot
 original_id: snapshot
 ---
 
@@ -40,15 +39,15 @@ snap-chain.rlp  snap.rlp
 
 1. 将上述生成的快照文件拷贝到需恢复链数据的节点目录下
 
-    ```bash
-    $ cd test-chain/1
-    $ cp ../0/snap.rlp ../0/snap-chain.rlp ./
-    ```
+   ```bash
+   $ cd test-chain/1
+   $ cp ../0/snap.rlp ../0/snap-chain.rlp ./
+   ```
 
 2. 依快照文件快照恢复
 
-    快照命令行工具接受恢复参数后，依据快照文件恢复数据。
+   快照命令行工具接受恢复参数后，依据快照文件恢复数据。
 
-    ```bash
-    $ ../../bin/snapshot_tool -m restore
-    ```
+   ```bash
+   $ ../../bin/snapshot_tool -m restore
+   ```

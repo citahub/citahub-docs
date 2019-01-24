@@ -1,7 +1,6 @@
 ---
 id: version-0.18-log
-title: 日志管理
-sidebar_label: 日志管理
+title: Log Management
 original_id: log
 ---
 
@@ -10,6 +9,7 @@ original_id: log
 CITA 每个微服务的日志信息都会被记录到一个单独的日志文件。
 
 ## 日志位置
+
 CITA 日志文件位于节点文件夹下的 logs 目录中，每个微服务单独一个日志文件。
 
 ```
@@ -18,6 +18,7 @@ cita-auth.log  cita-bft.log  cita-chain.log  cita-executor.log  cita-forever.log
 ```
 
 ## 日志优先级
+
 日志优先级定义如下：
 
 ```
@@ -68,6 +69,7 @@ CITA 支持为不同模块设置不同的优先级，这个在系统调试的时
 ```
 
 ## 日志分割
+
 CITA 节点需要长时间持续运行，因此日志文件会越来越大，需要定期清理。
 
 或者需要将某一段比较重要的日志单独备份。

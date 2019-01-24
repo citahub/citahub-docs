@@ -53,9 +53,16 @@ const siteConfig = {
     //   doc: 'welcome',
     //   label: 'Docs'
     // },
-    {page: 'community', label: 'Community'},
-    {search: true},
-    {language: true},
+    {
+      page: 'community',
+      label: 'Community'
+    },
+    {
+      search: true
+    },
+    {
+      language: true
+    },
   ],
 
   // If you have users set above, you add it here:
@@ -99,6 +106,8 @@ const siteConfig = {
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
+  docsSideNavCollapsible: true,
+
   // No .html extensions for paths.
   cleanUrl: true,
 

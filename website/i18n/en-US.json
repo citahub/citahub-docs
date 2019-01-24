@@ -9,7 +9,7 @@
         "title": "Architecture"
       },
       "cita/architecture/components": {
-        "title": "System Components"
+        "title": "System components"
       },
       "cita/architecture/consensus": {
         "title": "Consensus"
@@ -121,7 +121,7 @@
         "title": "System Configuration Contract"
       },
       "cita/system-management/amend": {
-        "title": "Amend Contract"
+        "title": "Amend"
       },
       "cita/system-management/autu-exec": {
         "title": "Automated Execution"
@@ -210,111 +210,85 @@
         "sidebar_label": "CITA Truffle Box Introduction"
       },
       "version-0.17-architecture": {
-        "title": "System architecture",
-        "sidebar_label": "System architecture"
+        "title": "Architecture"
       },
       "version-0.17-components": {
-        "title": "System components",
-        "sidebar_label": "System components"
+        "title": "System Components"
       },
       "version-0.17-consensus": {
-        "title": "Consensus",
-        "sidebar_label": "Consensus"
+        "title": "Consensus"
       },
       "version-0.17-transaction-process": {
-        "title": "Transaction Processing",
-        "sidebar_label": "Transaction Processing"
+        "title": "Transaction Processing"
       },
       "version-0.17-view": {
-        "title": "View",
-        "sidebar_label": "View"
+        "title": "View"
       },
       "version-0.17-config-tool": {
-        "title": "Chain Level Configuration",
-        "sidebar_label": "Chain level configuration"
+        "title": "Chain Configuration"
       },
       "version-0.17-getting-started": {
-        "title": "Getting Started",
-        "sidebar_label": "Getting Started"
-      },
-      "version-0.17-crosschain-contract-example": {
-        "title": "Examples of Cross-chain Contract",
-        "sidebar_label": "Crosschain"
+        "title": "Getting Started"
       },
       "version-0.17-cita-intro": {
-        "title": "Overview",
-        "sidebar_label": "About CITA"
+        "title": "About CITA"
+      },
+      "version-0.17-crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
       },
       "version-0.17-rpc-error-code": {
-        "title": "JSON RPC Error code",
-        "sidebar_label": "JSON RPC Error code"
+        "title": "JSON RPC Error Code"
       },
       "version-0.17-rpc-types": {
-        "title": "JSON RPC parameters and return values",
-        "sidebar_label": "JSON RPC parameters and return values"
+        "title": "JSON RPC Types"
       },
       "version-0.17-rpc": {
-        "title": "JSON RPC",
-        "sidebar_label": "JSON RPC"
+        "title": "JSON RPC"
       },
       "version-0.17-log": {
-        "title": "Log Management",
-        "sidebar_label": "Log Management"
+        "title": "Log Management"
       },
       "version-0.17-node": {
-        "title": "Node Management",
-        "sidebar_label": "Node Management"
+        "title": "Node Management"
       },
       "version-0.17-permission": {
-        "title": "Permission Management",
-        "sidebar_label": "Permission Management"
+        "title": "Permission Management"
       },
       "version-0.17-quota": {
-        "title": "Quota management",
-        "sidebar_label": "Quota management"
+        "title": "Quota Management"
       },
       "version-0.17-snapshot": {
-        "title": "Snapshot",
-        "sidebar_label": "Snapshot"
+        "title": "Snapshot"
       },
       "version-0.17-user": {
-        "title": "User Management",
-        "sidebar_label": "User Management"
+        "title": "User Management"
       },
       "version-0.17-txtool": {
-        "title": "TXTOOL",
-        "sidebar_label": "About TXTOOL"
+        "title": "About Txtool"
       },
       "version-0.17-contributing": {
         "title": "Contributing"
       },
       "version-0.17-welcome": {
-        "title": "Overview",
-        "sidebar_label": "Overview"
+        "title": "Overview"
       },
       "version-0.17-roadmap": {
-        "title": "Roadmap",
-        "sidebar_label": "Roadmap"
+        "title": "Roadmap"
       },
       "version-0.17-cli-intro": {
-        "title": "CLI Introduction",
-        "sidebar_label": "CITA-CLI Introduction"
+        "title": "CLI Introduction"
       },
       "version-0.17-cyton-intro": {
-        "title": "Cyton Introduction",
-        "sidebar_label": "Cyton Introduction"
+        "title": "Cyton Introduction"
       },
       "version-0.17-ide-intro": {
-        "title": "CITA IDE Introduction",
-        "sidebar_label": "CITA IDE Introduction"
+        "title": "CITA IDE Introduction"
       },
       "version-0.17-microscope-intro": {
-        "title": "Microscope Introduction",
-        "sidebar_label": "Microscope Introduction"
+        "title": "Microscope Introduction"
       },
       "version-0.17-rebirth-intro": {
-        "title": "Rebirth Introduction",
-        "sidebar_label": "BeBirth Introduction"
+        "title": "Rebirth Introduction"
       },
       "version-0.17-java-sdk": {
         "title": "CITA Java SDK"
@@ -329,116 +303,92 @@
         "title": "CITA Swift SDK"
       },
       "version-0.17-truffle-box-intro": {
-        "title": "CITA Truffle Box Introduction",
-        "sidebar_label": "CITA Truffle Box Introduction"
+        "title": "CITA Truffle Box Introduction"
       },
       "version-0.18-config-tool": {
-        "title": "Chain-level Configuration",
-        "sidebar_label": "Chain-level Configuration"
+        "title": "Chain Level Configuration"
       },
       "version-0.18-getting-started": {
-        "title": "Getting Started",
-        "sidebar_label": "Getting Started"
+        "title": "Getting Started"
+      },
+      "version-0.18-crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
       },
       "version-0.18-addresses": {
-        "title": "Reserved System Contract Address",
-        "sidebar_label": "Reserved System Contract Address"
+        "title": "Reserved System Addresses"
       },
       "version-0.18-faq": {
         "title": "FAQ",
         "sidebar_label": "FAQ"
       },
       "version-0.18-glossary": {
-        "title": "Glossary",
-        "sidebar_label": "Glossary"
+        "title": "Glossary"
       },
       "version-0.18-rpc-error-code": {
-        "title": "JSON RPC Error code",
-        "sidebar_label": "JSON RPC Error code"
+        "title": "JSON RPC Error Code"
       },
       "version-0.18-rpc-types": {
-        "title": "JSON RPC parameters and return values",
-        "sidebar_label": "JSON RPC parameters and return values"
+        "title": "JSON RPC Types"
       },
       "version-0.18-rpc": {
-        "title": "JSON RPC",
-        "sidebar_label": "JSON RPC"
+        "title": "JSON RPC"
       },
       "version-0.18-batch-tx": {
-        "title": "Batch Transaction",
-        "sidebar_label": "Batch Transaction"
+        "title": "Batch Transactions"
       },
       "version-0.18-log": {
-        "title": "Log Management",
-        "sidebar_label": "Log Management"
+        "title": "Log Management"
       },
       "version-0.18-node": {
-        "title": "Node Management",
-        "sidebar_label": "Node Management"
+        "title": "Node Management"
       },
       "version-0.18-permission": {
-        "title": "Permission Management",
-        "sidebar_label": "Permission Management"
+        "title": "Permission Management"
       },
       "version-0.18-snapshot": {
-        "title": "Snapshot",
-        "sidebar_label": "Snapshot"
+        "title": "Snapshot"
       },
-      "version-0.18-sys": {
-        "title": "System Configuration",
-        "sidebar_label": "Configuration"
+      "version-0.18-system": {
+        "title": "System Configuration"
       },
       "version-0.19-config-tool": {
-        "title": "Chain-level Configuration",
-        "sidebar_label": "Chain-level Configuration"
+        "title": "Chain Level Configuration"
       },
       "version-0.19-getting-started": {
-        "title": "Getting Started",
-        "sidebar_label": "Getting Started"
+        "title": "Getting Started"
       },
       "version-0.19-crosschain-contract-example": {
-        "title": "Example of Crosschain Contracts",
-        "sidebar_label": "Crosschain"
+        "title": "Crosschain Contract Examples"
       },
       "version-0.19-addresses": {
-        "title": "Reserved System Contract Address",
-        "sidebar_label": "Reserved System Contract Address"
+        "title": "Reserved System Addresses"
       },
       "version-0.19-rpc-types": {
-        "title": "JSON RPC parameters and return values",
-        "sidebar_label": "JSON RPC parameters and return values"
+        "title": "JSON RPC Types"
       },
       "version-0.19-rpc": {
-        "title": "JSON RPC",
-        "sidebar_label": "JSON RPC"
+        "title": "JSON RPC"
       },
       "version-0.19-amend": {
-        "title": "Amend",
-        "sidebar_label": "Amend"
+        "title": "Amend"
       },
       "version-0.19-batch-tx": {
-        "title": "Batch Transaction",
-        "sidebar_label": "Batch Transaction"
+        "title": "Batch Transactions"
       },
       "version-0.19-emergency-brake": {
-        "title": "Emergency Braking",
-        "sidebar_label": "Emergency Braking"
+        "title": "Emergency Brake"
       },
       "version-0.19-fee-back": {
-        "title": "Fee Back",
-        "sidebar_label": "Fee Back"
+        "title": "Fee Back"
       },
       "version-0.19-node": {
-        "title": "Node Management",
-        "sidebar_label": "Node Management"
+        "title": "Node Management"
       },
       "version-0.19-permission": {
-        "title": "Permission Management",
-        "sidebar_label": "Permission Management"
+        "title": "Permission Management"
       },
       "version-0.19-quota": {
-        "title": "Quota Management",
-        "sidebar_label": "Quota Management"
+        "title": "Quota Management"
       },
       "version-0.20.1-consensus": {
         "title": "Consensus"
@@ -466,37 +416,37 @@
         "title": "Admin Contract Interface"
       },
       "version-0.20.1-all-groups": {
-        "title": "All-groups System Contract"
+        "title": "All-Group Contract Interface"
       },
       "version-0.20.1-auth": {
-        "title": "Authorization Management Contract"
+        "title": "Auth Management Contract Interface"
       },
       "version-0.20.1-auto-exec": {
-        "title": "Auto Execution Contract"
+        "title": "Auto Execution Contract Interface"
       },
       "version-0.20.1-batch": {
-        "title": "Batch Transaction Contract"
+        "title": "Batch Transactions Contract Interface"
       },
       "version-0.20.1-error": {
-        "title": "System Contract Error Type"
+        "title": "System Contract Error Code"
       },
       "version-0.20.1-group-management": {
-        "title": "Group Management Contract"
+        "title": "Group Management Contract Interface"
       },
       "version-0.20.1-permission-management": {
-        "title": "Permission Management Contract"
+        "title": "Permission Management Contract Interface"
       },
       "version-0.20.1-quota-manager": {
-        "title": "Quota Management Contract"
+        "title": "Quota Management Contract Interface"
       },
       "version-0.20.1-quota-price": {
-        "title": "Quota Price Management Contract"
+        "title": "Quota Price Management Contract Interface"
       },
       "version-0.20.1-role-auth": {
-        "title": "Role Authorization Contract"
+        "title": "Role Auth Contract Interface"
       },
       "version-0.20.1-role": {
-        "title": "Role Contract"
+        "title": "Role Contract Interface"
       },
       "version-0.20.1-contracts": {
         "title": "System Contracts"
@@ -508,7 +458,7 @@
         "title": "Architecture"
       },
       "version-0.20-components": {
-        "title": "System Components"
+        "title": "System components"
       },
       "version-0.20-consensus": {
         "title": "Consensus"
@@ -523,7 +473,7 @@
         "title": "Welcome to CITA"
       },
       "version-0.20-chain-config": {
-        "title": "chain-config"
+        "title": "Chain-config"
       },
       "version-0.20-config-overview": {
         "title": "Configuration Overview"
@@ -568,53 +518,50 @@
       "version-0.20-admin": {
         "title": "Admin Contract Interface"
       },
-      "version-0.20-all-groups": {
-        "title": "All-groups Contract"
-      },
       "version-0.20-auth": {
-        "title": "Authorization Management Contract"
+        "title": "Auth Management Contract Interface"
       },
       "version-0.20-batch": {
-        "title": "Batch Transaction Contract"
+        "title": "Batch Transactions Contract Interface"
       },
       "version-0.20-emergency-brake": {
-        "title": "Emergency Braking"
+        "title": "Emergency Brake"
       },
       "version-0.20-error": {
-        "title": "System Contract Error Type"
+        "title": "System Contract Error Code"
       },
       "version-0.20-group-management": {
-        "title": "Group Management Contract"
+        "title": "Group Management Contract Interface"
       },
       "version-0.20-group": {
-        "title": "Group Contract"
+        "title": "Group Contract Interface"
       },
       "version-0.20-node": {
         "title": "Node Management"
       },
       "version-0.20-permission-management": {
-        "title": "Permission Management Contract"
+        "title": "Permission Management Contract Interface"
       },
       "version-0.20-permission": {
         "title": "Permission Management"
       },
       "version-0.20-quota-manager": {
-        "title": "Quota Management Contract"
+        "title": "Quota Management Contract Interface"
       },
       "version-0.20-role-management": {
-        "title": "Role management Contract"
+        "title": "Role Management Contract Interface"
       },
       "version-0.20-sys": {
-        "title": "System Configuration Contract"
+        "title": "System Configuration Contract Interface"
       },
       "version-0.20-amend": {
         "title": "Amend"
       },
       "version-0.20-autu-exec": {
-        "title": "Automated Execution"
+        "title": "Auto Execution"
       },
       "version-0.20-batch-tx": {
-        "title": "Batch Transaction"
+        "title": "Batch Transactions"
       },
       "version-0.20-contracts": {
         "title": "System Contracts"
@@ -638,89 +585,106 @@
         "title": "User Management"
       },
       "version-0.20-version": {
-        "title": "Protocol Management"
+        "title": "Version Management"
       },
       "version-0.17-cita/chain/getting-started": {
         "title": "Getting Started"
+      },
+      "version-0.17-cita/system-management/log": {
+        "title": "Log Management"
       },
       "version-0.17-cita/system-management/user": {
         "title": "User Management"
       },
       "version-0.17-cita/system-management/quota": {
-        "title": "Quota management"
-      },
-      "version-0.17-cita/system-management/log": {
-        "title": "Log Management"
+        "title": "Quota Management"
       },
       "version-0.17-cita/system-management/snapshot": {
         "title": "Snapshot"
       },
       "version-0.17-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC parameters and return values"
+        "title": "JSON RPC Types"
       },
       "version-0.17-cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC Error code"
-      },
-      "version-0.17-cita/architecture/components": {
-        "title": "System components"
-      },
-      "version-0.17-cita/architecture/consensus": {
-        "title": "Consensus"
+        "title": "JSON RPC Error Code"
       },
       "version-0.17-cita/architecture/transaction-process": {
         "title": "Transaction Processing"
       },
+      "version-0.17-cita/architecture/consensus": {
+        "title": "Consensus"
+      },
+      "version-0.17-cita/architecture/components": {
+        "title": "System components"
+      },
       "version-0.17-cita/architecture/view": {
         "title": "View"
+      },
+      "version-0.17-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "version-0.17-cita/cita-intro": {
+        "title": "About CITA"
+      },
+      "version-0.17-cita/txtool": {
+        "title": "About Txtool"
       },
       "version-0.18-cita/system-management/log": {
         "title": "Log Management"
       },
-      "version-0.18-cita/system-management/sys": {
+      "version-0.18-cita/system-management/batch-tx": {
+        "title": "Batch Transactions"
+      },
+      "version-0.18-cita/system-management/system": {
         "title": "System Configuration"
       },
       "version-0.18-cita/system-management/snapshot": {
         "title": "Snapshot"
       },
-      "version-0.18-cita/system-management/batch-tx": {
-        "title": "Batch Transaction"
-      },
       "version-0.18-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC parameters and return values"
-      },
-      "version-0.18-cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC Error code"
+        "title": "JSON RPC Types"
       },
       "version-0.18-cita/reference/addresses": {
-        "title": "Reserved System Contract Address"
+        "title": "Reserved System Addresses"
+      },
+      "version-0.18-cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC Error Code"
       },
       "version-0.18-cita/reference/glossary": {
         "title": "Glossary"
       },
       "version-0.19-cita/chain/getting-started": {
-        "title": "Getting Started",
-        "sidebar_label": "Getting Started"
+        "title": "Getting Started"
+      },
+      "version-0.18-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
       },
       "version-0.19-cita/system-management/quota": {
-        "title": "Quota management"
-      },
-      "version-0.19-cita/system-management/batch-tx": {
-        "title": "Batch Transaction"
+        "title": "Quota Management"
       },
       "version-0.19-cita/system-management/emergency-brake": {
-        "title": "Emergency Braking"
+        "title": "Emergency Brake"
       },
-      "version-0.19-cita/system-management/amend": {
-        "title": "Amend"
+      "version-0.19-cita/system-management/batch-tx": {
+        "title": "Batch Transactions"
       },
       "version-0.19-cita/system-management/fee-back": {
         "title": "Fee Back"
       },
+      "version-0.19-cita/system-management/amend": {
+        "title": "Amend"
+      },
       "version-0.19-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC parameters and return values"
+        "title": "JSON RPC Types"
+      },
+      "version-0.19-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Examples"
       },
       "version-0.19-cita/reference/addresses": {
-        "title": "Reserved System Contract Address"
+        "title": "Reserved System Addresses"
+      },
+      "version-0.20-cita/configuration/microservice-configuration": {
+        "title": "Microservice Configuration"
       },
       "version-0.20-cita/configuration/config-overview": {
         "title": "Configuration Overview"
@@ -731,131 +695,137 @@
       "version-0.20-cita/system-management/user": {
         "title": "User Management"
       },
-      "version-0.20-cita/system-management/quota": {
-        "title": "Quota Management"
-      },
       "version-0.20-cita/system-management/price": {
         "title": "Quota Price Management"
       },
       "version-0.20-cita/system-management/log": {
         "title": "Log Management"
       },
+      "version-0.20-cita/system-management/quota": {
+        "title": "Quota Management"
+      },
       "version-0.20-cita/system-management/snapshot": {
         "title": "Snapshot"
       },
-      "version-0.20-cita/system-management/emergency-brake": {
-        "title": "Emergency Braking"
-      },
       "version-0.20-cita/system-management/batch-tx": {
-        "title": "Batch Transaction"
+        "title": "Batch Transactions"
       },
-      "version-0.20-cita/system-management/fee-back": {
-        "title": "Fee Back"
+      "version-0.20-cita/system-management/emergency-brake": {
+        "title": "Emergency Brake"
       },
       "version-0.20-cita/system-management/amend": {
         "title": "Amend"
       },
+      "version-0.20-cita/system-management/version": {
+        "title": "Version Management"
+      },
+      "version-0.20-cita/system-management/fee-back": {
+        "title": "Fee Back"
+      },
       "version-0.20-cita/system-management/auto-exec": {
-        "title": "Automated Execution"
+        "title": "Auto Execution"
       },
       "version-0.20-cita/rpc-guide/rpc-types": {
         "title": "JSON RPC Types"
       },
       "version-0.20-cita/system-contract-interface/node": {
-        "title": "Consensus Node Management Contract"
+        "title": "Consensus Node Management Contract Interface"
       },
       "version-0.20-cita/rpc-guide/rpc-error-code": {
         "title": "JSON RPC Error Code"
       },
-      "version-0.20-cita/system-contract-interface/auth": {
-        "title": "Authorization Management Contract"
+      "version-0.20-cita/system-contract-interface/group": {
+        "title": "Group Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/permission": {
-        "title": "Permission Contract"
+        "title": "Permission Management Interface"
       },
       "version-0.20-cita/system-contract-interface/role-management": {
-        "title": "Role management Contract"
-      },
-      "version-0.20-cita/system-contract-interface/group": {
-        "title": "Group Contract"
-      },
-      "version-0.20-cita/system-contract-interface/all-groups": {
-        "title": "All-groups System Contract"
+        "title": "Role Management Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/quota-manager": {
-        "title": "Quota Management Contract"
+        "title": "Quota Management Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/batch": {
-        "title": "Batch Transaction Contract"
-      },
-      "version-0.20-cita/system-management/version": {
-        "title": "Protocol Management"
+        "title": "Batch Transactions Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/emergency-brake": {
-        "title": "Emergency Brake Contract"
+        "title": "Emergency Brake Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/admin": {
         "title": "Admin Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/error": {
-        "title": "System Contract Error Type"
+        "title": "System Contract Error Code"
       },
       "version-0.20-cita/architecture/components": {
-        "title": "System Components"
+        "title": "System components"
       },
       "version-0.20-cita/architecture/consensus": {
         "title": "Consensus"
       },
+      "version-0.20-cita/system-contract-interface/auth": {
+        "title": "Auth Management Contract Interface"
+      },
       "version-0.20-cita/architecture/transaction-process": {
         "title": "Transaction Process"
-      },
-      "version-0.20-cita/architecture/view": {
-        "title": "View"
-      },
-      "version-0.20-cita/protocol-upgrade/overview": {
-        "title": "Protocol Upgrade Overview"
-      },
-      "version-0.20-cita/protocol-upgrade/v0": {
-        "title": "v0 Protocol"
       },
       "version-0.20-cita/protocol-upgrade/v1": {
         "title": "v1 Protocol"
       },
+      "version-0.20-cita/architecture/view": {
+        "title": "View"
+      },
       "version-0.20-cita/reference/addresses": {
         "title": "Reserved System Addresses"
+      },
+      "version-0.20-cita/protocol-upgrade/overview": {
+        "title": "Protocol Upgrade Overview"
       },
       "version-0.20-cita/reference/glossary": {
         "title": "Glossary"
       },
-      "version-0.20.1-cita/system-management/contracts": {
-        "title": "系统合约"
+      "version-0.20-cita/protocol-upgrade/v0": {
+        "title": "v0 Protocol"
       },
-      "version-0.20.1-cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口"
+      "version-0.20-cita/cita-intro": {
+        "title": "Welcome to CITA"
+      },
+      "version-0.20-cita/getting-started": {
+        "title": "Getting Started"
+      },
+      "version-0.20-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "version-0.20.1-cita/system-management/contracts": {
+        "title": "System Contracts"
       },
       "version-0.20.1-cita/system-contract-interface/role-auth": {
-        "title": "角色授权合约接口"
+        "title": "Role Auth Contract Interface"
       },
-      "version-0.20.1-cita/system-contract-interface/group-management": {
-        "title": "组管理合约接口"
+      "version-0.20.1-cita/system-contract-interface/auth": {
+        "title": "Auth Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/all-groups": {
-        "title": "所有组合约接口"
+        "title": "All-Group Contract Interface"
+      },
+      "version-0.20.1-cita/system-contract-interface/group-management": {
+        "title": "Group Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/quota-manager": {
-        "title": "配额管理合约接口"
+        "title": "Quota Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/quota-price": {
-        "title": "配额价格管理合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/batch": {
-        "title": "批量交易合约接口"
+        "title": "Quota Price Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/admin": {
         "title": "Admin Contract Interface"
       },
+      "version-0.20.1-cita/system-contract-interface/batch": {
+        "title": "Batch Transactions Contract Interface"
+      },
       "version-0.20.1-cita/system-contract-interface/auto-exec": {
-        "title": "自动执行合约接口"
+        "title": "Auto Execution Contract Interface"
       },
       "version-0.20.1-cita/architecture/consensus": {
         "title": "Consensus"
@@ -863,20 +833,29 @@
       "version-0.20.1-cita/reference/addresses": {
         "title": "Reserved System Addresses"
       },
+      "version-0.20.1-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "cita/system-management/auto-exec": {
+        "title": "Automated Execution"
+      },
+      "version-0.17-cita/chain/config-tool": {
+        "title": "Chain Configuration"
+      },
       "version-0.17-cita/system-management/node": {
-        "title": "节点管理aa"
+        "title": "Node Management"
       },
       "version-0.17-cita/architecture/architecture": {
-        "title": "System architecture"
+        "title": "Architecture"
       },
       "version-0.18-cita/chain/getting-started": {
-        "title": "快速入门"
+        "title": "Getting Started"
       },
       "version-0.18-cita/chain/config-tool": {
-        "title": "Chain level configuration"
+        "title": "Chain Level Configuration"
       },
       "version-0.19-cita/chain/config-tool": {
-        "title": "Chain level configuration"
+        "title": "Chain Level Configuration"
       },
       "version-0.19-cita/system-management/node": {
         "title": "Node Management"
@@ -885,13 +864,16 @@
         "title": "Node Management"
       },
       "version-0.20-cita/system-contract-interface/group-management": {
-        "title": "Group Management Contract"
+        "title": "Group Management Contract Interface"
       },
       "version-0.20-cita/architecture/architecture": {
         "title": "Architecture"
       },
+      "version-0.20.1-cita/getting-started": {
+        "title": "Getting Started"
+      },
       "version-0.20.1-cita/system-contract-interface/error": {
-        "title": "System Contract Error Type"
+        "title": "System Contract Error Code"
       },
       "version-0.18-cita/system-management/node": {
         "title": "Node Management"
@@ -935,57 +917,59 @@
       "CITA": "CITA",
       "Toolchain": "Toolchain",
       "Contributing": "Contributing",
+      "Getting Started": "Getting Started",
       "Configuration": "Configuration",
       "System Management": "System Management",
-      "JSON-RPC": "JSON-RPC",
+      "JSON-RPC": "JSON RPC",
       "System Contract Interface": "System Contract Interface",
       "Architecture": "Architecture",
       "Protocol Upgrade": "Protocol Upgrade",
-      "Reference": "Reference"
+      "Reference": "Reference",
+      "Protocol-upgrade": "Protocol Upgrade"
     }
   },
   "pages-strings": {
     "CITA Community|no description given": "CITA Community",
-    "We aim to build a closed-loop community to connect operators, developers and users.|no description given": "We aim to build a closed-loop community to connect operators, developers and users.",
+    "We aim to build a closed-loop community to connect operators, developers and users.|no description given": "We aim to build a closed-loop the operators, developers and users.",
     "Where to get help|no description given": "Where to get help",
-    "If you need help with CITA, the right place to go depends on the type of help that you need.|no description given": "If you need help with CITA, the right place to go depends on the type of help that you need.",
+    "If you need help with CITA, the right place to go depends on the type of help that you need.|no description given": "If you need help with CITA, the \"place to go depends on the type of help s need.",
     "For technical problem|no description given": "For technical problem",
     "CITAHub Talk|no description given": "CITAHub Talk",
-    "would be a perfect place to get help, no matter having a code-level questions or being stuck with a specific error.|no description given": "would be a perfect place to get help, no matter having a code-level questions or being stuck with a specific error.",
-    "Looking for the solution for your organization|no description given": "Looking for the solution for your organization",
-    "Please apply to join|no description given": "Please apply to join",
+    "would be a perfect place to get help, no matter having a code-level questions or being stuck with a specific error.|no description given": "Would is a perfect place to get help, no matter having a code-level questions or being stuck with a specific error.",
+    "Looking for the solution for your organization|no description given": "Looking for the solution for your",
+    "Please apply to join|no description given": "Please make a apply to join",
     "our community|no description given": "our community",
-    "Our team can offer dedicated support technicians to assist you in developing with CITA stack. What can we do for you?|no description given": "Our team can offer dedicated support technicians to assist you in developing with CITA stack. What can we do for you?",
-    "Advisory services: Tap into our extensive experience(Coming soon) in blockchain architecture and ensure you make the right decisions.|no description given": "Advisory services: Tap into our extensive experience(Coming soon) in blockchain architecture and ensure you make the right decisions.",
-    "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise. No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.|no description given": "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise. No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.",
+    "Our team can offer dedicated support technicians to assist you in developing with CITA stack. What can we do for you?|no description given": "Our team can offer dedicated, technicians to assist and developing with CITA stack. What can I do for you?",
+    "Advisory services: Tap into our extensive experience(Coming soon) in blockchain architecture and ensure you make the right decisions.|no description given": "Advisory Services:tap into we extensive experience (Coming soon) in blockchain architecture and ensure I make the decisions.",
+    "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise. No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.|no description given": "Customizable Features: by Configuring and customizing the Services, CITA can meet all the needs of enterprise. No matter which of blockchain network you choose to builds, we make sure to offer you the \"set of the of features.\"",
     "How to contribute|no description given": "How to contribute",
     "Read|no description given": "Read",
-    "contributing guide|no description given": "contributing guide",
-    "for the first.|no description given": "for the first.",
-    "Please keep in mind nor is code the only way to contribute to the project, we strongly value documentation and gladly accept improvements to the documentation.|no description given": "Please keep in mind nor is code the only way to contribute to the project, we strongly value documentation and gladly accept improvements to the documentation.",
+    "contributing guide|no description given": "Contributing.md",
+    "for the first.|no description given": "For the first.",
+    "Please keep in mind nor is code the only way to contribute to the project, we strongly value documentation and gladly accept improvements to the documentation.|no description given": "Please Keep in the mind nor being code the only by-contribute to the project, our strongly value documentation and gladly ACCE PT improvements to the documentation.",
     "Generally, CITA uses:|no description given": "Generally, CITA uses:",
-    "CITA improvement proposal for planning major changes|no description given": "CITA improvement proposal for planning major changes",
-    "Github issue and Github Project to create, organize and track logical issues, including bugs and improvement|no description given": "Github issue and Github Project to create, organize and track logical issues, including bugs and improvement",
-    "docs.citahub.com for documentation|no description given": "docs.citahub.com for documentation",
-    "Github pull requests to manage the review and merge of specific code or docs changes|no description given": "Github pull requests to manage the review and merge of specific code or docs changes",
-    "That is, Github issue and CIP are used to describe what should be fixed or changed, and high - level approaches, and pull requests describe how to implement that change in the project 's source code.|no description given": "That is, Github issue and CIP are used to describe what should be fixed or changed, and high - level approaches, and pull requests describe how to implement that change in the project 's source code.",
-    "If you want to join our core team, please apply in|no description given": "If you want to join our core team, please apply in",
-    "CITAHub|no description given": "CITAHub",
+    "CITA improvement proposal for planning major changes|no description given": "CITA improvement proposal for planning, changes",
+    "Github issue and Github Project to create, organize and track logical issues, including bugs and improvement|no description given": "GitHub issue and GitHub Project to create, organize and track logical issues, including bugs and improvement",
+    "docs.citahub.com for documentation|no description given": "Docs.citahub.com for Documentation",
+    "Github pull requests to manage the review and merge of specific code or docs changes|no description given": "Github pull requests to manage the review and merge of specific code or documents changes",
+    "That is, Github issue and CIP are used to describe what should be fixed or changed, and high - level approaches, and pull requests describe how to implement that change in the project 's source code.|no description given": "That's, Github issue and CIP were used to describe WhatsApp-fixed or changed, and high-level approaches, and pull Requests describe how to implement-in the project's source code.",
+    "If you want to join our core team, please apply in|no description given": "If you want to join my core team, please apply in",
+    "CITAHub|no description given": "Citahub",
     "Staying up to date|no description given": "Staying up to date",
-    "official channel|no description given": "official channel",
-    "Coming soon|no description given": "Coming soon",
+    "official channel|no description given": "Official channel",
+    "Coming soon|no description given": "Coming Soon",
     "CIPs and RFCs|no description given": "CIPs and RFCs",
-    "Rocking in Community|no description given": "Rocking in Community",
+    "Rocking in Community|no description given": "Rocking in the",
     "Forum|no description given": "Forum",
-    "Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.|no description given": "Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.",
+    "Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.|no description given": "Talks.citahub.com feel free to share articles and tutorials as well as start discussions on all kinds of hot topics abo UT blockchain.",
     "Meetups|no description given": "Meetups",
-    "Training|no description given": "Training",
-    "Check our past|no description given": "Check our past",
+    "Training|no description given": "Reserved System Addresses",
+    "Check our past|no description given": "Check our Past",
     "Training activity|no description given": "Training activity",
     "CITA adopted a time-based release cadence.|no description given": "CITA adopted a time-based release cadence.",
-    "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.|no description given": "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.",
-    "In production environment, we highly recommend to use stable version.|no description given": "In production environment, we highly recommend to use stable version.",
-    "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.|no description given": "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.",
+    "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.|no description given": "To see WhatsApp changes is coming and provide better feedback to CITA contributors, with the latest release candidate when POS Sible.",
+    "In production environment, we highly recommend to use stable version.|no description given": "In production environment, our highly recommend to the-to-with stable version.",
+    "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.|no description given": "Please be notice, the version A/toolchains may not consistent with CITA, since and is separate program. But at Documents,we present CITA and his corresponding toolchain as a usable whole set,so don ' t worry about the version Co. NFusion.",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"

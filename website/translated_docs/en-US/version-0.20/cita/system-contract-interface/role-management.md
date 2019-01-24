@@ -1,6 +1,6 @@
 ---
 id: version-0.20-role-management
-title: 角色管理合约接口
+title: Role Management Contract Interface
 original_id: role-management
 ---
 

@@ -58,7 +58,7 @@ function Versions(props) {
                 </td>
                 <td>
                   <a href="https://github.com/cryptape/cita/compare/develop...master" alt="compare" target="_blank">
-                    Commits since version {latestVersion}
+                    Commits since version {versions[1]}
                   </a>
                 </td>
               </tr>
@@ -67,22 +67,24 @@ function Versions(props) {
           <h3 id="archive">Stable Versions</h3>
           <table className="versions">
             <tbody>
-              {versions.map(version => (
-                // version !== latestVersion &&
-                <tr>
-                  <th>{version}</th>
-                  <td>
-                    <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
-                      Documentation
-                    </a>
-                  </td>
-                  <td>
-                    <a href={`https://github.com/cryptape/cita/tree/${version}`} alt="Release Note" target="_blank">
-                      Release Note
-                    </a>
-                  </td>
-                </tr>
-              ))}
+              {versions.map(
+                version =>
+                  version !== latestVersion && (
+                    <tr>
+                      <th>{version}</th>
+                      <td>
+                        <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
+                          Documentation
+                        </a>
+                      </td>
+                      <td>
+                        <a href={`https://github.com/cryptape/cita/tree/${version}`} alt="Release Note" target="_blank">
+                          Release Note
+                        </a>
+                      </td>
+                    </tr>
+                  ),
+              )}
             </tbody>
           </table>
         </div>

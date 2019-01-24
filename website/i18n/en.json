@@ -230,8 +230,7 @@
         "sidebar_label": "视图"
       },
       "version-0.17-config-tool": {
-        "title": "链级配置",
-        "sidebar_label": "链级配置"
+        "title": "Chain Configuration"
       },
       "version-0.17-getting-started": {
         "title": "快速入门",
@@ -262,8 +261,8 @@
         "sidebar_label": "日志管理"
       },
       "version-0.17-node": {
-        "title": "节点管理a",
-        "sidebar_label": "节点管理a"
+        "title": "节点管理",
+        "sidebar_label": "节点管理"
       },
       "version-0.17-permission": {
         "title": "权限管理",
@@ -373,8 +372,8 @@
         "sidebar_label": "日志管理"
       },
       "version-0.18-node": {
-        "title": "节点管理a",
-        "sidebar_label": "节点管理a"
+        "title": "节点管理",
+        "sidebar_label": "节点管理"
       },
       "version-0.18-permission": {
         "title": "权限管理",
@@ -429,8 +428,8 @@
         "sidebar_label": "出块奖励返回"
       },
       "version-0.19-node": {
-        "title": "节点管理a",
-        "sidebar_label": "节点管理a"
+        "title": "节点管理",
+        "sidebar_label": "节点管理"
       },
       "version-0.19-permission": {
         "title": "权限管理",
@@ -590,7 +589,7 @@
         "title": "组合约接口"
       },
       "version-0.20-node": {
-        "title": "节点管理a"
+        "title": "节点管理"
       },
       "version-0.20-permission-management": {
         "title": "权限管理合约接口"

@@ -10,8 +10,8 @@ CITA 链生成时，通过系统合约来生成创世块，并作为链的最基
 <h2 class="hover-list">系统合约</h2>
 
 - [节点管理](#节点管理)
-- \[配额管理\](#配额管理)
-- \[配额价格管理\](#配额价格管理)
+- [配额管理](#配额管理)
+- [配额价格管理](#配额价格管理)
 - [权限管理](#权限管理)
 - [用户管理](#用户管理)
 - [批量交易](#批量交易)
@@ -27,7 +27,7 @@ CITA 链生成时，通过系统合约来生成创世块，并作为链的最基
 
 节点管理合约存放在`/scripts/contracts/src/system/node_manager.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff020001`
 
-节点管理的相关描述及方法介绍见 [node_manager](./system_management/node)
+节点管理的相关描述及方法介绍见 [node_manager](./system-management/node)
 
 ### 配额管理
 
@@ -35,7 +35,7 @@ CITA 链生成时，通过系统合约来生成创世块，并作为链的最基
 
 配额管理合约存放在 `/scripts/contracts/src/system/quota_manager.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff020003`
 
-配额管理的相关描述及方法介绍见 [配额管理](./system_management/quota)
+配额管理的相关描述及方法介绍见 [配额管理](./system-management/quota)
 
 ### 配额价格管理
 
@@ -43,7 +43,7 @@ CITA 链生成时，通过系统合约来生成创世块，并作为链的最基
 
 配额管理合约存放在 `/scripts/contracts/src/system/price_management.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff020010`
 
-配额价格管理的相关描述及方法介绍见 [配额价格管理](./system_management/price)
+配额价格管理的相关描述及方法介绍见 [配额价格管理](./system-management/price)
 
 ### 权限管理
 
@@ -51,7 +51,7 @@ CITA 是一个面向企业级应用的区块链平台，严格的权限管理必
 
 权限管理合约存放在 `/scripts/contracts/src/system/permission_management.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff020004`
 
-权限管理的相关描述及方法介绍见 [权限管理](./system_management/permission)
+权限管理的相关描述及方法介绍见 [权限管理](./system-management/permission)
 
 ### 用户管理
 
@@ -61,23 +61,23 @@ CITA 为了方便对用户的管理， 我们采用基于组的管理方式，�
 
 组用户管理合约存放在 `/scripts/contracts/src/user_management/group.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff020009`
 
-用户管理的相关描述及方法介绍见 [用户管理](./system_management/user)
+用户管理的相关描述及方法介绍见 [用户管理](./system-management/user)
 
 ### 批量交易
 
 CITA 支持批量调用合约。
 
-批量交易合约存放在 `/scripts/contracts/src/system/batch_tx.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff02000e`
+批量交易合约存放在 `/scripts/contracts/src/system/batch-tx.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff02000e`
 
-批量交易的相关描述及方法介绍见 [批量交易](./system_management/batch_tx)
+批量交易的相关描述及方法介绍见 [批量交易](./system-management/batch-tx)
 
 ### 紧急制动
 
 在极端情况下，管理员可以通过发送交易到紧急制动系统合约，开启紧急制动模式，只接受管理员发送的交易，屏蔽掉其他所有交易。
 
-紧急制动合约存放在 `/scripts/contracts/src/system/emergency_brake.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff02000f`
+紧急制动合约存放在 `/scripts/contracts/src/system/emergency-brake.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff02000f`
 
-紧急制动相关描述及方法介绍见 [紧急制动](./system_management/emergency_brake)
+紧急制动相关描述及方法介绍见 [紧急制动](./system-management/emergency-brake)
 
 ### 协议号管理
 
@@ -85,12 +85,12 @@ CITA 支持批量调用合约。
 
 协议号管理系统合约存放在 `/scripts/contracts/src/system/version_manager.sol`， 地址是　`0xffffffffffffffffffffffffffffffffff020011`
 
-协议号管理的相关描述及方法介绍见 [协议号管理](./system_management/version)
+协议号管理的相关描述及方法介绍见 [协议号管理](./system-management/version)
 
 ### 自动执行
 
 CITA 提供一种仅供管理员使用的交易自动执行的功能。当打开自动执行开关时，管理员就可以注册一个已部署合约的函数，其在每一个块中都会自动执行。
 
-自动执行系统合约存放在 `/scripts/contracts/src/system/auto_exec.sol`， 地址是　`0xffffffffffffffffffffffffffffffffff020013`
+自动执行系统合约存放在 `/scripts/contracts/src/system/auto-exec.sol`， 地址是　`0xffffffffffffffffffffffffffffffffff020013`
 
-关描述及方法介绍见 [自动执行](./system_management/auto_exec)
+关描述及方法介绍见 [自动执行](./system-management/auto-exec)

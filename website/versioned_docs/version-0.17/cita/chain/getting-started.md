@@ -250,4 +250,4 @@ cd target/install
 > 在发布件目录(target/install)下运行节点。
 > 可选择使用`./env.sh`
 
-更多 API（如合约调用、交易查询）请参见[RPC 调用](./rpc_guide/rpc)。
+更多 API（如合约调用、交易查询）请参见[RPC 调用](./rpc-guide/rpc)。

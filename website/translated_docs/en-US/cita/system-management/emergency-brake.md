@@ -17,7 +17,7 @@ title: 紧急制动
 
 接口签名如下：
 
-    ======= emergency_brake.sol:EmergencyBrake =======
+    ======= emergency-brake.sol:EmergencyBrake =======
     ac9f0222: setState(bool)
     c19d93fb: state()
     

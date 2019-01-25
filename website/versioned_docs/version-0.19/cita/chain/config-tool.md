@@ -112,11 +112,11 @@ $ ls test-chain/
 
 ### 配置文件
 
-`config_tool/config_example` 目录下为各个微服务默认使用的配置文件。用户可在 `config_tool` 下创建格式类似的文件自定义配置信息。
+`config-tool/config_example` 目录下为各个微服务默认使用的配置文件。用户可在 `config-tool` 下创建格式类似的文件自定义配置信息。
 
 #### cita-chain
 
-`config_tool` 下创建`chain.toml`文件来自定义 `cita-chain` 配置。格式参考 `config_example/chain.toml` 文件，如下:
+`config-tool` 下创建`chain.toml`文件来自定义 `cita-chain` 配置。格式参考 `config_example/chain.toml` 文件，如下:
 
 ```shell
 prooftype = 2
@@ -136,7 +136,7 @@ cache_size = 1048576
 
 #### cita-executor
 
-`config_tool` 下创建 `executor.toml`文件来自定义 `cita-executor` journaldb 的类型等。格式参考 `config_example/executor.toml`文件，如下:
+`config-tool` 下创建 `executor.toml`文件来自定义 `cita-executor` journaldb 的类型等。格式参考 `config_example/executor.toml`文件，如下:
 
 ```shell
 prooftype = 2
@@ -152,7 +152,7 @@ grpc_port = 5000
 
 #### cita-auth
 
-`config_tool` 下创建 `auth.toml`文件来自定义 `cita-auth` 配置。格式参考 `config_example/auth.toml`文件，如下:
+`config-tool` 下创建 `auth.toml`文件来自定义 `cita-auth` 配置。格式参考 `config_example/auth.toml`文件，如下:
 
 ```
 count_per_batch = 30
@@ -170,7 +170,7 @@ prof_duration = 0
 
 #### cita-bft
 
-`config_tool` 下创建 `consensus.toml`文件来自定义 `cita-bft` 配置。格式参考 `config_example/consensus.toml`文件，如下:
+`config-tool` 下创建 `consensus.toml`文件来自定义 `cita-bft` 配置。格式参考 `config_example/consensus.toml`文件，如下:
 
 ```
 [ntp_config]
@@ -261,7 +261,7 @@ Contracts:
 函数签名在 `test-chain/template/contracts/docs` 目录（`test-chain` 为当前链名称），提供了 `NodeManager-hashes.json`可供查看，
 并提供了针对用户和开发者的文档，分别为 `NodeManager-userdoc.json` 及 `NodeManager-devdoc.json`
 
-共识节点管理的相关描述及方法介绍见 [node_manager](./system_management/node)
+共识节点管理的相关描述及方法介绍见 [node_manager](./system-management/node)
 
 ### 配额管理系统合约
 
@@ -270,7 +270,7 @@ Contracts:
 函数签名在 `test-chain/template/contracts/docs` 目录（`test-chain` 为当前链名称），提供了 `QuotaManager-hashes.json`可供查看，
 并提供了针对用户和开发者的文档，分别为 `QuotaManager-userdoc.json` 及 `QuotaManager-devdoc.json`
 
-配额管理的相关描述及方法介绍见 [quota_manager](./system_management/quota)
+配额管理的相关描述及方法介绍见 [quota_manager](./system-management/quota)
 
 ### 权限管理系统合约
 
@@ -279,8 +279,8 @@ Contracts:
 在 `test-chain/template/contracts/docs` 目录（`test-chain` 为当前链名称），提供了 `PermissionManagement-hashes.json` 可供查看，
 并提供了针对用户和开发者的文档，分别为 `PermissionManagement-userdoc.json` 及 `PermissionManagement-devdoc.json`
 
-详细的接口说明见 [permission_management](./system_management/permission)
+详细的接口说明见 [permission_management](./system-management/permission)
 
 ## 单独增加节点
 
-相关描述及操作见 [ordinary_node_management](./system_management/node)
+相关描述及操作见 [ordinary_node_management](./system-management/node)

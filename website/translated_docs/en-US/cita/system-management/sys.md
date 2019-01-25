@@ -39,4 +39,4 @@ sidebar_label: 系统配置
 
 ## 初始化
 
-sys_config.sol 合约通过写入创世块的方式来初始化，具体可以参考 [config_tool](./chain/config_tool)
+sys_config.sol 合约通过写入创世块的方式来初始化，具体可以参考 [config-tool](./chain/config-tool)

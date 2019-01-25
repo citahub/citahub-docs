@@ -73,52 +73,52 @@
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": [
-          "version-0.19-toolchian/cli/cli-intro"
+          "version-0.17-toolchian/cli/cli-intro"
         ]
       },
       {
         "label": "SDK",
         "type": "subcategory",
         "ids": [
-          "version-0.19-toolchain/sdk/js-sdk",
-          "version-0.19-toolchain/sdk/java-sdk",
-          "version-0.19-toolchain/sdk/swift-sdk",
-          "version-0.19-toolchain/sdk/ruby-sdk"
+          "version-0.17-toolchian/sdk/js-sdk",
+          "version-0.17-toolchian/sdk/java-sdk",
+          "version-0.17-toolchian/sdk/swift-sdk",
+          "version-0.17-toolchian/sdk/ruby-sdk"
         ]
       },
       {
         "label": "ReBirth",
         "type": "subcategory",
         "ids": [
-          "version-0.19-toolchain/rebirth/rebirth-intro"
+          "version-0.17-toolchian/rebirth/rebirth-intro"
         ]
       },
       {
         "label": "Cyton",
         "type": "subcategory",
         "ids": [
-          "version-0.19-toolchain/cyton/cyton-intro"
+          "version-0.17-toolchian/cyton/cyton-intro"
         ]
       },
       {
         "label": "Microscope",
         "type": "subcategory",
         "ids": [
-          "version-0.19-toolchain/microscope/microscope-intro"
+          "version-0.17-toolchian/microscope/microscope-intro"
         ]
       },
       {
         "label": "CITA-IDE",
         "type": "subcategory",
         "ids": [
-          "version-0.19-toolchain/ide/ide-intro"
+          "version-0.17-toolchian/ide/ide-intro"
         ]
       },
       {
         "label": "CITA Truffle Box",
         "type": "subcategory",
         "ids": [
-          "version-0.19-toolchain/truffle-box/truffle-box-intro"
+          "version-0.17-toolchian/truffle-box/truffle-box-intro"
         ]
       }
     ],

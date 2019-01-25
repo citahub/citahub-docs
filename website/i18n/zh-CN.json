@@ -240,7 +240,7 @@
         "title": "JSON RPC 错误类型"
       },
       "version-0.17-rpc-types": {
-        "title": "JSON RPC Types"
+        "title": "JSON RPC 类型"
       },
       "version-0.17-rpc": {
         "title": "JSON RPC"
@@ -269,9 +269,6 @@
       "version-0.17-contributing": {
         "title": "贡献代码"
       },
-      "version-0.17-welcome": {
-        "title": "概览"
-      },
       "version-0.17-roadmap": {
         "title": "开发路线图"
       },
@@ -288,7 +285,7 @@
         "title": "Microscope 简介"
       },
       "version-0.17-rebirth-intro": {
-        "title": "Rebirth 简介"
+        "title": "ReBirth 简介"
       },
       "version-0.17-java-sdk": {
         "title": "CITA Java SDK"
@@ -304,6 +301,9 @@
       },
       "version-0.17-truffle-box-intro": {
         "title": "CITA Truffle Box 简介"
+      },
+      "version-0.17-welcome": {
+        "title": "概览"
       },
       "version-0.18-config-tool": {
         "title": "链级配置"
@@ -328,7 +328,7 @@
         "title": "JSON RPC 错误类型"
       },
       "version-0.18-rpc-types": {
-        "title": "JSON RPC Types"
+        "title": "JSON RPC 类型"
       },
       "version-0.18-rpc": {
         "title": "JSON RPC"
@@ -351,6 +351,12 @@
       "version-0.18-system": {
         "title": "系统配置"
       },
+      "version-0.18-contributing": {
+        "title": "贡献代码"
+      },
+      "version-0.18-welcome": {
+        "title": "关于 CITA"
+      },
       "version-0.19-config-tool": {
         "title": "链级配置"
       },
@@ -364,7 +370,7 @@
         "title": "系统保留地址列表"
       },
       "version-0.19-rpc-types": {
-        "title": "JSON RPC Types"
+        "title": "JSON RPC 类型"
       },
       "version-0.19-rpc": {
         "title": "JSON RPC"
@@ -389,6 +395,12 @@
       },
       "version-0.19-quota": {
         "title": "份额管理"
+      },
+      "version-0.19-contributing": {
+        "title": "贡献代码"
+      },
+      "version-0.19-welcome": {
+        "title": "关于 CITA"
       },
       "version-0.20.1-consensus": {
         "title": "共识"
@@ -453,6 +465,12 @@
       },
       "version-0.20.1-permission": {
         "title": "权限管理"
+      },
+      "version-0.20.1-contributing": {
+        "title": "贡献代码"
+      },
+      "version-0.20.1-welcome": {
+        "title": "关于 CITA"
       },
       "version-0.20-architecture": {
         "title": "架构设计"
@@ -587,53 +605,20 @@
       "version-0.20-version": {
         "title": "协议版本管理"
       },
-      "version-0.17-cita/chain/getting-started": {
-        "title": "快速开始"
+      "version-0.20-contributing": {
+        "title": "贡献代码"
       },
-      "version-0.17-cita/system-management/log": {
-        "title": "日志管理"
+      "version-0.20-welcome": {
+        "title": "关于 CITA"
       },
       "version-0.17-cita/system-management/user": {
         "title": "用户管理"
       },
-      "version-0.17-cita/system-management/quota": {
-        "title": "份额管理"
-      },
-      "version-0.17-cita/system-management/snapshot": {
-        "title": "快照"
-      },
-      "version-0.17-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC Types"
-      },
-      "version-0.17-cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC 错误类型"
-      },
-      "version-0.17-cita/architecture/transaction-process": {
-        "title": "交易处理"
-      },
-      "version-0.17-cita/architecture/consensus": {
-        "title": "共识"
-      },
-      "version-0.17-cita/architecture/components": {
-        "title": "系统组件"
-      },
-      "version-0.17-cita/architecture/view": {
-        "title": "视图"
-      },
-      "version-0.17-cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约示例"
-      },
-      "version-0.17-cita/cita-intro": {
-        "title": "关于 CITA"
-      },
-      "version-0.17-cita/txtool": {
-        "title": "关于 Txtool"
-      },
       "version-0.18-cita/system-management/log": {
         "title": "日志管理"
       },
-      "version-0.18-cita/system-management/batch-tx": {
-        "title": "批量交易"
+      "version-0.17-cita/system-management/quota": {
+        "title": "份额管理"
       },
       "version-0.18-cita/system-management/system": {
         "title": "系统配置"
@@ -641,59 +626,77 @@
       "version-0.18-cita/system-management/snapshot": {
         "title": "快照"
       },
-      "version-0.18-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC Types"
-      },
-      "version-0.18-cita/reference/addresses": {
-        "title": "系统保留地址列表"
+      "version-0.18-cita/system-management/batch-tx": {
+        "title": "批量交易"
       },
       "version-0.18-cita/rpc-guide/rpc-error-code": {
         "title": "JSON RPC 错误类型"
       },
+      "version-0.18-cita/rpc-guide/rpc-types": {
+        "title": "JSON RPC 类型"
+      },
+      "version-0.17-cita/architecture/components": {
+        "title": "系统组件"
+      },
+      "version-0.17-cita/architecture/transaction-process": {
+        "title": "交易处理"
+      },
+      "version-0.17-cita/architecture/consensus": {
+        "title": "共识"
+      },
+      "version-0.17-cita/architecture/view": {
+        "title": "视图"
+      },
+      "version-0.18-cita/reference/addresses": {
+        "title": "系统保留地址列表"
+      },
       "version-0.18-cita/reference/glossary": {
         "title": "词汇表"
-      },
-      "version-0.19-cita/chain/getting-started": {
-        "title": "快速开始"
       },
       "version-0.18-cita/crosschain/crosschain-contract-example": {
         "title": "跨链合约示例"
       },
+      "version-0.19-cita/chain/getting-started": {
+        "title": "快速开始"
+      },
       "version-0.19-cita/system-management/quota": {
         "title": "份额管理"
-      },
-      "version-0.19-cita/system-management/emergency-brake": {
-        "title": "紧急制动"
       },
       "version-0.19-cita/system-management/batch-tx": {
         "title": "批量交易"
       },
-      "version-0.19-cita/system-management/fee-back": {
-        "title": "出块奖励返回"
+      "version-0.19-cita/system-management/emergency-brake": {
+        "title": "紧急制动"
       },
       "version-0.19-cita/system-management/amend": {
         "title": "数据订正"
       },
-      "version-0.19-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC Types"
+      "version-0.19-cita/system-management/fee-back": {
+        "title": "出块奖励返回"
       },
-      "version-0.19-cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约示例"
+      "version-0.19-cita/rpc-guide/rpc-types": {
+        "title": "JSON RPC 类型"
       },
       "version-0.19-cita/reference/addresses": {
         "title": "系统保留地址列表"
       },
-      "version-0.20-cita/configuration/microservice-configuration": {
-        "title": "微服务配置"
+      "version-0.19-cita/crosschain/crosschain-contract-example": {
+        "title": "跨链合约示例"
       },
       "version-0.20-cita/configuration/config-overview": {
         "title": "配置概览"
       },
-      "version-0.20-cita/system-management/contracts": {
-        "title": "系统合约"
+      "version-0.20-cita/configuration/microservice-configuration": {
+        "title": "微服务配置"
       },
       "version-0.20-cita/system-management/user": {
         "title": "用户管理"
+      },
+      "version-0.20-cita/system-management/quota": {
+        "title": "份额管理"
+      },
+      "version-0.20-cita/system-management/contracts": {
+        "title": "系统合约"
       },
       "version-0.20-cita/system-management/price": {
         "title": "份额价格管理"
@@ -701,20 +704,20 @@
       "version-0.20-cita/system-management/log": {
         "title": "日志管理"
       },
-      "version-0.20-cita/system-management/quota": {
-        "title": "份额管理"
-      },
       "version-0.20-cita/system-management/snapshot": {
         "title": "快照"
-      },
-      "version-0.20-cita/system-management/batch-tx": {
-        "title": "批量交易"
       },
       "version-0.20-cita/system-management/emergency-brake": {
         "title": "紧急制动"
       },
+      "version-0.20-cita/system-management/batch-tx": {
+        "title": "批量交易"
+      },
       "version-0.20-cita/system-management/amend": {
         "title": "数据订正"
+      },
+      "version-0.20-cita/system-management/auto-exec": {
+        "title": "自动执行"
       },
       "version-0.20-cita/system-management/version": {
         "title": "协议版本管理"
@@ -722,29 +725,29 @@
       "version-0.20-cita/system-management/fee-back": {
         "title": "出块奖励返回"
       },
-      "version-0.20-cita/system-management/auto-exec": {
-        "title": "自动执行"
+      "version-0.20-cita/system-contract-interface/node": {
+        "title": "共识节点管理合约接口"
       },
       "version-0.20-cita/rpc-guide/rpc-types": {
         "title": "JSON RPC 类型"
       },
-      "version-0.20-cita/system-contract-interface/node": {
-        "title": "共识节点管理合约接口"
+      "version-0.20-cita/system-contract-interface/permission": {
+        "title": "权限合约接口"
       },
       "version-0.20-cita/rpc-guide/rpc-error-code": {
         "title": "JSON RPC 错误类型"
       },
-      "version-0.20-cita/system-contract-interface/group": {
-        "title": "组合约接口"
-      },
-      "version-0.20-cita/system-contract-interface/permission": {
-        "title": "权限合约接口"
-      },
       "version-0.20-cita/system-contract-interface/role-management": {
         "title": "角色管理合约接口"
       },
+      "version-0.20-cita/system-contract-interface/group": {
+        "title": "组合约接口"
+      },
       "version-0.20-cita/system-contract-interface/quota-manager": {
         "title": "份额管理合约接口"
+      },
+      "version-0.20-cita/system-contract-interface/auth": {
+        "title": "授权管理合约接口"
       },
       "version-0.20-cita/system-contract-interface/batch": {
         "title": "批量交易合约接口"
@@ -752,11 +755,11 @@
       "version-0.20-cita/system-contract-interface/emergency-brake": {
         "title": "紧急制动合约接口"
       },
-      "version-0.20-cita/system-contract-interface/admin": {
-        "title": "管路员合约接口"
-      },
       "version-0.20-cita/system-contract-interface/error": {
         "title": "系统合约错误码"
+      },
+      "version-0.20-cita/system-contract-interface/admin": {
+        "title": "管路员合约接口"
       },
       "version-0.20-cita/architecture/components": {
         "title": "系统组件"
@@ -764,20 +767,11 @@
       "version-0.20-cita/architecture/consensus": {
         "title": "共识"
       },
-      "version-0.20-cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口"
-      },
       "version-0.20-cita/architecture/transaction-process": {
         "title": "交易处理"
       },
-      "version-0.20-cita/protocol-upgrade/v1": {
-        "title": "v1 协议"
-      },
       "version-0.20-cita/architecture/view": {
         "title": "视图"
-      },
-      "version-0.20-cita/reference/addresses": {
-        "title": "系统预留地址"
       },
       "version-0.20-cita/protocol-upgrade/overview": {
         "title": "协议升级概览"
@@ -788,65 +782,38 @@
       "version-0.20-cita/protocol-upgrade/v0": {
         "title": "v0 协议"
       },
+      "version-0.20-cita/protocol-upgrade/v1": {
+        "title": "v1 协议"
+      },
+      "version-0.20-cita/reference/addresses": {
+        "title": "系统预留地址"
+      },
       "version-0.20-cita/cita-intro": {
         "title": "关于 CITA"
       },
+      "version-0.17-toolchain/rebirth/rebirth-intro": {
+        "title": "ReBirth 简介"
+      },
       "version-0.20-cita/getting-started": {
-        "title": "快速开始"
+        "title": "快速入门"
+      },
+      "version-0.17-toolchain/microscope/microscope-intro": {
+        "title": "Microscope 简介"
+      },
+      "version-0.17-toolchain/cli/cli-intro": {
+        "title": "CLI 简介"
+      },
+      "version-0.17-toolchain/cyton/cyton-intro": {
+        "title": "Cyton 简介"
+      },
+      "version-0.17-toolchain/ide/ide-intro": {
+        "title": "CITA IDE 简介"
       },
       "version-0.20-cita/crosschain/crosschain-contract-example": {
         "title": "跨链合约示例"
       },
-      "version-0.20.1-cita/system-management/contracts": {
-        "title": "系统合约"
-      },
-      "version-0.20.1-cita/system-contract-interface/role-auth": {
-        "title": "角色授权合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/all-groups": {
-        "title": "所有组合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/group-management": {
-        "title": "组管理合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/quota-manager": {
-        "title": "份额管理合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/quota-price": {
-        "title": "份额价格管理合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/admin": {
-        "title": "管理员合约地址"
-      },
-      "version-0.20.1-cita/system-contract-interface/batch": {
-        "title": "批量交易合约接口"
-      },
-      "version-0.20.1-cita/system-contract-interface/auto-exec": {
-        "title": "自动执行合约接口"
-      },
-      "version-0.20.1-cita/architecture/consensus": {
-        "title": "共识"
-      },
-      "version-0.20.1-cita/reference/addresses": {
-        "title": "系统预留地址"
-      },
-      "version-0.20.1-cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约示例"
-      },
-      "cita/system-management/auto-exec": {
-        "title": "自动执行"
-      },
-      "version-0.17-cita/chain/config-tool": {
-        "title": "链级配置"
-      },
-      "version-0.17-cita/system-management/node": {
-        "title": "节点管理"
-      },
-      "version-0.17-cita/architecture/architecture": {
-        "title": "架构设计"
+      "version-0.17-toolchain/truffle-box/truffle-box-intro": {
+        "title": "CITA Truffle Box 简介"
       },
       "version-0.18-cita/chain/getting-started": {
         "title": "快速开始"
@@ -854,47 +821,116 @@
       "version-0.18-cita/chain/config-tool": {
         "title": "链级配置"
       },
-      "version-0.19-cita/chain/config-tool": {
-        "title": "链级管理"
-      },
       "version-0.19-cita/system-management/node": {
         "title": "节点管理"
       },
-      "version-0.20-cita/system-management/node": {
-        "title": "节点管理"
+      "version-0.17-cita/architecture/architecture": {
+        "title": "架构设计"
+      },
+      "version-0.19-cita/chain/config-tool": {
+        "title": "链级管理"
       },
       "version-0.20-cita/system-contract-interface/group-management": {
         "title": "组管理合约接口"
       },
+      "version-0.20-cita/system-management/node": {
+        "title": "节点管理"
+      },
       "version-0.20-cita/architecture/architecture": {
         "title": "架构设计"
       },
-      "version-0.20.1-cita/getting-started": {
+      "version-0.17-cita/chain/getting-started": {
         "title": "快速开始"
       },
-      "version-0.20.1-cita/system-contract-interface/error": {
-        "title": "系统合约错误码"
+      "version-0.17-cita/system-management/log": {
+        "title": "日志管理"
+      },
+      "version-0.17-cita/system-management/snapshot": {
+        "title": "快照"
+      },
+      "version-0.17-cita/rpc-guide/rpc-types": {
+        "title": "JSON RPC 类型"
+      },
+      "version-0.17-cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC 错误类型"
+      },
+      "version-0.17-cita/txtool": {
+        "title": "关于 Txtool"
+      },
+      "version-0.17-cita/crosschain/crosschain-contract-example": {
+        "title": "跨链合约示例"
+      },
+      "version-0.17-cita/cita-intro": {
+        "title": "关于 CITA"
+      },
+      "cita/system-management/auto-exec": {
+        "title": "自动执行"
+      },
+      "version-0.20.1-cita/system-contract-interface/auth": {
+        "title": "授权管理合约接口"
+      },
+      "version-0.20.1-cita/system-contract-interface/role-auth": {
+        "title": "角色授权合约接口"
+      },
+      "version-0.20.1-cita/system-contract-interface/all-groups": {
+        "title": "所有组合约接口"
+      },
+      "version-0.20.1-cita/system-contract-interface/quota-manager": {
+        "title": "份额管理合约接口"
+      },
+      "version-0.20.1-cita/system-management/contracts": {
+        "title": "系统合约"
+      },
+      "version-0.20.1-cita/system-contract-interface/quota-price": {
+        "title": "份额价格管理合约接口"
+      },
+      "version-0.20.1-cita/system-contract-interface/batch": {
+        "title": "批量交易合约接口"
+      },
+      "version-0.20.1-cita/system-contract-interface/auto-exec": {
+        "title": "自动执行合约接口"
+      },
+      "version-0.20.1-cita/system-contract-interface/admin": {
+        "title": "管理员合约地址"
+      },
+      "version-0.20.1-cita/system-contract-interface/group-management": {
+        "title": "组管理合约接口"
+      },
+      "version-0.20.1-cita/architecture/consensus": {
+        "title": "共识"
       },
       "version-0.18-cita/system-management/node": {
         "title": "节点管理"
       },
+      "version-0.20.1-cita/reference/addresses": {
+        "title": "系统预留地址"
+      },
       "version-0.20-cita/system-management/permission": {
         "title": "权限管理"
+      },
+      "version-0.17-cita/chain/config-tool": {
+        "title": "链级配置"
+      },
+      "version-0.17-cita/system-management/node": {
+        "title": "节点管理"
+      },
+      "version-0.18-cita/system-management/permission": {
+        "title": "权限管理"
+      },
+      "version-0.20.1-cita/system-contract-interface/error": {
+        "title": "系统合约错误码"
+      },
+      "version-0.19-cita/system-management/permission": {
+        "title": "权限管理"
+      },
+      "version-0.20.1-cita/getting-started": {
+        "title": "快速入门"
       },
       "version-0.20.1-cita/system-management/permission": {
         "title": "权限管理"
       },
       "version-0.17-cita/system-management/permission": {
         "title": "权限管理"
-      },
-      "version-0.18-cita/system-management/permission": {
-        "title": "权限管理"
-      },
-      "version-0.19-cita/system-management/permission": {
-        "title": "权限管理"
-      },
-      "version-0.17-cita/rpc-guide/rpc": {
-        "title": "JSON RPC"
       },
       "version-0.19-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
@@ -903,6 +939,9 @@
         "title": "JSON RPC"
       },
       "version-0.18-cita/rpc-guide/rpc": {
+        "title": "JSON RPC"
+      },
+      "version-0.17-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       },
       "version-0.20.1-cita/rpc-guide/rpc": {
@@ -939,26 +978,26 @@
     "Looking for the solution for your organization|no description given": "如果你是开发团队、企业组织，想要寻求行业合作或解决方案",
     "Please apply to join|no description given": "请申请加入",
     "our community|no description given": "我们的社区",
-    "Our team can offer dedicated support technicians to assist you in developing with CITA stack. What can we do for you?|no description given": "Our team can offer dedicated support technicians to assist you in developing with CITA stack. What can we do for you?",
+    "Our team can offer dedicated support technicians to assist you in developing with CITA stack. What can we do for you?|no description given": "区块链是用来创造价值网络的工具，基于该理解，我们希望 CITAHub 能够联合各方资源，为开发价值网络提供场景、开发工具及最佳实践。我们可以提供以下帮助：",
     "Advisory services: Tap into our extensive experience(Coming soon) in blockchain architecture and ensure you make the right decisions.|no description given": "为开发者团队提供基于 CITA 的底层链开发以及应用层开发咨询服务",
-    "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise. No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.|no description given": "为企业用户提供业务层系统集成服务，将 CITA 与已有业务系统深度整合",
-    "How to contribute|no description given": "How to contribute",
+    "Customizable features: By configuring and customizing the services, CITA can meet all the needs of enterprise. No matter which of blockchain network you choose to build, we make sure to offer you the right set of features.|no description given": "为企业用户提供业务层系统集成服务，将 CITA 与已有业务系统深度整合。针对不同行业由合作伙伴提供一揽子解决方案。将区块链不可替代的价值与现有业务逻辑深度整合，帮助资源优势方迅速构建平台壁垒",
+    "How to contribute|no description given": "如果你想参与贡献",
     "Read|no description given": "阅读",
-    "contributing guide|no description given": "Contibuting 指导",
+    "contributing guide|no description given": "contibuting 指导",
     "for the first.|no description given": "首先。",
     "Please keep in mind nor is code the only way to contribute to the project, we strongly value documentation and gladly accept improvements to the documentation.|no description given": "无论是代码还是文档，都非常欢迎大家参与贡献。",
     "Generally, CITA uses:|no description given": "通常地, CITA 使用:",
     "CITA improvement proposal for planning major changes|no description given": "CIP（CITA改进提案）来管理 CITA的协议",
     "Github issue and Github Project to create, organize and track logical issues, including bugs and improvement|no description given": "Github Issue 和 Github Project 来创建、组织和跟踪 Issue，包括各种 Bug 和 功能改进",
-    "docs.citahub.com for documentation|no description given": "[Docs CITAHub](docs.citahub.com) for documentation",
+    "docs.citahub.com for documentation|no description given": "CITAHub Docs for documentation",
     "Github pull requests to manage the review and merge of specific code or docs changes|no description given": "Github Pull Request 来检视和合并代码或者文档的改进",
-    "That is, Github issue and CIP are used to describe what should be fixed or changed, and high - level approaches, and pull requests describe how to implement that change in the project 's source code.|no description given": "That is, Github issue and CIP are used to describe what should be fixed or changed, and high - level approaches, and pull requests describe how to implement that change in the project 's source code.",
-    "If you want to join our core team, please apply in|no description given": "如果你想加入我们的核心开发团队，请前往 [CITAHub](citahub.com) 申请",
+    "That is, Github issue and CIP are used to describe what should be fixed or changed, and high - level approaches, and pull requests describe how to implement that change in the project 's source code.|no description given": "Github Issue 和 Github Project 来创建、组织和跟踪 Issue，包括各种 Bug 和 功能改进",
+    "If you want to join our core team, please apply in|no description given": "如果你想加入我们的核心开发团队，请前往 CITAHub 申请",
     "CITAHub|no description given": "CITAHub",
     "Staying up to date|no description given": "获取我们的最新进展",
     "official channel|no description given": "官方频道",
     "Coming soon|no description given": "即将着陆",
-    "CIPs and RFCs|no description given": "CIPs and RFCs",
+    "CIPs and RFCs|no description given": "CIP（CITA改进提案）来管理 CITA的协议",
     "Rocking in Community|no description given": "加入到我们的社区中来",
     "Forum|no description given": "论坛",
     "Feel free to share articles and tutorials as well as start discussions about all kinds of hot topics about blockchain.|no description given": "[CITAHub Talk]()。在这里，你可以分享的的使用心得，和行业经验。只要是区块链相关的热点和议题，都欢迎你来这里讨论。",
@@ -966,10 +1005,10 @@
     "Training|no description given": "培训",
     "Check our past|no description given": "查看以往",
     "Training activity|no description given": "培训活动",
-    "CITA adopted a time-based release cadence.|no description given": "CITA adopted a time-based release cadence.",
-    "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.|no description given": "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.",
-    "In production environment, we highly recommend to use stable version.|no description given": "In production environment, we highly recommend to use stable version.",
-    "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.|no description given": "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.",
+    "CITA adopted a time-based release cadence.|no description given": "CITA 有一个自己的发版节奏，具体信息可以查看我们的开发路线图（即将着陆）",
+    "To see what changes are coming and provide better feedback to CITA contributors, use the latest release candidate when possible.|no description given": "如果对 CITA 最新引入的改变感兴趣并且想提些建议和反馈，可以使用我们的最新源码编译。",
+    "In production environment, we highly recommend to use stable version.|no description given": "如果要部署到生产环境，我们强烈建议您使用我们的已发版的稳定版本。",
+    "Please be notice, the version number of toolchains may not consistent with CITA, since they are separate program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't worry about the version confusion.|no description given": "请注意：工具链的版本和 CITA 的版本号是不一致的。但是请不要担心，因为在此文档中，当切换 CITA 版本时，我们都给出的是与其适配的 CITA 工具链版本，根据提示下载相应版本进行使用就可以了。",
     "Help Translate|recruit community translators for your project": "帮助翻译",
     "Edit this Doc|recruitment message asking to edit the doc source": "编辑",
     "Translate this Doc|recruitment message asking to translate the docs": "翻译"

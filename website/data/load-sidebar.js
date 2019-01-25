@@ -22,11 +22,11 @@ const handleItems = (items, versioned) => {
   const targetsOfSingle = items.filter(item => typeof item === 'string')
   const targets = [...targetsOfGroup, ...targetsOfSingle]
   return targets.map((target, i) => {
-    const p = (versioned ? '../versioned_docs/' : '../../docs/') + target.replace('-cita', '/cita') + '.md'
-    const doc = fs.readFile(path.join(__dirname, p),
+    const p = (versioned ? '../versioned_docs/' : '../../docs/') + target.replace(/(\d)\-/, '$1/') + '.md'
+    fs.readFile(path.join(__dirname, p),
       (err, data) => {
         if (err) {
-          // console.warn(err)
+          console.warn(err)
         } else {
           let title = ''
           const match = data.toString().match(/\ntitle(\s|\S)*?\n/)
@@ -50,8 +50,9 @@ const addTitleToSpecifiedVer = (v, idx) => {
     } else {
       const ver_sidebar = JSON.parse(data.toString())
       const field = v.slice(0, -1 * 'sidebars.json'.length) + 'docs'
-      const items = ver_sidebar[field].CITA
-      handleItems(items, true)
+      Object.values(ver_sidebar[field]).forEach((items, idx) => {
+        handleItems(items, true)
+      })
     }
   })
 }

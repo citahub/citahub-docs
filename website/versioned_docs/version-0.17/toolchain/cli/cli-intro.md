@@ -1,6 +1,6 @@
 ---
 id: version-0.17-cli-intro
-title: CLI 简介
+title: CLI Introduction
 original_id: cli-intro
 ---
 

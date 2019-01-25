@@ -27,63 +27,65 @@ function Versions(props) {
           <header className="postHeader">
             <h1>{siteConfig.title} Versions</h1>
           </header>
-          <p>
-            <translate>CITA adopted a time-based release cadence.</translate>
-          </p>
-          <ul>
-            <li>
+          <article>
+            <p>
+              <translate>CITA adopted a time-based release cadence.</translate>
+            </p>
+            <ul>
+              <li>
+                <translate>
+                  To see what changes are coming and provide better feedback to CITA contributors, use the latest
+                  release candidate when possible.
+                </translate>
+              </li>
+              <li>
+                <translate>In production environment, we highly recommend to use stable version.</translate>
+              </li>
+            </ul>
+            <p>
               <translate>
-                To see what changes are coming and provide better feedback to CITA contributors, use the latest release
-                candidate when possible.
+                Please be notice, the version number of toolchains may not consistent with CITA, since they are separate
+                program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so
+                don't worry about the version confusion.
               </translate>
-            </li>
-            <li>
-              <translate>In production environment, we highly recommend to use stable version.</translate>
-            </li>
-          </ul>
-          <p>
-            <translate>
-              Please be notice, the version number of toolchains may not consistent with CITA, since they are separate
-              program. But in documents，we present CITA and its corresponding toolchain as a usable whole set，so don't
-              worry about the version confusion.
-            </translate>
-          </p>
-          <h3 id="latest">Latest</h3>
-          <table className="versions">
-            <tbody>
-              <tr>
-                <th>{/*latestVersion*/}Develop</th>
-                <td>
-                  <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/next/welcome`}>Documentation</a>
-                </td>
-                <td>
-                  <a href="https://github.com/cryptape/cita/compare/develop...master" alt="compare" target="_blank">
-                    Commits since version {versions[0]}
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <h3 id="archive">Stable Versions</h3>
-          <table className="versions">
-            <tbody>
-              {versions.map(version => (
+            </p>
+            <h3 id="latest">Latest</h3>
+            <table className="versions">
+              <tbody>
                 <tr>
-                  <th>{version}</th>
+                  <th>{/*latestVersion*/}Develop</th>
                   <td>
-                    <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
-                      Documentation
-                    </a>
+                    <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/next/welcome`}>Documentation</a>
                   </td>
                   <td>
-                    <a href={`https://github.com/cryptape/cita/tree/${version}`} alt="Release Note" target="_blank">
-                      Release Note
+                    <a href="https://github.com/cryptape/cita/compare/develop...master" alt="compare" target="_blank">
+                      Commits since version {versions[0]}
                     </a>
                   </td>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+            <h3 id="archive">Stable Versions</h3>
+            <table className="versions">
+              <tbody>
+                {versions.map(version => (
+                  <tr>
+                    <th>{version}</th>
+                    <td>
+                      <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/${version}/welcome`}>
+                        Documentation
+                      </a>
+                    </td>
+                    <td>
+                      <a href={`https://github.com/cryptape/cita/tree/${version}`} alt="Release Note" target="_blank">
+                        Release Note
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </article>
         </div>
       </Container>
     </div>

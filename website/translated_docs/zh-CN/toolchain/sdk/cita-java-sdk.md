@@ -1,5 +1,5 @@
 ---
 title: CITA Java SDK
-id: java-sdk
+id: cita-java-sdk
 ---
 This is cita java sdk doc

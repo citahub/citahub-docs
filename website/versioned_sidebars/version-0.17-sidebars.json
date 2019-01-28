@@ -1,17 +1,12 @@
 {
   "version-0.17-docs": {
-    "Welcome": [
-      "version-0.17-welcome"
-    ],
+    "Welcome": ["version-0.17-welcome"],
     "CITA": [
       "version-0.17-cita/cita-intro",
       {
         "label": "Getting Started",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-cita/chain/getting-started",
-          "version-0.17-cita/chain/config-tool"
-        ]
+        "ids": ["version-0.17-cita/chain/getting-started", "version-0.17-cita/chain/config-tool"]
       },
       {
         "label": "System Management",
@@ -49,69 +44,51 @@
       {
         "label": "Reference",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-cita/reference/addresses",
-          "version-0.17-cita/reference/glossary",
-          "version-0.17-cita/reference/glossary"
-        ]
+        "ids": ["version-0.17-cita/reference/addresses", "version-0.17-cita/reference/glossary"]
       },
       "version-0.17-cita/txtool"
     ],
     "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchian/cli/cli-intro"
-        ]
+        "ids": ["version-0.17-toolchain/cli/cli-intro"]
       },
       {
         "label": "SDK",
         "type": "subcategory",
         "ids": [
-          "version-0.17-toolchain/sdk/js-sdk",
-          "version-0.17-toolchain/sdk/java-sdk",
-          "version-0.17-toolchain/sdk/swift-sdk",
-          "version-0.17-toolchain/sdk/ruby-sdk"
+          "version-0.17-toolchain/sdk/cita-javascript-sdk",
+          "version-0.17-toolchain/sdk/cita-java-sdk",
+          "version-0.17-toolchain/sdk/cita-swift-sdk",
+          "version-0.17-toolchain/sdk/cita-ruby-sdk"
         ]
       },
       {
         "label": "ReBirth",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchain/rebirth/rebirth-intro"
-        ]
+        "ids": ["version-0.17-toolchain/rebirth/rebirth-intro"]
       },
       {
         "label": "Cyton",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchain/cyton/cyton-intro"
-        ]
+        "ids": ["version-0.17-toolchain/cyton/cyton-intro"]
       },
       {
         "label": "Microscope",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchain/microscope/microscope-intro"
-        ]
+        "ids": ["version-0.17-toolchain/microscope/microscope-intro"]
       },
       {
         "label": "CITA-IDE",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchain/ide/ide-intro"
-        ]
+        "ids": ["version-0.17-toolchain/ide/ide-intro"]
       },
       {
         "label": "CITA Truffle Box",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchain/truffle-box/truffle-box-intro"
-        ]
+        "ids": ["version-0.17-toolchain/truffle-box/truffle-box-intro"]
       }
     ],
-    "Contributing": [
-      "version-0.17-contributing"
-    ]
+    "Contributing": ["version-0.17-contributing"]
   }
 }

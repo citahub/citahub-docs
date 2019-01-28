@@ -1,7 +1,7 @@
 ---
-id: version-0.17-ruby-sdk
+id: version-0.17-cita-ruby-sdk
 title: CITA Ruby SDK
-original_id: ruby-sdk
+original_id: cita-ruby-sdk
 ---
 
 This is cita ruby sdk doc

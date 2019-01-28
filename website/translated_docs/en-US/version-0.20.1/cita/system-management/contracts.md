@@ -9,15 +9,15 @@ CITA 链生成时，通过系统合约来生成创世块，并作为链的最基
 
 <h2 class="hover-list">System Contracts</h2>
 
-- [Node Management](#node-management)
-- [Quota Management](#quota-management)
-- [Quota Price Management](#quota-price-management)
-- [Permission Management](#permission-management)
-- [User Management](#user-management)
-- [Batch Transaction](#batch-transaction)
-- [Emergency Braking](#emergency-braking)
-- [Protocol Management](#protocol-management)
-- [Automated Execution](#automated-execution)
+- [Node Management](#节点管理)
+- \[配额管理\](#配额管理)
+- \[配额价格管理\](#配额价格管理)
+- [Permission Management](#权限管理)
+- [User Management](#用户管理)
+- [Batch Transaction](#批量交易)
+- [Emergency Braking](#紧急制动)
+- [协议号管理](#协议号管理)
+- [Automated Execution](#自动执行)
 
 * * *
 
@@ -79,7 +79,7 @@ CITA 支持批量调用合约。
 
 紧急制动相关描述及方法介绍见 [紧急制动](./system-management/emergency-brake)
 
-### Protocol Management
+### 协议号管理
 
 自 CITA 诞生以来，我们致力于研发成熟稳定，功能健全的区块链平台。CITA 的性能，功能上依旧在快速迭代，考虑到未来可能存在的兼容性问题，减少对现有客户的影响，我们增加了协议号管理系统合约。
 

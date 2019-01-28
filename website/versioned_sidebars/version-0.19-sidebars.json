@@ -1,17 +1,12 @@
 {
   "version-0.19-docs": {
-    "Welcome": [
-      "version-0.19-welcome"
-    ],
+    "Welcome": ["version-0.19-welcome"],
     "CITA": [
       "version-0.19-cita/cita-intro",
       {
         "label": "Getting Started",
         "type": "subcategory",
-        "ids": [
-          "version-0.19-cita/chain/getting-started",
-          "version-0.19-cita/chain/config-tool"
-        ]
+        "ids": ["version-0.19-cita/chain/getting-started", "version-0.19-cita/chain/config-tool"]
       },
       {
         "label": "System Management",
@@ -19,11 +14,11 @@
         "ids": [
           "version-0.19-cita/system-management/node",
           "version-0.19-cita/system-management/permission",
-          "version-0.17-cita/system-management/user",
+          "version-0.19-cita/system-management/user",
           "version-0.19-cita/system-management/quota",
-          "version-0.18-cita/system-management/log",
-          "version-0.18-cita/system-management/system",
-          "version-0.18-cita/system-management/snapshot",
+          "version-0.19-cita/system-management/log",
+          "version-0.19-cita/system-management/system",
+          "version-0.19-cita/system-management/snapshot",
           "version-0.19-cita/system-management/batch-tx",
           "version-0.19-cita/system-management/emergency-brake",
           "version-0.19-cita/system-management/amend",
@@ -36,94 +31,68 @@
         "ids": [
           "version-0.19-cita/rpc-guide/rpc-types",
           "version-0.19-cita/rpc-guide/rpc",
-          "version-0.18-cita/rpc-guide/rpc-error-code"
+          "version-0.19-cita/rpc-guide/rpc-error-code"
         ]
       },
       {
         "label": "Architecture",
         "type": "subcategory",
         "ids": [
-          "version-0.17-cita/architecture/architecture",
-          "version-0.17-cita/architecture/components",
-          "version-0.17-cita/architecture/consensus",
-          "version-0.17-cita/architecture/transaction-process",
-          "version-0.17-cita/architecture/view"
+          "version-0.19-cita/architecture/architecture",
+          "version-0.19-cita/architecture/components",
+          "version-0.19-cita/architecture/consensus",
+          "version-0.19-cita/architecture/transaction-process",
+          "version-0.19-cita/architecture/view"
         ]
       },
       "version-0.19-cita/crosschain/crosschain-contract-example",
       {
-        "label": "Protocol Upgrade",
-        "type": "subcategory",
-        "ids": [
-          "version-0.19-cita/protocol-upgrade/overview",
-          "version-0.19-cita/protocol-upgrade/v0",
-          "version-0.19-cita/protocol-upgrade/v1"
-        ]
-      },
-      {
         "label": "Reference",
         "type": "subcategory",
-        "ids": [
-          "version-0.19-cita/reference/addresses",
-          "version-0.18-cita/reference/glossary"
-        ]
+        "ids": ["version-0.19-cita/reference/addresses", "version-0.19-cita/reference/glossary"]
       }
     ],
     "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchian/cli/cli-intro"
-        ]
+        "ids": ["version-0.19-toolchain/cli/cli-intro"]
       },
       {
         "label": "SDK",
         "type": "subcategory",
         "ids": [
-          "version-0.17-toolchian/sdk/js-sdk",
-          "version-0.17-toolchian/sdk/java-sdk",
-          "version-0.17-toolchian/sdk/swift-sdk",
-          "version-0.17-toolchian/sdk/ruby-sdk"
+          "version-0.19-toolchain/sdk/cita-javascript-sdk",
+          "version-0.19-toolchain/sdk/cita-java-sdk",
+          "version-0.19-toolchain/sdk/cita-swift-sdk",
+          "version-0.19-toolchain/sdk/cita-ruby-sdk"
         ]
       },
       {
         "label": "ReBirth",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchian/rebirth/rebirth-intro"
-        ]
+        "ids": ["version-0.19-toolchain/rebirth/rebirth-intro"]
       },
       {
         "label": "Cyton",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchian/cyton/cyton-intro"
-        ]
+        "ids": ["version-0.19-toolchain/cyton/cyton-intro"]
       },
       {
         "label": "Microscope",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchian/microscope/microscope-intro"
-        ]
+        "ids": ["version-0.19-toolchain/microscope/microscope-intro"]
       },
       {
         "label": "CITA-IDE",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchian/ide/ide-intro"
-        ]
+        "ids": ["version-0.19-toolchain/ide/ide-intro"]
       },
       {
         "label": "CITA Truffle Box",
         "type": "subcategory",
-        "ids": [
-          "version-0.17-toolchian/truffle-box/truffle-box-intro"
-        ]
+        "ids": ["version-0.19-toolchain/truffle-box/truffle-box-intro"]
       }
     ],
-    "Contributing": [
-      "version-0.19-contributing"
-    ]
+    "Contributing": ["version-0.19-contributing"]
   }
 }

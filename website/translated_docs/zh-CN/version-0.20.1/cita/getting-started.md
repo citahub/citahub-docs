@@ -6,7 +6,7 @@ original_id: getting-started
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
 > - 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
-> - 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [测试链](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain), 也可以使用万云提供的 [BaaS 服务](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
+> - 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [测试链](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
 
 ## 依赖
 
@@ -143,11 +143,11 @@ $ ./env.sh make release
 >     - 系统合约详细参数
 >     - 共识节点地址
 >     
->     该工具更详细的使用说明请参考 [Config Tool](./chain/config-tool)。
+>     该工具更详细的使用说明请参考 [Config Tool](./configuration/chain-config)。
 > 
 > - 对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。
 > 
-> - 在不同服务器部署多条链主要规划相关端口配置，参见 [config-tool 的功能和用法](./chain/config-tool)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个 Docker 里运行。基于上面 test-chain 链所在的目录，生成一条新链：
+> - 在不同服务器部署多条链主要规划相关端口配置，参见 [config-tool 的功能和用法](./configuration/chain-config)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个 Docker 里运行。基于上面 test-chain 链所在的目录，生成一条新链：
 >     
 >     ```shell
 >     $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"

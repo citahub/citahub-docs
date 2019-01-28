@@ -1,7 +1,7 @@
 ---
-id: version-0.17-swift-sdk
+id: version-0.17-cita-swift-sdk
 title: CITA Swift SDK
-original_id: swift-sdk
+original_id: cita-swift-sdk
 ---
 
 This is cita swift sdk doc

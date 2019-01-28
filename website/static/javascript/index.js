@@ -20,7 +20,6 @@ function translateEnUs() {
   if (l) {
     l.setAttribute('href', l.href.slice(0, -3))
   }
-  console.log(l)
 }
 window.onload = () => {
   const welcome = '/welcome'
@@ -30,18 +29,4 @@ window.onload = () => {
   // add edit on github
   addEditOnGithub()
   translateEnUs()
-
-  // add coppase effect to sidebar
-  // const sidebarNavs = document.querySelectorAll('.navGroup.subNavGroup')
-  // sidebarNavs.forEach(nav => {
-  //   const title = nav.querySelector('h4')
-  //   title.addEventListener('click', () => {
-  //     title.classList.toggle('expand')
-  //   })
-  //   if (
-  //     Array.from(nav.querySelectorAll('a')).some(link => link.href === window.location.href)
-  //   ) {
-  //     title.classList.add('expand')
-  //   }
-  // })
 }

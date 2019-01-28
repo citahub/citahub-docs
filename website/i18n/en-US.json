@@ -117,8 +117,8 @@
       "cita/system-contract-interface/role": {
         "title": "Role Contract"
       },
-      "cita/system-contract-interface/sys": {
-        "title": "System Configuration Contract"
+      "cita/system-contract-interface/system-interface": {
+        "title": "System Configuration Contract Interface"
       },
       "cita/system-management/amend": {
         "title": "Amend"
@@ -236,6 +236,12 @@
       "version-0.17-crosschain-contract-example": {
         "title": "Crosschain Contract Example"
       },
+      "version-0.17-addresses": {
+        "title": "Reserved System Addresses"
+      },
+      "version-0.17-glossary": {
+        "title": "Glossary"
+      },
       "version-0.17-rpc-error-code": {
         "title": "JSON RPC Error Code"
       },
@@ -287,16 +293,16 @@
       "version-0.17-rebirth-intro": {
         "title": "ReBirth Introduction"
       },
-      "version-0.17-java-sdk": {
+      "version-0.17-cita-java-sdk": {
         "title": "CITA Java SDK"
       },
-      "version-0.17-js-sdk": {
+      "version-0.17-cita-javascript-sdk": {
         "title": "CITA JavaScript SDK"
       },
-      "version-0.17-ruby-sdk": {
+      "version-0.17-cita-ruby-sdk": {
         "title": "CITA Ruby SDK"
       },
-      "version-0.17-swift-sdk": {
+      "version-0.17-cita-swift-sdk": {
         "title": "CITA Swift SDK"
       },
       "version-0.17-truffle-box-intro": {
@@ -305,11 +311,29 @@
       "version-0.17-welcome": {
         "title": "Overview"
       },
+      "version-0.18-architecture": {
+        "title": "Architecture"
+      },
+      "version-0.18-components": {
+        "title": "System components"
+      },
+      "version-0.18-consensus": {
+        "title": "Consensus"
+      },
+      "version-0.18-transaction-process": {
+        "title": "Transaction Processing"
+      },
+      "version-0.18-view": {
+        "title": "View"
+      },
       "version-0.18-config-tool": {
         "title": "Chain Level Configuration"
       },
       "version-0.18-getting-started": {
         "title": "Getting Started"
+      },
+      "version-0.18-cita-intro": {
+        "title": "About CITA"
       },
       "version-0.18-crosschain-contract-example": {
         "title": "Crosschain Contract Example"
@@ -345,17 +369,68 @@
       "version-0.18-permission": {
         "title": "Permission Management"
       },
+      "version-0.18-quota": {
+        "title": "Quota Management"
+      },
       "version-0.18-snapshot": {
         "title": "Snapshot"
       },
       "version-0.18-system": {
         "title": "System Configuration"
       },
+      "version-0.18-user": {
+        "title": "User Management"
+      },
       "version-0.18-contributing": {
         "title": "Contributing"
       },
+      "version-0.18-cli-intro": {
+        "title": "CLI Introduction"
+      },
+      "version-0.18-cyton-intro": {
+        "title": "Cyton Introduction"
+      },
+      "version-0.18-ide-intro": {
+        "title": "CITA IDE Introduction"
+      },
+      "version-0.18-microscope-intro": {
+        "title": "Microscope Introduction"
+      },
+      "version-0.18-rebirth-intro": {
+        "title": "ReBirth Introduction"
+      },
+      "version-0.18-cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.18-cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.18-cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.18-cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.18-truffle-box-intro": {
+        "title": "CITA Truffle Box Introduction"
+      },
       "version-0.18-welcome": {
         "title": "About CITA"
+      },
+      "version-0.19-architecture": {
+        "title": "Architecture"
+      },
+      "version-0.19-components": {
+        "title": "System components"
+      },
+      "version-0.19-consensus": {
+        "title": "Consensus"
+      },
+      "version-0.19-transaction-process": {
+        "title": "Transaction Processing"
+      },
+      "version-0.19-view": {
+        "title": "View"
       },
       "version-0.19-config-tool": {
         "title": "Chain Level Configuration"
@@ -363,11 +438,20 @@
       "version-0.19-getting-started": {
         "title": "Getting Started"
       },
+      "version-0.19-cita-intro": {
+        "title": "About CITA"
+      },
       "version-0.19-crosschain-contract-example": {
         "title": "Crosschain Contract Examples"
       },
       "version-0.19-addresses": {
         "title": "Reserved System Addresses"
+      },
+      "version-0.19-glossary": {
+        "title": "Glossary"
+      },
+      "version-0.19-rpc-error-code": {
+        "title": "JSON RPC Error Code"
       },
       "version-0.19-rpc-types": {
         "title": "JSON RPC Types"
@@ -387,6 +471,9 @@
       "version-0.19-fee-back": {
         "title": "Fee Back"
       },
+      "version-0.19-log": {
+        "title": "Log Management"
+      },
       "version-0.19-node": {
         "title": "Node Management"
       },
@@ -396,17 +483,74 @@
       "version-0.19-quota": {
         "title": "Quota Management"
       },
+      "version-0.19-snapshot": {
+        "title": "Snapshot"
+      },
+      "version-0.19-system": {
+        "title": "System Configuration"
+      },
+      "version-0.19-user": {
+        "title": "User Management"
+      },
       "version-0.19-contributing": {
         "title": "Contributing"
+      },
+      "version-0.19-cli-intro": {
+        "title": "CLI Introduction"
+      },
+      "version-0.19-cyton-intro": {
+        "title": "Cyton Introduction"
+      },
+      "version-0.19-ide-intro": {
+        "title": "CITA IDE Introduction"
+      },
+      "version-0.19-microscope-intro": {
+        "title": "Microscope Introduction"
+      },
+      "version-0.19-rebirth-intro": {
+        "title": "ReBirth Introduction"
+      },
+      "version-0.19-cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.19-cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.19-cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.19-cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.19-truffle-box-intro": {
+        "title": "CITA Truffle Box Introduction"
       },
       "version-0.19-welcome": {
         "title": "About CITA"
       },
+      "version-0.20.1-architecture": {
+        "title": "Architecture"
+      },
+      "version-0.20.1-components": {
+        "title": "System components"
+      },
       "version-0.20.1-consensus": {
         "title": "Consensus"
       },
+      "version-0.20.1-transaction-process": {
+        "title": "Transaction Process"
+      },
+      "version-0.20.1-view": {
+        "title": "View"
+      },
+      "version-0.20.1-cita-intro": {
+        "title": "Welcome to CITA"
+      },
       "version-0.20.1-chain-configuration": {
         "title": "Chain Configuration"
+      },
+      "version-0.20.1-config-overview": {
+        "title": "Configuration Overview"
       },
       "version-0.20.1-microservice-configuration": {
         "title": "Microservice Configuration"
@@ -418,8 +562,29 @@
       "version-0.20.1-getting-started": {
         "title": "Getting Started"
       },
+      "version-0.20.1-overview": {
+        "title": "Protocol Upgrade Overview"
+      },
+      "version-0.20.1-v0": {
+        "title": "v0 Protocol"
+      },
+      "version-0.20.1-v1": {
+        "title": "v1 Protocol"
+      },
       "version-0.20.1-addresses": {
         "title": "Reserved System Addresses"
+      },
+      "version-0.20.1-faq": {
+        "title": "FAQ"
+      },
+      "version-0.20.1-glossary": {
+        "title": "Glossary"
+      },
+      "version-0.20.1-rpc-error-code": {
+        "title": "JSON RPC Error Code"
+      },
+      "version-0.20.1-rpc-types": {
+        "title": "JSON RPC Types"
       },
       "version-0.20.1-rpc": {
         "title": "JSON RPC"
@@ -439,14 +604,26 @@
       "version-0.20.1-batch": {
         "title": "Batch Transactions Contract Interface"
       },
+      "version-0.20.1-emergency-brake": {
+        "title": "Emergency Brake"
+      },
       "version-0.20.1-error": {
         "title": "System Contract Error Code"
       },
       "version-0.20.1-group-management": {
         "title": "Group Management Contract Interface"
       },
+      "version-0.20.1-group": {
+        "title": "Group Contract Interface"
+      },
+      "version-0.20.1-node": {
+        "title": "Node Management"
+      },
       "version-0.20.1-permission-management": {
         "title": "Permission Management Contract Interface"
+      },
+      "version-0.20.1-permission": {
+        "title": "Permission Management"
       },
       "version-0.20.1-quota-manager": {
         "title": "Quota Management Contract Interface"
@@ -457,17 +634,80 @@
       "version-0.20.1-role-auth": {
         "title": "Role Auth Contract Interface"
       },
+      "version-0.20.1-role-management": {
+        "title": "Role Management Contract Interface"
+      },
       "version-0.20.1-role": {
         "title": "Role Contract Interface"
+      },
+      "version-0.20.1-system-interface": {
+        "title": "System Configuration Contract Interface"
+      },
+      "version-0.20.1-amend": {
+        "title": "Amend"
+      },
+      "version-0.20.1-autu-exec": {
+        "title": "Auto Execution"
+      },
+      "version-0.20.1-batch-tx": {
+        "title": "Batch Transactions"
       },
       "version-0.20.1-contracts": {
         "title": "System Contracts"
       },
-      "version-0.20.1-permission": {
-        "title": "Permission Management"
+      "version-0.20.1-fee-back": {
+        "title": "Fee Back"
+      },
+      "version-0.20.1-log": {
+        "title": "Log Management"
+      },
+      "version-0.20.1-price": {
+        "title": "Quota Price Management"
+      },
+      "version-0.20.1-quota": {
+        "title": "Quota Management"
+      },
+      "version-0.20.1-snapshot": {
+        "title": "Snapshot"
+      },
+      "version-0.20.1-user": {
+        "title": "User Management"
+      },
+      "version-0.20.1-version": {
+        "title": "Version Management"
       },
       "version-0.20.1-contributing": {
         "title": "Contributing"
+      },
+      "version-0.20.1-cli-intro": {
+        "title": "CLI Introduction"
+      },
+      "version-0.20.1-cyton-intro": {
+        "title": "Cyton Introduction"
+      },
+      "version-0.20.1-ide-intro": {
+        "title": "CITA IDE Introduction"
+      },
+      "version-0.20.1-microscope-intro": {
+        "title": "Microscope Introduction"
+      },
+      "version-0.20.1-rebirth-intro": {
+        "title": "ReBirth Introduction"
+      },
+      "version-0.20.1-cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.20.1-cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.20.1-cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.20.1-cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.20.1-truffle-box-intro": {
+        "title": "CITA Truffle Box Introduction"
       },
       "version-0.20.1-welcome": {
         "title": "About CITA"
@@ -490,8 +730,8 @@
       "version-0.20-cita-intro": {
         "title": "Welcome to CITA"
       },
-      "version-0.20-chain-config": {
-        "title": "Chain-config"
+      "version-0.20-chain-configuration": {
+        "title": "chain Configuration"
       },
       "version-0.20-config-overview": {
         "title": "Configuration Overview"
@@ -536,8 +776,14 @@
       "version-0.20-admin": {
         "title": "Admin Contract Interface"
       },
+      "version-0.20-all-groups": {
+        "title": "All-Group Contract Interface"
+      },
       "version-0.20-auth": {
         "title": "Auth Management Contract Interface"
+      },
+      "version-0.20-auto-exec": {
+        "title": "Auto Execution Contract Interface"
       },
       "version-0.20-batch": {
         "title": "Batch Transactions Contract Interface"
@@ -566,10 +812,19 @@
       "version-0.20-quota-manager": {
         "title": "Quota Management Contract Interface"
       },
+      "version-0.20-quota-price": {
+        "title": "Quota Price Management Contract Interface"
+      },
+      "version-0.20-role-auth": {
+        "title": "Role Auth Contract Interface"
+      },
       "version-0.20-role-management": {
         "title": "Role Management Contract Interface"
       },
-      "version-0.20-sys": {
+      "version-0.20-role": {
+        "title": "Role Contract Interface"
+      },
+      "version-0.20-system-interface": {
         "title": "System Configuration Contract Interface"
       },
       "version-0.20-amend": {
@@ -608,17 +863,125 @@
       "version-0.20-contributing": {
         "title": "Contributing"
       },
+      "version-0.20-cli-intro": {
+        "title": "CLI Introduction"
+      },
+      "version-0.20-cyton-intro": {
+        "title": "Cyton Introduction"
+      },
+      "version-0.20-ide-intro": {
+        "title": "CITA IDE Introduction"
+      },
+      "version-0.20-microscope-intro": {
+        "title": "Microscope Introduction"
+      },
+      "version-0.20-rebirth-intro": {
+        "title": "ReBirth Introduction"
+      },
+      "version-0.20-cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.20-cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.20-cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.20-cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.20-truffle-box-intro": {
+        "title": "CITA Truffle Box Introduction"
+      },
       "version-0.20-welcome": {
         "title": "About CITA"
+      },
+      "version-0.17-cita/chain/getting-started": {
+        "title": "Getting Started"
       },
       "version-0.17-cita/system-management/user": {
         "title": "User Management"
       },
-      "version-0.18-cita/system-management/log": {
-        "title": "Log Management"
-      },
       "version-0.17-cita/system-management/quota": {
         "title": "Quota Management"
+      },
+      "version-0.17-cita/system-management/log": {
+        "title": "Log Management"
+      },
+      "version-0.17-cita/system-management/snapshot": {
+        "title": "Snapshot"
+      },
+      "version-0.17-cita/rpc-guide/rpc-types": {
+        "title": "JSON RPC Types"
+      },
+      "version-0.17-cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC Error Code"
+      },
+      "version-0.17-cita/architecture/components": {
+        "title": "System components"
+      },
+      "version-0.17-cita/architecture/consensus": {
+        "title": "Consensus"
+      },
+      "version-0.17-cita/architecture/transaction-process": {
+        "title": "Transaction Processing"
+      },
+      "version-0.17-cita/architecture/view": {
+        "title": "View"
+      },
+      "version-0.17-cita/reference/addresses": {
+        "title": "Reserved System Addresses"
+      },
+      "version-0.17-cita/reference/glossary": {
+        "title": "Glossary"
+      },
+      "version-0.17-cita/cita-intro": {
+        "title": "About CITA"
+      },
+      "version-0.17-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "version-0.17-cita/txtool": {
+        "title": "About Txtool"
+      },
+      "version-0.17-toolchain/cli/cli-intro": {
+        "title": "CLI Introduction"
+      },
+      "version-0.17-toolchain/sdk/cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.17-toolchain/sdk/cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.17-toolchain/sdk/cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.17-toolchain/sdk/cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.17-toolchain/rebirth/rebirth-intro": {
+        "title": "ReBirth Introduction"
+      },
+      "version-0.17-toolchain/cyton/cyton-intro": {
+        "title": "Cyton Introduction"
+      },
+      "version-0.17-toolchain/microscope/microscope-intro": {
+        "title": "Microscope Introduction"
+      },
+      "version-0.17-toolchain/ide/ide-intro": {
+        "title": "CITA IDE Introduction"
+      },
+      "version-0.17-toolchain/truffle-box/truffle-box-intro": {
+        "title": "CITA Truffle Box Introduction"
+      },
+      "version-0.18-cita/system-management/user": {
+        "title": "User Management"
+      },
+      "version-0.18-cita/system-management/quota": {
+        "title": "Quota Management"
+      },
+      "version-0.18-cita/system-management/log": {
+        "title": "Log Management"
       },
       "version-0.18-cita/system-management/system": {
         "title": "System Configuration"
@@ -629,22 +992,22 @@
       "version-0.18-cita/system-management/batch-tx": {
         "title": "Batch Transactions"
       },
-      "version-0.18-cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC Error Code"
-      },
       "version-0.18-cita/rpc-guide/rpc-types": {
         "title": "JSON RPC Types"
       },
-      "version-0.17-cita/architecture/components": {
+      "version-0.18-cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC Error Code"
+      },
+      "version-0.18-cita/architecture/components": {
         "title": "System components"
       },
-      "version-0.17-cita/architecture/transaction-process": {
-        "title": "Transaction Processing"
-      },
-      "version-0.17-cita/architecture/consensus": {
+      "version-0.18-cita/architecture/consensus": {
         "title": "Consensus"
       },
-      "version-0.17-cita/architecture/view": {
+      "version-0.18-cita/architecture/transaction-process": {
+        "title": "Transaction Processing"
+      },
+      "version-0.18-cita/architecture/view": {
         "title": "View"
       },
       "version-0.18-cita/reference/addresses": {
@@ -653,35 +1016,41 @@
       "version-0.18-cita/reference/glossary": {
         "title": "Glossary"
       },
+      "version-0.18-cita/cita-intro": {
+        "title": "About CITA"
+      },
       "version-0.18-cita/crosschain/crosschain-contract-example": {
         "title": "Crosschain Contract Example"
       },
-      "version-0.19-cita/chain/getting-started": {
-        "title": "Getting Started"
+      "version-0.18-toolchain/cli/cli-intro": {
+        "title": "CLI Introduction"
       },
-      "version-0.19-cita/system-management/quota": {
-        "title": "Quota Management"
+      "version-0.18-toolchain/sdk/cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
       },
-      "version-0.19-cita/system-management/batch-tx": {
-        "title": "Batch Transactions"
+      "version-0.18-toolchain/sdk/cita-java-sdk": {
+        "title": "CITA Java SDK"
       },
-      "version-0.19-cita/system-management/emergency-brake": {
-        "title": "Emergency Brake"
+      "version-0.18-toolchain/sdk/cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
       },
-      "version-0.19-cita/system-management/amend": {
-        "title": "Amend"
+      "version-0.18-toolchain/sdk/cita-swift-sdk": {
+        "title": "CITA Swift SDK"
       },
-      "version-0.19-cita/system-management/fee-back": {
-        "title": "Fee Back"
+      "version-0.18-toolchain/rebirth/rebirth-intro": {
+        "title": "ReBirth Introduction"
       },
-      "version-0.19-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC Types"
+      "version-0.18-toolchain/cyton/cyton-intro": {
+        "title": "Cyton Introduction"
       },
-      "version-0.19-cita/reference/addresses": {
-        "title": "Reserved System Addresses"
+      "version-0.18-toolchain/microscope/microscope-intro": {
+        "title": "Microscope Introduction"
       },
-      "version-0.19-cita/crosschain/crosschain-contract-example": {
-        "title": "Crosschain Contract Examples"
+      "version-0.18-toolchain/ide/ide-intro": {
+        "title": "CITA IDE Introduction"
+      },
+      "version-0.18-toolchain/truffle-box/truffle-box-intro": {
+        "title": "CITA Truffle Box Introduction"
       },
       "version-0.20-cita/configuration/config-overview": {
         "title": "Configuration Overview"
@@ -689,14 +1058,14 @@
       "version-0.20-cita/configuration/microservice-configuration": {
         "title": "Microservice Configuration"
       },
+      "version-0.20-cita/system-management/contracts": {
+        "title": "System Contracts"
+      },
       "version-0.20-cita/system-management/user": {
         "title": "User Management"
       },
       "version-0.20-cita/system-management/quota": {
         "title": "Quota Management"
-      },
-      "version-0.20-cita/system-management/contracts": {
-        "title": "System Contracts"
       },
       "version-0.20-cita/system-management/price": {
         "title": "Quota Price Management"
@@ -707,47 +1076,62 @@
       "version-0.20-cita/system-management/snapshot": {
         "title": "Snapshot"
       },
-      "version-0.20-cita/system-management/emergency-brake": {
-        "title": "Emergency Brake"
-      },
       "version-0.20-cita/system-management/batch-tx": {
         "title": "Batch Transactions"
+      },
+      "version-0.20-cita/system-management/emergency-brake": {
+        "title": "Emergency Brake"
       },
       "version-0.20-cita/system-management/amend": {
         "title": "Amend"
       },
-      "version-0.20-cita/system-management/auto-exec": {
-        "title": "Auto Execution"
+      "version-0.20-cita/system-management/fee-back": {
+        "title": "Fee Back"
       },
       "version-0.20-cita/system-management/version": {
         "title": "Version Management"
       },
-      "version-0.20-cita/system-management/fee-back": {
-        "title": "Fee Back"
-      },
-      "version-0.20-cita/system-contract-interface/node": {
-        "title": "Consensus Node Management Contract Interface"
+      "version-0.20-cita/system-management/auto-exec": {
+        "title": "Auto Execution"
       },
       "version-0.20-cita/rpc-guide/rpc-types": {
         "title": "JSON RPC Types"
       },
-      "version-0.20-cita/system-contract-interface/permission": {
-        "title": "Permission Management Interface"
-      },
       "version-0.20-cita/rpc-guide/rpc-error-code": {
         "title": "JSON RPC Error Code"
+      },
+      "version-0.20-cita/system-contract-interface/system-interface": {
+        "title": "System Configuration Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/node": {
+        "title": "Consensus Node Management Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/auth": {
+        "title": "Auth Management Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/permission": {
+        "title": "Permission Management Interface"
       },
       "version-0.20-cita/system-contract-interface/role-management": {
         "title": "Role Management Contract Interface"
       },
+      "version-0.20-cita/system-contract-interface/role": {
+        "title": "Role Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/role-auth": {
+        "title": "Role Auth Contract Interface"
+      },
       "version-0.20-cita/system-contract-interface/group": {
         "title": "Group Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/all-groups": {
+        "title": "All-Group Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/quota-manager": {
         "title": "Quota Management Contract Interface"
       },
-      "version-0.20-cita/system-contract-interface/auth": {
-        "title": "Auth Management Contract Interface"
+      "version-0.20-cita/system-contract-interface/quota-price": {
+        "title": "Quota Price Management Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/batch": {
         "title": "Batch Transactions Contract Interface"
@@ -755,11 +1139,14 @@
       "version-0.20-cita/system-contract-interface/emergency-brake": {
         "title": "Emergency Brake Contract Interface"
       },
-      "version-0.20-cita/system-contract-interface/error": {
-        "title": "System Contract Error Code"
-      },
       "version-0.20-cita/system-contract-interface/admin": {
         "title": "Admin Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/auto-exec": {
+        "title": "Auto Execution Contract Interface"
+      },
+      "version-0.20-cita/system-contract-interface/error": {
+        "title": "System Contract Error Code"
       },
       "version-0.20-cita/architecture/components": {
         "title": "System components"
@@ -776,9 +1163,6 @@
       "version-0.20-cita/protocol-upgrade/overview": {
         "title": "Protocol Upgrade Overview"
       },
-      "version-0.20-cita/reference/glossary": {
-        "title": "Glossary"
-      },
       "version-0.20-cita/protocol-upgrade/v0": {
         "title": "v0 Protocol"
       },
@@ -788,89 +1172,209 @@
       "version-0.20-cita/reference/addresses": {
         "title": "Reserved System Addresses"
       },
+      "version-0.20-cita/reference/glossary": {
+        "title": "Glossary"
+      },
       "version-0.20-cita/cita-intro": {
         "title": "Welcome to CITA"
-      },
-      "version-0.17-toolchain/rebirth/rebirth-intro": {
-        "title": "ReBirth Introduction"
       },
       "version-0.20-cita/getting-started": {
         "title": "Getting Started"
       },
-      "version-0.17-toolchain/microscope/microscope-intro": {
-        "title": "Microscope Introduction"
-      },
-      "version-0.17-toolchain/cli/cli-intro": {
-        "title": "CLI Introduction"
-      },
-      "version-0.17-toolchain/cyton/cyton-intro": {
-        "title": "Cyton Introduction"
-      },
-      "version-0.17-toolchain/ide/ide-intro": {
-        "title": "CITA IDE Introduction"
-      },
       "version-0.20-cita/crosschain/crosschain-contract-example": {
         "title": "Crosschain Contract Example"
       },
-      "version-0.17-toolchain/truffle-box/truffle-box-intro": {
+      "version-0.20-toolchain/cli/cli-intro": {
+        "title": "CLI Introduction"
+      },
+      "version-0.20-toolchain/sdk/cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.20-toolchain/sdk/cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.20-toolchain/sdk/cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.20-toolchain/sdk/cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.20-toolchain/rebirth/rebirth-intro": {
+        "title": "ReBirth Introduction"
+      },
+      "version-0.20-toolchain/cyton/cyton-intro": {
+        "title": "Cyton Introduction"
+      },
+      "version-0.20-toolchain/microscope/microscope-intro": {
+        "title": "Microscope Introduction"
+      },
+      "version-0.20-toolchain/ide/ide-intro": {
+        "title": "CITA IDE Introduction"
+      },
+      "version-0.20-toolchain/truffle-box/truffle-box-intro": {
         "title": "CITA Truffle Box Introduction"
       },
-      "version-0.18-cita/chain/getting-started": {
+      "version-0.19-cita/chain/getting-started": {
         "title": "Getting Started"
       },
-      "version-0.18-cita/chain/config-tool": {
-        "title": "Chain Level Configuration"
+      "version-0.19-cita/system-management/user": {
+        "title": "User Management"
       },
-      "version-0.19-cita/system-management/node": {
-        "title": "Node Management"
+      "version-0.19-cita/system-management/quota": {
+        "title": "Quota Management"
       },
-      "version-0.17-cita/architecture/architecture": {
-        "title": "Architecture"
-      },
-      "version-0.19-cita/chain/config-tool": {
-        "title": "Chain Level Configuration"
-      },
-      "version-0.20-cita/system-contract-interface/group-management": {
-        "title": "Group Management Contract Interface"
-      },
-      "version-0.20-cita/system-management/node": {
-        "title": "Node Management"
-      },
-      "version-0.20-cita/architecture/architecture": {
-        "title": "Architecture"
-      },
-      "version-0.17-cita/chain/getting-started": {
-        "title": "Getting Started"
-      },
-      "version-0.17-cita/system-management/log": {
+      "version-0.19-cita/system-management/log": {
         "title": "Log Management"
       },
-      "version-0.17-cita/system-management/snapshot": {
+      "version-0.19-cita/system-management/system": {
+        "title": "System Configuration"
+      },
+      "version-0.19-cita/system-management/snapshot": {
         "title": "Snapshot"
       },
-      "version-0.17-cita/rpc-guide/rpc-types": {
+      "version-0.19-cita/system-management/batch-tx": {
+        "title": "Batch Transactions"
+      },
+      "version-0.19-cita/system-management/emergency-brake": {
+        "title": "Emergency Brake"
+      },
+      "version-0.19-cita/system-management/amend": {
+        "title": "Amend"
+      },
+      "version-0.19-cita/system-management/fee-back": {
+        "title": "Fee Back"
+      },
+      "version-0.19-cita/rpc-guide/rpc-types": {
         "title": "JSON RPC Types"
       },
-      "version-0.17-cita/rpc-guide/rpc-error-code": {
+      "version-0.19-cita/rpc-guide/rpc-error-code": {
         "title": "JSON RPC Error Code"
       },
-      "version-0.17-cita/txtool": {
-        "title": "About Txtool"
+      "version-0.19-cita/architecture/components": {
+        "title": "System components"
       },
-      "version-0.17-cita/crosschain/crosschain-contract-example": {
-        "title": "Crosschain Contract Example"
+      "version-0.19-cita/architecture/consensus": {
+        "title": "Consensus"
       },
-      "version-0.17-cita/cita-intro": {
+      "version-0.19-cita/architecture/transaction-process": {
+        "title": "Transaction Processing"
+      },
+      "version-0.19-cita/architecture/view": {
+        "title": "View"
+      },
+      "version-0.19-cita/reference/addresses": {
+        "title": "Reserved System Addresses"
+      },
+      "version-0.19-cita/reference/glossary": {
+        "title": "Glossary"
+      },
+      "version-0.19-cita/cita-intro": {
         "title": "About CITA"
       },
-      "cita/system-management/auto-exec": {
-        "title": "Automated Execution"
+      "version-0.19-toolchain/cli/cli-intro": {
+        "title": "CLI Introduction"
+      },
+      "version-0.19-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Examples"
+      },
+      "version-0.19-toolchain/sdk/cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.19-toolchain/sdk/cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.19-toolchain/sdk/cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.19-toolchain/sdk/cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.19-toolchain/rebirth/rebirth-intro": {
+        "title": "ReBirth Introduction"
+      },
+      "version-0.19-toolchain/cyton/cyton-intro": {
+        "title": "Cyton Introduction"
+      },
+      "version-0.19-toolchain/microscope/microscope-intro": {
+        "title": "Microscope Introduction"
+      },
+      "version-0.19-toolchain/ide/ide-intro": {
+        "title": "CITA IDE Introduction"
+      },
+      "version-0.19-toolchain/truffle-box/truffle-box-intro": {
+        "title": "CITA Truffle Box Introduction"
+      },
+      "version-0.20.1-cita/configuration/config-overview": {
+        "title": "Configuration Overview"
+      },
+      "version-0.20.1-cita/system-management/contracts": {
+        "title": "System Contracts"
+      },
+      "version-0.20.1-cita/system-management/quota": {
+        "title": "Quota Management"
+      },
+      "version-0.20.1-cita/system-management/user": {
+        "title": "User Management"
+      },
+      "version-0.20.1-cita/system-management/price": {
+        "title": "Quota Price Management"
+      },
+      "version-0.20.1-cita/system-management/log": {
+        "title": "Log Management"
+      },
+      "version-0.20.1-cita/system-management/snapshot": {
+        "title": "Snapshot"
+      },
+      "version-0.20.1-cita/system-management/batch-tx": {
+        "title": "Batch Transactions"
+      },
+      "version-0.20.1-cita/system-management/emergency-brake": {
+        "title": "Emergency Brake"
+      },
+      "version-0.20.1-cita/system-management/amend": {
+        "title": "Amend"
+      },
+      "version-0.20.1-cita/system-management/fee-back": {
+        "title": "Fee Back"
+      },
+      "version-0.20.1-cita/system-management/version": {
+        "title": "Version Management"
+      },
+      "version-0.20.1-cita/system-management/auto-exec": {
+        "title": "Auto Execution"
+      },
+      "version-0.20.1-cita/rpc-guide/rpc-types": {
+        "title": "JSON RPC Types"
+      },
+      "version-0.20.1-cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC Error Code"
+      },
+      "version-0.20.1-cita/system-contract-interface/system-interface": {
+        "title": "System Configuration Contract Interface"
+      },
+      "version-0.20.1-cita/system-contract-interface/node": {
+        "title": "Consensus Node Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/auth": {
         "title": "Auth Management Contract Interface"
       },
+      "version-0.20.1-cita/system-contract-interface/permission": {
+        "title": "Permission Management Interface"
+      },
+      "version-0.20.1-cita/system-contract-interface/role-management": {
+        "title": "Role Management Contract Interface"
+      },
       "version-0.20.1-cita/system-contract-interface/role-auth": {
         "title": "Role Auth Contract Interface"
+      },
+      "version-0.20.1-cita/system-contract-interface/role": {
+        "title": "Role Contract Interface"
+      },
+      "version-0.20.1-cita/system-contract-interface/group-management": {
+        "title": "Group Management Contract Interface"
+      },
+      "version-0.20.1-cita/system-contract-interface/group": {
+        "title": "Group Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/all-groups": {
         "title": "All-Group Contract Interface"
@@ -878,35 +1382,56 @@
       "version-0.20.1-cita/system-contract-interface/quota-manager": {
         "title": "Quota Management Contract Interface"
       },
-      "version-0.20.1-cita/system-management/contracts": {
-        "title": "System Contracts"
-      },
       "version-0.20.1-cita/system-contract-interface/quota-price": {
         "title": "Quota Price Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/batch": {
         "title": "Batch Transactions Contract Interface"
       },
-      "version-0.20.1-cita/system-contract-interface/auto-exec": {
-        "title": "Auto Execution Contract Interface"
+      "version-0.20.1-cita/system-contract-interface/emergency-brake": {
+        "title": "Emergency Brake Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/admin": {
         "title": "Admin Contract Interface"
       },
-      "version-0.20.1-cita/system-contract-interface/group-management": {
-        "title": "Group Management Contract Interface"
+      "version-0.20.1-cita/system-contract-interface/auto-exec": {
+        "title": "Auto Execution Contract Interface"
+      },
+      "version-0.20.1-cita/architecture/components": {
+        "title": "System components"
       },
       "version-0.20.1-cita/architecture/consensus": {
         "title": "Consensus"
       },
-      "version-0.18-cita/system-management/node": {
-        "title": "Node Management"
+      "version-0.20.1-cita/architecture/transaction-process": {
+        "title": "Transaction Process"
+      },
+      "version-0.20.1-cita/architecture/view": {
+        "title": "View"
+      },
+      "version-0.20.1-cita/protocol-upgrade/overview": {
+        "title": "Protocol Upgrade Overview"
+      },
+      "version-0.20.1-cita/protocol-upgrade/v0": {
+        "title": "v0 Protocol"
+      },
+      "version-0.20.1-cita/protocol-upgrade/v1": {
+        "title": "v1 Protocol"
       },
       "version-0.20.1-cita/reference/addresses": {
         "title": "Reserved System Addresses"
       },
-      "version-0.20-cita/system-management/permission": {
-        "title": "Permission Management"
+      "version-0.20.1-cita/reference/glossary": {
+        "title": "Glossary"
+      },
+      "version-0.20.1-cita/cita-intro": {
+        "title": "Welcome to CITA"
+      },
+      "version-0.20.1-cita/crosschain/crosschain-contract-example": {
+        "title": "Crosschain Contract Example"
+      },
+      "cita/system-management/auto-exec": {
+        "title": "Automated Execution"
       },
       "version-0.17-cita/chain/config-tool": {
         "title": "Chain Configuration"
@@ -914,17 +1439,62 @@
       "version-0.17-cita/system-management/node": {
         "title": "Node Management"
       },
-      "version-0.18-cita/system-management/permission": {
-        "title": "Permission Management"
+      "version-0.17-cita/architecture/architecture": {
+        "title": "Architecture"
+      },
+      "version-0.18-cita/chain/getting-started": {
+        "title": "Getting Started"
+      },
+      "version-0.18-cita/chain/config-tool": {
+        "title": "Chain Level Configuration"
+      },
+      "version-0.18-cita/architecture/architecture": {
+        "title": "Architecture"
+      },
+      "version-0.20-cita/configuration/chain-configuration": {
+        "title": "chain Configuration"
+      },
+      "version-0.20-cita/system-management/node": {
+        "title": "Node Management"
+      },
+      "version-0.20-cita/system-contract-interface/group-management": {
+        "title": "Group Management Contract Interface"
+      },
+      "version-0.20-cita/architecture/architecture": {
+        "title": "Architecture"
+      },
+      "version-0.19-cita/chain/config-tool": {
+        "title": "Chain Level Configuration"
+      },
+      "version-0.19-cita/system-management/node": {
+        "title": "Node Management"
+      },
+      "version-0.19-cita/architecture/architecture": {
+        "title": "Architecture"
+      },
+      "version-0.20.1-cita/configuration/chain-configuration": {
+        "title": "Chain Configuration"
+      },
+      "version-0.20.1-cita/configuration/microservice-configuration": {
+        "title": "Microservice Configuration"
+      },
+      "version-0.20.1-cita/system-management/node": {
+        "title": "Node Management"
       },
       "version-0.20.1-cita/system-contract-interface/error": {
         "title": "System Contract Error Code"
       },
-      "version-0.19-cita/system-management/permission": {
-        "title": "Permission Management"
+      "version-0.20.1-cita/architecture/architecture": {
+        "title": "Architecture"
       },
       "version-0.20.1-cita/getting-started": {
         "title": "Getting Started"
+      },
+      "version-0.18-cita/system-management/node": {
+        "title": "Node Management"
+      },
+      "version-0.20-cita/system-management/permission": {
+        "title": "Permission Management"
       },
       "version-0.20.1-cita/system-management/permission": {
         "title": "Permission Management"
@@ -932,16 +1502,22 @@
       "version-0.17-cita/system-management/permission": {
         "title": "Permission Management"
       },
-      "version-0.19-cita/rpc-guide/rpc": {
+      "version-0.18-cita/system-management/permission": {
+        "title": "Permission Management"
+      },
+      "version-0.19-cita/system-management/permission": {
+        "title": "Permission Management"
+      },
+      "version-0.17-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       },
       "version-0.20-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       },
-      "version-0.18-cita/rpc-guide/rpc": {
+      "version-0.19-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       },
-      "version-0.17-cita/rpc-guide/rpc": {
+      "version-0.18-cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       },
       "version-0.20.1-cita/rpc-guide/rpc": {

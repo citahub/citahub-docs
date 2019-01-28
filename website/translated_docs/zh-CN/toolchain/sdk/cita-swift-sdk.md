@@ -1,5 +1,6 @@
 ---
 title: CITA Swift SDK
-id: swift-sdk
+id: cita-swift-sdk
 ---
+
 This is cita swift sdk doc

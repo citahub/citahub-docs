@@ -1,5 +1,6 @@
 ---
 title: CITA Ruby SDK
-id: ruby-sdk
+id: cita-ruby-sdk
 ---
+
 This is cita ruby sdk doc

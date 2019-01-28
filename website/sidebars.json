@@ -36,23 +36,19 @@
       {
         "label": "JSON-RPC",
         "type": "subcategory",
-        "ids": [
-          "cita/rpc-guide/rpc-types",
-          "cita/rpc-guide/rpc",
-          "cita/rpc-guide/rpc-error-code"
-        ]
+        "ids": ["cita/rpc-guide/rpc-types", "cita/rpc-guide/rpc", "cita/rpc-guide/rpc-error-code"]
       },
       {
         "label": "System Contract Interface",
         "type": "subcategory",
         "ids": [
-          "cita/system-contract-interface/sys-interface",
+          "cita/system-contract-interface/system-interface",
           "cita/system-contract-interface/node",
           "cita/system-contract-interface/auth",
           "cita/system-contract-interface/permission",
           "cita/system-contract-interface/role-management",
           "cita/system-contract-interface/role-auth",
-          "cita/system-contract-interface/role.md",
+          "cita/system-contract-interface/role",
           "cita/system-contract-interface/group-management",
           "cita/system-contract-interface/group",
           "cita/system-contract-interface/all-groups",
@@ -80,77 +76,55 @@
       {
         "label": "Protocol Upgrade",
         "type": "subcategory",
-        "ids": [
-          "cita/protocol-upgrade/overview",
-          "cita/protocol-upgrade/v0",
-          "cita/protocol-upgrade/v1"
-        ]
+        "ids": ["cita/protocol-upgrade/overview", "cita/protocol-upgrade/v0", "cita/protocol-upgrade/v1"]
       },
       {
         "label": "Reference",
         "type": "subcategory",
-        "ids": [
-          "cita/reference/addresses",
-          "cita/reference/glossary"
-        ]
+        "ids": ["cita/reference/addresses", "cita/reference/glossary"]
       }
     ],
     "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
-        "ids": [
-          "toolchian/cli/cli-intro"
-        ]
+        "ids": ["toolchain/cli/cli-intro"]
       },
       {
         "label": "SDK",
         "type": "subcategory",
         "ids": [
-          "toolchain/sdk/js-sdk",
-          "toolchain/sdk/java-sdk",
-          "toolchain/sdk/swift-sdk",
-          "toolchain/sdk/ruby-sdk"
+          "toolchain/sdk/cita-javascript-sdk",
+          "toolchain/sdk/cita-java-sdk",
+          "toolchain/sdk/cita-swift-sdk",
+          "toolchain/sdk/cita-ruby-sdk"
         ]
       },
       {
         "label": "Rebirth",
         "type": "subcategory",
-        "ids": [
-          "toolchain/rebirth/rebirth-intro"
-        ]
+        "ids": ["toolchain/rebirth/rebirth-intro"]
       },
       {
         "label": "Cyton",
         "type": "subcategory",
-        "ids": [
-          "toolchain/cyton/cyton-intro"
-        ]
+        "ids": ["toolchain/cyton/cyton-intro"]
       },
       {
         "label": "Microscope",
         "type": "subcategory",
-        "ids": [
-          "toolchain/microscope/microscope-intro"
-        ]
+        "ids": ["toolchain/microscope/microscope-intro"]
       },
       {
         "label": "CITA-IDE",
         "type": "subcategory",
-        "ids": [
-          "toolchain/ide/ide-intro"
-        ]
+        "ids": ["toolchain/ide/ide-intro"]
       },
       {
         "label": "CITA Truffle Box",
         "type": "subcategory",
-        "ids": [
-          "toolchain/truffle-box/truffle-box-intro"
-        ]
+        "ids": ["toolchain/truffle-box/truffle-box-intro"]
       }
     ],
-    "Contributing": [
-      "contributing",
-      "roadmap"
-    ]
+    "Contributing": ["contributing", "roadmap"]
   }
 }

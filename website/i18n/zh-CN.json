@@ -712,6 +712,52 @@
       "version-0.20.1-welcome": {
         "title": "关于 CITA"
       },
+      "version-0.20.2-cita-intro": {
+        "title": "关于 CITA"
+      },
+      "version-0.20.2-chain-configuration": {
+        "title": "链级配置"
+      },
+      "version-0.20.2-config-overview": {
+        "title": "配置概览"
+      },
+      "version-0.20.2-getting-started": {
+        "title": "快速开始"
+      },
+      "version-0.20.2-overview": {
+        "title": "协议升级概览"
+      },
+      "version-0.20.2-batch-tx": {
+        "title": "批量交易"
+      },
+      "version-0.20.2-contracts": {
+        "title": "系统合约"
+      },
+      "version-0.20.2-emergency-brake": {
+        "title": "紧急制动"
+      },
+      "version-0.20.2-node": {
+        "title": "节点管理"
+      },
+      "version-0.20.2-permission": {
+        "title": "权限管理"
+      },
+      "version-0.20.2-welcome": {
+        "title": "CITAHub 文档概览",
+        "sidebar_label": "CITAHub 文档概览"
+      },
+      "version-0.20.2-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.20.2-js-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.20.2-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.20.2-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
       "version-0.20-architecture": {
         "title": "架构设计"
       },
@@ -896,6 +942,102 @@
       "version-0.20-welcome": {
         "title": "关于 CITA"
       },
+      "version-0.20.2-cita/system-management/user": {
+        "title": "用户管理"
+      },
+      "version-0.20.2-cita/system-management/quota": {
+        "title": "份额管理"
+      },
+      "version-0.20.2-cita/system-management/price": {
+        "title": "份额价格管理"
+      },
+      "version-0.20.2-cita/system-management/log": {
+        "title": "日志管理"
+      },
+      "version-0.20.2-cita/system-management/snapshot": {
+        "title": "快照"
+      },
+      "version-0.20.2-cita/system-management/amend": {
+        "title": "数据订正"
+      },
+      "version-0.20.2-cita/system-management/fee-back": {
+        "title": "出块奖励返回"
+      },
+      "version-0.20.2-cita/system-management/version": {
+        "title": "协议版本管理"
+      },
+      "version-0.20.2-cita/system-management/auto-exec": {
+        "title": "自动执行"
+      },
+      "version-0.20.2-cita/rpc-guide/rpc-error-code": {
+        "title": "JSON RPC 错误类型"
+      },
+      "version-0.20.2-cita/system-contract-interface/system-interface": {
+        "title": "系统配置合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/node": {
+        "title": "共识节点管理合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/auth": {
+        "title": "授权管理合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/permission": {
+        "title": "权限合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/role-auth": {
+        "title": "角色授权合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/role-management": {
+        "title": "角色管理合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/role": {
+        "title": "角色合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/group-management": {
+        "title": "组管理合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/group": {
+        "title": "组合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/quota-manager": {
+        "title": "份额管理合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/all-groups": {
+        "title": "所有组合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/batch": {
+        "title": "批量交易合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/quota-price": {
+        "title": "份额价格管理合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/emergency-brake": {
+        "title": "紧急制动合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/admin": {
+        "title": "管理员合约接口"
+      },
+      "version-0.20.2-cita/system-contract-interface/auto-exec": {
+        "title": "自动执行合约接口"
+      },
+      "version-0.20.2-cita/architecture/components": {
+        "title": "系统组件"
+      },
+      "version-0.20.2-cita/architecture/consensus": {
+        "title": "共识"
+      },
+      "version-0.20.2-cita/architecture/transaction-process": {
+        "title": "交易处理"
+      },
+      "version-0.20.2-cita/architecture/view": {
+        "title": "视图"
+      },
+      "version-0.20.2-cita/reference/addresses": {
+        "title": "保留系统地址列表"
+      },
+      "version-0.20.2-cita/reference/glossary": {
+        "title": "词汇表"
+      },
       "version-0.17-cita/chain/getting-started": {
         "title": "快速开始"
       },
@@ -905,11 +1047,11 @@
       "version-0.17-cita/system-management/quota": {
         "title": "份额管理"
       },
-      "version-0.17-cita/system-management/log": {
-        "title": "日志管理"
-      },
       "version-0.17-cita/system-management/snapshot": {
         "title": "快照"
+      },
+      "version-0.17-cita/system-management/log": {
+        "title": "日志管理"
       },
       "version-0.17-cita/rpc-guide/rpc-types": {
         "title": "JSON RPC 类型"
@@ -920,14 +1062,14 @@
       "version-0.17-cita/architecture/components": {
         "title": "系统组件"
       },
-      "version-0.17-cita/architecture/consensus": {
-        "title": "共识"
-      },
       "version-0.17-cita/architecture/transaction-process": {
         "title": "交易处理"
       },
       "version-0.17-cita/architecture/view": {
         "title": "视图"
+      },
+      "version-0.17-cita/architecture/consensus": {
+        "title": "共识"
       },
       "version-0.17-cita/reference/addresses": {
         "title": "保留系统地址列表"
@@ -968,20 +1110,20 @@
       "version-0.17-toolchain/microscope/microscope-intro": {
         "title": "Microscope 简介"
       },
-      "version-0.17-toolchain/ide/ide-intro": {
-        "title": "CITA IDE 简介"
-      },
       "version-0.17-toolchain/truffle-box/truffle-box-intro": {
         "title": "CITA Truffle Box 简介"
       },
-      "version-0.18-cita/system-management/user": {
-        "title": "用户管理"
+      "version-0.17-toolchain/ide/ide-intro": {
+        "title": "CITA IDE 简介"
       },
       "version-0.18-cita/system-management/quota": {
         "title": "份额管理"
       },
       "version-0.18-cita/system-management/log": {
         "title": "日志管理"
+      },
+      "version-0.18-cita/system-management/user": {
+        "title": "用户管理"
       },
       "version-0.18-cita/system-management/system": {
         "title": "系统配置"
@@ -1019,11 +1161,11 @@
       "version-0.18-cita/cita-intro": {
         "title": "关于 CITA"
       },
-      "version-0.18-cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约示例"
-      },
       "version-0.18-toolchain/cli/cli-intro": {
         "title": "CLI 简介"
+      },
+      "version-0.18-cita/crosschain/crosschain-contract-example": {
+        "title": "跨链合约示例"
       },
       "version-0.18-toolchain/sdk/cita-javascript-sdk": {
         "title": "CITA JavaScript SDK"
@@ -1031,17 +1173,17 @@
       "version-0.18-toolchain/sdk/cita-java-sdk": {
         "title": "CITA Java SDK"
       },
-      "version-0.18-toolchain/sdk/cita-ruby-sdk": {
-        "title": "CITA Ruby SDK"
-      },
       "version-0.18-toolchain/sdk/cita-swift-sdk": {
         "title": "CITA Swift SDK"
       },
-      "version-0.18-toolchain/rebirth/rebirth-intro": {
-        "title": "ReBirth 简介"
+      "version-0.18-toolchain/sdk/cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
       },
       "version-0.18-toolchain/cyton/cyton-intro": {
         "title": "Cyton 简介"
+      },
+      "version-0.18-toolchain/rebirth/rebirth-intro": {
+        "title": "ReBirth 简介"
       },
       "version-0.18-toolchain/microscope/microscope-intro": {
         "title": "Microscope 简介"
@@ -1091,11 +1233,11 @@
       "version-0.20-cita/system-management/version": {
         "title": "协议版本管理"
       },
-      "version-0.20-cita/system-management/auto-exec": {
-        "title": "自动执行"
-      },
       "version-0.20-cita/rpc-guide/rpc-types": {
         "title": "JSON RPC 类型"
+      },
+      "version-0.20-cita/system-management/auto-exec": {
+        "title": "自动执行"
       },
       "version-0.20-cita/rpc-guide/rpc-error-code": {
         "title": "JSON RPC 错误类型"
@@ -1115,11 +1257,11 @@
       "version-0.20-cita/system-contract-interface/role-management": {
         "title": "角色管理合约接口"
       },
-      "version-0.20-cita/system-contract-interface/role": {
-        "title": "角色合约接口"
-      },
       "version-0.20-cita/system-contract-interface/role-auth": {
         "title": "角色授权合约接口"
+      },
+      "version-0.20-cita/system-contract-interface/role": {
+        "title": "角色合约接口"
       },
       "version-0.20-cita/system-contract-interface/group": {
         "title": "组合约接口"
@@ -1154,11 +1296,11 @@
       "version-0.20-cita/architecture/consensus": {
         "title": "共识"
       },
-      "version-0.20-cita/architecture/transaction-process": {
-        "title": "交易处理"
-      },
       "version-0.20-cita/architecture/view": {
         "title": "视图"
+      },
+      "version-0.20-cita/architecture/transaction-process": {
+        "title": "交易处理"
       },
       "version-0.20-cita/protocol-upgrade/overview": {
         "title": "协议升级概览"
@@ -1190,11 +1332,11 @@
       "version-0.20-toolchain/sdk/cita-javascript-sdk": {
         "title": "CITA JavaScript SDK"
       },
-      "version-0.20-toolchain/sdk/cita-java-sdk": {
-        "title": "CITA Java SDK"
-      },
       "version-0.20-toolchain/sdk/cita-swift-sdk": {
         "title": "CITA Swift SDK"
+      },
+      "version-0.20-toolchain/sdk/cita-java-sdk": {
+        "title": "CITA Java SDK"
       },
       "version-0.20-toolchain/sdk/cita-ruby-sdk": {
         "title": "CITA Ruby SDK"
@@ -1235,11 +1377,11 @@
       "version-0.19-cita/system-management/batch-tx": {
         "title": "批量交易"
       },
-      "version-0.19-cita/system-management/emergency-brake": {
-        "title": "紧急制动"
-      },
       "version-0.19-cita/system-management/amend": {
         "title": "数据订正"
+      },
+      "version-0.19-cita/system-management/emergency-brake": {
+        "title": "紧急制动"
       },
       "version-0.19-cita/system-management/fee-back": {
         "title": "出块奖励返回"
@@ -1271,11 +1413,11 @@
       "version-0.19-cita/cita-intro": {
         "title": "关于 CITA"
       },
-      "version-0.19-toolchain/cli/cli-intro": {
-        "title": "CLI 简介"
-      },
       "version-0.19-cita/crosschain/crosschain-contract-example": {
         "title": "跨链合约示例"
+      },
+      "version-0.19-toolchain/cli/cli-intro": {
+        "title": "CLI 简介"
       },
       "version-0.19-toolchain/sdk/cita-javascript-sdk": {
         "title": "CITA JavaScript SDK"
@@ -1289,11 +1431,11 @@
       "version-0.19-toolchain/sdk/cita-ruby-sdk": {
         "title": "CITA Ruby SDK"
       },
-      "version-0.19-toolchain/rebirth/rebirth-intro": {
-        "title": "ReBirth 简介"
-      },
       "version-0.19-toolchain/cyton/cyton-intro": {
         "title": "Cyton 简介"
+      },
+      "version-0.19-toolchain/rebirth/rebirth-intro": {
+        "title": "ReBirth 简介"
       },
       "version-0.19-toolchain/microscope/microscope-intro": {
         "title": "Microscope 简介"
@@ -1304,17 +1446,47 @@
       "version-0.19-toolchain/truffle-box/truffle-box-intro": {
         "title": "CITA Truffle Box 简介"
       },
+      "version-0.20.2-cita/configuration/config-overview": {
+        "title": "配置概览"
+      },
+      "version-0.20.2-cita/system-management/contracts": {
+        "title": "系统合约"
+      },
+      "version-0.20.2-cita/system-management/batch-tx": {
+        "title": "批量交易"
+      },
+      "version-0.20.2-cita/system-management/emergency-brake": {
+        "title": "紧急制动"
+      },
+      "version-0.20.2-cita/protocol-upgrade/overview": {
+        "title": "协议升级概览"
+      },
+      "version-0.20.2-cita/cita-intro": {
+        "title": "关于 CITA"
+      },
+      "version-0.20.2-toolchain/sdk/cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.20.2-toolchain/sdk/cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.20.2-toolchain/sdk/cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.20.2-toolchain/sdk/cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
       "version-0.20.1-cita/configuration/config-overview": {
         "title": "配置概览"
       },
       "version-0.20.1-cita/system-management/contracts": {
         "title": "系统合约"
       },
-      "version-0.20.1-cita/system-management/quota": {
-        "title": "份额管理"
-      },
       "version-0.20.1-cita/system-management/user": {
         "title": "用户管理"
+      },
+      "version-0.20.1-cita/system-management/quota": {
+        "title": "份额管理"
       },
       "version-0.20.1-cita/system-management/price": {
         "title": "份额价格管理"
@@ -1403,32 +1575,62 @@
       "version-0.20.1-cita/architecture/consensus": {
         "title": "共识"
       },
-      "version-0.20.1-cita/architecture/transaction-process": {
-        "title": "交易处理"
-      },
-      "version-0.20.1-cita/architecture/view": {
-        "title": "视图"
-      },
-      "version-0.20.1-cita/protocol-upgrade/overview": {
-        "title": "协议升级概览"
-      },
       "version-0.20.1-cita/protocol-upgrade/v0": {
         "title": "v0 协议"
       },
       "version-0.20.1-cita/protocol-upgrade/v1": {
         "title": "v1 协议"
       },
+      "version-0.20.1-cita/architecture/transaction-process": {
+        "title": "交易处理"
+      },
+      "version-0.20.1-cita/architecture/view": {
+        "title": "视图"
+      },
       "version-0.20.1-cita/reference/addresses": {
         "title": "系统预留地址"
       },
-      "version-0.20.1-cita/reference/glossary": {
-        "title": "词汇表"
+      "version-0.20.1-cita/protocol-upgrade/overview": {
+        "title": "协议升级概览"
       },
       "version-0.20.1-cita/cita-intro": {
         "title": "关于 CITA"
       },
+      "version-0.20.1-cita/reference/glossary": {
+        "title": "词汇表"
+      },
       "version-0.20.1-cita/crosschain/crosschain-contract-example": {
         "title": "跨链合约示例"
+      },
+      "version-0.20.1-toolchain/cli/cli-intro": {
+        "title": "CLI 简介"
+      },
+      "version-0.20.1-toolchain/sdk/cita-javascript-sdk": {
+        "title": "CITA JavaScript SDK"
+      },
+      "version-0.20.1-toolchain/sdk/cita-java-sdk": {
+        "title": "CITA Java SDK"
+      },
+      "version-0.20.1-toolchain/sdk/cita-swift-sdk": {
+        "title": "CITA Swift SDK"
+      },
+      "version-0.20.1-toolchain/sdk/cita-ruby-sdk": {
+        "title": "CITA Ruby SDK"
+      },
+      "version-0.20.1-toolchain/rebirth/rebirth-intro": {
+        "title": "ReBirth 简介"
+      },
+      "version-0.20.1-toolchain/cyton/cyton-intro": {
+        "title": "Cyton 简介"
+      },
+      "version-0.20.1-toolchain/microscope/microscope-intro": {
+        "title": "Microscope 简介"
+      },
+      "version-0.20.1-toolchain/ide/ide-intro": {
+        "title": "CITA IDE 简介"
+      },
+      "version-0.20.1-toolchain/truffle-box/truffle-box-intro": {
+        "title": "CITA Truffle Box 简介"
       },
       "cita/system-management/auto-exec": {
         "title": "自动执行"
@@ -1472,6 +1674,15 @@
       "version-0.19-cita/architecture/architecture": {
         "title": "架构设计"
       },
+      "version-0.20.2-cita/configuration/chain-configuration": {
+        "title": "链级配置"
+      },
+      "version-0.20.2-cita/system-management/node": {
+        "title": "节点管理"
+      },
+      "version-0.20.2-cita/getting-started": {
+        "title": "快速开始"
+      },
       "version-0.20.1-cita/configuration/chain-configuration": {
         "title": "链级配置"
       },
@@ -1494,6 +1705,9 @@
         "title": "节点管理"
       },
       "version-0.20-cita/system-management/permission": {
+        "title": "权限管理"
+      },
+      "version-0.20.2-cita/system-management/permission": {
         "title": "权限管理"
       },
       "version-0.20.1-cita/system-management/permission": {

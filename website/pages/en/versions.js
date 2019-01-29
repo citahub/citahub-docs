@@ -72,12 +72,18 @@ function Versions(props) {
                   <tr>
                     <th>{version}</th>
                     <td>
-                      <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}${version === latestVersion?'':'/'+version}/welcome`}>
+                      <a
+                        href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}${
+                          version === latestVersion ? '' : '/' + version
+                        }/welcome`}>
                         Documentation
                       </a>
                     </td>
                     <td>
-                      <a href={`https://github.com/cryptape/cita/tree/${version}`} alt="Release Note" target="_blank">
+                      <a
+                        href={`https://github.com/cryptape/cita/releases/tag/v${version}`}
+                        alt="Release Note"
+                        target="_blank">
                         Release Note
                       </a>
                     </td>

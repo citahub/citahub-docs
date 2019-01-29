@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "cita:sync": "git submodule update --remote",
+    "cita:sync": "git submodule update --remote && rm -rf docs && cp -r ./cita/docs/zh-CN ./docs",
     "crowdin:upload": "crowdin --config crowdin.yaml upload sources --auto-update",
     "crowdin:download": "crowdin --config crowdin.yaml download"
   },

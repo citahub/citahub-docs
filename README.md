@@ -1,27 +1,63 @@
-# CITAHub Docs 
+# CITAHub Docs
 
 ### Visit the documentation site: [CITAHub Docs](https://docs.citahub.com/)
 
 ### Build the documentation site
 
-* Initializing the website 
+- Initializing the website
 
   ```shell
   $ cd website
-  $ npm install
+  $ yarn install
   ```
+
   > **Note**
-  > 
-  > You can also install by Yarn:
+  >
+  > You can also install by npm:
   >
   > ```shell
-  > $ yarn install
+  > $ npm install
   > ```
-  > If you have not use Yarn before, you'll first need to install it on your system. Please refer to [official installation documents](https://yarnpkg.com/lang/en/docs/install/).
 
-* Use the `yarn start` command to view the site on localhost `http://localhost:3000`, and real-time reload whenever the you save changes.
+- Use the `yarn start` command to view the site on localhost `http://localhost:3000`, and real-time reload whenever the you save changes.
 
-  ```shell
-  $ cd website
-  $ yarn start
-  ```
+```shell
+$ cd website
+$ yarn start
+```
+
+- Sync Docs from CITA
+
+```shell
+$ yarn run cita:sync
+```
+
+- Update Sidebar Titles
+
+```shell
+$ cd website && yarn run write-translations
+```
+
+- Upload Latest Docs to Crowdin
+
+> Crowdin-CLI Required - [Crowdin-CLI](https://support.crowdin.com/cli-tool/)
+
+> Crowdin Config Required - set project identifier and apikey in `crowdin.yaml`
+
+1. Upload latest docs to crowdin
+
+```shell
+$ yarn run crowdin:upload
+```
+
+2. Download latest translated docs from crowdin
+
+```shell
+$ yarn run crowdin:download
+```
+
+- Deploy to Github Pages
+
+```shell
+$ cd website && CIT_USER=<your_git_username> CURRENT_BRANCH=master USER_SSH=true yarn run publish-gh-pages
+```

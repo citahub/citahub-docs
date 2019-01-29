@@ -129,7 +129,7 @@
       "cita/system-management/batch-tx": {
         "title": "Batch Transaction"
       },
-      "cita/system-management/contracts": {
+      "cita/system-management/system-contracts": {
         "title": "System Contracts"
       },
       "cita/system-management/emergency-brake": {
@@ -652,7 +652,7 @@
       "version-0.20.1-batch-tx": {
         "title": "Batch Transactions"
       },
-      "version-0.20.1-contracts": {
+      "version-0.20.1-system-contracts": {
         "title": "System Contracts"
       },
       "version-0.20.1-fee-back": {
@@ -730,7 +730,7 @@
       "version-0.20.2-batch-tx": {
         "title": "Batch Transaction"
       },
-      "version-0.20.2-contracts": {
+      "version-0.20.2-system-contracts": {
         "title": "System Contracts"
       },
       "version-0.20.2-emergency-brake": {
@@ -882,7 +882,7 @@
       "version-0.20-batch-tx": {
         "title": "Batch Transactions"
       },
-      "version-0.20-contracts": {
+      "version-0.20-system-contracts": {
         "title": "System Contracts"
       },
       "version-0.20-fee-back": {
@@ -1248,7 +1248,7 @@
       "version-0.20-cita/configuration/microservice-configuration": {
         "title": "Microservice Configuration"
       },
-      "version-0.20-cita/system-management/contracts": {
+      "version-0.20-cita/system-management/system-contracts": {
         "title": "System Contracts"
       },
       "version-0.20-cita/system-management/user": {
@@ -1497,7 +1497,7 @@
       "version-0.20.1-cita/configuration/config-overview": {
         "title": "Configuration Overview"
       },
-      "version-0.20.1-cita/system-management/contracts": {
+      "version-0.20.1-cita/system-management/system-contracts": {
         "title": "System Contracts"
       },
       "version-0.20.1-cita/system-management/user": {
@@ -1653,7 +1653,7 @@
       "version-0.20.2-cita/configuration/config-overview": {
         "title": "Configuration Overview"
       },
-      "version-0.20.2-cita/system-management/contracts": {
+      "version-0.20.2-cita/system-management/system-contracts": {
         "title": "System Contracts"
       },
       "version-0.20.2-cita/system-management/emergency-brake": {

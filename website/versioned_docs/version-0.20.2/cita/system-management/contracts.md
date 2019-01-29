@@ -1,7 +1,7 @@
 ---
-id: version-0.20.2-contracts
+id: version-0.20.2-system-contracts
 title: 系统合约
-original_id: contracts
+original_id: system-contracts
 ---
 
 CITA 链生成时，通过系统合约来生成创世块，并作为链的最基本配置。拥有权限的管理员可以发送交易修改创世块的部分配置，所以了解系统合约至关重要。

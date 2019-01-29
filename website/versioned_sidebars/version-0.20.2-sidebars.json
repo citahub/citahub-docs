@@ -1,8 +1,6 @@
 {
   "version-0.20.2-docs": {
-    "Welcome": [
-      "version-0.20.2-welcome"
-    ],
+    "Welcome": ["version-0.20.2-welcome"],
     "CITA": [
       "version-0.20.2-cita/cita-intro",
       "version-0.20.2-cita/getting-started",
@@ -19,7 +17,7 @@
         "label": "System Management",
         "type": "subcategory",
         "ids": [
-          "version-0.20.2-cita/system-management/contracts",
+          "version-0.20.2-cita/system-management/system-contracts",
           "version-0.20.2-cita/system-management/node",
           "version-0.20.2-cita/system-management/permission",
           "version-0.20.2-cita/system-management/user",
@@ -91,19 +89,14 @@
       {
         "label": "Reference",
         "type": "subcategory",
-        "ids": [
-          "version-0.20.2-cita/reference/addresses",
-          "version-0.20.2-cita/reference/glossary"
-        ]
+        "ids": ["version-0.20.2-cita/reference/addresses", "version-0.20.2-cita/reference/glossary"]
       }
     ],
     "Toolchain": [
       {
         "label": "CITA-CLI",
         "type": "subcategory",
-        "ids": [
-          "version-0.20.2-toolchain/cli/cli-intro"
-        ]
+        "ids": ["version-0.20.2-toolchain/cli/cli-intro"]
       },
       {
         "label": "SDK",
@@ -118,42 +111,29 @@
       {
         "label": "Rebirth",
         "type": "subcategory",
-        "ids": [
-          "version-0.20.2-toolchain/rebirth/rebirth-intro"
-        ]
+        "ids": ["version-0.20.2-toolchain/rebirth/rebirth-intro"]
       },
       {
         "label": "Cyton",
         "type": "subcategory",
-        "ids": [
-          "version-0.20.2-toolchain/cyton/cyton-intro"
-        ]
+        "ids": ["version-0.20.2-toolchain/cyton/cyton-intro"]
       },
       {
         "label": "Microscope",
         "type": "subcategory",
-        "ids": [
-          "version-0.20.2-toolchain/microscope/microscope-intro"
-        ]
+        "ids": ["version-0.20.2-toolchain/microscope/microscope-intro"]
       },
       {
         "label": "CITA-IDE",
         "type": "subcategory",
-        "ids": [
-          "version-0.20.2-toolchain/ide/ide-intro"
-        ]
+        "ids": ["version-0.20.2-toolchain/ide/ide-intro"]
       },
       {
         "label": "CITA Truffle Box",
         "type": "subcategory",
-        "ids": [
-          "version-0.20.2-toolchain/truffle-box/truffle-box-intro"
-        ]
+        "ids": ["version-0.20.2-toolchain/truffle-box/truffle-box-intro"]
       }
     ],
-    "Contributing": [
-      "version-0.20.2-contributing",
-      "version-0.20.2-roadmap"
-    ]
+    "Contributing": ["version-0.20.2-contributing", "version-0.20.2-roadmap"]
   }
 }

@@ -17,7 +17,7 @@
         "label": "System Management",
         "type": "subcategory",
         "ids": [
-          "version-0.20.1-cita/system-management/contracts",
+          "version-0.20.1-cita/system-management/system-contracts",
           "version-0.20.1-cita/system-management/node",
           "version-0.20.1-cita/system-management/permission",
           "version-0.20.1-cita/system-management/user",
@@ -92,7 +92,8 @@
         "ids": ["version-0.20.1-cita/reference/addresses", "version-0.20.1-cita/reference/glossary"]
       }
     ],
-    "Toolchain": [{
+    "Toolchain": [
+      {
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": ["version-0.20.1-toolchain/cli/cli-intro"]

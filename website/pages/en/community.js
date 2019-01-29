@@ -45,7 +45,7 @@ const Community = () => (
 
           <p>
             <translate>Please apply to join</translate>{' '}
-            <a href="https://www.citahub.com/#/Our" alt="Our Community">
+            <a href="https://www.citahub.com/#/" alt="Our Community">
               <translate>our community</translate>
             </a>
             .

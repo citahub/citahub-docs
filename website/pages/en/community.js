@@ -30,7 +30,7 @@ const Community = () => (
           </h3>
 
           <p>
-            <a href="https://talks.citahub.com/" alt="CITAHub Talk">
+            <a href="https://talk.citahub.com/" alt="CITAHub Talk">
               <translate>CITAHub Talk </translate>
             </a>{' '}
             <translate>
@@ -160,7 +160,7 @@ const Community = () => (
           </h3>
 
           <p>
-            <a href="https://talks.citahub.com/" alt="CITAHub Talk">
+            <a href="https://talk.citahub.com/" alt="CITAHub Talk">
               <translate>CITAHub Talk </translate>
             </a>
             .

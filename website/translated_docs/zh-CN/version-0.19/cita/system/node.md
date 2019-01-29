@@ -1,7 +1,9 @@
 ---
-id: node
+id: version-0.19-node
 title: Node Management
+original_id: node
 ---
+
 CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，共识完成后即被确认为合法区块。普通节点不参与共识，只同步和验证链上所有的原始数据。
 
 公有链没有节点准入机制，意味着任何节点都可以接入链并同步其全部的数据，在满足一定的条件下都可以参加共识。而 CITA 对于共识节点和普通节点都进行了准入管理。 对于身份验证失败的节点，即使该节点能够在网络层与其他 CITA 节点连通，这些 CITA 节点也会拒绝与之建立通讯会话，如此可避免信息泄漏。
@@ -17,37 +19,37 @@ CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为
 ### 添加普通节点（以下以 4 号节点举例）
 
 1. 假设目前的工作目录在 `../cita/target/install/` 下：
-    
-    ```bash
-    $ pwd
-    ../cita/target/install
-    $ ls test-chain/
-     0  1  2  3  template
-    ```
-    
-    template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
+
+   ```bash
+   $ pwd
+   ../cita/target/install
+   $ ls test-chain/
+    0  1  2  3  template
+   ```
+
+   template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
 
 2. 生成新 node：
-    
-    ```bash
-    $ ./scripts/create_cita_config.py append --chain_name test-chain --node "127.0.0.1:4004"
-    $ ls test-chain/
-     0  1  2  3  4  template
-    ```
+
+   ```bash
+   $ ./scripts/create_cita_config.py append --node "127.0.0.1:4004"
+   $ ls test-chain/
+    0  1  2  3  4  template
+   ```
 
 - append 子命令，在指定链中增加对应 ip 地址的节点
 - 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
 
 1. 启动新节点：
-    
-    对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
-    
-    新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
-    
-    ```bash
-    $ ./bin/cita setup test-chain/4
-    $ ./bin/cita start test-chain/4
-    ```
+
+   对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
+
+   新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
+
+   ```bash
+   $ ./bin/cita setup test-chain/4
+   $ ./bin/cita start test-chain/4
+   ```
 
 ### 删除普通节点
 
@@ -68,13 +70,80 @@ CITA 作为一个面向企业级应用的区块链框架，需要保证监管方
 - 设置共识节点权重；
 - 获取共识节点权重千分比。
 
+### 共识节点管理合约接口
+
+<table>
+  <tr>
+    <th>名称</th>
+    <th>需要权限</th>
+    <th>传入参数</th>
+    <th>返回值</th>
+    <th>详细描述</th>
+  </tr>
+  <tr>
+    <td>approveNode(address) <br/> <strong>确认共识节点</strong></td>
+    <td>管理员权限</td>
+    <td>新增共识节点地址</td>
+    <td>操作是否成功 (bool)</td>
+    <td>新节点成功准备后，可调用此方法确认节点成为共识节点，同时节点将处于 start 状态</td>
+  </tr>
+  <tr>
+    <td>deleteNode(address) <br/> <strong>删除共识节点</strong></td>
+    <td>管理员权限</td>
+    <td>节点地址</td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后节点将从节点列表中删除，同时节点将处于 close 状态</td>
+  </tr>
+  <tr>
+    <td>listNode() <br/> <strong>获取共识节点列表</strong></td>
+    <td>普通权限(只读)</td>
+    <td>空</td>
+    <td>地址列表(address[])</td>
+    <td>获取共识节点列表，即状态为 start 的节点</td>
+  </tr>
+  <tr>
+    <td>listStake() <br/> <strong>获取共识节点Stake列表</strong></td>
+    <td>普通权限(只读)</td>
+    <td>空</td>
+    <td>地址列表(uint64[] _stakes)</td>
+    <td>获取共识节点Stake列表</td>
+  </tr>
+  <tr>
+    <td>setStake(address,uint64) <br/> <strong>设置共识节点Stake</strong></td>
+    <td>管理员权限</td>
+    <td>节点地址，Stake</td>
+    <td>操作是否成功 (bool)</td>
+    <td>设置共识节点Stake</td>
+  </tr>
+  <tr>
+    <td>stakePermillage(address _node) <br/> <strong>获取共识节点出块权重千分比</strong></td>
+    <td>普通权限(只读)</td>
+    <td>节点地址</td>
+    <td>权重千分比 (uint64)</td>
+    <td>获取共识节点节点出块权重千分比（省略小数部分）</td>
+  </tr>
+  <tr>
+    <td>getStatus(address) <br/> <strong>获得节点状态</strong></td>
+    <td>普通权限(只读)</td>
+    <td>节点地址</td>
+    <td>
+      节点的状态 (uint8):
+      <ul>
+        <li>0: close 状态</li>
+        <li>1: start 状态</li>
+      </ul>
+    </td>
+    <td>获取共识节点状态</td>
+  </tr>
+</table>
+
 ### 增加共识节点
 
 节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由管理员(拥有管理员角色的账号)确认才完成了添加操作。
 
 从普通节点升级到共识节点，具体操作需要用到上面合约方法 `approveNode(address)`。
 
-共识节点管理合约是系统合约，默认将放在创世块上，下面使用 [solc](https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html) 命令(solidity 的命令行编译器，在 cita 镜像中已安装)查看共识节点管理合约的 hash：
+共识节点管理合约是系统合约，默认将放在创世块上，下面是共识节点管理合约的 hash：
 
 ```bash
 # solc --hashes system/node_manager.sol --allow-paths .
@@ -90,9 +159,9 @@ Function signatures:
     645b8b1b: status(address)
 ```
 
-*首先需要启动一条链，具体方法见快速入门部分*
+_首先需要启动一条链，具体方法见快速入门部分_
 
-接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+接下来的测试，用 cita-cli 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 #### 查看当前的共识节点列表：
 
@@ -125,7 +194,7 @@ $ cita-cli scm NodeManager approveNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config_tool)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config-tool)。
 
 输出：
 
@@ -182,14 +251,12 @@ $ cita-cli rpc getTransactionReceipt \
         "transactionIndex": "0x0"
       }
     }
-    
 
 从 `log` 中可以看出本次操作的相关信息。
 
 #### 查看当前的共识节点数
 
     $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
-    
 
 输出：
 
@@ -238,7 +305,7 @@ $ cita-cli scm NodeManager deleteNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config_tool)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config-tool)。
 
 输出：
 

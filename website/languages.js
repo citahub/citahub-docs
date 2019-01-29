@@ -11,6 +11,10 @@ const languages = [{
     tag: 'en',
   },
   {
+    enabled: false,
+    name: 'English',
+    tag: "-US"
+  }, {
     enabled: true,
     name: 'English',
     tag: 'en-US',

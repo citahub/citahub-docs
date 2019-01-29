@@ -1,6 +1,7 @@
 ---
-id: autu-exec
-title: Automated Execution
+id: version-0.20.1-autu-exec
+title: 自动执行
+original_id: autu-exec
 ---
 `CITA` 自动执行合约。
 

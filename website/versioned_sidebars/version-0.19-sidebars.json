@@ -12,17 +12,17 @@
         "label": "System Management",
         "type": "subcategory",
         "ids": [
-          "version-0.19-cita/system-management/node",
-          "version-0.19-cita/system-management/permission",
-          "version-0.19-cita/system-management/user",
-          "version-0.19-cita/system-management/quota",
-          "version-0.19-cita/system-management/log",
-          "version-0.19-cita/system-management/system",
-          "version-0.19-cita/system-management/snapshot",
-          "version-0.19-cita/system-management/batch-tx",
-          "version-0.19-cita/system-management/emergency-brake",
-          "version-0.19-cita/system-management/amend",
-          "version-0.19-cita/system-management/fee-back"
+          "version-0.19-cita/system/node",
+          "version-0.19-cita/system/permission",
+          "version-0.19-cita/system/user",
+          "version-0.19-cita/system/quota",
+          "version-0.19-cita/system/log",
+          "version-0.19-cita/system/system",
+          "version-0.19-cita/system/snapshot",
+          "version-0.19-cita/system/batch-tx",
+          "version-0.19-cita/system/emergency-brake",
+          "version-0.19-cita/system/amend",
+          "version-0.19-cita/system/fee-back"
         ]
       },
       {

@@ -17,20 +17,20 @@
         "label": "System Management",
         "type": "subcategory",
         "ids": [
-          "version-0.20-cita/system-management/system-contracts",
-          "version-0.20-cita/system-management/node",
-          "version-0.20-cita/system-management/permission",
-          "version-0.20-cita/system-management/user",
-          "version-0.20-cita/system-management/quota",
-          "version-0.20-cita/system-management/price",
-          "version-0.20-cita/system-management/log",
-          "version-0.20-cita/system-management/snapshot",
-          "version-0.20-cita/system-management/batch-tx",
-          "version-0.20-cita/system-management/emergency-brake",
-          "version-0.20-cita/system-management/amend",
-          "version-0.20-cita/system-management/fee-back",
-          "version-0.20-cita/system-management/version",
-          "version-0.20-cita/system-management/auto-exec"
+          "version-0.20-cita/system/system",
+          "version-0.20-cita/system/node",
+          "version-0.20-cita/system/permission",
+          "version-0.20-cita/system/user",
+          "version-0.20-cita/system/quota",
+          "version-0.20-cita/system/price",
+          "version-0.20-cita/system/log",
+          "version-0.20-cita/system/snapshot",
+          "version-0.20-cita/system/batch-tx",
+          "version-0.20-cita/system/emergency-brake",
+          "version-0.20-cita/system/amend",
+          "version-0.20-cita/system/fee-back",
+          "version-0.20-cita/system/version",
+          "version-0.20-cita/system/auto-exec"
         ]
       },
       {
@@ -96,8 +96,7 @@
         ]
       }
     ],
-    "Toolchain": [
-      {
+    "Toolchain": [{
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": ["version-0.20-toolchain/cli/cli-intro"]

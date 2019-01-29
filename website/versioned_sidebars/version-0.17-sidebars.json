@@ -12,12 +12,12 @@
         "label": "System Management",
         "type": "subcategory",
         "ids": [
-          "version-0.17-cita/system-management/node",
-          "version-0.17-cita/system-management/permission",
-          "version-0.17-cita/system-management/user",
-          "version-0.17-cita/system-management/quota",
-          "version-0.17-cita/system-management/log",
-          "version-0.17-cita/system-management/snapshot"
+          "version-0.17-cita/system/node",
+          "version-0.17-cita/system/permission",
+          "version-0.17-cita/system/user",
+          "version-0.17-cita/system/quota",
+          "version-0.17-cita/system/log",
+          "version-0.17-cita/system/snapshot"
         ]
       },
       {

@@ -19,7 +19,7 @@ const users = [
   // pinned: true,
   // },
 ];
-const baseUrl = '/citahub-docs/'
+const baseUrl = '/'
 
 const siteConfig = {
   title: 'CITAHub Docs', // Title for your website.
@@ -46,7 +46,7 @@ const siteConfig = {
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
-  editUrl: 'https://github.com/cryptape/citahub-docs/edit/master/docs/',
+  editUrl: 'https://github.com/cryptape/edit/master/docs/',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     // {

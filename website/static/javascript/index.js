@@ -23,7 +23,10 @@ function translateEnUs() {
 }
 window.onload = () => {
   const welcome = '/welcome'
-  const logoEl = document.querySelector(".fixedHeaderContainer a[href^='/citahub-docs/']")
+  const logoEl =
+    document.querySelector(".fixedHeaderContainer a[href='/en-US']") ||
+    document.querySelector(".fixedHeaderContainer a[href='/zh-CN']")
+  console.log(logoEl)
   logoEl.setAttribute('href', logoEl.href + welcome)
 
   // add edit on github

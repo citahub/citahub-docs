@@ -1,14 +1,14 @@
 ---
 id: admin
-title: Admin Contract Interface
+title: 管理员合约接口
 ---
 
 
 <h2 class="hover-list">Admin Management</h2>
 
-- [admin](#admin)
-- [isAdmin](#isAdmin)
-- [update](#update)
+* [admin](#admin)
+* [isAdmin](#isAdmin)
+* [update](#update)
 
 * * *
 
@@ -16,11 +16,11 @@ title: Admin Contract Interface
 
 查询当前的管理员账户地址
 
-- Parameters
+* 参数
     
-    `None`
+    空
 
-- Returns
+* 返回值
     
     `address` - 管理员地址
 
@@ -28,11 +28,11 @@ title: Admin Contract Interface
 
 判断账户是否是管理员
 
-- Parameters
+* 参数
     
     `address` - 待判断的管理员地址
 
-- Returns
+* 返回值
     
     `bool` - 是管理员则为真，反之则反
 
@@ -40,10 +40,10 @@ title: Admin Contract Interface
 
 更新管理员账户
 
-- Parameters
+* 参数
     
     `address` - 待更新的管理员地址
 
-- Returns
+* 返回值
     
     `bool` - 更新成功则为真，反之则反

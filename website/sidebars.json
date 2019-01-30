@@ -4,6 +4,7 @@
     "CITA": [
       "cita/cita-intro",
       "cita/getting-started",
+      "cita/huawei", 
       {
         "label": "Configuration",
         "type": "subcategory",

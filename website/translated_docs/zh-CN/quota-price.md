@@ -6,8 +6,8 @@ title: 配额价格管理合约接口
 
 <h2 class="hover-list">Price Management</h2>
 
-- [setQuotaPrice](#setQuotaPrice)
-- [getQuotaPrice](#getQuotaPrice)
+* [setQuotaPrice](#setQuotaPrice)
+* [getQuotaPrice](#getQuotaPrice)
 
 * * *
 
@@ -15,15 +15,15 @@ title: 配额价格管理合约接口
 
 设置 `quota price`，默认为 1。
 
-- Parameters
+* 参数
     
     `uint` - The setting quota price
 
-- Returns
+* 返回值
     
     `bool` - True if success,other false.
 
-- Example
+* 示例
 
 ```shell
 $ cita-cli scm PriceManager setQuotaPrice \
@@ -35,21 +35,21 @@ $ cita-cli scm PriceManager setQuotaPrice \
 
 查询当前链 quota price。
 
-- Parameters
+* 参数
     
-    None
+    空
 
-- Returns
+* 返回值
     
     `uint` - The quota price
 
-- Example
+* 示例
 
 ```shell
 $ cita-cli scm PriceManager getQuotaPrice
 ```
 
-output:
+输出：
 
 ```json
 {
@@ -57,4 +57,5 @@ output:
   "jsonrpc": "2.0",
   "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
 }
+
 ```

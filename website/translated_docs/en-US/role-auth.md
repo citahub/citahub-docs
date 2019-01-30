@@ -6,8 +6,8 @@ title: Role Authorization Contract Interface
 
 <h2 class="hover-list">Role Authorization</h2>
 
-- [queryRoles](#queryRoles)
-- [queryAccounts](#queryAccounts)
+* [queryRoles](#queryRoles)
+* [queryAccounts](#queryAccounts)
 
 * * *
 
@@ -15,21 +15,21 @@ title: Role Authorization Contract Interface
 
 查询某一账户的所有角色。
 
-- Parameters
+* 参数
     
-    `address` - The account address
+    `address` - 待查询的账户地址
 
-- Returns
+* 返回值
     
-    `address[]` - The roles of the account
+    `address[]` - 拥有的角色列表
 
-- Example
+* 示例
 
 ```shell
 $ scm RoleManagement queryRoles --account 0x101e99e1a654a99308175042aff4833a6528be74
 ```
 
-output:
+输出：
 
 ```json
 {
@@ -43,21 +43,21 @@ output:
 
 查询某一角色下的所有账户。
 
-- Parameters
+* 参数
     
-    `address` - The role address
+    `address` - 角色地址
 
-- Returns
+* 返回值
     
-    `address[]` - The accounts address
+    `address[]` - 拥有此角色的所有账户
 
-- Example
+* 示例
 
 ```shell
 $ scm RoleManagement queryAccounts --address 0x558c280233cee856fb53931eb18747a40e688a43
 ```
 
-output:
+输出：
 
 ```json
 {

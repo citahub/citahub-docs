@@ -6,7 +6,7 @@ title: All-groups System Contract
 
 <h2 class="hover-list">Admin Management</h2>
 
-- [queryGroups](#queryGroups)
+* [queryGroups](#queryGroups)
 
 * * *
 
@@ -14,10 +14,10 @@ title: All-groups System Contract
 
 查询当前所有组
 
-- Parameters
+* 参数
     
-    `None`
+    空
 
-- Returns
+* 返回值
     
     `address[]` - 组地址列表

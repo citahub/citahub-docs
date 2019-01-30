@@ -3,7 +3,6 @@ id: version-0.19-fee-back
 title: Fee Back
 original_id: fee-back
 ---
-
 ## 简述
 
 CITA 中存在两种经济模型：`Quota` 和 `Charge` 模型，默认经济模型 `Quota` ，没有余额概念。 在具有余额的 `Charge` 经济模型中，出块奖励默认返还给矿工，但运营方可以通过配置，将出块奖励返还给自己。
@@ -26,7 +25,7 @@ $ ./env.sh ./scripts/create_cita_config.py create \
         --contract_arguments "SysConfig.economicalModel=1"
 ```
 
-_接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示_。
+*接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示*。
 
 查看管理员和运营方地址余额
 

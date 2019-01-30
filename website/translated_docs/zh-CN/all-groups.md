@@ -6,7 +6,7 @@ title: 所有组合约接口
 
 <h2 class="hover-list">Admin Management</h2>
 
-- [queryGroups](#queryGroups)
+* [queryGroups](#queryGroups)
 
 * * *
 
@@ -14,10 +14,10 @@ title: 所有组合约接口
 
 查询当前所有组
 
-- Parameters
+* 参数
     
-    `None`
+    空
 
-- Returns
+* 返回值
     
     `address[]` - 组地址列表

@@ -1,5 +1,5 @@
 ---
-id: system-contracts
+id: contracts
 title: System Contracts
 ---
 CITA 链生成时，通过系统合约来生成创世块，并作为链的最基本配置。拥有权限的管理员可以发送交易修改创世块的部分配置，所以了解系统合约至关重要。 你可以在 `/scripts/contracts/src` 目录下查看所有的系统合约，当然，接下来我们会一一解释。
@@ -8,15 +8,15 @@ CITA 链生成时，通过系统合约来生成创世块，并作为链的最基
 
 <h2 class="hover-list">System Contracts</h2>
 
-- [Node Management](#节点管理)
-- \[配额管理\](#配额管理)
-- \[配额价格管理\](#配额价格管理)
-- [Permission Management](#权限管理)
-- [User Management](#用户管理)
-- [Batch Transaction](#批量交易)
-- [Emergency Braking](#紧急制动)
-- [协议号管理](#协议号管理)
-- [Automated Execution](#自动执行)
+* [Node Management](#节点管理)
+* \[配额管理\](#配额管理)
+* \[配额价格管理\](#配额价格管理)
+* [Permission Management](#权限管理)
+* [User Management](#用户管理)
+* [Batch Transaction](#批量交易)
+* [Emergency Braking](#紧急制动)
+* [协议号管理](#协议号管理)
+* [Automated Execution](#自动执行)
 
 * * *
 

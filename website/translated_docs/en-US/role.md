@@ -6,10 +6,10 @@ title: Role Contract Interface
 
 <h2 class="hover-list">Role</h2>
 
-- [queryName](#queryName)
-- [queryPermissions](#queryPermissions)
-- [lengthOfPermissions](#lengthOfPermissions)
-- [inPermissions](#inPermissions)
+* [queryName](#queryName)
+* [queryPermissions](#queryPermissions)
+* [lengthOfPermissions](#lengthOfPermissions)
+* [inPermissions](#inPermissions)
 
 * * *
 
@@ -17,21 +17,21 @@ title: Role Contract Interface
 
 查询角色名称。
 
-- Parameters
+* 参数
     
-    None
+    空
 
-- Returns
+* 返回值
     
-    `bytes32` - The name of role
+    `bytes32` - 角色名称
 
-- Example
+* 示例
 
 ```shell
 $ scm Role queryName --address 0x558c280233cee856fb53931eb18747a40e688a43
 ```
 
-output:
+输出：
 
 ```json
 {
@@ -45,21 +45,21 @@ output:
 
 查询角色所有权限。
 
-- Parameters
+* 参数
     
-    None
+    空
 
-- Returns
+* 返回值
     
-    `address[]` - The permissions of the role
+    `address[]` - 角色拥有的权限列表
 
-- Example
+* 示例
 
 ```shell
 $ scm Role queryPermissions --address 0x558c280233cee856fb53931eb18747a40e688a43
 ```
 
-output:
+输出：
 
 ```json
 {
@@ -73,21 +73,21 @@ output:
 
 查询角色拥有权限数。
 
-- Parameters
+* 参数
     
-    None
+    空
 
-- Returns
+* 返回值
     
-    `uint` - The numbers of permissions
+    `uint` - 角色拥有的权限个数
 
-- Example
+* 示例
 
 ```shell
 $ scm Role lengthOfPermissions --address 0x558c280233cee856fb53931eb18747a40e688a43
 ```
 
-output:
+输出：
 
 ```json
 {
@@ -95,21 +95,22 @@ output:
   "jsonrpc": "2.0",
   "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
 }
+
 ```
 
 ### inPermissions
 
 判断权限是否存在角色中
 
-- Parameters
+* 参数
     
-    `address` - The permission address
+    `address` - 权限地址
 
-- Returns
+* 返回值
     
-    `bool` - True if in the role, otherwise false
+    `bool` - 在则返回为真，反之则反
 
-- Example
+* 示例
 
 ```shell
 $  scm Role inPermissions \
@@ -117,7 +118,7 @@ $  scm Role inPermissions \
         --permission 0x1acec7eaba22b46ba5d2a7c0bfc94a7741dfd32b \
 ```
 
-output:
+输出：
 
 ```json
 {

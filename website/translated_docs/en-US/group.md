@@ -6,12 +6,12 @@ title: Group Contract Interface
 
 <h2 class="hover-list">Users Management</h2>
 
-- [queryInfo](#queryInfo)
-- [queryName](#queryName)
-- [queryAccounts](#queryAccounts)
-- [queryChild](#queryChild)
-- [queryChildLength](#queryChildLength)
-- [queryParent](#queryParent)
+* [queryInfo](#queryInfo)
+* [queryName](#queryName)
+* [queryAccounts](#queryAccounts)
+* [queryChild](#queryChild)
+* [queryChildLength](#queryChildLength)
+* [queryParent](#queryParent)
 
 * * *
 
@@ -19,17 +19,17 @@ title: Group Contract Interface
 
 查询组信息。
 
-- Parameters
+* 参数
     
     `address` - The group address
 
-- Returns
+* 返回值
     
     `bytes32` - The name of group
     
     `address[]` - The accounts of group
 
-- Example
+* 示例
 
 ```shell
 $ scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
@@ -39,15 +39,15 @@ $ scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 查询组名字。
 
-- Parameters
+* 参数
     
     `address` - The group address
 
-- Returns
+* 返回值
     
     `bytes32` - The name of group
 
-- Example
+* 示例
 
 ```shell
 $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
@@ -57,15 +57,15 @@ $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 查询组内所有用户。
 
-- Parameters
+* 参数
     
     `address` - The group address
 
-- Returns
+* 返回值
     
     `address[]` - All accounts address
 
-- Example
+* 示例
 
 ```shell
 $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
@@ -75,15 +75,15 @@ $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 查询子组。
 
-- Parameters
+* 参数
     
     `address` - The group address
 
-- Returns
+* 返回值
     
     `address` - The children of group
 
-- Example
+* 示例
 
 ```shell
 $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
@@ -93,15 +93,15 @@ $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 
 查询子组个数。
 
-- Parameters
+* 参数
     
     `address` - The group address
 
-- Returns
+* 返回值
     
     `uint` - The number of the children group
 
-- Example
+* 示例
 
 ```shell
 $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
@@ -111,15 +111,15 @@ $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF02000
 
 查询父组。
 
-- Parameters
+* 参数
     
     `address` - The group address
 
-- Returns
+* 返回值
     
     `address` - The parent of the group
 
-- Example
+* 示例
 
 ```shell
 $ scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025

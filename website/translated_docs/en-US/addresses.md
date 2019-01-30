@@ -1,6 +1,6 @@
 ---
 id: addresses
-title: Reserved System Addresses
+title: 系统保留地址
 ---
 !> **系统保留地址更改！** 老版本用户请注意，为了让地址更加规范，最新版本的 CITA 将 0.16 版本及之前版本中无规律的系统保留地址规范到了一个地址段内。
 
@@ -52,11 +52,11 @@ title: Reserved System Addresses
 | 0xffffffffffffffffffffffffffffffffff020009 | 组内用户管理                       |
 | 0xffffffffffffffffffffffffffffffffff02000a | 组管理                          |
 | 0xffffffffffffffffffffffffffffffffff02000b | 创建用户组                        |
-| 0xffffffffffffffffffffffffffffffffff02000c | admin 管理                     |
+| 0xffffffffffffffffffffffffffffffffff02000c | admin管理                      |
 | 0xffffffffffffffffffffffffffffffffff02000d | 角色授权                         |
 | 0xffffffffffffffffffffffffffffffffff02000e | Batch Transaction            |
 | 0xffffffffffffffffffffffffffffffffff02000f | 急停合约                         |
-| 0xffffffffffffffffffffffffffffffffff020010 | QuotaPrice 管理                |
+| 0xffffffffffffffffffffffffffffffffff020010 | QuotaPrice管理                 |
 | 0xffffffffffffffffffffffffffffffffff020011 | Protocol Versions Management |
 | 0xffffffffffffffffffffffffffffffffff020012 | 所有组                          |
 | 0xffffffffffffffffffffffffffffffffff020013 | 自动执行合约                       |

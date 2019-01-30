@@ -2,15 +2,15 @@
 id: auth
 title: 授权管理合约接口
 ---
-# 授权管理合约接口
+
 
 <h2 class="hover-list">Authorization Management</h2>
 
-- [queryPermissions](#queryPermissions)
-- [queryAccounts](#queryAccounts)
-- [queryAllAccounts](#queryAllAccounts)
-- [checkResource](#checkResource)
-- [checkPermission](#checkPermission)
+* [queryPermissions](#queryPermissions)
+* [queryAccounts](#queryAccounts)
+* [queryAllAccounts](#queryAllAccounts)
+* [checkResource](#checkResource)
+* [checkPermission](#checkPermission)
 
 * * *
 
@@ -18,11 +18,11 @@ title: 授权管理合约接口
 
 查询账户拥有的权限
 
-- Parameters
+* 参数
     
     `address` - 待查询的账户地址
 
-- Returns
+* 返回值
     
     `address[]` - 权限地址列表
 
@@ -30,11 +30,11 @@ title: 授权管理合约接口
 
 查询拥有某个权限的所有账户
 
-- Parameters
+* 参数
     
     `address` - 待查询的权限地址
 
-- Returns
+* 返回值
     
     `address[]` - 账户地址列表
 
@@ -42,11 +42,11 @@ title: 授权管理合约接口
 
 查询拥有权限的所有账户
 
-- Parameters
+* 参数
     
     `address` - 待查询的权限地址
 
-- Returns
+* 返回值
     
     `address[]` - 账户地址列表
 
@@ -56,10 +56,10 @@ title: 授权管理合约接口
 
 ### checkPermission
 
-- Parameters
+* 参数
     
     `address` - 待判断的账户地址 `address` - 待判断的权限地址
 
-- Returns
+* 返回值
     
     `bool` - 账户拥有权限则为真，反之则反

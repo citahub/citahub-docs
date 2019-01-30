@@ -46,7 +46,7 @@
         "label": "System Contract Interface",
         "type": "subcategory",
         "ids": [
-          "version-0.20.1-cita/system-contract-interface/system-interface",
+          "version-0.20.1-cita/system-contract-interface/sys",
           "version-0.20.1-cita/system-contract-interface/node",
           "version-0.20.1-cita/system-contract-interface/auth",
           "version-0.20.1-cita/system-contract-interface/permission",
@@ -101,10 +101,10 @@
         "label": "SDK",
         "type": "subcategory",
         "ids": [
-          "version-0.20.1-toolchain/sdk/cita-javascript-sdk",
-          "version-0.20.1-toolchain/sdk/cita-java-sdk",
-          "version-0.20.1-toolchain/sdk/cita-swift-sdk",
-          "version-0.20.1-toolchain/sdk/cita-ruby-sdk"
+          "version-0.20.1-toolchain/sdk/javascript-sdk",
+          "version-0.20.1-toolchain/sdk/java-sdk",
+          "version-0.20.1-toolchain/sdk/swift-sdk",
+          "version-0.20.1-toolchain/sdk/ruby-sdk"
         ]
       },
       {

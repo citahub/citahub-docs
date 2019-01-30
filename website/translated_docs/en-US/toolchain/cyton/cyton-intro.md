@@ -1,6 +1,6 @@
 ---
-title: Cyton 简介
+title: Cyton Introduction
 id: cyton-intro
-sidebar_label: Cyton 简介
+sidebar_label: Cyton Introduction
 ---
 Coming soon

@@ -11,27 +11,27 @@
         "ids": [
           "cita/configuration/config-overview",
           "cita/configuration/chain-configuration",
-          "cita/configuration/microservice-configuration"
+          "cita/configuration/service-config"
         ]
       },
       {
         "label": "System Management",
         "type": "subcategory",
         "ids": [
-          "cita/system-management/system",
-          "cita/system-management/node",
-          "cita/system-management/permission",
-          "cita/system-management/user",
-          "cita/system-management/quota",
-          "cita/system-management/price",
-          "cita/system-management/log",
-          "cita/system-management/snapshot",
-          "cita/system-management/batch-tx",
-          "cita/system-management/emergency-brake",
-          "cita/system-management/amend",
-          "cita/system-management/fee-back",
-          "cita/system-management/version",
-          "cita/system-management/auto-exec"
+          "cita/system/contracts",
+          "cita/system/node",
+          "cita/system/permission",
+          "cita/system/user",
+          "cita/system/quota",
+          "cita/system/price",
+          "cita/system/log",
+          "cita/system/snapshot",
+          "cita/system/batch-tx",
+          "cita/system/emergency-brake",
+          "cita/system/amend",
+          "cita/system/fee-back",
+          "cita/system/version",
+          "cita/system/auto-exec"
         ]
       },
       {
@@ -43,7 +43,7 @@
         "label": "System Contract Interface",
         "type": "subcategory",
         "ids": [
-          "cita/system-contract-interface/system-interface",
+          "cita/system-contract-interface/sys",
           "cita/system-contract-interface/node",
           "cita/system-contract-interface/auth",
           "cita/system-contract-interface/permission",
@@ -94,10 +94,10 @@
         "label": "SDK",
         "type": "subcategory",
         "ids": [
-          "toolchain/sdk/cita-javascript-sdk",
-          "toolchain/sdk/cita-java-sdk",
-          "toolchain/sdk/cita-swift-sdk",
-          "toolchain/sdk/cita-ruby-sdk"
+          "toolchain/sdk/javascript-sdk",
+          "toolchain/sdk/java-sdk",
+          "toolchain/sdk/swift-sdk",
+          "toolchain/sdk/ruby-sdk"
         ]
       },
       {

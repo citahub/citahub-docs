@@ -1,7 +1,7 @@
 ---
 id: version-0.20-chain-configuration
 title: chain-configuration
-original_id: chain-config
+original_id: chain-configuration
 ---
 
 按照快速搭链的教程编译成功后，我们可以在启动节点前，对链进行配置。本文档主要介绍如何配置链自身的一些属性、RPC 接口、节点间网络连接，并通过具体的操作示例，教你如何搭建你自己的链。

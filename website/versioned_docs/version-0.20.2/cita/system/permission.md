@@ -18,7 +18,7 @@ CITA 通过智能合约的方式来对权限进行管理。
 目前权限管理针对外部账户进行细粒度管理。CITA 默认集成了 superAdmin 账户，拥有权限管理涉及到的所有权限。在 CITA 启动前可以对 superAdmin 进行配置。
 在权限系统开启时，由用户生成的外部账户，在 CITA 系统中没有任何权限，需要 superAdmin 对其进行授权。
 
-权限管理默认未开启，配置相关信息查看[系统合约](./chain/config_tool)
+权限管理默认未开启，配置相关信息查看[系统合约](../configuration/chain-configuration)
 
 ## 权限管理概述
 
@@ -70,7 +70,7 @@ $ ./env.sh ./scripts/create_cita_config.py create \
 
 其中 `checkCallPermission`, `checkSendTxPermission`, `checkCreateContractPermission` 分别为合约调用、发送交易及创建合约的开关。
 
-启动链接下来的步骤见[快速搭链](./chain/getting_started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+启动链接下来的步骤见[快速搭链](../getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 生成普通账户
 

@@ -1,5 +1,5 @@
 ---
-id: 自动执行合约接口
+id: version-0.20-auto-exec
 title: 自动执行合约接口
 original_id: auto-exec
 ---

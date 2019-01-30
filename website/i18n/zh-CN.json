@@ -23,7 +23,7 @@
       "cita/cita-intro": {
         "title": "关于 CITA"
       },
-      "cita/configuration/chain-config": {
+      "cita/configuration/chain-configuration": {
         "title": "链级配置"
       },
       "cita/configuration/config-overview": {
@@ -69,100 +69,100 @@
       "cita/rpc-guide/rpc": {
         "title": "JSON RPC"
       },
-      "cita/system-contracts-interface/admin": {
+      "cita/system-contract-interface/admin": {
         "title": "管理员合约接口"
       },
-      "cita/system-contracts-interface/all-groups": {
+      "cita/system-contract-interface/all-groups": {
         "title": "所有组合约接口"
       },
-      "cita/system-contracts-interface/auth": {
+      "cita/system-contract-interface/auth": {
         "title": "授权管理合约接口"
       },
-      "cita/system-contracts-interface/auto-exec": {
+      "cita/system-contract-interface/auto-exec": {
         "title": "自动执行合约接口"
       },
-      "cita/system-contracts-interface/batch": {
+      "cita/system-contract-interface/batch": {
         "title": "批量交易合约接口"
       },
-      "cita/system-contracts-interface/emergency-brake": {
+      "cita/system-contract-interface/emergency-brake": {
         "title": "紧急制动合约接口"
       },
-      "cita/system-contracts-interface/error": {
+      "cita/system-contract-interface/error": {
         "title": "系统合约错误类型"
       },
-      "cita/system-contracts-interface/group-management": {
+      "cita/system-contract-interface/group-management": {
         "title": "组管理合约接口"
       },
-      "cita/system-contracts-interface/group": {
+      "cita/system-contract-interface/group": {
         "title": "组合约接口"
       },
-      "cita/system-contracts-interface/node": {
+      "cita/system-contract-interface/node": {
         "title": "共识节点管理合约接口"
       },
-      "cita/system-contracts-interface/permission-management": {
+      "cita/system-contract-interface/permission-management": {
         "title": "权限管理合约接口"
       },
-      "cita/system-contracts-interface/permission": {
+      "cita/system-contract-interface/permission": {
         "title": "权限合约接口"
       },
-      "cita/system-contracts-interface/quota-manager": {
+      "cita/system-contract-interface/quota-manager": {
         "title": "配额管理合约接口"
       },
-      "cita/system-contracts-interface/quota-price": {
+      "cita/system-contract-interface/quota-price": {
         "title": "配额价格管理合约接口"
       },
-      "cita/system-contracts-interface/role-auth": {
+      "cita/system-contract-interface/role-auth": {
         "title": "角色授权合约接口"
       },
-      "cita/system-contracts-interface/role-management": {
+      "cita/system-contract-interface/role-management": {
         "title": "角色管理合约接口"
       },
-      "cita/system-contracts-interface/role": {
+      "cita/system-contract-interface/role": {
         "title": "角色合约接口"
       },
-      "cita/system-contracts-interface/sys": {
+      "cita/system-contract-interface/sys": {
         "title": "系统配置合约接口"
       },
-      "cita/system-management/amend": {
+      "cita/system/amend": {
         "title": "数据订正"
       },
-      "cita/system-management/autu-exec": {
+      "cita/system/auto-exec": {
         "title": "自动执行"
       },
-      "cita/system-management/batch-tx": {
+      "cita/system/batch-tx": {
         "title": "批量交易"
       },
-      "cita/system-management/contracts": {
+      "cita/system/contracts": {
         "title": "系统合约"
       },
-      "cita/system-management/emergency-brake": {
+      "cita/system/emergency-brake": {
         "title": "紧急制动"
       },
-      "cita/system-management/fee-back": {
+      "cita/system/fee-back": {
         "title": "出块奖励返回"
       },
-      "cita/system-management/log": {
+      "cita/system/log": {
         "title": "日志管理"
       },
-      "cita/system-management/node": {
+      "cita/system/node": {
         "title": "节点管理"
       },
-      "cita/system-management/permission": {
+      "cita/system/permission": {
         "title": "权限管理"
       },
-      "cita/system-management/price": {
+      "cita/system/price": {
         "title": "配额价格管理"
       },
-      "cita/system-management/quota": {
+      "cita/system/quota": {
         "title": "配额管理"
       },
-      "cita/system-management/snapshot": {
+      "cita/system/snapshot": {
         "title": "快照"
       },
-      "cita/system-management/user": {
+      "cita/system/user": {
         "title": "用户管理"
       },
-      "cita/system-management/version": {
+      "cita/system/version": {
         "title": "协议版本号管理"
       },
       "contributing": {
@@ -199,7 +199,7 @@
       "toolchain/sdk/java-sdk": {
         "title": "CITA Java SDK"
       },
-      "toolchain/sdk/js-sdk": {
+      "toolchain/sdk/javascript-sdk": {
         "title": "CITA JavaScript SDK"
       },
       "toolchain/sdk/ruby-sdk": {
@@ -602,7 +602,7 @@
         "title": "授权管理合约接口"
       },
       "version-0.20.1-auto-exec": {
-        "title": "自动执行合约接口"
+        "title": "自动执行"
       },
       "version-0.20.1-batch": {
         "title": "批量交易合约接口"
@@ -648,9 +648,6 @@
       },
       "version-0.20.1-amend": {
         "title": "数据订正"
-      },
-      "version-0.20.1-autu-exec": {
-        "title": "自动执行"
       },
       "version-0.20.1-batch-tx": {
         "title": "批量交易"
@@ -725,7 +722,7 @@
         "title": "配置概览"
       },
       "version-0.20.2-getting-started": {
-        "title": "快速开始"
+        "title": "快速入门"
       },
       "version-0.20.2-overview": {
         "title": "协议升级概览"
@@ -752,7 +749,7 @@
       "version-0.20.2-java-sdk": {
         "title": "CITA Java SDK"
       },
-      "version-0.20.2-js-sdk": {
+      "version-0.20.2-javascript-sdk": {
         "title": "CITA JavaScript SDK"
       },
       "version-0.20.2-ruby-sdk": {
@@ -832,7 +829,7 @@
         "title": "授权管理合约接口"
       },
       "version-0.20-auto-exec": {
-        "title": "自动执行合约接口"
+        "title": "自动执行"
       },
       "version-0.20-batch": {
         "title": "批量交易合约接口"
@@ -878,9 +875,6 @@
       },
       "version-0.20-amend": {
         "title": "数据订正"
-      },
-      "version-0.20-autu-exec": {
-        "title": "自动执行"
       },
       "version-0.20-batch-tx": {
         "title": "批量交易"
@@ -1542,51 +1536,6 @@
       "cita/system-contract-interface/system-interface": {
         "title": "系统配置合约接口"
       },
-      "cita/system-contract-interface/node": {
-        "title": "共识节点管理合约接口"
-      },
-      "cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口"
-      },
-      "cita/system-contract-interface/permission": {
-        "title": "权限合约接口"
-      },
-      "cita/system-contract-interface/role-management": {
-        "title": "角色管理合约接口"
-      },
-      "cita/system-contract-interface/role-auth": {
-        "title": "角色授权合约接口"
-      },
-      "cita/system-contract-interface/role": {
-        "title": "角色合约接口"
-      },
-      "cita/system-contract-interface/group": {
-        "title": "组合约接口"
-      },
-      "cita/system-contract-interface/all-groups": {
-        "title": "所有组合约接口"
-      },
-      "cita/system-contract-interface/group-management": {
-        "title": "组管理合约接口"
-      },
-      "cita/system-contract-interface/quota-manager": {
-        "title": "配额管理合约接口"
-      },
-      "cita/system-contract-interface/quota-price": {
-        "title": "配额价格管理合约接口"
-      },
-      "cita/system-contract-interface/admin": {
-        "title": "管理员合约接口"
-      },
-      "cita/system-contract-interface/batch": {
-        "title": "批量交易合约接口"
-      },
-      "cita/system-contract-interface/emergency-brake": {
-        "title": "紧急制动合约接口"
-      },
-      "cita/system-contract-interface/auto-exec": {
-        "title": "自动执行合约接口"
-      },
       "version-0.17-cita/system/node": {
         "title": "节点管理"
       },
@@ -1651,13 +1600,7 @@
         "title": "链级配置"
       },
       "version-0.20.2-cita/getting-started": {
-        "title": "快速开始"
-      },
-      "cita/configuration/chain-configuration": {
-        "title": "链级配置"
-      },
-      "cita/system-contract-interface/error": {
-        "title": "系统合约错误类型"
+        "title": "快速入门"
       },
       "version-0.20-cita/system/permission": {
         "title": "权限管理"
@@ -1704,7 +1647,7 @@
       "CITA": "CITA",
       "Toolchain": "工具链",
       "Contributing": "贡献代码",
-      "Getting Started": "快速开始",
+      "Getting Started": "快速入门",
       "Configuration": "配置",
       "System Management": "系统管理",
       "JSON-RPC": "JSON RPC",

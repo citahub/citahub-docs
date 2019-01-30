@@ -41,7 +41,7 @@ prof_duration = 0
 * `prof_start` : 性能采样分析参数，表示进行启动多久之后进行性能采样，单位是秒。
 * `prof_duration` : 性能采样分析参数，表示采样持续时间，单位是秒，为 0，表示不采样。
 
-## Consensus
+## 共识
 
 consensus.toml 是 Consensus 微服务的配置文件，如下：
 

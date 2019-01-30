@@ -7,41 +7,41 @@ We offer a open source blockchain solution, in which CITA as the blockchain kern
 
 ![](assets/first-page.jpg)
 
-## CITA | 区块链内核
+## CITA | Blockchain Kernel
 
 [![](https://img.shields.io/badge/CITA-Documents-green.svg)](https://cryptape.github.io/cita/) [![](https://img.shields.io/badge/CITA-GitHub-lightgrey.svg)](https://github.com/cryptape/cita/)
 
 CITA is a high performance kernel developed by Cryptape, commissioned by Nervos Foundation. CITA could be used to build a consortium permissioned blockchain or a public permissioned blockchain.
 
-## CITA Toolchain | CITA 工具链
+## CITA toolchain | CITA Toolchain
 
-### Cyton | DApp 钱包
+### Cyton | DApp Wallet
 
 [![](https://img.shields.io/badge/Cyton(Android)-Documents-green.svg)](https://github.com/cryptape/cyton-android) [![](https://img.shields.io/badge/Cyton(Android)-GitHub-lightgrey.svg)](https://github.com/cryptape/cyton-android)
 
 [![](https://img.shields.io/badge/Cyton(iOS)-Documents-green.svg)](https://github.com/cryptape/cyton-ios) [![](https://img.shields.io/badge/Cyton(iOS)-GitHub-lightgrey.svg)](https://github.com/cryptape/cyton-ios)
 
-Cyton 提供了现实世界的用户访问区块链世界的入口。Cyton 一方面是 CITA（也兼容以太坊）上用户私钥和各类数字资产、私有产权和私有数据的管理工具，更重要的，它作为一个 DApp 的运行平台，可以允许各种区块链应用以小程序的方式在用户终端直接运行。
+Cyton provides a real-world portal for users to access the blockchain world. Cyton，on the one hand， helps users manager their private key，various types of digital assets, private property rights and private data. More importantly, as a DAPP operating platform, it can support to run Dapp inside of it.
 
 Imagining a blockchain game developer who only needs to complete the core development of smart contracts and website of Dapp, complex private key management and digital asset management business are taken over by open source Cyton. Users only need to enter the DApp URL or even sweep the code to access DAPP and complete the game operation. Developers can also use payment services to integrate into the action page, such as using WeChat recharge to purchase game props on the blockchain. Third-party developers can also create new DApp (game replicas, etc.) to interact with the original DApp at the smart contract level, to achieve decentralized collaboration, and work together for the value of users.
 
-Cyton 的运营者或者 DApp 开发者也可以选择重构开源的 Cyton 代码，为用户提供更加专业和针对性的服务。相信这将大大降低开发者的门槛，也降低用户的学习难度。
+Cyton operators or DAPP developers can also choose to refactor Cyton code to provide users with more professional and targeted services. It is believed that this will greatly reduce the developer's threshold, but also reduce the user's learning difficulties.
 
-### Microscope | 区块链浏览器
+### Microscope | Blockchain Browser
 
 [![](https://img.shields.io/badge/Microscope-Documents-green.svg)](https://github.com/cryptape/microscope/) [![](https://img.shields.io/badge/Microscope-GitHub-lightgrey.svg)](https://github.com/cryptape/microscope/)
 
-Microscope 的目标是打造一个类似 etherscan 的区块链数据访问平台。它提供对区块数据、交易数据、账号地址数据以及智能合约的访问等必备功能。Microscope 支持多链访问，只要给出对应链的 RPC 服务地址，即可接入这条区块链并提供数据浏览服务。运营方可以部署一个自己的专用浏览器，也可以将访问接口提供给其他浏览器。
+Microscope is a full-featured blockchain browser platform. With Microscope you can access data of blocks, transactions, account (including contracts) on any specified chains build by CITA, as well as call contract methods and view chain's real-time performance index. A cache server is also provided for caching blockchain data. It can be easily deployed to cache data from any specified chains for application usage.
 
 未来 Microscope 将增加数字资产访问、结构化数据展示等功能。对应地，我们将提供一个链上 KV 数据自动转换为本地关系型数据的中间件，以方便 DApp 的开发。开发者可以通过中间件快速索引业务数据，为用户提供更加友好的服务。
 
-### ReBirth | 区块缓存服务器
+### Rebirth | Blockchain Data Cache Server
 
 [![](https://img.shields.io/badge/ReBirth-Documents-green.svg)](https://github.com/cryptape/rebirth) [![](https://img.shields.io/badge/ReBirth-GitHub-lightgrey.svg)](https://github.com/cryptape/re-birth/)
 
-ReBirth 是一个提供区块链数据缓存服务的服务器端组件。它通过在服务器本地缓存 链上的数据，为 Microscope 和 Cyton 提供所需的数据缓存和查询服务，加快查询区块数据的速度，提升软件的使用体验。
+Rebirth is a server-side component that provides blockchain data caching services. It provides the data caching and query services required for microscope and Cyton, which can speed up the query service, and enhance the software usage experience.
 
-### 多平台 SDK | 软件开发工具包
+### Multi-platform SDK | Software Development Kit
 
 [![](https://img.shields.io/badge/CITA_SDK(Swift)-GitHub-lightgrey.svg)](https://github.com/cryptape/cita-sdk-swift) [![](https://img.shields.io/badge/CITA_SDK(Swift)-Documents-green.svg)](https://github.com/cryptape/cita-sdk-swift)
 
@@ -53,14 +53,14 @@ ReBirth 是一个提供区块链数据缓存服务的服务器端组件。它通
 
 Blockchain operations are difficult for the vast majority of developers, given complex operations such as signature, message assembly, and ABI calls. To this end, we provide a multi-platform SDK to further reduce the development threshold. The open source SDK, which is currently being maintained, includes JavaScript, Java, Ruby, and Swift. Users can also use the web3 SDK of the Ethereum at the same time, enabling the same DApp front end to support both the Ethereum network and the CITA network.
 
-### CITA Truffle Box | DApp 开发框架
+### CITA Truffle Box | DApp Development Framework
 
 [![](https://img.shields.io/badge/Truffle_Box-Documents-green.svg)](https://github.com/cryptape/appchain-truffle-box) [![](https://img.shields.io/badge/Truffle_Box-GitHub-lightgrey.svg)](https://github.com/cryptape/appchain-truffle-box)
 
-CITA Truffle Box 可以使开发者借助 Truffle 完成 CITA 上的 DApp 开发.
+This truffle box is customized for you to work with CITA. You can use this box to develop DApps on CITA.
 
-### CITA IDE | Solidity 合约编辑器
+### CITA IDE | CITA Solidity IDE
 
 [![](https://img.shields.io/badge/Truffle_Box-Documents-green.svg)](https://github.com/cryptape/appchain-ide) [![](https://img.shields.io/badge/Truffle_Box-GitHub-lightgrey.svg)](https://github.com/cryptape/appchain-ide)
 
-CITA IDE 是一个基于浏览器的合约编辑器，是基于 Remix 开发的。
+The CITA IDE is an IDE for Solidity dApp developers, developed based on Remix.

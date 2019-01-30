@@ -1,6 +1,6 @@
 ---
 id: batch-tx
-title: 批量交易
+title: Batch Transaction
 ---
 `CITA` 支持批量交易，目前只能进行批量合约的调用。
 
@@ -14,21 +14,21 @@ title: 批量交易
 
 接口签名如下:
 
-    ======= batch-tx.sol:BatchTx =======
+    ======= batch_tx.sol:BatchTx =======
     Function signatures:
     82cc3327: multiTxs(bytes)
     
 
 ### 数据组装规则
 
-参数类型为 `bytes`，encode 规则和 ABI 一致。拼装规则如下:
+参数类型为 `bytes`，encode规则和ABI一致。拼装规则如下:
 
-- 二十字节的目标调用合约的地址
-- 四字节的目标合约的调用数据的长度 
-  - 四字节的函数签名
-  - ABI 格式编码的函数参数
-- 目标合约的调用数据(第一条交易信息结束)
-- ...(第 n 条交易信息)
+* 二十字节的目标调用合约的地址
+* 四字节的目标合约的调用数据的长度 
+    * 四字节的函数签名
+    * ABI格式编码的函数参数
+* 目标合约的调用数据(第一条交易信息结束)
+* ...(第n条交易信息)
 
 拼装之后按照 bytes 的 ABI 编码即可。
 
@@ -46,9 +46,9 @@ title: 批量交易
 
 *首先需要启动一条链，具体方法见快速入门部分*
 
-其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/test_batch-tx.sol)函数签名如下:
+其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/test_batch_tx.sol)函数签名如下:
 
-    ======= contracts/test_batch-tx.sol:SelfAdd =======
+    ======= contracts/test_batch_tx.sol:SelfAdd =======
     Function signatures:
     2d910f2c: AddOne()
     0c55699c: x()
@@ -56,8 +56,8 @@ title: 批量交易
 
 其中：
 
-- `AddOne()`表示对 x 加一
-- `x()`表示获取 x 数值
+* `AddOne()`表示对x加一
+* `x()`表示获取x数值
 
 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
@@ -79,7 +79,7 @@ $ cita-cli key create
 
 ### 部署测试合约
 
-- 发送交易
+* 发送交易
 
 ```bash
 $ cita-cli rpc sendRawTransaction \
@@ -101,7 +101,7 @@ $ cita-cli rpc sendRawTransaction \
 }
 ```
 
-- 获取 receipt
+* 获取 receipt
 
 ```bash
 $ cita-cli rpc getTransactionReceipt \
@@ -122,7 +122,8 @@ $ cita-cli rpc getTransactionReceipt \
     "cumulativeGasUsed": "0xc66f",
     "errorMessage": null,
     "gasUsed": "0xc66f",
-    "logs": [],
+    "logs": [
+    ],
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
     "root": null,
     "transactionHash": "0x6054cd8ba0754eb352ddd283193d3233be559296a7c15cfd50797216cc9b331f",
@@ -154,11 +155,11 @@ $ cita-cli rpc call \
 
 数值为 0
 
-### 批量交易
+### Batch Transaction
 
 测试批量调用测试合约的 `AddOne()` 函数，预期结构为 x 数值变为 2 。
 
-- 发送交易
+* 发送交易
 
 ```bash
 $ cita-cli scm BatchTx multiTxs \
@@ -181,7 +182,7 @@ $ cita-cli scm BatchTx multiTxs \
 }
 ```
 
-- 获取 receipt
+* 获取receipt
 
 ```bash
 $ cita-cli rpc getTransactionReceipt \

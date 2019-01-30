@@ -1,6 +1,6 @@
 ---
 id: autu-exec
-title: 自动执行
+title: Automated Execution
 ---
 `CITA` 自动执行合约。
 
@@ -35,8 +35,8 @@ title: 自动执行
 
 其中：
 
-- `autoExec()`： 为自动执行的入口，实现对 x 加一
-- `x()`： 表示获取 x 数值
+* `autoExec()`： 为自动执行的入口，实现对 x 加一
+* `x()`： 表示获取x数值
 
 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
@@ -44,7 +44,7 @@ title: 自动执行
 
 *使用默认私钥进行演示*
 
-- 发送交易
+* 发送交易
 
 ```bash
 $ cita-cli rpc sendRawTransaction \
@@ -65,7 +65,7 @@ $ cita-cli rpc sendRawTransaction \
 }
 ```
 
-- 获取交易回执
+* 获取交易回执
 
 ```bash
 $ cita-cli rpc getTransactionReceipt \
@@ -85,7 +85,8 @@ $ cita-cli rpc getTransactionReceipt \
     "contractAddress": "0xd48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b",
     "cumulativeQuotaUsed": "0x1711d",
     "errorMessage": null,
-    "logs": [],
+    "logs": [
+    ],
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
     "quotaUsed": "0x1711d",
     "root": null,
@@ -122,7 +123,7 @@ $ cita-cli rpc call \
 
 调用 `register` 接口对测试合约进行注册。预期结果为 x 数值随块的增加而增加。
 
-- 发送交易
+* 发送交易
 
 ```bash
 $ cita-cli rpc senRawTransaction \
@@ -145,7 +146,7 @@ $ cita-cli rpc senRawTransaction \
 }
 ```
 
-- 获取交易回执
+* 获取交易回执
 
 ```bash
 $ cita-cli rpc getTransactionReceipt \

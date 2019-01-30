@@ -28,6 +28,7 @@ $ cita-cli scm PriceManager getQuotaPrice
   "jsonrpc": "2.0",
   "result": "0x00000000000000000000000000000000000000000000000000000000000f4240"
 }
+
 ```
 
 得到 `quotaPrice` 是十六进制的默认值。

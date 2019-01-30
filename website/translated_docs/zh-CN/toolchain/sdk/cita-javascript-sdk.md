@@ -1,6 +1,5 @@
 ---
 title: CITA JavaScript SDK
-id: cita-javascript-sdk
+id: js-sdk
 ---
-
 This is cita javascript sdk doc

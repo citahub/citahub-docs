@@ -1,6 +1,6 @@
 ---
 id: price
-title: 配额价格管理
+title: Quota Price Management
 ---
 ## 简述
 
@@ -28,6 +28,7 @@ $ cita-cli scm PriceManager getQuotaPrice
   "jsonrpc": "2.0",
   "result": "0x00000000000000000000000000000000000000000000000000000000000f4240"
 }
+
 ```
 
 得到 `quotaPrice` 是十六进制的默认值。

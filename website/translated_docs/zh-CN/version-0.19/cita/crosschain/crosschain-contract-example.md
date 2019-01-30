@@ -3,8 +3,6 @@ id: version-0.19-crosschain-contract-example
 title: Crosschain Contract Examples
 original_id: crosschain-contract-example
 ---
- 
-
 ## 跨链合约编写
 
 ### 跨链合约示例

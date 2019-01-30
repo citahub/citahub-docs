@@ -1,16 +1,16 @@
 ---
 id: node
-title: 节点管理
+title: Node Management
 ---
 CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，共识完成后即被确认为合法区块。普通节点不参与共识，只同步和验证链上所有的原始数据。
 
 公有链没有节点准入机制，意味着任何节点都可以接入链并同步其全部的数据，在满足一定的条件下都可以参加共识。而 CITA 对于共识节点和普通节点都进行了准入管理。 对于身份验证失败的节点，即使该节点能够在网络层与其他 CITA 节点连通，这些 CITA 节点也会拒绝与之建立通讯会话，如此可避免信息泄漏。
 
-CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为公有联盟链可以根据节点的出块权重分配出块权，管理员可以设置每个出块节点的 Stake 来调整出块权重。 出块权重按照每个出块节点所占的千分比进行分配，对于小数部分采用的 [Largest_remainder_method](https://en.wikipedia.org/wiki/Largest_remainder_method) 算法进行分配。 每次出块时，查询共识节点的权重，根据权重计算出每个节点在 1000 个块中可以出的块个数，这 1000 个块算为一个 epoch，再将这 1000 个块出块顺序以创世块的时间戳为种子进行随机排序。 如果在同一个 epoch 中出块节点列表和权重没有变化，共识将会按照此顺序进行出块；如果节点列表和权重有变化，将按照新的顺序进行出块。
+CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为公有联盟链可以根据节点的出块权重分配出块权，管理员可以设置每个出块节点的 Stake 来调整出块权重。 出块权重按照每个出块节点所占的千分比进行分配，对于小数部分采用的 [Largest_remainder_method](https://en.wikipedia.org/wiki/Largest_remainder_method) 算法进行分配。 每次出块时，查询共识节点的权重，根据权重计算出每个节点在 1000 个块中可以出的块个数，这 1000 个块算为一个 epoch，再将这1000个块出块顺序以创世块的时间戳为种子进行随机排序。 如果在同一个 epoch 中出块节点列表和权重没有变化，共识将会按照此顺序进行出块；如果节点列表和权重有变化，将按照新的顺序进行出块。
 
 ## 普通节点管理 (白名单)
 
-目前 CITA 对于普通节点的准入管理采用白名单的方式。每个节点本地保存白名单配置文件，其中记录着允许连接的 p2p 通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。 白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。
+目前 CITA 对于普通节点的准入管理采用白名单的方式。每个节点本地保存白名单配置文件，其中记录着允许连接的p2p通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。 白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。
 
 普通节点的管理，包括添加和删除。下面我们将用具体的示例来阐述。
 
@@ -22,7 +22,7 @@ CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为
     $ pwd
     ../cita/target/install
     $ ls test-chain/
-     0  1  2  3  template
+      0  1  2  3  template
     ```
     
     template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
@@ -32,13 +32,13 @@ CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为
     ```bash
     $ ./scripts/create_cita_config.py append --chain_name test-chain --node "127.0.0.1:4004"
     $ ls test-chain/
-     0  1  2  3  4  template
+      0  1  2  3  4  template
     ```
+    
+    * append 子命令，在指定链中增加对应 ip 地址的节点
+    * 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
 
-- append 子命令，在指定链中增加对应 ip 地址的节点
-- 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
-
-1. 启动新节点：
+3. 启动新节点：
     
     对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
     
@@ -61,12 +61,12 @@ CITA 作为一个面向企业级应用的区块链框架，需要保证监管方
 
 对于共识节点的管理，包括添加、删除及获得共识节点。下面我们将用具体的示例来阐述。
 
-- 添加操作只可由管理员执行;
-- 删除操作只可由管理员执行;
-- 获得共识节点列表；
-- 获取共识节点权重；
-- 设置共识节点权重；
-- 获取共识节点权重千分比。
+* 添加操作只可由管理员执行;
+* 删除操作只可由管理员执行;
+* 获得共识节点列表；
+* 获取共识节点权重；
+* 设置共识节点权重；
+* 获取共识节点权重千分比。
 
 ### 增加共识节点
 
@@ -116,7 +116,7 @@ $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 
 #### approve 节点
 
-- 发送交易
+* 发送交易
 
 ```bash
 $ cita-cli scm NodeManager approveNode \
@@ -125,7 +125,7 @@ $ cita-cli scm NodeManager approveNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config-tool)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config_tool)。
 
 输出：
 
@@ -140,7 +140,7 @@ $ cita-cli scm NodeManager approveNode \
 }
 ```
 
-- 获取 receipt
+* 获取 receipt
 
 ```bash
 $ cita-cli rpc getTransactionReceipt \
@@ -229,7 +229,7 @@ $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 
 #### delete 共识节点
 
-- 发送交易
+* 发送交易
 
 ```bash
 $ cita-cli scm NodeManager deleteNode \
@@ -238,7 +238,7 @@ $ cita-cli scm NodeManager deleteNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config-tool)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config_tool)。
 
 输出：
 
@@ -253,7 +253,7 @@ $ cita-cli scm NodeManager deleteNode \
 }
 ```
 
-- 获取 receipt
+* 获取 receipt
 
 ```bash
 $ cita-cli rpc getTransactionReceipt \

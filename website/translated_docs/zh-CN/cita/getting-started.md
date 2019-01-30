@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: 快速开始
+title: 快速入门
 ---
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
@@ -145,10 +145,10 @@ $ ./env.sh make release
 >     * 系统合约详细参数
 >     * 共识节点地址
 >     
->     该工具更详细的使用说明请参考 [Config Tool](./chain/config_tool)。
+>     该工具更详细的使用说明请参考 [Config Tool](./configuration/chain-configuration)。
 > 
 > * 对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。
-> * 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool的功能和用法](./chain/config_tool)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：
+> * 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool的功能和用法](./configuration/chain-configuration)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：
 >     
 >     ```shell
 >     $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
@@ -312,4 +312,4 @@ $ ./env.sh ./bin/cita help
 
 !> 在发布件目录(target/install)下运行节点时，可选择使用`./env.sh`
 
-更多 API（如合约调用、交易查询）请参见[RPC 调用](./rpc_guide/rpc)。
+更多 API（如合约调用、交易查询）请参见[RPC 调用](./rpc-guide/rpc)。

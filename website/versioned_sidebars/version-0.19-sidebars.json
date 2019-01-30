@@ -61,10 +61,10 @@
         "label": "SDK",
         "type": "subcategory",
         "ids": [
-          "version-0.19-toolchain/sdk/cita-javascript-sdk",
-          "version-0.19-toolchain/sdk/cita-java-sdk",
-          "version-0.19-toolchain/sdk/cita-swift-sdk",
-          "version-0.19-toolchain/sdk/cita-ruby-sdk"
+          "version-0.19-toolchain/sdk/javascript-sdk",
+          "version-0.19-toolchain/sdk/java-sdk",
+          "version-0.19-toolchain/sdk/swift-sdk",
+          "version-0.19-toolchain/sdk/ruby-sdk"
         ]
       },
       {

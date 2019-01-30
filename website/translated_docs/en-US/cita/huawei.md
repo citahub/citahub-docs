@@ -1,6 +1,6 @@
 ---
 id: huawei
-title: 华为云一键部署
+title: Huawei Cloud Deployment
 ---
 目前一键部署的功能为，通过使用部署模板，用户只需输入必要的配置参数，即可一键部署一条至少4个node 的链。
 

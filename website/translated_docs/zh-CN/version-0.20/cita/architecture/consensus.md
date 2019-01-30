@@ -1,6 +1,6 @@
 ---
 id: version-0.20-consensus
-title: Consensus
+title: 共识
 original_id: consensus
 ---
 # 共识

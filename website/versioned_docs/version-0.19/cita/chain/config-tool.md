@@ -261,7 +261,7 @@ Contracts:
 函数签名在 `test-chain/template/contracts/docs` 目录（`test-chain` 为当前链名称），提供了 `NodeManager-hashes.json`可供查看，
 并提供了针对用户和开发者的文档，分别为 `NodeManager-userdoc.json` 及 `NodeManager-devdoc.json`
 
-共识节点管理的相关描述及方法介绍见 [node_manager](./system-management/node)
+共识节点管理的相关描述及方法介绍见 [node_manager](../system/node)
 
 ### 配额管理系统合约
 
@@ -270,7 +270,7 @@ Contracts:
 函数签名在 `test-chain/template/contracts/docs` 目录（`test-chain` 为当前链名称），提供了 `QuotaManager-hashes.json`可供查看，
 并提供了针对用户和开发者的文档，分别为 `QuotaManager-userdoc.json` 及 `QuotaManager-devdoc.json`
 
-配额管理的相关描述及方法介绍见 [quota_manager](./system-management/quota)
+配额管理的相关描述及方法介绍见 [quota_manager](../system/quota)
 
 ### 权限管理系统合约
 
@@ -279,8 +279,8 @@ Contracts:
 在 `test-chain/template/contracts/docs` 目录（`test-chain` 为当前链名称），提供了 `PermissionManagement-hashes.json` 可供查看，
 并提供了针对用户和开发者的文档，分别为 `PermissionManagement-userdoc.json` 及 `PermissionManagement-devdoc.json`
 
-详细的接口说明见 [permission_management](./system-management/permission)
+详细的接口说明见 [permission_management](../system/permission)
 
 ## 单独增加节点
 
-相关描述及操作见 [ordinary_node_management](./system-management/node)
+相关描述及操作见 [ordinary_node_management](../system/node)

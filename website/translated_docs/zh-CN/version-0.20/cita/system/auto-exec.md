@@ -1,7 +1,7 @@
 ---
-id: version-0.20-autu-exec
+id: version-0.20-auto-exec
 title: 自动执行
-original_id: autu-exec
+original_id: auto-exec
 ---
 `CITA` 自动执行合约。
 

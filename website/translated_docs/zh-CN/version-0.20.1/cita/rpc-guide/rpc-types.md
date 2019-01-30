@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-rpc-types
-title: JSON RPC Types
+title: JSON RPC 类型
 original_id: JSON RPC Types
 ---
 ## JSON-RPC support

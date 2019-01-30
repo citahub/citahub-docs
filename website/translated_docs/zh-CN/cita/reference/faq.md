@@ -1,5 +1,5 @@
 ---
-id: FAQ
+id: faq
 title: FAQ
 ---
 ## CITA 是如何防止双花的？

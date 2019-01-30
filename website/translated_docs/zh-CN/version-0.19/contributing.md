@@ -1,6 +1,6 @@
 ---
 id: version-0.19-contributing
-title: Contributing
+title: 贡献代码
 original_id: contributing
 ---
 CITA 是一个开源项目，任何人都可以参与 CITA 并贡献代码。
@@ -78,6 +78,6 @@ git push -f
 
 - 不要破坏已有的测试套件;
 
-CITA 是采用 Rust 语言编写而成，若要在本机上编译并调试源码，请参考[getting_started](./chain/getting_started)。
+CITA 是采用 Rust 语言编写而成，若要在本机上编译并调试源码，请参考[getting-started](./chain/getting-started)。
 
 以上步骤，如有对 git 命令不熟悉的，请参考[git 使用手册](https://git-scm.com/doc)。

@@ -1,6 +1,6 @@
 ---
 id: version-0.20-permission-management
-title: Permission Management Contract Interface
+title: 权限管理合约接口
 original_id: permission-management
 ---
 

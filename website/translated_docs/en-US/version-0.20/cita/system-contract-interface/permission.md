@@ -1,6 +1,6 @@
 ---
 id: version-0.20-permission
-title: Permission Contract Interface
+title: Permission Management Interface
 original_id: permission
 ---
 

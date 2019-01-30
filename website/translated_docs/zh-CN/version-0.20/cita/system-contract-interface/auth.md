@@ -1,6 +1,6 @@
 ---
 id: version-0.20-auth
-title: Auth Management Contract Interface
+title: 授权管理合约接口
 original_id: auth
 ---
 

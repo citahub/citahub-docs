@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-role
-title: Role Contract Interface
+title: 角色合约接口
 original_id: role
 ---
 

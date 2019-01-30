@@ -1,7 +1,7 @@
 ---
 id: version-0.20.1-chain-configuration
 title: 链级配置
-original_id: chain-configuration
+original_id: 链级配置
 ---
 当拿到发布件解压后，或从源码编译后，不要着急动节点，在这之前，很重要的一步就是我们需要对链进行初始化配置。 这些配置信息将被写入链的创世块，创世块一旦生成，SysConfig 中只有 `chainName`，`operator`，`website` 这三项可以在链运行之后再进行修改，其他项均不可再修改, 因此请大家慎重设定各配置项。 在 CITA 里面，我们提供了工具 config tool 来帮助你在起链前对链进行初始化配置, 提供了命令行工具 CITA-CLI 来帮助你在起链后修改个别配置。
 
@@ -107,7 +107,7 @@ usage: create_cita_config.py create [-h]
   - `operator` : 运营方名称
   - `website` : 运营方网站
   - `blockInterval` ： 出块间隔，默认 3 秒
-  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型，交易只需不超过限额即可，限额由管理员设置，详细机制可查看[配额管理](./system-management/quota)；`economicalModel = 1` 表示 Charge 模型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看[配额价格管理](./system-management/price)。
+  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型，交易只需不超过限额即可，限额由管理员设置，详细机制可查看[配额管理](./system/quota)；`economicalModel = 1` 表示 Charge 模型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看[配额价格管理](./system/price)。
   - `name` : Token 名称
   - `symbol` : Token 符号
   - `avatar` : Token 图标链接

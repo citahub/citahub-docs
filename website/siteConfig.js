@@ -13,8 +13,8 @@ const users = [
   // {
   // caption: 'User1',
   // // You will need to prepend the image path with your baseUrl
-  // // if it is not '/', like: '/test-site../cita-assets/docusaurus.svg'.
-  // image: '../cita-assets/docusaurus.svg',
+  // // if it is not '/', like: '/test-siteassets/cita-assets/docusaurus.svg'.
+  // image: 'assets/cita-assets/docusaurus.svg',
   // infoLink: 'https://www.facebook.com',
   // pinned: true,
   // },

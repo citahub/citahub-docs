@@ -1,0 +1,77 @@
+/* your custom css */
+
+.headerTitleWithLogo {
+  white-space: nowrap;
+}
+
+a.navItem {
+  font-weight: 500 !important;
+  color: #000 !important;
+}
+
+.fixedHeaderContainer header h3 {
+  font-size: 14px;
+}
+
+.navGroup.subNavGroup h4 {
+  display: block;
+  cursor: default;
+}
+
+/* .navGroup.subNavGroup h4+ul { */
+/* max-height: 0; */
+/* overflow: hidden; */
+/* transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); */
+/* } */
+
+/* .navGroup.subNavGroup h4.expand+ul { */
+/* max-height: none; */
+/* } */
+
+.post article a {
+  color: #C71810;
+}
+
+.post article p a img {
+  display: inline;
+}
+
+table.versions td,
+table.versions th,
+table.versions tr {
+  border: none;
+  padding-left: 0;
+}
+
+table.versions td,
+table.versions th {
+  text-align: left;
+}
+
+blockquote {
+  background-color: #FEF3F3;
+  border-left-color: #FDDDDC;
+}
+
+footer {
+  display: none;
+}
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    max-width: 1400px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1500px) {
+  /* .wrapper {
+    max-width: 1400px;
+  } */
+}

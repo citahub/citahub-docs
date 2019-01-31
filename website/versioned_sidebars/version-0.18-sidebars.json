@@ -1,0 +1,99 @@
+{
+  "version-0.18-docs": {
+    "Welcome": ["version-0.18-welcome"],
+    "CITA": [
+      "version-0.18-cita/cita-intro",
+      {
+        "label": "Getting Started",
+        "type": "subcategory",
+        "ids": ["version-0.18-cita/chain/getting-started", "version-0.18-cita/chain/config-tool"]
+      },
+      {
+        "label": "System Management",
+        "type": "subcategory",
+        "ids": [
+          "version-0.18-cita/system/node",
+          "version-0.18-cita/system/permission",
+          "version-0.18-cita/system/user",
+          "version-0.18-cita/system/quota",
+          "version-0.18-cita/system/log",
+          "version-0.18-cita/system/system",
+          "version-0.18-cita/system/snapshot",
+          "version-0.18-cita/system/batch-tx"
+        ]
+      },
+      {
+        "label": "JSON-RPC",
+        "type": "subcategory",
+        "ids": [
+          "version-0.18-cita/rpc-guide/rpc",
+          "version-0.18-cita/rpc-guide/rpc-types",
+          "version-0.18-cita/rpc-guide/rpc-error-code"
+        ]
+      },
+      {
+        "label": "Architecture",
+        "type": "subcategory",
+        "ids": [
+          "version-0.18-cita/architecture/architecture",
+          "version-0.18-cita/architecture/components",
+          "version-0.18-cita/architecture/consensus",
+          "version-0.18-cita/architecture/transaction-process",
+          "version-0.18-cita/architecture/view"
+        ]
+      },
+      "version-0.18-cita/crosschain/crosschain-contract-example",
+      {
+        "label": "Reference",
+        "type": "subcategory",
+        "ids": [
+          "version-0.18-cita/reference/addresses",
+          "version-0.18-cita/reference/glossary",
+          "version-0.18-cita/reference/glossary"
+        ]
+      }
+    ],
+    "Toolchain": [{
+        "label": "CITA-CLI",
+        "type": "subcategory",
+        "ids": ["version-0.18-toolchain/cli/cli-intro"]
+      },
+      {
+        "label": "SDK",
+        "type": "subcategory",
+        "ids": [
+          "version-0.18-toolchain/sdk/javascript-sdk",
+          "version-0.18-toolchain/sdk/java-sdk",
+          "version-0.18-toolchain/sdk/swift-sdk",
+          "version-0.18-toolchain/sdk/ruby-sdk"
+        ]
+      },
+      {
+        "label": "ReBirth",
+        "type": "subcategory",
+        "ids": ["version-0.18-toolchain/rebirth/rebirth-intro"]
+      },
+      {
+        "label": "Cyton",
+        "type": "subcategory",
+        "ids": ["version-0.18-toolchain/cyton/cyton-intro"]
+      },
+      {
+        "label": "Microscope",
+        "type": "subcategory",
+        "ids": ["version-0.18-toolchain/microscope/microscope-intro"]
+      },
+      {
+        "label": "CITA-IDE",
+        "type": "subcategory",
+        "ids": ["version-0.18-toolchain/ide/ide-intro"]
+      },
+      {
+        "label": "CITA Truffle Box",
+        "type": "subcategory",
+        "ids": ["version-0.18-toolchain/truffle-box/truffle-box-intro"]
+      }
+    ],
+    "Contributing": ["version-0.18-contributing"]
+  }
+}

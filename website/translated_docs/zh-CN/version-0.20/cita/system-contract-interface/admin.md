@@ -1,6 +1,6 @@
 ---
 id: version-0.20-admin
-title: 管理员合约接口
+title: 管理员合约地址
 original_id: admin
 ---
 

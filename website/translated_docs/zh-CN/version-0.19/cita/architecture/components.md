@@ -1,7 +1,7 @@
 ---
 id: version-0.19-components
 title: 系统组件
-original_id: 系统组件
+original_id: components
 ---
 ## RPC
 

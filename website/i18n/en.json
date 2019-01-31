@@ -468,7 +468,7 @@
       "version-0.19-batch-tx": {
         "title": "Batch Transactions"
       },
-      "version-0.19-emergency-brake": {
+      "version-0.19-emg-brake": {
         "title": "Emergency Brake"
       },
       "version-0.19-fee-back": {

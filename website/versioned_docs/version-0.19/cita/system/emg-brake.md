@@ -1,7 +1,7 @@
 ---
-id: version-0.20.1-emergency-brake
+id: version-0.19-emg-brake
 title: Emergency Brake
-original_id: emergency-brake
+original_id: emg-brake
 ---
 
 ## 简述

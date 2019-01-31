@@ -1,8 +1,9 @@
 ---
-id: version-0.19-emergency-brake
+id: version-0.20.2-emg-brake
 title: 紧急制动
-original_id: emergency-brake
+original_id: emg-brake
 ---
+
 ## 简述
 
 超级管理员在极端情况下的维护手段，开启紧急制动模式后，链上只接收超级管理员发送的交易，其他交易全部拒绝。
@@ -18,16 +19,17 @@ original_id: emergency-brake
 
 接口签名如下：
 
-    ======= emergency-brake.sol:EmergencyBrake =======
-    ac9f0222: setState(bool)
-    c19d93fb: state()
-    
+```
+======= emergency_brake.sol:EmergencyBrake =======
+ac9f0222: setState(bool)
+c19d93fb: state()
+```
 
 初始默认值为 `false`，超级管理员可以通过发交易的方式修改状态值，当状态为 `true` 时，进入紧急制动模式。
 
 ### 操作示例
 
-*首先需要启动一条链，具体方法见快速入门部分*
+_首先需要启动一条链，具体方法见快速入门部分_
 
 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 

@@ -18,7 +18,7 @@ const users = [
   // infoLink: 'https://www.facebook.com',
   // pinned: true,
   // },
-];
+]
 const baseUrl = '/'
 
 const siteConfig = {
@@ -28,6 +28,7 @@ const siteConfig = {
   baseUrl, // Base URL for your project */
   customDocsPath: 'docs/',
   docsUrl: '',
+  cname: 'https://docs.citahub.com/',
   // blogsUrl: 'toolchain',
   // blogSideBarCount: 'ALL',
   // blogSidebarTitle: {
@@ -55,13 +56,13 @@ const siteConfig = {
     // },
     {
       page: 'community',
-      label: 'Community'
+      label: 'Community',
     },
     {
-      search: true
+      search: true,
     },
     {
-      language: true
+      language: true,
     },
   ],
 
@@ -126,16 +127,16 @@ const siteConfig = {
   //   repoUrl: 'https://github.com/facebook/test-site',
   scrollToTop: true,
   algolia: {
-    apiKey: "4fdec42fee0b2bd9e2c44248e1945f19",
-    indexName: "test",
-    placeholder: "Search",
+    apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+    indexName: 'test',
+    placeholder: 'Search',
     algoliaOptions: {
       algoliaOptions: {
         // "start_urls": ["./docs"],
-        facetFilters: ["language:LANGUAGE", "version:VERSION"]
-      }
-    } // Optional, if provided by Algolia
+        facetFilters: ['language:LANGUAGE', 'version:VERSION'],
+      },
+    }, // Optional, if provided by Algolia
   },
-};
+}
 
-module.exports = siteConfig;
+module.exports = siteConfig

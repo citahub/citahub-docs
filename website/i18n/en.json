@@ -608,7 +608,7 @@
         "title": "Batch Transactions Contract Interface"
       },
       "version-0.20.1-emergency-brake": {
-        "title": "Emergency Brake"
+        "title": "Emergency Brake Contract Interface"
       },
       "version-0.20.1-error": {
         "title": "System Contract Error Code"
@@ -651,6 +651,9 @@
       },
       "version-0.20.1-batch-tx": {
         "title": "Batch Transactions"
+      },
+      "version-0.20.1-emg-brake": {
+        "title": "Emergency Brake"
       },
       "version-0.20.1-fee-back": {
         "title": "Fee Back"
@@ -733,7 +736,7 @@
       "version-0.20.2-system-contracts": {
         "title": "系统合约"
       },
-      "version-0.20.2-emergency-brake": {
+      "version-0.20.2-emg-brake": {
         "title": "紧急制动"
       },
       "version-0.20.2-node": {
@@ -834,7 +837,7 @@
       "version-0.20-batch": {
         "title": "Batch Transactions Contract Interface"
       },
-      "version-0.20-emergency-brake": {
+      "version-0.20-emg-brake": {
         "title": "Emergency Brake"
       },
       "version-0.20-error": {

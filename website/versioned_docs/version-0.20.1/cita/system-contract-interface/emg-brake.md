@@ -1,7 +1,7 @@
 ---
-id: version-0.20.1-emergency-brake
+id: version-0.20.1-emg-brake
 title: Emergency Brake Contract Interface
-original_id: emergency-brake
+original_id: emg-brake
 ---
 
 <h2 class="hover-list">Emergency brake</h2>

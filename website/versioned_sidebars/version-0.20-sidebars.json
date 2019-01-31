@@ -59,7 +59,7 @@
           "version-0.20-cita/system-contract-interface/quota-manager",
           "version-0.20-cita/system-contract-interface/quota-price",
           "version-0.20-cita/system-contract-interface/batch",
-          "version-0.20-cita/system-contract-interface/emergency-brake",
+          "version-0.20-cita/system-contract-interface/emg-brake",
           "version-0.20-cita/system-contract-interface/admin",
           "version-0.20-cita/system-contract-interface/auto-exec",
           "version-0.20-cita/system-contract-interface/error"

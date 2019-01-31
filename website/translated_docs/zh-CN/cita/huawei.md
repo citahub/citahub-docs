@@ -20,15 +20,16 @@ title: 华为云一键部署
 
 在导航栏**服务列表**菜单中，找到**应用编排服务**。在**模板市场**页面中，找到模版**一键部署 CITA 区块链 (nervos)**。
 
-![step 1](./cita-assets/huawei01.png) ![step 1.1](./cita-assets/huawei02.png)
+![step 1](assets/cita-assets/huawei01.png)
+![step 1.1](assets/cita-assets/huawei02.png)
 
 1. 点击“创建堆栈”，
 
 其中，token_avatar为代币图标，应输入图标所在的url链接。
 
-![step 2](./cita-assets/huawei03.png) 3. 点击下一步，
+![step 2](assets/cita-assets/huawei03.png) 3. 点击下一步，
 
-![step 3](./cita-assets/huawei04.png) 输入资源配置的相关参数。如下图：
+![step 3](assets/cita-assets/huawei04.png) 输入资源配置的相关参数。如下图：
 
 一个用户用同一个模板在一个区域（见下图第一个参数“集群可用区”）只能部署一个链。
 
@@ -48,14 +49,14 @@ Eip_bandwidth为节点的带宽。
 | 3900      | 4     | 4    | 8核16G  | 20         |
 | 15000     | 4     | 4    | 32核64G | 100        |
 
-![step 4](./cita-assets/huawei05.png) 点击“下一步”。显示，
+![step 4](assets/cita-assets/huawei05.png) 点击“下一步”。显示，
 
-![step 5](./cita-assets/huawei06.png) 点击创建堆栈，页面显示创建进度，最后完成。
+![step 5](assets/cita-assets/huawei06.png) 点击创建堆栈，页面显示创建进度，最后完成。
 
 生成sshkey的步骤为,返回到第一个页面，如下图，找到“这里”，并点击
 
-![step 6](./cita-assets/huawei07.png) 点击“创建密钥对”，
+![step 6](assets/cita-assets/huawei07.png) 点击“创建密钥对”，
 
-![step 7](./cita-assets/huawei08.png) 点击“确定”。
+![step 7](assets/cita-assets/huawei08.png) 点击“确定”。
 
-![step 8](./cita-assets/huawei09.png) 密钥文件下载到本地。
+![step 8](assets/cita-assets/huawei09.png) 密钥文件下载到本地。

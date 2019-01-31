@@ -21,7 +21,7 @@ title: 华为云一键部署
 
 在导航栏**服务列表**菜单中，找到**应用编排服务**。在**模板市场**页面中，找到模版**一键部署 CITA 区块链 (nervos)**。
 
-![step 1](./cita-assets/huawei01.png)
+![step 1](cita-assets/huawei01.png)
 ![step 1.1](./cita-assets/huawei02.png)
 
 2. 点击“创建堆栈”，

@@ -40,7 +40,7 @@
         "ids": [
           "version-0.19-cita/architecture/architecture",
           "version-0.19-cita/architecture/comp",
-          "version-0.19-cita/architecture/consensus",
+          "version-0.19-cita/architecture/cons",
           "version-0.19-cita/architecture/transaction-process",
           "version-0.19-cita/architecture/view"
         ]

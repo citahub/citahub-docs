@@ -35,7 +35,7 @@
         "ids": [
           "version-0.17-cita/architecture/architecture",
           "version-0.17-cita/architecture/comp",
-          "version-0.17-cita/architecture/consensus",
+          "version-0.17-cita/architecture/cons",
           "version-0.17-cita/architecture/transaction-process",
           "version-0.17-cita/architecture/view"
         ]

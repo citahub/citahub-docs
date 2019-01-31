@@ -218,7 +218,7 @@
       "version-0.17-comp": {
         "title": "System Components"
       },
-      "version-0.17-consensus": {
+      "version-0.17-cons": {
         "title": "Consensus"
       },
       "version-0.17-transaction-process": {
@@ -320,7 +320,7 @@
       "version-0.18-comp": {
         "title": "System Components"
       },
-      "version-0.18-consensus": {
+      "version-0.18-cons": {
         "title": "Consensus"
       },
       "version-0.18-transaction-process": {
@@ -426,7 +426,7 @@
       "version-0.19-comp": {
         "title": "System Components"
       },
-      "version-0.19-consensus": {
+      "version-0.19-cons": {
         "title": "Consensus"
       },
       "version-0.19-transaction-process": {
@@ -537,7 +537,7 @@
       "version-0.20.1-comp": {
         "title": "System Components"
       },
-      "version-0.20.1-consensus": {
+      "version-0.20.1-cons": {
         "title": "Consensus"
       },
       "version-0.20.1-transaction-process": {
@@ -764,7 +764,7 @@
       "version-0.20-comp": {
         "title": "System Components"
       },
-      "version-0.20-consensus": {
+      "version-0.20-cons": {
         "title": "Consensus"
       },
       "version-0.20-transaction-process": {

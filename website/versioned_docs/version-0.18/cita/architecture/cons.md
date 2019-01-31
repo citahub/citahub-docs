@@ -1,7 +1,7 @@
 ---
-id: version-0.18-consensus
+id: version-0.18-cons
 title: Consensus
-original_id: consensus
+original_id: cons
 ---
 
 CITA 的共识模块主要是保证多个节点对于交易的顺序和 Block 的内容达成一致。在众多的分布式算法中，

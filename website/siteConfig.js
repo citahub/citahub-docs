@@ -12,8 +12,8 @@
 const users = [
   // {
   // caption: 'User1',
-  // // You will need to prepend the image path with your baseUrl
-  // // if it is not '/', like: '/test-site../cita-assets/docusaurus.svg'.
+  // You will need to prepend the image path with your baseUrl
+  // if it is not '/', like: '/test-site../cita-assets/docusaurus.svg'.
   // image: '../cita-assets/docusaurus.svg',
   // infoLink: 'https://www.facebook.com',
   // pinned: true,
@@ -28,7 +28,7 @@ const siteConfig = {
   baseUrl, // Base URL for your project */
   customDocsPath: 'docs/',
   docsUrl: '',
-  cname: 'https://docs.citahub.com',
+  cname: 'docs.citahub.com',
   // blogsUrl: 'toolchain',
   // blogSideBarCount: 'ALL',
   // blogSidebarTitle: {

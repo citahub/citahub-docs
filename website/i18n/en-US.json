@@ -90,7 +90,7 @@
       "cita/system-contract-interface/error": {
         "title": "System contract Error Type"
       },
-      "cita/system-contract-interface/group-management": {
+      "cita/system-contract-interface/group-mng": {
         "title": "Group Management Contract"
       },
       "cita/system-contract-interface/group": {
@@ -613,7 +613,7 @@
       "version-0.20.1-error": {
         "title": "System Contract Error Code"
       },
-      "version-0.20.1-group-management": {
+      "version-0.20.1-group-mng": {
         "title": "Group Management Contract Interface"
       },
       "version-0.20.1-group": {
@@ -840,7 +840,7 @@
       "version-0.20-error": {
         "title": "System Contract Error Code"
       },
-      "version-0.20-group-management": {
+      "version-0.20-group-mng": {
         "title": "Group Management Contract Interface"
       },
       "version-0.20-group": {
@@ -1416,7 +1416,7 @@
       "version-0.20.1-cita/system-contract-interface/quota-manager": {
         "title": "Quota Management Contract Interface"
       },
-      "version-0.20.1-cita/system-contract-interface/group-management": {
+      "version-0.20.1-cita/system-contract-interface/group-mng": {
         "title": "Group Management Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/group": {
@@ -1557,7 +1557,7 @@
       "version-0.20-cita/architecture/architecture": {
         "title": "Architecture"
       },
-      "version-0.20-cita/system-contract-interface/group-management": {
+      "version-0.20-cita/system-contract-interface/group-mng": {
         "title": "Group Management Contract Interface"
       },
       "version-0.18-cita/chain/getting-started": {

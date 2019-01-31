@@ -1,7 +1,7 @@
 ---
-id: version-0.20.1-group-management
+id: version-0.20.1-group-mng
 title: 组管理合约接口
-original_id: group-management
+original_id: group-mng
 ---
 
 
@@ -22,15 +22,15 @@ original_id: group-management
 创建一个用户组。
 
 - Parameters
-    
+
     `address` - The sender's origin group
-    
+
     `bytes32` - The name of group
-    
+
     `address[]` - The accounts of group
 
 - Returns
-    
+
     `address` - The group address
 
 - Example
@@ -116,13 +116,13 @@ $ scm GroupManagement newGroup \
 删除用户组。
 
 - Parameters
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
 
 - Returns
-    
+
     `bool` - True, if successfully, otherwise false.
 
 - Example
@@ -139,15 +139,15 @@ $ scm GroupManagement deleteGroup \
 更新用户组名称。
 
 - Parameters
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
-    
+
     `bytes32` - The new name to be updated
 
 - Returns
-    
+
     `bool` - True, if successfully, otherwise false.
 
 - Example
@@ -164,15 +164,15 @@ $ scm GroupManagement updateGroupName \
 添加用户。
 
 - Parameters
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
-    
+
     `address[]` - The accounts to be added
 
 - Returns
-    
+
     `bool` - True, if successfully, otherwise false.
 
 - Examplee
@@ -189,15 +189,15 @@ $ scm GroupManagement updateGroupName \
 删除用户。
 
 - Parameters
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
-    
+
     `address[]` - The accounts to be added
 
 - Returns
-    
+
     `bool` - True, if successfully, otherwise false.
 
 - Example
@@ -213,13 +213,13 @@ $ scm GroupManagement deleteAccounts \
 ### checkScope
 
 - Parameters
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
 
 - Returns
-    
+
     `bool` - True, if successfully, otherwise false.
 
 - Example
@@ -235,11 +235,11 @@ $ scm GroupManagement checkScope \
 查询所有组。
 
 - Parameters
-    
+
     `None`
 
 - Returns
-    
+
     `address[]` - All groups address
 
 - Example

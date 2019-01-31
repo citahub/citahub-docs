@@ -1,7 +1,7 @@
 ---
-id: version-0.20-role-management
+id: version-0.20-role-mng
 title: Role Management Contract Interface
-original_id: role-management
+original_id: role-mng
 ---
 
 <h2 class="hover-list">Role Management</h2>

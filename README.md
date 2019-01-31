@@ -59,5 +59,5 @@ $ yarn run crowdin:download
 - Deploy to Github Pages
 
 ```shell
-$ cd website && CIT_USER=<your_git_username> CURRENT_BRANCH=master USER_SSH=true yarn run publish-gh-pages
+$ cd website && GIT_USER=<your_git_username> CURRENT_BRANCH=master USER_SSH=true yarn run publish-gh-pages
 ```

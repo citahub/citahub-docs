@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-quota-price
-title: Quota Price Management Contract Interface
+title: 份额价格管理合约接口
 original_id: quota-price
 ---
 

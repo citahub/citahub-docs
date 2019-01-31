@@ -1,6 +1,6 @@
 ---
-title: CLI 简介
+title: CLI Introduction
 id: cli-intro
-sidebar_label: CITA-CLI 简介
+sidebar_label: CITA-CLI Introduction
 ---
 Coming soon

@@ -1,6 +1,6 @@
 ---
 id: components
-title: System components
+title: 系统组件
 ---
 ## RPC
 

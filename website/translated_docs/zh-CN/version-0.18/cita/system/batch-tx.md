@@ -1,6 +1,6 @@
 ---
 id: version-0.18-batch-tx
-title: Batch Transactions
+title: 批量交易
 original_id: batch-tx
 ---
  

@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-error
-title: System Contract Error Code
+title: 系统合约错误码
 original_id: error
 ---
 当在调用系统合约接口的时候，可以通过查看交易回执中日志信息来获得具体执行过程中的错误类型。

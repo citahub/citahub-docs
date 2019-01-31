@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-node
-title: Consensus Node Management Contract Interface
+title: 共识节点管理合约接口
 original_id: node
 ---
 

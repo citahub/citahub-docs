@@ -1,6 +1,6 @@
 ---
 id: version-0.20-emergency-brake
-title: Emergency Brake
+title: 紧急制动
 original_id: emergency-brake
 ---
 ## 简述

@@ -1,6 +1,6 @@
 ---
 id: version-0.18-system
-title: System Configuration
+title: 系统配置
 original_id: system
 ---
  

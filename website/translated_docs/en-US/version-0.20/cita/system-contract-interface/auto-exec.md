@@ -3,7 +3,7 @@ id: version-0.20-auto-exec
 title: Auto Execution Contract Interface
 original_id: auto-exec
 ---
-# Auto Execution Contract interface
+# Auto Execution Contract
 
 <h2 class="hover-list">Auto Exec</h2>
 

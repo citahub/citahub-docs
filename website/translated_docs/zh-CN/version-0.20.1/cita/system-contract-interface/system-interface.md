@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-system-interface
-title: System Configuration Contract Interface
+title: 系统配置合约接口
 original_id: system-interface
 ---
 

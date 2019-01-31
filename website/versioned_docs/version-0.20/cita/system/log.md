@@ -4,8 +4,6 @@ title: Log Management
 original_id: log
 ---
 
-# 日志管理
-
 日志在系统调试，问题定位，甚至业务运维方面有着重要的作用。
 
 CITA 每个微服务的日志信息都会被记录到一个单独的日志文件。

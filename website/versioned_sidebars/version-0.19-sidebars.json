@@ -49,7 +49,10 @@
       {
         "label": "Reference",
         "type": "subcategory",
-        "ids": ["version-0.19-cita/reference/addresses", "version-0.19-cita/reference/glossary"]
+        "ids": [
+          "version-0.19-cita/ref/addresses",
+          "version-0.19-cita/ref/glossary"
+        ]
       }
     ],
     "Toolchain": [{

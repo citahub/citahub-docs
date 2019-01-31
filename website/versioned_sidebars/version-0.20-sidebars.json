@@ -90,9 +90,8 @@
         "label": "Reference",
         "type": "subcategory",
         "ids": [
-          "version-0.20-cita/reference/addresses",
-          "version-0.20-cita/reference/glossary",
-          "version-0.20-cita/reference/glossary"
+          "version-0.20-cita/ref/addresses",
+          "version-0.20-cita/ref/glossary"
         ]
       }
     ],

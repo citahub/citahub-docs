@@ -47,9 +47,8 @@
         "label": "Reference",
         "type": "subcategory",
         "ids": [
-          "version-0.18-cita/reference/addresses",
-          "version-0.18-cita/reference/glossary",
-          "version-0.18-cita/reference/glossary"
+          "version-0.18-cita/ref/addresses",
+          "version-0.18-cita/ref/glossary"
         ]
       }
     ],

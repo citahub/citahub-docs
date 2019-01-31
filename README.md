@@ -26,12 +26,6 @@ $ cd website
 $ yarn start
 ```
 
-- Sync Docs from CITA
-
-```shell
-$ yarn run cita:sync
-```
-
 - Update Sidebar Titles
 
 ```shell

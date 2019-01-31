@@ -1,7 +1,7 @@
 ---
-id: version-0.20-components
+id: version-0.20.1-comp
 title: System Components
-original_id: components
+original_id: comp
 ---
 
 ## RPC

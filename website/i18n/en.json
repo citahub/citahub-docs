@@ -215,7 +215,7 @@
       "version-0.17-architecture": {
         "title": "Architecture"
       },
-      "version-0.17-components": {
+      "version-0.17-comp": {
         "title": "System Components"
       },
       "version-0.17-consensus": {
@@ -317,7 +317,7 @@
       "version-0.18-architecture": {
         "title": "Architecture"
       },
-      "version-0.18-components": {
+      "version-0.18-comp": {
         "title": "System Components"
       },
       "version-0.18-consensus": {
@@ -423,7 +423,7 @@
       "version-0.19-architecture": {
         "title": "Architecture"
       },
-      "version-0.19-components": {
+      "version-0.19-comp": {
         "title": "System Components"
       },
       "version-0.19-consensus": {
@@ -534,7 +534,7 @@
       "version-0.20.1-architecture": {
         "title": "Architecture"
       },
-      "version-0.20.1-components": {
+      "version-0.20.1-comp": {
         "title": "System Components"
       },
       "version-0.20.1-consensus": {
@@ -761,7 +761,7 @@
       "version-0.20-architecture": {
         "title": "Architecture"
       },
-      "version-0.20-components": {
+      "version-0.20-comp": {
         "title": "System Components"
       },
       "version-0.20-consensus": {

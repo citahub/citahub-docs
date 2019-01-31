@@ -70,7 +70,7 @@
         "type": "subcategory",
         "ids": [
           "version-0.20.1-cita/architecture/architecture",
-          "version-0.20.1-cita/architecture/components",
+          "version-0.20.1-cita/architecture/comp",
           "version-0.20.1-cita/architecture/consensus",
           "version-0.20.1-cita/architecture/transaction-process",
           "version-0.20.1-cita/architecture/view"

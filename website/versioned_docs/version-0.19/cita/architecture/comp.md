@@ -1,12 +1,12 @@
 ---
-id: version-0.20.1-components
+id: version-0.19-comp
 title: System Components
-original_id: components
+original_id: comp
 ---
 
 ## RPC
 
-RPC(Remote Procedure Call Protocol)即远程过程调用协议，它是一种通过网
+RPC(Remote Procedure Call Protocol) 即远程过程调用协议，它是一种通过网
 络从远程计算机程序上请求服务，不需要了解底层网络技术的协议，是基于可靠
 性、可控制 TCP 的应用层协议，从而保证了用户数据的传输完整。
 
@@ -28,7 +28,7 @@ RPC(Remote Procedure Call Protocol)即远程过程调用协议，它是一种通
 
 ## Consensus
 
-共识算法解决的是针对某个提案(proposal)，系统中的节点达成一致的过程。在
+共识算法解决的是针对某个提案 (proposal)，系统中的节点达成一致的过程。在
 区块链系统中，共识算法确保所有正确节点的交易顺序是一致的。CITA 共识模块
 包括 Raft 和 CITA-BFT 的实现，共识模块负责接收交易并进行简单验证，然后打
 包出块。在 CITA 的实现中，共识以相对独立的形式存在，其他共识算法的实现可
@@ -53,15 +53,8 @@ CITA 中的 Chain 模块主要功能有以下几点：
 
 - EVM 合约引擎
 
-用户可使用 [Solidity](https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html) 语言编写智能合约，并在 [Remix](http://remix.ethereum.org) 集成开发环境中开发
-和测试，最后通过 CITA 的合约创建和调用接口来部署和调用。换句话说，CITA 的
-合约通过以太坊智能合约的生态，一方面降低用户培养成本，一方面降低安全风
-险。
+  用户可使用 [Solidity](https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html) 语言编写智能合约，并在 [Remix](http://remix.ethereum.org) 集成开发环境中开发和测试，最后通过 CITA 的合约创建和调用接口来部署和调用。换句话说，CITA 的合约通过以太坊智能合约的生态，一方面降低用户培养成本，一方面降低安全风险。
 
 - 原生合约引擎
 
-使用 EVM 合约能够快速完成功能开发，并满足初期性能需求。随着业务发展，当
-性能上遇到瓶颈时，可以 EVM 合约开发的基础上，用原生合约来实现，合约调用
-接口不变。原生合约支持两种数据访问接口，兼容 EVM 合约的键值数据库方式与
-传统的结构化数据库方式。同时也提供了原生合约的注册表机制，用户可以实现
-合约的创建与销毁。
+  使用 EVM 合约能够快速完成功能开发，并满足初期性能需求。随着业务发展，当性能上遇到瓶颈时，可以 EVM 合约开发的基础上，用原生合约来实现，合约调用接口不变。原生合约支持两种数据访问接口，兼容 EVM 合约的键值数据库方式与传统的结构化数据库方式。同时也提供了原生合约的注册表机制，用户可以实现合约的创建与销毁。

@@ -1,8 +1,9 @@
 ---
-id: version-0.19-amend
-title: 数据订正
-original_id: amend
+id: version-0.19-data-amend
+title: Amend
+original_id: data-amend
 ---
+
 ## 数据订正概述
 
 数据订正 Amend 是超级管理员 Super Admin 通过发送特定的交易到链上，来干预或者修正链的运行
@@ -24,7 +25,8 @@ Amend 交易现在有四种不同的数据订正的类型 ABI,Code,Balance,Key-V
 
 ### ABI
 
-ABI 类型用来修改账户的二进制接口信息，参数如下： amend abi 代表修改 ABI 信息，命令中的 content 参数 的值为 ABI 的数据信息
+ABI 类型用来修改账户的二进制接口信息，参数如下：
+amend abi 代表修改 ABI 信息，命令中的 content 参数 的值为 ABI 的数据信息
 
 - 示例：
 
@@ -42,7 +44,8 @@ ABI 类型用来修改账户的二进制接口信息，参数如下： amend abi
 
 ### Code
 
-Code 类型用来修改合约账户内的代码，参数如下： amend code 代表修改 Code 信息，命令中的 content 参数 的值为 Code 的二进制数据信息
+Code 类型用来修改合约账户内的代码，参数如下：
+amend code 代表修改 Code 信息，命令中的 content 参数 的值为 Code 的二进制数据信息
 
 - 示例：
 
@@ -60,7 +63,8 @@ Code 类型用来修改合约账户内的代码，参数如下： amend code 代
 
 ### Balance
 
-Balance 类型用来修改账户内部的资金 Balance 的数值，参数如下： amend balance 代表修改 Balance 信息，命令中的 balance 参数数值为修改后的数值
+Balance 类型用来修改账户内部的资金 Balance 的数值，参数如下：
+amend balance 代表修改 Balance 信息，命令中的 balance 参数数值为修改后的数值
 
 - 示例：
 
@@ -78,7 +82,9 @@ Balance 类型用来修改账户内部的资金 Balance 的数值，参数如下
 
 ### Key->Value
 
-Key->Value 类型用来修改某账户使用的底层 KV 数据库的 Key-Value 信息,参数如下： amend kv-h256 代表修改数据库的 KV 信息，命令中的 kv 参数值为一系列的 Key-Value 对， 前面的 H256 信息 Key，后面的 H256 信息为 Value,交替存放。
+Key->Value 类型用来修改某账户使用的底层 KV 数据库的 Key-Value 信息,参数如下：
+amend kv-h256 代表修改数据库的 KV 信息，命令中的 kv 参数值为一系列的 Key-Value 对，
+前面的 H256 信息 Key，后面的 H256 信息为 Value,交替存放。
 
 - 示例：
 

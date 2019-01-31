@@ -462,11 +462,11 @@
       "version-0.19-rpc": {
         "title": "JSON RPC"
       },
-      "version-0.19-amend": {
-        "title": "Amend"
-      },
       "version-0.19-batch-tx": {
         "title": "Batch Transactions"
+      },
+      "version-0.19-data-amend": {
+        "title": "Amend"
       },
       "version-0.19-emg-brake": {
         "title": "Emergency Brake"
@@ -607,8 +607,8 @@
       "version-0.20.1-batch": {
         "title": "Batch Transactions Contract Interface"
       },
-      "version-0.20.1-emergency-brake": {
-        "title": "Emergency Brake Contract Interface"
+      "version-0.20.1-emg-brake": {
+        "title": "Emergency Brake"
       },
       "version-0.20.1-error": {
         "title": "System Contract Error Code"
@@ -651,9 +651,6 @@
       },
       "version-0.20.1-batch-tx": {
         "title": "Batch Transactions"
-      },
-      "version-0.20.1-emg-brake": {
-        "title": "Emergency Brake"
       },
       "version-0.20.1-fee-back": {
         "title": "Fee Back"

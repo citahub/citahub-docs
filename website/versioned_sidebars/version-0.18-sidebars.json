@@ -36,8 +36,8 @@
         "type": "subcategory",
         "ids": [
           "version-0.18-cita/architecture/architecture",
-          "version-0.18-cita/architecture/components",
-          "version-0.18-cita/architecture/consensus",
+          "version-0.18-cita/architecture/comp",
+          "version-0.18-cita/architecture/cons",
           "version-0.18-cita/architecture/transaction-process",
           "version-0.18-cita/architecture/view"
         ]
@@ -47,9 +47,8 @@
         "label": "Reference",
         "type": "subcategory",
         "ids": [
-          "version-0.18-cita/reference/addresses",
-          "version-0.18-cita/reference/glossary",
-          "version-0.18-cita/reference/glossary"
+          "version-0.18-cita/ref/addresses",
+          "version-0.18-cita/ref/glossary"
         ]
       }
     ],

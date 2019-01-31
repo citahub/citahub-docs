@@ -26,7 +26,7 @@
           "version-0.20-cita/system/log",
           "version-0.20-cita/system/snapshot",
           "version-0.20-cita/system/batch-tx",
-          "version-0.20-cita/system/emergency-brake",
+          "version-0.20-cita/system/emg-brake",
           "version-0.20-cita/system/amend",
           "version-0.20-cita/system/fee-back",
           "version-0.20-cita/system/version",
@@ -50,16 +50,16 @@
           "version-0.20-cita/system-contract-interface/node",
           "version-0.20-cita/system-contract-interface/auth",
           "version-0.20-cita/system-contract-interface/permission",
-          "version-0.20-cita/system-contract-interface/role-management",
+          "version-0.20-cita/system-contract-interface/role-mng",
           "version-0.20-cita/system-contract-interface/role-auth",
           "version-0.20-cita/system-contract-interface/role",
-          "version-0.20-cita/system-contract-interface/group-management",
+          "version-0.20-cita/system-contract-interface/group-mng",
           "version-0.20-cita/system-contract-interface/group",
           "version-0.20-cita/system-contract-interface/all-groups",
           "version-0.20-cita/system-contract-interface/quota-manager",
           "version-0.20-cita/system-contract-interface/quota-price",
           "version-0.20-cita/system-contract-interface/batch",
-          "version-0.20-cita/system-contract-interface/emergency-brake",
+          "version-0.20-cita/system-contract-interface/emg-brake",
           "version-0.20-cita/system-contract-interface/admin",
           "version-0.20-cita/system-contract-interface/auto-exec",
           "version-0.20-cita/system-contract-interface/error"
@@ -70,8 +70,8 @@
         "type": "subcategory",
         "ids": [
           "version-0.20-cita/architecture/architecture",
-          "version-0.20-cita/architecture/components",
-          "version-0.20-cita/architecture/consensus",
+          "version-0.20-cita/architecture/comp",
+          "version-0.20-cita/architecture/cons",
           "version-0.20-cita/architecture/transaction-process",
           "version-0.20-cita/architecture/view"
         ]
@@ -90,9 +90,8 @@
         "label": "Reference",
         "type": "subcategory",
         "ids": [
-          "version-0.20-cita/reference/addresses",
-          "version-0.20-cita/reference/glossary",
-          "version-0.20-cita/reference/glossary"
+          "version-0.20-cita/ref/addresses",
+          "version-0.20-cita/ref/glossary"
         ]
       }
     ],

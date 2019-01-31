@@ -1,5 +1,5 @@
 ---
-id: group-management
+id: group-mng
 title: 组管理合约接口
 ---
 
@@ -21,15 +21,15 @@ title: 组管理合约接口
 创建一个用户组。
 
 * 参数
-    
+
     `address` - The sender's origin group
-    
+
     `bytes32` - The name of group
-    
+
     `address[]` - The accounts of group
 
 * 返回值
-    
+
     `address` - The group address
 
 * 示例
@@ -116,13 +116,13 @@ $ scm GroupManagement newGroup \
 删除用户组。
 
 * 参数
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
 
 * 返回值
-    
+
     `bool` - True, if successfully, otherwise false.
 
 * 示例
@@ -139,15 +139,15 @@ $ scm GroupManagement deleteGroup \
 更新用户组名称。
 
 * 参数
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
-    
+
     `bytes32` - The new name to be updated
 
 * 返回值
-    
+
     `bool` - True, if successfully, otherwise false.
 
 * 示例
@@ -164,15 +164,15 @@ $ scm GroupManagement updateGroupName \
 添加用户。
 
 * 参数
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
-    
+
     `address[]` - The accounts to be added
 
 * 返回值
-    
+
     `bool` - True, if successfully, otherwise false.
 
 * 示例e
@@ -189,15 +189,15 @@ $ scm GroupManagement updateGroupName \
 删除用户。
 
 * 参数
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
-    
+
     `address[]` - The accounts to be added
 
 * 返回值
-    
+
     `bool` - True, if successfully, otherwise false.
 
 * 示例
@@ -213,13 +213,13 @@ $ scm GroupManagement deleteAccounts \
 ### checkScope
 
 * 参数
-    
+
     `address` - The sender's orgin group
-    
+
     `address` - The target group to be deleted
 
 * 返回值
-    
+
     `bool` - True, if successfully, otherwise false.
 
 * 示例
@@ -235,11 +235,11 @@ $ scm GroupManagement checkScope \
 查询所有组。
 
 * 参数
-    
+
     空
 
 * 返回值
-    
+
     `address[]` - All groups address
 
 * 示例

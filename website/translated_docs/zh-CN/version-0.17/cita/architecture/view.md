@@ -1,7 +1,7 @@
 ---
-id: 视图
+id: version-0.17-view
 title: 视图
-original_id: 视图
+original_id: view
 ---
 ## 账号
 

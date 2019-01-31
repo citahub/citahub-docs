@@ -27,12 +27,12 @@ const handleItems = (items, versioned) => {
       (err, data) => {
         if (err) {
           console.warn(err)
-          // const match = target.match(/\/(\s|\S)*?$/)
-          // if (match) {
-          //   collect["localized-strings"].docs[target] = {
-          //     title: match[0].split('/').pop().replace(/-/g, ' ').replace(/\b(\w)/g, w => w.toUpperCase())
-          //   }
-          // }
+          const match = target.match(/\/(\s|\S)*?$/)
+          if (match) {
+            collect["localized-strings"].docs[target] = {
+              title: match[0].split('/').pop().replace(/-/g, ' ').replace(/\b(\w)/g, w => w.toUpperCase())
+            }
+          }
         } else {
           let title = ''
           const match = data.toString().match(/\ntitle(\s|\S)*?\n/)

@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>快照 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;从字面上解释，“快照”这个词来源于照相、摄影等领域，后来延展到范围很广，当需要保留某件事物某个时间的状态时，就可以说对其做一次“快照”。&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.20.1"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="快照 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;从字面上解释，“快照”这个词来源于照相、摄影等领域，后来延展到范围很广，当需要保留某件事物某个时间的状态时，就可以说对其做一次“快照”。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>0.20.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/0.20.1/cita/system/snapshot">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/welcome">关于 CITA</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/cita-intro">关于 CITA</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/getting-started">快速入门</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">配置</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/configuration/config-overview">配置概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/configuration/chain-configuration">链级配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/configuration/microservice-configuration">微服务配置</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统管理</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/system">系统合约</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/node">节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/permission">权限管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/user"> 用户管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/quota">份额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/price">份额价格管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/log">日志管理</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/0.20.1/cita/system/snapshot">快照</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/batch-tx"> 批量交易</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/emergency-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/amend">数据订正</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/fee-back">出块奖励返回</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/version">协议版本管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system/auto-exec">自动执行</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/rpc-guide/rpc-types">JSON RPC Types</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/rpc-guide/rpc-error-code">JSON RPC 错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统合约地址</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/node">共识节点管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/auth">授权管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/permission">权限合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/role-management">角色管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/role-auth">角色授权合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/role">角色合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/group-management">组管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/group">组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/all-groups">所有组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/quota-manager">份额管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/quota-price">份额价格管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/batch">批量交易合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/emergency-brake">紧急制动合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/admin">管理员合约地址</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/auto-exec">自动执行合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/system-contract-interface/error">系统合约错误码</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构设计</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/architecture/architecture">架构设计</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/architecture/components">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/architecture/consensus">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/architecture/view">视图</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/crosschain/crosschain-contract-example">Crosschain</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议升级</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/protocol-upgrade/overview">协议升级概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/protocol-upgrade/v0">v0 协议</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/protocol-upgrade/v1">v1 协议</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">参考</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/reference/addresses">系统预留地址</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/cita/reference/glossary">词汇表</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/toolchain/cli/cli-intro">CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">ReBirth</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/toolchain/rebirth/rebirth-intro">ReBirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.1/contributing">贡献代码</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">快照</h1></header><article><div><span><p>从字面上解释，“快照”这个词来源于照相、摄影等领域，后来延展到范围很广，当需要保留某件事物某个时间的状态时，就可以说对其做一次“快照”。</p>
+<p>快照属于工具类的功能，不属于区块链本身的功能。对区块链某个高度的状态做快照，保存状态、区块等数据，然后将快照恢复到另一个节点/本节点，就可以在较短时间内同步/恢复区块链数据。</p>
+<h2><a class="anchor" aria-hidden="true" id="使用说明"></a><a href="#使用说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用说明</h2>
+<p>snapshot_tool 有两个功能：创建快照和快照恢复</p>
+<ul>
+<li>创建快照是将当前区块链的状态等数据保存到文件中。</li>
+<li>快照恢复是根据保存下来的文件将区块链数据恢复到创建快照时的状态。</li>
+</ul>
+<p>命令格式如下：</p>
+<pre><code class="hljs">snapshot_tool -m snapshot [-e HEIGHT]  [-f FILE]
+snapshot_tool -m restore [-f FILE]
+</code></pre>
+<p>中括号中的选项是可选的。</p>
+<ul>
+<li>-m 是指定功能，快照或者恢复。</li>
+<li>-e 是指定区块链高度，缺省值是区块链当前高度。</li>
+<li>-f 是指定快照文件的名字，如果指定为 FILE，chain 模块会生成 FILE_chain.rlp，executor 模块会生成 FILE_executor.rlp，缺省时是 snapshot_chain.rlp 和 snapshot_executor.rlp。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="创建快照"></a><a href="#创建快照" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建快照</h3>
+<p>以对 100 高度做快照为例（当前链高度需大于 100）：</p>
+<pre><code class="hljs">$ cd test-chain/0
+$ ../../bin/snapshot_tool -m snapshot -e 100
+$ ls snap*
+snapshot_chain.rlp  snapshot_executor.rlp
+</code></pre>
+<p>NOTE： 由于区块链的区块数据和状态分别保存在 Chain 和 Executor 微服务中，所以需要两个模块都进行快照，生成快照文件，恢复的时候根据各自的快照文件进行恢复。</p>
+<h3><a class="anchor" aria-hidden="true" id="快照恢复"></a><a href="#快照恢复" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>快照恢复</h3>
+<p>以将快照恢复到节点 1 为例：</p>
+<ol>
+<li><p>将上述生成的快照文件拷贝到需恢复链数据的节点目录下</p>
+<pre><code class="hljs css language-bash">$ <span class="hljs-built_in">cd</span> <span class="hljs-built_in">test</span>-chain/1
+$ cp ../0/snapshot_chain.rlp ../0/snapshot_executor.rlp ./
+</code></pre></li>
+<li><p>依快照文件快照恢复</p>
+<p>快照命令行工具接受恢复参数后，依据快照文件恢复数据。</p>
+<pre><code class="hljs css language-bash">$ ../../bin/snapshot_tool -m restore
+</code></pre></li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/0.20.1/cita/system/log"><span class="arrow-prev">← </span><span>日志管理</span></a><a class="docs-next button" href="/zh-CN/0.20.1/cita/system/batch-tx"><span>批量交易</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#使用说明">使用说明</a><ul class="toc-headings"><li><a href="#创建快照">创建快照</a></li><li><a href="#快照恢复">快照恢复</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:zh-CN","version:0.20.1"]}}
+              });
+            </script></body></html>

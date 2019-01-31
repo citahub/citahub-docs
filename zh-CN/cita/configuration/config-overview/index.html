@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>配置概览 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;在本章节中，将为你详细介绍链级配置和各微服务配置的相关内容。&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.20.2"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="配置概览 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;在本章节中，将为你详细介绍链级配置和各微服务配置的相关内容。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>0.20.2</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/cita/configuration/config-overview">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/welcome">CITAHub 文档概览</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/cita-intro">关于 CITA</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/getting-started">快速入门</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">配置</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/cita/configuration/config-overview">配置概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/configuration/chain-configuration">链级配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/configuration/microservice-configuration">Microservice Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统管理</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/system-contracts">系统合约</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/node">节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/permission">权限管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/user">User Management</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/quota">Quota Management</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/price">Quota Price Management</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/log">Log Management</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/snapshot">Snapshot</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/batch-tx">批量交易</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/emergency-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/amend">Amend</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/fee-back">Fee Back</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/version">Version Management</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system/auto-exec">Auto Execution</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/cita/rpc-guide/rpc-types">JSON RPC Types</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/rpc-guide/rpc-error-code">JSON RPC Error Code</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统合约地址</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/node">Consensus Node Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/auth">Auth Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/permission">Permission Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/role-management">Role Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/role-auth">Role Auth Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/role">Role Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/group-management">Group Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/group">Group Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/all-groups">All-Group Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/quota-manager">Quota Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/quota-price">Quota Price Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/batch">Batch Transactions Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/emergency-brake">Emergency Brake Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/admin">Admin Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/auto-exec">Auto Execution Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/system-contract-interface/error">System Contract Error Code</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构设计</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/components">System Components</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/consensus">Consensus</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/transaction-process">Transaction Process</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/view">View</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/cita/crosschain/crosschain-contract-example">Crosschain</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议升级</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/cita/protocol-upgrade/overview">协议升级概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/protocol-upgrade/v0">v0 Protocol</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/protocol-upgrade/v1">v1 Protocol</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">参考</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/cita/reference/addresses">Reserved System Addresses</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/reference/glossary">Glossary</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/cli/cli-intro">CLI Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SDK</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/javascript-sdk">CITA JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/java-sdk">CITA Java SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/swift-sdk">CITA Swift SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/ruby-sdk">CITA Ruby SDK</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rebirth</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/rebirth/rebirth-intro">ReBirth Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/cyton/cyton-intro">Cyton Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/microscope/microscope-intro">Microscope Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/ide/ide-intro">CITA IDE Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box Introduction</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/contributing">Contributing</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/roadmap">Roadmap</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">配置概览</h1></header><article><div><span><p>在本章节中，将为你详细介绍链级配置和各微服务配置的相关内容。</p>
+<p><a href="./configuration/chain_config">链级配置</a>主要是指链自身的一些属性、系统合约、RPC 接口、节点间网络连接等的配置，需要用户在<strong>起链前</strong>进行初始化配置。 在链级配置这篇文档中，将为你详细介绍链的各个可配置项；然后通过具体的操作示例，演示如何起链前对链进行初始化配置；并带你详细了解初始化配置后文件的目录结构；最后，将通过具体示例，演示起链后如何修改个别配置。 相信阅读完此文档后，你将可以自己定制一条满足你需求的链。</p>
+<p><a href="./configuration/service_config">微服务配置</a>主要是指各微服务的配置。CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network，各组件之间通过消息总线交换信息相互协作。 各节点运维人员可根据系统运行情况（微服务负载情况等）进行配置调整，优化性能。 当前只有 network 微服务可以在不停链的情况下，进行配置调整，其他模块需要停链后进行操作。当修改配置后，支持自动刷新。 在<a href="./configuration/service_config">微服务配置</a>这篇文档中，将为你详细介绍各个微服务的可配置项。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/cita/getting-started"><span class="arrow-prev">← </span><span>快速入门</span></a><a class="docs-next button" href="/zh-CN/cita/configuration/chain-configuration"><span>链级配置</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:zh-CN","version:0.20.2"]}}
+              });
+            </script></body></html>

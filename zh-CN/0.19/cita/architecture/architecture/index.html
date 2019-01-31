@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>架构设计 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;微服务&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#微服务&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;微服务&lt;/h2&gt;
+"/><meta name="docsearch:version" content="0.19"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="架构设计 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;微服务&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#微服务&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;微服务&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>0.19</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/0.19/cita/architecture/architecture">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/welcome">关于 CITA</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/cita-intro">关于 CITA</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速入门</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/chain/getting-started">快速开始</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/chain/config-tool">链级管理</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统管理</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/node">节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/permission">权限管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/user"> 用户管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/quota">份额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/system">系统配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/snapshot">快照</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/batch-tx"> 批量交易</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/emergency-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/amend">数据订正</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/system/fee-back">出块奖励返回</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/rpc-guide/rpc-types">JSON RPC 类型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/rpc-guide/rpc-error-code">JSON RPC 错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构设计</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/0.19/cita/architecture/architecture">架构设计</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/architecture/components">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/architecture/consensus">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/architecture/view">视图</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/crosschain/crosschain-contract-example">跨链合约示例</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">参考</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/reference/addresses">系统保留地址列表</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/cita/reference/glossary">词汇表</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/toolchain/cli/cli-intro">CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">ReBirth</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/toolchain/rebirth/rebirth-intro">ReBirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.19/contributing">贡献代码</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">架构设计</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="微服务"></a><a href="#微服务" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>微服务</h2>
+<p>联盟链在交易吞吐量低、交易实时性上很难满足行业应用的要求。另外，区块链 技术发展迅速，单体应用也很难满足演进要求。</p>
+<p>为了解决这两个问题， CITA 将单个节点按照功解构为交易共识、合约引擎、链 式存储、网络同步、服务网关等多个松耦合的微服务，一方面利用云计算基础设 施来按需提升性能，另一方面，各个组件可独立替换升级。</p>
+<p>另外，采用消息总线进行通信，各个微服务可以利用异步消息简化处理，又可以 确保消息的安全、可靠送达。当与外部系统集成时，外部系统可以直接访问消息 总线，而无需 CITA 做适配。</p>
+<p><img src="https://raw.githubusercontent.com/cryptape/cita-whitepaper/master/en/cita-parallel.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="flow-chart"></a><a href="#flow-chart" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Flow Chart</h2>
+<pre><code class="hljs">                                                                node0 (tx into chain)                                               node1
+    ---------------------------------------------------------------------------------------------------------                   -----------
+
+                                                   // reply when reveive the tx from the remote
+                        ---------------------------------------------------------------------------------
+                        |                                                                               ^
+                        |  ----------------------------------------------                               ^
+                        |  |               3.1.reply                    ^                               ^
+                        |  |                                            |                               |
+    +-----+  0.send   +---------+  1.forward   +------+  2.2.send  +-----------+    3.2.send      +---------+   broadcast:tx   +---------+
+    | APP |  ------&gt;  | jsonRPC |  ---------&gt;  | auth |  -------&gt;  | consensus |  -------------&gt;  | network |  &lt;------------&gt;  | network | ...
+    +-----+           +---------+              +------+            +-----------+                  +---------+                  +---------+
+       ^                | ^  ^                   | ^ ^                    ^                               ^
+       |  4.reply       | ^  |     2.1.reply     | ^ | // tx from remote  |            4.broadcast tx    |
+       ------------------ ^  --------------------- ^ ---------------------|--------------------------------
+                          ^                        ^                      |
+                          ^                        |             6.2.sync | 5.package      +-------+  6.1.process
+                          |                        |                      --------------&gt;  | chain |  ----&gt;
+                          |                        |                                       +-------+      |
+                          |                        |       6.3.sync tx hash                  |  |         |
+                          |                        -------------------------------------------  |         |
+                          |                                                                     |     +---------+
+                          -----------------------------------------------------------------------     | rocksDB |
+                                                    6.4.reply                                         +---------+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="timing-diagram"></a><a href="#timing-diagram" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Timing Diagram</h2>
+<pre><code class="hljs">    +-----+             +---------+             +------+                   +-----------+         +-------+              +---------+               +-----------+
+    | APP |             | jsonRPC |             | auth |                   | consensus |         | chain |              | network |               | other_node|
+    +-----+             +---------+             +------+                   +-----------+         +-------+              +---------+               +-----------+
+       | -----new_tx-------&gt; |                      |                            |                   |                        |                          |
+       |                     | --------new_tx-----&gt; |-------------+              |                   |                        |                          |
+       |                     |                      |   tx in pool and check     |                   |                        |                          |
+       |                     |                      |&lt;------------+              |                   |                        |                          |
+       |                     | &lt;-------result------ |                            |                   |                        |                          |
+       | &lt;----result-------- |                      | ----------broadcast tx------------------------------------------------&gt; |                          |
+       |                     |                      |                            |                   |                        | ----flooding new tx----&gt; |-----+
+       |                     |                      |                            |                   |                        |                          |  reflect
+       |                     |                      |                            |                   |                        | &lt;---flooding new tx----- |&lt;----+
+       |                     |                      | &lt;---------receive new_tx----------------------------------------------- |                          |
+       |                     |                      | ----------package_tx-----&gt; |---------+         |                        |                          |
+       |                     |                      |                            | consensus txs     |                        |                          |
+       |                     |                      |                            |---------+         |                        |                          |
+       |                     |                      |                            | ----new_block---&gt; |-----+                  |                          |
+       |                     |                      |                            |                   | add block              |                          |
+       |                     |                      |                            |                   |&lt;----+                  |                          |
+       |                     |                      | &lt;----------tx hash---------------------------- |                        |                          |
+       |                     |                      |                            |                   |                        |                          |
+       |                     |                      |                            | &lt;---new status--- | ---broadcast status--&gt; |                          |
+       |                     |                      |                            |                   |                        | --flooding new status--&gt; |-----+
+       | ----request-------&gt; |                      |                            |                   |                        |                          |     |
+       |                     | -----forward request------------------------------------------------&gt; |                        |                          |  reflect
+       |                     | &lt;----response-------------------------------------------------------- |                        |                          |     |
+       |&lt;-forward response-- |                      |                            |                   |                        | &lt;--flooding new status-- |&lt;----+
+       |                     |                      |                            |                   | &lt;-----new status------ |                          |
+       |                     |                      |                            |                   |-------+                |                          |
+       |                     |                      |                            |                   |  if need sync          |                          |
+       |                     |                      |                            |                   |&lt;------+                |                          |
+       |                     |                      |                            |                   | ---request block-----&gt; |                          |
+       |                     |                      |                            |                   |                        | --request block--------&gt; |-----+
+       |                     |                      |                            |                   |                        |                          |  reflect
+       |                     |                      |                            |                   |                        | &lt;-response block-------- |&lt;----+
+       |                     |                      |                            |                   | &lt;--response block----- |                          |
+       |                     |                      |                            |                   | -----+                 |                          |
+       |                     |                      |                            |                   |  add block             |                          |
+       |                     |                      |                            |                   | &lt;----+                 |                          |
+       -                     -                      -                            -                   -                        -                          -
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="protocolbuffer"></a><a href="#protocolbuffer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ProtocolBuffer</h2>
+<p>ProtocolBuffer_ 是一种用于序列化结构数据的语言无关、平台无关的扩展机制， 经常被用于跨进程、跨机器的应用程序间的数据通信，特别是微服务间的数据通 信。它的编译器接受接口描述语言（<a href="https://en.wikipedia.org/wiki/Interface_description_language">IDL</a>）作为输入，通过不同语言的插件，可以编译 成各自语言的本地代码。</p>
+<p>CITA 采用了 ProtocolBuffer 作为数据序列化的方法。一方面，序列化/反序列化 性能高，另一方面，不同微服务间可以通过接口描述语言很方便的集成到 CITA 的 微服务架构中。</p>
+<h2><a class="anchor" aria-hidden="true" id="block"></a><a href="#block" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Block</h2>
+<p>Block 结构</p>
+<ul>
+<li>version: u32</li>
+<li>header: BlockHeader 结构</li>
+<li>body: BlockBody 结构</li>
+</ul>
+<p>BlockHeader 结构</p>
+<ul>
+<li>prevhash: 上一个块的 Keccak 256-bit 哈希值</li>
+<li>timestamp: Unix 时间戳</li>
+<li>proof: Proof 结构，出块人签名</li>
+<li>commit: Commit 结构，Chain 处理结果</li>
+<li>height: uint64 块号</li>
+</ul>
+<p>BlockBody 结构</p>
+<ul>
+<li>transactions: 交易列表</li>
+</ul>
+<p>Commit 结构</p>
+<ul>
+<li>stateRoot: Keccak 256-bit，状态 root</li>
+<li>transactionsRoot: Keccak 256-bit，交易列表 root</li>
+<li>receiptsRoot: Keccak 256-bit，交易回执 root</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="transaction"></a><a href="#transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transaction</h2>
+<p>Transaction 结构</p>
+<ul>
+<li>to: 160-bit address；如果为空表示创建合约</li>
+<li>content: bytes，交易 data</li>
+<li>valid_until_block: 交易超时设置</li>
+<li>signature: bytes，签名</li>
+<li>crypto: 签名类型</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/0.19/cita/rpc-guide/rpc-error-code"><span class="arrow-prev">← </span><span>JSON RPC 错误类型</span></a><a class="docs-next button" href="/zh-CN/0.19/cita/architecture/components"><span>系统组件</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#微服务">微服务</a></li><li><a href="#flow-chart">Flow Chart</a></li><li><a href="#timing-diagram">Timing Diagram</a></li><li><a href="#protocolbuffer">ProtocolBuffer</a></li><li><a href="#block">Block</a></li><li><a href="#transaction">Transaction</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:zh-CN","version:0.19"]}}
+              });
+            </script></body></html>

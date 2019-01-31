@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Transaction Process · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用 Protobuf 格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.20"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="Transaction Process · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用 Protobuf 格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en-US"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en-US/versions"><h3>0.20</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en-US/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/zh-CN/0.20/cita/architecture/transaction-process">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Welcome<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.20/welcome">About CITA</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/cita-intro">Welcome to CITA</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/getting-started">Getting Started</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Configuration</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/configuration/config-overview">Configuration Overview</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/configuration/chain-configuration">chain Configuration</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/configuration/microservice-configuration">Microservice Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Management</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/system">System Contracts</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/node">Node Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/permission">Permission Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/user">User Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/quota">Quota Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/price">Quota Price Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/log">Log Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/snapshot">Snapshot</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/batch-tx">Batch Transactions</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/emergency-brake">Emergency Brake</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/amend">Amend</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/fee-back">Fee Back</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/version">Version Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system/auto-exec">Auto Execution</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/rpc-guide/rpc-types">JSON RPC Types</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/rpc-guide/rpc-error-code">JSON RPC Error Code</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Contract Interface</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/node">Consensus Node Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/auth">Auth Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/permission">Permission Management Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/role-management">Role Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/role-auth">Role Auth Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/role">Role Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/group-management">Group Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/group">Group Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/all-groups">All-Group Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/quota-manager">Quota Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/quota-price">Quota Price Management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/batch">Batch Transactions Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/emergency-brake">Emergency Brake Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/admin">Admin Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/auto-exec">Auto Execution Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/system-contract-interface/error">System Contract Error Code</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Architecture</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/architecture/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/architecture/components">System components</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/architecture/consensus">Consensus</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/en-US/0.20/cita/architecture/transaction-process">Transaction Process</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/architecture/view">View</a></li></ul></div><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/crosschain/crosschain-contract-example">Crosschain</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Protocol Upgrade</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/protocol-upgrade/overview">Protocol Upgrade Overview</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/protocol-upgrade/v0">v0 Protocol</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/protocol-upgrade/v1">v1 Protocol</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Reference</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/reference/addresses">Reserved System Addresses</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.20/cita/reference/glossary">Glossary</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Toolchain<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/toolchain/cli/cli-intro">CLI Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">ReBirth</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/toolchain/rebirth/rebirth-intro">ReBirth Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/toolchain/cyton/cyton-intro">Cyton Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/toolchain/microscope/microscope-intro">Microscope Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/toolchain/ide/ide-intro">CITA IDE Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.20/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box Introduction</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Contributing<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.20/contributing">Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Transaction Process</h1></header><article><div><span><p>CITA 采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用 Protobuf 格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。</p>
+<p>在 CITA 中交易的生命周期内，用户在客户端按照 Protobuf 结构进行交易构造，将 Protobuf 结构序列化为 bytes 结构，将消息以 JSON-RPC 格式发送到 RPC 模块。RPC 模块对消息进行简单验证，验证通过后将消息发送到 Auth 模块。Auth 模块进行签名验证等，将验证结果通过消息通道返回给 RPC 模块，与此同时，如果验证通过，会将消息插入交易池。最终共识模块打包交易，发送给 Chain&amp;Auth 进行处理。</p>
+<h2><a class="anchor" aria-hidden="true" id="交易构造"></a><a href="#交易构造" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易构造</h2>
+<p>交易的 Protobuf 结构如下。</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Crypto</span> </span>{
+    SECP = <span class="hljs-number">0</span>;
+    SM2 = <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Transaction</span> </span>{
+    <span class="hljs-built_in">string</span> to = <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">string</span> nonce = <span class="hljs-number">2</span>;
+    <span class="hljs-built_in">uint64</span> quota = <span class="hljs-number">3</span>;
+    <span class="hljs-built_in">uint64</span> valid_until_block = <span class="hljs-number">4</span>;
+    <span class="hljs-built_in">bytes</span> data = <span class="hljs-number">5</span>;
+    <span class="hljs-built_in">bytes</span> value = <span class="hljs-number">6</span>;
+    <span class="hljs-built_in">uint32</span> chain_id = <span class="hljs-number">7</span>;
+    <span class="hljs-built_in">uint32</span> version = <span class="hljs-number">8</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">UnverifiedTransaction</span> </span>{
+    Transaction transaction = <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">bytes</span> signature = <span class="hljs-number">2</span>;
+    Crypto crypto = <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">SignedTransaction</span> </span>{
+    UnverifiedTransaction transaction_with_sig = <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">bytes</span> tx_hash = <span class="hljs-number">2</span>;  <span class="hljs-comment">// SignedTransaction hash</span>
+    <span class="hljs-built_in">bytes</span> signer = <span class="hljs-number">3</span>; <span class="hljs-comment">//public key</span>
+}
+</code></pre>
+<p>其中 Transaction 为原始的交易的内容，UnverifiedTransaction 为带签名的交易，SignedTransaction 为验证通过的交易。</p>
+<p>用户要发送交易，首先构造 Transaction，然后再构造 UnverifiedTransaction，其中 signature 为 Transaction 结构的 Hash 值进行签名得到的字符串，用来保证 Transaction 未被修改。Crypto 用来表示使用的哪一种签名方法。</p>
+<h2><a class="anchor" aria-hidden="true" id="交易验证"></a><a href="#交易验证" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易验证</h2>
+<p>CITA 中交易通过消息总线进行转发，用户通过 RPC 模块和系统进行交互。RPC 请求分为两种：一种是对链上状态进行查询的请求，一种是需要打包到区块中的交易。</p>
+<p>首先在 RPC 模块，对用户请求进行验证：</p>
+<ul>
+<li>是否符合服务规范（目前支持 JSON-RPC 2.0）;</li>
+<li>服务 API 方法是否合法；</li>
+<li>参数个数和格式是否合法。</li>
+</ul>
+<p>如果验证通过，则根据请求类型发往不同模块。对于查询请求，发送到相关模块，相关模块解析请求，并执行然后返回结果。对于交易，则发送到 Auth 模块，Auth 模块通过验证后，将交易放入交易池。</p>
+<p>在 Auth 模块，需要验证</p>
+<ul>
+<li>交易签名是否合法；</li>
+<li>是否拥有权限；</li>
+<li>发送人是否有足够的配额；</li>
+<li>交易是否为重复交易。</li>
+</ul>
+<p>交易验证通过后，以 SignedTransaction 的结构进行保存，并转发给其他模块。SignedTransaction 主要用来缓存签名和 Hash，这样避免了其他服务再去解签名，以及计算交易 Hash 的开销。</p>
+<h2><a class="anchor" aria-hidden="true" id="交易打包"></a><a href="#交易打包" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易打包</h2>
+<p>最终共识将交易打包成 Block，发送到 Chain 和 Executor 模块，进行相应处理。</p>
+<p>Block 的结构如下：</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Block</span> </span>{
+    <span class="hljs-built_in">uint32</span> version = <span class="hljs-number">1</span>;
+    BlockHeader header = <span class="hljs-number">2</span>;
+    BlockBody body = <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">BlockBody</span> </span>{
+    <span class="hljs-keyword">repeated</span> SignedTransaction transactions = <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">BlockHeader</span> </span>{
+    <span class="hljs-built_in">bytes</span> prevhash = <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">uint64</span> timestamp = <span class="hljs-number">2</span>;
+    <span class="hljs-built_in">uint64</span> height = <span class="hljs-number">3</span>;
+    <span class="hljs-built_in">bytes</span> state_root = <span class="hljs-number">4</span>;
+    <span class="hljs-built_in">bytes</span> transactions_root = <span class="hljs-number">5</span>;
+    <span class="hljs-built_in">bytes</span> receipts_root = <span class="hljs-number">6</span>;
+    <span class="hljs-built_in">uint64</span> gas_used = <span class="hljs-number">7</span>;
+    <span class="hljs-built_in">uint64</span> gas_limit = <span class="hljs-number">8</span>;
+    Proof proof = <span class="hljs-number">9</span>;
+    <span class="hljs-built_in">bytes</span> proposer = <span class="hljs-number">10</span>;
+}
+</code></pre>
+<p>共识对 Block 格式的验证包括：</p>
+<ul>
+<li>PreHash 是否正确；</li>
+<li>区块签名是否正确；</li>
+<li>签名个数是否满足。</li>
+</ul>
+<p>交易验证成功则正常执行，验证失败则将错误信息保存在交易回执中。CITA 中交易处理具有原子性，当交易在执行过程中发生错误，整个交易状态会回滚。</p>
+<p>其中 BlockHeader 中的 transactions_root 用来保存 Body 中的交易 Root，在共识模块中构造 Proposal 时进行构造，以及验证 Proposal 时进行验证。在这里构造好 transactions_root，对于本节点共识的块，后续的 Chain/Executor 不需要再对交易格式进行验证，也不需要再计算 transactions_root。</p>
+<h2><a class="anchor" aria-hidden="true" id="交易执行"></a><a href="#交易执行" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易执行</h2>
+<p>Chain 模块负责存储和保存 Block 相关结构，Executor 模块负责处理交易。交易在处理过程中，采用针对交易的每一步执行进行单步扣费的方式：先检查费用，再进行执行的方式。Chain/Executor 处理完成后，将处理的结果，包括 state_root，receipts_root，gas_used 信息写入 Block，并进行落盘保存。</p>
+<h2><a class="anchor" aria-hidden="true" id="异步交易处理"></a><a href="#异步交易处理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>异步交易处理</h2>
+<p>区块链节点的最主要职责包括点对点网络交互、共识、交易处理以及数据存储四个方面。节点通过共识算法，在系统中形成对交易排序的全局共识，再按照共识 后的顺序对交易进行逐个处理。只要处理过程能保证确定性，所有节点最后都能达到一致的状态，产生相同的本地数据。</p>
+<p>在当前的区块链设计中，共识与交易处理耦合程度较高，共识的性能受到交易处理能力的影响。 CITA 将共识与交易处理解耦为独立的微服务，共识服务只负责交易排序，并不关心交易内容，交易处理服务只负责对排好顺序的交易进行处理。 此时共识过程可以先于交易处理完成，交易处理服务可以异步执行。异步交易处理技术不仅使 CITA 具有更好的共识性能，还带来了更有弹性的交易处理能力， 交易负荷可以被更均匀的分摊到一段时间内。</p>
+<p>由于交易异步处理，在共识前只能对交易进行有限的检查，例如签名验证。无效的交易有可能通过共识进入交易处理服务，产生一定程度的垃圾数据。 在有必要的情况下，可以通过 CITA 的交易控制或者垃圾清理技术解决该问题。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/0.20/cita/architecture/consensus"><span class="arrow-prev">← </span><span>Consensus</span></a><a class="docs-next button" href="/en-US/0.20/cita/architecture/view"><span>View</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#交易构造">交易构造</a></li><li><a href="#交易验证">交易验证</a></li><li><a href="#交易打包">交易打包</a></li><li><a href="#交易执行">交易执行</a></li><li><a href="#异步交易处理">异步交易处理</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:en-US","version:0.20"]}}
+              });
+            </script></body></html>

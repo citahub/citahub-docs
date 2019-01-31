@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>User Management · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 实现了基于组的用户管理，组之间为树形的关系，可对应企业的组织结构。&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.17"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="User Management · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 实现了基于组的用户管理，组之间为树形的关系，可对应企业的组织结构。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en-US"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en-US/versions"><h3>0.17</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en-US/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/zh-CN/0.17/cita/system/user">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Welcome<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.17/welcome">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/cita-intro">About CITA</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Getting Started</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/chain/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/chain/config-tool">Chain Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Management</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/system/node">Node Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/system/permission">Permission Management</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/en-US/0.17/cita/system/user">User Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/system/quota">Quota Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/system/log">Log Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/system/snapshot">Snapshot</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/rpc-guide/rpc-types">JSON RPC Types</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/rpc-guide/rpc-error-code">JSON RPC Error Code</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Architecture</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/architecture/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/architecture/components">System components</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/architecture/consensus">Consensus</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/architecture/transaction-process">Transaction Processing</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/architecture/view">View</a></li></ul></div><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/crosschain/crosschain-contract-example">Crosschain Contract Example</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Reference</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/reference/addresses">Reserved System Addresses</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/reference/glossary">Glossary</a></li></ul></div><li class="navListItem"><a class="navItem" href="/en-US/0.17/cita/txtool">About Txtool</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Toolchain<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/toolchain/cli/cli-intro">CLI Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">ReBirth</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/toolchain/rebirth/rebirth-intro">ReBirth Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/toolchain/cyton/cyton-intro">Cyton Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/toolchain/microscope/microscope-intro">Microscope Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/toolchain/ide/ide-intro">CITA IDE Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.17/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box Introduction</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Contributing<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.17/contributing">Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">User Management</h1></header><article><div><span><p>CITA 实现了基于组的用户管理，组之间为树形的关系，可对应企业的组织结构。</p>
+<p>可使用权限管理系统对组进行授权，组内用户除了本身自己的权限之外还拥有所在组的权限。</p>
+<p>对于组的管理，用户在拥有系统内置的权限的前提下，还对权限作用的范围做了约束：</p>
+<ul>
+<li>一个组内的用户可作用于本组及本组所有子组</li>
+</ul>
+<p>相对应的鉴权流程增加对组的权限的鉴定，过程如下：</p>
+<ul>
+<li>对用户的权限进行鉴定</li>
+<li>对用户所在组的权限进行鉴定</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="接口说明"></a><a href="#接口说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>接口说明</h2>
+<h3><a class="anchor" aria-hidden="true" id="操作类接口"></a><a href="#操作类接口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作类接口</h3>
+<table>
+  <tr>
+    <th>name</th>
+    <th>permissions</th>
+    <th>parameters</th>
+    <th>return</th>
+    <th>describe</th>
+  </tr>
+  <tr>
+    <td>
+      newGroup(origin, name, accounts) <br/>
+      <strong>Create a new group</strong>
+    </td>
+    <td>newGroup</td>
+    <td>
+      origin: The user's origin group
+      <br/>
+      name: The name of the new group
+      <br/>
+      accounts: The accounts of the new group
+    </td>
+    <td>The address of the new group</td>
+    <td>A group is a smart contract</td>
+  </tr>
+  <tr>
+    <td>
+      deleteGroup(origin, target) <br/>
+      <strong>Delete a group</strong>
+    </td>
+    <td>deleteGroup</td>
+    <td>
+      origin: The user's origin group
+      <br/>
+      target: The target group that will be deleted
+    </td>
+    <td>true/false</td>
+    <td>Close the smart contract</td>
+  </tr>
+  <tr>
+    <td>
+      updateGroupName(origin, target, name) <br/>
+      <strong>Update the group name</strong>
+    </td>
+    <td>updateGroup</td>
+    <td>
+      origin: The user's origin group
+      <br/>
+      target: The target group that will be updated
+      <br/>
+      name: The new name of the group
+    </td>
+    <td>true/false</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      addAccounts(origin, target, accounts) <br/>
+      <strong>Add the group's accounts</strong>
+    </td>
+    <td>updateGroup</td>
+    <td>
+      origin: The user's origin group
+      <br/>
+      target: The target group that will be updated
+      <br/>
+      accounts: The accounts will be added
+    </td>
+    <td>true/false</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      deleteAccounts(origin, target, accounts) <br/>
+      <strong>Delete the group's accounts</strong>
+    </td>
+    <td>updateGroup</td>
+    <td>
+      origin: The user's origin group
+      <br/>
+      target: The target group that will be updated
+      <br/>
+      accounts: The accounts will be deleted
+    </td>
+    <td>true/false</td>
+    <td>None</td>
+  </tr>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="query"></a><a href="#query" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>query</h3>
+<h4><a class="anchor" aria-hidden="true" id="group-management"></a><a href="#group-management" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>group_management</h4>
+<table>
+  <tr>
+    <th>name</th>
+    <th>parameters</th>
+    <th>return</th>
+    <th>describe</th>
+  </tr>
+  <tr>
+    <td>
+      checkScope(origin, name) <br/>
+      <strong>Check the target group in the scope of the origin group</strong>
+    </td>
+    <td>
+      origin: The user's origin group
+      <br/>
+      target: The target group
+    </td>
+    <td>true/false</td>
+    <td>The origin group is ancestor of the target group</td>
+  </tr>
+  <tr>
+    <td>
+      queryGroups() <br/>
+      <strong>Query all groups</strong>
+    </td>
+    <td>None</td>
+    <td>All groups</td>
+    <td>None</td>
+  </tr>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="查询类接口"></a><a href="#查询类接口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询类接口</h4>
+<p>查询类接口不需要权限。</p>
+<table>
+  <tr>
+    <th>name</th>
+    <th>parameters</th>
+    <th>return</th>
+    <th>describe</th>
+  </tr>
+  <tr>
+    <td>
+      queryInfo() <br/>
+      <strong>Query the information of group</strong>
+    </td>
+    <td>None</td>
+    <td>Include the name and accounts</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryName() <br/>
+      <strong>Query the name of group</strong>
+    </td>
+    <td>None</td>
+    <td>The name of group</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryAccounts() <br/>
+      <strong>Query the accounts of group</strong>
+    </td>
+    <td>None</td>
+    <td>The accounts of group</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryChild() <br/>
+      <strong>Query the children of group</strong>
+    </td>
+    <td>None</td>
+    <td>The children of group</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryChildLength() <br/>
+      <strong>Query the number of children</strong>
+    </td>
+    <td>None</td>
+    <td>The number of children</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryParent() <br/>
+      <strong>Query the parent of group</strong>
+    </td>
+    <td>None</td>
+    <td>The parent of group</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      inGroup() <br/>
+      <strong>Check the user in the group</strong>
+    </td>
+    <td>None</td>
+    <td>true/false</td>
+    <td>None</td>
+  </tr>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/0.17/cita/system/permission"><span class="arrow-prev">← </span><span>Permission Management</span></a><a class="docs-next button" href="/en-US/0.17/cita/system/quota"><span>Quota management</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#接口说明">接口说明</a><ul class="toc-headings"><li><a href="#操作类接口">操作类接口</a></li><li><a href="#query">query</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:en-US","version:0.17"]}}
+              });
+            </script></body></html>

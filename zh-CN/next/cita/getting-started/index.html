@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>快速入门 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。&lt;/p&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="快速入门 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/getting-started">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/welcome">CITAHub 文档概览</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/cita-intro">关于 CITA</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/next/cita/getting-started">快速入门</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/huawei">华为云一键部署</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">配置</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/config-overview">配置概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/chain-configuration">链级配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/service-config">微服务配置</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统管理</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/contracts">系统合约</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/node">节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/permission">权限管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/user">用户管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/quota">配额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/price">配额价格管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/snapshot">快照</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/batch-tx">批量交易</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/emergency-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/amend">数据订正</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/fee-back">出块奖励返回</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/version">协议版本号管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/auto-exec">自动执行</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc-types">JSON RPC 类型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc-error-code">JSON RPC 错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统合约地址</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/sys">系统配置合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/node">共识节点管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/auth">授权管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/permission">权限合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role-management">角色管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role-auth">角色授权合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role">角色合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/group-management">组管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/group">组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/all-groups">所有组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/quota-manager">配额管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/quota-price">配额价格管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/batch">批量交易合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/emergency-brake">紧急制动合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/admin">管理员合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/auto-exec">自动执行合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/error">系统合约错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构设计</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/architecture">架构设计</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/components">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/consensus">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/view">视图</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/crosschain/crosschain-contract-example">跨链</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议升级</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/overview">协议升级概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/v0">v0 协议</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/v1">v1 协议</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">参考</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/reference/addresses">系统保留地址</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/reference/glossary">词汇表</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/cli/cli-intro">CITA-CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SDK</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/javascript-sdk">CITA JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/java-sdk">CITA Java SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/swift-sdk">CITA Swift SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/ruby-sdk">CITA Ruby SDK</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rebirth</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/rebirth/rebirth-intro">Rebirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/contributing">社区贡献</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/roadmap">开发路线图</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">快速入门</h1></header><article><div><span><p>CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。</p>
+<blockquote>
+<ul>
+<li>如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考<a href="./huawei">云服务支持</a>。</li>
+<li>如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 CITA 测试链。测试链的水龙头的地址为：<a href="https://dapp.cryptape.com/faucet/">https://dapp.cryptape.com/faucet/</a>, 可以在这里领取 Testnet 的代币。测试链的内核 CITA 的版本为 <a href="https://github.com/cryptape/cita/releases/tag/v0.20.2"><code>v0.20.2</code></a>。该测试链由4个节点组成，各节点的 ip 地址和端口如下：</li>
+</ul>
+</blockquote>
+<pre><code class="hljs">node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.cryptape.com
+node 2: 116.62.221.89:1338  
+node 3: 47.96.84.91:1339  
+node 4: 121.43.163.31:1340  
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="依赖"></a><a href="#依赖" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>依赖</h2>
+<h3><a class="anchor" aria-hidden="true" id="系统平台要求"></a><a href="#系统平台要求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>系统平台要求</h3>
+<p>系统需支持 Docker 的安装。</p>
+<p>CITA 的 Docker 镜像托管在 <a href="https://hub.docker.com/r/cita/cita-build/">DockerHub</a> 。 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。</p>
+<h3><a class="anchor" aria-hidden="true" id="安装-docker"></a><a href="#安装-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 Docker</h3>
+<p>参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/install/">在线资料</a>。</p>
+<p>可使用下面的命令来检查 Docker 是否已经成功安装：</p>
+<pre><code class="hljs">$ sudo docker run hello-world
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="获取-docker-镜像"></a><a href="#获取-docker-镜像" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取 Docker 镜像</h3>
+<p>CITA 的 Docker 镜像托管在 <a href="https://hub.docker.com/r/cita/cita-build/">DockerHub</a>。</p>
+<p>可以使用 <code>docker pull</code> 命令直接从 DockerHub 获取， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/pull.html">在线资料</a>。</p>
+<p>对于内网环境，也可以通过 <code>docker save</code> 和 <code>docker load</code> 传递镜像， 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/image/other.html">在线资料</a>。</p>
+<h2><a class="anchor" aria-hidden="true" id="编译-cita"></a><a href="#编译-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编译 CITA</h2>
+<blockquote>
+<p>下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 <a href="https://github.com/cryptape/cita/releases">CITA 正式发布版本</a>，直接下载你想要的版本发布包然后部署即可。</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="获取源码"></a><a href="#获取源码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取源码</h3>
+<p>从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">clone</span> https://github.com/cryptape/cita.git</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita</span>
+<span class="hljs-meta">$</span><span class="bash"> git submodule init</span>
+<span class="hljs-meta">$</span><span class="bash"> git submodule update</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="编译源代码"></a><a href="#编译源代码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编译源代码</h3>
+<p>可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make debug</span>
+</code></pre>
+<p>或者</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make release</span>
+</code></pre>
+<p>编译生成的文件在发布件目录 <code>target/install</code> 下，生产环境下只需要这个目录即可。</p>
+<blockquote>
+<p><strong>Docker env 和 daemon 使用说明</strong></p>
+<ul>
+<li><p>在源码根目录下，我们提供了 <code>env.sh</code> 脚本，封装了 Docker 相关的操作。 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。 例如：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make debug</span>
+</code></pre>
+<p>即表示在 Docker 环境中运行 <code>make debug</code>。</p></li>
+<li><p>不带任何参数运行 <code>./env.sh</code>，将直接获取一个 Docker 环境的 shell。</p></li>
+<li><p>还提供了 <code>daemon.sh</code>，用法同 <code>env.sh</code>，效果是后台运行。</p></li>
+</ul>
+<p><strong>Notice</strong></p>
+<ul>
+<li><p>如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 <code>./env.sh</code> 会出现如下错误：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh</span>
+error: failed switching to "user": unable to find user user: no matching entries in passwd file
+</code></pre>
+<p>因此要保证操作使用的始终是同一个系统用户。</p></li>
+<li><p>如果出现 Docker 相关的报错，可以执行如下命令并重试：<br>
+shell
+docker kill $(docker ps -a -q)</p></li>
+</ul>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="部署cita"></a><a href="#部署cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署CITA</h2>
+<h3><a class="anchor" aria-hidden="true" id="配置节点"></a><a href="#配置节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置节点</h3>
+<ul>
+<li><p>先切换到发布件目录</p>
+<ul>
+<li>如果之前选择从源码开始编译：</li>
+</ul>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> target/install</span>
+</code></pre>
+<ul>
+<li>如果之前选择下载编译好的发布包：</li>
+</ul>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita_secp256k1_sha3/</span>
+</code></pre></li>
+<li><p>使用发布件目录中的 <code>create_cita_config.py</code> 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
+</code></pre>
+<p>节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：</p>
+<ul>
+<li>test-chain/0</li>
+<li>test-chain/1</li>
+<li>test-chain/2</li>
+<li>test-chain/3</li>
+</ul></li>
+<li><p>执行以下命令依次配置四个节点</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>
+<span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/2</span>
+<span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/3</span>
+</code></pre></li>
+</ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<ul>
+<li><p>生产环境中，用户需要根据实际情况更改默认配置。使用命令 <code>./scripts/create_cita_config.py -h</code> 来获得详细帮助信息，允许自定义的配置包括：</p>
+<ul>
+<li>系统管理员账户</li>
+<li>出块时间间隔</li>
+<li>累积多少历史交易量后进行重复交易的检查</li>
+<li>系统合约详细参数</li>
+<li>共识节点地址</li>
+</ul>
+<p>该工具更详细的使用说明请参考 <a href="./configuration/chain-configuration">Config Tool</a>。</p></li>
+<li><p>对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。</p></li>
+<li><p>在不同服务器部署多条链主要规划相关端口配置，参见 <a href="./configuration/chain-configuration">Config_Tool的功能和用法</a>。在同一台服务器上部署多条链，除了规划端口配置外，由于 <code>RabbitMQ</code> 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span>  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes <span class="hljs-string">"127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"</span></span>
+</code></pre>
+<p>运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个Docker 里运行。</p></li>
+</ul>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="节点命令"></a><a href="#节点命令" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点命令</h3>
+<p>通过 <code>./bin/cita</code> 查看节点命令。</p>
+<pre><code class="hljs css language-shell">Usage: cita &lt;command&gt; &lt;node&gt; [options]
+where &lt;command&gt; is one of the following:
+    { help | setup | start | stop | restart | ping
+      top | backup | clean | logs | logrotate }
+
+Run `cita help` for more detailed information.
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="启动节点"></a><a href="#启动节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动节点</h3>
+<p>执行以下命令依次启动四个节点，该命令正常情况下不会返回，节点后台运行。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./daemon.sh ./bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> ./daemon.sh ./bin/cita start <span class="hljs-built_in">test</span>-chain/1</span>
+<span class="hljs-meta">$</span><span class="bash"> ./daemon.sh ./bin/cita start <span class="hljs-built_in">test</span>-chain/2</span>
+<span class="hljs-meta">$</span><span class="bash"> ./daemon.sh ./bin/cita start <span class="hljs-built_in">test</span>-chain/3</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="停止节点"></a><a href="#停止节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>停止节点</h3>
+<p>以“0”节点为例，执行以下命令即可停止“0”节点：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita stop <span class="hljs-built_in">test</span>-chain/0</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="其他操作"></a><a href="#其他操作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>其他操作</h3>
+<p>更多其他操作使用以下命令查看帮助信息：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita <span class="hljs-built_in">help</span></span>
+</code></pre>
+<blockquote>
+<p><strong>Notice</strong></p>
+<ul>
+<li><p>请不要先进到 bin 目录，再执行以上的部署操作，错误示范：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> bin</span>
+<span class="hljs-meta">$</span><span class="bash"> ./env.sh .cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+</code></pre></li>
+<li><p>请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。</p></li>
+<li><p>请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突</p></li>
+</ul>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="使用docker-compose"></a><a href="#使用docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用docker-compose</h3>
+<p>前面运行节点的方法，是将所有节点放在同一个容器中，并且容器没有做网络隔离。</p>
+<p>对于复杂的测试场景，会造成一些不便。</p>
+<p>使用<code>docker-compose</code>可以让每个节点单独一个容器，网络也是隔离的。</p>
+<h5><a class="anchor" aria-hidden="true" id="安装docker-compose"></a><a href="#安装docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装docker-compose</h5>
+<pre><code class="hljs">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="准备发布件"></a><a href="#准备发布件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>准备发布件</h5>
+<pre><code class="hljs">latest_release_tag=$(curl --silent &quot;https://api.github.com/repos/cryptape/cita/releases/latest&quot; | grep '&quot;tag_name&quot;:' | sed -E 's/.*&quot;([^&quot;]+)&quot;.*/\1/')
+echo &quot;latest release tag: $latest_release_tag&quot;
+wget https://github.com/cryptape/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
+tar zxvf cita_secp256k1_sha3.tar.gz
+cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node0
+cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node1
+cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
+cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
+
+wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_test/docker-compose.yaml
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="启动"></a><a href="#启动" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动</h5>
+<pre><code class="hljs">USER_ID=`id -u $USER` docker-compose up
+</code></pre>
+<p>后台启动</p>
+<pre><code class="hljs">USER_ID=`id -u $USER` docker-compose up -d
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="停止"></a><a href="#停止" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>停止</h5>
+<pre><code class="hljs">docker-compose down
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="进入容器内执行命令"></a><a href="#进入容器内执行命令" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>进入容器内执行命令</h5>
+<pre><code class="hljs">docker-compose exec node0 /usr/bin/gosu user /bin/bash
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="日志"></a><a href="#日志" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>日志</h5>
+<p>容器默认输出的是<code>chain</code>微服务的日志</p>
+<pre><code class="hljs">docker-compose logs -f
+</code></pre>
+<p>也可以直接到挂载目录下查看所有微服务的日志</p>
+<pre><code class="hljs">tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="验证"></a><a href="#验证" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证</h2>
+<ul>
+<li><p>查询节点个数</p>
+<p>Request:</p>
+<pre><code class="hljs css language-shell">./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
+</code></pre>
+<p>Result:</p>
+<pre><code class="hljs css language-shell">{
+"jsonrpc": "2.0",
+"id": 74,
+"result": "0x3"
+}
+</code></pre></li>
+<li><p>查询当前块高度。</p>
+<p>Request:</p>
+<pre><code class="hljs css language-shell">./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+</code></pre>
+<p>Result:</p>
+<pre><code class="hljs css language-shell">{
+"jsonrpc": "2.0",
+"id": 83,
+"result": "0x8"
+}
+</code></pre>
+<p>返回块高度，表示节点已经开始正常出块。</p></li>
+</ul>
+<p>!&gt; 在发布件目录(target/install)下运行节点时，可选择使用<code>./env.sh</code></p>
+<p>更多 API（如合约调用、交易查询）请参见<a href="./rpc-guide/rpc">RPC 调用</a>。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/cita-intro"><span class="arrow-prev">← </span><span>关于 CITA</span></a><a class="docs-next button" href="/zh-CN/next/cita/huawei"><span>华为云一键部署</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#依赖">依赖</a><ul class="toc-headings"><li><a href="#系统平台要求">系统平台要求</a></li><li><a href="#安装-docker">安装 Docker</a></li><li><a href="#获取-docker-镜像">获取 Docker 镜像</a></li></ul></li><li><a href="#编译-cita">编译 CITA</a><ul class="toc-headings"><li><a href="#获取源码">获取源码</a></li><li><a href="#编译源代码">编译源代码</a></li></ul></li><li><a href="#部署cita">部署CITA</a><ul class="toc-headings"><li><a href="#配置节点">配置节点</a></li><li><a href="#节点命令">节点命令</a></li><li><a href="#启动节点">启动节点</a></li><li><a href="#停止节点">停止节点</a></li><li><a href="#其他操作">其他操作</a></li><li><a href="#使用docker-compose">使用docker-compose</a></li></ul></li><li><a href="#验证">验证</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:zh-CN","version:next"]}}
+              });
+            </script></body></html>

@@ -1,0 +1,842 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>权限管理 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 实现了对账户的权限管理，并支持基于角色的权限管理。&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.18"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="权限管理 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 实现了对账户的权限管理，并支持基于角色的权限管理。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>0.18</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/0.18/cita/system/permission">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/welcome">关于 CITA</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/cita-intro">关于 CITA</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">快速入门</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/chain/getting-started">快速开始</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/chain/config-tool">链级配置</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统管理</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/system/node">节点管理</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/0.18/cita/system/permission">权限管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/system/user"> 用户管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/system/quota">份额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/system/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/system/system">系统配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/system/snapshot">快照</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/system/batch-tx"> 批量交易</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/rpc-guide/rpc-types">JSON RPC 类型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/rpc-guide/rpc-error-code">JSON RPC 错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构设计</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/architecture/architecture">架构设计</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/architecture/components">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/architecture/consensus">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/architecture/view">视图</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/crosschain/crosschain-contract-example">跨链合约示例</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">参考</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/reference/addresses">系统保留地址列表</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/cita/reference/glossary">词汇表</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/toolchain/cli/cli-intro">CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">ReBirth</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/toolchain/rebirth/rebirth-intro">ReBirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.18/contributing">贡献代码</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">权限管理</h1></header><article><div><span><p>CITA 实现了对账户的权限管理，并支持基于角色的权限管理。</p>
+<p>CITA 通过智能合约的方式来对权限进行管理。</p>
+<h2><a class="anchor" aria-hidden="true" id="账户概述"></a><a href="#账户概述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>账户概述</h2>
+<ul>
+<li>账户(account)： 链上唯一的标识，权限管理的主体对象。
+<ul>
+<li>外部账户： 拥有公私钥对，可发送交易的用户。</li>
+<li>合约账户： 拥有相关的代码(code)及存储(storage)。</li>
+</ul></li>
+</ul>
+<p>目前权限管理针对外部账户进行细粒度管理。CITA 默认集成了 superAdmin 账户，拥有权限管理涉及到的所有权限。在 CITA 启动前可以对 superAdmin 进行配置。 在权限系统开启时，由用户生成的外部账户，在 CITA 系统中没有任何权限，需要 superAdmin 对其进行授权。</p>
+<p>权限管理默认未开启，配置相关信息查看<a href="./chain/config-tool">系统合约</a></p>
+<h2><a class="anchor" aria-hidden="true" id="权限管理概述"></a><a href="#权限管理概述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>权限管理概述</h2>
+<p>权限(permission)在此系统中的定义为多个资源(resource)的集合，其中资源(resource)为一个合约地址及一个函数签名。</p>
+<h3><a class="anchor" aria-hidden="true" id="系统默认权限类型"></a><a href="#系统默认权限类型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>系统默认权限类型</h3>
+<p>用户可自定义权限，其中系统内置了几种权限(禁止对其进行删除操作)，如下所示：</p>
+<ul>
+<li><code>sendTx</code>: 表示发交易权限</li>
+<li><code>createContract</code>: 表示创建合约权限</li>
+<li><code>newPermission</code>: 表示创建一个新的权限权限</li>
+<li><code>deletePermission</code>: 表示删除一个权限权限</li>
+<li><code>updatePermission</code>: 表示更新一个权限权限</li>
+<li><code>setAuth</code>: 表示对账号进行授权权限</li>
+<li><code>cancelAuth</code>: 表示对帐号取消授权权限</li>
+<li><code>newRole</code>: 表示创建一个新的角色权限</li>
+<li><code>deleteRole</code>: 表示删除一个角色权限</li>
+<li><code>updateRole</code>: 表示更新一个角色权限</li>
+<li><code>setRole</code>: 表示对账号授予角色权限</li>
+<li><code>cancelRole</code>: 表示对帐号取消授予角色权限</li>
+<li><code>newGroup</code>: 表示创建一个新组权限</li>
+<li><code>deleteGroup</code>: 表示删除一个组权限</li>
+<li><code>updateGroup</code>: 表示更新一个组权限</li>
+<li><code>newNode</code>: 表示增加普通节点权限</li>
+<li><code>deleteNode</code>: 表示删除节点权限</li>
+<li><code>updateNode</code>: 表示更新节点权限</li>
+<li><code>accountQuota</code>: 表示账户配额设置权限</li>
+<li><code>blockQuota</code>: 表示块配额设置权限</li>
+</ul>
+<p>系统内置了 superAdmin 的帐号，其拥有以上所有权限，可对其进行正常的权限管理。默认配置情况下其他普通账户也拥有以上权限，建议在初始化 CITA 系统前对权限管理进行配置。</p>
+<h3><a class="anchor" aria-hidden="true" id="权限管理合约接口"></a><a href="#权限管理合约接口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>权限管理合约接口</h3>
+<h4><a class="anchor" aria-hidden="true" id="操作类接口"></a><a href="#操作类接口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作类接口</h4>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>需要权限</th>
+    <th>入参</th>
+    <th>返回值</th>
+    <th>详细描述</th>
+  </tr>
+  <tr>
+    <td>
+      newPermission(name, conts, funcs) <br/>
+      <strong>创建新权限</strong>
+    </td>
+    <td>newPermission</td>
+    <td>
+      name: 权限的名称
+      <br/>
+      conts: 权限包含的合约地址的集合
+      <br/>
+      funcs: 权限包含的的函数签名的集合
+    </td>
+    <td>新权限的地址 (Address)</td>
+    <td>成功后即生成了一个新的权限类型</td>
+  </tr>
+  <tr>
+    <td>
+      deletePermission(permission) <br/>
+      <strong>删除权限</strong>
+    </td>
+    <td>deletePermission</td>
+    <td>permission: 权限地址 </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后权限不可用</td>
+  </tr>
+  <tr>
+    <td>
+      updatePermissionName(permission, name) <br/>
+      <strong>更新权限名称</strong>
+    </td>
+    <td>updatePermission</td>
+    <td>
+      permission: 权限地址
+      <br/>
+      name: 新的权限名称
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>更新权限的名称，新名称可任意指定，权限之间的名称可重复</td>
+  </tr>
+  <tr>
+    <td>
+      addResources(permission, conts. funcs) <br/>
+      <strong>添加资源</strong>
+    </td>
+    <td>updatePermission</td>
+    <td>
+      permission: 操作的权限对象
+      <br/>
+      conts: 添加的合约地址的集合
+      <br/>
+      funcs: 添加的函数签名的集合
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后为指定的权限添加新的资源</td>
+  </tr>
+  <tr>
+    <td>
+      deleteResources(permission, conts. funcs) <br/>
+      <strong>删除资源</strong>
+    </td>
+    <td>updatePermission</td>
+    <td>
+      permission: 操作的权限对象
+      <br/>
+      conts: 删除的合约地址的集合
+      <br/>
+      funcs: 删除的函数签名的集合
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后删除指定权限的指定资源</td>
+  </tr>
+  <tr>
+    <td>
+      setAuthorization(account, permission) <br/>
+      <strong>授权</strong>
+    </td>
+    <td>setAuth</td>
+    <td>
+      account: 授权的帐号对象
+      <br/>
+      permission: 授权的权限对象
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号拥有所授予的权限</td>
+  </tr>
+  <tr>
+    <td>
+      setAuthorizations(account, permissions) <br/>
+      <strong>多次授权</strong>
+    </td>
+    <td>setAuth</td>
+    <td>
+      account: 授权的帐号对象
+      <br/>
+      permissions: 授权的权限对象的集合
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号拥有所授予的权限集合</td>
+  </tr>
+  <tr>
+    <td>
+      cancelAuthorization(account, permission) <br/>
+      <strong>取消授权</strong>
+    </td>
+    <td>cancelAuth</td>
+    <td>
+      account: 取消授权的帐号对象
+      <br/>
+      permissions: 取消授权的权限对象
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号不再拥有此权限</td>
+  </tr>
+  <tr>
+    <td>
+      cancelAuthorizations(account, permissions) <br/>
+      <strong>多次取消授权</strong>
+    </td>
+    <td>cancelAuth</td>
+    <td>
+      account: 取消授权的帐号对象
+      <br/>
+      permissions: 取消授权的权限对象集合
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号不再拥有此权限集合</td>
+  </tr>
+  <tr>
+    <td>
+      clearAuthorization(account) <br/>
+      <strong>取消账户的所有授权</strong>
+    </td>
+    <td>cancelAuth</td>
+    <td>
+      account: 取消授权的帐号对象
+    </td>
+    <td>操作是否成功 (bool)</td>
+    <td>成功后帐号不再拥有任何权限</td>
+  </tr>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="查询类接口"></a><a href="#查询类接口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询类接口</h4>
+<p>查询类接口的调用不需要权限。</p>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>入参</th>
+    <th>返回值</th>
+    <th>详细描述</th>
+  </tr>
+  <tr>
+    <td>
+      queryAllAccounts()<br/>
+      <strong>查询所有帐号</strong>
+    </td>
+    <td>None</td>
+    <td>所有拥有权限的账号集合</td>
+    <td>查询到的账号为权限管理记录的所有帐号</td>
+  </tr>
+  <tr>
+    <td>
+      queryPermissions(account) <br/>
+      <strong>查询帐号权限</strong>
+    </td>
+    <td>
+      account: 查询的帐号
+    </td>
+    <td>帐号拥有的权限集合</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryAccounts(permission) <br/>
+      <strong>查询拥有权限的账号</strong>
+    </td>
+    <td>permission: 权限地址</td>
+    <td>拥有此权限的所有帐号集合</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      checkPermission(account, permission) <br/>
+      <strong>检查权限</strong>
+    </td>
+    <td>
+      account: 鉴权的帐号对象
+      <br/>
+      permission: 权限地址
+    </td>
+    <td>判断此帐号是否拥有此权限</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      checkResource(account, cont, func) <br/>
+      <strong>检查资源</strong>
+    </td>
+    <td>
+      account: 鉴权的帐号对象
+      <br/>
+      cont: 合约地址
+      <br/>
+      func: 函数签名
+    </td>
+    <td>判断此帐号是否拥有此资源</td>
+    <td>其中合约地址及函数签名组成了一个资源</td>
+  </tr>
+  <tr>
+    <td>
+      inPermission(permission, cont, func) <br/>
+      <strong>检查权限</strong>
+    </td>
+    <td>
+      permission: 判断的权限对象
+      <br/>
+      cont: 合约地址
+      <br/>
+      func: 函数签名
+    </td>
+    <td>判断此权限是否拥有合约及函数</td>
+    <td>其中合约地址及函数签名组成了一个资源</td>
+  </tr>
+  <tr>
+    <td>
+      queryInfo()<br/>
+      <strong>查询权限信息</strong>
+    </td>
+    <td>None</td>
+    <td>权限的所有信息</td>
+    <td>信息包括名称及包含的资源集合</td>
+  </tr>
+  <tr>
+    <td>
+      queryName()<br/>
+      <strong>查询权限名称</strong>
+    </td>
+    <td>None</td>
+    <td>权限的名称</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      queryResource()<br/>
+      <strong>查询权限资源</strong>
+    </td>
+    <td>None</td>
+    <td>权限的资源</td>
+    <td>None</td>
+  </tr>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="权限管理操作实例"></a><a href="#权限管理操作实例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>权限管理操作实例</h2>
+<h3><a class="anchor" aria-hidden="true" id="修改系统配置"></a><a href="#修改系统配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>修改系统配置</h3>
+<ul>
+<li><p>演示中 superAdmin 密钥对如下：</p>
+<ul>
+<li>公钥： <code>0x9dcd6b234e2772c5451fd4ccf7582f4283140697</code></li>
+<li>私钥： <code>993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9</code></li>
+</ul></li>
+<li><p>通过以下命令生成各节点。</p>
+<pre><code class="hljs">    ``` shell
+    $ ./scripts/create_cita_config.py create --nodes &quot;127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003&quot; \
+                                             --super_admin &quot;0x9dcd6b234e2772c5451fd4ccf7582f4283140697&quot; \
+                                             --contract_arguments SysConfig.checkPermission=true
+    ```
+</code></pre></li>
+</ul>
+<p>用户生成普通账户，由 super_admin 账户对其进行授权，实现权限管理。使用 super_admin 的私钥调用的接口由管理员执行，使用用户 john 的私钥由用户 john 执行。</p>
+<h3><a class="anchor" aria-hidden="true" id="生成普通账户"></a><a href="#生成普通账户" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成普通账户</h3>
+<p>用户可以自己生成公私钥对。也可以使用 CITA 提供的工具<code>create_key_addr</code>生成。例如用户 john 通过工具生成如下密钥。</p>
+<p>根据输入的字符串&quot;john&quot;使用<code>./bin/create_key_addr /tmp/privKey &quot;john&quot;</code>命令生成账户地址:</p>
+<ul>
+<li><code>/tmp/privKey</code>文件内容为工具生成的私钥</li>
+<li><code>john</code>为当前目录下生成以之命名的文件记录账户地址。</li>
+</ul>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash">./bin/create_key_addr /tmp/privKey <span class="hljs-string">"john"</span></span>
+<span class="hljs-meta">$</span><span class="bash">cat john</span>
+0x6212dd3506a68d6ec231177c6cb9c46dcfd43190
+<span class="hljs-meta">$</span><span class="bash">cat /tmp/privKey</span>
+a71f68fd5f0a64c0a66737357ec6e491c5bab8e001f8d7116252c22a9a4f03b4
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="部署合约"></a><a href="#部署合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署合约</h3>
+<p>拥有私钥用户 john 需要部署如下合约，默认时用户 john 没有部署权限，需要由 superAdmin 授权。</p>
+<p>合约内容：</p>
+<pre><code class="hljs css language-shell">pragma solidity ^0.4.16;
+
+
+contract Advance {
+    uint  count = 0;
+
+    function add() {
+        count += 1;
+    }
+
+    function get() constant returns(uint) {
+        return count;
+    }
+
+    function reset() {
+        count = 0;
+    }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="获得合约的字节码"></a><a href="#获得合约的字节码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获得合约的字节码</h4>
+<p>用户 john 执行如下操作：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash">solc /home/king/work/doc/Advance.sol --bin</span>
+Binary:
+606060405260008055341561001357600080fd5b60f2806100216000396000f3006060604052600436106053576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f2be91f1460585780636d4ce63c14606a578063d826f88f146090575b600080fd5b3415606257600080fd5b606860a2565b005b3415607457600080fd5b607a60b4565b6040518082815260200191505060405180910390f35b3415609a57600080fd5b60a060bd565b005b60016000808282540192505081905550565b60008054905090565b600080819055505600a165627a7a72305820906dc3fa7444ee6bea2e59c94fe33064e84166909760c82401f65dfecbd307d50029
+</code></pre>
+<p>得到合约字节码后，就可以将其部署到 CITA 链上了，部署的方法已经用 python 脚本封装，只需要传入私钥和字节码即可。python 脚本存放的位置为<code>scripts/txtool/txtool</code>，具体安装和使用方法可以参考目录下的<code>README.md</code>文件。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#####用户john部署合约</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 make_tx.py --privkey <span class="hljs-string">"a71f68fd5f0a64c0a66737357ec6e491c5bab8e001f8d7116252c22a9a4f03b4"</span> --code <span class="hljs-string">"606060405260008055341561001357600080fd5b60f2806100216000396000f3006060604052600436106053576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f2be91f1460585780636d4ce63c14606a578063d826f88f146090575b600080fd5b3415606257600080fd5b606860a2565b005b3415607457600080fd5b607a60b4565b6040518082815260200191505060405180910390f35b3415609a57600080fd5b60a060bd565b005b60016000808282540192505081905550565b60008054905090565b600080819055505600a165627a7a72305820906dc3fa7444ee6bea2e59c94fe33064e84166909760c82401f65dfecbd307d50029"</span></span>
+{
+    "jsonrpc":"2.0",
+    "id":2,
+    "result":"0x0"
+}
+<span class="hljs-meta">$</span><span class="bash">python3 send_tx.py</span>
+{
+    "jsonrpc":"2.0",
+    "id":1,
+    "result":
+    {
+        "hash":"0x4702c79ce76e861c740601d559c1623365fcb5a281d9710ea68710080a93d571",
+        "status":"Ok"
+    }
+}
+</code></pre>
+<p>其中<code>--privkey</code>为用户 john 的账号私钥，<code>--code</code>为<code>Advance.sol</code>的字节码。 status 为 OK，默认配置时表示合约已经发送成功。但此时我们已修改了默认配置，打开权限管理，首先需要获得发送交易及创建合约的权限。</p>
+<p>这种情况获得的回执并没有合约地址(<code>contractAddress:null</code>)、并且<code>errorMessage:&quot;No transaction permission.&quot;</code>，表示此账户还未获得发送交易的权限。回执信息如下：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash">python3 get_receipt.py</span>
+{
+    "contractAddress": null,
+    "cumulativeGasUsed": "0x0",
+    "logs": [],
+    "blockHash": "0xd527e1c6a43e8096d52d83a2dfe38df7bb33e8abc29108c178c0ac713d0e82e3",
+    "transactionHash": "0x4702c79ce76e861c740601d559c1623365fcb5a281d9710ea68710080a93d571",
+    "root": null,
+    "errorMessage": "No transaction permission.",
+    "blockNumber": "0x55f9",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "transactionIndex": "0x0",
+    "gasUsed": "0x0"
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="部署合约-1"></a><a href="#部署合约-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署合约</h4>
+<p>由于用户 john 的账户没有部署权限，需要通过 superAdmin 对其授 sendTx 发送交易及 createContract 创建合约权限。</p>
+<ul>
+<li><p>授予发送交易权限</p>
+<pre><code class="hljs">    ```shell
+    ######调用系统合约setAuthorization对用户john授予sendTx权限，createContract对应的ID为0x1，ID作为setAuthorization的第二个参数
+    $python3 make_tx.py --privkey &quot;993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9&quot; --to &quot;ffffffffffffffffffffffffffffffffff020004&quot; --code &quot;0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000001&quot;
+    $python3 send_tx.py
+    $python3 get_receipt.py
+    ```
+</code></pre></li>
+</ul>
+<p>其中<code>--to</code>为权限管理的系统合约地址，<code>--code</code>前<code>0x0f5aa9f3</code>为系统合约的 setAuthorization 接口，其后紧跟需要授权地址和所授权限。<code>0x1</code>表示 sendTx 发送权限。</p>
+<ul>
+<li><p>授予创建合约权限</p>
+<pre><code class="hljs">    ```shell
+    ######调用系统合约setAuthorization对用户john授予createContract权限，createContract对应的ID为0x2，ID作为setAuthorization的第二个参数
+    $python3 make_tx.py --privkey &quot;993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9&quot; --to &quot;ffffffffffffffffffffffffffffffffff020004&quot; --code &quot;0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000002&quot;
+    $python3 send_tx.py
+    $python3 get_receipt.py
+    ```
+</code></pre></li>
+</ul>
+<p>其中<code>--to</code>为权限管理的系统合约地址，<code>--code</code>前<code>0x0f5aa9f3</code>为系统合约的 setAuthorization 接口，其后紧跟需要授权地址和所授权限。0x2 表示 createContract 创建合约权限。</p>
+<ul>
+<li>再次部署合约</li>
+</ul>
+<p>权限授予成功后用户 john 重做第一步，成功获得合约地址，表示合约部署成功。成功回执信息如下：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#####再次部署合约</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 make_tx.py --privkey <span class="hljs-string">"a71f68fd5f0a64c0a66737357ec6e491c5bab8e001f8d7116252c22a9a4f03b4"</span> --code <span class="hljs-string">"606060405260008055341561001357600080fd5b60f2806100216000396000f3006060604052600436106053576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f2be91f1460585780636d4ce63c14606a578063d826f88f146090575b600080fd5b3415606257600080fd5b606860a2565b005b3415607457600080fd5b607a60b4565b6040518082815260200191505060405180910390f35b3415609a57600080fd5b60a060bd565b005b60016000808282540192505081905550565b60008054905090565b600080819055505600a165627a7a72305820906dc3fa7444ee6bea2e59c94fe33064e84166909760c82401f65dfecbd307d50029"</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 send_tx.py</span>
+<span class="hljs-meta">#</span><span class="bash">python3 get_receipt.py</span>
+{
+    "contractAddress": "0x47113fea5720d201b31ecf82a7da5ea3ed150255",
+    "cumulativeGasUsed": "0xd160",
+    "logs": [],
+    "blockHash": "0x84c43701a3eefdde2a3f3ff8ab823faea8fa2fd59cd691c0f7a704791947e86f",
+    "transactionHash": "0x3593ac7424d1f98f77a705e6c6b1a2e3db99438df0f771ad82ff4a7b00d9865b",
+    "root": null,
+    "errorMessage": null,
+    "blockNumber": "0x564c",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "transactionIndex": "0x0",
+    "gasUsed": "0xd160"
+}
+</code></pre>
+<p>回执<code>errorMessage</code>返回值为 null，此时 Advance 合约由用户 john 成功部署到 CITA 链上。但是此时的合约还没有用户能够使用(superAdmin 除外)，用户 john 需要调用 Advance 合约还需要 superAdmin 用户给予授权。</p>
+<h3><a class="anchor" aria-hidden="true" id="生成新的权限"></a><a href="#生成新的权限" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成新的权限</h3>
+<p>通过 superAdmin 授予用户 john 的账户 newPermission 权限，回执中<code>errorMessage</code>返回值为<code>null</code>，表示成功生成新权限。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#####调用系统合约的newPermission生成新的权限</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 make_tx.py --privkey <span class="hljs-string">"993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9"</span> --to <span class="hljs-string">"ffffffffffffffffffffffffffffffffff020004"</span> --code <span class="hljs-string">"fc4a089c416476616e63655f66756e6374696f6e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000047113fea5720d201b31ecf82a7da5ea3ed15025500000000000000000000000000000000000000000000000000000000000000014f2be91f00000000000000000000000000000000000000000000000000000000"</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 send_tx.py</span>
+<span class="hljs-meta">$</span><span class="bash">python3 get_receipt.py</span>
+{
+  "contractAddress": null,
+  "cumulativeGasUsed": "0xc5a22",
+  "logs": [
+    {
+      "blockHash": "0xf994c2748ec0d09b1233fc25b194872acec15d3fe45dcfd5f632d12bfb3503b1",
+      "transactionHash": "0xfbfb3cdb1d4fa1ca203cc4feaa869e1a0447d035dfac6e48a3e1e71c83f3ca58",
+      "transactionIndex": "0x0",
+      "topics": [
+        "0xb533e8b79dc7485ba7e4435e3395df911c1a3c767225941003d88a7812d216f7"
+      ],
+      "blockNumber": "0x56af",
+      "address": "0x3682affa243cb9536cb6989307c54e388198e709",
+      "transactionLogIndex": "0x0",
+      "logIndex": "0x0",
+      "data": "0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000100000000000000000000000047113fea5720d201b31ecf82a7da5ea3ed15025500000000000000000000000000000000000000000000000000000000000000014f2be91f00000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "blockHash": "0xf994c2748ec0d09b1233fc25b194872acec15d3fe45dcfd5f632d12bfb3503b1",
+      "transactionHash": "0xfbfb3cdb1d4fa1ca203cc4feaa869e1a0447d035dfac6e48a3e1e71c83f3ca58",
+      "transactionIndex": "0x0",
+      "topics": [
+        "0x792f7322d94960c6e90863b5aef39075ca54620cfa13a822081d733f79c48f91",
+        "0x0000000000000000000000003682affa243cb9536cb6989307c54e388198e709",
+        "0x416476616e63655f66756e6374696f6e00000000000000000000000000000000"
+      ],
+      "blockNumber": "0x56af",
+      "address": "0xffffffffffffffffffffffffffffffffff020005",
+      "transactionLogIndex": "0x1",
+      "logIndex": "0x1",
+      "data": "0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000100000000000000000000000047113fea5720d201b31ecf82a7da5ea3ed15025500000000000000000000000000000000000000000000000000000000000000014f2be91f00000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "blockHash": "0xf994c2748ec0d09b1233fc25b194872acec15d3fe45dcfd5f632d12bfb3503b1",
+  "transactionHash": "0xfbfb3cdb1d4fa1ca203cc4feaa869e1a0447d035dfac6e48a3e1e71c83f3ca58",
+  "root": null,
+  "errorMessage": null,
+  "blockNumber": "0x56af",
+  "logsBloom": "0x00000000000000000000000100000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000200000000000000000000080000000100000000000020000000000000000000000000800000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000800000000000000000000000000000000000000000100000000000010000004000000000000000000000000000000000000002000001000000100000000100000",
+  "transactionIndex": "0x0",
+  "gasUsed": "0xc5a22"
+}
+</code></pre>
+<p>其中</p>
+<ul>
+<li><code>--privkey</code> 为 superAdmin 的私钥</li>
+<li><code>--to</code> 为权限管理的合约地址</li>
+<li><code>--code</code> 前<code>0xfc4a089c</code>为 newPermission 接口 hash 值，后面为接口输入的参数 (&quot;Advance_function&quot;,[&quot;0x47113fea5720d201b31ecf82a7da5ea3ed150255&quot;],[&quot;0x4f2be91f&quot;])， <code>0x47113fea5720d201b31ecf82a7da5ea3ed150255</code>为部署合约时生成的合约地址，<code>0x4f2be91f</code>为合约的 add()方法。 执行成功从 get_receipt.py 回执 logsi[0].address 获得新的权限地址<code>0x3682affa243cb9536cb6989307c54e388198e709</code>。目前 newPermission 方法新生成的权限地址记录在<code>logs[0].address</code>中。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="使用新权限"></a><a href="#使用新权限" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用新权限</h3>
+<p>给用户 john 授予新的权限使其可以调用 Advance.sol 合约中的 add 方法。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#####调用系统合约setAuthorization对用户john授予newPermission新生成的权限</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 make_tx.py --privkey <span class="hljs-string">"993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9"</span> --to <span class="hljs-string">"ffffffffffffffffffffffffffffffffff020004"</span> --code <span class="hljs-string">"0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000003682affa243cb9536cb6989307c54e388198e709"</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 send_tx.py</span>
+<span class="hljs-meta">$</span><span class="bash">python3 get_receipt.py</span>
+</code></pre>
+<p>用户 john 获得权限后就能使用 Advance.add 方法，<code>errorMessage:null</code>表示成功调用。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">####用户john调用Advance合约的add方法</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 make_tx.py --privkey <span class="hljs-string">"a71f68fd5f0a64c0a66737357ec6e491c5bab8e001f8d7116252c22a9a4f03b4"</span> --to <span class="hljs-string">"47113fea5720d201b31ecf82a7da5ea3ed150255"</span> --code <span class="hljs-string">"4f2be91f"</span></span>
+<span class="hljs-meta">$</span><span class="bash">python3 send_tx.py</span>
+<span class="hljs-meta">$</span><span class="bash">python3 get_receipt.py</span>
+{
+  "contractAddress": null,
+  "cumulativeGasUsed": "0x4f57",
+  "logs": [],
+  "blockHash": "0xdfab49202b8cd8c85fafab92b0f4e0002162ecfa6a4414c1e5b78ea8b7522796",
+  "transactionHash": "0x7224604ecc51c1f4801ad73123b08001625d1e35c3511a9eb16cced4fc15b58e",
+  "root": null,
+  "errorMessage": null,
+  "blockNumber": "0x5848",
+  "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "transactionIndex": "0x0",
+  "gasUsed": "0x4f57"
+}
+</code></pre>
+<p>用户 john 通过合约的 get 方法可以获得 add 方法的结果。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash">curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"call","params":[{"to":"0x47113fea5720d201b31ecf82a7da5ea3ed150255","data":"0x6d4ce63c"}, "latest"],"id":2}'</span> 127.0.0.1:1337|jq</span>
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+}
+</code></pre>
+<p>其中<code>to</code>参数为 john 之前部署成功后的合约地址、<code>data</code>为合约的 get 方法。result 成功返回调用 add 方法的结果。</p>
+<p>致此用户 john 获得 sendTx、createContract 以及 0x3682affa243cb9536cb6989307c54e388198e709 新权限。操作类接口的其它接口如添加删除资源等参照以上调用方式使用。</p>
+<h3><a class="anchor" aria-hidden="true" id="查询账户权限"></a><a href="#查询账户权限" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询账户权限</h3>
+<p>查询账户权限非发送交易方式，调用合约内容直接调用 jsonrpc 中的<code>call</code>接口。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#####调用系统合约queryPermissions方法查询用户john权限</span></span>
+<span class="hljs-meta">$</span><span class="bash">curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"call","params":[{"to":"0xffffffffffffffffffffffffffffffffff020006","data":"0x945a25550000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd43190"}, "latest"],"id":2}'</span> 127.0.0.1:1337|jq</span>
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000020000000000000000000000003682affa243cb9536cb6989307c54e388198e7090000000000000000000000000000000000000000000000000000000000000001"
+}
+</code></pre>
+<p>其中 params 中:</p>
+<ul>
+<li><code>to</code>参数，为 queryPermissions 所在系统合约地址；</li>
+<li><code>data</code>为调用<code>call</code>的输入参数，由 queryPermissions 的 hash 和 queryPermissions 参数组成。</li>
+</ul>
+<p>result 返回给用户 john 的所有权限，包括 sendTx、createContract 以及 0x3682affa243cb9536cb6989307c54e388198e709 新权限。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">#####调用系统合约queryResource方法查询新权限0x3682affa243cb9536cb6989307c54e388198e709内容</span></span>
+<span class="hljs-meta">$</span><span class="bash">curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"call","params":[{"to":"0x3682affa243cb9536cb6989307c54e388198e709","data":"0x53f4a519"}, "latest"],"id":2}'</span> 127.0.0.1:1337|jq</span>
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": "0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000100000000000000000000000047113fea5720d201b31ecf82a7da5ea3ed15025500000000000000000000000000000000000000000000000000000000000000014f2be91f00000000000000000000000000000000000000000000000000000000"
+}
+</code></pre>
+<p>result 返回新权限包括 john 部署的合约地址及相应 add 方法。</p>
+<p>查询类接口的其它接口参照以上调用方式使用。</p>
+<h2><a class="anchor" aria-hidden="true" id="角色管理概述"></a><a href="#角色管理概述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>角色管理概述</h2>
+<p>在权限之上封装了一层更贴近于现实生活中的角色类型，角色包含多种权限。可对用户赋予角色，则用户拥有角色内的所有权限。</p>
+<ul>
+<li>角色的增删改等相关操作独立于权限管理。操作需要权限管理赋予相应权限，不会造成权限管理的变动。</li>
+<li>关于角色的授权操作： 授予角色时会调用权限管理的授权接口，所以会造成权限管理的变动。 <strong><em>建议角色的授权与权限的授权二者选其一，应该尽量避免同时使用</em></strong></li>
+<li>关于角色的鉴权： 鉴权是在底层操作，底层没有角色的概念，鉴权与权限管理统一。</li>
+</ul>
+<p>用户可自定义角色。</p>
+<h3><a class="anchor" aria-hidden="true" id="角色管理合约接口"></a><a href="#角色管理合约接口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>角色管理合约接口</h3>
+<p>合约接口调用方式与权限管理方式一致。</p>
+<h4><a class="anchor" aria-hidden="true" id="操作类接口-1"></a><a href="#操作类接口-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作类接口</h4>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>需要权限</th>
+    <th>入参</th>
+    <th>返回值</th>
+    <th>详细描述</th>
+  </tr>
+  <tr>
+    <td>
+      newRole(name, permissions)<br/>
+      <strong>新建角色</strong>
+    </td>
+    <td>newRole</td>
+    <td>
+      name: 角色名称
+      <br/>
+      permissions: 权限集合
+    </td>
+    <td>新建的角色的地址</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      deleteRole(role) <br/>
+      <strong>删除角色</strong>
+    </td>
+    <td>deleteRole</td>
+    <td>
+      role: 角色地址
+    </td>
+    <td>删除是否成功 (bool)</td>
+    <td>如果角色已经被授予帐号则需要cancelAuthorization，否则则不需要权限</td>
+  </tr>
+  <tr>
+    <td>
+      updateRoleName(role, name) <br/>
+      <strong>更新角色名称</strong>
+    </td>
+    <td>updateRole</td>
+    <td>
+      role: 更新的角色
+      <br/>
+      name: 更新的新的角色的名称
+    </td>
+    <td>更新是否成功 (bool)</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>
+      addPermissions(role, permissions) <br/>
+      <strong>添加角色权限</strong>
+    </td>
+    <td>updateRole</td>
+    <td>
+      role: 角色
+      <br/>
+      permissions: 添加的权限集合
+    </td>
+    <td>添加是否成功 (bool)</td>
+    <td>如果角色已经被授予帐号则需要调用setAuthorization</td>
+  </tr>
+  <tr>
+    <td>
+      deletePermissions(role, permissions) <br/>
+      <strong>删除角色权限</strong>
+    </td>
+    <td>updateRole</td>
+    <td>
+      role: 角色
+      <br/>
+      permissions: 删除的权限集合
+    </td>
+    <td>删除是否成功 (bool)</td>
+    <td>如果角色已经被授予帐号则需要调用cancelAuthorization</td>
+  </tr>
+  <tr>
+    <td>
+      setRole(account, role) <br/>
+      <strong>设置角色</strong>
+    </td>
+    <td>setRole</td>
+    <td>
+      account: 设置角色的帐号对象
+      <br/>
+      role: 设置的角色
+    </td>
+    <td>设置是否成功 (bool)</td>
+    <td>调用权限管理，把role内的所有permission依次授予account</td>
+  </tr>
+  <tr>
+    <td>
+      cancelRole(account, role) <br/>
+      <strong>取消设置角色</strong>
+    </td>
+    <td>cancelRole</td>
+    <td>
+      account: 取消设置角色的帐号对象
+      <br/>
+      role: 取消设置的角色
+    </td>
+    <td>取消设置是否成功 (bool)</td>
+    <td>调用权限管理，把role内的所有permission依次取消授予account</td>
+  </tr>
+  <tr>
+    <td>
+      clearRole(account) <br/>
+      <strong>取消帐号所有的角色</strong>
+    </td>
+    <td>cancelRole</td>
+    <td>
+      account: 取消设置角色的帐号对象
+    </td>
+    <td>取消设置是否成功 (bool)</td>
+    <td>调用权限管理，把account所有的role内的所有permission依次取消授予account</td>
+  </tr>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="查询类接口-1"></a><a href="#查询类接口-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询类接口</h4>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>入参</th>
+    <th>返回值</th>
+    <th>详细描述</th>
+  </tr>
+  <tr>
+    <td>
+      queryPermissions(role)<br/>
+      <strong>查询角色权限</strong>
+    </td>
+    <td>
+      role: 查询的角色
+    </td>
+    <td>角色的权限集合</td>
+    <td>调用role_management合约</td>
+  </tr>
+  <tr>
+    <td>
+      queryRoles(account)<br/>
+      <strong>查询帐号所有的角色</strong>
+    </td>
+    <td>account: 查询的帐号</td>
+    <td>所有账号拥有的角色集合</td>
+    <td>调用role_management合约</td>
+  </tr>
+  <tr>
+    <td>
+      queryAccounts(role) <br/>
+      <strong>查询拥有此角色的所有帐号</strong>
+    </td>
+    <td>
+      role: 查询的角色
+    </td>
+    <td>帐号集合</td>
+    <td>调用role_management合约</td>
+  </tr>
+  <tr>
+    <td>
+      queryRole() <br/>
+      <strong>查询角色信息</strong>
+    </td>
+    <td>None</td>
+    <td>角色的信息集合</td>
+    <td>调用相应role合约，信息包括角色名称和权限列表</td>
+  </tr>
+  <tr>
+    <td>
+      queryName()<br/>
+      <strong>查询角色名称</strong>
+    </td>
+    <td>None</td>
+    <td>角色的名称</td>
+    <td>调用相应role合约</td>
+  </tr>
+  <tr>
+    <td>
+      queryPermissions()<br/>
+      <strong>查询角色权限</strong>
+    </td>
+    <td>None</td>
+    <td>角色的权限集合</td>
+    <td>调用相应role合约</td>
+  </tr>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/0.18/cita/system/node"><span class="arrow-prev">← </span><span>节点管理</span></a><a class="docs-next button" href="/zh-CN/0.18/cita/system/user"><span>用户管理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#账户概述">账户概述</a></li><li><a href="#权限管理概述">权限管理概述</a><ul class="toc-headings"><li><a href="#系统默认权限类型">系统默认权限类型</a></li><li><a href="#权限管理合约接口">权限管理合约接口</a></li></ul></li><li><a href="#权限管理操作实例">权限管理操作实例</a><ul class="toc-headings"><li><a href="#修改系统配置">修改系统配置</a></li><li><a href="#生成普通账户">生成普通账户</a></li><li><a href="#部署合约">部署合约</a></li><li><a href="#生成新的权限">生成新的权限</a></li><li><a href="#使用新权限">使用新权限</a></li><li><a href="#查询账户权限">查询账户权限</a></li></ul></li><li><a href="#角色管理概述">角色管理概述</a><ul class="toc-headings"><li><a href="#角色管理合约接口">角色管理合约接口</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:zh-CN","version:0.18"]}}
+              });
+            </script></body></html>

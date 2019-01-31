@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>JSON RPC 类型 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;json-rpc-support&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#json-rpc-support&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;JSON-RPC support&lt;/h2&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="JSON RPC 类型 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;json-rpc-support&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#json-rpc-support&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;JSON-RPC support&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/rpc-guide/rpc-types">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/welcome">CITAHub 文档概览</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/cita-intro">关于 CITA</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/getting-started">快速入门</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/huawei">华为云一键部署</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">配置</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/config-overview">配置概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/chain-configuration">链级配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/service-config">微服务配置</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统管理</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/contracts">系统合约</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/node">节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/permission">权限管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/user">用户管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/quota">配额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/price">配额价格管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/snapshot">快照</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/batch-tx">批量交易</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/emergency-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/amend">数据订正</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/fee-back">出块奖励返回</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/version">协议版本号管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/auto-exec">自动执行</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc-types">JSON RPC 类型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc-error-code">JSON RPC 错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统合约地址</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/sys">系统配置合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/node">共识节点管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/auth">授权管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/permission">权限合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role-management">角色管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role-auth">角色授权合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role">角色合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/group-management">组管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/group">组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/all-groups">所有组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/quota-manager">配额管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/quota-price">配额价格管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/batch">批量交易合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/emergency-brake">紧急制动合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/admin">管理员合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/auto-exec">自动执行合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/error">系统合约错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构设计</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/architecture">架构设计</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/components">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/consensus">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/view">视图</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/crosschain/crosschain-contract-example">跨链</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议升级</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/overview">协议升级概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/v0">v0 协议</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/v1">v1 协议</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">参考</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/reference/addresses">系统保留地址</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/reference/glossary">词汇表</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/cli/cli-intro">CITA-CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SDK</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/javascript-sdk">CITA JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/java-sdk">CITA Java SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/swift-sdk">CITA Swift SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/ruby-sdk">CITA Ruby SDK</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rebirth</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/rebirth/rebirth-intro">Rebirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/contributing">社区贡献</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/roadmap">开发路线图</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">JSON RPC 类型</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="json-rpc-support"></a><a href="#json-rpc-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON-RPC support</h2>
+<table>
+<thead>
+<tr><th></th><th style="text-align:center">CITA</th></tr>
+</thead>
+<tbody>
+<tr><td>JSON-RPC 1.0</td><td style="text-align:center">✓</td></tr>
+<tr><td>JSON-RPC 2.0</td><td style="text-align:center">✓</td></tr>
+<tr><td>Batch requests</td><td style="text-align:center">✓</td></tr>
+<tr><td>HTTP</td><td style="text-align:center">✓</td></tr>
+<tr><td>IPC</td><td style="text-align:center"></td></tr>
+<tr><td>WS</td><td style="text-align:center">✓</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="基本类型"></a><a href="#基本类型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>基本类型</h2>
+<h3><a class="anchor" aria-hidden="true" id="quantity"></a><a href="#quantity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Quantity</code></h3>
+<p>大整数类型。</p>
+<ul>
+<li><p>As Parameters</p>
+<ul>
+<li><p><code>0x</code> 开头的十六进制的字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）。</p></li>
+<li><p>必须为字符串格式，即左右有双引号。</p></li>
+<li><p>不可以为空字符串。</p></li>
+<li><p>不可以 <code>0x</code> ，<code>0</code> 必须写做 <code>0x0</code> 。</p></li>
+<li><p>（不建议） 目前兼容使用大写 <code>0X</code> 开头。</p></li>
+<li><p>（不建议） 目前兼容使用大写 <code>A-F</code> 字符。</p></li>
+<li><p>（不建议） 目前兼容十进制字符串（不用 <code>0x</code> 开头且仅含有字符 <code>0-9</code> ）。</p></li>
+<li><p>（不建议） 目前兼容数据高位填充 <code>0</code> 。</p></li>
+<li><p>Examples:</p>
+<ul>
+<li>(Good) <code>&quot;0xab5801a7&quot;</code></li>
+<li>(Bad) <code>&quot;0Xab5801a7&quot;</code></li>
+<li>(Bad) <code>&quot;0xAB5801A7&quot;</code></li>
+<li>(Bad) <code>&quot;2874671527&quot;</code></li>
+<li>(Bad) <code>&quot;0x0000ab5801a7&quot;</code></li>
+<li>(Wrong) <code>0xab5801a7</code></li>
+<li>(Wrong) <code>&quot;0x&quot;</code></li>
+<li>(Wrong) <code>&quot;ab5801a7&quot;</code></li>
+</ul></li>
+</ul></li>
+<li><p>As Returns</p>
+<p><code>0x</code> 前缀的、紧凑型的、十六进制小写字符串。</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="integer"></a><a href="#integer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Integer</code></h3>
+<p>一般整数类型。</p>
+<ul>
+<li><p>As Parameters</p>
+<ul>
+<li><p>十进制数值。</p></li>
+<li><p>Examples:</p>
+<ul>
+<li>(Good) <code>2874671527</code></li>
+<li>(Wrong) <code>&quot;2874671527&quot;</code></li>
+<li>(Wrong) <code>&quot;0xab5801a7&quot;</code></li>
+<li>(Wrong) <code>0xab5801a7</code></li>
+</ul></li>
+</ul></li>
+<li><p>As Returns</p>
+<ul>
+<li>十进制数值。</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data"></a><a href="#data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Data</code></h3>
+<p>不定长二进制数据类型。</p>
+<ul>
+<li><p>As Parameters</p>
+<ul>
+<li><p><code>0x</code> 开头的十六进制的字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）。</p></li>
+<li><p>必须为偶数个字符。</p></li>
+<li><p>使用 <code>0x</code> 表示空数据。</p></li>
+<li><p>（不建议） 目前兼容使用大写 <code>0X</code> 开头。</p></li>
+<li><p>（不建议） 目前兼容使用大写 <code>A-F</code> 字符。</p></li>
+<li><p>Examples:</p>
+<ul>
+<li>(Good) <code>&quot;0x&quot;</code></li>
+<li>(Bad) <code>&quot;0Xab5801a7&quot;</code></li>
+<li>(Bad) <code>&quot;0xAB5801A7&quot;</code></li>
+<li>(Wrong) <code>0xab5801a7</code></li>
+<li>(Wrong) <code>&quot;0xab5801a&quot;</code></li>
+<li>(Wrong) <code>&quot;&quot;</code></li>
+<li>(Wrong) <code>&quot;ab5801a7&quot;</code></li>
+</ul></li>
+</ul></li>
+<li><p>As Returns</p>
+<ul>
+<li><code>0x</code> 开头的十六进制的字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）。</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="data20-data32"></a><a href="#data20-data32" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Data20</code> / <code>Data32</code></h3>
+<p>定长二进制数据。 <code>Data20</code> 为 20 字节， <code>Data32</code> 为 32 字节。</p>
+<ul>
+<li><p>As Parameters</p>
+<ul>
+<li><p><code>0x</code> 开头的十六进制的定长字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）。</p></li>
+<li><p>需要补 <code>0</code> 填充完整。</p>
+<ul>
+<li><code>Data20</code> 有 40 个字符（不包括前缀）。</li>
+<li><code>Data32</code> 有 64 个字符（不包括前缀）。</li>
+</ul></li>
+<li><p>（不建议） 目前兼容使用大写 <code>0X</code> 开头。</p></li>
+<li><p>（不建议） 目前兼容使用大写 <code>A-F</code> 字符。</p></li>
+<li><p>Examples:</p>
+<ul>
+<li>(Good) <code>&quot;0x00000000000000000000000000000000ab5801a7&quot;</code></li>
+<li>(Bad) <code>&quot;0X00000000000000000000000000000000ab5801a7&quot;</code></li>
+<li>(Bad) <code>&quot;0x00000000000000000000000000000000AB5801A7&quot;</code></li>
+<li>(Wrong) <code>&quot;0xab5801a7&quot;</code></li>
+<li>(Wrong) <code>0x00000000000000000000000000000000ab5801a7</code></li>
+</ul></li>
+</ul></li>
+<li><p>As Returns</p>
+<ul>
+<li><code>0x</code> 开头的十六进制的定长字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）。</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="boolean"></a><a href="#boolean" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Boolean</code></h3>
+<p>布尔类型， <code>true</code> 或者 <code>false</code> 。</p>
+<h3><a class="anchor" aria-hidden="true" id="string"></a><a href="#string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>String</code></h3>
+<p>字符串类型。</p>
+<h3><a class="anchor" aria-hidden="true" id="tag"></a><a href="#tag" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Tag</code></h3>
+<p>标签类型，由特定字符串或数字组成的枚举类型。</p>
+<ul>
+<li><p><code>BlockTag</code></p>
+<ul>
+<li><code>String</code> <code>&quot;earliest&quot;</code> - for the earliest/genesis block.</li>
+<li><code>String</code> <code>&quot;latest&quot;</code> - for the latest mined block.</li>
+<li><code>String</code> <code>&quot;pending&quot;</code> - for the pending state/transactions</li>
+</ul></li>
+<li><p><code>EconomicalModel</code></p>
+<ul>
+<li><code>Integer</code> <code>0</code> - the quota economical model.</li>
+<li><code>Integer</code> <code>1</code> - the charge economical model.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="复合类型"></a><a href="#复合类型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>复合类型</h2>
+<h3><a class="anchor" aria-hidden="true" id="blocknumber"></a><a href="#blocknumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>BlockNumber</code></h3>
+<ul>
+<li><code>Quantity | BlockTag</code> ： 通常可以为空，为空时默认值为 <code>&quot;latest&quot;</code> 。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="callrequest"></a><a href="#callrequest" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>CallRequest</code></h3>
+<ul>
+<li><code>from</code>: <code>Data20</code> - <strong>Optional</strong> The address the transaction is sent from.</li>
+<li><code>to</code>: <code>Data20</code> The address the transaction is directed to.</li>
+<li><code>data</code>: <code>Data</code> - <strong>Optional</strong> Hash of the method signature and encoded parameters. For details see <a href="https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI">Ethereum Contract ABI</a>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="filter"></a><a href="#filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Filter</code></h3>
+<ul>
+<li><code>fromBlock</code>: <code>BlockNumber</code> - <strong>Optional</strong> 起始块高度。</li>
+<li><code>toBlock</code>: <code>BlockNumber</code> - <strong>Optional</strong> 中止块高度。</li>
+<li><code>address</code>: <code>Data20 | [Data20]</code> - <strong>Optional</strong> Contract address or a list of addresses from which logs should originate.</li>
+<li><code>topics</code>: <code>[Data32 | [Data32]]</code> - <strong>Optional</strong> Array of <code>Data32</code> topics. Topics are order-dependent. Each topic can also be an array of DATA with &quot;or&quot; options.</li>
+</ul>
+<p>Topics are order-dependent. A transaction with a log with topics [A, B] will be matched by the following topic filters:</p>
+<ul>
+<li><code>[]</code> &quot;anything&quot;</li>
+<li><code>[A]</code> &quot;A in first position (and anything after)&quot;</li>
+<li><code>[null, B]</code> &quot;anything in first position AND B in second position (and anything after)&quot;</li>
+<li><code>[A, B]</code> &quot;A in first position AND B in second position (and anything after)&quot;</li>
+<li><code>[[A, B], [A, B]]</code> &quot;(A OR B) in first position AND (A OR B) in second position (and anything after)&quot;</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="block"></a><a href="#block" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Block</code></h3>
+<ul>
+<li><code>version</code> - Version of Block(0 default)</li>
+<li><code>hash</code> - The hash value of block</li>
+<li><code>header</code>- Block header
+<ul>
+<li><code>timestamp</code> - The timestamp of block</li>
+<li><code>prevHash</code>- hash value of previous block</li>
+<li><code>number</code> - 块高(十六进制)</li>
+<li><code>stateRoot</code>- 状态树根</li>
+<li><code>transactionsRoot</code> - 交易树根</li>
+<li><code>receiptsRoot</code>- 回执树根</li>
+<li><code>gasUsed</code>- The amount of gas used in the block</li>
+<li><code>proof</code>-
+<ul>
+<li><code>BFT</code>
+<ul>
+<li><code>proposal</code>- 提议内容的hash</li>
+<li><code>height</code> - 块高(十进制)</li>
+<li><code>round</code> - 投票轮数</li>
+<li><code>commits</code>- 投票人地址和投票内容签名</li>
+</ul></li>
+</ul></li>
+<li><code>proposer</code>- 提议者</li>
+</ul></li>
+<li><code>body</code>- block body
+<ul>
+<li><code>transactions</code>- 交易列表</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/system/auto-exec"><span class="arrow-prev">← </span><span>自动执行</span></a><a class="docs-next button" href="/zh-CN/next/cita/rpc-guide/rpc"><span>JSON RPC</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#json-rpc-support">JSON-RPC support</a></li><li><a href="#基本类型">基本类型</a><ul class="toc-headings"><li><a href="#quantity"><code>Quantity</code></a></li><li><a href="#integer"><code>Integer</code></a></li><li><a href="#data"><code>Data</code></a></li><li><a href="#data20-data32"><code>Data20</code> / <code>Data32</code></a></li><li><a href="#boolean"><code>Boolean</code></a></li><li><a href="#string"><code>String</code></a></li><li><a href="#tag"><code>Tag</code></a></li></ul></li><li><a href="#复合类型">复合类型</a><ul class="toc-headings"><li><a href="#blocknumber"><code>BlockNumber</code></a></li><li><a href="#callrequest"><code>CallRequest</code></a></li><li><a href="#filter"><code>Filter</code></a></li><li><a href="#block"><code>Block</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:zh-CN","version:next"]}}
+              });
+            </script></body></html>

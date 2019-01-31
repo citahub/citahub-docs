@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>自动执行 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;&lt;code&gt;CITA&lt;/code&gt; 自动执行合约。&lt;/p&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="自动执行 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;&lt;code&gt;CITA&lt;/code&gt; 自动执行合约。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/system/auto-exec">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/welcome">CITAHub 文档概览</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/cita-intro">关于 CITA</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/getting-started">快速入门</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/huawei">华为云一键部署</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">配置</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/config-overview">配置概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/chain-configuration">链级配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/configuration/service-config">微服务配置</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统管理</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/contracts">系统合约</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/node">节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/permission">权限管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/user">用户管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/quota">配额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/price">配额价格管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/snapshot">快照</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/batch-tx">批量交易</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/emergency-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/amend">数据订正</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/fee-back">出块奖励返回</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system/version">协议版本号管理</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/next/cita/system/auto-exec">自动执行</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc-types">JSON RPC 类型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc">JSON RPC</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/rpc-guide/rpc-error-code">JSON RPC 错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统合约地址</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/sys">系统配置合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/node">共识节点管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/auth">授权管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/permission">权限合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role-management">角色管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role-auth">角色授权合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/role">角色合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/group-management">组管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/group">组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/all-groups">所有组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/quota-manager">配额管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/quota-price">配额价格管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/batch">批量交易合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/emergency-brake">紧急制动合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/admin">管理员合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/auto-exec">自动执行合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/system-contract-interface/error">系统合约错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构设计</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/architecture">架构设计</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/components">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/consensus">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/architecture/view">视图</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/crosschain/crosschain-contract-example">跨链</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议升级</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/overview">协议升级概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/v0">v0 协议</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/protocol-upgrade/v1">v1 协议</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">参考</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/reference/addresses">系统保留地址</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/cita/reference/glossary">词汇表</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow">⌃</span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/cli/cli-intro">CITA-CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SDK</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/javascript-sdk">CITA JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/java-sdk">CITA Java SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/swift-sdk">CITA Swift SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/sdk/ruby-sdk">CITA Ruby SDK</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rebirth</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/rebirth/rebirth-intro">Rebirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/next/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow">⌃</span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/next/contributing">社区贡献</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/next/roadmap">开发路线图</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">自动执行</h1></header><article><div><span><p><code>CITA</code> 自动执行合约。</p>
+<h2><a class="anchor" aria-hidden="true" id="简述"></a><a href="#简述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>简述</h2>
+<p>自动执行是底层的一个扩展功能，只有管理员可以注册，注册的自动执行合约需要继承 <code>IAutoExec.sol</code>，实现 autoExec 函数作为自动执行的入口。</p>
+<h3><a class="anchor" aria-hidden="true" id="合约信息"></a><a href="#合约信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约信息</h3>
+<p>合约地址为: <code>0xffffffffffffffffffffffffffffffffff020013</code></p>
+<p>接口签名如下:</p>
+<pre><code class="hljs">======= system/AutoExec.sol:AutoExec =======
+Function signatures:
+844cbc43: autoExec()
+f95b72de: contAddr()
+4420e486: register(address)
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="操作示例"></a><a href="#操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作示例</h2>
+<p><em>首先需要启动一条链，具体方法见快速入门部分</em></p>
+<p>其中<a href="https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/AutoExec.sol">测试合约</a>函数签名如下:</p>
+<pre><code class="hljs">======= contracts/AutoExec.sol:AutoExec =======
+Function signatures:
+844cbc43: autoExec()
+0c55699c: x()
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><code>autoExec()</code>： 为自动执行的入口，实现对 x 加一</li>
+<li><code>x()</code>： 表示获取x数值</li>
+</ul>
+<p>接下来的测试，用 <a href="https://github.com/cryptape/cita-cli">cita-cli</a> 命令行模式（与交互式模式的命令是一致的）进行演示。</p>
+<h3><a class="anchor" aria-hidden="true" id="部署测试合约"></a><a href="#部署测试合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署测试合约</h3>
+<p><em>使用默认私钥进行演示</em></p>
+<ul>
+<li>发送交易</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc sendRawTransaction \
+    --code 0x608060405234801561001057600080fd5b5060cf8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630c55699c14604e578063844cbc43146076575b600080fd5b348015605957600080fd5b506060608a565b6040518082815260200191505060405180910390f35b348015608157600080fd5b5060886090565b005b60005481565b60008081548092919060010191905055505600a165627a7a723058204a422f811fa5ff28e0e79adab0817a6ffe6d283011d9107b68a36bc95091abd30029 \
+    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x4c590891fdfd89d5e064c467ac74196ef4fcba5e80dc670da01800c652650913"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+}
+</code></pre>
+<ul>
+<li>获取交易回执</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x4c590891fdfd89d5e064c467ac74196ef4fcba5e80dc670da01800c652650913 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xae69b6b37e0eae54960a40bcce75f8495f97a1ffb5ec0397a542f8b85469e336"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x28e"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-string">"0xd48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b"</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x1711d"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"logs"</span>: [
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x1711d"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x4c590891fdfd89d5e064c467ac74196ef4fcba5e80dc670da01800c652650913"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>其中合约地址为： <code>0xd48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b</code></p>
+<h3><a class="anchor" aria-hidden="true" id="查询-x-数值"></a><a href="#查询-x-数值" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询 x 数值</h3>
+<pre><code class="hljs css language-bash">$ cita-cli rpc call \
+    --to 0xd48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b \
+    --data 0x0c55699c \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>
+}
+</code></pre>
+<p>数值为 0</p>
+<h3><a class="anchor" aria-hidden="true" id="注册自动执行合约"></a><a href="#注册自动执行合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>注册自动执行合约</h3>
+<p>调用 <code>register</code> 接口对测试合约进行注册。预期结果为 x 数值随块的增加而增加。</p>
+<ul>
+<li>发送交易</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc senRawTransaction \
+    --code 0x4420e486000000000000000000000000d48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b \
+    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --address 0xffffffffffffffffffffffffffffffffff020013
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xd9bd3a0dbc406d8772dcb85785863897f4102faac1fdcdc4247a735ac3d1a4a5"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<ul>
+<li>获取交易回执</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0xd9bd3a0dbc406d8772dcb85785863897f4102faac1fdcdc4247a735ac3d1a4a5 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">{
+  &quot;id&quot;: 1,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;blockHash&quot;: &quot;0x107f386d21b5af1c7f4cab4802f63ac7e5989b623161cae2ba533c4ed32061bd&quot;,
+    &quot;blockNumber&quot;: &quot;0x3a7&quot;,
+    &quot;contractAddress&quot;: null,
+    &quot;cumulativeQuotaUsed&quot;: &quot;0x6e4a&quot;,
+    &quot;errorMessage&quot;: null,
+    &quot;logs&quot;: [
+      {
+        &quot;address&quot;: &quot;0xffffffffffffffffffffffffffffffffff020013&quot;,
+        &quot;blockHash&quot;: &quot;0x107f386d21b5af1c7f4cab4802f63ac7e5989b623161cae2ba533c4ed32061bd&quot;,
+        &quot;blockNumber&quot;: &quot;0x3a7&quot;,
+        &quot;data&quot;: &quot;0x&quot;,
+        &quot;logIndex&quot;: &quot;0x0&quot;,
+        &quot;topics&quot;: [
+          &quot;0x2d3734a8e47ac8316e500ac231c90a6e1848ca2285f40d07eaa52005e4b3a0e9&quot;,
+          &quot;0x000000000000000000000000d48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b&quot;
+        ],
+        &quot;transactionHash&quot;: &quot;0xd9bd3a0dbc406d8772dcb85785863897f4102faac1fdcdc4247a735ac3d1a4a5&quot;,
+        &quot;transactionIndex&quot;: &quot;0x0&quot;,
+        &quot;transactionLogIndex&quot;: &quot;0x0&quot;
+      }
+    ],
+    &quot;logsBloom&quot;: &quot;0x00000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000080000004000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000100000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000200000&quot;,
+    &quot;quotaUsed&quot;: &quot;0x6e4a&quot;,
+    &quot;root&quot;: null,
+    &quot;transactionHash&quot;: &quot;0xd9bd3a0dbc406d8772dcb85785863897f4102faac1fdcdc4247a735ac3d1a4a5&quot;,
+    &quot;transactionIndex&quot;: &quot;0x0&quot;
+  }
+}
+</code></pre>
+<p>这里从 <code>logs</code> 已经可以看出测试合约已经注册成功。</p>
+<h3><a class="anchor" aria-hidden="true" id="验证结果"></a><a href="#验证结果" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证结果</h3>
+<p>查询 x 数值</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc call \
+    --to 0xd48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b \
+    --data 0x0c55699c \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000026"</span>
+}
+</code></pre>
+<p>数值变为 26</p>
+<p>自动执行生效。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/system/version"><span class="arrow-prev">← </span><span>协议版本号管理</span></a><a class="docs-next button" href="/zh-CN/next/cita/rpc-guide/rpc-types"><span>JSON RPC 类型</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#简述">简述</a><ul class="toc-headings"><li><a href="#合约信息">合约信息</a></li></ul></li><li><a href="#操作示例">操作示例</a><ul class="toc-headings"><li><a href="#部署测试合约">部署测试合约</a></li><li><a href="#查询-x-数值">查询 x 数值</a></li><li><a href="#注册自动执行合约">注册自动执行合约</a></li><li><a href="#验证结果">验证结果</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+                indexName: 'test',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"algoliaOptions":{"facetFilters":["language:zh-CN","version:next"]}}
+              });
+            </script></body></html>

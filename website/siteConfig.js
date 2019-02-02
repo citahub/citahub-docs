@@ -58,9 +58,9 @@ const siteConfig = {
       page: 'community',
       label: 'Community',
     },
-    {
-      search: true,
-    },
+    // {
+    //   search: false,
+    // },
     {
       language: true,
     },
@@ -126,17 +126,17 @@ const siteConfig = {
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
   scrollToTop: true,
-  algolia: {
-    apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
-    indexName: 'test',
-    placeholder: 'Search',
-    algoliaOptions: {
-      algoliaOptions: {
-        // "start_urls": ["./docs"],
-        facetFilters: ['language:LANGUAGE', 'version:VERSION'],
-      },
-    }, // Optional, if provided by Algolia
-  },
+  // algolia: {
+  //   apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
+  //   indexName: 'test',
+  //   placeholder: 'Search',
+  //   algoliaOptions: {
+  //     algoliaOptions: {
+  //       // "start_urls": ["./docs"],
+  //       facetFilters: ['language:LANGUAGE', 'version:VERSION'],
+  //     },
+  //   }, // Optional, if provided by Algolia
+  // },
 }
 
 module.exports = siteConfig

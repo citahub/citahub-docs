@@ -96,13 +96,13 @@ $ cita-cli key create
 * 字节码
 
 ```bash
-$ solc test_example.sol --bin
+$ solc SimpleStorage.sol --bin
 ```
 
 输出：
 
 ```
-======= test_example.sol:SimpleStorage =======
+======= SimpleStorage.sol:SimpleStorage =======
 Binary:
 608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029
 ```
@@ -110,13 +110,13 @@ Binary:
 * 函数签名
 
 ```bash
-$ solc test_example.sol --hashes
+$ solc SimpleStorage.sol --hashes
 ```
 
 输出：
 
 ```
-======= test_example.sol:SimpleStorage =======
+======= SimpleStorage.sol:SimpleStorage =======
 Function signatures:
 6d4ce63c: get()
 60fe47b1: set(uint256)

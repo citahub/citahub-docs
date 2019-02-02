@@ -91,7 +91,8 @@
         "type": "subcategory",
         "ids": [
           "version-0.20.1-cita/ref/addresses",
-          "version-0.20.1-cita/ref/glossary"
+          "version-0.20.1-cita/ref/glossary",
+          "version-0.20.1-cita/ref/faq"
         ]
       }
     ],

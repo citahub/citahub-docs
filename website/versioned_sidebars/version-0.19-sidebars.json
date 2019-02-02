@@ -51,7 +51,8 @@
         "type": "subcategory",
         "ids": [
           "version-0.19-cita/ref/addresses",
-          "version-0.19-cita/ref/glossary"
+          "version-0.19-cita/ref/glossary",
+          "version-0.19-cita/ref/faq"
         ]
       }
     ],

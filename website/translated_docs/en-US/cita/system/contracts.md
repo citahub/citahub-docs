@@ -9,8 +9,8 @@ CITA 链生成时，通过系统合约来生成创世块，并作为链的最基
 <h2 class="hover-list">System Contracts</h2>
 
 * [Node Management](#节点管理)
-* Quota management
-* Quota Price management
+* \[Quota management\](#quota-management)
+* \[Quota Price management\](#quota-price-management)
 * [Permission Management](#权限管理)
 * [User Management](#用户管理)
 * [Batch Transaction](#批量交易)

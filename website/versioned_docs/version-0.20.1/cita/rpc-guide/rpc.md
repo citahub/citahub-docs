@@ -744,14 +744,14 @@ params: [
 
 Example
 
-以`scripts/contracts/tests/contracts/test_example.sol`这个合约为例子，正常在链上创建该合约；
+以`scripts/contracts/tests/contracts/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
 
 用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 - 首先可以通过solc得到合约的ABI；
 
 ```shell
-$ solc --abi test_example.sol
+$ solc --abi SimpleStorage.sol
 ```
 
 输出：

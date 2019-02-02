@@ -1,5 +1,5 @@
 ---
-id: 系统组件
+id: components
 title: 系统组件
 ---
 ## RPC

@@ -20,8 +20,7 @@ title: Huawei Cloud Deployment
 
 在导航栏**服务列表**菜单中，找到**应用编排服务**。在**模板市场**页面中，找到模版**一键部署 CITA 区块链 (nervos)**。
 
-![step 1](assets/cita-assets/huawei01.png)
-![step 1.1](assets/cita-assets/huawei02.png)
+![step 1](assets/cita-assets/huawei01.png) ![step 1.1](assets/cita-assets/huawei02.png)
 
 1. 点击“创建堆栈”，
 

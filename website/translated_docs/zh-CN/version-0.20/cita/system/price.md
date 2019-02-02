@@ -1,6 +1,6 @@
 ---
 id: version-0.20-price
-title: 份额价格管理
+title: 配额价格管理
 original_id: price
 ---
 ## 简述

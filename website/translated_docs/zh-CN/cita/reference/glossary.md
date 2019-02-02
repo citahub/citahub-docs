@@ -1,5 +1,5 @@
 ---
-id: 词汇表
+id: glossary
 title: 词汇表
 ---
 ## 区块链

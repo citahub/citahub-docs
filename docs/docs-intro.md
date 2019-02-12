@@ -40,8 +40,6 @@ Microscope 的目标是打造一个类似 etherscan 的区块链数据访问平�
 
 Microscope 还具有数字资产访问、结构化数据展示等功能。我们提供了一个链上 KV 数据自动转换为本地关系型数据的中间件 Rebirth，以方便 DApp 的开发。开发者可以通过中间件快速索引业务数据，为用户提供更加友好的服务。
 
-未来 
-
 ### ReBirth | 区块缓存服务器
 
 [![](https://img.shields.io/badge/ReBirth-Documents-green.svg)](https://github.com/cryptape/rebirth)

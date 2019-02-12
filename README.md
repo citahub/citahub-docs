@@ -2,9 +2,14 @@
 
 ### Visit the documentation site: [CITAHub Docs](https://docs.citahub.com/)
 
+### Update documents
+
+* Add or modify the docs under `docs` folder.
+* Modify sidebar in `sidebars.json`
+
 ### Build the documentation site
 
-- Initializing the website
+#### Initializing the website
 
   ```shell
   $ cd website
@@ -19,20 +24,13 @@
   > $ npm install
   > ```
 
-- Use the `yarn start` command to view the site on localhost `http://localhost:3000`, and real-time reload whenever the you save changes.
-
-```shell
-$ cd website
-$ yarn start
-```
-
-- Update Sidebar Titles
+#### Update Sidebar Titles
 
 ```shell
 $ cd website && yarn run write-translations
 ```
 
-- Upload Latest Docs to Crowdin
+#### Update Latest Docs in Crowdin
 
 > Crowdin-CLI Required - [Crowdin-CLI](https://support.crowdin.com/cli-tool/)
 
@@ -50,7 +48,7 @@ $ yarn run crowdin:upload
 $ yarn run crowdin:download
 ```
 
-- Deploy to Github Pages
+#### Deploy to Github Pages
 
 ```shell
 $ cd website && GIT_USER=<your_git_username> CURRENT_BRANCH=master USER_SSH=true yarn run publish-gh-pages

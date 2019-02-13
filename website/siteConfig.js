@@ -127,15 +127,12 @@ const siteConfig = {
   //   repoUrl: 'https://github.com/facebook/test-site',
   scrollToTop: true,
   algolia: {
-    apiKey: '4fdec42fee0b2bd9e2c44248e1945f19',
-    indexName: 'test',
+    apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+    indexName: 'citahub',
     placeholder: 'Search',
     algoliaOptions: {
-      algoliaOptions: {
-        // "start_urls": ["./docs"],
-        facetFilters: ['language:LANGUAGE', 'version:VERSION'],
-      },
-    }, // Optional, if provided by Algolia
+      facetFilters: ["language:LANGUAGE", "version:VERSION"]
+    }
   },
 }
 

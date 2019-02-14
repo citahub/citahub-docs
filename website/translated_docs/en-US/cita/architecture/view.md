@@ -54,7 +54,7 @@ title: 视图
 
 在Ethereum中，使用Trie来构建Merkle tree，即Merkle Patricia Trie。它是Ethereum中主要的数据结构，用来存储所有账号的状态以及交易和交易回执。MPT支持高效的检索及动态的插入、删除、修改，Ethereum将其命名为Merkle Patricia Tree（MPT），其示意图如下：
 
-![Merkle Patricia Trie](assets/cita-assets//merkle-patricia-trie.png)
+![Merkle Patricia Trie](assets/cita-assets/merkle-patricia-trie.png)
 
 更多关于MPT的介绍可以参考Ethereum [Patricia-Tree](https://github.com/ethereum/wiki/wiki/Patricia-Tree)。
 

@@ -1,5 +1,5 @@
 ---
-id: group-management
+id: group-mng
 title: 组管理合约接口
 ---
 

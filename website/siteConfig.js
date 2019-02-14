@@ -58,9 +58,9 @@ const siteConfig = {
       page: 'community',
       label: 'Community',
     },
-    {
-      search: true,
-    },
+    // {
+    //   search: false,
+    // },
     {
       language: true,
     },

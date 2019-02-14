@@ -1,5 +1,5 @@
 ---
-id: chain-configuration
+id: chain-config
 title: 链级配置
 ---
 

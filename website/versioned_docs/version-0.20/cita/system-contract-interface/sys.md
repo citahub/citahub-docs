@@ -1,7 +1,7 @@
 ---
-id: version-0.20.1-system-interface
+id: version-0.20-sys
 title: System Configuration Contract Interface
-original_id: system-interface
+original_id: sys
 ---
 
 <h2 class="hover-list">System Config</h2>

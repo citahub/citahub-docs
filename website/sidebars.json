@@ -10,7 +10,7 @@
         "type": "subcategory",
         "ids": [
           "cita/configuration/config-overview",
-          "cita/configuration/chain-configuration",
+          "cita/configuration/chain-config",
           "cita/configuration/service-config"
         ]
       },

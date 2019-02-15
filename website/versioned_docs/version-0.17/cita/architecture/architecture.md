@@ -17,7 +17,7 @@ original_id: architecture
 确保消息的安全、可靠送达。当与外部系统集成时，外部系统可以直接访问消息
 总线，而无需 CITA 做适配。
 
-![](https://raw.githubusercontent.com/cryptape/cita-whitepaper/master/en/cita-parallel.png)
+![](assets/cita-assets/architecture.jpg)
 
 ## Flow Chart
 

@@ -59,7 +59,7 @@ const siteConfig = {
       label: 'Community',
     },
     {
-      search: false,
+      search: true,
     },
     {
       language: true,

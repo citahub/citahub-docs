@@ -74,6 +74,7 @@ usage: create_cita_config.py create [-h]
    name: Nervos AppChain Test Token
    symbol: NATT
    avatar: https://cdn.cryptape.com/icon_appchain.png
+   autoExec: false
  -QuotaManager:
    admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
  -NodeManager:
@@ -113,6 +114,7 @@ usage: create_cita_config.py create [-h]
     - `name` : Token 名称
     - `symbol` : Token 符号
     - `avatar` : Token 图标链接
+    - `autoExec` : 自动执行开关（默认：false）
   * `QuotaManager` : 初始化配额管理合约的管理员地址
     - `admin` : 默认管理员地址
   * `NodeManager` : 初始化共识节点管理合约

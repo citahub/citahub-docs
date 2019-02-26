@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>节点管理 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，共识完成后即被确认为合法区块。普通节点不参与共识，只同步和验证链上所有的原始数据。&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.20.2"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="节点管理 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，共识完成后即被确认为合法区块。普通节点不参与共识，只同步和验证链上所有的原始数据。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>0.20.2</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/0.20.2/cita/system/node">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/welcome">CITAHub 文档概览</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/cita-intro">关于 CITA</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/getting-started">快速入门</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">配置</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/configuration/config-overview">配置概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/configuration/chain-configuration">链级配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/configuration/microservice-configuration">微服务配置</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统管理</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/system-contracts">系统合约</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/0.20.2/cita/system/node">节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/permission">权限管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/user">用户管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/quota">配额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/price">配额价格管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/snapshot">快照</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/batch-tx">批量交易</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/emg-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/amend">数据订正</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/fee-back">出块奖励返回</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/version">协议版本管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system/auto-exec">自动执行</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/rpc-guide/rpc-types">RPC 类型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/rpc-guide/rpc">RPC</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/rpc-guide/rpc-error-code">RPC 错误码</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">系统合约接口</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/sys">系统合约</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/node">节点合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/auth">授权合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/permission">权限合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/role-mng">角色管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/role-auth">角色授权合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/role">角色合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/group-mng">组管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/group">组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/all-groups">所有组合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/quota-manager">配额管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/quota-price">配额价格合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/batch">批量交易合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/emg-brake">紧急制动合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/admin">管理员合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/auto-exec">自动执行合约接口</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/system-contract-interface/error">系统合约错误类型</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构设计</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/architecture/architecture">架构设计</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/architecture/comp">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/architecture/cons">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/architecture/view">视图</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/crosschain/crosschain-contract-example">Crosschain</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议升级</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/protocol-upgrade/overview">协议升级概览</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/protocol-upgrade/v0">v0 协议</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/protocol-upgrade/v1">v1 协议</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">参考</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/ref/addresses">系统保留地址</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/ref/glossary">词汇表</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/cita/ref/faq">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/cli/cli-intro">CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SDK</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/sdk/javascript-sdk">CITA JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/sdk/java-sdk">CITA Java SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/sdk/swift-sdk">CITA Swift SDK</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/sdk/ruby-sdk">CITA Ruby SDK</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rebirth</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/rebirth/rebirth-intro">ReBirth  简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/contributing">Contributing</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/0.20.2/roadmap">Roadmap</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">节点管理</h1></header><article><div><span><p>CITA 中节点分为共识节点和普通节点，交易由共识节点排序并打包成块，共识完成后即被确认为合法区块。普通节点不参与共识，只同步和验证链上所有的原始数据。</p>
+<p>公有链没有节点准入机制，意味着任何节点都可以接入链并同步其全部的数据，在满足一定的条件下都可以参加共识。而 CITA 对于共识节点和普通节点都进行了准入管理。 对于身份验证失败的节点，即使该节点能够在网络层与其他 CITA 节点连通，这些 CITA 节点也会拒绝与之建立通讯会话，如此可避免信息泄漏。</p>
+<p>CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为公有联盟链可以根据节点的出块权重分配出块权，管理员可以设置每个出块节点的 Stake 来调整出块权重。 出块权重按照每个出块节点所占的千分比进行分配，对于小数部分采用的 <a href="https://en.wikipedia.org/wiki/Largest_remainder_method">Largest_remainder_method</a> 算法进行分配。 每次出块时，查询共识节点的权重，根据权重计算出每个节点在 1000 个块中可以出的块个数，这 1000 个块算为一个 epoch，再将这 1000 个块出块顺序以创世块的时间戳为种子进行随机排序。 如果在同一个 epoch 中出块节点列表和权重没有变化，共识将会按照此顺序进行出块；如果节点列表和权重有变化，将按照新的顺序进行出块。</p>
+<h2><a class="anchor" aria-hidden="true" id="普通节点管理-白名单"></a><a href="#普通节点管理-白名单" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>普通节点管理 (白名单)</h2>
+<p>目前 CITA 对于普通节点的准入管理采用白名单的方式。每个节点本地保存白名单配置文件，其中记录着允许连接的 p2p 通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。 白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。</p>
+<p>普通节点的管理，包括添加和删除。下面我们将用具体的示例来阐述。</p>
+<h3><a class="anchor" aria-hidden="true" id="添加普通节点-以下以-4-号节点举例"></a><a href="#添加普通节点-以下以-4-号节点举例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>添加普通节点（以下以 4 号节点举例）</h3>
+<ol>
+<li><p>假设目前的工作目录在 <code>../cita/target/install/</code> 下：</p>
+<pre><code class="hljs css language-bash">$ <span class="hljs-built_in">pwd</span>
+../cita/target/install
+$ ls <span class="hljs-built_in">test</span>-chain/
+ 0  1  2  3  template
+</code></pre>
+<p>template 中保存了当前节点的公钥地址 <code>template/authorities.list</code>，以及创世块信息 <code>template/configs/genesis.json</code>，目前地址有四个。</p></li>
+<li><p>生成新 node：</p>
+<pre><code class="hljs css language-bash">$ ./scripts/create_cita_config.py append --chain_name <span class="hljs-built_in">test</span>-chain --node <span class="hljs-string">"127.0.0.1:4004"</span>
+$ ls <span class="hljs-built_in">test</span>-chain/
+ 0  1  2  3  4  template
+</code></pre></li>
+</ol>
+<ul>
+<li>append 子命令，在指定链中增加对应 ip 地址的节点</li>
+<li>脚本将自动生成 4 号节点，并在原有节点中 <code>test-chain/*/network.toml</code> 中插入新节点的 ip 及端口配置</li>
+</ul>
+<ol>
+<li><p>启动新节点：</p>
+<p>对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。</p>
+<p>新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，<strong>注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求</strong>。</p>
+<pre><code class="hljs css language-bash">$ ./bin/cita setup <span class="hljs-built_in">test</span>-chain/4
+$ ./bin/cita start <span class="hljs-built_in">test</span>-chain/4
+</code></pre></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="删除普通节点"></a><a href="#删除普通节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>删除普通节点</h3>
+<p>到对应节点目录下，找到 <code>network.toml</code>，删除对应 <code>peers</code> 条目即可。</p>
+<h2><a class="anchor" aria-hidden="true" id="共识节点管理"></a><a href="#共识节点管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>共识节点管理</h2>
+<p>CITA 作为一个面向企业级应用的区块链框架，需要保证监管方能够获得相关的权限对共识节点进行管理，包括增加、删除共识节点等操作。对于共识微服务，需要对其提供实时读取共识节点列表的接口，而中心化管理的方式无法保证各个节点的共识节点列表的安全性及一致性。CITA 采用合约的方式来实现共识节点的管理，通过区块链上的合约可以保证共识节点的安全性及一致性。</p>
+<p>在 CITA 初始化创世块阶段，需要初始化一个管理员地址，其拥有管理员角色，将其写入到每个节点的创世块文件中，共识节点管理合约拥有的一个固定地址也写入其中。创世块内容在初始化以后不允许被修改。区块链正常启动之后，将合约写入到创世块中。链外的操作人员可以通过调用 RPC 接口来实现对共识节点的管理。</p>
+<p>对于共识节点的管理，包括添加、删除及获得共识节点。下面我们将用具体的示例来阐述。</p>
+<ul>
+<li>添加操作只可由管理员执行;</li>
+<li>删除操作只可由管理员执行;</li>
+<li>获得共识节点列表；</li>
+<li>获取共识节点权重；</li>
+<li>设置共识节点权重；</li>
+<li>获取共识节点权重千分比。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="增加共识节点"></a><a href="#增加共识节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>增加共识节点</h3>
+<p>节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由管理员(拥有管理员角色的账号)确认才完成了添加操作。</p>
+<p>从普通节点升级到共识节点，具体操作需要用到上面合约方法 <code>approveNode(address)</code>。</p>
+<p>共识节点管理合约是系统合约，默认将放在创世块上，下面使用 <a href="https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html">solc</a> 命令(solidity 的命令行编译器，在 cita 镜像中已安装)查看共识节点管理合约的 hash：</p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># solc --hashes system/node_manager.sol --allow-paths .</span>
+contract address: 0xffffffffffffffffffffffffffffffffff020001
+Function signatures:
+    dd4c97a0: approveNode(address)
+    2d4ede93: deleteNode(address)
+    30ccebb5: getStatus(address)
+    609df32f: listNode()
+    6ed3876d: listStake()
+    51222d50: setStake(address,uint64)
+    0c829315: stakePermillage(address)
+    645b8b1b: status(address)
+</code></pre>
+<p><em>首先需要启动一条链，具体方法见快速入门部分</em></p>
+<p>接下来的测试，用 <a href="https://github.com/cryptape/cita-cli">cita-cli</a> 命令行模式（与交互式模式的命令是一致的）进行演示。</p>
+<h4><a class="anchor" aria-hidden="true" id="查看当前的共识节点列表"></a><a href="#查看当前的共识节点列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看当前的共识节点列表：</h4>
+<pre><code class="hljs css language-bash">$ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000004000000000000000000000000d0f05f536ffc6a5d27b17cd14a544418b0500e92000000000000000000000000cccda2959225fc79f61f99bed213bd1172a7ea830000000000000000000000000014e2a75b4b5399f09732ecb6ed1a5b389c9e700000000000000000000000003e91911ba91b10dfa41f0a34d4a3c5a4f838eace"</span>
+}
+</code></pre>
+<p>返回值为目前的共识节点地址列表。</p>
+<p>下面我们需要将新增的普通节点通过交易的方式升级为共识节点，新增的普通节点的公钥地址，演示中，为 <code>0x59a316df602568957f47973332f1f85ae1e2e75e</code>。</p>
+<h4><a class="anchor" aria-hidden="true" id="approve-节点"></a><a href="#approve-节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>approve 节点</h4>
+<ul>
+<li>发送交易</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli scm NodeManager approveNode \
+    --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
+    --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>其中 <code>--admin-privkey</code> 是管理员私钥，系统默认的管理员私钥可以看 <a href="../configuration/chain-configuration">系统合约相关</a>。</p>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<ul>
+<li>获取 receipt</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">{
+  &quot;id&quot;: 1,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;blockHash&quot;: &quot;0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1&quot;,
+    &quot;blockNumber&quot;: &quot;0xba&quot;,
+    &quot;contractAddress&quot;: null,
+    &quot;cumulativeGasUsed&quot;: &quot;0x11660&quot;,
+    &quot;errorMessage&quot;: null,
+    &quot;gasUsed&quot;: &quot;0x11660&quot;,
+    &quot;logs&quot;: [
+      {
+        &quot;address&quot;: &quot;0xffffffffffffffffffffffffffffffffff020001&quot;,
+        &quot;blockHash&quot;: &quot;0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1&quot;,
+        &quot;blockNumber&quot;: &quot;0xba&quot;,
+        &quot;data&quot;: &quot;0x&quot;,
+        &quot;logIndex&quot;: &quot;0x0&quot;,
+        &quot;topics&quot;: [
+          &quot;0x5d55f24dd047ef52a5f36ddefc8c424e4b26c8415d8758be1bbb88b5c65e04eb&quot;,
+          &quot;0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e&quot;
+        ],
+        &quot;transactionHash&quot;: &quot;0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2&quot;,
+        &quot;transactionIndex&quot;: &quot;0x0&quot;,
+        &quot;transactionLogIndex&quot;: &quot;0x0&quot;
+      }
+    ],
+    &quot;logsBloom&quot;: &quot;0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,
+    &quot;root&quot;: null,
+    &quot;transactionHash&quot;: &quot;0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2&quot;,
+    &quot;transactionIndex&quot;: &quot;0x0&quot;
+  }
+}
+</code></pre>
+<p>从 <code>log</code> 中可以看出本次操作的相关信息。</p>
+<h4><a class="anchor" aria-hidden="true" id="查看当前的共识节点数"></a><a href="#查看当前的共识节点数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看当前的共识节点数</h4>
+<pre><code class="hljs">$ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005000000000000000000000000d0f05f536ffc6a5d27b17cd14a544418b0500e92000000000000000000000000cccda2959225fc79f61f99bed213bd1172a7ea830000000000000000000000000014e2a75b4b5399f09732ecb6ed1a5b389c9e700000000000000000000000003e91911ba91b10dfa41f0a34d4a3c5a4f838eace00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"</span>
+}
+</code></pre>
+<p>返回值为目前的共识节点地址列表（可以看到新添加的共识节点地址 <code>0x59a316df602568957f47973332f1f85ae1e2e75e</code>）</p>
+<h3><a class="anchor" aria-hidden="true" id="删除共识节点"></a><a href="#删除共识节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>删除共识节点</h3>
+<p>按照以上方法，普通节点可以被添加为共识节点，那么共识节点怎么删除呢？下面是删除共识节点的示例：</p>
+<p>删除共识节点需要由管理员来完成， 具体操作需要调用 deleteNode(address) 合约方法。</p>
+<h4><a class="anchor" aria-hidden="true" id="获取当前的共识节点列表"></a><a href="#获取当前的共识节点列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取当前的共识节点列表：</h4>
+<pre><code class="hljs css language-bash">$ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005000000000000000000000000d0f05f536ffc6a5d27b17cd14a544418b0500e92000000000000000000000000cccda2959225fc79f61f99bed213bd1172a7ea830000000000000000000000000014e2a75b4b5399f09732ecb6ed1a5b389c9e700000000000000000000000003e91911ba91b10dfa41f0a34d4a3c5a4f838eace00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"</span>
+}
+</code></pre>
+<p>(由于接着上面步骤操作，所以这里有五个共识节点)</p>
+<h4><a class="anchor" aria-hidden="true" id="delete-共识节点"></a><a href="#delete-共识节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>delete 共识节点</h4>
+<ul>
+<li>发送交易</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli scm NodeManager deleteNode \
+    --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
+    --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>其中 <code>--admin-privkey</code> 是管理员私钥，系统默认的管理员私钥可以看 <a href="../configuration/chain-configuration">系统合约相关</a>。</p>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<ul>
+<li>获取 receipt</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x1db"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeGasUsed"</span>: <span class="hljs-string">"0x558c"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"gasUsed"</span>: <span class="hljs-string">"0x558c"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020001"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x1db"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x74976f07ac4bfb6a02b2dbd3bc158d4984ee6027d938e870692126ca9e1931d5"</span>,
+          <span class="hljs-string">"0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"</span>
+        ],
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+      }
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000400000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>从 <code>log</code> 中可以看出本次操作的相关信息。</p>
+<h4><a class="anchor" aria-hidden="true" id="查看当前的共识节点数-1"></a><a href="#查看当前的共识节点数-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看当前的共识节点数</h4>
+<pre><code class="hljs css language-bash">$ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000004000000000000000000000000d0f05f536ffc6a5d27b17cd14a544418b0500e92000000000000000000000000cccda2959225fc79f61f99bed213bd1172a7ea830000000000000000000000000014e2a75b4b5399f09732ecb6ed1a5b389c9e700000000000000000000000003e91911ba91b10dfa41f0a34d4a3c5a4f838eace"</span>
+}
+</code></pre>
+<p>返回值为目前的共识节点地址列表（可以看到新添加的共识节点地址 59a316df602568957f47973332f1f85ae1e2e75e 已经删除了）</p>
+<blockquote>
+<p>以上代码的返回值有所删减，实际操作会略有不同</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/0.20.2/cita/system/system-contracts"><span class="arrow-prev">← </span><span>上一篇</span></a><a class="docs-next button" href="/zh-CN/0.20.2/cita/system/permission"><span>权限管理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#普通节点管理-白名单">普通节点管理 (白名单)</a><ul class="toc-headings"><li><a href="#添加普通节点-以下以-4-号节点举例">添加普通节点（以下以 4 号节点举例）</a></li><li><a href="#删除普通节点">删除普通节点</a></li></ul></li><li><a href="#共识节点管理">共识节点管理</a><ul class="toc-headings"><li><a href="#增加共识节点">增加共识节点</a></li><li><a href="#删除共识节点">删除共识节点</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:zh-CN","version:0.20.2"]}
+              });
+            </script></body></html>

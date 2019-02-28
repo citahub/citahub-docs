@@ -4,4 +4,4 @@ id: version-0.20.2-swift-sdk
 original_id: swift-sdk
 ---
 
-This is cita swift sdk doc
+This is CITA Swift SDK doc

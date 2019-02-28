@@ -4,4 +4,4 @@ id: version-0.20.2-java-sdk
 original_id: java-sdk
 ---
 
-This is cita java sdk doc
+This is CITA Java SDK doc

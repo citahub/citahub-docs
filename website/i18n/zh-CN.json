@@ -943,7 +943,7 @@
         "title": "FAQ"
       },
       "version-0.17-toolchain/sdk/javascript-sdk": {
-        "title": "Javascript Sdk"
+        "title": "JavaScript SDK"
       },
       "version-0.17-toolchain/sdk/java-sdk": {
         "title": "Java Sdk"
@@ -955,7 +955,7 @@
         "title": "Ruby Sdk"
       },
       "version-0.18-toolchain/sdk/javascript-sdk": {
-        "title": "Javascript Sdk"
+        "title": "JavaScript SDK"
       },
       "version-0.18-toolchain/sdk/java-sdk": {
         "title": "Java Sdk"
@@ -970,7 +970,7 @@
         "title": "系统合约"
       },
       "version-0.20-toolchain/sdk/javascript-sdk": {
-        "title": "Javascript Sdk"
+        "title": "JavaScript SDK"
       },
       "version-0.20-toolchain/sdk/java-sdk": {
         "title": "Java Sdk"
@@ -985,7 +985,7 @@
         "title": "系统合约"
       },
       "version-0.20.1-toolchain/sdk/javascript-sdk": {
-        "title": "Javascript Sdk"
+        "title": "JavaScript SDK"
       },
       "version-0.20.1-toolchain/sdk/java-sdk": {
         "title": "Java Sdk"
@@ -1000,7 +1000,7 @@
         "title": "FAQ"
       },
       "version-0.19-toolchain/sdk/javascript-sdk": {
-        "title": "Javascript Sdk"
+        "title": "JavaScript SDK"
       },
       "version-0.19-toolchain/sdk/java-sdk": {
         "title": "Java Sdk"
@@ -1144,7 +1144,7 @@
         "title": "CLI 简介"
       },
       "version-0.20.2-toolchain/sdk/javascript-sdk": {
-        "title": "Javascript Sdk"
+        "title": "JavaScript SDK"
       },
       "version-0.20.2-toolchain/sdk/java-sdk": {
         "title": "Java Sdk"

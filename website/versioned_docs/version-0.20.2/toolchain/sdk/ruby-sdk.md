@@ -4,4 +4,4 @@ id: version-0.20.2-ruby-sdk
 original_id: ruby-sdk
 ---
 
-This is cita ruby sdk doc
+This is CITA Ruby SDK doc

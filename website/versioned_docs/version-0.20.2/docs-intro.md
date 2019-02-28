@@ -11,7 +11,7 @@ original_id: welcome
 
 ## CITA | 区块链内核
 
-[![](https://img.shields.io/badge/CITA-Documents-green.svg)](https://cryptape.github.io/cita/)
+[![](https://img.shields.io/badge/CITA-Documents-green.svg)](https://docs.citahub.com/zh-CN/cita/cita-intro)
 [![](https://img.shields.io/badge/CITA-GitHub-lightgrey.svg)](https://github.com/cryptape/cita/)
 
 CITA 将一个区块链节点的共识、网络、计算、RPC 等功能进行了微服务化拆分，每一个微服务又可以有多个实例，最终这些实例共同完成一个节点的记账功能。这样，我们将区块链性能的扩展问题转化成了节点的扩展问题，当性能不足时，插入一台服务器，分担节点的工作压力即可。同时，我们将共识机制、底层逻辑进行了深度优化，例如采用Rust语言架构所有代码等。最终实现了目前**开源可实证**区块链系统的顶级性能。这是一组实测数据：由4核8G云主机构成的AppChain的性能可达到每秒2900笔简单交易；32核64G云主机组成的AppChain的性能则超过了每秒1.5万笔简单交易。采用集群构建节点性能将会更高，因此 CITA 的性能已经足以应付绝大多数应用场景。

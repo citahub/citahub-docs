@@ -4,4 +4,4 @@ title: CITA JavaScript SDK
 original_id: javascript-sdk
 ---
 
-This is cita javascript sdk doc
+This is CITA JavaScript SDK doc

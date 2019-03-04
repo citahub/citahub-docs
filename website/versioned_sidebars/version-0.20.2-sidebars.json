@@ -112,7 +112,7 @@
         ]
       },
       {
-        "label": "Rebirth",
+        "label": "ReBirth",
         "type": "subcategory",
         "ids": ["version-0.20.2-toolchain/rebirth/rebirth-intro"]
       },

@@ -11,7 +11,7 @@ original_id: architecture
 
 另外，采用消息总线进行通信，各个微服务可以利用异步消息简化处理，又可以 确保消息的安全、可靠送达。当与外部系统集成时，外部系统可以直接访问消息 总线，而无需 CITA 做适配。
 
-![](assets/cita-assets/architecture.jpg)
+![]((assets/cita-assets/architecture.jpg))
 
 ## Flow Chart
 

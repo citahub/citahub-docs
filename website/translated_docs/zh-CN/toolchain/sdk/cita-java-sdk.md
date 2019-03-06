@@ -2,4 +2,4 @@
 title: CITA Java SDK
 id: java-sdk
 ---
-This is cita java sdk doc
+This is CITA Java SDK doc

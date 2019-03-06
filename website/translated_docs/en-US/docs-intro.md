@@ -3,13 +3,13 @@ id: welcome
 title: CITAHub Docs Overview
 sidebar_label: CITAHub Docs Overview
 ---
-我们提供了一套完整的开源的区块链解决方案，CITA 作为底层区块链内核；围绕 CITA, 我们提供了一系列开源的工具链来完善基础设施，以方便运营方，开发者以及终端用户能够快速应用起来，包括：Dapp 钱包 Cyton，区块链浏览器 Microscope，区块缓存服务器 Rebirth，多平台SDK 等。
+我们提供了一套完整的开源的区块链解决方案，CITA 作为底层区块链内核；围绕 CITA, 我们提供了一系列开源的工具链来完善基础设施，以方便运营方，开发者以及终端用户能够快速应用起来，包括：Dapp 钱包 Cyton，区块链浏览器 Microscope，区块缓存服务器 ReBirth，多平台SDK 等。
 
 ![](assets/first-page.jpg)
 
 ## CITA | Blockchain Kernel
 
-[![](https://img.shields.io/badge/CITA-Documents-green.svg)](https://cryptape.github.io/cita/) [![](https://img.shields.io/badge/CITA-GitHub-lightgrey.svg)](https://github.com/cryptape/cita/)
+[![](https://img.shields.io/badge/CITA-Documents-green.svg)](https://docs.citahub.com/zh-CN/cita/cita-intro) [![](https://img.shields.io/badge/CITA-GitHub-lightgrey.svg)](https://github.com/cryptape/cita/)
 
 CITA 将一个区块链节点的共识、网络、计算、RPC 等功能进行了微服务化拆分，每一个微服务又可以有多个实例，最终这些实例共同完成一个节点的记账功能。这样，我们将区块链性能的扩展问题转化成了节点的扩展问题，当性能不足时，插入一台服务器，分担节点的工作压力即可。同时，我们将共识机制、底层逻辑进行了深度优化，例如采用Rust语言架构所有代码等。最终实现了目前**开源可实证**区块链系统的顶级性能。这是一组实测数据：由4核8G云主机构成的AppChain的性能可达到每秒2900笔简单交易；32核64G云主机组成的AppChain的性能则超过了每秒1.5万笔简单交易。采用集群构建节点性能将会更高，因此 CITA 的性能已经足以应付绝大多数应用场景。
 
@@ -33,7 +33,7 @@ Cyton operators or DAPP developers can also choose to refactor Cyton code to pro
 
 Microscope is a full-featured blockchain browser platform. With Microscope you can access data of blocks, transactions, account (including contracts) on any specified chains build by CITA, as well as call contract methods and view chain's real-time performance index. A cache server is also provided for caching blockchain data. It can be easily deployed to cache data from any specified chains for application usage.
 
-未来 Microscope 将增加数字资产访问、结构化数据展示等功能。对应地，我们将提供一个链上 KV 数据自动转换为本地关系型数据的中间件，以方便 DApp 的开发。开发者可以通过中间件快速索引业务数据，为用户提供更加友好的服务。
+Microscope 还具有数字资产访问、结构化数据展示等功能。我们提供了一个链上 KV 数据自动转换为本地关系型数据的中间件 ReBirth，以方便 DApp 的开发。开发者可以通过中间件快速索引业务数据，为用户提供更加友好的服务。
 
 ### Rebirth | Blockchain Data Cache Server
 

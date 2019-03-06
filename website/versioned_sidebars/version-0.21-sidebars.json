@@ -1,0 +1,161 @@
+{
+  "version-0.21-docs": {
+    "Welcome": [
+      "version-0.21-welcome"
+    ],
+    "CITA": [
+      "version-0.21-cita/cita-intro",
+      "version-0.21-cita/getting-started",
+      "version-0.21-cita/huawei",
+      {
+        "label": "Configuration",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-cita/configuration/config-overview",
+          "version-0.21-cita/configuration/chain-config",
+          "version-0.21-cita/configuration/service-config"
+        ]
+      },
+      {
+        "label": "System Management",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-cita/system/contracts",
+          "version-0.21-cita/system/node",
+          "version-0.21-cita/system/permission",
+          "version-0.21-cita/system/user",
+          "version-0.21-cita/system/quota",
+          "version-0.21-cita/system/price",
+          "version-0.21-cita/system/log",
+          "version-0.21-cita/system/snapshot",
+          "version-0.21-cita/system/batch-tx",
+          "version-0.21-cita/system/emergency-brake",
+          "version-0.21-cita/system/amend",
+          "version-0.21-cita/system/fee-back",
+          "version-0.21-cita/system/version",
+          "version-0.21-cita/system/auto-exec"
+        ]
+      },
+      {
+        "label": "JSON-RPC",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-cita/rpc-guide/rpc-types",
+          "version-0.21-cita/rpc-guide/rpc",
+          "version-0.21-cita/rpc-guide/rpc-error-code"
+        ]
+      },
+      {
+        "label": "System Contract Interface",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-cita/system-contract-interface/sys",
+          "version-0.21-cita/system-contract-interface/node",
+          "version-0.21-cita/system-contract-interface/auth",
+          "version-0.21-cita/system-contract-interface/permission",
+          "version-0.21-cita/system-contract-interface/role-management",
+          "version-0.21-cita/system-contract-interface/role-auth",
+          "version-0.21-cita/system-contract-interface/role",
+          "version-0.21-cita/system-contract-interface/group-mng",
+          "version-0.21-cita/system-contract-interface/group",
+          "version-0.21-cita/system-contract-interface/all-groups",
+          "version-0.21-cita/system-contract-interface/quota-manager",
+          "version-0.21-cita/system-contract-interface/quota-price",
+          "version-0.21-cita/system-contract-interface/batch",
+          "version-0.21-cita/system-contract-interface/emergency-brake",
+          "version-0.21-cita/system-contract-interface/admin",
+          "version-0.21-cita/system-contract-interface/auto-exec",
+          "version-0.21-cita/system-contract-interface/error"
+        ]
+      },
+      {
+        "label": "Architecture",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-cita/architecture/architecture",
+          "version-0.21-cita/architecture/components",
+          "version-0.21-cita/architecture/consensus",
+          "version-0.21-cita/architecture/transaction-process",
+          "version-0.21-cita/architecture/view"
+        ]
+      },
+      "version-0.21-cita/crosschain/crosschain-contract-example",
+      {
+        "label": "Protocol Upgrade",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-cita/protocol-upgrade/overview",
+          "version-0.21-cita/protocol-upgrade/v0",
+          "version-0.21-cita/protocol-upgrade/v1"
+        ]
+      },
+      {
+        "label": "Reference",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-cita/reference/addresses",
+          "version-0.21-cita/reference/glossary",
+          "version-0.21-cita/reference/faq"
+        ]
+      }
+    ],
+    "Toolchain": [
+      {
+        "label": "CITA-CLI",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-toolchain/cli/cli-intro"
+        ]
+      },
+      {
+        "label": "SDK",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-toolchain/sdk/javascript-sdk",
+          "version-0.21-toolchain/sdk/java-sdk",
+          "version-0.21-toolchain/sdk/swift-sdk",
+          "version-0.21-toolchain/sdk/ruby-sdk"
+        ]
+      },
+      {
+        "label": "ReBirth",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-toolchain/rebirth/rebirth-intro"
+        ]
+      },
+      {
+        "label": "Cyton",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-toolchain/cyton/cyton-intro"
+        ]
+      },
+      {
+        "label": "Microscope",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-toolchain/microscope/microscope-intro"
+        ]
+      },
+      {
+        "label": "CITA-IDE",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-toolchain/ide/ide-intro"
+        ]
+      },
+      {
+        "label": "CITA Truffle Box",
+        "type": "subcategory",
+        "ids": [
+          "version-0.21-toolchain/truffle-box/truffle-box-intro"
+        ]
+      }
+    ],
+    "Contributing": [
+      "version-0.21-contributing",
+      "version-0.21-roadmap"
+    ]
+  }
+}

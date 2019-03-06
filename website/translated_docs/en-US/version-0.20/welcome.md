@@ -3,13 +3,13 @@ id: version-0.20-welcome
 title: About CITA
 original_id: welcome
 ---
-We offer a open source blockchain solution, in which CITA as the blockchain kernel, and around CITA, we offer a whole set of open source toolchain to make infrastructure friendly for operators, developers and end users, including Dapp wallet Cyton, blockchain browser microscope, block cache server Rebirth, multi-platform SDK, etc.
+我们提供了一套完整的开源的区块链解决方案，CITA 作为底层区块链内核；围绕 CITA, 我们提供了一系列开源的工具链来完善基础设施，以方便运营方，开发者以及终端用户能够快速应用起来，包括：Dapp 钱包 Cyton，区块链浏览器 Microscope，区块缓存服务器 ReBirth，多平台 SDK 等。
 
 ![](assets/first-page.jpg)
 
 ## CITA | Blockchain Kernel
 
-[![](https://img.shields.io/badge/CITA-Documents-green.svg)](https://cryptape.github.io/cita/) [![](https://img.shields.io/badge/CITA-GitHub-lightgrey.svg)](https://github.com/cryptape/cita/)
+[![](https://img.shields.io/badge/CITA-Documents-green.svg)]https://docs.citahub.com/zh-CN/cita/cita-intro) [![](https://img.shields.io/badge/CITA-GitHub-lightgrey.svg)](https://github.com/cryptape/cita/)
 
 CITA is a high performance kernel developed by Cryptape, commissioned by Nervos Foundation. CITA could be used to build a consortium permissioned blockchain or a public permissioned blockchain.
 

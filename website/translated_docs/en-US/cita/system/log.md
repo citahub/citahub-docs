@@ -39,7 +39,7 @@ CITA 默认日志等级为`Info`。示例如下：
 
 日志优先级可以在启动 CITA 的时候通过参数修改：
 
-    ./env.sh ./bin/cita start test-chain/0 trace
+    ./daemon.sh ./bin/cita start test-chain/0 trace
     
 
 这时`Trace`级别的日志也可以打印出来了：

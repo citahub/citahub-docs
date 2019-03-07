@@ -157,7 +157,7 @@ $ cita-cli rpc call \
 
 ### Batch Transaction
 
-测试批量调用测试合约的 `AddOne()` 函数，预期结构为 x 数值变为 2 。
+测试批量调用测试合约的 `AddOne()` 函数，预期结果为 x 数值变为 2 。
 
 * 发送交易
 

@@ -1,5 +1,5 @@
 ---
-id: 链级配置
+id: chain-config
 title: 链级配置
 ---
 当拿到发布件解压后，或从源码编译后，不要着急动节点，在这之前，很重要的一步就是我们需要对链进行初始化配置。 这些配置信息将被写入链的创世块，创世块一旦生成，SysConfig 中只有 `chainName`，`operator`，`website` 这三项可以在链运行之后再进行修改，其他项均不可再修改, 因此请大家慎重设定各配置项。 在 CITA 里面，我们提供了工具 config tool 来帮助你在起链前对链进行初始化配置, 提供了命令行工具 CITA-CLI 来帮助你在起链后修改个别配置。
@@ -70,6 +70,7 @@ usage: create_cita_config.py create [-h]
        name: Nervos AppChain Test Token
        symbol: NATT
        avatar: https://cdn.cryptape.com/icon_appchain.png
+       autoExec: false
      -QuotaManager:
        admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
      -NodeManager:
@@ -110,6 +111,7 @@ usage: create_cita_config.py create [-h]
       - `name` : Token 名称
       - `symbol` : Token 符号
       - `avatar` : Token 图标链接
+      - `autoExec` : 自动执行开关（默认：false）
     * `QuotaManager` : 初始化配额管理合约的管理员地址
       - `admin` : 默认管理员地址
     * `NodeManager` : 初始化共识节点管理合约
@@ -169,7 +171,7 @@ $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d
 $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.checkSendTxPermission=true SysConfig.checkCallPermission=true SysConfig.economicalModel=1 SysConfig.checkFeeBackPlatform=true SysConfig.chainOwner=0x9a6bd7272edb238f13002911d8c93dd6bb646d15
 ```
 
-上述命令，生成一条包含四个节点，端口默认 4000 , 4001 , 4002 , 4003， 超级管理员地址 `0xab159a4817542585c93f01cfce9cfe6cd4cbd26a`， 运营方地址 `0x9a6bd7272edb238f13002911d8c93dd6bb646d15`， 经济模型 `Charge`， 出块激励返回运营方，权限全开的链。
+上述命令，生成一条包含四个节点，端口默认 4000 , 4001 , 4002 , 4003， 超级管理员地址 `0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523`， 运营方地址 `0x9a6bd7272edb238f13002911d8c93dd6bb646d15`， 经济模型 `Charge`， 出块激励返回运营方，权限全开的链。
 
 ## 初始化配置后生成的目录结构
 

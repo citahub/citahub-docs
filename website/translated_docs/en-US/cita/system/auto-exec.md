@@ -23,7 +23,20 @@ title: Automated Execution
 
 ## 操作示例
 
-*首先需要启动一条链，具体方法见快速入门部分*
+*首先需要启动一条链*
+
+通过以下命令初始化一条链，生成配置文件：
+
+```bash
+$ ./env.sh ./scripts/create_cita_config.py create \
+    --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" \
+    --contract_arguments SysConfig.autoExec=true \
+    --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+```
+
+其中 `autoExec` 为自动执行开关。
+
+启动链接下来的步骤见[快速入门](../getting-started)部分。
 
 其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/AutoExec.sol)函数签名如下:
 

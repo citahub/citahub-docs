@@ -2,4 +2,4 @@
 title: CITA Ruby SDK
 id: ruby-sdk
 ---
-This is cita ruby sdk doc
+This is CITA Ruby SDK doc

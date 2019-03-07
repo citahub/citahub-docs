@@ -68,7 +68,7 @@
         "ids": [
           "cita/architecture/architecture",
           "cita/architecture/components",
-          "cita/architecture/consensus",
+          "cita/architecture/cons",
           "cita/architecture/transaction-process",
           "cita/architecture/view"
         ]

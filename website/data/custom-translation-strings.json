@@ -1093,7 +1093,7 @@
       "version-0.21-cita/configuration/chain-config": {
         "title": "链级配置"
       },
-      "version-0.21-cita/architecture/consensus": {
+      "version-0.21-cita/architecture/cons": {
         "title": "共识"
       },
       "version-0.21-cita/architecture/architecture": {
@@ -1162,7 +1162,7 @@
       "cita/getting-started": {
         "title": "快速入门"
       },
-      "cita/architecture/consensus": {
+      "cita/architecture/cons": {
         "title": "共识"
       },
       "cita/reference/faq": {

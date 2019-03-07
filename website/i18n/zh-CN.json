@@ -11,7 +11,7 @@
       "cita/architecture/components": {
         "title": "系统组件"
       },
-      "cita/architecture/consensus": {
+      "cita/architecture/cons": {
         "title": "共识"
       },
       "cita/architecture/transaction-process": {
@@ -952,7 +952,7 @@
       "version-0.21-components": {
         "title": "系统组件"
       },
-      "version-0.21-consensus": {
+      "version-0.21-cons": {
         "title": "共识"
       },
       "version-0.21-transaction-process": {
@@ -2034,7 +2034,7 @@
       "version-0.21-cita/configuration/chain-config": {
         "title": "链级配置"
       },
-      "version-0.21-cita/architecture/consensus": {
+      "version-0.21-cita/architecture/cons": {
         "title": "共识"
       },
       "version-0.21-cita/architecture/architecture": {

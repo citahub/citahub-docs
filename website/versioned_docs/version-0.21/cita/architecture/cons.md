@@ -1,7 +1,7 @@
 ---
-id: version-0.21-consensus
+id: version-0.21-cons
 title: 共识
-original_id: consensus
+original_id: cons
 ---
 
 

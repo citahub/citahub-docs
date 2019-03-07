@@ -11,7 +11,7 @@
       "cita/architecture/components": {
         "title": "System Components"
       },
-      "cita/architecture/consensus": {
+      "cita/architecture/cons": {
         "title": "Consensus"
       },
       "cita/architecture/transaction-process": {
@@ -952,7 +952,7 @@
       "version-0.21-components": {
         "title": "系统组件"
       },
-      "version-0.21-consensus": {
+      "version-0.21-cons": {
         "title": "共识"
       },
       "version-0.21-transaction-process": {

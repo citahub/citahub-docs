@@ -1099,9 +1099,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"
 "economicalModel": 1,
 "genesisTimestamp": 1541058686340,
 "operator": "test-operator",
-"tokenAvatar": "https://cdn.cryptape.com/icon_appchain.png",
-"tokenName": "Nervos AppChain Test Token",
-"tokenSymbol": "NATT",
+"tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+"tokenName": "CITA Test Token",
+"tokenSymbol": "CTT",
 "validators": [
 "0xc489d5cb6f497e4708cc8c3805473b9528f83c7a",
 "0x497c68f02bbe335cc879356af120371ebf6cbc29",

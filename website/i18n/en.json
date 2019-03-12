@@ -51,13 +51,13 @@
       "cita/protocol-upgrade/v1": {
         "title": "v1 协议"
       },
-      "cita/reference/addresses": {
+      "cita/ref/addresses": {
         "title": "系统保留地址"
       },
-      "cita/reference/faq": {
+      "cita/ref/faq": {
         "title": "FAQ"
       },
-      "cita/reference/glossary": {
+      "cita/ref/glossary": {
         "title": "词汇表"
       },
       "cita/rpc-guide/rpc-error-code": {
@@ -1629,7 +1629,7 @@
       "version-0.21-cita/protocol-upgrade/v1": {
         "title": "v1 协议"
       },
-      "version-0.21-cita/reference/glossary": {
+      "version-0.21-cita/ref/glossary": {
         "title": "词汇表"
       },
       "version-0.21-cita/cita-intro": {
@@ -1644,7 +1644,7 @@
       "version-0.20-cita/configuration/config-overview": {
         "title": "Configuration Overview"
       },
-      "version-0.21-cita/reference/addresses": {
+      "version-0.21-cita/ref/addresses": {
         "title": "系统保留地址"
       },
       "version-0.20-cita/configuration/microservice-configuration": {
@@ -2040,7 +2040,7 @@
       "version-0.21-cita/architecture/architecture": {
         "title": "系统架构"
       },
-      "version-0.21-cita/reference/faq": {
+      "version-0.21-cita/ref/faq": {
         "title": "FAQ"
       },
       "version-0.20-cita/configuration/chain-configuration": {

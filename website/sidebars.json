@@ -82,7 +82,7 @@
       {
         "label": "Reference",
         "type": "subcategory",
-        "ids": ["cita/reference/addresses", "cita/reference/glossary","cita/reference/faq"]
+        "ids": ["cita/ref/addresses", "cita/ref/glossary","cita/ref/faq"]
       }
     ],
     "Toolchain": [{

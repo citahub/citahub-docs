@@ -71,9 +71,9 @@ usage: create_cita_config.py create [-h]
    website: https://www.example.com (https://www.example.com/)
    blockInterval: 3000
    economicalModel: 0
-   name: Nervos AppChain Test Token
-   symbol: NATT
-   avatar: https://cdn.cryptape.com/icon_appchain.png
+   name: CITA Test Token
+   symbol: CTT
+   avatar: https://cdn.cryptape.com/icon_cita.png
    autoExec: false
  -QuotaManager:
    admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
@@ -225,9 +225,9 @@ $ rpc getMetaData
     "economicalModel": 1,
     "genesisTimestamp": 1538101178583,
     "operator": "test-operator",
-    "tokenAvatar": "https://cdn.cryptape.com/icon_appchain.png",
-    "tokenName": "Nervos AppChain Test Token",
-    "tokenSymbol": "NATT",
+    "tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+    "tokenName": "CITA Test Token",
+    "tokenSymbol": "CTT",
     "validators": [
       "0x185e7072f53574666cf8ed8ec080e09b7e39c98f"
     ],

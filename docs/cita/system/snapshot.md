@@ -29,7 +29,7 @@ snapshot_tool -m snapshot [-e HEIGHT]  [-f FILE]
 snapshot_tool -m restore [-f FILE]
 ```
 
-中括号中的选项是可选的。 
+中括号中的选项是可选的。
 
 - -m 是指定功能，快照或者恢复。
 - -e 是指定区块链高度，缺省值是区块链当前高度。

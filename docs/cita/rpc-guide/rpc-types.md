@@ -7,9 +7,9 @@ title: JSON RPC 类型
 
 | | CITA |
 |-------|:------------:|
-| JSON-RPC 1.0 | &#x2713; | 
+| JSON-RPC 1.0 | &#x2713; |
 | JSON-RPC 2.0 | &#x2713; |
-| Batch requests | &#x2713; | 
+| Batch requests | &#x2713; |
 | HTTP | &#x2713; |
 | IPC | |
 | WS | &#x2713; |

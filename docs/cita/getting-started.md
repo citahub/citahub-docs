@@ -10,9 +10,9 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ```
 node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.cryptape.com
-node 2: 116.62.221.89:1338  
-node 3: 47.96.84.91:1339  
-node 4: 121.43.163.31:1340  
+node 2: 116.62.221.89:1338
+node 3: 47.96.84.91:1339
+node 4: 121.43.163.31:1340
 ```
 
 ## 依赖
@@ -75,11 +75,11 @@ $ ./env.sh make release
 编译生成的文件在发布件目录 `target/install` 下，生产环境下只需要这个目录即可。
 
 > **Docker env 和 daemon 使用说明**
-> 
+>
 > * 在源码根目录下，我们提供了 `env.sh` 脚本，封装了 Docker 相关的操作。
 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。
 例如：
-> 
+>
 >   ```shell
 >   $ ./env.sh make debug
 >   ```
@@ -95,9 +95,9 @@ $ ./env.sh make release
 >   ```shell
 >   $ ./env.sh
 >   error: failed switching to "user": unable to find user user: no matching entries in passwd file
->   ``` 
+>   ```
 >   因此要保证操作使用的始终是同一个系统用户。
-> * 如果出现 Docker 相关的报错，可以执行如下命令并重试：  
+> * 如果出现 Docker 相关的报错，可以执行如下命令并重试：
 >   ```shell
 >   docker kill $(docker ps -a -q)
 >   ```
@@ -114,11 +114,11 @@ $ ./env.sh make release
     $ cd target/install
     ```
   * 如果之前选择下载编译好的发布包：
-   
+
     ```shell
     $ cd cita_secp256k1_sha3/
     ```
-     
+
 * 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
 
   ```shell
@@ -141,7 +141,7 @@ $ ./env.sh make release
   $ ./env.sh ./bin/cita setup test-chain/3
   ```
 
-> **Note** 
+> **Note**
 >
 > * 生产环境中，用户需要根据实际情况更改默认配置。使用命令 `./scripts/create_cita_config.py -h` 来获得详细帮助信息，允许自定义的配置包括：
 >   * 系统管理员账户

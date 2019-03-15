@@ -12,7 +12,7 @@ title: 数据订正
 
 ## 数据订正的类型
 
-Amend 交易现在有四种不同的数据订正的类型 ABI,Code,Balance,Key-Value, 发送不同类型的 Amend 交易的差别，主要体现在 cita-cli 的 Amend 子命令中，一般情况下 
+Amend 交易现在有四种不同的数据订正的类型 ABI,Code,Balance,Key-Value, 发送不同类型的 Amend 交易的差别，主要体现在 cita-cli 的 Amend 子命令中，一般情况下
 
 * address 参数为账户地址
 
@@ -40,7 +40,7 @@ amend abi 代表修改 ABI信息，命令中的 content参数 的值为 ABI 的�
 
 ### Code
 Code 类型用来修改合约账户内的代码，参数如下：
-amend code 代表修改 Code 信息，命令中的 content 参数 的值为 Code 的二进制数据信息 
+amend code 代表修改 Code 信息，命令中的 content 参数 的值为 Code 的二进制数据信息
 
 - 示例：
 

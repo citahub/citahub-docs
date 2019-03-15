@@ -3,7 +3,7 @@ title: CITA Java SDK
 id: java-sdk
 ---
 
-由于 CITA 完全兼容Ethereum EVM，Java SDK（ Github 项目名称：cita-sdk-java ）借鉴了 [Web3j](https://github.com/web3j/web3j) ，在其基础上对 CITA 独有的特性做了全面的适配。cita-sdk-java 集成了与 CITA 客户端交互的功能，可以用来对 CITA 发送交易，部署智能合约、调用合约方法、进行系统配置以及其他信息查询等功能。
+由于 CITA 完全兼容 Ethereum EVM，Java SDK（ Github 项目名称：cita-sdk-java ）借鉴了 [Web3j](https://github.com/web3j/web3j) ，在其基础上对 CITA 独有的特性做了全面的适配。cita-sdk-java 集成了与 CITA 客户端交互的功能，可以用来对 CITA 发送交易，部署智能合约、调用合约方法、进行系统配置以及其他信息查询等功能。
 
 ## 特性
 

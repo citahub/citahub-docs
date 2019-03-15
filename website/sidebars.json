@@ -85,7 +85,13 @@
         "ids": ["cita/ref/addresses", "cita/ref/glossary","cita/ref/faq"]
       }
     ],
-    "Toolchain": [{
+    "Toolchain": [
+      {
+        "label": "CITA-Toolchain-intro",
+        "type": "subcategory",
+        "ids": ["toolchain/toolchain-intro/toolchain-intro"]
+      },
+      {
         "label": "CITA-CLI",
         "type": "subcategory",
         "ids": ["toolchain/cli/cli-intro"]

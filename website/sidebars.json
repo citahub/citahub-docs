@@ -103,7 +103,8 @@
           "toolchain/sdk/javascript-sdk",
           "toolchain/sdk/java-sdk",
           "toolchain/sdk/swift-sdk",
-          "toolchain/sdk/ruby-sdk"
+          "toolchain/sdk/ruby-sdk",
+          "toolchain/sdk/rust-sdk"
         ]
       },
       {

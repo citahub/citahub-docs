@@ -1,13 +1,12 @@
 ---
-title: CITA Ruby SDK
-id: ruby-sdk
+title: CITA Rust SDK
+id: rust-sdk
 ---
 
-Ruby SDK 用于构建 [ReBirth](https://github.com/cryptape/re-birth)。
+Rust SDK 是 CITA JSON-RPC 客户端的 Rust 实现。
 
 ## Getting Started
 
-https://github.com/cryptape/cita-sdk-ruby
+https://github.com/cryptape/cita-common/tree/develop/cita-web3
 
 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea
-

@@ -205,12 +205,23 @@
       "toolchain/sdk/ruby-sdk": {
         "title": "CITA Ruby SDK"
       },
+      "toolchain/sdk/rust-sdk": {
+        "title": "CITA Rust SDK"
+      },
       "toolchain/sdk/swift-sdk": {
         "title": "CITA Swift SDK"
+      },
+      "toolchain/toolchain-intro/toolchain-intro": {
+        "title": "CITA Toolchain 简介",
+        "sidebar_label": "Toolchain 简介"
       },
       "toolchain/truffle-box/truffle-box-intro": {
         "title": "CITA Truffle Box Introduction",
         "sidebar_label": "CITA Truffle Box 简介"
+      },
+      "toolchain/web-debugger/web-debugger-intro": {
+        "title": "CITA Web Debugger",
+        "sidebar_label": "CITA Web Debugger 简介"
       },
       "version-0.17-architecture": {
         "title": "Architecture"

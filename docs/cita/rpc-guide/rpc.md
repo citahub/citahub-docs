@@ -879,11 +879,11 @@ Result:
 
 ### newFilter
 
-Creates a filter object, based on filter options, to notify when the state changes (logs). To check if the state has changed, call getFilterChanges.
+基于给定的 topic 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 `getFilterChanges` 查看状态变化内容。
 
 * Parameters
 
-1. `Filter` - The filter object, see [getLogs](#getlogs)
+1. `Filter` - The filter object, 详见 Filter 的说明。
 
 * Returns
 
@@ -909,7 +909,7 @@ Result:
 
 ### newBlockFilter
 
-Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call getFilterChanges.
+创建一个新块产生过滤器，当新块产生时，记录 hash 值。调用 `getFilterChanges` 查看新块 hash 列表。
 
 * Parameters
 
@@ -939,8 +939,8 @@ Result:
 
 ### uninstallFilter
 
-Uninstalls a filter with given id. Should always be called when watch is no longer needed.
-Additonally Filters timeout when they aren't requested with getFilterChanges for a period of time.
+卸载 filter 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。当然，如果你在创建过滤器
+后的很长一段时间，没有调用 `getFilterChanges`， 过滤器会自动卸载。
 
 * Parameters
 
@@ -970,7 +970,7 @@ Result:
 
 ### getFilterChanges
 
-Polling method for a filter, which returns an array of logs which occurred since last poll.
+获取最近一次监听内容。
 
 * Parameters
 
@@ -978,9 +978,10 @@ Polling method for a filter, which returns an array of logs which occurred since
 
 * Returns
 
-`Array` - Array of log objects, or an empty array. If the filter belongs to blockfilter,
-the result returned is a block hash array containing the hashes of the block after the filter was created.
-同 [getLogs](#getlogs)
+`Array` - Array of log objects, or an empty array. 
+
+* If the filter belongs to blockfilter, the result returned is a block hash array containing the hashes of the block after the filter was created.
+* If the filter belongs to newfilter, thre result returned is state change, according to filter topics.
 
 * Example
 
@@ -988,7 +989,7 @@ the result returned is a block hash array containing the hashes of the block aft
 curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}'
 ```
 
-Result:
+NewFilter Result:
 
 ```json
 {

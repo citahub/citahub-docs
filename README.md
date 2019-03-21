@@ -4,25 +4,33 @@
 
 ### Update documents
 
-* Add or modify the docs under `docs` folder.
-* Modify sidebar in `sidebars.json`
+- Add or modify the docs under `docs` folder.
+- Modify sidebar in `sidebars.json`
+
+### Host Locally
+
+```shell
+$ cd website
+$ yarn install
+$ ENABLE_SOURCE_DOCS=true yarn start # use set ENABLE_SOURCE_DOCS to set the environment
+```
 
 ### Build the documentation site
 
 #### Initializing the website
 
-  ```shell
-  $ cd website
-  $ yarn install
-  ```
+```shell
+$ cd website
+$ yarn install
+```
 
-  > **Note**
-  >
-  > You can also install by npm:
-  >
-  > ```shell
-  > $ npm install
-  > ```
+> **Note**
+>
+> You can also install by npm:
+>
+> ```shell
+> $ npm install
+> ```
 
 #### Update Sidebar Titles
 

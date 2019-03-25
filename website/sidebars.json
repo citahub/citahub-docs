@@ -27,7 +27,7 @@
           "cita/system/log",
           "cita/system/snapshot",
           "cita/system/batch-tx",
-          "cita/system/emergency-brake",
+          "cita/system/emg-brake",
           "cita/system/amend",
           "cita/system/fee-back",
           "cita/system/version",
@@ -67,7 +67,7 @@
         "type": "subcategory",
         "ids": [
           "cita/architecture/architecture",
-          "cita/architecture/components",
+          "cita/architecture/comp",
           "cita/architecture/cons",
           "cita/architecture/transaction-process",
           "cita/architecture/view"

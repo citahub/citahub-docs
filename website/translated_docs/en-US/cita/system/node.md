@@ -17,33 +17,32 @@ CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为
 ### 添加普通节点（以下以 4 号节点举例）
 
 1. 假设目前的工作目录在 `../cita/target/install/` 下：
-    
-    ```bash
+
+```bash
     $ pwd
     ../cita/target/install
     $ ls test-chain/
       0  1  2  3  template
     ```
-    
     template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
 
 2. 生成新 node：
-    
+
     ```bash
     $ ./scripts/create_cita_config.py append --chain_name test-chain --node "127.0.0.1:4004"
     $ ls test-chain/
       0  1  2  3  4  template
     ```
-    
-    * append 子命令，在指定链中增加对应 ip 地址的节点
-    * 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
+
+    - append 子命令，在指定链中增加对应 ip 地址的节点
+    - 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
 
 3. 启动新节点：
-    
+
     对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
-    
+
     新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
-    
+
     ```bash
     $ ./bin/cita setup test-chain/4
     $ ./bin/cita start test-chain/4
@@ -125,7 +124,7 @@ $ cita-cli scm NodeManager approveNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](../configuration/chain-configuration)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](../configuration/chain-config)。
 
 输出：
 
@@ -238,7 +237,7 @@ $ cita-cli scm NodeManager deleteNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](../configuration/chain-configuration)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](../configuration/chain-config)。
 
 输出：
 

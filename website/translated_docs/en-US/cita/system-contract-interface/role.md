@@ -4,7 +4,7 @@ title: Role Contract
 ---
 
 
-<h2 class="hover-list">Role</h2>
+<h2 class="hover-list">Role Contract Interface</h2>
 
 * [queryName](#queryname)
 * [queryPermissions](#querypermissions)

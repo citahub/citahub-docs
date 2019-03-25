@@ -90,7 +90,7 @@ $ cita-cli key create
 
 ### 部署合约
 
-使用[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/SimpleStorage.sol)
+使用[测试合约](https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol)
 
 #### 获得合约的相关信息
 

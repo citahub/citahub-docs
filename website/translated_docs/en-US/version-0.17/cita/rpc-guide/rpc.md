@@ -5,7 +5,7 @@ original_id: rpc
 ---
 !> **接口名称更改！** 老版本用户请注意，为了让接口更加清晰明了，最新版本的CITA去掉了0.16及更老版本中接口的前缀。
 
-## JSON-RPC
+## JSON RPC
 
 * [peerCount](#peercount)
 * [blockNumber](#blocknumber)
@@ -43,11 +43,11 @@ original_id: rpc
     `Quantity` - integer of the number of connected peers.
 
 * Example
-    
-    ```js
+
+```js
     // Request
     curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}'
-    
+
     // Result
     {
         "id": 74,
@@ -56,26 +56,26 @@ original_id: rpc
     }
     ```
 
-* * *
+***
 
 ### blockNumber
 
 返回当前块高度。
 
 * Parameters
-    
+
     None
 
 * Returns
-    
+
     `Quantity` - integer of current block height of CITA.
 
 * Example
-    
+
     ```js
     // Request
     curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}'
-    
+
     // Result
     {
         "id": 83,
@@ -84,15 +84,16 @@ original_id: rpc
     }
     ```
 
-* * *
+***
 
 ### sendRawTransaction
 
 通过序列化交易调用区块链接口。
 
 * Parameters
-    
+
     1. `Data`, The signed transaction data.
+
     ```js
     const signed_data = "0a9b0412013018fface20420f73b2a8d046060604052341561000f57600080fd5b5b60646000819055507f8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3336064604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b5b610178806100956000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b1146100495780636d4ce63c1461006c575b600080fd5b341561005457600080fd5b61006a6004808035906020019091905050610095565b005b341561007757600080fd5b61007f610142565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055507ffd28ec3ec2555238d8ad6f9faf3e4cd10e574ce7e7ef28b73caa53f9512f65b93382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b50565b6000805490505b905600a165627a7a72305820631927ec00e7a86b68950c2304ba2614a8dcb84780b339fc2bfe442bba418ce800291241884bfdfd8e417ab286fd761d42b71a9544071d91084c56f9063471ce82e266122a8f9a24614e1cf75070eea301bf1e7a65857def86093b6892e09ae7d0bcdff901"
     params: [signed_data]
@@ -229,11 +230,11 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
     `Data32` - 交易hash
 
 * Example
-    
-    ```js
+
+```js
     // Request
     curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["0x0a910212013218fface20420a0492a8302606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da200291241edd3fb02bc1e844e1a6743e8986a61e1d8a584aac26db5fa1ce5b32700eba5d16ba4c754731f43692f3f5299e85176627e55b9f61f5fe3e43572ec8c535b0d9201"],"id":1}'
-    
+
     // Result
     {
       "jsonrpc": "2.0",
@@ -243,9 +244,9 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
         "status": "OK"
       }
     }
-    
+
     // 如果是近期发送的重复交易，则会提示重复交易
-    
+
     {
       "jsonrpc": "2.0",
       "id": 1,
@@ -254,20 +255,21 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
         "message": "Dup"//重复交易
       }
     }
-    
-    
+
+
     ```
 
-* * *
+***
 
 ### getBlockByHash
 
 根据块hash查询块的信息。
 
 * Parameters
-    
+
     1. `Data32` - Hash of a block.
     2. `Boolean` - 是否返回交易信息(True: 返回详细交易列表| False: 只返回交易hash).
+
     ```shell
     params: [
         '0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329',
@@ -276,15 +278,15 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
     ```
 
 * Returns
-    
+
     1. `Object` - A block object, or null when no block was found:
 
 * Example
-    
+
     ```shell
     // Request
     curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByHash","params":["0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329", true],"id":1}'
-    
+
     // Result
     {
       "jsonrpc": "2.0",
@@ -323,19 +325,20 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
         }
       }
     }
-    
+
     ```
 
-* * *
+***
 
 ### getBlockByNumber
 
 根据块高度查询块信息。
 
 * Parameters
-    
+
     1. `Quantity` - integer of a block height.
     2. `Boolean` - 是否返回交易信息(True: 返回详细交易列表| False: 只返回交易hash).
+
     ```js
     params: [
        0x1da3,
@@ -344,18 +347,18 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
     ```
 
 * Returns
-    
+
     See [getBlockByHash](#getblockbyhash)
 
 * Example
-    
+
     ```js
     // Request
     curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0xF9", true],"id":1}'
     ```
 
 * Invalid Params
-    
+
     ```shell
     curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0XF9", true],"id":1}'
     #或者
@@ -366,15 +369,16 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
 
 同 [getBlockByHash](#getblockbyhash)
 
-* * *
+***
 
 ### getTransactionReceipt
 
 根据交易hash获取交易回执。
 
 * Parameters
-    
+
     1. `Data32` - hash of a transaction
+
     ```js
     params: [
         "0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af"
@@ -382,9 +386,9 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
     ```
 
 * Returns
-    
+
     Object - A receipt object:
-    
+
     * transactionHash: `Data32` - hash of the transaction.
     * transactionIndex: `Quantity` - transaction index.
     * blockHash: `Data32` - hash of the block where this transaction was in. null when its not in block.
@@ -395,9 +399,9 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
     * logs: `Array` - Array of log objects, which this transaction generated.
     * root: `Data32` of post-transaction stateroot.
     * errorMessage: `String` execution error message.
-    
+
     Receipt error messages:
-    
+
     * No transaction permission.
     * No contract permission.
     * Not enough base gas.
@@ -414,11 +418,11 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
     * Reverted.
 
 * Example
-    
+
     ```js
     // Request
     curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionReceipt","params":["0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"],"id":1}'
-    
+
     // Result
     {
         "jsonrpc":"2.0",
@@ -450,7 +454,7 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
             "logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100040000000010000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
         }
     }
-    
+
     error：
     {
       "contractAddress": "0xbb6f8266fae605da373c2526c386fe07542b4957",
@@ -469,30 +473,30 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
 
 如果出现**Timeout，errorcode 99**,请查看可能的解决方法[Can't assign requested Address](https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux)
 
-* * *
+***
 
 ### getLogs
 
 根据Topic查询logs。
 
 * Parameters
-    
+
     1. `Filter` - The filter object，详见 `Filter` 的说明。
 
 * Returns
-    
+
     `Array` - Array of log objects, or an empty array if no logs
-    
-    * `address` - 合约地址
-    * `topics`- 用来构造过滤器的topics
-    * `data`- 经过 topics 筛选的 log 数据
+
+      * `address` - 合约地址
+      * `topics`- 用来构造过滤器的topics
+      * `data`- 经过 topics 筛选的 log 数据
 
 * Example
-    
+
     ```js
     // Request
     curl -X POST --data '{"jsonrpc":"2.0","method":"getLogs","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"],"fromBlock": "0x0"}],"id":74}'
-    
+
     // Result
     {
         "jsonrpc":"2.0",
@@ -513,31 +517,32 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
             }
         ]
     }
-    
+
     ```
 
-* * *
+***
 
 ### call
 
 合约接口调用。
 
 * Parameters
-    
+
     1. `CallRequest` - The transaction call object. 详见 `CallRequest` 的说明。
     2. `BlockNumber` - block parameter.
+
     ```js
     params: [{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "0x1d23"]
     ```
 
 * Returns
-    
+
     `Data32` - the transaction hash.
 
 * Example
-    
+
     contract中get方法Hash和编码后的数据
-    
+
     ```shell
     0x6d4ce63c
     ```
@@ -566,16 +571,17 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b
 * Parameters
     
     1. `Data32` - hash of a transaction
-    ```js
+
+```js
     params: [
         "0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"
     ]
     ```
 
 * Returns
-    
+
     Object - A transaction object, or null when no transaction was found:
-    
+
     * hash: `Data32` - hash of the transaction.
     * content: `Data` 交易内容.
     * blockHash: `Data32` - hash of the block where this transaction was in. null when its not in block.
@@ -583,11 +589,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b
     * index: `Quantity` - integer of the transactions index position in the block. null when its not in block.
 
 * Example
-    
+
     ```js
     // Request
     curl -X POST --data '{"jsonrpc":"2.0","method":"getTransaction","params":["0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"],"id":1}'
-    
+
     // Result
     {
       "jsonrpc": "2.0",
@@ -602,55 +608,55 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b
     }
     ```
 
-* * *
+***
 
 ### getTransactionCount
 
 获取账户发送交易的数量。
 
 * Parameters
-    
+
     1. `Data20` - address.
     2. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
 
 * Returns
-    
+
     `Quantity` - integer of the number of transactions send from this address.
 
 * Example
-    
+
     ```shell
     curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","0x1f"],"id":1}'
-    
+
     // Result:
     {
       "jsonrpc": "2.0",
       "id": 1,
       "result": "0x1"
     }
-    
+
     ```
 
-* * *
+***
 
 ### getCode
 
 获取合约代码。
 
 * Parameters
-    
+
     1. `Data20` - address.
     2. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
 
 * Returns
-    
+
     `Data` - the code from the given address.
 
 * Example
-    
+
     ```shell
     curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
-    
+
     // Result:
     {
       "jsonrpc": "2.0",
@@ -659,33 +665,33 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b
     }
     ```
 
-* * *
+***
 
 ### getAbi
 
 获取合约ABI
 
 * Parameters
-    
+
     1. `Data20` - address.
     2. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
 
 * Returns
-    
+
     `Data` - the abi from the given address.
 
 * Example
-    
+
     ```shell
     curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}'
-    
+
     // Result:
     {
       "jsonrpc": "2.0",
       "id": 1,
       "result": "0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000"
     }
-    
+
     ```
 
 ### 在Account中保存ABI和获取ABI
@@ -703,30 +709,31 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b
 
 Example
 
-以`scripts/contracts/tests/contracts/test_example.sol`这个合约为例子，正常在链上创建该合约；
+以`https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
 
-* 首先可以通过solc得到合约的ABI；
-    
+- 首先可以通过solc得到合约的ABI；
+
     ```shell
-    solc --abi test_example.sol
-    
+    solc --abi SimpleStorage.sol
+
     // Result
     [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]
     ```
 
-* 将abi作为String类型，编码结果如下：
-    
-        0x4ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000
-        00000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275
-        696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d7
-        5746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c
-        22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e743
-        23536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e63
-        74696f6e227d5d00000000000000000000000000000000000000000000000000
-        
+- 将abi作为String类型，编码结果如下：
 
-* 构造并发送交易到链上
-    
+    ```
+    0x4ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000
+    00000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275
+    696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d7
+    5746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c
+    22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e743
+    23536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e63
+    74696f6e227d5d00000000000000000000000000000000000000000000000000
+    ```
+
+- 构造并发送交易到链上
+
     ```shell
     // 前面20字节`73552bc4e960a1d53013b40074569ea05b950b4d`为合约地址，后面为abi
     python3 make_tx.py --code "73552bc4e960a1d53013b40074569ea05b950b4d4ed3885e000000000000000000000000000000000000000000000
@@ -738,296 +745,292 @@ Example
     654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000
     000000000" --to "ffffffffffffffffffffffffffffffffff010001"  --privkey "352416e1c910e413768c51390dfd791b414212b7b4fe6b1a
     18f58007fa894214"
-    
+
     python3 send_tx.py
-    
+
     // Result
     --> {"params": ["0ad0030a286161616161616161616161616161616161616161616161616161616161616161616161616161616112013118fface20420ba022a980373552bc4e960a1d53013b40074569ea05b950b4d4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d000000000000000000000000000000000000000000000000001241a79c6b34aaa552ccbe99c1240ecf892a982fa337d26143f5485cb578f3972c426aaebd031d49b5ce32164422fd292957e183fa5933da8cb9eee426607e3314f101"], "jsonrpc": "2.0", "method": "sendRawTransaction", "id": 1}
     <-- {"jsonrpc":"2.0","id":1,"result":{"hash":"0x5ea7cf509ef5325bd58f737ab533c7fe5683c285a2d7b71dde90519f5640ae73","status":"OK"}} (200 OK)
     transaction hash 保存到../output/transaction/hash
-    
+
     ```
 
 #### 查询abi
 
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}' 127.0.0.1:1337 | jq
-    
-    // Result:
-    {
-      "jsonrpc": "2.0",
-      "id": 1,
-      "result": "0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000"
-    }
-    
-
-* * *
-
-### getBalance
-
-获取合约余额。
-
-* Parameters
-    
-    1. `Data` - address.
-    2. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
-
-* Returns
-    
-    `Data` - the balance from the given address.
-
-* Example
-    
-    ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
-    
-    // Result:
-    {
-      "jsonrpc": "2.0",
-      "id": 1,
-      "result": "0x0"
-    }
-    ```
-
-* * *
-
-### newFilter
-
-Creates a filter object, based on filter options, to notify when the state changes (logs). To check if the state has changed, call getFilterChanges.
-
-* Parameters
-    
-    1. `Filter` - The filter object, see [getLogs](#getlogs)
-
-* Returns
-    
-    `Quantity` - A filter id.
-
-* Example
-    
-    ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"newFilter","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"]}],"id":1}'
-    
-    // Result
-    {
-      "id":1,
-      "jsonrpc": "2.0",
-      "result": "0x1"
-    }
-    ```
-
-* * *
-
-### newBlockFilter
-
-Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call getFilterChanges.
-
-* Parameters
-    
-    None
-
-* Returns
-    
-    `Quantity` - A filter id.
-
-* Example
-    
-    ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"newBlockFilter","params":[],"id":73}'
-    
-    // Result
-    {
-      "id":1,
-      "jsonrpc":  "2.0",
-      "result": "0x1"
-    }
-    ```
-
-* * *
-
-### uninstallFilter
-
-Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additonally Filters timeout when they aren't requested with getFilterChanges for a period of time.
-
-* Parameters
-    
-    1. `Quantity` - The filter id.
-
-* Returns
-    
-    `Boolean` - true if the filter was successfully uninstalled, otherwise false.
-
-* Example
-    
-    ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":73}'
-    
-    // Result
-    {
-      "id":1,
-      "jsonrpc": "2.0",
-      "result": true
-    }
-    ```
-
-* * *
-
-### getFilterChanges
-
-Polling method for a filter, which returns an array of logs which occurred since last poll.
-
-* Parameters
-    
-    1. `Quantity` - The filter id.
-
-* Returns
-    
-    `Array` - Array of log objects, or an empty array if nothing has changed since last poll. 同 [getLogs](#getlogs)
-
-* Example
-    
-    ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}'
-    
-    // Result
-    {
-        "jsonrpc":"2.0",
-        "id":74,
-        "result":[
-            {
-                "address":"0xea4f6bc98b456ef085da5c424db710489848cab5",
-                "topics":[
-                    "0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"
-                ],
-                "data":"0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064",
-                "blockHash":"0x3e83b74560860344f4c48d7b8089a18173aecd96b6b2148653c61b5d3f559764",
-                "blockNumber":"0x4",
-                "transactionHash":"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
-                "transactionIndex":"0x0",
-                "logIndex":"0x0",
-                "transactionLogIndex":"0x0"
-            }
-        ]
-    }
-    ```
-
-* * *
-
-### getFilterLogs
-
-Returns an array of all logs matching filter with given id.
-
-* Parameters
-    
-    1. `Quantity` - The filter id.
-
-* Returns
-    
-    `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
-
-* Example
-    
-    同 [getFilterChanges](#getfilterchanges)
-
-* * *
-
-### getTransactionProof
-
-根据交易hash获取交易执行的证明。
-
-* Parameters
-    
-    1. `Data32` - hash of a transaction
-        
-        ```js
-        params: [
-            "0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"
-        ]
-        ```
-
-* Returns
-    
-    `Data` - A proof include transaction, receipt, receipt merkle tree proof, block header. There will be a tool to verify the proof and extract some info.
-
-* Example
-    
-    ```js
-    // Request
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionProof","params":["0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"],"id":1}'
-    
-    // Result
-    {
-        "jsonrpc": "2.0",
-        "id": 1,
-        "result": "0xf9070df903f2a09a9102d68052de36b825d5b1f4dc9512684a8b1a61add6337e455ef69eb304e7a044d0da81e6ebd0928c084692e5aacb6f0e56dbd0a064c9639adb7ef9f6fd3b41a037f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4a02c533219294c9fce960e0749b017a3ce281eb45facaa138123240336fef8327db90100000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000400000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000005b88ffffffffffffffff826d7b86016242114b6f80b902530ace0442000000000000003078306139383765623937646438323539626433623063386665303832303333333762336631386536613161653735613035636261383032336135346563303564355a00000000000000000000000000000004000000000000002a000000000000003078316666333830313730633765633338613831643731636663636433343765653033386464646237304100000000000000cf81312f4118a72b53f35ecd99817cb499597f1ff7132df672e58cbb615180e8535eebe2040d6303b50c55cbe01d01de49512b6dbffc363dd950a4a919b9693b002a000000000000003078383665373133326164326535323433326466323537633630373638373962626334393962343365624100000000000000f75f5b766676560d6e1a116c29ac6176070c5448c453dc68202b4ac7d388c3cc0edf07d2e0c171710c6ec30735d06590b7fa8e3c094a9275df1bfddf026f1a94002a000000000000003078373661393566333633313532666133353338623530366362636539333764343138613164643131644100000000000000cba1c56842458c11245ba64b0fc3f93dc90682b12407623634433a6a22a741af356a2df0603ab6d300b7c8638db7c56761a716d4948da10be177b36193c058e7012a0000000000000030783362313836653138643263353530383661343230323338373239613238303761393364366163633941000000000000000727955db4413d3c7f476d94d7570ae6d6ed4177fff682fde08ee21b1e46e47073d39d22218b55bb56e1e620fb4a5f17c998d9b80892a27fd73d947756483085001002f901e5826d7bb9010000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000040000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000f8dbf8d99473552bc4e960a1d53013b40074569ea05b950b4de1a002d96cafa1b66d774136b3051a7a5675d5cb23a055bfe1410019ec924f4f93acb8a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000073552bc4e960a1d53013b40074569ea05b950b4d00000000000000000000000000000000000000000000000000000000ec90a79a0000000000000000000000000000000000000000000000000000000000000000c001c0f9012c31808398967f9473552bc4e960a1d53013b40074569ea05b950b4d80b8644c6e5926000000000000000000000000000000000000000000000000000000000000000000000000000000000000000073552bc4e960a1d53013b40074569ea05b950b4d000000000000000000000000000000000000000000000000000000000000000281aeb84182e91042d0201d5f3c8def6f7b09a46a02c6d4a9890e878406498f47fc78719a6d86ee0cfb7bba33228649790c7340ea975dbe59b7fd6a0f267de972b1008dbf0180a037f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4b840c7561cde2792e85c76bf423cf9c339bd085f6ca686e2fe5cb5092c6bff210786790cac0bf6472e6837282bef5e19416e791f5dbf6abbb33e04e4b291d6ef4e1b80"
-    }
-    ```
-
-* * *
-
-### getMetaData
-
-根据高度查询链上元数据。
-
-* Parameters
-    
-    1. `BlockNumber`, integer of a block height or "latest"
-        
-        ```py
-        params: [
-            "0x1da3"
-        ]
-        ```
-
-* Returns
-    
-    * `chainId`, `Integer` - Deal with transaction replay attack
-    * `chainName`, `String` - Chain name
-    * `operator`, `String` - Chain operator
-    * `genesisTimestamp`, `Integer` - Genesis timestamp
-    * `validators`, `[Data20]` - Validator array
-    * `blockInterval` `Integer` - block interval by millisecond
-    * `tokenName`, `String` - Token name
-    * `tokenSymbol`, `String` - Token symbol
-    * `tokenAvatar`, `String` - Token avatar url
-
-* Example
-    
-    ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"id":1}' 127.0.0.1:1337
-    
-    {
-        "jsonrpc": "2.0",
-        "id": 1,
-        "result": {
-            "chainId": 1,
-            "chainName": "test-chain",
-            "operator": "test-operator",
-            "website": "https://www.example.com",
-            "genesisTimestamp": 1528076976075,
-            "validators": [
-            "0x18e79b84cd3e5801e7f3dc66546b3b46af812cbd",
-            "0x5bb02723557a4633cebfa3f83b1ecb657002f444",
-            "0xafbf170735a3535f141cd929f67296de50842638",
-            "0xdd321f6586f2c5ceb4ae3ce28d0bd92fb631d3ae"
-            ],
-            "blockInterval": 3000,
-            "token_name": "tokenName",
-            "token_symbol": "tokenSymbol",
-            "token_avatar": "tokenAvatar"
-        }
-    }
-    ```
-
-* * *
-
-## RPC Errors
-
-### Invalid Request
-
-```shell
-// 正确方式：POST 方法
-curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[]}' 127.0.0.1:1337
 ```
+
+curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}' 127.0.0.1:1337 | jq
+
+// Result: { "jsonrpc": "2.0", "id": 1, "result": "0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000" }
+
+    <br />***
+    
+    ### getBalance
+    
+    获取合约余额。
+    
+    * Parameters
+    
+        1. `Data` - address.
+        2. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
+    
+    * Returns
+    
+        `Data` - the balance from the given address.
+    
+    * Example
+    
+        ```shell
+        curl -X POST --data '{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
+    
+        // Result:
+        {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "result": "0x0"
+        }
+        ```
+    
+    ***
+    
+    ### newFilter
+    
+    Creates a filter object, based on filter options, to notify when the state changes (logs). To check if the state has changed, call getFilterChanges.
+    
+    * Parameters
+    
+        1. `Filter` - The filter object, see [getLogs](#getlogs)
+    
+    * Returns
+    
+        `Quantity` - A filter id.
+    
+    * Example
+    
+        ```shell
+        curl -X POST --data '{"jsonrpc":"2.0","method":"newFilter","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"]}],"id":1}'
+    
+        // Result
+        {
+          "id":1,
+          "jsonrpc": "2.0",
+          "result": "0x1"
+        }
+        ```
+    
+    ***
+    
+    ### newBlockFilter
+    
+    Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call getFilterChanges.
+    
+    * Parameters
+    
+        None
+    
+    * Returns
+    
+        `Quantity` - A filter id.
+    
+    * Example
+    
+        ```shell
+        curl -X POST --data '{"jsonrpc":"2.0","method":"newBlockFilter","params":[],"id":73}'
+    
+        // Result
+        {
+          "id":1,
+          "jsonrpc":  "2.0",
+          "result": "0x1"
+        }
+        ```
+    
+    ***
+    
+    ### uninstallFilter
+    
+    Uninstalls a filter with given id. Should always be called when watch is no longer needed.
+    Additonally Filters timeout when they aren't requested with getFilterChanges for a period of time.
+    
+    * Parameters
+    
+        1. `Quantity` - The filter id.
+    
+    * Returns
+    
+        `Boolean` - true if the filter was successfully uninstalled, otherwise false.
+    
+    * Example
+    
+        ```shell
+        curl -X POST --data '{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":73}'
+    
+        // Result
+        {
+          "id":1,
+          "jsonrpc": "2.0",
+          "result": true
+        }
+        ```
+    
+    ***
+    
+    ### getFilterChanges
+    
+    Polling method for a filter, which returns an array of logs which occurred since last poll.
+    
+    * Parameters
+    
+        1. `Quantity` - The filter id.
+    
+    * Returns
+    
+        `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
+        同 [getLogs](#getlogs)
+    
+    * Example
+    
+        ```shell
+        curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}'
+    
+        // Result
+        {
+            "jsonrpc":"2.0",
+            "id":74,
+            "result":[
+                {
+                    "address":"0xea4f6bc98b456ef085da5c424db710489848cab5",
+                    "topics":[
+                        "0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"
+                    ],
+                    "data":"0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064",
+                    "blockHash":"0x3e83b74560860344f4c48d7b8089a18173aecd96b6b2148653c61b5d3f559764",
+                    "blockNumber":"0x4",
+                    "transactionHash":"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
+                    "transactionIndex":"0x0",
+                    "logIndex":"0x0",
+                    "transactionLogIndex":"0x0"
+                }
+            ]
+        }
+        ```
+    
+    ***
+    
+    ### getFilterLogs
+    
+    Returns an array of all logs matching filter with given id.
+    
+    * Parameters
+    
+        1. `Quantity` - The filter id.
+    
+    * Returns
+    
+        `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
+    
+    * Example
+    
+        同 [getFilterChanges](#getfilterchanges)
+    
+    ***
+    
+    ### getTransactionProof
+    
+    根据交易hash获取交易执行的证明。
+    
+    * Parameters
+    
+        1. `Data32` - hash of a transaction
+    
+            ```js
+            params: [
+                "0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"
+            ]
+            ```
+    
+    * Returns
+    
+        `Data` - A proof include transaction, receipt, receipt merkle tree proof, block header. There will be a tool to verify the proof and extract some info.
+    
+    * Example
+    
+        ```js
+        // Request
+        curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionProof","params":["0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"],"id":1}'
+    
+        // Result
+        {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "result": "0xf9070df903f2a09a9102d68052de36b825d5b1f4dc9512684a8b1a61add6337e455ef69eb304e7a044d0da81e6ebd0928c084692e5aacb6f0e56dbd0a064c9639adb7ef9f6fd3b41a037f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4a02c533219294c9fce960e0749b017a3ce281eb45facaa138123240336fef8327db90100000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000400000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000005b88ffffffffffffffff826d7b86016242114b6f80b902530ace0442000000000000003078306139383765623937646438323539626433623063386665303832303333333762336631386536613161653735613035636261383032336135346563303564355a00000000000000000000000000000004000000000000002a000000000000003078316666333830313730633765633338613831643731636663636433343765653033386464646237304100000000000000cf81312f4118a72b53f35ecd99817cb499597f1ff7132df672e58cbb615180e8535eebe2040d6303b50c55cbe01d01de49512b6dbffc363dd950a4a919b9693b002a000000000000003078383665373133326164326535323433326466323537633630373638373962626334393962343365624100000000000000f75f5b766676560d6e1a116c29ac6176070c5448c453dc68202b4ac7d388c3cc0edf07d2e0c171710c6ec30735d06590b7fa8e3c094a9275df1bfddf026f1a94002a000000000000003078373661393566333633313532666133353338623530366362636539333764343138613164643131644100000000000000cba1c56842458c11245ba64b0fc3f93dc90682b12407623634433a6a22a741af356a2df0603ab6d300b7c8638db7c56761a716d4948da10be177b36193c058e7012a0000000000000030783362313836653138643263353530383661343230323338373239613238303761393364366163633941000000000000000727955db4413d3c7f476d94d7570ae6d6ed4177fff682fde08ee21b1e46e47073d39d22218b55bb56e1e620fb4a5f17c998d9b80892a27fd73d947756483085001002f901e5826d7bb9010000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000040000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000f8dbf8d99473552bc4e960a1d53013b40074569ea05b950b4de1a002d96cafa1b66d774136b3051a7a5675d5cb23a055bfe1410019ec924f4f93acb8a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000073552bc4e960a1d53013b40074569ea05b950b4d00000000000000000000000000000000000000000000000000000000ec90a79a0000000000000000000000000000000000000000000000000000000000000000c001c0f9012c31808398967f9473552bc4e960a1d53013b40074569ea05b950b4d80b8644c6e5926000000000000000000000000000000000000000000000000000000000000000000000000000000000000000073552bc4e960a1d53013b40074569ea05b950b4d000000000000000000000000000000000000000000000000000000000000000281aeb84182e91042d0201d5f3c8def6f7b09a46a02c6d4a9890e878406498f47fc78719a6d86ee0cfb7bba33228649790c7340ea975dbe59b7fd6a0f267de972b1008dbf0180a037f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4b840c7561cde2792e85c76bf423cf9c339bd085f6ca686e2fe5cb5092c6bff210786790cac0bf6472e6837282bef5e19416e791f5dbf6abbb33e04e4b291d6ef4e1b80"
+        }
+        ```
+    
+    ***
+    
+    ### getMetaData
+    
+    根据高度查询链上元数据。
+    
+    * Parameters
+    
+        1. `BlockNumber`, integer of a block height or "latest"
+    
+            ```py
+            params: [
+                "0x1da3"
+            ]
+            ```
+    
+    * Returns
+        * `chainId`, `Integer` - Deal with transaction replay attack
+        * `chainName`, `String` - Chain name
+        * `operator`, `String` - Chain operator
+        * `genesisTimestamp`, `Integer` - Genesis timestamp
+        * `validators`, `[Data20]` - Validator array
+        * `blockInterval` `Integer` - block interval by millisecond
+        * `tokenName`, `String` - Token name
+        * `tokenSymbol`, `String` - Token symbol
+        * `tokenAvatar`, `String` - Token avatar url
+    * Example
+    
+        ```shell
+        curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"id":1}' 127.0.0.1:1337
+    
+        {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "result": {
+                "chainId": 1,
+                "chainName": "test-chain",
+                "operator": "test-operator",
+                "website": "https://www.example.com",
+                "genesisTimestamp": 1528076976075,
+                "validators": [
+                "0x18e79b84cd3e5801e7f3dc66546b3b46af812cbd",
+                "0x5bb02723557a4633cebfa3f83b1ecb657002f444",
+                "0xafbf170735a3535f141cd929f67296de50842638",
+                "0xdd321f6586f2c5ceb4ae3ce28d0bd92fb631d3ae"
+                ],
+                "blockInterval": 3000,
+                "token_name": "tokenName",
+                "token_symbol": "tokenSymbol",
+                "token_avatar": "tokenAvatar"
+            }
+        }
+        ```
+    
+    ***
+    
+    ## RPC Errors
+    
+    ### Invalid Request
+    
+    ```shell
+    // 正确方式：POST 方法
+    curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[]}' 127.0.0.1:1337
+    
 
 ```shell
 {"jsonrpc":"2.0","error":{"code":-32600,"message":"Invalid Request"},"id":null}

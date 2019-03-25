@@ -47,7 +47,7 @@ original_id: batch-tx
 
 *首先需要启动一条链，具体方法见快速入门部分*
 
-其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/test_batch-tx.sol)函数签名如下:
+其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/src/system/BatchTx.sol)函数签名如下:
 
     ======= contracts/test_batch-tx.sol:SelfAdd =======
     Function signatures:

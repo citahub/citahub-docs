@@ -1,6 +1,6 @@
 ---
 id: chain-config
-title: 链级配置
+title: Chain Configuration
 ---
 当拿到发布件解压后，或从源码编译后，不要着急动节点，在这之前，很重要的一步就是我们需要对链进行初始化配置。 这些配置信息将被写入链的创世块，创世块一旦生成，SysConfig 中只有 `chainName`，`operator`，`website` 这三项可以在链运行之后再进行修改，其他项均不可再修改, 因此请大家慎重设定各配置项。 在 CITA 里面，我们提供了工具 config tool 来帮助你在起链前对链进行初始化配置, 提供了命令行工具 CITA-CLI 来帮助你在起链后修改个别配置。
 
@@ -67,9 +67,9 @@ usage: create_cita_config.py create [-h]
        website: https://www.example.com (https://www.example.com/)
        blockInterval: 3000
        economicalModel: 0
-       name: Nervos AppChain Test Token
-       symbol: NATT
-       avatar: https://cdn.cryptape.com/icon_appchain.png
+       name: CITA Test Token
+       symbol: CTT
+       avatar: https://cdn.cryptape.com/icon_cita.png
        autoExec: false
      -QuotaManager:
        admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
@@ -227,9 +227,9 @@ $ rpc getMetaData
     "economicalModel": 1,
     "genesisTimestamp": 1538101178583,
     "operator": "test-operator",
-    "tokenAvatar": "https://cdn.cryptape.com/icon_appchain.png",
-    "tokenName": "Nervos AppChain Test Token",
-    "tokenSymbol": "NATT",
+    "tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+    "tokenName": "CITA Test Token",
+    "tokenSymbol": "CTT",
     "validators": [
       "0x185e7072f53574666cf8ed8ec080e09b7e39c98f"
     ],

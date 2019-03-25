@@ -1,5 +1,5 @@
 ---
-id: emergency-brake
+id: emg-brake
 title: Emergency Braking
 ---
 ## 简述

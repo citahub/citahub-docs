@@ -1,6 +1,6 @@
 ---
 id: version-0.17-quota
-title: Quota Management
+title: 配额管理
 original_id: quota
 ---
  

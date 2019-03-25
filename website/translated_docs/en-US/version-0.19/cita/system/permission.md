@@ -16,7 +16,7 @@ CITA 通过智能合约的方式来对权限进行管理。
 
 目前权限管理针对外部账户进行细粒度管理。CITA 默认集成了 superAdmin 账户，拥有权限管理涉及到的所有权限。在 CITA 启动前可以对 superAdmin 进行配置。 在权限系统开启时，由用户生成的外部账户，在 CITA 系统中没有任何权限，需要 superAdmin 对其进行授权。
 
-权限管理默认未开启，配置相关信息查看[系统合约](./chain/config-tool)
+权限管理默认未开启，配置相关信息查看[系统合约](../chain/config-tool)
 
 ## 权限管理概述
 
@@ -53,7 +53,7 @@ CITA 通过智能合约的方式来对权限进行管理。
 
 系统内置了 superAdmin 的帐号，其拥有以上所有权限，可对其进行正常的权限管理。默认配置情况下其他普通账户也拥有以上权限，建议在初始化 CITA 系统前对权限管理进行配置。
 
-可以查看具体[权限的地址信息](https://github.com/cryptape/cita/blob/develop/cita-chain/types/src/reserved-addresses.rs)
+可以查看具体[权限的地址信息](https://github.com/cryptape/cita/blob/develop/cita-chain/types/src/reserved_addresses.rs)
 
 ### Permission Management Contract Interface
 
@@ -335,7 +335,7 @@ $ ./env.sh ./scripts/create_cita_config.py create \
 
 其中 `checkPermission`, `checkSendTxPermission`, `checkCreateContractPermission` 分别为合约调用、发送交易及创建合约的开关。
 
-启动链接下来的步骤见[快速搭链](./chain/getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+启动链接下来的步骤见[快速搭链](../chain/getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 生成普通账户
 
@@ -355,19 +355,19 @@ $ cita-cli key create
 
 ### 部署合约
 
-使用[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/test_example.sol)
+使用[测试合约](https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol)
 
 #### 获得合约的相关信息
 
 - 字节码
 
 ```bash
-$ solc test_example.sol --bin
+$ solc SimpleStorage.sol --bin
 ```
 
 输出：
 
-    ======= test_example.sol:SimpleStorage =======
+    ======= SimpleStorage.sol:SimpleStorage =======
     Binary:
     608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029
     
@@ -375,12 +375,12 @@ $ solc test_example.sol --bin
 - 函数签名
 
 ```bash
-$ solc test_example.sol --hashes
+$ solc SimpleStorage.sol --hashes
 ```
 
 输出：
 
-    ======= test_example.sol:SimpleStorage =======
+    ======= SimpleStorage.sol:SimpleStorage =======
     Function signatures:
     6d4ce63c: get()
     60fe47b1: set(uint256)

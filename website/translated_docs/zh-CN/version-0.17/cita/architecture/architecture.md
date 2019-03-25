@@ -3,6 +3,8 @@ id: version-0.17-architecture
 title: 架构设计
 original_id: architecture
 ---
+ 
+
 ## 微服务
 
 联盟链在交易吞吐量低、交易实时性上很难满足行业应用的要求。另外，区块链 技术发展迅速，单体应用也很难满足演进要求。

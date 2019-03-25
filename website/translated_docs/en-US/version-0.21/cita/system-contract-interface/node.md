@@ -1,6 +1,6 @@
 ---
 id: version-0.21-node
-title: Consensus Node Management Contract Interface
+title: Consensus Node Management Contract
 original_id: node
 ---
 

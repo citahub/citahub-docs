@@ -18,37 +18,37 @@ CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为
 ### 添加普通节点（以下以 4 号节点举例）
 
 1. 假设目前的工作目录在 `../cita/target/install/` 下：
-    
-    ```bash
-    $ pwd
-    ../cita/target/install
-    $ ls test-chain/
+
+```bash
+   $ pwd
+   ../cita/target/install
+   $ ls test-chain/
      0  1  2  3  template
-    ```
-    
-    template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
+   ```
+
+   template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
 
 2. 生成新 node：
-    
-    ```bash
-    $ ./scripts/create_cita_config.py append --node "127.0.0.1:4004"
-    $ ls test-chain/
+
+   ```bash
+   $ ./scripts/create_cita_config.py append --node "127.0.0.1:4004"
+   $ ls test-chain/
      0  1  2  3  4  template
-    ```
+   ```
 
-- append 子命令，在指定链中增加对应 ip 地址的节点
-- 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
+   - append 子命令，在指定链中增加对应 ip 地址的节点
+   - 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
 
-1. 启动新节点：
-    
-    对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
-    
-    新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
-    
-    ```bash
-    $ ./bin/cita setup test-chain/4
-    $ ./bin/cita start test-chain/4
-    ```
+3. 启动新节点：
+
+   对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
+
+   新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
+
+   ```bash
+   $ ./bin/cita setup test-chain/4
+   $ ./bin/cita start test-chain/4
+   ```
 
 ### 删除普通节点
 
@@ -69,7 +69,9 @@ CITA 作为一个面向企业级应用的区块链框架，需要保证监管方
 - 设置共识节点权重；
 - 获取共识节点权重千分比。
 
-### Consensus Node Management Contract Interface
+### 共识节点管理合约接口
+
+
 
 <table>
   <tr>
@@ -136,6 +138,8 @@ CITA 作为一个面向企业级应用的区块链框架，需要保证监管方
   </tr>
 </table>
 
+
+
 ### 增加共识节点
 
 节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由管理员(拥有管理员角色的账号)确认才完成了添加操作。
@@ -179,27 +183,27 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffff
 调用合约遵循 [ABI](https://solidity.readthedocs.io/en/develop/abi-spec.html), 提供工具 `make_tx.py`：
 
 1. 构造 approveNode 交易信息
-    
-    ```bash
-    $ python3 make_tx.py --to "ffffffffffffffffffffffffffffffffff020001" --code "dd4c97a000000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e" --privkey "5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6"
-    ```
 
-- privkey 是私钥，用来签证，确认交易信息合法，系统默认的几个私钥可以看 [系统合约相关](./chain/config-tool)
-- code 前 8 位是函数 hash 值，即 newNode 对应的 hash，后面 64 位是函数的参数 address 的值，即节点地址，不足 64 位用 0 补齐。
+```bash
+   $ python3 make_tx.py --to "ffffffffffffffffffffffffffffffffff020001" --code "dd4c97a000000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e" --privkey "5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6"
+   ```
 
-1. 发送交易
-    
-    ```bash
-    $ python3 send_tx.py
-    --> {"params": ["0a5b0a283030303030303030303030303030303030303030303030303030303030303030303133323431613212013118fface20420ef012a24dd4c97a000000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e124177a025eaafcda1f28f4b2eedd1c8ecb0d339b141e452a3bd8736cd9abc45e7387af7ab41045df5646aa411e7cac1b3a8b78e7efc81b356877afcf4a2080c06d500"], "jsonrpc": "2.0", "method": "sendRawTransaction", "id": 1}
-    <-- {"jsonrpc":"2.0","id":1,"result":{"hash":"0xd6b38b125efcacb8d59379eef9394e3d9d4f7bb4151e53f0c2c50682f9f037b4","status":"OK"}} (200 OK)
-    ```
+   - privkey 是私钥，用来签证，确认交易信息合法，系统默认的几个私钥可以看 [系统合约相关](../chain/config-tool)
+   - code 前 8 位是函数 hash 值，即 newNode 对应的 hash，后面 64 位是函数的参数 address 的值，即节点地址，不足 64 位用 0 补齐。
 
-2. 获取回执
-    
-    ```bash
-    $ python3 get_receipt.py
-    {
+2. 发送交易
+
+   ```bash
+   $ python3 send_tx.py
+   --> {"params": ["0a5b0a283030303030303030303030303030303030303030303030303030303030303030303133323431613212013118fface20420ef012a24dd4c97a000000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e124177a025eaafcda1f28f4b2eedd1c8ecb0d339b141e452a3bd8736cd9abc45e7387af7ab41045df5646aa411e7cac1b3a8b78e7efc81b356877afcf4a2080c06d500"], "jsonrpc": "2.0", "method": "sendRawTransaction", "id": 1}
+   <-- {"jsonrpc":"2.0","id":1,"result":{"hash":"0xd6b38b125efcacb8d59379eef9394e3d9d4f7bb4151e53f0c2c50682f9f037b4","status":"OK"}} (200 OK)
+   ```
+
+3. 获取回执
+
+   ```bash
+   $ python3 get_receipt.py
+   {
      "contractAddress": null,
      "cumulativeGasUsed": "0xcf15",
      "logs": [
@@ -226,18 +230,18 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffff
      "logsBloom": "0x00000000000000020040000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000010000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000",
      "transactionIndex": "0x0",
      "gasUsed": "0xcf15"
-    }
-    ```
+   }
+   ```
 
-3. 查看当前的共识节点数
-    
-    ```bash
-    $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffffffffffffffffffffffffffffffff020001", "data":"0x609df32f"}, "latest"],"id":2}' 127.0.0.1:1337
-    
-    {"jsonrpc":"2.0","id":2,"result":"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005000000000000000000000000cb9480d61bf0964687c6839670f1c3e65c1ca193000000000000000000000000dd21b5f342b017a6546a3e5455be1a6e4d6e83a10000000000000000000000000bb7249753e5dcec37c4ad3b917f10c68d64bffa00000000000000000000000011f0bba536cde870fb7c733f93d9b12ecedd13a100000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"}
-    ```
-    
-    可以看到，返回的 result 中在最后增加了一个地址，即当前新增的节点已经成为共识节点。
+4. 查看当前的共识节点数
+
+   ```bash
+   $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffffffffffffffffffffffffffffffff020001", "data":"0x609df32f"}, "latest"],"id":2}' 127.0.0.1:1337
+
+   {"jsonrpc":"2.0","id":2,"result":"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005000000000000000000000000cb9480d61bf0964687c6839670f1c3e65c1ca193000000000000000000000000dd21b5f342b017a6546a3e5455be1a6e4d6e83a10000000000000000000000000bb7249753e5dcec37c4ad3b917f10c68d64bffa00000000000000000000000011f0bba536cde870fb7c733f93d9b12ecedd13a100000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"}
+   ```
+
+   可以看到，返回的 result 中在最后增加了一个地址，即当前新增的节点已经成为共识节点。
 
 ### 删除共识节点
 
@@ -274,14 +278,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffff
     
     生成的交易信息存放在 `../output/transaction/deploycode` 中
 
-1. 发送交易
+2. 发送交易
     
     ```bash
     $ python3 send_tx.py
     --> {"jsonrpc": "2.0", "method": "sendRawTransaction", "params": ["0x0a83010a2866666666666666666666666666666666666666666666666666666666666666666666303230303031120656415a39553718c0843d20e7032a242d4ede9300000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e3220000000000000000000000000000000000000000000000000000000000000000038011241958dc34c4524e928193902732e9b9445eb585577b5b1d78267b75423951580f31964bcd8b979a25d6cfa1578f012a3f69df91fabd0ce83289fbe9f65cbffaf4a01"], "id": 1}
     ```
 
-2. 获取回执
+3. 获取回执
     
     ```bash
     $ python3 get_receipt.py
@@ -316,7 +320,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffff
     
     ```
 
-3. 查看当前的共识节点数
+4. 查看当前的共识节点数
     
     ```bash
     $  curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0xffffffffffffffffffffffffffffffffff020001", "data":"0x609df32f"}, "latest"],"id":2}' 127.0.0.1:1337

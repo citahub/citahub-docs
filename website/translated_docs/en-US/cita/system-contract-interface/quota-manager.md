@@ -1,6 +1,6 @@
 ---
 id: quota-manager
-title: Quota Management Contract Interface
+title: Quota Management Contract
 ---
 
 

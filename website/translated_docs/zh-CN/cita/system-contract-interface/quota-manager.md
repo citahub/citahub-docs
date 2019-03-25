@@ -4,7 +4,7 @@ title: 配额管理合约接口
 ---
 
 
-<h2 class="hover-list">Quota Management</h2>
+<h2 class="hover-list">配额管理</h2>
 
 * [setBQL](#setBQL)
 * [setDefaultAQL](#setDefaultAQL)

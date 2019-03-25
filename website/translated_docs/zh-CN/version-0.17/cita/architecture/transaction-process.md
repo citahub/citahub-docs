@@ -1,6 +1,6 @@
 ---
 id: version-0.17-transaction-process
-title: Transaction Processing
+title: 交易处理
 original_id: transaction-process
 ---
 CITA 采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用 Protobuf 格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。

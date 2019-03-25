@@ -1,6 +1,6 @@
 ---
 id: rpc-types
-title: JSON RPC 类型
+title: JSON RPC Types
 ---
 ## JSON-RPC support
 

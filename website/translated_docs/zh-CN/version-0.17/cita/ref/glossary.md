@@ -1,10 +1,8 @@
 ---
 id: version-0.17-glossary
 title: 词汇表
-original_id: 词汇表
+original_id: glossary
 ---
- 
-
 ## 区块链
 
 - 区块

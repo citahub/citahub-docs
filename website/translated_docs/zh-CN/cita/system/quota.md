@@ -4,7 +4,10 @@ title: 配额管理
 ---
 ## 简述
 
-cita 中的配额数量存在两个限制： * `BQL(BlockQuotaLimit)` : 表示块配额的最大值， 默认 1073741824 * `AQL(AccountQuotaLimit)` : 表示账户配额的最大值， 默认 268435456
+cita 中的配额数量存在两个限制：
+
+* `BQL(BlockQuotaLimit)` : 表示块配额的最大值， 默认 1073741824
+* `AQL(AccountQuotaLimit)` : 表示账户配额的最大值， 默认 268435456
 
 我们可以通过配额管理合约实现对区块以及账户配额消耗上限的管理:
 

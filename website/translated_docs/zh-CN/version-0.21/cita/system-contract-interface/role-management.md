@@ -10,7 +10,7 @@ original_id: role-management
 * [newRole](#newrole)
 * [updateRoleName](#updaterolename)
 * [addPermissions](#addpermissions)
-* [deletePermissions](#deleterermissions)
+* [deletePermissions](#deletepermissions)
 * [setRole](#setrole)
 * [cancelRole](#cancelrole)
 * [clearRole](#clearrole)

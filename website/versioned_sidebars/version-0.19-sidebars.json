@@ -21,7 +21,7 @@
           "version-0.19-cita/system/snapshot",
           "version-0.19-cita/system/batch-tx",
           "version-0.19-cita/system/emg-brake",
-          "version-0.19-cita/system/data-amend",
+          "version-0.19-cita/system/amend",
           "version-0.19-cita/system/fee-back"
         ]
       },

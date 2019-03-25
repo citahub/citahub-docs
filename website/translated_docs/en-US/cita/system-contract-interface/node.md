@@ -1,6 +1,6 @@
 ---
 id: node
-title: Consensus Node Management Contract Interface
+title: Consensus Node Management Contract
 ---
 
 

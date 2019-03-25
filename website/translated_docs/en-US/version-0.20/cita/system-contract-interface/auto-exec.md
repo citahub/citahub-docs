@@ -5,7 +5,7 @@ original_id: auto-exec
 ---
 # Auto Execution Contract
 
-<h2 class="hover-list">Auto Exec</h2>
+<h2 class="hover-list">Auto Execution</h2>
 
 - [register](#register)
 - [autoExec](#autoExec)

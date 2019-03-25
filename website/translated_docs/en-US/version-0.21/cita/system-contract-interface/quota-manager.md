@@ -1,6 +1,6 @@
 ---
 id: version-0.21-quota-manager
-title: Quota Management Contract Interface
+title: Quota Management Contract
 original_id: quota-manager
 ---
 

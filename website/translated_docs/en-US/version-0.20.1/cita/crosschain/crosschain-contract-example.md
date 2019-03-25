@@ -6,7 +6,7 @@ original_id: crosschain-contract-example
 ---
 ## 跨链合约编写
 
-### 跨链合约示例
+### Example of a cross-chain contract
 
 可以参照[示例合约](https://github.com/cryptape/test-contracts/blob/master/MyToken.sol)。
 

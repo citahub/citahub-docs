@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: 快速入门
+title: Getting Started
 ---
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
@@ -8,9 +8,9 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 > * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 CITA 测试链。测试链的水龙头的地址为：https://dapp.cryptape.com/faucet/, 可以在这里领取 Testnet 的代币。测试链的内核 CITA 的版本为 [`v0.20.2`](https://github.com/cryptape/cita/releases/tag/v0.20.2)。该测试链由4个节点组成，各节点的 ip 地址和端口如下：
 
     node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.cryptape.com
-    node 2: 116.62.221.89:1338  
-    node 3: 47.96.84.91:1339  
-    node 4: 121.43.163.31:1340  
+    node 2: 116.62.221.89:1338
+    node 3: 47.96.84.91:1339
+    node 4: 121.43.163.31:1340
     
 
 ## 依赖
@@ -93,7 +93,7 @@ $ ./env.sh make release
 >     
 >     因此要保证操作使用的始终是同一个系统用户。
 > 
-> * 如果出现 Docker 相关的报错，可以执行如下命令并重试：  
+> * 如果出现 Docker 相关的报错，可以执行如下命令并重试： 
 >         shell
 >         docker kill $(docker ps -a -q)
 
@@ -104,62 +104,60 @@ $ ./env.sh make release
 * 先切换到发布件目录
     
     * 如果之前选择从源码开始编译：
-    ```shell
+
+```shell
     $ cd target/install
     ```
-    
-    * 如果之前选择下载编译好的发布包：
+  * 如果之前选择下载编译好的发布包：
+
     ```shell
     $ cd cita_secp256k1_sha3/
     ```
 
 * 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
-    
-    ```shell
-    $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
-    ```
-    
-    节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
-    
-    * test-chain/0
-    * test-chain/1
-    * test-chain/2
-    * test-chain/3
+
+  ```shell
+  $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+  ```
+
+  节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
+
+  * test-chain/0
+  * test-chain/1
+  * test-chain/2
+  * test-chain/3
 
 * 执行以下命令依次配置四个节点
-    
-    ```shell
-    $ ./env.sh ./bin/cita setup test-chain/0
-    $ ./env.sh ./bin/cita setup test-chain/1
-    $ ./env.sh ./bin/cita setup test-chain/2
-    $ ./env.sh ./bin/cita setup test-chain/3
-    ```
+
+  ```shell
+  $ ./env.sh ./bin/cita setup test-chain/0
+  $ ./env.sh ./bin/cita setup test-chain/1
+  $ ./env.sh ./bin/cita setup test-chain/2
+  $ ./env.sh ./bin/cita setup test-chain/3
+  ```
 
 > **Note**
-> 
+>
 > * 生产环境中，用户需要根据实际情况更改默认配置。使用命令 `./scripts/create_cita_config.py -h` 来获得详细帮助信息，允许自定义的配置包括：
->     
->     * 系统管理员账户
->     * 出块时间间隔
->     * 累积多少历史交易量后进行重复交易的检查
->     * 系统合约详细参数
->     * 共识节点地址
->     
->     该工具更详细的使用说明请参考 [Config Tool](./configuration/chain-configuration)。
-> 
+>   * 系统管理员账户
+>   * 出块时间间隔
+>   * 累积多少历史交易量后进行重复交易的检查
+>   * 系统合约详细参数
+>   * 共识节点地址
+>
+>   该工具更详细的使用说明请参考 [Config Tool](./configuration/chain-config)。
 > * 对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。
-> * 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool的功能和用法](./configuration/chain-configuration)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：
->     
->     ```shell
->     $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
->     ```
->     
->     运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个Docker 里运行。
+> * 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool的功能和用法](./configuration/chain-config)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：
+>
+>   ```shell
+>   $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
+>   ```
+>
+>   运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个Docker 里运行。
 
 ### 节点命令
 
 通过 `./bin/cita` 查看节点命令。
-
 ```shell
 Usage: cita <command> <node> [options]
 where <command> is one of the following:

@@ -5,7 +5,7 @@ original_id: rpc
 ---
 !> **Methods Name Changed ！** For the user of V0.16 and older versions: Please pay attention that we deprecated the pre-fix in the name of JSON-RPC interfaces, which makes it looks more tidy and easier to use.
 
-## JSON-RPC
+## JSON RPC
 
 * [peerCount](#peercount)
 * [blockNumber](#blocknumber)
@@ -743,7 +743,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e96
 
 Example
 
-以`scripts/contracts/tests/contracts/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
+以`https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
 
 用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 

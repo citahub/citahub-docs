@@ -97,7 +97,7 @@ optional arguments:
 
 ```shell
 // 传入文件的绝对路径
-python3 compile.py -f /home/jerry/rustproj/cita/admintool/txtool/txtool/tests/test.sol
+python3 compile.py -f /home/jerry/rustproj/cita/config-tool/txtool/txtool/tests/test.sol
 
 // 或者传入源码
 python3 compile.py -s "pragma solidity ^0.4.0;

@@ -15,7 +15,7 @@ CITA 通过智能合约的方式来对权限进行管理。
 
 目前权限管理针对外部账户进行细粒度管理。CITA 默认集成了 superAdmin 账户，拥有权限管理涉及到的所有权限。在 CITA 启动前可以对 superAdmin 进行配置。 在权限系统开启时，由用户生成的外部账户，在 CITA 系统中没有任何权限，需要 superAdmin 对其进行授权。
 
-权限管理默认未开启，配置相关信息查看[系统合约](./chain/config-tool)
+权限管理默认未开启，配置相关信息查看[系统合约](../chain/config-tool)
 
 ## 权限管理概述
 
@@ -321,15 +321,13 @@ CITA 通过智能合约的方式来对权限进行管理。
 - 演示中 superAdmin 密钥对如下： 
   - 公钥： `0x9dcd6b234e2772c5451fd4ccf7582f4283140697`
   - 私钥： `993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9`
-
 - 通过以下命令生成各节点。
-  
-          ``` shell
-          $ ./scripts/create_cita_config.py create --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" \
-                                                   --super_admin "0x9dcd6b234e2772c5451fd4ccf7582f4283140697" \
-                                                   --contract_arguments SysConfig.checkPermission=true
-          ```
-      
+
+```shell
+        $ ./scripts/create_cita_config.py create --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" \
+                                                 --super_admin "0x9dcd6b234e2772c5451fd4ccf7582f4283140697" \
+                                                 --contract_arguments SysConfig.checkPermission=true
+        ```
 
 用户生成普通账户，由 super_admin 账户对其进行授权，实现权限管理。使用 super_admin 的私钥调用的接口由管理员执行，使用用户 john 的私钥由用户 john 执行。
 
@@ -435,26 +433,24 @@ $python3 get_receipt.py
 由于用户 john 的账户没有部署权限，需要通过 superAdmin 对其授 sendTx 发送交易及 createContract 创建合约权限。
 
 - 授予发送交易权限
-  
-          ```shell
-          ######调用系统合约setAuthorization对用户john授予sendTx权限，createContract对应的ID为0x1，ID作为setAuthorization的第二个参数
-          $python3 make_tx.py --privkey "993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9" --to "ffffffffffffffffffffffffffffffffff020004" --code "0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000001"
-          $python3 send_tx.py
-          $python3 get_receipt.py
-          ```
-      
+
+```shell
+        ######调用系统合约setAuthorization对用户john授予sendTx权限，createContract对应的ID为0x1，ID作为setAuthorization的第二个参数
+        $python3 make_tx.py --privkey "993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9" --to "ffffffffffffffffffffffffffffffffff020004" --code "0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000001"
+        $python3 send_tx.py
+        $python3 get_receipt.py
+        ```
 
 其中`--to`为权限管理的系统合约地址，`--code`前`0x0f5aa9f3`为系统合约的 setAuthorization 接口，其后紧跟需要授权地址和所授权限。`0x1`表示 sendTx 发送权限。
 
 - 授予创建合约权限
-  
-          ```shell
-          ######调用系统合约setAuthorization对用户john授予createContract权限，createContract对应的ID为0x2，ID作为setAuthorization的第二个参数
-          $python3 make_tx.py --privkey "993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9" --to "ffffffffffffffffffffffffffffffffff020004" --code "0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000002"
-          $python3 send_tx.py
-          $python3 get_receipt.py
-          ```
-      
+
+        ```shell
+        ######调用系统合约setAuthorization对用户john授予createContract权限，createContract对应的ID为0x2，ID作为setAuthorization的第二个参数
+        $python3 make_tx.py --privkey "993ef0853d7bf1f4c2977457b50ea6b5f8bc2fd829e3ca3e19f6081ddabb07e9" --to "ffffffffffffffffffffffffffffffffff020004" --code "0f5aa9f30000000000000000000000006212dd3506a68d6ec231177c6cb9c46dcfd431900000000000000000000000000000000000000000000000000000000000000002"
+        $python3 send_tx.py
+        $python3 get_receipt.py
+        ```
 
 其中`--to`为权限管理的系统合约地址，`--code`前`0x0f5aa9f3`为系统合约的 setAuthorization 接口，其后紧跟需要授权地址和所授权限。0x2 表示 createContract 创建合约权限。
 

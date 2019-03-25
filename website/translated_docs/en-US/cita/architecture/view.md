@@ -1,6 +1,6 @@
 ---
 id: view
-title: 视图
+title: View
 ---
 ## 账号
 

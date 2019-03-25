@@ -107,7 +107,7 @@ usage: create_cita_config.py create [-h]
   - `operator` : 运营方名称
   - `website` : 运营方网站
   - `blockInterval` ： 出块间隔，默认 3 秒
-  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型，交易只需不超过限额即可，限额由管理员设置，详细机制可查看[配额管理](./system/quota)；`economicalModel = 1` 表示 Charge 模型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看[配额价格管理](./system/price)。
+  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型，交易只需不超过限额即可，限额由管理员设置，详细机制可查看[配额管理](../system/quota)；`economicalModel = 1` 表示 Charge 模型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看[配额价格管理](../system/price)。
   - `name` : Token 名称
   - `symbol` : Token 符号
   - `avatar` : Token 图标链接
@@ -121,11 +121,11 @@ usage: create_cita_config.py create [-h]
   - `parentChainAuthorities` : 父链的共识节点列表
 - `Authorization` : 初始化权限管理合约 
   - `superAdmin` : 管理员地址
-- `Group` : 初始化用户组管理合约 
+- `组合约接口` : 初始化用户组管理合约 
   - `parent` : 父组的地址
   - `name` : 组的名称
   - `accounts` : 组内用户列表
-- `Admin` : 管理员 
+- `管理员合约接口` : 管理员 
   - `admin` : 管理员地址
 - `VersionManager` : 协议版本管理合约 
   - `version` : 协议版本号

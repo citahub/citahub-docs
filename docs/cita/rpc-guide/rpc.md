@@ -770,7 +770,7 @@ Result:
 
 Example
 
-以`scripts/contracts/tests/contracts/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
+以`https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
 
 用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 

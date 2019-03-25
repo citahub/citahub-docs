@@ -77,11 +77,11 @@ original_id: Chain Configuration
   - `parentChainAuthorities` : 父链的共识节点列表
 - `Authorization` : 初始化管理员地址 
   - `superAdmin` : 管理员地址
-- `Group` : 初始化用户组 
+- `Group Contract Interface` : 初始化用户组 
   - `parent` : 父组的地址
   - `name` : 组的名称
   - `accounts` : 组内用户列表
-- `Admin` : 管理员 
+- `Admin Contract Interface` : 管理员 
   - `admin` : 管理员地址
 - `VersionManager` : 协议版本号 
   - `version` : 协议版本号

@@ -18,37 +18,37 @@ CITA 作为联盟链共识节点采用轮流出块的方式进行出块。作为
 ### 添加普通节点（以下以 4 号节点举例）
 
 1. 假设目前的工作目录在 `../cita/target/install/` 下：
-    
-    ```bash
-    $ pwd
-    ../cita/target/install
-    $ ls test-chain/
+
+```bash
+   $ pwd
+   ../cita/target/install
+   $ ls test-chain/
      0  1  2  3  template
-    ```
-    
-    template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
+   ```
+
+   template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
 
 2. 生成新 node：
-    
-    ```bash
-    $ ./scripts/create_cita_config.py append --node "127.0.0.1:4004"
-    $ ls test-chain/
+
+   ```bash
+   $ ./scripts/create_cita_config.py append --node "127.0.0.1:4004"
+   $ ls test-chain/
      0  1  2  3  4  template
-    ```
+   ```
 
-- append 子命令，在指定链中增加对应 ip 地址的节点
-- 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
+   - append 子命令，在指定链中增加对应 ip 地址的节点
+   - 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
 
-1. 启动新节点：
-    
-    对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
-    
-    新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
-    
-    ```bash
-    $ ./bin/cita setup test-chain/4
-    $ ./bin/cita start test-chain/4
-    ```
+3. 启动新节点：
+
+   对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
+
+   新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
+
+   ```bash
+   $ ./bin/cita setup test-chain/4
+   $ ./bin/cita start test-chain/4
+   ```
 
 ### 删除普通节点
 
@@ -69,7 +69,9 @@ CITA 作为一个面向企业级应用的区块链框架，需要保证监管方
 - 设置共识节点权重；
 - 获取共识节点权重千分比。
 
-### Consensus Node Management Contract Interface
+### 共识节点管理合约接口
+
+
 
 <table>
   <tr>
@@ -136,6 +138,8 @@ CITA 作为一个面向企业级应用的区块链框架，需要保证监管方
   </tr>
 </table>
 
+
+
 ### 增加共识节点
 
 节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由管理员(拥有管理员角色的账号)确认才完成了添加操作。
@@ -193,7 +197,7 @@ $ cita-cli scm NodeManager approveNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config-tool)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](../chain/config-tool)。
 
 输出：
 
@@ -306,7 +310,7 @@ $ cita-cli scm NodeManager deleteNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config-tool)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](../chain/config-tool)。
 
 输出：
 

@@ -1,6 +1,6 @@
 ---
 id: version-0.21-view
-title: 视图
+title: View
 original_id: view
 ---
 ## 账号

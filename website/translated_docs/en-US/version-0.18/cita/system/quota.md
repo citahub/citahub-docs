@@ -15,7 +15,7 @@ original_id: quota
     - 默认的账号配额上限，全局设置，即若账号未指定配额上限，默认为此值;
     - 设置指定账号配额上限，可针对不同用户灵活分配对应的配额上限。
 
-## Quota Management Contract Interface
+## Quota Management Contract
 
 说明:
 

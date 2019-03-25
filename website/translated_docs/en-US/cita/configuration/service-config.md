@@ -15,7 +15,7 @@ $ ls 0
 
 了解一下各个关键微服务的配置吧！
 
-## Auth
+## Auth Contract Interface
 
 auth.toml 是 Auth 微服务的配置文件，如下：
 

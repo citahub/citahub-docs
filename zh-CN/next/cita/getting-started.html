@@ -76,9 +76,9 @@
 </ul>
 </blockquote>
 <pre><code class="hljs">node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.cryptape.com
-node 2: 116.62.221.89:1338
-node 3: 47.96.84.91:1339
-node 4: 121.43.163.31:1340
+node 2: 116.62.221.89:1338  
+node 3: 47.96.84.91:1339  
+node 4: 121.43.163.31:1340  
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="依赖"></a><a href="#依赖" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>依赖</h2>
 <h3><a class="anchor" aria-hidden="true" id="系统平台要求"></a><a href="#系统平台要求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>系统平台要求</h3>
@@ -129,7 +129,7 @@ node 4: 121.43.163.31:1340
 error: failed switching to "user": unable to find user user: no matching entries in passwd file
 </code></pre>
 <p>因此要保证操作使用的始终是同一个系统用户。</p></li>
-<li><p>如果出现 Docker 相关的报错，可以执行如下命令并重试：
+<li><p>如果出现 Docker 相关的报错，可以执行如下命令并重试：<br>
 shell
 docker kill $(docker ps -a -q)</p></li>
 </ul>
@@ -140,27 +140,24 @@ docker kill $(docker ps -a -q)</p></li>
 <li><p>先切换到发布件目录</p>
 <ul>
 <li>如果之前选择从源码开始编译：</li>
-</ul></li>
 </ul>
-<pre><code class="hljs css language-shell">    $ cd target/install
-    ```
-  * 如果之前选择下载编译好的发布包：
-
-    ```shell
-    $ cd cita_secp256k1_sha3/
-    ```
-
-* 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
-
-  ```shell
-<span class="hljs-meta">  $</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> target/install</span>
+</code></pre>
+<ul>
+<li>如果之前选择下载编译好的发布包：</li>
+</ul>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita_secp256k1_sha3/</span>
+</code></pre></li>
+<li><p>使用发布件目录中的 <code>create_cita_config.py</code> 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
 </code></pre>
 <p>节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：</p>
 <ul>
-<li><p>test-chain/0</p></li>
-<li><p>test-chain/1</p></li>
-<li><p>test-chain/2</p></li>
-<li><p>test-chain/3</p></li>
+<li>test-chain/0</li>
+<li>test-chain/1</li>
+<li>test-chain/2</li>
+<li>test-chain/3</li>
+</ul></li>
 <li><p>执行以下命令依次配置四个节点</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
 <span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>

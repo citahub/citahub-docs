@@ -76,66 +76,48 @@
 <p>普通节点的管理，包括添加和删除。下面我们将用具体的示例来阐述。</p>
 <h3><a class="anchor" aria-hidden="true" id="添加普通节点-以下以-4-号节点举例"></a><a href="#添加普通节点-以下以-4-号节点举例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>添加普通节点（以下以 4 号节点举例）</h3>
 <ol>
-<li>假设目前的工作目录在 <code>../cita/target/install/</code> 下：</li>
+<li><p>假设目前的工作目录在 <code>../cita/target/install/</code> 下：</p>
+<pre><code class="hljs css language-bash">$ <span class="hljs-built_in">pwd</span>
+../cita/target/install
+$ ls <span class="hljs-built_in">test</span>-chain/
+  0  1  2  3  template
+</code></pre>
+<p>template 中保存了当前节点的公钥地址 <code>template/authorities.list</code>，以及创世块信息 <code>template/configs/genesis.json</code>，目前地址有四个。</p></li>
+<li><p>生成新 node：</p>
+<pre><code class="hljs css language-bash">$ ./scripts/create_cita_config.py append --chain_name <span class="hljs-built_in">test</span>-chain --node <span class="hljs-string">"127.0.0.1:4004"</span>
+$ ls <span class="hljs-built_in">test</span>-chain/
+  0  1  2  3  4  template
+</code></pre>
+<ul>
+<li>append 子命令，在指定链中增加对应 ip 地址的节点</li>
+<li>脚本将自动生成 4 号节点，并在原有节点中 <code>test-chain/*/network.toml</code> 中插入新节点的 ip 及端口配置</li>
+</ul></li>
+<li><p>启动新节点：</p>
+<p>对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。</p>
+<p>新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，<strong>注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求</strong>。</p>
+<pre><code class="hljs css language-bash">$ ./bin/cita setup <span class="hljs-built_in">test</span>-chain/4
+$ ./bin/cita start <span class="hljs-built_in">test</span>-chain/4
+</code></pre></li>
 </ol>
-<pre><code class="hljs css language-bash">    $ <span class="hljs-built_in">pwd</span>
-    ../cita/target/install
-    $ ls <span class="hljs-built_in">test</span>-chain/
-      0  1  2  3  template
-    ```
-    template 中保存了当前节点的公钥地址 `template/authorities.list`，以及创世块信息 `template/configs/genesis.json`，目前地址有四个。
-
-2. 生成新 node：
-
-    ```bash
-    $ ./scripts/create_cita_config.py append --chain_name <span class="hljs-built_in">test</span>-chain --node <span class="hljs-string">"127.0.0.1:4004"</span>
-    $ ls <span class="hljs-built_in">test</span>-chain/
-      0  1  2  3  4  template
-    ```
-
-    - append 子命令，在指定链中增加对应 ip 地址的节点
-    - 脚本将自动生成 4 号节点，并在原有节点中 `<span class="hljs-built_in">test</span>-chain/*/network.toml` 中插入新节点的 ip 及端口配置
-
-3. 启动新节点：
-
-    对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。
-
-    新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
-
-    ```bash
-    $ ./bin/cita setup <span class="hljs-built_in">test</span>-chain/4
-    $ ./bin/cita start <span class="hljs-built_in">test</span>-chain/4
-    ```
-
-<span class="hljs-comment">### 删除普通节点</span>
-
-到对应节点目录下，找到 `network.toml`，删除对应 `peers` 条目即可。
-
-<span class="hljs-comment">## 共识节点管理</span>
-
-CITA 作为一个面向企业级应用的区块链框架，需要保证监管方能够获得相关的权限对共识节点进行管理，包括增加、删除共识节点等操作。对于共识微服务，需要对其提供实时读取共识节点列表的接口，而中心化管理的方式无法保证各个节点的共识节点列表的安全性及一致性。CITA 采用合约的方式来实现共识节点的管理，通过区块链上的合约可以保证共识节点的安全性及一致性。
-
-在 CITA 初始化创世块阶段，需要初始化一个管理员地址，其拥有管理员角色，将其写入到每个节点的创世块文件中，共识节点管理合约拥有的一个固定地址也写入其中。创世块内容在初始化以后不允许被修改。区块链正常启动之后，将合约写入到创世块中。链外的操作人员可以通过调用 RPC 接口来实现对共识节点的管理。
-
-对于共识节点的管理，包括添加、删除及获得共识节点。下面我们将用具体的示例来阐述。
-
-* 添加操作只可由管理员执行;
-* 删除操作只可由管理员执行;
-* 获得共识节点列表；
-* 获取共识节点权重；
-* 设置共识节点权重；
-* 获取共识节点权重千分比。
-
-<span class="hljs-comment">### 增加共识节点</span>
-
-节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由管理员(拥有管理员角色的账号)确认才完成了添加操作。
-
-从普通节点升级到共识节点，具体操作需要用到上面合约方法 `approveNode(address)`。
-
-共识节点管理合约是系统合约，默认将放在创世块上，下面使用 [solc](https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html) 命令(solidity 的命令行编译器，在 cita 镜像中已安装)查看共识节点管理合约的 <span class="hljs-built_in">hash</span>：
-
-```bash
-<span class="hljs-comment"># solc --hashes system/node_manager.sol --allow-paths .</span>
+<h3><a class="anchor" aria-hidden="true" id="删除普通节点"></a><a href="#删除普通节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>删除普通节点</h3>
+<p>到对应节点目录下，找到 <code>network.toml</code>，删除对应 <code>peers</code> 条目即可。</p>
+<h2><a class="anchor" aria-hidden="true" id="共识节点管理"></a><a href="#共识节点管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>共识节点管理</h2>
+<p>CITA 作为一个面向企业级应用的区块链框架，需要保证监管方能够获得相关的权限对共识节点进行管理，包括增加、删除共识节点等操作。对于共识微服务，需要对其提供实时读取共识节点列表的接口，而中心化管理的方式无法保证各个节点的共识节点列表的安全性及一致性。CITA 采用合约的方式来实现共识节点的管理，通过区块链上的合约可以保证共识节点的安全性及一致性。</p>
+<p>在 CITA 初始化创世块阶段，需要初始化一个管理员地址，其拥有管理员角色，将其写入到每个节点的创世块文件中，共识节点管理合约拥有的一个固定地址也写入其中。创世块内容在初始化以后不允许被修改。区块链正常启动之后，将合约写入到创世块中。链外的操作人员可以通过调用 RPC 接口来实现对共识节点的管理。</p>
+<p>对于共识节点的管理，包括添加、删除及获得共识节点。下面我们将用具体的示例来阐述。</p>
+<ul>
+<li>添加操作只可由管理员执行;</li>
+<li>删除操作只可由管理员执行;</li>
+<li>获得共识节点列表；</li>
+<li>获取共识节点权重；</li>
+<li>设置共识节点权重；</li>
+<li>获取共识节点权重千分比。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="增加共识节点"></a><a href="#增加共识节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>增加共识节点</h3>
+<p>节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由管理员(拥有管理员角色的账号)确认才完成了添加操作。</p>
+<p>从普通节点升级到共识节点，具体操作需要用到上面合约方法 <code>approveNode(address)</code>。</p>
+<p>共识节点管理合约是系统合约，默认将放在创世块上，下面使用 <a href="https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html">solc</a> 命令(solidity 的命令行编译器，在 cita 镜像中已安装)查看共识节点管理合约的 hash：</p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># solc --hashes system/node_manager.sol --allow-paths .</span>
 contract address: 0xffffffffffffffffffffffffffffffffff020001
 Function signatures:
     dd4c97a0: approveNode(address)
@@ -324,7 +306,7 @@ Function signatures:
 <blockquote>
 <p>以上代码的返回值有所删减，实际操作会略有不同</p>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/system/contracts"><span class="arrow-prev">← </span><span>系统合约</span></a><a class="docs-next button" href="/zh-CN/next/cita/system/permission"><span>权限管理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#普通节点管理-白名单">普通节点管理 (白名单)</a><ul class="toc-headings"><li><a href="#添加普通节点-以下以-4-号节点举例">添加普通节点（以下以 4 号节点举例）</a></li><li><a href="#删除共识节点">删除共识节点</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/system/contracts"><span class="arrow-prev">← </span><span>系统合约</span></a><a class="docs-next button" href="/zh-CN/next/cita/system/permission"><span>权限管理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#普通节点管理-白名单">普通节点管理 (白名单)</a><ul class="toc-headings"><li><a href="#添加普通节点-以下以-4-号节点举例">添加普通节点（以下以 4 号节点举例）</a></li><li><a href="#删除普通节点">删除普通节点</a></li></ul></li><li><a href="#共识节点管理">共识节点管理</a><ul class="toc-headings"><li><a href="#增加共识节点">增加共识节点</a></li><li><a href="#删除共识节点">删除共识节点</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

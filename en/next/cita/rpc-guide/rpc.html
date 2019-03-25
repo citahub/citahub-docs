@@ -798,12 +798,12 @@ $ cita-cli rpc getAbi \
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="newfilter"></a><a href="#newfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>newFilter</h3>
-<p>Creates a filter object, based on filter options, to notify when the state changes (logs). To check if the state has changed, call getFilterChanges.</p>
+<p>基于给定的 topic 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 <code>getFilterChanges</code> 查看状态变化内容。</p>
 <ul>
 <li>Parameters</li>
 </ul>
 <ol>
-<li><code>Filter</code> - The filter object, see <a href="#getlogs">getLogs</a></li>
+<li><code>Filter</code> - The filter object, 详见 Filter 的说明。</li>
 </ol>
 <ul>
 <li>Returns</li>
@@ -823,7 +823,7 @@ $ cita-cli rpc getAbi \
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="newblockfilter"></a><a href="#newblockfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>newBlockFilter</h3>
-<p>Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call getFilterChanges.</p>
+<p>创建一个新块产生过滤器，当新块产生时，记录 hash 值。调用 <code>getFilterChanges</code> 查看新块 hash 列表。</p>
 <ul>
 <li>Parameters</li>
 </ul>
@@ -846,8 +846,8 @@ $ cita-cli rpc getAbi \
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="uninstallfilter"></a><a href="#uninstallfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>uninstallFilter</h3>
-<p>Uninstalls a filter with given id. Should always be called when watch is no longer needed.
-Additonally Filters timeout when they aren't requested with getFilterChanges for a period of time.</p>
+<p>卸载 filter 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。当然，如果你在创建过滤器
+后的很长一段时间，没有调用 <code>getFilterChanges</code>， 过滤器会自动卸载。</p>
 <ul>
 <li>Parameters</li>
 </ul>
@@ -872,7 +872,7 @@ Additonally Filters timeout when they aren't requested with getFilterChanges for
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getfilterchanges"></a><a href="#getfilterchanges" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getFilterChanges</h3>
-<p>Polling method for a filter, which returns an array of logs which occurred since last poll.</p>
+<p>获取最近一次监听内容。</p>
 <ul>
 <li>Parameters</li>
 </ul>
@@ -882,15 +882,15 @@ Additonally Filters timeout when they aren't requested with getFilterChanges for
 <ul>
 <li>Returns</li>
 </ul>
-<p><code>Array</code> - Array of log objects, or an empty array. If the filter belongs to blockfilter,
-the result returned is a block hash array containing the hashes of the block after the filter was created.
-同 <a href="#getlogs">getLogs</a></p>
+<p><code>Array</code> - Array of log objects, or an empty array.</p>
 <ul>
-<li>Example</li>
+<li><p>If the filter belongs to blockfilter, the result returned is a block hash array containing the hashes of the block after the filter was created.</p></li>
+<li><p>If the filter belongs to newfilter, thre result returned is state change, according to filter topics.</p></li>
+<li><p>Example</p></li>
 </ul>
 <pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}'
 </code></pre>
-<p>Result:</p>
+<p>NewFilter Result:</p>
 <pre><code class="hljs css language-json">{
 <span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,
 <span class="hljs-attr">"id"</span>:<span class="hljs-number">74</span>,

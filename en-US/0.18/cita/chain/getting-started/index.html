@@ -69,12 +69,6 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Getting Started</h1></header><article><div><span><p>CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。</p>
-<blockquote>
-<ul>
-<li>如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考<a href="https://docs.nervos.org/nervos-cita-docs/#/quick-start/deploy-appchain">云服务支持</a>。</li>
-<li>如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 <a href="https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain">测试链</a>, 也可以使用万云提供的 <a href="https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain">BaaS 服务</a>。</li>
-</ul>
-</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="依赖"></a><a href="#依赖" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>依赖</h2>
 <h3><a class="anchor" aria-hidden="true" id="系统平台要求"></a><a href="#系统平台要求" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>系统平台要求</h3>
 <p>系统需支持 Docker 的安装。</p>
@@ -177,9 +171,9 @@ error: failed switching to "user": unable to find user user: no matching entries
 <li>系统合约详细参数</li>
 <li>共识节点地址</li>
 </ul>
-<p>该工具更详细的使用说明请参考 <a href="./chain/config-tool">Config Tool</a>。</p></li>
+<p>该工具更详细的使用说明请参考 <a href="../chain/config-tool">Config Tool</a>。</p></li>
 <li><p>对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。</p></li>
-<li><p>在不同服务器部署多条链主要规划相关端口配置，参见 <a href="./chain/config-tool">config-tool 的功能和用法</a>。在同一台服务器上部署多条链，除了规划端口配置外，由于 <code>RabbitMQ</code> 系统服务限制，多条链只能在一个 Docker 里运行。基于上面 test-chain 链所在的目录，生成一条新链：</p>
+<li><p>在不同服务器部署多条链主要规划相关端口配置，参见 <a href="../chain/config-tool">config-tool 的功能和用法</a>。在同一台服务器上部署多条链，除了规划端口配置外，由于 <code>RabbitMQ</code> 系统服务限制，多条链只能在一个 Docker 里运行。基于上面 test-chain 链所在的目录，生成一条新链：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes <span class="hljs-string">"127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"</span></span>
 </code></pre>
 <p>运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个 Docker 里运行。</p></li>

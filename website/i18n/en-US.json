@@ -12,7 +12,7 @@
         "title": "System Components"
       },
       "cita/architecture/cons": {
-        "title": "Consensus"
+        "title": "共识"
       },
       "cita/architecture/transaction-process": {
         "title": "Transaction Processing"
@@ -24,7 +24,7 @@
         "title": "About CITA"
       },
       "cita/configuration/chain-config": {
-        "title": "链级配置"
+        "title": "Chain Configuration"
       },
       "cita/configuration/config-overview": {
         "title": "Configuration Overview"
@@ -51,13 +51,13 @@
       "cita/protocol-upgrade/v1": {
         "title": "v1 Protocol"
       },
-      "cita/reference/addresses": {
+      "cita/ref/addresses": {
         "title": "Reserved System Addresses"
       },
-      "cita/reference/faq": {
+      "cita/ref/faq": {
         "title": "FAQ"
       },
-      "cita/reference/glossary": {
+      "cita/ref/glossary": {
         "title": "Glossary"
       },
       "cita/rpc-guide/rpc-error-code": {
@@ -85,7 +85,7 @@
         "title": "Batch Transaction Contract"
       },
       "cita/system-contract-interface/emergency-brake": {
-        "title": "Emergency brake Contract"
+        "title": "紧急制动合约接口"
       },
       "cita/system-contract-interface/error": {
         "title": "System contract Error Type"
@@ -135,14 +135,14 @@
       "cita/system/contracts": {
         "title": "System Contracts"
       },
-      "cita/system/emergency-brake": {
+      "cita/system/emg-brake": {
         "title": "Emergency Braking"
       },
       "cita/system/fee-back": {
-        "title": "Fee Back"
+        "title": "出块奖励返回"
       },
       "cita/system/log": {
-        "title": "Log Management"
+        "title": "日志管理"
       },
       "cita/system/node": {
         "title": "Node Management"
@@ -194,7 +194,7 @@
       },
       "toolchain/rebirth/rebirth-intro": {
         "title": "ReBirth Introduction",
-        "sidebar_label": "ReBirth 简介"
+        "sidebar_label": "BeBirth Introduction"
       },
       "toolchain/sdk/java-sdk": {
         "title": "CITA Java SDK"
@@ -205,12 +205,23 @@
       "toolchain/sdk/ruby-sdk": {
         "title": "CITA Ruby SDK"
       },
+      "toolchain/sdk/rust-sdk": {
+        "title": "CITA Rust SDK"
+      },
       "toolchain/sdk/swift-sdk": {
         "title": "CITA Swift SDK"
+      },
+      "toolchain/toolchain-intro/toolchain-intro": {
+        "title": "CITA Toolchain 简介",
+        "sidebar_label": "Toolchain 简介"
       },
       "toolchain/truffle-box/truffle-box-intro": {
         "title": "CITA Truffle Box Introduction",
         "sidebar_label": "CITA Truffle Box Introduction"
+      },
+      "toolchain/web-debugger/web-debugger-intro": {
+        "title": "CITA Web Debugger",
+        "sidebar_label": "CITA Web Debugger 简介"
       },
       "version-0.17-architecture": {
         "title": "Architecture"
@@ -421,7 +432,7 @@
         "title": "CITA Truffle Box Introduction"
       },
       "version-0.18-welcome": {
-        "title": "About CITA"
+        "title": "Overview"
       },
       "version-0.19-architecture": {
         "title": "Architecture"
@@ -472,7 +483,7 @@
       "version-0.19-batch-tx": {
         "title": "Batch Transactions"
       },
-      "version-0.19-data-amend": {
+      "version-0.19-amend": {
         "title": "Amend"
       },
       "version-0.19-emg-brake": {
@@ -536,7 +547,7 @@
         "title": "CITA Truffle Box Introduction"
       },
       "version-0.19-welcome": {
-        "title": "About CITA"
+        "title": "Overview"
       },
       "version-0.20.1-architecture": {
         "title": "Architecture"
@@ -717,7 +728,7 @@
         "title": "CITA Truffle Box Introduction"
       },
       "version-0.20.1-welcome": {
-        "title": "About CITA"
+        "title": "Overview"
       },
       "version-0.20.2-cita-intro": {
         "title": "Welcome to CITA"
@@ -944,74 +955,74 @@
         "title": "CITA Truffle Box Introduction"
       },
       "version-0.20-welcome": {
-        "title": "About CITA"
+        "title": "Overview"
       },
       "version-0.21-architecture": {
-        "title": "系统架构"
+        "title": "System architecture"
       },
       "version-0.21-components": {
-        "title": "系统组件"
+        "title": "System Components"
       },
       "version-0.21-cons": {
         "title": "共识"
       },
       "version-0.21-transaction-process": {
-        "title": "交易处理"
+        "title": "Transaction Processing"
       },
       "version-0.21-view": {
-        "title": "视图"
+        "title": "View"
       },
       "version-0.21-cita-intro": {
-        "title": "关于 CITA"
+        "title": "About CITA"
       },
       "version-0.21-chain-config": {
-        "title": "链级配置"
+        "title": "Chain Configuration"
       },
       "version-0.21-config-overview": {
-        "title": "配置概览"
+        "title": "Configuration Overview"
       },
       "version-0.21-service-config": {
         "title": "Microservice Configuration"
       },
       "version-0.21-crosschain-contract-example": {
-        "title": "跨链合约示例",
+        "title": "Cross-chain Contract Example",
         "sidebar_label": "Crosschain"
       },
       "version-0.21-getting-started": {
-        "title": "快速入门"
+        "title": "Getting Started"
       },
       "version-0.21-huawei": {
         "title": "Huawei Cloud Deployment"
       },
       "version-0.21-overview": {
-        "title": "协议升级概览"
+        "title": "Overview of Protocol Upgrades"
       },
       "version-0.21-v0": {
-        "title": "v0 协议"
+        "title": "v0 Protocol"
       },
       "version-0.21-v1": {
-        "title": "v1 协议"
+        "title": "v1 Protocol"
       },
       "version-0.21-addresses": {
-        "title": "系统保留地址"
+        "title": "Reserved System Addresses"
       },
       "version-0.21-faq": {
         "title": "FAQ"
       },
       "version-0.21-glossary": {
-        "title": "词汇表"
+        "title": "Glossary"
       },
       "version-0.21-rpc-error-code": {
-        "title": "JSON RPC 错误码"
+        "title": "JSON RPC Error Code"
       },
       "version-0.21-rpc-types": {
-        "title": "JSON RPC 类型"
+        "title": "JSON RPC Types"
       },
       "version-0.21-rpc": {
-        "title": "CITA JSON RPC 列表"
+        "title": "CITA JSON RPC List"
       },
       "version-0.21-admin": {
-        "title": "管理员合约接口"
+        "title": "Administrator Contract Interface"
       },
       "version-0.21-all-groups": {
         "title": "All-groups System Contract"
@@ -1025,7 +1036,7 @@
       "version-0.21-batch": {
         "title": "Batch Transaction Contract"
       },
-      "version-0.21-emergency-brake": {
+      "version-0.21-emg-brake": {
         "title": "Emergency Braking"
       },
       "version-0.21-error": {
@@ -1047,7 +1058,7 @@
         "title": "Permission Management"
       },
       "version-0.21-quota-manager": {
-        "title": "Quota Management Contract Interface"
+        "title": "Quota Management Contract"
       },
       "version-0.21-quota-price": {
         "title": "Quota Price Management Contract"
@@ -1074,10 +1085,10 @@
         "title": "System Contracts"
       },
       "version-0.21-fee-back": {
-        "title": "Fee Back"
+        "title": "出块奖励返回"
       },
       "version-0.21-log": {
-        "title": "Log Management"
+        "title": "日志管理"
       },
       "version-0.21-price": {
         "title": "Quota Price Management"
@@ -1102,16 +1113,16 @@
         "title": "CLI Introduction"
       },
       "version-0.21-toolchain/sdk/javascript-sdk": {
-        "title": "Javascript Sdk"
+        "title": "JavaScript SDK"
       },
       "version-0.21-toolchain/sdk/java-sdk": {
-        "title": "Java Sdk"
+        "title": "Java SDK"
       },
       "version-0.21-toolchain/sdk/swift-sdk": {
-        "title": "Swift Sdk"
+        "title": "Swift SDK"
       },
       "version-0.21-toolchain/sdk/ruby-sdk": {
-        "title": "Ruby Sdk"
+        "title": "Ruby SDK"
       },
       "version-0.21-toolchain/rebirth/rebirth-intro": {
         "title": "ReBirth Introduction"
@@ -1209,8 +1220,8 @@
       "version-0.20.2-cita/system-contract-interface/quota-price": {
         "title": "Quota Price Contract Interface"
       },
-      "version-0.20.2-cita/system-contract-interface/emg-brake": {
-        "title": "Emergency Brake"
+      "version-0.20.2-cita/system-contract-interface/emergency-brake": {
+        "title": "Emg Brake"
       },
       "version-0.20.2-cita/system-contract-interface/admin": {
         "title": "Admin Contract Interface"
@@ -1452,7 +1463,7 @@
       "version-0.19-cita/system/fee-back": {
         "title": "Fee Back"
       },
-      "version-0.19-cita/system/data-amend": {
+      "version-0.19-cita/system/amend": {
         "title": "Amend"
       },
       "version-0.19-cita/rpc-guide/rpc-types": {
@@ -1519,7 +1530,7 @@
         "title": "CITA Truffle Box Introduction"
       },
       "version-0.21-cita/configuration/config-overview": {
-        "title": "配置概览"
+        "title": "Configuration Overview"
       },
       "version-0.21-cita/system/contracts": {
         "title": "System Contracts"
@@ -1531,7 +1542,7 @@
         "title": "Quota management"
       },
       "version-0.21-cita/system/log": {
-        "title": "Log Management"
+        "title": "日志管理"
       },
       "version-0.21-cita/system/snapshot": {
         "title": "Snapshot"
@@ -1545,11 +1556,11 @@
       "version-0.21-cita/system/amend": {
         "title": "Amend"
       },
-      "version-0.21-cita/system/emergency-brake": {
+      "version-0.21-cita/system/emg-brake": {
         "title": "Emergency Braking"
       },
       "version-0.21-cita/system/fee-back": {
-        "title": "Fee Back"
+        "title": "出块奖励返回"
       },
       "version-0.21-cita/system/version": {
         "title": "Protocol Versions Management"
@@ -1558,10 +1569,10 @@
         "title": "Automated Execution"
       },
       "version-0.21-cita/rpc-guide/rpc-types": {
-        "title": "JSON RPC 类型"
+        "title": "JSON RPC Types"
       },
       "version-0.21-cita/rpc-guide/rpc-error-code": {
-        "title": "JSON RPC 错误码"
+        "title": "JSON RPC Error Code"
       },
       "version-0.21-cita/system-contract-interface/sys": {
         "title": "System Configuration Contract Interface"
@@ -1570,7 +1581,7 @@
         "title": "Permission Contract"
       },
       "version-0.21-cita/system-contract-interface/node": {
-        "title": "Consensus Node Management Contract Interface"
+        "title": "Consensus Node Management Contract"
       },
       "version-0.21-cita/system-contract-interface/auth": {
         "title": "Authorization Management Contract"
@@ -1594,7 +1605,7 @@
         "title": "All-groups System Contract"
       },
       "version-0.21-cita/system-contract-interface/quota-manager": {
-        "title": "Quota Management Contract Interface"
+        "title": "Quota Management Contract"
       },
       "version-0.21-cita/system-contract-interface/quota-price": {
         "title": "Quota Price Management Contract"
@@ -1603,49 +1614,49 @@
         "title": "Batch Transaction Contract"
       },
       "version-0.21-cita/system-contract-interface/emergency-brake": {
-        "title": "Emergency brake Contract"
+        "title": "紧急制动合约接口"
       },
       "version-0.21-cita/system-contract-interface/admin": {
-        "title": "管理员合约接口"
+        "title": "Administrator Contract Interface"
       },
       "version-0.21-cita/system-contract-interface/auto-exec": {
         "title": "Auto Execution Contract"
       },
       "version-0.21-cita/architecture/components": {
-        "title": "系统组件"
+        "title": "System Components"
       },
       "version-0.21-cita/protocol-upgrade/v0": {
-        "title": "v0 协议"
+        "title": "v0 Protocol"
       },
       "version-0.21-cita/architecture/view": {
-        "title": "视图"
+        "title": "View"
       },
       "version-0.21-cita/protocol-upgrade/overview": {
-        "title": "协议升级概览"
+        "title": "Overview of Protocol Upgrades"
       },
       "version-0.21-cita/architecture/transaction-process": {
-        "title": "交易处理"
+        "title": "Transaction Processing"
       },
       "version-0.21-cita/protocol-upgrade/v1": {
-        "title": "v1 协议"
+        "title": "v1 Protocol"
       },
-      "version-0.21-cita/reference/glossary": {
-        "title": "词汇表"
+      "version-0.21-cita/ref/glossary": {
+        "title": "Glossary"
       },
       "version-0.21-cita/cita-intro": {
-        "title": "关于 CITA"
+        "title": "About CITA"
       },
       "version-0.21-cita/huawei": {
         "title": "Huawei Cloud Deployment"
       },
       "version-0.21-cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约示例"
+        "title": "Cross-chain Contract Example"
       },
       "version-0.20-cita/configuration/config-overview": {
         "title": "Configuration Overview"
       },
-      "version-0.21-cita/reference/addresses": {
-        "title": "系统保留地址"
+      "version-0.21-cita/ref/addresses": {
+        "title": "Reserved System Addresses"
       },
       "version-0.20-cita/configuration/microservice-configuration": {
         "title": "Microservice Configuration"
@@ -1725,7 +1736,7 @@
       "version-0.20-cita/system-contract-interface/quota-manager": {
         "title": "Quota Management Contract Interface"
       },
-      "version-0.20-cita/system-contract-interface/emg-brake": {
+      "version-0.20-cita/system-contract-interface/emergency-brake": {
         "title": "Emergency Brake Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/batch": {
@@ -1890,7 +1901,7 @@
       "version-0.20.1-cita/system-contract-interface/quota-manager": {
         "title": "Quota Management Contract Interface"
       },
-      "version-0.20.1-cita/system-contract-interface/emg-brake": {
+      "version-0.20.1-cita/system-contract-interface/emergency-brake": {
         "title": "Emergency Brake Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/role-mng": {
@@ -2032,22 +2043,22 @@
         "title": "Microservice Configuration"
       },
       "version-0.21-cita/configuration/chain-config": {
-        "title": "链级配置"
+        "title": "Chain Configuration"
       },
-      "version-0.21-cita/architecture/consensus": {
+      "version-0.21-cita/architecture/cons": {
         "title": "共识"
       },
       "version-0.21-cita/architecture/architecture": {
-        "title": "系统架构"
+        "title": "System architecture"
       },
-      "version-0.21-cita/reference/faq": {
+      "version-0.21-cita/ref/faq": {
         "title": "FAQ"
       },
       "version-0.20-cita/configuration/chain-configuration": {
         "title": "Chain Configuration"
       },
       "version-0.21-cita/getting-started": {
-        "title": "快速入门"
+        "title": "Getting Started"
       },
       "version-0.20-cita/system/node": {
         "title": "Node Management"
@@ -2125,7 +2136,7 @@
         "title": "JSON RPC"
       },
       "version-0.21-cita/rpc-guide/rpc": {
-        "title": "CITA JSON RPC 列表"
+        "title": "CITA JSON RPC List"
       },
       "version-0.20-cita/rpc-guide/rpc": {
         "title": "JSON RPC"

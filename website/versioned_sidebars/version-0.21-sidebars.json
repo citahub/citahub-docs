@@ -29,7 +29,7 @@
           "version-0.21-cita/system/log",
           "version-0.21-cita/system/snapshot",
           "version-0.21-cita/system/batch-tx",
-          "version-0.21-cita/system/emergency-brake",
+          "version-0.21-cita/system/emg-brake",
           "version-0.21-cita/system/amend",
           "version-0.21-cita/system/fee-back",
           "version-0.21-cita/system/version",
@@ -73,7 +73,7 @@
         "type": "subcategory",
         "ids": [
           "version-0.21-cita/architecture/architecture",
-          "version-0.21-cita/architecture/components",
+          "version-0.21-cita/architecture/comp",
           "version-0.21-cita/architecture/cons",
           "version-0.21-cita/architecture/transaction-process",
           "version-0.21-cita/architecture/view"

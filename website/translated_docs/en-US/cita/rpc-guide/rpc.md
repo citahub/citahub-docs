@@ -1,10 +1,10 @@
 ---
 id: rpc
-title: CITA JSON RPC 列表
+title: CITA JSON RPC List
 ---
 !> **Methods Name Changed ！** For the user of V0.16 and older versions: Please pay attention that we deprecated the pre-fix in the name of JSON-RPC interfaces, which makes it looks more tidy and easier to use.
 
-## JSON-RPC
+## JSON RPC
 
 * [peerCount](#peercount)
 * [blockNumber](#blocknumber)
@@ -46,13 +46,15 @@ None
 
 * Example
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "id": 74,
 "jsonrpc": "2.0",
@@ -76,13 +78,15 @@ None
 
 * Example
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "id": 83,
 "jsonrpc": "2.0",
@@ -237,13 +241,15 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
 
 * Example
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["0x0a910212013218fface20420a0492a8302606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da200291241edd3fb02bc1e844e1a6743e8986a61e1d8a584aac26db5fa1ce5b32700eba5d16ba4c754731f43692f3f5299e85176627e55b9f61f5fe3e43572ec8c535b0d9201"],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -254,14 +260,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["0
 }
 ```
 
+如果是近期发送的重复交易，则会提示重复交易：
+
 ```json
-// 如果是近期发送的重复交易，则会提示重复交易
 {
 "jsonrpc": "2.0",
 "id": 1,
 "error": {
 "code": -32006,
-"message": "Dup"//重复交易
+"message": "Dup"
 }
 }
 ```
@@ -290,13 +297,15 @@ true
 
 * Example
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByHash","params":["0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329", true],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -428,13 +437,15 @@ Receipt error messages:
 
 * Example
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionReceipt","params":["0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc":"2.0",
 "id":1,
@@ -467,8 +478,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionReceipt","params":
 }
 ```
 
+Error:
+
 ```json
-// error
 {
 "contractAddress": "0xbb6f8266fae605da373c2526c386fe07542b4957",
 "cumulativeGasUsed": "0x0",
@@ -506,13 +518,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionReceipt","params":
 
 * Example
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"getLogs","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"],"fromBlock": "0x0"}],"id":74}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc":"2.0",
 "id":74,
@@ -570,13 +584,15 @@ contract中get方法Hash和编码后的数据
 
 发送和获取数据
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "0x6"],"id":2}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc": "2.0",
 "id": 2,
@@ -614,13 +630,15 @@ Object - A transaction object, or null when no transaction was found:
 
 * Example
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"getTransaction","params":["0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -652,12 +670,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransaction","params":["0x019
 
 * Example
 
+Request:
+
 ```shell
 curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","0x1f"],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result:
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -683,12 +704,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["
 
 * Example
 
+Request:
+
 ```shell
 curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result:
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -713,12 +737,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b
 
 * Example
 
+Request:
+
 ```shell
 curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result:
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -742,7 +769,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e96
 
 Example
 
-以`scripts/contracts/tests/contracts/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
+以`https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
 
 用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
@@ -835,8 +862,9 @@ $ cita-cli store abi \
 curl -X POST --data '{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result:
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -864,8 +892,9 @@ Creates a filter object, based on filter options, to notify when the state chang
 curl -X POST --data '{"jsonrpc":"2.0","method":"newFilter","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"]}],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "id":1,
 "jsonrpc": "2.0",
@@ -893,8 +922,9 @@ None
 curl -X POST --data '{"jsonrpc":"2.0","method":"newBlockFilter","params":[],"id":73}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "id":1,
 "jsonrpc":  "2.0",
@@ -922,8 +952,9 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 curl -X POST --data '{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":73}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "id":1,
 "jsonrpc": "2.0",
@@ -951,8 +982,9 @@ Polling method for a filter, which returns an array of logs which occurred since
 curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc":"2.0",
 "id":74,
@@ -978,8 +1010,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x1
 curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x3"],"id":74}'
 ```
 
+BlockFilter Result:
+
 ```json
-// BlockFilter Result
 {
 "id": 1,
 "jsonrpc": "2.0",
@@ -1032,13 +1065,15 @@ params: [
 
 * Example
 
+Request:
+
 ```shell
-// Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionProof","params":["0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"],"id":1}'
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -1093,9 +1128,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"
 "economicalModel": 1,
 "genesisTimestamp": 1541058686340,
 "operator": "test-operator",
-"tokenAvatar": "https://cdn.cryptape.com/icon_appchain.png",
-"tokenName": "Nervos AppChain Test Token",
-"tokenSymbol": "NATT",
+"tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+"tokenName": "CITA Test Token",
+"tokenSymbol": "CTT",
 "validators": [
 "0xc489d5cb6f497e4708cc8c3805473b9528f83c7a",
 "0x497c68f02bbe335cc879356af120371ebf6cbc29",
@@ -1131,8 +1166,9 @@ params: [
 curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockHeader","params":["3"],"id":1}' 127.0.0.1:1337
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -1159,8 +1195,9 @@ Get proof of a special variable at special block number. For sidechain.
 curl -X POST --data '{"jsonrpc":"2.0","method":"getStateProof","params":["0xad54ae137c6c39fa413fa1da7db6463e3ae45664", "0xa40893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423e", "16"],"id":1}' 127.0.0.1:1337
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc": "2.0",
 "id": 1,
@@ -1187,8 +1224,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getStateProof","params":["0xad54
 curl -X POST --data '{"jsonrpc":"2.0","method":"getStorageAt","params":["0xffffffffffffffffffffffffffffffffff020000", "0x0000000000000000000000000000000000000000000000000000000000000007", "16"],"id":1}' 127.0.0.1:1337
 ```
 
+Result:
+
 ```json
-// Result
 {
 "jsonrpc": "2.0",
 "id": 1,

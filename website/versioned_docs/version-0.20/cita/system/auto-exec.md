@@ -28,7 +28,7 @@ f95b72de: contAddr()
 
 _首先需要启动一条链，具体方法见快速入门部分_
 
-其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/AutoExec.sol)函数签名如下:
+其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/src/system/AutoExec.sol)函数签名如下:
 
 ```
 ======= contracts/AutoExec.sol:AutoExec =======

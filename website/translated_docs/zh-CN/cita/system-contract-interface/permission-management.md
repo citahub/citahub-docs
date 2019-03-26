@@ -4,7 +4,7 @@ title: 权限管理合约接口
 ---
 
 
-<h2 class="hover-list">Permission Management</h2>
+<h2 class="hover-list">权限管理</h2>
 
 * [newPermission](#newPermission)
 * [deletePermission](#deletePermission)

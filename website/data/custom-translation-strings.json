@@ -112,7 +112,7 @@
       "version-0.20.2-cita/system-contract-interface/quota-price": {
         "title": "Quota Price"
       },
-      "version-0.20.2-cita/system-contract-interface/emg-brake": {
+      "version-0.20.2-cita/system-contract-interface/emergency-brake": {
         "title": "Emg Brake"
       },
       "version-0.20.2-cita/system-contract-interface/admin": {
@@ -370,7 +370,7 @@
       "version-0.19-cita/system/fee-back": {
         "title": "Fee Back"
       },
-      "version-0.19-cita/system/data-amend": {
+      "version-0.19-cita/system/amend": {
         "title": "Amend"
       },
       "version-0.19-cita/rpc-guide/rpc-types": {
@@ -466,7 +466,7 @@
       "version-0.21-cita/system/amend": {
         "title": "数据订正"
       },
-      "version-0.21-cita/system/emergency-brake": {
+      "version-0.21-cita/system/emg-brake": {
         "title": "紧急制动"
       },
       "version-0.21-cita/system/fee-back": {
@@ -649,7 +649,7 @@
       "version-0.20-cita/system-contract-interface/quota-manager": {
         "title": "Quota Management Contract Interface"
       },
-      "version-0.20-cita/system-contract-interface/emg-brake": {
+      "version-0.20-cita/system-contract-interface/emergency-brake": {
         "title": "Emergency Brake Contract Interface"
       },
       "version-0.20-cita/system-contract-interface/batch": {
@@ -820,7 +820,7 @@
       "version-0.20.1-cita/system-contract-interface/quota-manager": {
         "title": "Quota Management Contract Interface"
       },
-      "version-0.20.1-cita/system-contract-interface/emg-brake": {
+      "version-0.20.1-cita/system-contract-interface/emergency-brake": {
         "title": "Emergency Brake Contract Interface"
       },
       "version-0.20.1-cita/system-contract-interface/role-mng": {
@@ -988,7 +988,7 @@
       "cita/system-contract-interface/quota-manager": {
         "title": "配额管理合约接口"
       },
-      "cita/system/emergency-brake": {
+      "cita/system/emg-brake": {
         "title": "紧急制动"
       },
       "cita/system-contract-interface/quota-price": {

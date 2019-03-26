@@ -1,6 +1,6 @@
 ---
 id: version-0.17-snapshot
-title: Snapshot
+title: 快照
 original_id: snapshot
 ---
 ## 快照功能概述

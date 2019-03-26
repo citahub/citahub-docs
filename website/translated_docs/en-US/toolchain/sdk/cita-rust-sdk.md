@@ -2,7 +2,6 @@
 title: CITA Rust SDK
 id: rust-sdk
 ---
-
 Rust SDK 是 CITA JSON-RPC 客户端的 Rust 实现。
 
 ## Getting Started

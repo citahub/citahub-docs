@@ -51,13 +51,13 @@
       "cita/protocol-upgrade/v1": {
         "title": "v1 协议"
       },
-      "cita/reference/addresses": {
+      "cita/ref/addresses": {
         "title": "系统保留地址"
       },
-      "cita/reference/faq": {
+      "cita/ref/faq": {
         "title": "FAQ"
       },
-      "cita/reference/glossary": {
+      "cita/ref/glossary": {
         "title": "词汇表"
       },
       "cita/rpc-guide/rpc-error-code": {
@@ -135,7 +135,7 @@
       "cita/system/contracts": {
         "title": "系统合约"
       },
-      "cita/system/emergency-brake": {
+      "cita/system/emg-brake": {
         "title": "紧急制动"
       },
       "cita/system/fee-back": {
@@ -205,12 +205,23 @@
       "toolchain/sdk/ruby-sdk": {
         "title": "CITA Ruby SDK"
       },
+      "toolchain/sdk/rust-sdk": {
+        "title": "CITA Rust SDK"
+      },
       "toolchain/sdk/swift-sdk": {
         "title": "CITA Swift SDK"
+      },
+      "toolchain/toolchain-intro/toolchain-intro": {
+        "title": "CITA Toolchain 简介",
+        "sidebar_label": "Toolchain 简介"
       },
       "toolchain/truffle-box/truffle-box-intro": {
         "title": "CITA Truffle Box 简介",
         "sidebar_label": "CITA Truffle Box 简介"
+      },
+      "toolchain/web-debugger/web-debugger-intro": {
+        "title": "CITA Web Debugger",
+        "sidebar_label": "CITA Web Debugger 简介"
       },
       "version-0.17-architecture": {
         "title": "架构设计"
@@ -421,7 +432,7 @@
         "title": "CITA Truffle Box 简介"
       },
       "version-0.18-welcome": {
-        "title": "关于 CITA"
+        "title": "概览"
       },
       "version-0.19-architecture": {
         "title": "架构设计"
@@ -472,7 +483,7 @@
       "version-0.19-batch-tx": {
         "title": "批量交易"
       },
-      "version-0.19-data-amend": {
+      "version-0.19-amend": {
         "title": "数据订正"
       },
       "version-0.19-emg-brake": {
@@ -536,7 +547,7 @@
         "title": "CITA Truffle Box 简介"
       },
       "version-0.19-welcome": {
-        "title": "关于 CITA"
+        "title": "概览"
       },
       "version-0.20.1-architecture": {
         "title": "架构设计"
@@ -717,7 +728,7 @@
         "title": "CITA Truffle Box 简介"
       },
       "version-0.20.1-welcome": {
-        "title": "关于 CITA"
+        "title": "概览"
       },
       "version-0.20.2-cita-intro": {
         "title": "关于 CITA"
@@ -944,7 +955,7 @@
         "title": "CITA Truffle Box 简介"
       },
       "version-0.20-welcome": {
-        "title": "关于 CITA"
+        "title": "概览"
       },
       "version-0.21-architecture": {
         "title": "系统架构"
@@ -1025,7 +1036,7 @@
       "version-0.21-batch": {
         "title": "批量交易合约接口"
       },
-      "version-0.21-emergency-brake": {
+      "version-0.21-emg-brake": {
         "title": "紧急制动"
       },
       "version-0.21-error": {
@@ -1209,8 +1220,8 @@
       "version-0.20.2-cita/system-contract-interface/quota-price": {
         "title": "配额价格合约接口"
       },
-      "version-0.20.2-cita/system-contract-interface/emg-brake": {
-        "title": "紧急制动合约接口"
+      "version-0.20.2-cita/system-contract-interface/emergency-brake": {
+        "title": "Emg Brake"
       },
       "version-0.20.2-cita/system-contract-interface/admin": {
         "title": "管理员合约接口"
@@ -1452,7 +1463,7 @@
       "version-0.19-cita/system/fee-back": {
         "title": "出块奖励返回"
       },
-      "version-0.19-cita/system/data-amend": {
+      "version-0.19-cita/system/amend": {
         "title": "数据订正"
       },
       "version-0.19-cita/rpc-guide/rpc-types": {
@@ -1545,7 +1556,7 @@
       "version-0.21-cita/system/amend": {
         "title": "数据订正"
       },
-      "version-0.21-cita/system/emergency-brake": {
+      "version-0.21-cita/system/emg-brake": {
         "title": "紧急制动"
       },
       "version-0.21-cita/system/fee-back": {
@@ -1629,7 +1640,7 @@
       "version-0.21-cita/protocol-upgrade/v1": {
         "title": "v1 协议"
       },
-      "version-0.21-cita/reference/glossary": {
+      "version-0.21-cita/ref/glossary": {
         "title": "词汇表"
       },
       "version-0.21-cita/cita-intro": {
@@ -1644,7 +1655,7 @@
       "version-0.20-cita/configuration/config-overview": {
         "title": "配置概览"
       },
-      "version-0.21-cita/reference/addresses": {
+      "version-0.21-cita/ref/addresses": {
         "title": "系统保留地址"
       },
       "version-0.20-cita/configuration/microservice-configuration": {
@@ -1725,7 +1736,7 @@
       "version-0.20-cita/system-contract-interface/quota-manager": {
         "title": "配额管理合约接口"
       },
-      "version-0.20-cita/system-contract-interface/emg-brake": {
+      "version-0.20-cita/system-contract-interface/emergency-brake": {
         "title": "紧急制动合约接口"
       },
       "version-0.20-cita/system-contract-interface/batch": {
@@ -1890,7 +1901,7 @@
       "version-0.20.1-cita/system-contract-interface/quota-manager": {
         "title": "配额管理合约接口"
       },
-      "version-0.20.1-cita/system-contract-interface/emg-brake": {
+      "version-0.20.1-cita/system-contract-interface/emergency-brake": {
         "title": "紧急制动合约接口"
       },
       "version-0.20.1-cita/system-contract-interface/role-mng": {
@@ -2040,7 +2051,7 @@
       "version-0.21-cita/architecture/architecture": {
         "title": "系统架构"
       },
-      "version-0.21-cita/reference/faq": {
+      "version-0.21-cita/ref/faq": {
         "title": "FAQ"
       },
       "version-0.20-cita/configuration/chain-configuration": {

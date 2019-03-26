@@ -5,7 +5,7 @@ original_id: node
 ---
 
 
-<h2 class="hover-list">Node Management</h2>
+<h2 class="hover-list">节点管理</h2>
 
 - [approveNode](#approveNode)
 - [deleteNode](#deleteNode)

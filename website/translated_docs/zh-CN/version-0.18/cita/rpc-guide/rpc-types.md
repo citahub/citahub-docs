@@ -1,7 +1,7 @@
 ---
 id: version-0.18-rpc-types
 title: JSON RPC 列表
-original_id: JSON RPC Types
+original_id: rpc-types
 ---
 ## 基本类型
 

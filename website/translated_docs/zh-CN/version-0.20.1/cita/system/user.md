@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-user
-title: User Management
+title: 用户管理
 original_id: user
 ---
 CITA 实现了基于组的用户管理，组之间为树形的关系，可对应企业的组织结构。

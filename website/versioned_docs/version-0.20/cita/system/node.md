@@ -132,7 +132,7 @@ $ cita-cli scm NodeManager approveNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config-tool)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](../configuration/chain-configuration)。
 
 输出：
 
@@ -247,7 +247,7 @@ $ cita-cli scm NodeManager deleteNode \
     --url http://127.0.0.1:1337
 ```
 
-其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](./chain/config-tool)。
+其中 `--admin-privkey` 是管理员私钥，系统默认的管理员私钥可以看 [系统合约相关](../configuration/chain-configuration)。
 
 输出：
 

@@ -5,9 +5,6 @@ original_id: getting-started
 ---
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
-> - 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
-> - 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [测试链](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain), 也可以使用万云提供的 [BaaS 服务](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。
-
 ## 依赖
 
 ### 系统平台要求
@@ -104,58 +101,59 @@ $ ./env.sh make release
 - 先切换到发布件目录
     
     - 如果之前选择从源码开始编译：
-    ```shell
+
+```shell
     $ cd target/install
     ```
-    
-    - 如果之前选择下载编译好的发布包：
+
+  - 如果之前选择下载编译好的发布包：
+
     ```shell
     $ cd cita_secp256k1_sha3/
     ```
 
 - 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
-    
-    ```shell
-    $ ./env.sh ./scripts/create_cita_config.py create --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
-    ```
-    
-    节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
-    
-    - test-chain/0
-    - test-chain/1
-    - test-chain/2
-    - test-chain/3
+
+  ```shell
+  $ ./env.sh ./scripts/create_cita_config.py create --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+  ```
+
+  节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
+
+  - test-chain/0
+  - test-chain/1
+  - test-chain/2
+  - test-chain/3
 
 - 执行以下命令依次配置四个节点
-    
-    ```shell
-    $ ./env.sh ./bin/cita setup test-chain/0
-    $ ./env.sh ./bin/cita setup test-chain/1
-    $ ./env.sh ./bin/cita setup test-chain/2
-    $ ./env.sh ./bin/cita setup test-chain/3
-    ```
+
+  ```shell
+  $ ./env.sh ./bin/cita setup test-chain/0
+  $ ./env.sh ./bin/cita setup test-chain/1
+  $ ./env.sh ./bin/cita setup test-chain/2
+  $ ./env.sh ./bin/cita setup test-chain/3
+  ```
 
 > **Note**
-> 
+>
 > - 生产环境中，用户需要根据实际情况更改默认配置。使用命令 `./scripts/create_cita_config.py -h` 来获得详细帮助信息，允许自定义的配置包括：
->     
->     - 系统管理员账户
->     - 出块时间间隔
->     - 累积多少历史交易量后进行重复交易的检查
->     - 系统合约详细参数
->     - 共识节点地址
->     
->     该工具更详细的使用说明请参考 [Config Tool](./chain/config-tool)。
-> 
+>
+>   - 系统管理员账户
+>   - 出块时间间隔
+>   - 累积多少历史交易量后进行重复交易的检查
+>   - 系统合约详细参数
+>   - 共识节点地址
+>
+>   该工具更详细的使用说明请参考 [Config Tool](../chain/config-tool)。
+>
 > - 对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。
-> 
-> - 在不同服务器部署多条链主要规划相关端口配置，参见 [config-tool 的功能和用法](./chain/config-tool)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个 Docker 里运行。基于上面 test-chain 链所在的目录，生成一条新链：
->     
->     ```shell
->     $ ./env.sh ./scripts/create_cita_config.py create --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
->     ```
->     
->     运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个 Docker 里运行。
+> - 在不同服务器部署多条链主要规划相关端口配置，参见 [config-tool 的功能和用法](../chain/config-tool)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个 Docker 里运行。基于上面 test-chain 链所在的目录，生成一条新链：
+>
+>   ```shell
+>   $ ./env.sh ./scripts/create_cita_config.py create --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
+>   ```
+>
+>   运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个 Docker 里运行。
 
 ### 启动节点
 

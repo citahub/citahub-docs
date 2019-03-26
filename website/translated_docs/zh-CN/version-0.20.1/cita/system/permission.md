@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-permission
-title: Permission Management
+title: 权限管理
 original_id: permission
 ---
 CITA 实现了对账户的权限管理，并支持基于角色的权限管理。
@@ -16,7 +16,7 @@ CITA 通过智能合约的方式来对权限进行管理。
 
 目前权限管理针对外部账户进行细粒度管理。CITA 默认集成了 superAdmin 账户，拥有权限管理涉及到的所有权限。在 CITA 启动前可以对 superAdmin 进行配置。 在权限系统开启时，由用户生成的外部账户，在 CITA 系统中没有任何权限，需要 superAdmin 对其进行授权。
 
-权限管理默认未开启，配置相关信息查看[系统合约](./chain/config-tool)
+权限管理默认未开启，配置相关信息查看[系统合约](../configuration/chain-configuration)
 
 ## 权限管理概述
 
@@ -51,7 +51,7 @@ CITA 通过智能合约的方式来对权限进行管理。
 - `quotaPrice`: 表示设置 quotaPrice 权限
 - `version`: 表示设置版本权限
 
-可以查看具体[权限的地址信息](https://github.com/cryptape/cita/blob/develop/cita-chain/types/src/reserved-addresses.rs)
+可以查看具体[权限的地址信息](https://github.com/cryptape/cita/blob/develop/cita-chain/types/src/reserved_addresses.rs)
 
 ## 权限管理操作实例
 
@@ -68,7 +68,7 @@ $ ./env.sh ./scripts/create_cita_config.py create \
 
 其中 `checkCallPermission`, `checkSendTxPermission`, `checkCreateContractPermission` 分别为合约调用、发送交易及创建合约的开关。
 
-启动链接下来的步骤见[快速搭链](./chain/getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+启动链接下来的步骤见[快速搭链](../getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 生成普通账户
 
@@ -88,7 +88,7 @@ $ cita-cli key create
 
 ### 部署合约
 
-使用[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/SimpleStorage.sol)
+使用[测试合约](https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol)
 
 #### 获得合约的相关信息
 

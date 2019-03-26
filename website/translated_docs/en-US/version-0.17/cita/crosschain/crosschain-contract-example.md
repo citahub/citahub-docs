@@ -5,7 +5,7 @@ original_id: crosschain-contract-example
 ---
 ## 跨链合约编写
 
-### 跨链合约示例
+### Example of a cross-chain contract
 
 可以参照[示例合约](https://github.com/cryptape/cita/blob/v0.17/scripts/contracts/tests/contracts/cross_chain_token.sol)。
 
@@ -49,7 +49,7 @@ solc --hashes cross_chain_token.sol
 
 ### 新建、注册和启动侧链
 
-目前，侧链使用系统合约 [ChainManager](https://github.com/cryptape/cita/blob/develop/scripts/contracts/system/chain_manager.sol) 进行管理。
+目前，侧链使用系统合约 [ChainManager](https://github.com/cryptape/cita/blob/develop/scripts/contracts/src/system/ChainManager.sol) 进行管理。
 
 - 生成侧链的验证节点的私钥，使用侧链的验证节点地址，在主链上使用系统合约 `ChainManager` 的方法 `newSideChain` 进行新建侧链，得到侧链的 Id 。
 - 在主链上使用系统合约 `ChainManager` 的方法 `enableSideChain` 启动指定 Id 的侧链。

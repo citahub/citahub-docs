@@ -5,7 +5,7 @@ original_id: role
 ---
 
 
-<h2 class="hover-list">Role</h2>
+<h2 class="hover-list">Role Contract Interface</h2>
 
 - [queryName](#queryName)
 - [queryPermissions](#queryPermissions)

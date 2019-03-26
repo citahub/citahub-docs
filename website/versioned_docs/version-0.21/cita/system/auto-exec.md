@@ -41,7 +41,7 @@ $ ./env.sh ./scripts/create_cita_config.py create \
 
 启动链接下来的步骤见[快速入门](../getting-started)部分。
 
-其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/tests/contracts/AutoExec.sol)函数签名如下:
+其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/src/system/AutoExec.sol)函数签名如下:
 
 ```
 ======= contracts/AutoExec.sol:AutoExec =======

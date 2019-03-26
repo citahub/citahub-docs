@@ -1,6 +1,6 @@
 ---
 id: version-0.19-welcome
-title: 关于 CITA
+title: 概览
 original_id: welcome
 ---
 我们提供了一套完整的开源的区块链解决方案，CITA 作为底层区块链内核；围绕 CITA, 我们提供了一系列开源的工具链来完善基础设施，以方便运营方，开发者以及终端用户能够快速应用起来，包括：Dapp 钱包 Cyton，区块链浏览器 Microscope，区块缓存服务器 ReBirth，多平台 SDK 等。
@@ -11,7 +11,7 @@ original_id: welcome
 
 [![](https://img.shields.io/badge/CITA-Documents-green.svg)](https://docs.citahub.com/zh-CN/cita/cita-intro) [![](https://img.shields.io/badge/CITA-GitHub-lightgrey.svg)](https://github.com/cryptape/cita/)
 
-CITA 将一个区块链节点的共识、网络、计算、RPC 等功能进行了微服务化拆分，每一个微服务又可以有多个实例，最终这些实例共同完成一个节点的记账功能。这样，我们将区块链性能的扩展问题转化成了节点的扩展问题，当性能不足时，插入一台服务器，分担节点的工作压力即可。同时，我们将共识机制、底层逻辑进行了深度优化，例如采用 Rust 语言架构所有代码等。最终实现了目前**开源可实证**区块链系统的顶级性能。这是一组实测数据：由 4 核 8G 云主机构成的 AppChain 的性能可达到每秒 2900 笔简单交易；32 核 64G 云主机组成的 AppChain 的性能则超过了每秒 1.5 万笔简单交易。采用集群构建节点性能将会更高，因此 CITA 的性能已经足以应付绝大多数应用场景。
+CITA 将一个区块链节点的共识、网络、计算、RPC 等功能进行了微服务化拆分，每一个微服务又可以有多个实例，最终这些实例共同完成一个节点的记账功能。这样，我们将区块链性能的扩展问题转化成了节点的扩展问题，当性能不足时，插入一台服务器，分担节点的工作压力即可。同时，我们将共识机制、底层逻辑进行了深度优化，例如采用 Rust 语言架构所有代码等。最终实现了目前**开源可实证**区块链系统的顶级性能。这是一组实测数据：由 4 核 8G 云主机构成的 CITA 的性能可达到每秒 2900 笔简单交易；32 核 64G 云主机组成的 CITA 的性能则超过了每秒 1.5 万笔简单交易。采用集群构建节点性能将会更高，因此 CITA 的性能已经足以应付绝大多数应用场景。
 
 ## CITA Toolchain | CITA 工具链
 
@@ -55,12 +55,12 @@ ReBirth 是一个提供区块链数据缓存服务的服务器端组件。它通
 
 ### CITA Truffle Box | DApp 开发框架
 
-[![](https://img.shields.io/badge/Truffle_Box-Documents-green.svg)](https://github.com/cryptape/appchain-truffle-box) [![](https://img.shields.io/badge/Truffle_Box-GitHub-lightgrey.svg)](https://github.com/cryptape/appchain-truffle-box)
+[![](https://img.shields.io/badge/Truffle_Box-Documents-green.svg)](https://github.com/cryptape/cita-truffle-box) [![](https://img.shields.io/badge/Truffle_Box-GitHub-lightgrey.svg)](https://github.com/cryptape/cita-truffle-box)
 
 CITA Truffle Box 可以使开发者借助 Truffle 完成 CITA 上的 DApp 开发.
 
 ### CITA IDE | Solidity 合约编辑器
 
-[![](https://img.shields.io/badge/Truffle_Box-Documents-green.svg)](https://github.com/cryptape/appchain-ide) [![](https://img.shields.io/badge/Truffle_Box-GitHub-lightgrey.svg)](https://github.com/cryptape/appchain-ide)
+[![](https://img.shields.io/badge/Truffle_Box-Documents-green.svg)](https://github.com/cryptape/cita-ide) [![](https://img.shields.io/badge/Truffle_Box-GitHub-lightgrey.svg)](https://github.com/cryptape/cita-ide)
 
 CITA IDE 是一个基于浏览器的合约编辑器，是基于 Remix 开发的。

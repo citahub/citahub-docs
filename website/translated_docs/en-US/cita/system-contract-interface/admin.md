@@ -1,6 +1,6 @@
 ---
 id: admin
-title: 管理员合约接口
+title: Administrator Contract Interface
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-id: emergency-brake
+id: emg-brake
 title: 紧急制动
 ---
 

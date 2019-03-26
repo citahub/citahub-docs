@@ -1,6 +1,6 @@
 ---
 id: rpc-error-code
-title: JSON RPC 错误码
+title: JSON RPC Error code
 ---
 ## JSON RPC标准错误码
 

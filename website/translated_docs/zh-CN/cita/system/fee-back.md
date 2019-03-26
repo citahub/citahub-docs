@@ -12,14 +12,18 @@ CITA 中存在两种经济模型：`Quota` 和 `Charge` 模型，默认经济模
 
 ### 操作示例
 
-首先配置链的时候要注意三点： - 配置经济模型 - 设置奖励返回开关 - 设置运营方地址
+首先配置链的时候要注意三点：
+
+- 配置经济模型
+- 设置奖励返回开关
+- 设置运营方地址
 
 ```bash
 $ ./env.sh ./scripts/create_cita_config.py create \
         --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" \
         --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" \
         --contract_arguments "SysConfig.checkFeeBackPlatform=true" \
-        --contract_arguments "SysConfig.chainOwner=0x36a60d575b0dee0423abb6a57dbc6ca60bf47545" \  
+        --contract_arguments "SysConfig.chainOwner=0x36a60d575b0dee0423abb6a57dbc6ca60bf47545" \ 
         --contract_arguments "SysConfig.economicalModel=1"
 ```
 

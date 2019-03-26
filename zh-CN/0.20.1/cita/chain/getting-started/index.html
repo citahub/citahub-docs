@@ -87,24 +87,28 @@ error: failed switching to "user": unable to find user user: no matching entries
 <li><p>先切换到发布件目录</p>
 <ul>
 <li>如果之前选择从源码开始编译：</li>
+</ul></li>
 </ul>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> target/install</span>
-</code></pre>
-<ul>
-<li>如果之前选择下载编译好的发布包：</li>
-</ul>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita_secp256k1_sha3/</span>
-</code></pre></li>
-<li><p>使用发布件目录中的 <code>create_cita_config.py</code> 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
+<pre><code class="hljs css language-shell">    $ cd target/install
+    ```
+
+  - 如果之前选择下载编译好的发布包：
+
+    ```shell
+    $ cd cita_secp256k1_sha3/
+    ```
+
+- 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
+
+  ```shell
+<span class="hljs-meta">  $</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
 </code></pre>
 <p>节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：</p>
 <ul>
-<li>test-chain/0</li>
-<li>test-chain/1</li>
-<li>test-chain/2</li>
-<li>test-chain/3</li>
-</ul></li>
+<li><p>test-chain/0</p></li>
+<li><p>test-chain/1</p></li>
+<li><p>test-chain/2</p></li>
+<li><p>test-chain/3</p></li>
 <li><p>执行以下命令依次配置四个节点</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
 <span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>

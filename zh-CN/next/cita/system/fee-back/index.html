@@ -75,12 +75,17 @@
 <p>0.20 版本之前的默认 <code>quotaPrice</code> 是 1</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="操作示例"></a><a href="#操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作示例</h3>
-<p>首先配置链的时候要注意三点： - 配置经济模型 - 设置奖励返回开关 - 设置运营方地址</p>
+<p>首先配置链的时候要注意三点：</p>
+<ul>
+<li>配置经济模型</li>
+<li>设置奖励返回开关</li>
+<li>设置运营方地址</li>
+</ul>
 <pre><code class="hljs css language-bash">$ ./env.sh ./scripts/create_cita_config.py create \
         --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> \
         --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span> \
         --contract_arguments <span class="hljs-string">"SysConfig.checkFeeBackPlatform=true"</span> \
-        --contract_arguments <span class="hljs-string">"SysConfig.chainOwner=0x36a60d575b0dee0423abb6a57dbc6ca60bf47545"</span> \  
+        --contract_arguments <span class="hljs-string">"SysConfig.chainOwner=0x36a60d575b0dee0423abb6a57dbc6ca60bf47545"</span> \ 
         --contract_arguments <span class="hljs-string">"SysConfig.economicalModel=1"</span>
 </code></pre>
 <p><em>接下来的测试，用 <a href="https://github.com/cryptape/cita-cli">cita-cli</a> 交互模式进行演示</em>。</p>

@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Microservice Configuration · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 最大的特色就是将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network， 它们分工合作，共同完成去中心化的任务。先了解一下都有哪些配置文件， toml 配置文件的位置在 &lt;code&gt;test-chain/*/&lt;/code&gt; ( &lt;code&gt;test-chain&lt;/code&gt; 是默认链名称)。&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.21"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="Microservice Configuration · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 最大的特色就是将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network， 它们分工合作，共同完成去中心化的任务。先了解一下都有哪些配置文件， toml 配置文件的位置在 &lt;code&gt;test-chain/*/&lt;/code&gt; ( &lt;code&gt;test-chain&lt;/code&gt; 是默认链名称)。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en-US"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en-US/versions"><h3>0.21</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en-US/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/zh-CN/0.21/cita/configuration/service-config">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Welcome<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.21/welcome">CITAHub Docs Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/cita-intro">About CITA</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/huawei">Huawei Cloud Deployment</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Configuration</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/configuration/config-overview">Configuration Overview</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/configuration/chain-config">Chain Configuration</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/en-US/0.21/cita/configuration/service-config">Microservice Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Management</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/contracts">System Contracts</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/node">Node Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/permission">Permission Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/user">User Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/quota">Quota management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/price">Quota Price Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/snapshot">Snapshot</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/batch-tx">Batch Transaction</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/emg-brake">Emergency Braking</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/amend">Amend</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/fee-back">出块奖励返回</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/version">Protocol Versions Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system/auto-exec">Automated Execution</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/rpc-guide/rpc-types">JSON RPC Types</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/rpc-guide/rpc">CITA JSON RPC List</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/rpc-guide/rpc-error-code">JSON RPC Error Code</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Contract Interface</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/sys">System Configuration Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/node">Consensus Node Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/auth">Authorization Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/permission">Permission Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/role-management">Role management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/role-auth">Role Authorization Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/role">Role Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/group-mng">Group Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/group">Group System Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/all-groups">All-groups System Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/quota-manager">Quota Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/quota-price">Quota Price Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/batch">Batch Transaction Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/emergency-brake">紧急制动合约接口</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/admin">Administrator Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/auto-exec">Auto Execution Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/system-contract-interface/error">System contract Error Type</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Architecture</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/architecture/architecture">System architecture</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/architecture/comp">System Components</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/architecture/cons">共识</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/architecture/transaction-process">Transaction Processing</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/architecture/view">View</a></li></ul></div><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/crosschain/crosschain-contract-example">跨链</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Protocol Upgrade</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/protocol-upgrade/overview">Overview of Protocol Upgrades</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/protocol-upgrade/v0">v0 Protocol</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/protocol-upgrade/v1">v1 Protocol</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">reference</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/ref/addresses">Reserved System Addresses</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/ref/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/cita/ref/faq">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Toolchain<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/cli/cli-intro">CLI Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SDK</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/sdk/javascript-sdk">JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/sdk/java-sdk">Java SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/sdk/swift-sdk">Swift SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/sdk/ruby-sdk">Ruby SDK</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">ReBirth</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/rebirth/rebirth-intro">ReBirth Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/cyton/cyton-intro">Cyton Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/microscope/microscope-intro">Microscope Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/ide/ide-intro">CITA IDE Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/0.21/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box Introduction</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Contributing<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/0.21/contributing">Contributing</a></li><li class="navListItem"><a class="navItem" href="/en-US/0.21/roadmap">Roadmap</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Microservice Configuration</h1></header><article><div><span><p>CITA 最大的特色就是将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network， 它们分工合作，共同完成去中心化的任务。先了解一下都有哪些配置文件， toml 配置文件的位置在 <code>test-chain/*/</code> ( <code>test-chain</code> 是默认链名称)。</p>
+<pre><code class="hljs css language-bash">$ ./env.sh ./scripts/create_cita_config.py create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span>
+$ ls <span class="hljs-built_in">test</span>—chain/
+  0  1  2  3  template
+$ ls 0
+  auth.toml executor.toml jsonrpc.toml chain.toml forever.toml logs
+  consensus.toml network.toml genesis.json privkey
+</code></pre>
+<p>了解一下各个关键微服务的配置吧！</p>
+<h2><a class="anchor" aria-hidden="true" id="auth-contract-interface"></a><a href="#auth-contract-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auth Contract Interface</h2>
+<p>auth.toml 是 Auth 微服务的配置文件，如下：</p>
+<pre><code class="hljs css language-bash">&lt;br /&gt;count_per_batch = 30
+buffer_duration = 30
+tx_verify_thread_num = 4
+tx_verify_cache_size = 100000
+tx_pool_limit = 0
+wal_enable = <span class="hljs-literal">false</span>
+prof_start = 0
+prof_duration = 0
+
+</code></pre>
+<ul>
+<li><code>count_per_batch</code> : 表示批量处理阈值</li>
+<li><code>buffer_duration</code> : 表示超时时间(当达到批量数量或是超时时间到了，就开始交易处理流程)</li>
+<li><code>tx_verify_thread_num</code> : 交易验证线程数</li>
+<li><code>tx_verify_cache_size</code> : 交易验证缓存结果大小，缓存交易验证结果，减少重复计算</li>
+<li><code>tx_pool_limit</code> : 交易池数量上限，默认是0，表示无上限</li>
+<li><code>wal_enable</code> : 交易持久化开关，开启后，交易池交易进行持久化，节点重启后池内交易不丢失</li>
+<li><code>prof_start</code> : 性能采样分析参数，表示进行启动多久之后进行性能采样，单位是秒。</li>
+<li><code>prof_duration</code> : 性能采样分析参数，表示采样持续时间，单位是秒，为 0，表示不采样。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="consensus"></a><a href="#consensus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Consensus</h2>
+<p>consensus.toml 是 Consensus 微服务的配置文件，如下：</p>
+<pre><code class="hljs css language-bash">&lt;br /&gt;[ntp_config]
+enabled = <span class="hljs-literal">true</span>
+threshold = 1000
+address = <span class="hljs-string">"0.pool.ntp.org:123"</span>
+
+</code></pre>
+<ul>
+<li><code>enabled</code> : 为 true 表示开启 ntp</li>
+<li><code>threshold</code> : 表示时间偏移的阈值</li>
+<li><code>address</code> : 表示 ntp 服务器的地址</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="chain"></a><a href="#chain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chain</h2>
+<p>chain.toml 是 Chain 微服务的配置文件，如下：</p>
+<pre><code class="hljs css language-bash">&lt;br /&gt;prooftype = 2
+
+</code></pre>
+<ul>
+<li><code>prooftype</code> : 表示当前的共识算法，目前只支持 CITA-BFT 算法。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="executor"></a><a href="#executor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Executor</h2>
+<p>executor.toml 是 Executor 微服务的配置文件，如下：</p>
+<pre><code class="hljs css language-bash">&lt;br /&gt;journaldb_type = <span class="hljs-string">"archive"</span>
+prooftype = 2
+grpc_port = 5000
+genesis_path = <span class="hljs-string">"./genesis.json"</span>
+statedb_cache_size = 5242880
+eth_compatibility = <span class="hljs-literal">false</span>
+
+</code></pre>
+<ul>
+<li><code>journaldb_type</code> : 表示当前使用的 JournalDB 算法，有 &quot;archive&quot; &quot;light&quot; &quot;fast&quot; &quot;basic&quot; 等4种类型，默认是 archive。</li>
+<li><code>prooftype</code> : 表示当前使用的共识算法，目前只支持 CITA-BFT 算法。</li>
+<li><code>grpc_port</code> : grpc 端口。</li>
+<li><code>genesis_path</code> : 创世块文件路径</li>
+<li><code>statedb_cache_size</code>: 表示 StateDB 中 global cache 的大小，用于缓存账户和 code， 默认是 5242880，即 5M。</li>
+<li><code>eth_compatibility</code> : 是否与以太坊兼容的开关(CITA默认与以太坊在块的时间戳精度上不兼容，CITA为毫秒，以太坊为秒)。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="rpc"></a><a href="#rpc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RPC</h2>
+<p>jsonrpc.toml 是 RPC 微服务的配置文件， CITA 支持 JsonRpc 和 Websocket 两种通信协议，该文件主要是协议配置相关。如下:</p>
+<pre><code class="hljs css language-shell">backlog_capacity = 1000
+
+[profile_config]
+flag_prof_start = 0
+enable = false
+flag_prof_duration = 0
+
+[http_config]
+allow_origin = "*"
+timeout = 3
+enable = true
+listen_port = "1337"
+listen_ip = "0.0.0.0"
+
+[ws_config]
+panic_on_internal = true
+fragments_grow = true
+panic_on_protocol = false
+enable = true
+in_buffer_capacity = 2048
+panic_on_queue = false
+fragment_size = 65535
+panic_on_timeout = false
+method_strict = false
+thread_number = 2
+panic_on_capacity = false
+masking_strict = false
+key_strict = false
+max_connections = 800
+listen_ip = "0.0.0.0"
+listen_port = "4337"
+queue_size = 200
+fragments_capacity = 100
+tcp_nodelay = false
+shutdown_on_interrupt = true
+out_buffer_grow = true
+panic_on_io = false
+panic_on_new_connection = false
+out_buffer_capacity = 2048
+encrypt_server = false
+in_buffer_grow = true
+panic_on_shutdown = false
+panic_on_encoding = false
+
+[new_tx_flow_config]
+buffer_duration = 30000000
+count_per_batch = 30
+</code></pre>
+<ul>
+<li><code>backlog_capacity</code>: 连接容量大小</li>
+<li><code>profile_config</code>: 性能采样分析
+<ul>
+<li><code>flag_prof_start</code>: 进程启动多久后开始性能采样</li>
+<li><code>enable</code>: 开关</li>
+<li><code>flag_prof_duration</code>: 性能采样分析持续时间</li>
+</ul></li>
+<li><code>http_config</code>:
+<ul>
+<li><code>allow_origin</code>:响应头。<code>*</code>表示可以被任意外域访问</li>
+<li><code>timeout</code>: 超时时间</li>
+<li><code>enable</code>: 默认开启</li>
+<li><code>listen_port</code>: 监听端口</li>
+<li><code>listen_ip</code>: 监听 IP 地址</li>
+</ul></li>
+<li><code>ws_config</code>:
+<ul>
+<li><code>panic_on_internal</code>: 出现内部错误的时候，是否退出，默认 true</li>
+<li><code>fragments_grow</code>: 当 fragments_capacity 达到时，是否重新分配，默认为 true</li>
+<li><code>panic_on_protocol</code>: 出现协议错误时，是否退出，默认 false</li>
+<li><code>enable</code>: 默认开启</li>
+<li><code>in_buffer_capacity</code>: 不动态增加情况下，输入缓存大小， 默认 2048</li>
+<li><code>panic_on_queue</code>: 出现队列错误时，是否退出，默认 false</li>
+<li><code>fragment_size</code>: 最长帧片段，超过后截取成片段，默认 65535</li>
+<li><code>panic_on_timeout</code>: 出现超时时，是否退出，默认 false</li>
+<li><code>method_strict</code>: 是否检查握手请求，默认 false</li>
+<li><code>thread_number</code>: 线程数，默认 2</li>
+<li><code>panic_on_capacity</code>: 达到容量时，是否退出，默认 false</li>
+<li><code>masking_strict</code>: 帧安全检查， 默认 false</li>
+<li><code>key_strict</code>: 客户端是否检查服务端返回的 key 值，默认 false</li>
+<li><code>max_connections</code>: websocket 最大链接数，默认是 800</li>
+<li><code>listen_ip</code>: 监听地址， 默认 0.0.0.0</li>
+<li><code>listen_port</code>: 监听端口， 默认 4337</li>
+<li><code>queue_size</code>: 单个链接的事件队列大小，默认 200</li>
+<li><code>fragments_capacity</code>: 不动态增加情况下，连接能处理的最大片段数， 默认 100</li>
+<li><code>tcp_nodelay</code>: tcp socket 会积攒报文包到一定数量，一块发送，默认 false</li>
+<li><code>shutdown_on_interrupt</code>: 当中断出现时，是否关闭事件监听，默认 true</li>
+<li><code>out_buffer_grow</code>: 当输出缓冲达到 out_buffer_capacity 是否重新动态增加，默认 true</li>
+<li><code>panic_on_io</code>: 出现 IO 错误时，是否退出，默认 false</li>
+<li><code>panic_on_new_connection</code>: TCP 连接失败后，是否退出，默认 false</li>
+<li><code>out_buffer_capacity</code>: 不动态增加情况下，输出缓存大小， 默认 2048</li>
+<li><code>encrypt_server</code>: 服务端是否采用 SSL 加密接受链接，默认 false</li>
+<li><code>in_buffer_grow</code>: 当输入缓冲达到 in_buffer_capacity， 是否重新动态增加，默认 true</li>
+<li><code>panic_on_shutdown</code>: 收到关闭 WebSocket 请求时，是否退出， 默认 false</li>
+<li><code>panic_on_encoding</code>: 编码问题出现时，是否退出，默认 false</li>
+</ul></li>
+<li><code>new_tx_flow_config</code>:
+<ul>
+<li><code>buffer_duration</code>: 超时时间</li>
+<li><code>count_per_batch</code>: 批量处理阈值</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="network"></a><a href="#network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Network</h2>
+<p>network.toml 是 Network 微服务的配置文件。文件记录了总节点数、本地节点端口以及其它节点的ip和端口号，用户可以通过增加节点信息来添加节点，并且支持热更新，直接把修改后的文件拷贝过来覆盖即可生效，不用重启进程。</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> Current node ip is 127.0.0.1</span>
+id_card = 0
+port = 4000
+[[peers]]
+id_card = 1
+ip = "127.0.0.1"
+port = 4001
+
+[[peers]]
+id_card = 2
+ip = "127.0.0.1"
+port = 4002
+
+[[peers]]
+id_card = 3
+ip = "127.0.0.1"
+port = 4003
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="forever"></a><a href="#forever" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Forever</h2>
+<p>forever.toml 是守护进程的配置文件，每个进程对应一个微服务，<code>respawn</code> 表示唤醒次数。</p>
+<pre><code class="hljs">name=&quot;cita-forever&quot;
+command = &quot;cita-forever&quot;
+pidfile = &quot;.cita-forever.pid&quot;
+
+[[process]]
+name = &quot;cita-auth&quot;
+command = &quot;cita-auth&quot;
+args = [&quot;-c&quot;,&quot;auth.toml&quot;]
+pidfile = &quot;.cita-auth.pid&quot;
+respawn = 3
+
+[[process]]
+name = &quot;cita-network&quot;
+command = &quot;cita-network&quot;
+args = [&quot;-c&quot;,&quot;network.toml&quot;]
+pidfile = &quot;.cita-network.pid&quot;
+respawn = 3
+
+[[process]]
+name = &quot;cita-bft&quot;
+command = &quot;cita-bft&quot;
+args = [&quot;-c&quot;,&quot;consensus.toml&quot;,&quot;-p&quot;,&quot;privkey&quot;]
+pidfile = &quot;.cita-bft.pid&quot;
+respawn = 3
+
+[[process]]
+name = &quot;cita-jsonrpc&quot;
+command = &quot;cita-jsonrpc&quot;
+args = [&quot;-c&quot;,&quot;jsonrpc.toml&quot;]
+pidfile = &quot;.cita-jsonrpc.pid&quot;
+respawn = 3
+
+
+[[process]]
+name = &quot;cita-chain&quot;
+command = &quot;cita-chain&quot;
+args = [&quot;-c&quot;,&quot;chain.toml&quot;]
+pidfile = &quot;.cita-chain.pid&quot;
+respawn = 3
+
+[[process]]
+name = &quot;cita-executor&quot;
+command = &quot;cita-executor&quot;
+args = [&quot;-g&quot;,&quot;genesis.json&quot;,&quot;-c&quot;,&quot;executor.toml&quot;]
+pidfile = &quot;.cita-executor.pid&quot;
+respawn = 3</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/0.21/cita/configuration/chain-config"><span class="arrow-prev">← </span><span>Chain Configuration</span></a><a class="docs-next button" href="/en-US/0.21/cita/system/contracts"><span>System Contracts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#auth-contract-interface">Auth Contract Interface</a></li><li><a href="#consensus">Consensus</a></li><li><a href="#chain">Chain</a></li><li><a href="#executor">Executor</a></li><li><a href="#rpc">RPC</a></li><li><a href="#network">Network</a></li><li><a href="#forever">Forever</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en-US","version:0.21"]}
+              });
+            </script></body></html>

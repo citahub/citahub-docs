@@ -47,7 +47,7 @@
           "cita/system-contract-interface/node",
           "cita/system-contract-interface/auth",
           "cita/system-contract-interface/permission",
-          "cita/system-contract-interface/role-management",
+          "cita/system-contract-interface/role-mng",
           "cita/system-contract-interface/role-auth",
           "cita/system-contract-interface/role",
           "cita/system-contract-interface/group-mng",

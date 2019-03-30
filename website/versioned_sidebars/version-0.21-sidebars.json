@@ -53,7 +53,7 @@
           "version-0.21-cita/system-contract-interface/node",
           "version-0.21-cita/system-contract-interface/auth",
           "version-0.21-cita/system-contract-interface/permission",
-          "version-0.21-cita/system-contract-interface/role-management",
+          "version-0.21-cita/system-contract-interface/role-mng",
           "version-0.21-cita/system-contract-interface/role-auth",
           "version-0.21-cita/system-contract-interface/role",
           "version-0.21-cita/system-contract-interface/group-mng",

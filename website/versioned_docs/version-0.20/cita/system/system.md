@@ -67,7 +67,7 @@ CITA 支持批量调用合约。
 
 紧急制动合约存放在 `/scripts/contracts/src/system/emergency-brake.sol`， 地址是 `0xffffffffffffffffffffffffffffffffff02000f`
 
-紧急制动相关描述及方法介绍见 [emg-brake](./emg-brake)
+紧急制动相关描述及方法介绍见 [emergency-brake](./emg-brake)
 紧急制动相关描述及方法介绍见 [emergency-brake](./emg-brake)
 
 ### 协议号管理系统合约

@@ -1,5 +1,5 @@
 ---
-id: role-management
+id: role-mng
 title: 角色管理合约接口
 ---
 

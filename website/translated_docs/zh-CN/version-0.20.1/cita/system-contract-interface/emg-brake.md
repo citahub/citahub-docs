@@ -1,6 +1,6 @@
 ---
 id: version-0.20.1-emg-brake
-title: 紧急制动合约接口
+title: Emergency Brake Contract Interface
 original_id: emg-brake
 ---
 

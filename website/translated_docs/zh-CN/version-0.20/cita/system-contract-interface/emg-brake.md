@@ -1,7 +1,7 @@
 ---
-id: version-0.20-emg-brake
-title: 紧急制动合约接口
-original_id: emg-brake
+id: version-0.20-emergency-brake
+title: Emergency Brake Contract Interface
+original_id: emergency-brake
 ---
 
 

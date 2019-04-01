@@ -6,7 +6,7 @@ title: 快速入门
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](./huawei)。
-> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 CITA 测试链。测试链的水龙头的地址为：https://dapp.cryptape.com/faucet/, 可以在这里领取 Testnet 的代币。测试链的内核 CITA 的版本为 [`v0.20.2`](https://github.com/cryptape/cita/releases/tag/v0.20.2)。该测试链由4个节点组成，各节点的 ip 地址和端口如下：
+> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 CITA 测试链。测试链的水龙头的地址为：https://dapp.cryptape.com/faucet/, 可以在这里领取 Testnet 的代币。测试链的内核 CITA 的版本为 [`v0.22.0`](https://github.com/cryptape/cita/releases/tag/v0.22.0)。该测试链由4个节点组成，各节点的 ip 地址和端口如下：
 
 ```
 node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.cryptape.com

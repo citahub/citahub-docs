@@ -113,14 +113,13 @@ node 4: 121.43.163.31:1340
 </code></pre>
 <p>编译生成的文件在发布件目录 <code>target/install</code> 下，生产环境下只需要这个目录即可。</p>
 <blockquote>
-<p><strong>Docker env 和 daemon 使用说明</strong></p>
+<p><strong>Docker env 使用说明</strong></p>
 <ul>
 <li><p>在源码根目录下，我们提供了 <code>env.sh</code> 脚本，封装了 Docker 相关的操作。 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。 例如：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make debug</span>
 </code></pre>
 <p>即表示在 Docker 环境中运行 <code>make debug</code>。</p></li>
 <li><p>不带任何参数运行 <code>./env.sh</code>，将直接获取一个 Docker 环境的 shell。</p></li>
-<li><p>还提供了 <code>daemon.sh</code>，用法同 <code>env.sh</code>，效果是后台运行。</p></li>
 </ul>
 <p><strong>Notice</strong></p>
 <ul>
@@ -153,7 +152,7 @@ docker kill $(docker ps -a -q)</p></li>
 * 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
 
   ```shell
-<span class="hljs-meta">  $</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> bin/cita create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
 </code></pre>
 <p>节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：</p>
 <ul>
@@ -162,16 +161,16 @@ docker kill $(docker ps -a -q)</p></li>
 <li><p>test-chain/2</p></li>
 <li><p>test-chain/3</p></li>
 <li><p>执行以下命令依次配置四个节点</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
-<span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>
-<span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/2</span>
-<span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita setup <span class="hljs-built_in">test</span>-chain/3</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>
+<span class="hljs-meta">$</span><span class="bash"> bin/cita setup <span class="hljs-built_in">test</span>-chain/2</span>
+<span class="hljs-meta">$</span><span class="bash"> bin/cita setup <span class="hljs-built_in">test</span>-chain/3</span>
 </code></pre></li>
 </ul>
 <blockquote>
 <p><strong>Note</strong></p>
 <ul>
-<li><p>生产环境中，用户需要根据实际情况更改默认配置。使用命令 <code>./scripts/create_cita_config.py -h</code> 来获得详细帮助信息，允许自定义的配置包括：</p>
+<li><p>生产环境中，用户需要根据实际情况更改默认配置。使用命令 <code>bin/cita create -h</code> 来获得详细帮助信息，允许自定义的配置包括：</p>
 <ul>
 <li>系统管理员账户</li>
 <li>出块时间间隔</li>
@@ -182,7 +181,7 @@ docker kill $(docker ps -a -q)</p></li>
 <p>该工具更详细的使用说明请参考 <a href="./configuration/chain-config">Config Tool</a>。</p></li>
 <li><p>对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。</p></li>
 <li><p>在不同服务器部署多条链主要规划相关端口配置，参见 <a href="./configuration/chain-config">Config_Tool的功能和用法</a>。在同一台服务器上部署多条链，除了规划端口配置外，由于 <code>RabbitMQ</code> 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./scripts/create_cita_config.py create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span>  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes <span class="hljs-string">"127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"</span></span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span>  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes <span class="hljs-string">"127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"</span></span>
 </code></pre>
 <p>运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个Docker 里运行。</p></li>
 </ul>
@@ -191,32 +190,31 @@ docker kill $(docker ps -a -q)</p></li>
 <p>通过 <code>./bin/cita</code> 查看节点命令。</p>
 <pre><code class="hljs css language-shell">Usage: cita &lt;command&gt; &lt;node&gt; [options]
 where &lt;command&gt; is one of the following:
-    { help | setup | start | stop | restart | ping
-      top | backup | clean | logs | logrotate }
-
+    { help | create | port | setup | start | stop | restart
+      ping | top | backup | clean | logs | logrotate }
 Run `cita help` for more detailed information.
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="启动节点"></a><a href="#启动节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动节点</h3>
 <p>执行以下命令依次启动四个节点，该命令正常情况下不会返回，节点后台运行。</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./daemon.sh ./bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
-<span class="hljs-meta">$</span><span class="bash"> ./daemon.sh ./bin/cita start <span class="hljs-built_in">test</span>-chain/1</span>
-<span class="hljs-meta">$</span><span class="bash"> ./daemon.sh ./bin/cita start <span class="hljs-built_in">test</span>-chain/2</span>
-<span class="hljs-meta">$</span><span class="bash"> ./daemon.sh ./bin/cita start <span class="hljs-built_in">test</span>-chain/3</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> bin/cita start <span class="hljs-built_in">test</span>-chain/1</span>
+<span class="hljs-meta">$</span><span class="bash"> bin/cita start <span class="hljs-built_in">test</span>-chain/2</span>
+<span class="hljs-meta">$</span><span class="bash"> bin/cita start <span class="hljs-built_in">test</span>-chain/3</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="停止节点"></a><a href="#停止节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>停止节点</h3>
 <p>以“0”节点为例，执行以下命令即可停止“0”节点：</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita stop <span class="hljs-built_in">test</span>-chain/0</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita stop <span class="hljs-built_in">test</span>-chain/0</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="其他操作"></a><a href="#其他操作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>其他操作</h3>
 <p>更多其他操作使用以下命令查看帮助信息：</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh ./bin/cita <span class="hljs-built_in">help</span></span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita <span class="hljs-built_in">help</span></span>
 </code></pre>
 <blockquote>
 <p><strong>Notice</strong></p>
 <ul>
 <li><p>请不要先进到 bin 目录，再执行以上的部署操作，错误示范：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> bin</span>
-<span class="hljs-meta">$</span><span class="bash"> ./env.sh .cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> cita setup <span class="hljs-built_in">test</span>-chain/0</span>
 </code></pre></li>
 <li><p>请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。</p></li>
 <li><p>请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突</p></li>
@@ -266,29 +264,28 @@ wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_tes
 <ul>
 <li><p>查询节点个数</p>
 <p>Request:</p>
-<pre><code class="hljs css language-shell">./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
 </code></pre>
 <p>Result:</p>
-<pre><code class="hljs css language-shell">{
-"jsonrpc": "2.0",
-"id": 74,
-"result": "0x3"
+<pre><code class="hljs css language-json">{
+<span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+<span class="hljs-attr">"id"</span>: <span class="hljs-number">74</span>,
+<span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x3"</span>
 }
 </code></pre></li>
 <li><p>查询当前块高度。</p>
 <p>Request:</p>
-<pre><code class="hljs css language-shell">./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
 </code></pre>
 <p>Result:</p>
-<pre><code class="hljs css language-shell">{
-"jsonrpc": "2.0",
-"id": 83,
-"result": "0x8"
+<pre><code class="hljs css language-json">{
+<span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+<span class="hljs-attr">"id"</span>: <span class="hljs-number">83</span>,
+<span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x8"</span>
 }
 </code></pre>
 <p>返回块高度，表示节点已经开始正常出块。</p></li>
 </ul>
-<p>!&gt; 在发布件目录(target/install)下运行节点时，可选择使用<code>./env.sh</code></p>
 <p>更多 API（如合约调用、交易查询）请参见<a href="./rpc-guide/rpc">RPC 调用</a>。</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/cita-intro"><span class="arrow-prev">← </span><span>关于 CITA</span></a><a class="docs-next button" href="/zh-CN/next/cita/huawei"><span>华为云一键部署</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#依赖">依赖</a><ul class="toc-headings"><li><a href="#系统平台要求">系统平台要求</a></li><li><a href="#安装-docker">安装 Docker</a></li><li><a href="#获取-docker-镜像">获取 Docker 镜像</a></li></ul></li><li><a href="#编译-cita">编译 CITA</a><ul class="toc-headings"><li><a href="#获取源码">获取源码</a></li><li><a href="#编译源代码">编译源代码</a></li></ul></li><li><a href="#部署cita">部署CITA</a><ul class="toc-headings"><li><a href="#配置节点">配置节点</a></li><li><a href="#节点命令">节点命令</a></li><li><a href="#启动节点">启动节点</a></li><li><a href="#停止节点">停止节点</a></li><li><a href="#其他操作">其他操作</a></li><li><a href="#使用docker-compose">使用docker-compose</a></li></ul></li><li><a href="#验证">验证</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {

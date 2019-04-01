@@ -60,7 +60,7 @@ https://docs.citahub.com/zh-CN/cita/architecture/architecture
 * **Fabric 其实不是一个区块链**，准确的表达是**一个加入共识算法的中心化数据库**。这样就引发了两个问题，1. 没有原生代币，不需要挖矿，这样其实不能够提供一个经济激励，导致有一些需要激励的场景是没有办法用 Fabric 的。2. 无法进行跨链，Fabric 中通道就是一条链，跨通道就是跨链。但是通道并不是常规意义上的跨链，因为不可能所有的企业都在一个 Fabric 的网络上，所以他们不能跨通道，或者说跨通道技术非常不成熟。3.权限限制无法从链本身灵活实现，比如某个合约需要限制权限，而另一个不需要，两者又又互相调用关系。
 
 #### Fabric 的合约能直接迁移到 CITA 上面吗？
-不能。虽然 CITA 也支持 Go 智能合约，但是跟 Fabric 合约的共同点也只有都是用 Go 语言这一点，编程模式上完全不同。	
+不能。虽然 CITA 也支持 Go 智能合约，但是跟 Fabric 合约的共同点也只有都是用 Go 语言这一点，编程模式上完全不同。
 
 ### CITA 关键设计
 
@@ -125,53 +125,53 @@ Solidity，Rust，Go
 #### CITA 支持用 Go 来写智能合约吗？
 CITA 支持 Go 合约，但是现在 Go 合约不能够和 solidity  的合约互相调用。在使用的时候，需要单独为每一个节点启动关于 Go 合约的服务，操作比较繁琐。除此之外，在 Go 合约中使用随机数会导致链的分叉，因为 Go 合约是每一个节点单独作为一个服务运行的。
 
-###版本	
+###版本
 
 #### CITA 0.17 和 0.18 的solc 版本分别最高支持多少？
-0.4.19 和 0.4.24	
+0.4.19 和 0.4.24
 
 ### 系统保留地址
-	
-#### 对于 0xffffffffffffffffffffffffffffffffff010000 存证指令的这个地址，是怎么使用的呀？现在我向这个地址存了数据，该用什么方法去读取呢？	
-就是普通的发交易,读取的话就是根据交易哈希查询 getReceipt，然后取出来。
-	
-## RPC/SDK	
 
-####chainid 是写在配置文件中的，如何获取？	
+#### 对于 0xffffffffffffffffffffffffffffffffff010000 存证指令的这个地址，是怎么使用的呀？现在我向这个地址存了数据，该用什么方法去读取呢？
+就是普通的发交易,读取的话就是根据交易哈希查询 getReceipt，然后取出来。
+
+## RPC/SDK
+
+####chainid 是写在配置文件中的，如何获取？
 chainId可以通过getMetaData这个jsonRPC方法来获取。
 示例命令：`curl -X POST —data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"id":1}' ipAddr:port`。
 
-#### sdk 中新出现的参数 value（智能合约反向生成的 java 类，在 deploy 中出现的 value）具体代表什么含义，需要给应用层暴露么？	
+#### sdk 中新出现的参数 value（智能合约反向生成的 java 类，在 deploy 中出现的 value）具体代表什么含义，需要给应用层暴露么？
 是暴露在应用层的。value 是指原生 token，之前 CITA 是没有币这个概念的，0.17 加入的，所以多了 value 这个概念。
 这个 value 在部署的方法里现在是没有用到的，只是在转账的时候用到，部署的时候填入空字符串即可.
 
 #### quota 和 value 有什么差别，应用如何对应输入参数？
-quota 是你发送一个交易（包括调用合约，部署合约和转账）所需要付出的矿工费，如果不足则该交易无法入链，value 是你要在该交易中发送的币的数量，比如你要给A转账1个币，那么value就是1(注意这里的单位是ether)，quota 是 100000 quota. (quota 的最小单位就叫quota, 类似以太坊的 wei, 但是注意我们不要用 ethereum 的单位体系)。如果交易失败了你的 quota 仍然会损失，但是 value 是不会损失的。	
-#### eventlog的查询有示例代码么？	
-有的，在 github 上有一个 develop 分支，里面有个 project 叫 tests，里面都是例子，其中叫 TokenFilterTest 的是关于 event 的实例	
+quota 是你发送一个交易（包括调用合约，部署合约和转账）所需要付出的矿工费，如果不足则该交易无法入链，value 是你要在该交易中发送的币的数量，比如你要给A转账1个币，那么value就是1(注意这里的单位是ether)，quota 是 100000 quota. (quota 的最小单位就叫quota, 类似以太坊的 wei, 但是注意我们不要用 ethereum 的单位体系)。如果交易失败了你的 quota 仍然会损失，但是 value 是不会损失的。
+#### eventlog的查询有示例代码么？
+有的，在 github 上有一个 develop 分支，里面有个 project 叫 tests，里面都是例子，其中叫 TokenFilterTest 的是关于 event 的实例
 
 #### 交易如果需要转币，必须要有转账的来源、去处、额度，但是有的交易不需要转币，这个相关参数如何处理？
 交易如果需要转币，不需要提供来源，只需要提供去处，因为签名信息已经代表了来源，如果不需要转币，相关参数传空字符串就可以。
 
-## 运维	
+## 运维
 
 ### 部署
 
-#### 部署维护一个节点所需配置及成本？	
+#### 部署维护一个节点所需配置及成本？
 实际成本视运行节点的服务器配置而定（eg. CPU：4 核心 、内存：8G、硬盘：100G 带宽：5MB ，658元/月）
 最低配置：阿里云上 CPU：2 核心、内存：4G、硬盘：100G，377元/月
 
-#### 对 docker 的支持到什么程度？	
+#### 对 docker 的支持到什么程度？
 编译环境：目前有个封装了 Ubuntu 18.04 和依赖的运行环境的 docker image 叫 [cita-build](https://hub.docker.com/r/cita/cita-build)，用于编译 CITA 二进制文件；
-运行环境：目前有个封装了 Ubuntu 18.04 和依赖的运行环境的 docker image 叫 [cita-run](https://hub.docker.com/r/cita/cita-run)，需要把编译好的 CITA 二进制文件和数据存储目录 mount 进去才能执行，不是很“正统”的 docker 化服务支持（如不能直接使用 docker run cita:vx.y.z）	
+运行环境：目前有个封装了 Ubuntu 18.04 和依赖的运行环境的 docker image 叫 [cita-run](https://hub.docker.com/r/cita/cita-run)，需要把编译好的 CITA 二进制文件和数据存储目录 mount 进去才能执行，不是很“正统”的 docker 化服务支持（如不能直接使用 docker run cita:vx.y.z）
 
 #### CITA 是否有完整的 Docker 镜像？
-目前没有	
+目前没有
 
-### 配置	
+### 配置
 
 #### CITA 对于机器配置是内存关键还是 CPU 关键？
-CPU 关键	
+CPU 关键
 
 #### 微服务架构如何搭建扩容，例如：Network 如何扩容，在不同的服务器上如何协同。
 CITA 目前由 6 个微服务组成。因为微服务之间通过消息总线通信，所以 RabbitMQ 以及这 6 个微服务可以部署在不同的服务器上，形成集群。但是进一步的扩容，比如每个微服务运行多个实例，这个目前还在我们的开发计划中。
@@ -179,9 +179,9 @@ CITA 目前由 6 个微服务组成。因为微服务之间通过消息总线通
 #### 想要在已经运行的一条链（如标准分平台）上增加对国密的支持，现在一条链上不支持多种加密算法，有什么建议？
 目前不支持。
 
-### 节点操作	
+### 节点操作
 
-#### 如何获取节点的地址？	
+#### 如何获取节点的地址？
 https://docs.citahub.com/zh-CN/cita/configuration/chain-config#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84
 
 #### 请问现在 CITA 的节点数量有上限吗？
@@ -190,7 +190,7 @@ CITA 的初始化的时候共识节点的最大数量是 256，在链运行之�
 #### 节点与节点之间的同步是怎么同步的？全量同步还是增量同步？使用的是什么技术，如何保障一致性。
 节点间是以块为单位，按块高度增量同步的。节点块高度变化之后会广播自己的高度。其他节点收到之后跟自己的高度比较。如果自己的高度低，就会主动发起同步请求。收到同步过来的块会进行详细的hash和签名的验证，发现有问题就直接丢弃。
 
-### 监控	
+### 监控
 
 #### CITA 采用消息总线？如何保证它的稳定性，如何监控。有没有消息监控平台。
 CITA 采用的微服务架构，微服务之间通过消息总线通信。消息总线采用的是成熟的消息中间件产品 RabbitMQ。RabbitMQ 自身就有监控系统。CITA 本身也有监控系统，但是目前还在开发过程中。就稳定性来说，RabbitMQ是得到广泛验证的稳定性很高的成熟产品，而 CITA 其实并不完全依赖消息总线的可靠性，本身也有很多可靠性上的保证，所以是双重保险。
@@ -202,15 +202,15 @@ CITA 采用的微服务架构，微服务之间通过消息总线通信。消息
 这个最粗糙的做法就是获取所有节点的高度，跟自己的对比，所有节点都查，比较一下高度是否有差异。高度差在 5 以上的话就告警。
 
 #### 应用连接的节点可能存在区块高度与最新区块差异较大的不健康情况，应用应该怎么处理会更好？
-一个方案是客户端记录所有节点的 ip，自己去用 RPC 接口获取所有节点的链接网络速度、节点高度等关键信息，自己去做最优选择策略。问题就跟下载软件选择镜像网站一样，可以配置多个，根据响应时间等情况选择最优的.这个切换是无状态的，因为所有节点都是一样的.	
+一个方案是客户端记录所有节点的 ip，自己去用 RPC 接口获取所有节点的链接网络速度、节点高度等关键信息，自己去做最优选择策略。问题就跟下载软件选择镜像网站一样，可以配置多个，根据响应时间等情况选择最优的.这个切换是无状态的，因为所有节点都是一样的.
 
-### 版本升级	
+### 版本升级
 
 #### 一条链对于多版本节点是否支持？
 “版本”要明确是软件版本，还是协议版本。软件版本可以不同，但协议版本要一致。但不建议长期不一致，新版本发布就是为了修复旧版存在的问题，因此只建议在做不停机升级时使用多软件版本并存的过渡方案。
 案例：3 个共识 0.20.2， 一个共识 0.19，一个老版本节点不能参加共识，但是可以同步数据，而且可以参与投票。
 
-#### cita链有指令可以查询版本号吗？	
+#### cita链有指令可以查询版本号吗？
 CITA 查询版本，不是通过 RPC 返回值查看。通过 binary 运行 ./bin/cita-auth —version 查看当前 CITA 版本。
 
 #### 升级后 chain-id 会变化吗？
@@ -219,25 +219,25 @@ CITA 查询版本，不是通过 RPC 返回值查看。通过 binary 运行 ./bi
 #### 关于更新节点时是否需要停节点。比如咱们以后有 4 个 CITA 的共识节点 + 2 个只读节点，更新版本的时候需要 6 个节点都是停了更新完 bin，再启动服务；还是在不停止其他服务的情况下，可以单独地更新一个个的节点？
 对于 0.17 升级 0.18 这种兼容的升级，两个版本的 bin 其实是可以同时存在的，最好是一个节点一个节点更新，这样可以不中断服务。
 
-### 协议升级	
+### 协议升级
 
 #### 升级过程要多久？
 当有协议变更时 https://docs.citahub.com/zh-CN/cita/protocol-upgrade/v1 升级协议需要开启紧急制动，就是链要暂停。需要些时间(看数据量)。协议变更，Transaction 结构中增加 to_v1 字段，类型为 bytes。在链的协议版本为 v1 时，原来 to 字段不再使用。Transaction 结构中增加 chain_id_v1 字段，类型为 bytes(u256)。在链的协议版本为 v1 时，原来 chain_id 字段不再使用。Transaction 结构中的version字段必须填 1。协议升级会增加字段。
 
 ### 数据备份、迁移
 
-#### 目前 CITA 底层区块数据不断增长，占用空间很大，需要有办法压缩区块及日志数据，目前CITA有支持吗？ 
+#### 目前 CITA 底层区块数据不断增长，占用空间很大，需要有办法压缩区块及日志数据，目前CITA有支持吗？
 做快照是可以减少目录大小，但老的数据会丢失。
 日志可以清理掉或者备份到其他服务器上，参考 CITA 文档：https://docs.citahub.com/en-US/next/cita/system/log
 
 ### 日志
-	
-#### CITA运行的日志文件存放在哪里？	
+
+#### CITA运行的日志文件存放在哪里？
 node1/logs下。
 
-## 故障诊断	
+## 故障诊断
 
-### 安装部署报错	
+### 安装部署报错
 
 ####  Mac安装部署报错：thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "Failed to run `\"pkg-config\" \"—libs\" \"—cflags\" \"libsodium\"`: No such file or directory (os error 2)"', libcore/result.rs:945:5
 
@@ -249,13 +249,13 @@ node1/logs下。
 
 #### Mac安装部署报错：= note: ld: library not found for -lprofiler clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
-解决办法： `brew install gperftools`	
+解决办法： `brew install gperftools`
 
 #### Mac安装部署报错：error[E0460]: found possibly newer version of crate num_traits which num_traits depends on → /Users/rain/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-0.8.0/src/[lib.rs:40:1](http://lib.rs:40:1)
 
-解决办法：`cargo check`	
+解决办法：`cargo check`
 
-### 运行报错、微服务异常	
+### 运行报错、微服务异常
 
 #### Mac 运行 CITA 报错：/scripts/create_cita_config.py create —nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" Traceback (most recent call last): File "./scripts/create_cita_config.py", line 12, in <module> import toml ModuleNotFoundError: No module named ‘toml'
 
@@ -263,22 +263,22 @@ node1/logs下。
 
 #### Mac 运行 CITA 报错：git clone https://github.com/ethereum/pyethereum.git python3 setup.py install 会卡死。
 
-解决办法：`pip3 install -r requirements.txt` 或者 `pip3 install ethereum`	
+解决办法：`pip3 install -r requirements.txt` 或者 `pip3 install ethereum`
 
 #### Mac运行 CITA 报错：Failed to import bitcoin. This is not a fatal error but does mean that you will not be able to determine the address from your wallet file.
 
 解决办法：`pip3 install bitcoin`
 
 #### Mac 运行 CITA 报错：Internal compiler error during compilation: /tmp/solidity-20180515-88303-7oxibo/solidity_0.4.23/libsolidity/interface/CompilerStack.cpp(732): Throw in function void dev::solidity::CompilerStack::compileContract(const dev::solidity::ContractDefinition &, map<const dev::solidity::ContractDefinition *, const eth::Assembly *> &) Dynamic exception type: boost::exception_detail::clone_impl<dev::solidity::InternalCompilerError>
-解决办法： `brew upgrade solidity`	
+解决办法： `brew upgrade solidity`
 
 #### Mac运行 CITA 报错：/Users/leeyr/Documents/cryptape/code/cita/tests/integrate_test/cita_blockNumber.sh: line 17: jq: command not found
 
-解决办法：`brew install jq`	
+解决办法：`brew install jq`
 
 #### Mac 运行 CITA 报错：Error: unable to perform an operation on node 'rabbit@localhost'. Please see diagnostics information and suggestions below
 
-解决办法： `brew services start rabbitmq`	
+解决办法： `brew services start rabbitmq`
 
 #### Mac 运行 CITA 报错：Initializing chain from provided state sys_config.sol:66:16: Error: Expected identifier, got 'LParen' constructor( ^
 
@@ -288,37 +288,37 @@ node1/logs下。
 from rlp.utils import decode_hex, encode_hex, ascii_chr, str_to_bytes
 ImportError: cannot import name 'decode_hex'
 
-解决办法：`pip3 install 'rlp==0.6.0'`	
+解决办法：`pip3 install 'rlp==0.6.0'`
 
-#### 机器没有重启，为什么进程挂了？	
+#### 机器没有重启，为什么进程挂了？
 在不使用 Docker 镜像的情况而使用自编译环境，终端窗口一关，进程就挂了，加上 nohup 就没问题了。推荐使用 Docker 环境就不会出现这个问题。
 
-#### 性能测出来为什么很低？	
+#### 性能测出来为什么很低？
 可能的原因 1. 机器配置。如 cpu，内存。 2. 可能是块或者账号的配额总的设置额度太低了。
 
-#### 如何处理压力测试时出现交易未上链的情况	
+#### 如何处理压力测试时出现交易未上链的情况
 前面已经提到，交易未上链是因为交易的超时，确保交易不会出现”意外“上链的情况。CITA 的交易池在 Auth 模块，在 RPC 将交易转发给Auth，Auth 进行交易的签名等信息验证成功后，将交易放入交易池。默认情况下，交易池的最大交易容量是无穷大，所以对于一般的个人用户在进行压力测试时，交易发送过快，由于机器性能限制，交易可能处理不过来，可能会出现交易累积在交易池，导致交易超时。所以普通用户可以根据机器性能选择将 auth.toml 中的 tx_pool_limit 参数由 0（0 表示没有限制）改为一个合适的值。（对于单节点 4c8g 的节点，建议50000）。此时，如果发送交易超出交易池的容纳能力，RPC 会返回 BUSY，提示用户发送交易速度过快。
 
 #### Tread main panicked at AMQP_URL must be set: Not Present, libcore/[result.rs:945](http://result.rs:945/)
 
 原因：由于 node/x 目录没有 rabbitmq 的配置文件，配置文件默认为隐藏文件 .env。
 
-解决方案：在 node/x 节点目录生成配置文件 .env AMQP_URL=amqp://guest:guest@localhost/node/1 DATA_PATH=./data	
+解决方案：在 node/x 节点目录生成配置文件 .env AMQP_URL=amqp://guest:guest@localhost/node/1 DATA_PATH=./data
 
-#### Tread main panicked at failed to open url amqp://guest@localhost/node/0: IoError[ConnectionRefused].	
+#### Tread main panicked at failed to open url amqp://guest@localhost/node/0: IoError[ConnectionRefused].
 原因：连接 rabbitmq 不成功。可能因为：1. rabbitmq 未成功启动：rabbitmq 端口被占用（冲突）、rabbitmq 服务本身异常等。2. rabbitmq 成功启动可能注册id不可用
 
 解决方案：对于1，请先确认端口是否被占用，系统已启动 rabbitmq，然后在 docker 里再启动 rabbitmq 会导致 docker 里的启动失败。重启 rabbitmq 服务。对于2，删除无效 id：`sudo rabbitmqctl list_vhosts`, 然后 `sudo rabbitmqctl delete_vhost`
 
-#### Tread <unnamed> panicked at save_current_block_poof DB write failed.:"10 error: ./data/nosql/007258.log: Too many open files in system", libcore/[result.rs:945](http://result.rs:945/)	
+#### Tread <unnamed> panicked at save_current_block_poof DB write failed.:"10 error: ./data/nosql/007258.log: Too many open files in system", libcore/[result.rs:945](http://result.rs:945/)
 请参考：https://blog.csdn.net/fdipzone/article/details/34588803，可以先改一下相关的配置，然后持续观察一下，看是否有文件句柄泄漏的情况。
 
-### 合约相关报错	
+### 合约相关报错
 #### 有一个工厂合约，new 一个合约后合约地址返回，返回后立即调用合约里面方法会报这个错误 invoke: Can't find the specific contract (edited) - 合约地址返回后立马调用会出现问题， 过一会调用就不会出现问题。
 
 虽然合约地址生成了，写入了区块，但是区块状态是 pending（处于共识中）。 sdk 都是默认请求 last 的区块。pending 和 last 相差一个区块。所以需要等一个块的时间。（这个问题 v0.20出现的，之前没有。因为0.20才加上的状态）。
 
-### 访问报错	
+### 访问报错
 
 #### 用户在通过本地访问获取块高度，出现错误 failed：Connection time out，但是 ping 可以 ping 通。
 

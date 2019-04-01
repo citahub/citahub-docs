@@ -17,6 +17,11 @@ $ ls 0
 
 ## Auth Contract Interface
 
+### 启动参数
+
+* '-c, --config=[FILE]' : 自定义配置文件
+* '-s, --stdout' : 日志输出到控制台
+
 auth.toml 是 Auth 微服务的配置文件，如下：
 
 ```bash
@@ -42,6 +47,14 @@ prof_duration = 0
 
 ## Consensus
 
+### 启动参数
+
+* '-c, --config=[FILE]' : 自定义配置文件
+* '-p, --private=[FILE]' : 设置私钥文件
+* '--prof-start=[0]' : 指定分析的开始时间，0表示没有
+* '--prof-duration=[0]' : 指定分析的持续时间，0表示没有
+* '-s, --stdout' : 日志输出到控制台
+
 consensus.toml 是 Consensus 微服务的配置文件，如下：
 
 ```bash
@@ -58,6 +71,11 @@ address = "0.pool.ntp.org:123"
 
 ## Chain
 
+### 启动参数
+
+* '-c, --config=[FILE]' : 自定义配置文件
+* '-s, --stdout' : 日志输出到控制台
+
 chain.toml 是 Chain 微服务的配置文件，如下：
 
 ```bash
@@ -68,6 +86,11 @@ chain.toml 是 Chain 微服务的配置文件，如下：
 * `prooftype` : 表示当前的共识算法，目前只支持 CITA-BFT 算法。
 
 ## Executor
+
+### 启动参数
+
+* '-c, --config=[FILE]' : 自定义配置文件
+* '-s, --stdout' : 日志输出到控制台
 
 executor.toml 是 Executor 微服务的配置文件，如下：
 
@@ -89,6 +112,11 @@ eth_compatibility = false
 * `eth_compatibility` : 是否与以太坊兼容的开关(CITA默认与以太坊在块的时间戳精度上不兼容，CITA为毫秒，以太坊为秒)。
 
 ## RPC
+
+### 启动参数
+
+* '-c, --config=[FILE]' : 自定义配置文件
+* '-s, --stdout' : 日志输出到控制台
 
 jsonrpc.toml 是 RPC 微服务的配置文件， CITA 支持 JsonRpc 和 Websocket 两种通信协议，该文件主要是协议配置相关。如下:
 
@@ -188,6 +216,12 @@ count_per_batch = 30
 
 ## Network
 
+### 启动参数
+
+* '-c, --config=[FILE]' : 自定义配置文件
+* '-a, --address=[FILE]' : 配置地址文件
+* '-s, --stdout' : 日志输出到控制台
+
 network.toml 是 Network 微服务的配置文件。文件记录了总节点数、本地节点端口以及其它节点的ip和端口号，用户可以通过增加节点信息来添加节点，并且支持热更新，直接把修改后的文件拷贝过来覆盖即可生效，不用重启进程。
 
 ```shell
@@ -212,6 +246,18 @@ port = 4003
 ```
 
 ## Forever
+
+### 启动参数
+
+* '-c, --config=[FILE]' : 自定义配置文件
+* '-s, --stdout' : 日志输出到控制台
+
+### 子命令
+
+* 'start' : 后台启动所有进程
+* 'stop' : 停止所有进程
+* 'logrotate' : 转移日志
+* '""' : 后台启动所有进程
 
 forever.toml 是守护进程的配置文件，每个进程对应一个微服务，`respawn` 表示唤醒次数。
 
@@ -258,6 +304,18 @@ forever.toml 是守护进程的配置文件，每个进程对应一个微服务�
     [[process]]
     name = "cita-executor"
     command = "cita-executor"
-    args = ["-g","genesis.json","-c","executor.toml"]
+    args = ["-c","executor.toml"]
     pidfile = ".cita-executor.pid"
+    respawn = 3
+    
+
+### 提示
+
+日志默认输出到文件中，为达到输出到控制台的目的，可以在 forever.toml 中修改进程的启动参数。例如修改 Chain 进程输出到控制台：
+
+    [[process]]
+    name = "cita-chain"
+    command = "cita-chain"
+    args = ["-c","chain.toml", "-s"]
+    pidfile = ".cita-chain.pid"
     respawn = 3

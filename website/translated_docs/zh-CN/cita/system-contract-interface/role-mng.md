@@ -1,7 +1,8 @@
 ---
-id: role-management
+id: role-mng
 title: 角色管理合约接口
 ---
+
 
 <h2 class="hover-list">Role Management</h2>
 
@@ -14,20 +15,20 @@ title: 角色管理合约接口
 * [clearRole](#clearrole)
 * [deleteRole](#deleterole)
 
-***
+* * *
 
 ### newRole
 
 新建角色。
 
 * 参数
-
+    
     `bytes32` - The role name
-
+    
     `address[]` - The permissions
 
 * 返回值
-
+    
     `address` - The role address
 
 * 示例
@@ -99,13 +100,13 @@ $ scm RoleManagement newRole \
 更新角色名称。
 
 * 参数
-
+    
     `bytes32` - The role name
-
+    
     `address` - The role address
 
 * 返回值
-
+    
     `bool`
 
 * 示例
@@ -122,13 +123,13 @@ $ scm RoleManagement updateRoleName \
 为角色添加权限。
 
 * 参数
-
+    
     `address` - The role address
-
+    
     `address[]` - The role permissions
 
 * 返回值
-
+    
     `bool`
 
 * 示例
@@ -145,13 +146,13 @@ $ scm RoleManagement addPermissions \
 删除权限。
 
 * 参数
-
+    
     `address` - The role address
-
+    
     `address[]` - The permissions
 
 * 返回值
-
+    
     `bool`
 
 * 示例
@@ -168,13 +169,13 @@ $ scm RoleManagement deletePermissions \
 为某一个账户设置角色。
 
 * 参数
-
+    
     `address` - The account address
-
+    
     `address` - The role address
 
 * 返回值
-
+    
     `bool`
 
 * 示例
@@ -191,13 +192,13 @@ $ scm RoleManagement setRole \
 清除某个账户的指定权限
 
 * 参数
-
+    
     `address` - The account address
-
+    
     `address` - The role address
 
 * 返回值
-
+    
     `bool`
 
 * 示例
@@ -214,11 +215,11 @@ $ scm RoleManagement cancelRole \
 清除某个账户的所有权限。
 
 * 参数
-
+    
     `address` - The account address
 
 * 返回值
-
+    
     `bool`
 
 * 示例
@@ -234,11 +235,11 @@ $ scm RoleManagement clearRole \
 删除角色。
 
 * 参数
-
+    
     `address` - The role address
 
 * 返回值
-
+    
     `bool`
 
 * 示例

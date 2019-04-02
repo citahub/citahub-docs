@@ -1,5 +1,5 @@
 ---
-title: CITA Rust SDK
+title: CITA Ruby SDK
 id: rust-sdk
 ---
 Rust SDK 是 CITA JSON-RPC 客户端的 Rust 实现。

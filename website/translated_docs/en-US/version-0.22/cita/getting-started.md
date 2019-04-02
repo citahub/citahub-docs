@@ -1,5 +1,5 @@
 ---
-id: version-0.22-getting-started
+id: version-0.22.0-getting-started
 title: Getting Started
 original_id: getting-started
 ---
@@ -8,7 +8,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](./huawei)。
 > * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 CITA 测试链。测试链的水龙头的地址为：https://dapp.cryptape.com/faucet/, 可以在这里领取 Testnet 的代币。测试链的内核 CITA 的版本为 [`v0.20.2`](https://github.com/cryptape/cita/releases/tag/v0.20.2)。该测试链由4个节点组成，各节点的 ip 地址和端口如下：
 
-    node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.cryptape.com
+    node 1: 121.196.200.22.05:1337 //或者通过域名访问： https://node.cryptape.com
     node 2: 116.62.221.89:1338
     node 3: 47.96.84.91:1339
     node 4: 121.43.163.31:1340

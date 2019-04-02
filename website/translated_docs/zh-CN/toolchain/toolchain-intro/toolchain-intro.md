@@ -1,5 +1,5 @@
 ---
-title: CITA Toolchain 简介
+title: Toolchain 简介
 id: toolchain-intro
 sidebar_label: Toolchain 简介
 ---

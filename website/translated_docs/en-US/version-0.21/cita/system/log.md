@@ -1,6 +1,6 @@
 ---
 id: version-0.21-log
-title: 日志管理
+title: Log Management
 original_id: log
 ---
 日志在系统调试，问题定位，甚至业务运维方面有着重要的作用。

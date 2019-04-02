@@ -1,6 +1,6 @@
 ---
 id: emergency-brake
-title: 紧急制动合约接口
+title: Emergency Brake Contract Interface
 ---
 
 

@@ -11,7 +11,7 @@ title: 链级配置
 执行以下命令查看各个配置项：
 
 ```shell
-$ ./env.sh ./scripts/create_cita_config.py create --help
+$ bin/cita create --help
 usage: create_cita_config.py create [-h]
                                     [--authorities AUTHORITY[,AUTHORITY[,AUTHORITY[,AUTHORITY[, ...]]]]]
                                     [--chain_name CHAIN_NAME]
@@ -162,13 +162,13 @@ usage: create_cita_config.py create [-h]
 以下是最基础起链命令，该命令生成一条包含四个节点的新链，端口默认 4000 , 4001 , 4002 , 4003， 默认超级管理员，经济模型为 `Quota`, 所有权限控制关闭。
 
 ```shell
-$ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+$ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
 接下来演示来生成一条高级配置的链, 命令如下：
 
 ```shell
-$ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.checkSendTxPermission=true SysConfig.checkCallPermission=true SysConfig.economicalModel=1 SysConfig.checkFeeBackPlatform=true SysConfig.chainOwner=0x9a6bd7272edb238f13002911d8c93dd6bb646d15
+$ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.checkSendTxPermission=true SysConfig.checkCallPermission=true SysConfig.economicalModel=1 SysConfig.checkFeeBackPlatform=true SysConfig.chainOwner=0x9a6bd7272edb238f13002911d8c93dd6bb646d15
 ```
 
 上述命令，生成一条包含四个节点，端口默认 4000 , 4001 , 4002 , 4003， 超级管理员地址 `0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523`， 运营方地址 `0x9a6bd7272edb238f13002911d8c93dd6bb646d15`， 经济模型 `Charge`， 出块激励返回运营方，权限全开的链。

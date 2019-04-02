@@ -1,6 +1,6 @@
 ---
 id: version-0.21-emergency-brake
-title: 紧急制动合约接口
+title: Emergency Brake Contract Interface
 original_id: emergency-brake
 ---
 

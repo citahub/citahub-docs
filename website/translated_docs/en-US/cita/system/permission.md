@@ -59,7 +59,7 @@ CITA通过智能合约的方式来对权限进行管理。
 通过以下命令生成配置文件(打开权限开关)：
 
 ```bash
-$ ./env.sh ./scripts/create_cita_config.py create \
+$ bin/cita create \
     --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" \
     --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" \
     --contract_arguments SysConfig.checkCallPermission=true SysConfig.checkSendTxPermission=true SysConfig.checkCreateContractPermission=true

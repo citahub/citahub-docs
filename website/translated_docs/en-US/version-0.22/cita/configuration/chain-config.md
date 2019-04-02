@@ -1,5 +1,5 @@
 ---
-id: version-0.22-chain-config
+id: version-0.22.0-chain-config
 title: Chain Configuration
 original_id: chain-config
 ---

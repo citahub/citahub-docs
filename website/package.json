@@ -2,12 +2,13 @@
   "scripts": {
     "examples": "docusaurus-examples",
     "start": "docusaurus-start",
-    "build": "docusaurus-build",
+    "build": "npm run patches && docusaurus-build",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "yarn run scan-sidebar && docusaurus-write-translations",
     "version": "docusaurus-version",
     "scan-sidebar": "node ./data/load-sidebar.js",
-    "rename-version": "docusaurus-rename-version"
+    "rename-version": "docusaurus-rename-version",
+    "patches": "node ./scripts/patch-docusaurus.js"
   },
   "devDependencies": {
     "docusaurus": "^1.7.1"

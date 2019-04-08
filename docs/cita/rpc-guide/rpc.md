@@ -740,7 +740,7 @@ Result:
 
 * Returns
 
-`Data` - the abi from the given address.
+`Data` - the abi from the given address, base on the given `BlockNumber`
 
 * Example
 
@@ -863,7 +863,7 @@ $ cita-cli rpc getAbi \
 
 * Returns
 
-`Quantity` - the balance from the given address.
+`Quantity` - the balance from the given address, base on the given `BlockNumber`.
 
 * Example
 
@@ -1232,40 +1232,7 @@ Result:
 3. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
 
 * Returns
-`Data` - H256 value of the key in address.
-* Example
-
-```shell
-curl -X POST --data '{"jsonrpc":"2.0","method":"getStorageAt","params":["0xffffffffffffffffffffffffffffffffff020000", "0x0000000000000000000000000000000000000000000000000000000000000007", "16"],"id":1}' 127.0.0.1:1337
-```
-
-Result:
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x000000000000000000000000ffffffffffffffffffffffffffffffffff02000d"
-}
-```
-
-***
-
-## RPC Errors
-
-### Invalid Request
-
-正确方式： POST 方法
-
-```shell
-curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[]}' 127.0.0.1:1337
-```
-
-```shell
-{"jsonrpc":"2.0","error":{"code":-32600,"message":"Invalid Request"},"id":null}
-```
-
-### Method not found
+`Data` - H256 value of the key in address, base on the given `BlockNumber`.SO 
 
 正确方式： method 应该是 `getBlockByNumber`
 

@@ -31,11 +31,14 @@ Cyton-iOS 项目代码需要使用 Xcode 10.0 及以上版本打开，同时需�
 ## 下载体验
 
 iOS 和 Android 下载 
-[Image: image.png][Image: image.png]
+![ios](assets/toolchain-assets/ios.png)
+
+![android](assets/toolchain-assets/android.png)
 
 ## Getting Started
 
 cyton-android：https://github.com/cryptape/cyton-android
+
 cyton-ios：https://github.com/cryptape/cyton-ios
 
 ## 期待协作

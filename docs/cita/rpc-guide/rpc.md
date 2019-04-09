@@ -583,7 +583,7 @@ params: [
 
 * Example
 
-contract中get方法Hash和编码后的数据
+contract 中 get 方法 Hash 和编码后的数据
 
 ```shell
 0x6d4ce63c
@@ -673,7 +673,7 @@ Result:
 
 * Returns
 
-`Quantity` - integer of the number of transactions send from this address, based on the given BlockNumber.
+`Quantity` - integer of the number of transactions sent from this address, based on the given BlockNumber.
 
 * Example
 

@@ -673,7 +673,7 @@ Result:
 
 * Returns
 
-`Quantity` - integer of the number of transactions send from this address.
+`Quantity` - integer of the number of transactions send from this address, based on the given BlockNumber.
 
 * Example
 
@@ -707,7 +707,7 @@ Result:
 
 * Returns
 
-`Data` - the code from the given address.
+`Data` - the code from the given address, based on the given BlockNumber.
 
 * Example
 
@@ -740,11 +740,11 @@ Result:
 
 * Returns
 
-`Data` - the abi from the given address.
+`Data` - the abi from the given address, based on the given blockNUmber.
 
 * Example
 
-Request:
+Request:   
 
 ```shell
 curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}'
@@ -863,7 +863,7 @@ $ cita-cli rpc getAbi \
 
 * Returns
 
-`Quantity` - the balance from the given address.
+`Quantity` - the balance from the given address, based on the given BlockNumber.
 
 * Example
 
@@ -1232,7 +1232,7 @@ Result:
 3. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
 
 * Returns
-`Data` - H256 value of the key in address.
+`Data` - H256 value of the key in address, based on the given BlockNumber.
 * Example
 
 ```shell

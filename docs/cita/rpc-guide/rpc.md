@@ -9,8 +9,10 @@ For the user of V0.16 and older versions: Please pay attention that we deprecate
 ## JSON-RPC
 
 * [peerCount](#peercount)
+* [peersInfo](#peersinfo)
 * [blockNumber](#blocknumber)
 * [sendRawTransaction](#sendrawtransaction)
+* [getVersion](#getversion)
 * [getBlockByHash](#getblockbyhash)
 * [getBlockByNumber](#getblockbynumber)
 * [getTransactionReceipt](#gettransactionreceipt)
@@ -61,6 +63,50 @@ Result:
     "id": 74,
     "jsonrpc": "2.0",
     "result": "0x3"
+}
+```
+
+***
+
+### peersInfo
+
+获取与本节点相连的其它节点信息，信息包括节点的 `address` 和节点 `ip`。
+
+* Parameters
+
+None
+
+* Returns
+
+Object - A peersInfo object:
+
+* amount: `Quantity` - The amount of peers connected to this node.
+* peers: `Object` - peers info, including peer address and peer ip.
+* errorMessage: `String` - execution error message.
+
+* Example
+
+Request:
+
+```shell
+curl -X POST --data '{"jsonrpc":"2.0","method":"peersInfo","params":[],"id":83}'
+```
+
+Result:
+
+```json
+{
+    "jsonrpc":"2.0",
+    "id":83,
+    "result":{
+        "amount":3,
+        "peers":{
+            "0x2aaeacf658e49f58973b4ef6f37a5c574a28822c":"127.0.0.1",
+            "0x3ea53608732da3761ef41805da73f0d45d3e8e09":"127.0.0.1",
+            "0x01cb0a8012b75ea156eaef3e827547f760dd917a":"127.0.0.1"
+        },
+        "errorMessage":null
+    }
 }
 ```
 
@@ -271,6 +317,40 @@ Result:
     "error": {
         "code": -32006,
         "message": "Dup"
+    }
+}
+```
+
+***
+
+### getVersion
+
+获取当前 CITA 软件的版本号
+
+* Parameters
+
+None
+
+* Returns
+
+`String` - version of the running CITA.
+
+* Example
+
+Request:
+
+```shell
+curl -X POST --data '{"jsonrpc":"2.0","method":"getVersion","params":[],"id":83}'
+```
+
+Result:
+
+```json
+{
+    "jsonrpc":"2.0",
+    "id":83,
+    "result":{
+        "softwareVersion":"v0.22.0"
     }
 }
 ```

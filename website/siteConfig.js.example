@@ -54,7 +54,7 @@ const siteConfig = {
   scrollToTop: true,
   algolia: {
     apiKey: <ALGOLIA_CRAWLER_APIKEY>,
-    indexName: 'citahub',
+    indexName: <ALGOLIA_INDEX_NAME>,
     placeholder: 'Search',
     algoliaOptions: {
       facetFilters: ["language:LANGUAGE", "version:VERSION"]

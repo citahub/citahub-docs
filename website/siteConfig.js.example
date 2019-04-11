@@ -1,0 +1,65 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// See https://docusaurus.io/docs/site-config for all the possible
+// site configuration options.
+
+const baseUrl = '/'
+
+const siteConfig = {
+  title: 'CITAHub Docs',
+  tagline: 'Documents of CITAHub',
+  url: 'https://docs.citahub.com/',
+  baseUrl,
+  customDocsPath: 'docs/',
+  docsUrl: '',
+  cname: 'docs.citahub.com',
+  projectName: 'citahub-docs',
+  organizationName: 'cryptape',
+  editUrl: 'https://github.com/cryptape/edit/master/docs/',
+  headerLinks: [{
+      page: 'community',
+      label: 'Community',
+    },
+    {
+      search: true,
+    },
+    {
+      language: true,
+    },
+  ],
+  headerIcon: 'img/citahub_logo.svg',
+  footerIcon: 'img/citahub_logo.svg',
+  favicon: 'img/citahub_logo.png',
+  colors: {
+    primaryColor: '#231719',
+    secondaryColor: '#595656',
+  },
+  translationRecruitingLink: 'https://crowdin.com/project/citahub-docs',
+  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  highlight: {
+    theme: 'default',
+  },
+
+  scripts: ['https://buttons.github.io/buttons.js', baseUrl + 'javascript/index.js'],
+  onPageNav: 'separate',
+  docsSideNavCollapsible: true,
+  cleanUrl: true,
+  ogImage: 'img/docusaurus.png',
+  twitterImage: 'img/docusaurus.png',
+  scrollToTop: true,
+  algolia: {
+    apiKey: <ALGOLIA_CRAWLER_APIKEY>,
+    indexName: <ALGOLIA_INDEX_NAME>,
+    placeholder: 'Search',
+    algoliaOptions: {
+      facetFilters: ["language:LANGUAGE", "version:VERSION"]
+    }
+  },
+}
+
+module.exports = siteConfig

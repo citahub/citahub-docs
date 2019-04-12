@@ -744,7 +744,7 @@ Result:
 
 * Example
 
-Request:   
+Request:
 
 ```shell
 curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}'

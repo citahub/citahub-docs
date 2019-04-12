@@ -72,6 +72,12 @@ $ ./env.sh make debug
 $ ./env.sh make release
 ```
 
+> 可选择替换 Rust Crates 的官方源，详细教程可以参考：
+>
+> - [USTC Mirror Help for Rust Crates](http://mirrors.ustc.edu.cn/help/crates.io-index.html)
+> - [Source Replacement for Rust Crates](https://doc.rust-lang.org/cargo/reference/source-replacement.html)
+> - [How to map a configuration file into docker](https://docs.docker.com/storage/volumes/)
+
 编译生成的文件在发布件目录 `target/install` 下，生产环境下只需要这个目录即可。
 
 > **Docker env 使用说明**

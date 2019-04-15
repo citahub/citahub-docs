@@ -663,7 +663,7 @@ params: [
 
 * Example
 
-contract中get方法Hash和编码后的数据
+contract 中 get 方法 Hash 和编码后的数据
 
 ```shell
 0x6d4ce63c
@@ -753,7 +753,7 @@ Result:
 
 * Returns
 
-`Quantity` - integer of the number of transactions send from this address.
+`Quantity` - integer of the number of transactions sent from this address, based on the given BlockNumber.
 
 * Example
 
@@ -787,7 +787,7 @@ Result:
 
 * Returns
 
-`Data` - the code from the given address.
+`Data` - the code from the given address, based on the given BlockNumber.
 
 * Example
 
@@ -820,7 +820,7 @@ Result:
 
 * Returns
 
-`Data` - the abi from the given address.
+`Data` - the abi from the given address, based on the given blockNUmber.
 
 * Example
 
@@ -943,7 +943,7 @@ $ cita-cli rpc getAbi \
 
 * Returns
 
-`Quantity` - the balance from the given address.
+`Quantity` - the balance from the given address, based on the given BlockNumber.
 
 * Example
 
@@ -1312,7 +1312,7 @@ Result:
 3. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
 
 * Returns
-`Data` - H256 value of the key in address.
+`Data` - H256 value of the key in address, based on the given BlockNumber.
 * Example
 
 ```shell

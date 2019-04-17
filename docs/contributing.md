@@ -3,15 +3,13 @@ id: contributing
 title: Contributing
 ---
 
-CITA 是一个开源项目，任何人都可以参与 CITA 并贡献代码。
+CITA 和 CITA Toolchain 皆是开源项目，任何人都可以参与贡献代码。
 
-以下是参与 CITA 并贡献的具体流程：
+以下将以 CITA 为例，详述参与贡献的具体流程，为 CITA Toolchain 贡献的流程与 CITA 相同。
 
 ## 复制 CITA 到自己的仓库中（Fork repository）
 
-首先，进入 CITA 的 Github 主页，点击右上角的 Fork 按钮将 CITA 复制到自己的 Github 仓库。
-
-Fork 完成后，进入自己的 Github 主页查看是否已经存在 CITA，若存在，说明 Fork 成功。
+首先，进入 CITA 的 Github 主页，点击右上角的 Fork 按钮将 CITA 复制到自己的 Github 仓库。Fork 完成后，进入自己的 Github 主页查看是否已经存在 CITA，若存在，说明 Fork 成功。
 
 ## 创建新的分支（Create new branch）
 

@@ -21,6 +21,23 @@ function translateEnUs() {
     l.setAttribute('href', l.href.slice(0, -3))
   }
 }
+
+
+function addGA() {
+  if(window.location.href.indexOf('docs.citahub.com') > -1){
+    var googleScript = document.createElement("script");
+    googleScript.src = "https://www.googletagmanager.com/gtag/js?id=UA-134504127-3"
+    googleScript.async = true;
+    googleScript.onload = function(){
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-134504127-3');
+    }
+    document.body.append(googleScript)
+  }
+}
+
 window.onload = () => {
   const welcome = '/welcome'
   const logoEl =
@@ -31,4 +48,7 @@ window.onload = () => {
   // add edit on github
   addEditOnGithub()
   translateEnUs()
+
+  // add Google Analytics
+  addGA()
 }

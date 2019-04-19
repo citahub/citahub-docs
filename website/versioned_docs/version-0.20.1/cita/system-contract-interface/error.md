@@ -223,7 +223,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 ### NoParentChain
 
-!> deprecation
+> deprecation
 
 ### NoSideChain
 
@@ -285,7 +285,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 ### NotOneOperate
 
-!> deprecation
+> deprecation
 
 ### NotClose
 
@@ -405,4 +405,4 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 ### NotReady
 
-!> deprecation
+> deprecation

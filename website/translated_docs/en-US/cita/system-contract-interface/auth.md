@@ -52,7 +52,7 @@ title: Authorization Management Contract
 
 ### checkResource
 
-!> 废弃
+> 废弃
 
 ### checkPermission
 

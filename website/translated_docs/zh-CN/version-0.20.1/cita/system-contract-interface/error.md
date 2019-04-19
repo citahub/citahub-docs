@@ -221,7 +221,7 @@ original_id: error
 
 ### NoParentChain
 
-!> deprecation
+> deprecation
 
 ### NoSideChain
 
@@ -307,4 +307,4 @@ original_id: error
 
 ### NotReady
 
-!> deprecation
+> deprecation

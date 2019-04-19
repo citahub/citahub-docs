@@ -220,7 +220,7 @@ title: 系统合约错误类型
 
 ### NoParentChain
 
-!> 废弃
+> 废弃
 
 ### NoSideChain
 
@@ -305,4 +305,4 @@ title: 系统合约错误类型
 
 ### NotReady
 
-!> 废弃
+> 废弃

@@ -31,6 +31,10 @@ const siteConfig = {
     {
       language: true,
     },
+    { 
+      href: "https://github.com/cryptape/citahub-docs", 
+      label: "GitHub" 
+    },
   ],
   headerIcon: 'img/citahub_logo.svg',
   footerIcon: 'img/citahub_logo.svg',

@@ -49,16 +49,6 @@ https://docs.citahub.com/zh-CN/cita/architecture/architecture
 * **多核支持好**。
 * **类型系统**：在编译阶段杜绝很多代码问题，对软件质量非常有帮助。
 
-### CITA 与 Fabric 对比
-
-#### 与 Fabric 相比，CITA 有什么优点？
-* **成本较高。** 咨询成本: IBM 咨询费用比较高; 维护成本: 包括升级的时候，链码的 package 必须在每一个背书节点中升级才可以，所以如果一个通道中的不同节点被不同的机构所掌握的话，可能需要联系独家机构才可以完成升级维护; 人员成本: 这样就要求一个开发人员至少具备两点：第一点就是需要对 Fabric 的概念很熟悉，有背书节点，peer 节点，通道的概念。 对于链码的部署，还需要一个背书策略。第二点就是对容器比较熟悉，因为智能合约，在 Fabric 中叫做链码。是单独作为一个容器以沙盒的形式运行在一个节点中，要通过 Fabric 修改升级删除链码需要通过命令行来实现。这样其实要求是一个底层工程师，一般成本要超过 50W 人民币一年。传统程序员很难胜任。
-* **操作复杂。** 用证书进行权限控制。进行增加节点的时候过程繁琐，在增加的时候，需要在新增的节点中再次加入链码的 package。
-* **性能不高。** 由于 Fabric 中每一个交易流程复杂，所以性能较低，官方宣布一万，但是实测可能较低，只有 200 TPS。
-可能只有在 IBM 自己的硬件上面才可以达到很高的标准，因为 IBM 最终还是想要推广自己的硬件。
-* **生态位不合理。** IBM 不接小的项目，但是他们本身的团队在有大的项目的时候，会接单提供技术支持。这个时候，如果你也是采用的 IBM 底层技术的话，竞标上面是有很大的劣势的。
-* **Fabric 其实不是一个区块链**，准确的表达是**一个加入共识算法的中心化数据库**。这样就引发了两个问题，1. 没有原生代币，不需要挖矿，这样其实不能够提供一个经济激励，导致有一些需要激励的场景是没有办法用 Fabric 的。2. 无法进行跨链，Fabric 中通道就是一条链，跨通道就是跨链。但是通道并不是常规意义上的跨链，因为不可能所有的企业都在一个 Fabric 的网络上，所以他们不能跨通道，或者说跨通道技术非常不成熟。3.权限限制无法从链本身灵活实现，比如某个合约需要限制权限，而另一个不需要，两者又又互相调用关系。
-
 #### Fabric 的合约能直接迁移到 CITA 上面吗？
 不能。虽然 CITA 也支持 Go 智能合约，但是跟 Fabric 合约的共同点也只有都是用 Go 语言这一点，编程模式上完全不同。
 
@@ -147,6 +137,7 @@ chainId可以通过getMetaData这个jsonRPC方法来获取。
 
 #### quota 和 value 有什么差别，应用如何对应输入参数？
 quota 是你发送一个交易（包括调用合约，部署合约和转账）所需要付出的矿工费，如果不足则该交易无法入链，value 是你要在该交易中发送的币的数量，比如你要给A转账1个币，那么value就是1(注意这里的单位是ether)，quota 是 100000 quota. (quota 的最小单位就叫quota, 类似以太坊的 wei, 但是注意我们不要用 ethereum 的单位体系)。如果交易失败了你的 quota 仍然会损失，但是 value 是不会损失的。
+
 #### eventlog的查询有示例代码么？
 有的，在 github 上有一个 develop 分支，里面有个 project 叫 tests，里面都是例子，其中叫 TokenFilterTest 的是关于 event 的实例
 
@@ -176,7 +167,7 @@ CPU 关键
 #### 微服务架构如何搭建扩容，例如：Network 如何扩容，在不同的服务器上如何协同。
 CITA 目前由 6 个微服务组成。因为微服务之间通过消息总线通信，所以 RabbitMQ 以及这 6 个微服务可以部署在不同的服务器上，形成集群。但是进一步的扩容，比如每个微服务运行多个实例，这个目前还在我们的开发计划中。
 
-#### 想要在已经运行的一条链（如标准分平台）上增加对国密的支持，现在一条链上不支持多种加密算法，有什么建议？
+#### 想要在已经运行的一条链上增加对国密的支持，现在一条链上不支持多种加密算法，有什么建议？
 目前不支持。
 
 ### 节点操作
@@ -211,7 +202,7 @@ CITA 采用的微服务架构，微服务之间通过消息总线通信。消息
 案例：3 个共识 0.20.2， 一个共识 0.19，一个老版本节点不能参加共识，但是可以同步数据，而且可以参与投票。
 
 #### cita链有指令可以查询版本号吗？
-CITA 查询版本，不是通过 RPC 返回值查看。通过 binary 运行 ./bin/cita-auth —version 查看当前 CITA 版本。
+在 v0.23.0 及以后版本，如果打开了 --enable_version 配置，可以通过 JSON-RPC 接口 getVersion 获取，详细见[这里](https://docs.citahub.com/zh-CN/next/cita/rpc-guide/rpc#getversion)。其他版本需要通过运行 binary 文件方式, 运行 cita-jsonrpc --version 查看。
 
 #### 升级后 chain-id 会变化吗？
 不变。
@@ -237,59 +228,6 @@ node1/logs下。
 
 ## 故障诊断
 
-### 安装部署报错
-
-####  Mac安装部署报错：thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "Failed to run `\"pkg-config\" \"—libs\" \"—cflags\" \"libsodium\"`: No such file or directory (os error 2)"', libcore/result.rs:945:5
-
-解决办法： `brew install pkg-config`
-
-#### Mac安装部署报错：thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "`\"pkg-config\" \"—libs\" \"—cflags\" \"libsodium\"` did not exit successfully: exit code: 1\n--- stderr\nPackage libsodium was not found in the pkg-config search path.\nPerhaps you should add the directory containing `libsodium.pc\'\nto the PKG_CONFIG_PATH environment variable\nNo package \'libsodium\' found\n"', libcore/result.rs:945:5
-
-解决办法：`brew install libsodium`
-
-#### Mac安装部署报错：= note: ld: library not found for -lprofiler clang: error: linker command failed with exit code 1 (use -v to see invocation)
-
-解决办法： `brew install gperftools`
-
-#### Mac安装部署报错：error[E0460]: found possibly newer version of crate num_traits which num_traits depends on → /Users/rain/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-0.8.0/src/[lib.rs:40:1](http://lib.rs:40:1)
-
-解决办法：`cargo check`
-
-### 运行报错、微服务异常
-
-#### Mac 运行 CITA 报错：/scripts/create_cita_config.py create —nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" Traceback (most recent call last): File "./scripts/create_cita_config.py", line 12, in <module> import toml ModuleNotFoundError: No module named ‘toml'
-
-解决办法 `pip3 install toml`
-
-#### Mac 运行 CITA 报错：git clone https://github.com/ethereum/pyethereum.git python3 setup.py install 会卡死。
-
-解决办法：`pip3 install -r requirements.txt` 或者 `pip3 install ethereum`
-
-#### Mac运行 CITA 报错：Failed to import bitcoin. This is not a fatal error but does mean that you will not be able to determine the address from your wallet file.
-
-解决办法：`pip3 install bitcoin`
-
-#### Mac 运行 CITA 报错：Internal compiler error during compilation: /tmp/solidity-20180515-88303-7oxibo/solidity_0.4.23/libsolidity/interface/CompilerStack.cpp(732): Throw in function void dev::solidity::CompilerStack::compileContract(const dev::solidity::ContractDefinition &, map<const dev::solidity::ContractDefinition *, const eth::Assembly *> &) Dynamic exception type: boost::exception_detail::clone_impl<dev::solidity::InternalCompilerError>
-解决办法： `brew upgrade solidity`
-
-#### Mac运行 CITA 报错：/Users/leeyr/Documents/cryptape/code/cita/tests/integrate_test/cita_blockNumber.sh: line 17: jq: command not found
-
-解决办法：`brew install jq`
-
-#### Mac 运行 CITA 报错：Error: unable to perform an operation on node 'rabbit@localhost'. Please see diagnostics information and suggestions below
-
-解决办法： `brew services start rabbitmq`
-
-#### Mac 运行 CITA 报错：Initializing chain from provided state sys_config.sol:66:16: Error: Expected identifier, got 'LParen' constructor( ^
-
-解决办法：更新docker `docker pull cita/cita-build:ubuntu-18.04-20180523`
-
-#### Mac 运行 CITA 报错：File "/Users/rain/.pyenv/versions/3.6.4/lib/python3.6/site-packages/ethereum/utils.py", line 13, in <module>
-from rlp.utils import decode_hex, encode_hex, ascii_chr, str_to_bytes
-ImportError: cannot import name 'decode_hex'
-
-解决办法：`pip3 install 'rlp==0.6.0'`
-
 #### 机器没有重启，为什么进程挂了？
 在不使用 Docker 镜像的情况而使用自编译环境，终端窗口一关，进程就挂了，加上 nohup 就没问题了。推荐使用 Docker 环境就不会出现这个问题。
 
@@ -310,10 +248,8 @@ ImportError: cannot import name 'decode_hex'
 
 解决方案：对于1，请先确认端口是否被占用，系统已启动 rabbitmq，然后在 docker 里再启动 rabbitmq 会导致 docker 里的启动失败。重启 rabbitmq 服务。对于2，删除无效 id：`sudo rabbitmqctl list_vhosts`, 然后 `sudo rabbitmqctl delete_vhost`
 
-#### Tread <unnamed> panicked at save_current_block_poof DB write failed.:"10 error: ./data/nosql/007258.log: Too many open files in system", libcore/[result.rs:945](http://result.rs:945/)
-请参考：https://blog.csdn.net/fdipzone/article/details/34588803，可以先改一下相关的配置，然后持续观察一下，看是否有文件句柄泄漏的情况。
-
 ### 合约相关报错
+
 #### 有一个工厂合约，new 一个合约后合约地址返回，返回后立即调用合约里面方法会报这个错误 invoke: Can't find the specific contract (edited) - 合约地址返回后立马调用会出现问题， 过一会调用就不会出现问题。
 
 虽然合约地址生成了，写入了区块，但是区块状态是 pending（处于共识中）。 sdk 都是默认请求 last 的区块。pending 和 last 相差一个区块。所以需要等一个块的时间。（这个问题 v0.20出现的，之前没有。因为0.20才加上的状态）。

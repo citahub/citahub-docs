@@ -118,6 +118,7 @@ $ ./env.sh make release
     ```shell
     $ cd target/install
     ```
+
   * 如果之前选择下载编译好的发布包：
 
     ```shell

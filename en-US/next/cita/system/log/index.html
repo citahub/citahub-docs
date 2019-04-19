@@ -92,7 +92,7 @@ Trace,         //trace是最低等级
 2018-04-02T13:18:20.101335388+08:00 - ERROR - Buffer is malformed 5135603446501605376 != 16045690981097406464.
 </code></pre>
 <p>日志优先级可以在启动 CITA 的时候通过参数修改：</p>
-<pre><code class="hljs">./daemon.sh ./bin/cita start test-chain/0 trace
+<pre><code class="hljs">bin/cita start test-chain/0 trace
 </code></pre>
 <p>这时<code>Trace</code>级别的日志也可以打印出来了：</p>
 <pre><code class="hljs">2018-04-02T14:38:09.842824387+08:00 - TRACE - response block's tx hashes for height:9350
@@ -112,7 +112,7 @@ Trace,         //trace是最低等级
 <p>为了适应不同场景的需要，CITA 的日志分割功能采用比较灵活的方式。</p>
 <p>通过向进程发信号，触发日志分割和日志文件的转储，保证切换期间没有日志丢失。</p>
 <p>对于一个节点内的多个微服务，有如下的命令封装：</p>
-<pre><code class="hljs">./env.sh ./bin/cita logrotate test-chain/0
+<pre><code class="hljs">bin/cita logrotate test-chain/0
 </code></pre>
 <p>效果如下：</p>
 <pre><code class="hljs">./test-chain/0/logs/cita-auth.log

@@ -92,7 +92,7 @@ cita-auth<span class="hljs-selector-class">.log</span>  cita-bft<span class="hlj
 <span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-02</span>T13:<span class="hljs-number">18</span>:<span class="hljs-number">20.101335388</span>+<span class="hljs-number">08</span>:<span class="hljs-number">00</span> - ERROR - Buffer <span class="hljs-keyword">is</span> malformed <span class="hljs-number">5135603446501605376</span> != <span class="hljs-number">16045690981097406464.</span>
 </code></pre>
 <p>日志优先级可以在启动 CITA 的时候通过参数修改：</p>
-<pre><code class="hljs">./daemon.sh ./bin/cita <span class="hljs-keyword">start</span> <span class="hljs-keyword">test</span>-<span class="hljs-keyword">chain</span>/<span class="hljs-number">0</span> <span class="hljs-keyword">trace</span>
+<pre><code class="hljs">bin/cita <span class="hljs-keyword">start</span> <span class="hljs-keyword">test</span>-<span class="hljs-keyword">chain</span>/<span class="hljs-number">0</span> <span class="hljs-keyword">trace</span>
 </code></pre>
 <p>这时<code>Trace</code>级别的日志也可以打印出来了：</p>
 <pre><code class="hljs"><span class="hljs-number">2018</span>-<span class="hljs-number">04</span>-<span class="hljs-number">02T14</span>:<span class="hljs-number">38</span>:<span class="hljs-number">09.842824387</span>+<span class="hljs-number">08</span>:<span class="hljs-number">00</span> - TRACE - response <span class="hljs-built_in">block</span>'s tx hashes <span class="hljs-keyword">for</span> <span class="hljs-built_in">height</span>:<span class="hljs-number">9350</span>
@@ -112,7 +112,7 @@ cita-auth<span class="hljs-selector-class">.log</span>  cita-bft<span class="hlj
 <p>为了适应不同场景的需要，CITA 的日志分割功能采用比较灵活的方式。</p>
 <p>通过向进程发信号，触发日志分割和日志文件的转储，保证切换期间没有日志丢失。</p>
 <p>对于一个节点内的多个微服务，有如下的命令封装：</p>
-<pre><code class="hljs">.<span class="hljs-regexp">/env.sh ./</span>bin<span class="hljs-regexp">/cita logrotate test-chain/</span><span class="hljs-number">0</span>
+<pre><code class="hljs">bin/cita logrotate test-chain/<span class="hljs-number">0</span>
 </code></pre>
 <p>效果如下：</p>
 <pre><code class="hljs">./test-chain/<span class="hljs-number">0</span>/logs/cita-auth.log

@@ -7,8 +7,10 @@ title: CITA JSON RPC List
 ## JSON RPC
 
 * [peerCount](#peercount)
+* [peersInfo](#peersinfo)
 * [blockNumber](#blocknumber)
 * [sendRawTransaction](#sendrawtransaction)
+* [getVersion](#getversion)
 * [getBlockByHash](#getblockbyhash)
 * [getBlockByNumber](#getblockbynumber)
 * [getTransactionReceipt](#gettransactionreceipt)
@@ -59,6 +61,50 @@ Result:
     "id": 74,
     "jsonrpc": "2.0",
     "result": "0x3"
+}
+```
+
+* * *
+
+### peersInfo
+
+获取与本节点相连的其它节点信息，信息包括节点的 `address` 和节点 `ip`。
+
+* Parameters
+
+None
+
+* Returns
+
+Object - A peersInfo object:
+
+* amount: `Quantity` - The amount of peers connected to this node.
+* peers: `Object` - peers info, including peer address and peer ip.
+* errorMessage: `String` - execution error message.
+
+* Example
+
+Request:
+
+```shell
+curl -X POST --data '{"jsonrpc":"2.0","method":"peersInfo","params":[],"id":83}'
+```
+
+Result:
+
+```json
+{
+    "jsonrpc":"2.0",
+    "id":83,
+    "result":{
+        "amount":3,
+        "peers":{
+            "0x2aaeacf658e49f58973b4ef6f37a5c574a28822c":"127.0.0.1",
+            "0x3ea53608732da3761ef41805da73f0d45d3e8e09":"127.0.0.1",
+            "0x01cb0a8012b75ea156eaef3e827547f760dd917a":"127.0.0.1"
+        },
+        "errorMessage":null
+    }
 }
 ```
 
@@ -269,6 +315,40 @@ Result:
     "error": {
         "code": -32006,
         "message": "Dup"
+    }
+}
+```
+
+* * *
+
+### getVersion
+
+获取当前 CITA 软件的版本号
+
+* Parameters
+
+None
+
+* Returns
+
+`String` - version of the running CITA.
+
+* Example
+
+Request:
+
+```shell
+curl -X POST --data '{"jsonrpc":"2.0","method":"getVersion","params":[],"id":83}'
+```
+
+Result:
+
+```json
+{
+    "jsonrpc":"2.0",
+    "id":83,
+    "result":{
+        "softwareVersion":"v0.22.0"
     }
 }
 ```
@@ -577,7 +657,7 @@ Result:
 
 * Example
 
-contract中get方法Hash和编码后的数据
+contract 中 get 方法 Hash 和编码后的数据
 
 ```shell
 0x6d4ce63c
@@ -666,7 +746,7 @@ Result:
 
 * Returns
 
-`Quantity` - integer of the number of transactions send from this address.
+`Quantity` - integer of the number of transactions sent from this address, based on the given BlockNumber.
 
 * Example
 
@@ -700,7 +780,7 @@ Result:
 
 * Returns
 
-`Data` - the code from the given address.
+`Data` - the code from the given address, based on the given BlockNumber.
 
 * Example
 
@@ -733,7 +813,7 @@ Result:
 
 * Returns
 
-`Data` - the abi from the given address.
+`Data` - the abi from the given address, based on the given blockNUmber.
 
 * Example
 
@@ -854,7 +934,7 @@ $ cita-cli store abi \
 
 * Returns
 
-`Quantity` - the balance from the given address.
+`Quantity` - the balance from the given address, based on the given BlockNumber.
 
 * Example
 
@@ -1217,7 +1297,7 @@ Result:
 2. `Data32` - key, position of the variable
 3. `BlockNumber` - integer block number(Hex string), or the string "latest", "earliest"
 
-* Returns `Data` - H256 value of the key in address.
+* Returns `Data` - H256 value of the key in address, based on the given BlockNumber.
 * Example
 
 ```shell

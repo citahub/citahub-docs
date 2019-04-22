@@ -129,9 +129,9 @@ title: JSON RPC 类型
 
 * `BlockTag`
     
-    * `String` `"earliest"` - for the earliest/genesis block.
-    * `String` `"latest"` - for the latest mined block.
-    * `String` `"pending"` - for the pending state/transactions
+    * `String` `"earliest"` - the earliest/genesis block.
+    * `String` `"latest"` - the latest mined block.
+    * `String` `"pending"` - the next block to the `"latest"` which includes pending state/transactions.
 
 * `EconomicalModel`
     

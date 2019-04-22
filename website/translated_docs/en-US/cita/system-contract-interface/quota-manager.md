@@ -14,7 +14,7 @@ title: Quota Management Contract
 * [getBQL](#getBQL)
 * [getDefaultAQL](#getDefaultAQL)
 * [getAQL](#getAQL)
-* [getAutoExecAQL](#getAQL)
+* [getAutoExecQL](#getAutoExecQL)
 
 ### setBQL
 

@@ -14,7 +14,7 @@ title: 配额管理合约接口
 * [getBQL](#getBQL)
 * [getDefaultAQL](#getDefaultAQL)
 * [getAQL](#getAQL)
-* [getAutoExecAQL](#getAQL)
+* [getAutoExecQL](#getAutoExecQL)
 
 ### setBQL
 

@@ -57,8 +57,8 @@ const siteConfig = {
   twitterImage: 'img/docusaurus.png',
   scrollToTop: true,
   algolia: {
-    apiKey: <ALGOLIA_CRAWLER_APIKEY>,
-    indexName: <ALGOLIA_INDEX_NAME>,
+    apiKey: "<ALGOLIA_CRAWLER_APIKEY>",
+    indexName: "<ALGOLIA_INDEX_NAME>",
     placeholder: 'Search',
     algoliaOptions: {
       facetFilters: ["language:LANGUAGE", "version:VERSION"]

@@ -4,9 +4,22 @@
   white-space: nowrap;
 }
 
-a.navItem {
-  font-weight: 500 !important;
-  color: #000 !important;
+.toc .toggleNav .navGroup .navGroupCategoryTitle,
+.toc .toggleNav .navGroup .navGroupSubcategoryTitle,
+.toc .toggleNav .navGroup a.navItem {
+  font-weight: 400;
+  color: #000;
+}
+.toc .toggleNav .navGroup .navListItem.navListItemActive a.navItem{
+  font-weight: bold !important;
+  color: #000;
+}
+.toc .toggleNav .navGroup a.navItem:visited {
+  color: #717171;
+}
+.toc .toggleNav .navGroup a.navItem:hover {
+  font-weight: bold !important;
+  color: #000;
 }
 
 .fixedHeaderContainer header h3 {

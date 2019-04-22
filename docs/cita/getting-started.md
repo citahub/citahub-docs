@@ -25,6 +25,8 @@ CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-b
 。
 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。
 
+如果你使用的是 macOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA.
+
 ### 安装 Docker
 
 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/install/)。

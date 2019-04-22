@@ -17,4 +17,4 @@ brk
 crowdin.yaml
 
 # config
-*/siteConfig.js
+#*/siteConfig.js

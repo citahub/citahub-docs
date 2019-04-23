@@ -220,7 +220,7 @@ title: System contract Error Type
 
 ### NoParentChain
 
-!> 废弃
+> 废弃
 
 ### NoSideChain
 
@@ -305,4 +305,4 @@ title: System contract Error Type
 
 ### NotReady
 
-!> 废弃
+> 废弃

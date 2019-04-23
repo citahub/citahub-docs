@@ -221,7 +221,7 @@ original_id: error
 
 ### NoParentChain
 
-!> 废弃
+> 废弃
 
 ### NoSideChain
 
@@ -306,4 +306,4 @@ original_id: error
 
 ### NotReady
 
-!> 废弃
+> 废弃

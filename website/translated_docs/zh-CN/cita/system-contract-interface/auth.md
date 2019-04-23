@@ -52,7 +52,7 @@ title: 授权管理合约接口
 
 ### checkResource
 
-!> 废弃
+> 废弃
 
 ### checkPermission
 

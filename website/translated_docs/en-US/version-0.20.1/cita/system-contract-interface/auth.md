@@ -53,7 +53,7 @@ original_id: auth
 
 ### checkResource
 
-!> 废弃
+> 废弃
 
 ### checkPermission
 

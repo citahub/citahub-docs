@@ -239,7 +239,7 @@ $ ./env.sh ./bin/cita help
     ./env.sh ./tests/integrate_test/cita_byzantinetest.sh
     ```
 
-!> 必须使用`./env.sh`
+> 必须使用`./env.sh`
 
 ## 验证
 
@@ -281,6 +281,6 @@ $ ./env.sh ./bin/cita help
     
     返回块高度，表示节点已经开始正常出块。
 
-!> 在发布件目录(target/install)下运行节点时，可选择使用`./env.sh`
+> 在发布件目录(target/install)下运行节点时，可选择使用`./env.sh`
 
 更多 API（如合约调用、交易查询）请参见[RPC 调用](../rpc-guide/rpc)。

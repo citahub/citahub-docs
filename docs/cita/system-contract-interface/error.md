@@ -221,7 +221,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 ### NoParentChain
 
-!> 废弃
+> 废弃
 
 ### NoSideChain
 
@@ -283,7 +283,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 ### NotOneOperate
 
-!> 废弃
+> 废弃
 
 ### NotClose
 
@@ -402,4 +402,4 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 ### NotReady
 
-!> 废弃
+> 废弃

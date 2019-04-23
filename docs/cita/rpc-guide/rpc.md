@@ -639,7 +639,7 @@ Result:
 
 ### call
 
-合约接口调用。
+合约中读操作类接口调用。
 
 * Parameters
 

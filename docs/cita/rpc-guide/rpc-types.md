@@ -154,7 +154,7 @@ title: JSON RPC 类型
 ### `Filter`
 
 * `fromBlock`: `BlockNumber` - **Optional** 起始块高度。
-* `toBlock`: `BlockNumber` - **Optional** 中止块高度。
+* `toBlock`: `BlockNumber` - **Optional** 中止块高度，当 `toBlock` 大于当前链的最大高度时，则中止块高度为当前链的最大高度，即 `pending` 块高。
 * `address`: `Data20 | [Data20]` - **Optional** Contract address or a list of addresses from which logs should originate.
 * `topics`: `[Data32 | [Data32]]` - **Optional** Array of `Data32` topics. Topics are order-dependent. Each topic can also be an array of DATA with "or" options.
 

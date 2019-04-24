@@ -75,7 +75,7 @@ $ ./env.sh make release
 
 编译生成的文件在发布件目录 `target/install` 下，生产环境下只需要这个目录即可。
 
-> **Docker env 使用说明**
+> **Docker env 和 daemon 使用说明**
 >
 > * 在源码根目录下，我们提供了 `env.sh` 脚本，封装了 Docker 相关的操作。
 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。
@@ -87,6 +87,7 @@ $ ./env.sh make release
 >
 >   即表示在 Docker 环境中运行 `make debug`。
 > * 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
+> * 还提供了 `daemon.sh`，用法同 `env.sh`，效果是后台运行。
 
 > **Notice**
 >
@@ -113,6 +114,7 @@ $ ./env.sh make release
     ```shell
     $ cd target/install
     ```
+    
   * 如果之前选择下载编译好的发布包：
 
     ```shell
@@ -122,7 +124,7 @@ $ ./env.sh make release
 * 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
 
   ```shell
-  $ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+  $ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
   ```
 
   节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
@@ -135,10 +137,10 @@ $ ./env.sh make release
 * 执行以下命令依次配置四个节点
 
   ```shell
-  $ bin/cita setup test-chain/0
-  $ bin/cita setup test-chain/1
-  $ bin/cita setup test-chain/2
-  $ bin/cita setup test-chain/3
+  $ ./env.sh ./bin/cita setup test-chain/0
+  $ ./env.sh ./bin/cita setup test-chain/1
+  $ ./env.sh ./bin/cita setup test-chain/2
+  $ ./env.sh ./bin/cita setup test-chain/3
   ```
 
 > **Note**
@@ -155,7 +157,7 @@ $ ./env.sh make release
 > * 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool的功能和用法](./configuration/chain-config)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：
 >
 >   ```shell
->   $ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
+>   $ ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
 >   ```
 >
 >   运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个Docker 里运行。
@@ -166,8 +168,8 @@ $ ./env.sh make release
 ```shell
 Usage: cita <command> <node> [options]
 where <command> is one of the following:
-    { help | create | port | setup | start | stop | restart
-      ping | top | backup | clean | logs | logrotate }
+    { help | setup | start | stop | restart | ping
+      top | backup | clean | logs | logrotate }
 Run `cita help` for more detailed information.
 ```
 
@@ -176,10 +178,10 @@ Run `cita help` for more detailed information.
 执行以下命令依次启动四个节点，该命令正常情况下不会返回，节点后台运行。
 
 ```shell
-$ bin/cita start test-chain/0
-$ bin/cita start test-chain/1
-$ bin/cita start test-chain/2
-$ bin/cita start test-chain/3
+$ ./daemon.sh ./bin/cita start test-chain/0
+$ ./daemon.sh ./bin/cita start test-chain/1
+$ ./daemon.sh ./bin/cita start test-chain/2
+$ ./daemon.sh ./bin/cita start test-chain/3
 ```
 
 ### 停止节点
@@ -187,7 +189,7 @@ $ bin/cita start test-chain/3
 以“0”节点为例，执行以下命令即可停止“0”节点：
 
 ```shell
-$ bin/cita stop test-chain/0
+$ ./env.sh ./bin/cita stop test-chain/0
 ```
 
 ### 其他操作
@@ -195,7 +197,7 @@ $ bin/cita stop test-chain/0
 更多其他操作使用以下命令查看帮助信息：
 
 ```shell
-$ bin/cita help
+$ ./env.sh ./bin/cita help
 ```
 
 >**Notice**
@@ -204,7 +206,7 @@ $ bin/cita help
 >
 >   ```shell
 >   $ cd bin
->   $ cita setup test-chain/0
+>   $ ./env.sh ./cita setup test-chain/0
 >   ```
 >
 > * 请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。
@@ -286,7 +288,7 @@ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
   Request:
 
   ```shell
-  curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
+  ./env.sh ./ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
   ```
   Result:
 
@@ -303,7 +305,7 @@ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
   Request:
 
   ```shell
-  curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+  ./env.sh ./ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
   ```
 
   Result:

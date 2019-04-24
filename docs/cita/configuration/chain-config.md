@@ -29,8 +29,8 @@ usage: create_cita_config.py create [-h]
                                     [--resource_dir RESOURCE_DIR]
                                     [--grpc_port GRPC_PORT]
                                     [--jsonrpc_port JSONRPC_PORT]
-                                    [--ws_port WS_PORT]
-                                    [--enable_tls]
+                                    [--ws_port WS_PORT] [--enable_tls]
+                                    [--enable_version] [--stdout]
 ```
 
 我们一一解释：
@@ -153,7 +153,15 @@ usage: create_cita_config.py create [-h]
 
 ###  `--enable_tls` 是否开通节点间通讯加密
 * 指定节点间数据是否使用 TLS (Transport Layer Security) 加密传输，不加此选项默认为不加密传输。
-* 创建链时加上此选项，会在 `test-chain/*/network.toml` 配置文件中增加 `enable = true` 和每个 peer 中 `common_name = ${chain_name}.cita` 的配置项。
+* 创建链时加上此选项，会在 `test-chain/*/network.toml` 配置文件中增加 `enable_tls = true` 的配置项。
+
+### `--enable_version` 是否使能 JSON-RPC 接口 `getVersion`
+* 配置当前链是否能够通过 JSON-RPC 的 `getVersion` 接口来获得当前链的 CITA 软件版本号。不加此选项默认为不开启这个接口。
+* 创建链时加上此选项，会在 `test-chain/*/jsonrpc.toml` 配置文件中增加 `enable_version = true` 的配置项。
+
+### `--stdout` 是否将 CITA 日志输出到标准输出
+* 配置当前链的日志信息输出到标准输出，CITA 的日志默认以文件形式输出到 `test-chain/*/logs` 下。
+* 创建链时加上此选项，会在 `test-chain/*/forever.toml` 配置文件中增加为每个微服务的启动参数添加 `-s` 选项。
 
 ## 初始化配置操作示例
 

@@ -4,6 +4,18 @@
   white-space: nowrap;
 }
 
+.navGroupCategoryTitle {
+  font-size: 18px !important;
+}
+.navGroupSubcategoryTitle{
+  font-size: 16px !important;
+}
+.navGroup .navItem {
+  font-size: 16px !important;
+}
+.navGroup.subNavGroup .navItem{
+  font-size: 14px !important;
+}
 .toc .toggleNav .navGroup .navGroupCategoryTitle,
 .toc .toggleNav .navGroup .navGroupSubcategoryTitle,
 .toc .toggleNav .navGroup a.navItem {

@@ -315,7 +315,7 @@ cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node1
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
 
-wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_test/docker-compose.yaml
+wget https://raw.githubusercontent.com/cryptape/cita/$latest_release_tag/tests/integrate_test/docker-compose.yaml
 ```
 
 ##### 启动

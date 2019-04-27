@@ -4,7 +4,6 @@ title: Emergency Brake Contract Interface
 original_id: emergency-brake
 ---
 
-
 <h2 class="hover-list">Emergency brake</h2>
 
 * [setState](#setState)

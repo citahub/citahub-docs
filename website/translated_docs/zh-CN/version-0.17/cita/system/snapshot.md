@@ -3,6 +3,7 @@ id: version-0.17-snapshot
 title: 快照
 original_id: snapshot
 ---
+
 ## 快照功能概述
 
 状态、区块快照，将必需的区块链数据经高度压缩优化后存档，可在较短时间内同步恢复链数据。

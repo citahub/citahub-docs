@@ -3,6 +3,7 @@ id: version-0.20.1-rpc
 title: JSON RPC
 original_id: rpc
 ---
+
 > **Methods Name Changed ！** For the user of V0.16 and older versions: Please pay attention that we deprecated the pre-fix in the name of JSON-RPC interfaces, which makes it looks more tidy and easier to use.
 
 ## JSON RPC

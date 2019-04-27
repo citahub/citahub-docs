@@ -4,7 +4,6 @@ title: Consensus Node Management Contract Interface
 original_id: node
 ---
 
-
 <h2 class="hover-list">Node Management</h2>
 
 - [approveNode](#approveNode)

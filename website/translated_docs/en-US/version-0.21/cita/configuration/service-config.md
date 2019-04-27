@@ -3,6 +3,7 @@ id: version-0.21-service-config
 title: Microservice Configuration
 original_id: service-config
 ---
+
 CITA 最大的特色就是将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network， 它们分工合作，共同完成去中心化的任务。先了解一下都有哪些配置文件， toml 配置文件的位置在 `test-chain/*/` ( `test-chain` 是默认链名称)。
 
 ```bash

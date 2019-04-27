@@ -4,7 +4,6 @@ title: 配额管理合约接口
 original_id: quota-manager
 ---
 
-
 <h2 class="hover-list">配额管理</h2>
 
 - [setBQL](#setBQL)

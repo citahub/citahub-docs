@@ -3,7 +3,6 @@ id: permission
 title: 权限合约接口
 ---
 
-
 <h2 class="hover-list">权限合约接口</h2>
 
 * [inPermission](#inPermission)

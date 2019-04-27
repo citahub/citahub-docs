@@ -2,6 +2,7 @@
 id: price
 title: 配额价格管理
 ---
+
 ## 简述
 
 和以太坊消耗 gas 类似，在 CITA 的 `Charge` 经济模型中发送交易，部署合约等也需要花费一定的手续费，具体的计算方法是: `手续费 = quotaUsed * quotaPrice` 。 为了更好的满足运营方的需求，我们提供了设置 `quotaPrice` 的接口，拥有权限的管理员可以通过发送交易来设置 `quotaPrice`。

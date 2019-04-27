@@ -2,6 +2,7 @@
 id: auto-exec
 title: Automated Execution
 ---
+
 `CITA` 自动执行合约。
 
 ## 简述

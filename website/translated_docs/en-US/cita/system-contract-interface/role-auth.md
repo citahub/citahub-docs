@@ -3,7 +3,6 @@ id: role-auth
 title: Role Authorization Contract
 ---
 
-
 <h2 class="hover-list">Role Authorization</h2>
 
 * [queryRoles](#queryRoles)

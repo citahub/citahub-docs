@@ -3,7 +3,6 @@ id: version-0.19-system
 title: 系统配置
 original_id: system
 ---
- 
 
 使用 CITA 搭建一条链，用户可以根据需要在区块链生成创世块时进行配置，具体配置项如下（配置在 SysConfig 系统合约实现）：
 

@@ -4,6 +4,7 @@ id: version-0.22.0-rebirth-intro
 sidebar_label: BeBirth Introduction
 original_id: rebirth-intro
 ---
+
 ReBirth 是针对 CITA 的区块链缓存服务器。技术栈为 Ruby、Ruby on Rails、sidekiq、redis 和 postgres。 在做企业级应用或 DApp 时，如果前端直接与合约层交互，性能会受到很大影响，因此 ReBirth 缓存 block 列表，tx 列表，event logs ，ERC20 列表，前端与 ReBirth 交互，不影响性能。
 
 ## 功能

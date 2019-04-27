@@ -4,7 +4,6 @@ title: Group Contract Interface
 original_id: group
 ---
 
-
 <h2 class="hover-list">Users Management</h2>
 
 - [queryInfo](#queryInfo)

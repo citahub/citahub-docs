@@ -4,7 +4,6 @@ title: Administrator Contract Interface
 original_id: admin
 ---
 
-
 <h2 class="hover-list">Admin Management</h2>
 
 * [admin](#admin)

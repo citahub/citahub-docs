@@ -4,7 +4,6 @@ title: 管理员合约地址
 original_id: admin
 ---
 
-
 <h2 class="hover-list">Admin Management</h2>
 
 * [isAdmin](#isAdmin)

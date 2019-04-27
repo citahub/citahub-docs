@@ -3,6 +3,7 @@ id: version-0.22.0-faq
 title: CITA FAQ
 original_id: faq
 ---
+
 ## CITA 介绍、架构、原理
 
 ### CITA 介绍及整体架构

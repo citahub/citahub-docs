@@ -3,7 +3,6 @@ id: group-mng
 title: 组管理合约接口
 ---
 
-
 <h2 class="hover-list">Group Management</h2>
 
 * [newGroup](#newGroup)

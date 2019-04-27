@@ -3,7 +3,6 @@ id: auto-exec
 title: Auto Execution Contract
 ---
 
-
 <h2 class="hover-list">Auto Execution</h2>
 
 * [register](#register)

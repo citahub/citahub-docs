@@ -3,6 +3,7 @@ title: CITA Ruby SDK
 id: version-0.22.0-ruby-sdk
 original_id: ruby-sdk
 ---
+
 Ruby SDK 用于构建 [ReBirth](https://github.com/cryptape/re-birth)。
 
 ## Getting Started

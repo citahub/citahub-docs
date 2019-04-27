@@ -4,7 +4,6 @@ title: 组管理合约接口
 original_id: group-mng
 ---
 
-
 <h2 class="hover-list">Group Management</h2>
 
 - [newGroup](#newGroup)

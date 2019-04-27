@@ -3,6 +3,7 @@ id: version-0.20-auto-exec
 title: 自动执行合约接口
 original_id: auto-exec
 ---
+
 # 自动执行合约接口
 
 <h2 class="hover-list">自动执行</h2>

@@ -4,7 +4,6 @@ title: 系统配置合约接口
 original_id: sys
 ---
 
-
 <h2 class="hover-list">System Config</h2>
 
 - [setChainName](#setChainName)

@@ -4,7 +4,6 @@ title: 所有组合约接口
 original_id: all-groups
 ---
 
-
 <h2 class="hover-list">Admin Management</h2>
 
 * [queryGroups](#queryGroups)

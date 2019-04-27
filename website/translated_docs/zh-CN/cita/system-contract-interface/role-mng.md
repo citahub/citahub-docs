@@ -3,7 +3,6 @@ id: role-mng
 title: 角色管理合约接口
 ---
 
-
 <h2 class="hover-list">Role Management</h2>
 
 * [newRole](#newrole)

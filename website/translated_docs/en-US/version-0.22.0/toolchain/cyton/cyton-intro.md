@@ -4,6 +4,7 @@ id: version-0.22.0-cyton-intro
 sidebar_label: Cyton Introduction
 original_id: cyton-intro
 ---
+
 Cyton Wallet 是支持 CITA 的区块链钱包工具，分为 Android 版和 iOS 版，提供密钥和账户管理功能（私钥、助记词、keystore），Token 管理及转账功能，内置 DApp浏览器，可直接在 Cyton 中使用基于 CITA 和 Ethereum 开发的DApp。代码开源在 Github 上，任何开发者可以基于 Cyton Wallet 进行二次开发，构建属于自己独有的区块链钱包。
 
 Cyton Wallet 兼容 Ethereum，可以管理Ethereum资产，比如 ETH、ERC20、ERC721等，同时也支持现有的以太坊 DApp。由于 CITA 兼容以太坊的 EVM，支持 Solidity 开发智能合约，所以在 Ethereum 上任何合约代码都可以直接移植到 CITA 上，CITA 链上的 ERC20 代币和 Ethereum ERC20 代币完全兼容。此外 Cyton 支持基于 CITA 的多链场景，由于 CITA 是开源的区块链框架，通过 chainId 区分不同的 CITA 链，Cyton 可以同时支持多条不同 chainId 的 CITA 链。

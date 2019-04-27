@@ -4,7 +4,6 @@ title: 紧急制动合约接口
 original_id: emergency-brake
 ---
 
-
 <h2 class="hover-list">Emergency brake</h2>
 
 * [setState](#setState)

@@ -4,7 +4,6 @@ title: Group Management Contract Interface
 original_id: group-mng
 ---
 
-
 <h2 class="hover-list">Group Management</h2>
 
 - [newGroup](#newGroup)

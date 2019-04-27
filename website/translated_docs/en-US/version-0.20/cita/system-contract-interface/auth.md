@@ -4,7 +4,6 @@ title: Auth Management Contract Interface
 original_id: auth
 ---
 
-
 <h2 class="hover-list">Authorization Management</h2>
 
 - [queryPermissions](#queryPermissions)

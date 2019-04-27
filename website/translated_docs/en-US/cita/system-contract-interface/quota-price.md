@@ -3,7 +3,6 @@ id: quota-price
 title: Quota Price Management Contract
 ---
 
-
 <h2 class="hover-list">Price Management</h2>
 
 * [setQuotaPrice](#setQuotaPrice)

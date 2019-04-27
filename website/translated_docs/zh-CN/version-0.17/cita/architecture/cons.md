@@ -3,6 +3,7 @@ id: version-0.17-cons
 title: 共识
 original_id: cons
 ---
+
 CITA 的共识模块主要是保证多个节点对于交易的顺序和 Block 的内容达成一致。在众多的分布式算法中， 我们选择实现了非拜占庭容错的 Raft 算法和拜占庭容错的的 CITA-BFT 算法。
 
 ## 共识的架构

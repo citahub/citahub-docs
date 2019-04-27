@@ -3,7 +3,6 @@ id: node
 title: Consensus Node Management Contract
 ---
 
-
 <h2 class="hover-list">Node Management</h2>
 
 * [approveNode](#approveNode)

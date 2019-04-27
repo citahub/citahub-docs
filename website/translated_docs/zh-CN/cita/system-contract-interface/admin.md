@@ -3,7 +3,6 @@ id: admin
 title: 管理员合约接口
 ---
 
-
 <h2 class="hover-list">Admin Management</h2>
 
 * [admin](#admin)

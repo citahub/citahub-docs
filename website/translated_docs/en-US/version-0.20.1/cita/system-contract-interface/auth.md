@@ -3,6 +3,7 @@ id: version-0.20.1-auth
 title: Auth Management Contract Interface
 original_id: auth
 ---
+
 # Authorization Management Contract
 
 <h2 class="hover-list">Authorization Management</h2>

@@ -3,6 +3,7 @@ id: version-0.19-config-tool
 title: 链级配置
 original_id: config-tool
 ---
+
 ## 主要功能
 
 create_cita_config.py 分为两种模式：

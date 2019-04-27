@@ -2,6 +2,7 @@
 id: getting-started
 title: Getting Started
 ---
+
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](./huawei)。
@@ -20,6 +21,8 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 系统需支持 Docker 的安装。
 
 CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-build/) 。 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。
+
+如果你使用的是 macOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA.
 
 ### 安装 Docker
 
@@ -67,6 +70,12 @@ $ ./env.sh make debug
 $ ./env.sh make release
 ```
 
+> 可选择替换 Rust Crates 的官方源，详细教程可以参考：
+> 
+> * [USTC Mirror Help for Rust Crates](http://mirrors.ustc.edu.cn/help/crates.io-index.html)
+> * [Source Replacement for Rust Crates](https://doc.rust-lang.org/cargo/reference/source-replacement.html)
+> * [How to map a configuration file into docker](https://docs.docker.com/storage/volumes/)
+
 编译生成的文件在发布件目录 `target/install` 下，生产环境下只需要这个目录即可。
 
 > **Docker env 使用说明**
@@ -107,6 +116,7 @@ $ ./env.sh make release
 ```shell
     $ cd target/install
     ```
+
   * 如果之前选择下载编译好的发布包：
 
     ```shell
@@ -114,6 +124,15 @@ $ ./env.sh make release
     ```
 
 * 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
+
+> **Notice**
+> `bin/cita` 脚本默认是通过启动容器执行命令，若是本地配置了相关的环境直接使用，请 加上 `bebop` 关键词
+>
+>   ```shell
+>   $ bin/cita bebop create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+>   ```
+> 下同
+
 
   ```shell
   $ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
@@ -156,7 +175,8 @@ $ ./env.sh make release
 
 ### 节点命令
 
-通过 `./bin/cita` 查看节点命令。
+通过 `bin/cita bebop` 查看节点命令。
+
 ```shell
 Usage: cita <command> <node> [options]
 where <command> is one of the following:
@@ -189,7 +209,66 @@ $ bin/cita stop test-chain/0
 更多其他操作使用以下命令查看帮助信息：
 
 ```shell
-$ bin/cita help
+$ bin/cita bebop help
+```
+
+输出如下：
+
+```shell
+Usage: cita <command> <node> [options]
+This is the primary script for controlling the cita node.
+ INFORMATIONAL COMMANDS
+    help
+        You are here.
+ BUILDING COMMANDS
+    create <config>
+        Creates blockchains according to the following config,
+        use "cita create -h" to get more information.
+        "cita-config" has the same function.
+    port <ports>
+        Sets docker port, for example: "cita port 1337:1337"
+ SERVICE CONTROL COMMANDS
+    setup <node>
+        Ensuring the required runtime environment for cita node, like
+        RabbitMQ service. You should run this command at the first time
+        of running cita node.
+    start <node>
+        Starts the cita node in the background. If the node is already
+        started, you will get the message "Node is already running!" If the
+        node is not already running, no output will be given.
+    stop <node> [debug] [mock]
+        Stops the running cita node. Prints "ok" when successful.  When
+        the node is already stopped or not responding, prints:
+        "Node 'NODE_NAME' not responding to pings."
+    restart <node>
+        Stops and then starts the running cita node. Prints "ok"
+        when successful.  When the node is already stopped or not
+        responding, prints: "Node 'NODE_NAME' not responding to
+        pings."
+ DIAGNOSTIC COMMANDS
+    ping <node>
+        Checks that the cita node is running. Prints "pong" when
+        successful.  When the node is stopped or not responding, prints:
+        "Node 'NODE_NAME' not responding to pings."
+    top <node>
+        Prints services processes information similar
+        to the information provided by the `top` command.
+    stat <node> (deprecated, use 'top' instead)
+    logs <node> <service>
+        Fetch the logs of the specified service.
+ SCRIPTING COMMANDS
+    backup <node>
+        Backup the node's data and logs into backup directory, which actually
+        copy that data and logs into backup directory. Prints the specified
+        backup commands. When the node is running, prints:
+        "Node is already running!"
+    clean <node>
+        Clean the node's data and logs, which actually move that data and logs
+        into backup directory. Prints the specified backup commands. When the
+        node is running, prints: "Node is already running!"
+    logrotate <node>
+        Archives the current node logs, starts fresh logs. Prints the archived
+        logs path.
 ```
 
 > **Notice**
@@ -231,7 +310,7 @@ $ bin/cita help
     cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
     cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
     
-    wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_test/docker-compose.yaml
+    wget https://raw.githubusercontent.com/cryptape/cita/$latest_release_tag/tests/integrate_test/docker-compose.yaml
     
 
 ##### 启动

@@ -4,7 +4,6 @@ title: System Contract Error Code
 original_id: error
 ---
 
-
 <h2 class="hover-list">Emergency brake</h2>
 
 - [setState](#setState)

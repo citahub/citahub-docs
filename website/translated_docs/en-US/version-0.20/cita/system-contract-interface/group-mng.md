@@ -4,7 +4,6 @@ title: Group Management Contract Interface
 original_id: group-mng
 ---
 
-
 <h2 class="hover-list">Users Management</h2>
 
 - [queryInfo](#queryInfo)

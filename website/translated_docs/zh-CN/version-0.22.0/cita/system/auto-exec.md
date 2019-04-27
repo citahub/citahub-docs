@@ -3,6 +3,7 @@ id: version-0.22.0-auto-exec
 title: 自动执行
 original_id: auto-exec
 ---
+
 `CITA` 自动执行合约。
 
 ## 简述
@@ -29,7 +30,7 @@ original_id: auto-exec
 通过以下命令初始化一条链，生成配置文件：
 
 ```bash
-$ bin/cita create \
+$ ./env.sh ./scripts/create_cita_config.py create \
     --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" \
     --contract_arguments SysConfig.autoExec=true \
     --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"

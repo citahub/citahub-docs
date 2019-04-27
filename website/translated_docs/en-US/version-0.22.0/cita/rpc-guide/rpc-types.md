@@ -3,6 +3,7 @@ id: version-0.22.0-rpc-types
 title: JSON RPC Types
 original_id: rpc-types
 ---
+
 ## JSON-RPC support
 
 |                |   CITA   |

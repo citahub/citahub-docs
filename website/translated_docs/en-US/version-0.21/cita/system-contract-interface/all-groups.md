@@ -4,7 +4,6 @@ title: All-groups System Contract
 original_id: all-groups
 ---
 
-
 <h2 class="hover-list">Admin Management</h2>
 
 * [queryGroups](#queryGroups)

@@ -3,6 +3,7 @@ id: crosschain-contract-example
 title: Example of a cross-chain contract
 sidebar_label: Crosschain
 ---
+
 ## 跨链合约编写
 
 ### Example of a cross-chain contract

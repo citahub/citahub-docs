@@ -4,7 +4,6 @@ title: Batch Transactions Contract Interface
 original_id: batch
 ---
 
-
 <h2 class="hover-list">Batch Tx</h2>
 
 - [multiTxs](#multiTxs)

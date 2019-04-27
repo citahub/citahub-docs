@@ -2,6 +2,7 @@
 id: fee-back
 title: Fee Back
 ---
+
 ## 简述
 
 CITA 中存在两种经济模型：`Quota` 和 `Charge` 模型，默认经济模型 `Quota` ，没有余额概念。 在具有余额的 `Charge` 经济模型中，出块奖励默认返还给共识节点，但运营方可以通过设置 `checkFeeBackPlatform` 和 `chainOwner`，将出块奖励返还给自己。

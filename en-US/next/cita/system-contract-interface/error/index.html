@@ -117,9 +117,9 @@
     <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xa860fb8f185fca757029dc4fe48e4100b134756aec7c33a1e23c29b48cd9160e"</span>,
     <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x34f"</span>,
     <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"cumulativeGasUsed"</span>: <span class="hljs-string">"0x5b61"</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x5b61"</span>,
     <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"gasUsed"</span>: <span class="hljs-string">"0x5b61"</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x5b61"</span>,
     <span class="hljs-attr">"logs"</span>: [
       {
         <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff02000c"</span>,
@@ -156,11 +156,9 @@
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "Not the admin account"
-      }
-    ]
+    }
     ```
 <span class="hljs-meta">
 #</span><span class="bash"><span class="hljs-comment">## OutOfBaseLimit</span></span>
@@ -175,9 +173,9 @@
     "blockHash": "0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0",
     "blockNumber": "0x487",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5f37",
+    "cumulativeQuotaUsed": "0x5f37",
     "errorMessage": null,
-    "gasUsed": "0x5f37",
+    "quotaUsed": "0x5f37",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020003",
@@ -214,11 +212,9 @@
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "The value is out of base limit"
-      }
-    ]
+    }
     ```
 <span class="hljs-meta">
 #</span><span class="bash"><span class="hljs-comment">## OutOfBlockLimit</span></span>
@@ -233,9 +229,9 @@
     "blockHash": "0x010a48e24ec63d73ab04ec00143924bfeb4a70ef25a08cd44c5e97d1575086e3",
     "blockNumber": "0x61f",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5f66",
+    "cumulativeQuotaUsed": "0x5f66",
     "errorMessage": null,
-    "gasUsed": "0x5f66",
+    "quotaUsed": "0x5f66",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020003",
@@ -272,11 +268,9 @@
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "The value is out of block limit"
-      }
-    ]
+    }
     ```
 <span class="hljs-meta">
 #</span><span class="bash"><span class="hljs-comment">## NoParentChain</span></span>
@@ -295,9 +289,9 @@
     "blockHash": "0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3",
     "blockNumber": "0x6f",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5bc7",
+    "cumulativeQuotaUsed": "0x5bc7",
     "errorMessage": null,
-    "gasUsed": "0x5bc7",
+    "quotaUsed": "0x5bc7",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020002",
@@ -334,11 +328,9 @@
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "has no side chain"
-      }
-    ]
+    }
     ```
 <span class="hljs-meta">
 #</span><span class="bash"><span class="hljs-comment">## NotOneOperate</span></span>
@@ -357,9 +349,9 @@
     "blockHash": "0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212",
     "blockNumber": "0x2a",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x60f9",
+    "cumulativeQuotaUsed": "0x60f9",
     "errorMessage": null,
-    "gasUsed": "0x60f9",
+    "quotaUsed": "0x60f9",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020001",
@@ -396,11 +388,9 @@
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "node does not close"
-      }
-    ]
+    }
     ```
 <span class="hljs-meta">
 #</span><span class="bash"><span class="hljs-comment">## NotStart</span></span>
@@ -415,9 +405,9 @@
     "blockHash": "0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4",
     "blockNumber": "0x79",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5f65",
+    "cumulativeQuotaUsed": "0x5f65",
     "errorMessage": null,
-    "gasUsed": "0x5f65",
+    "quotaUsed": "0x5f65",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020001",
@@ -450,11 +440,9 @@
   --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000
 </code></pre>
 <p>输出如下：</p>
-<pre><code class="hljs css language-json">[
-  {
+<pre><code class="hljs css language-json">{
     <span class="hljs-attr">"string"</span>: <span class="hljs-string">"node does not start"</span>
-  }
-]
+}
 </code></pre></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="notready"></a><a href="#notready" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NotReady</h3>

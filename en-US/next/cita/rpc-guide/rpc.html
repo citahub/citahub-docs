@@ -210,7 +210,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Transaction</span> </span>{
     <span class="hljs-built_in">string</span> to = <span class="hljs-number">1</span>;
     <span class="hljs-built_in">string</span> nonce = <span class="hljs-number">2</span>;
-    <span class="hljs-built_in">uint64</span> quota = <span class="hljs-number">3</span>; <span class="hljs-comment">// gas</span>
+    <span class="hljs-built_in">uint64</span> quota = <span class="hljs-number">3</span>; <span class="hljs-comment">// quota</span>
     <span class="hljs-built_in">uint64</span> valid_until_block = <span class="hljs-number">4</span>;
     <span class="hljs-built_in">bytes</span> data = <span class="hljs-number">5</span>;
     <span class="hljs-built_in">bytes</span> value = <span class="hljs-number">6</span>;
@@ -264,11 +264,11 @@ contract SimpleStorage {
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="构造签名"></a><a href="#构造签名" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>构造签名</h4>
 <ol>
-<li>构造Transaction对象tx，填充to, nonce, valid_until_block, quota, data, value, chain_id, version 8个字段。</li>
-<li>tx对象protobuf序列化后 sha3 -&gt; hash</li>
+<li>构造 Transaction 对象 tx，填充 to, nonce, valid_until_block, quota, data, value, chain_id, version 8 个字段。</li>
+<li>tx 对象 protobuf 序列化后 sha3 -&gt; hash</li>
 <li>对 hash 进行签名 -&gt; signature</li>
-<li>构造UnverifiedTransaction, 使用hash, signature, SECP填充UnverifiedTransaction -&gt; unverify_tx</li>
-<li>unverify_tx对象protobuf序列化</li>
+<li>构造 UnverifiedTransaction, 使用 hash, signature, SECP 填充 UnverifiedTransaction -&gt; unverify_tx</li>
+<li>unverify_tx 对象 protobuf 序列化</li>
 </ol>
 <p>伪代码描述:</p>
 <pre><code class="hljs css language-shell">let tx = Transaction::new();
@@ -279,19 +279,19 @@ if not depoly_contract {
     tx.setTo(address);
 }
 
-// current_block_height 可以通过CITA JSON-RPC接口 blockNumber 获取
+// current_block_height 可以通过 CITA JSON-RPC 接口 blockNumber 获取
 let valid_util_block = current_block_height + 88;
 tx.set_valid_until_block(valid_util_block);
 
 tx.set_nonce(nonce);
 
-// 如果是solidity合约，可以通过solc --gas获取估算gas值，在此基础上加50%，或者在remix中运行获取的实际消耗gas上加一点
+// 如果是 solidity 合约，可以通过 `solc --gas` 获取估算 gas 值，在此基础上加 50%，或者在 Remix 中运行获取的实际消耗 gas 上加一点
 tx.set_quota(quota);
 
-// 当前version 默认为0
+// 当前 version 默认为 0
 tx.set_version(verison);
 
-// language_depend_method和sign 分别是相应的语言或库中处理私钥和签名的方法
+// language_depend_method 和 sign 分别是相应的语言或库中处理私钥和签名的方法
 let privkey = language_depend_method("966fc50326cf6e2b30b06d8214737fcc2cda5bdce84eb23e14b6dbf3540d3f84");
 let signature = sign(privkey, tx.protobuf_serialize().hash());
 
@@ -308,7 +308,7 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
 <ul>
 <li>Returns</li>
 </ul>
-<p><code>Data32</code> - 交易hash</p>
+<p><code>Data32</code> - 交易 hash</p>
 <ul>
 <li>Example</li>
 </ul>
@@ -363,7 +363,7 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getblockbyhash"></a><a href="#getblockbyhash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getBlockByHash</h3>
-<p>根据块hash查询块的信息。</p>
+<p>根据块 hash 查询块的信息。</p>
 <ul>
 <li>Parameters</li>
 </ul>
@@ -411,7 +411,7 @@ true
             <span class="hljs-attr">"stateRoot"</span>: <span class="hljs-string">"0xe29266e5574bc0c848b513d36403d4da71f99f328d3324e8d3134809c33d4fb4"</span>,
             <span class="hljs-attr">"transactionsRoot"</span>: <span class="hljs-string">"0xf31e32611322f410f430ef8141c2237c19dd1034eddef8dedba692ec9851799b"</span>,
             <span class="hljs-attr">"receiptsRoot"</span>: <span class="hljs-string">"0x9646cf2572734b4b13fe1616446ab2658e208cfdbaf25e47ebea9b6327e10c5b"</span>,
-            <span class="hljs-attr">"gasUsed"</span>: <span class="hljs-string">"0x0"</span>,
+            <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x0"</span>,
             <span class="hljs-attr">"number"</span>: <span class="hljs-string">"0x387"</span>,
             <span class="hljs-attr">"proposer"</span>:<span class="hljs-string">"0xe6d430a2d830236d3774d148cbee72bbf26cd481"</span>
         },
@@ -482,8 +482,8 @@ true
 <li>transactionIndex: <code>Quantity</code> - transaction index.</li>
 <li>blockHash: <code>Data32</code> - hash of the block where this transaction was in. null when its not in block.</li>
 <li>blockNumber: <code>Quantity</code> - block number where this transaction was in. null when its not in block.</li>
-<li>cumulativeGasUsed: <code>Quantity</code> - The total amount of gas used when this transaction was executed in the block.</li>
-<li>gasUsed: <code>Quantity</code> - The amount of gas used by this specific transaction alone.</li>
+<li>cumulativeQuotaUsed: <code>Quantity</code> - The total amount of quota used when this transaction was executed in the block.</li>
+<li>quotaUsed: <code>Quantity</code> - The amount of quota used by this specific transaction alone.</li>
 <li>contractAddress: <code>Data20</code> - The contract address created, if the transaction was a contract creation, otherwise null.</li>
 <li>logs: <code>Array</code> - Array of log objects, which this transaction generated.</li>
 <li>root: <code>Data32</code> of post-transaction stateroot.</li>
@@ -519,8 +519,8 @@ true
         <span class="hljs-attr">"transactionIndex"</span>:<span class="hljs-string">"0x0"</span>,
         <span class="hljs-attr">"blockHash"</span>:<span class="hljs-string">"0xe068cf7299450b78fe97ed370fd9ebe09ecbd6786968e474fae862ccbd5c5020"</span>,
         <span class="hljs-attr">"blockNumber"</span>:<span class="hljs-string">"0xa"</span>,
-        <span class="hljs-attr">"cumulativeGasUsed"</span>:<span class="hljs-string">"0x17a0f"</span>,
-        <span class="hljs-attr">"gasUsed"</span>:<span class="hljs-string">"0x17a0f"</span>,
+        <span class="hljs-attr">"cumulativeQuotaUsed"</span>:<span class="hljs-string">"0x17a0f"</span>,
+        <span class="hljs-attr">"quotaUsed"</span>:<span class="hljs-string">"0x17a0f"</span>,
         <span class="hljs-attr">"contractAddress"</span>:<span class="hljs-string">"0xea4f6bc98b456ef085da5c424db710489848cab5"</span>,
         <span class="hljs-attr">"logs"</span>:[
             {
@@ -545,7 +545,7 @@ true
 <p>Error:</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-string">"0xbb6f8266fae605da373c2526c386fe07542b4957"</span>,
-    <span class="hljs-attr">"cumulativeGasUsed"</span>: <span class="hljs-string">"0x0"</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x0"</span>,
     <span class="hljs-attr">"logs"</span>: [],
     <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329"</span>,
     <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"</span>,
@@ -554,7 +554,7 @@ true
     <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x1da3"</span>,
     <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
     <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
-    <span class="hljs-attr">"gasUsed"</span>: <span class="hljs-string">"0x0"</span>
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x0"</span>
 }
 </code></pre>
 <p>如果出现<strong>Timeout，errorcode 99</strong>,请查看可能的解决方法<a href="https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux">Can't assign requested Address</a></p>

@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>交易处理 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用Protobuf格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。&lt;/p&gt;
-"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="交易处理 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用Protobuf格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。&lt;/p&gt;
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>交易处理 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用 Protobuf 格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。&lt;/p&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="交易处理 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用 Protobuf 格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。&lt;/p&gt;
 "/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
         document.addEventListener('DOMContentLoaded', function() {
           addBackToTop(
@@ -68,10 +68,10 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/cryptape/edit/master/docs/cita/architecture/transaction-process.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">交易处理</h1></header><article><div><span><p>CITA采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用Protobuf格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。</p>
-<p>在CITA中交易的生命周期内，用户在客户端按照Protobuf结构进行交易构造，将Protobuf结构序列化为bytes结构，将消息以JSON-RPC格式发送到RPC模块。RPC模块对消息进行简单验证，验证通过后将消息发送到Auth模块。Auth模块进行签名验证等，将验证结果通过消息通道返回给RPC模块，与此同时，如果验证通过，会将消息插入交易池。最终共识模块打包交易，发送给Chain&amp;Auth进行处理。</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/cryptape/edit/master/docs/cita/architecture/transaction-process.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">交易处理</h1></header><article><div><span><p>CITA 采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用 Protobuf 格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。</p>
+<p>在 CITA 中交易的生命周期内，用户在客户端按照 Protobuf 结构进行交易构造，将 Protobuf 结构序列化为 bytes 结构，将消息以 JSON-RPC 格式发送到 RPC 模块。RPC 模块对消息进行简单验证，验证通过后将消息发送到 Auth 模块。Auth 模块进行签名验证等，将验证结果通过消息通道返回给 RPC 模块，与此同时，如果验证通过，会将消息插入交易池。最终共识模块打包交易，发送给 Chain &amp; Auth 进行处理。</p>
 <h2><a class="anchor" aria-hidden="true" id="交易构造"></a><a href="#交易构造" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易构造</h2>
-<p>交易的Protobuf结构如下。</p>
+<p>交易的 Protobuf 结构如下。</p>
 <pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Crypto</span> </span>{
     DEFAULT = <span class="hljs-number">0</span>;
     RESERVED = <span class="hljs-number">1</span>;
@@ -100,27 +100,27 @@
     <span class="hljs-built_in">bytes</span> signer = <span class="hljs-number">3</span>; <span class="hljs-comment">//public key</span>
 }
 </code></pre>
-<p>其中Transaction为原始的交易的内容，UnverifiedTransaction为带签名的交易，SignedTransaction为验证通过的交易。</p>
-<p>用户要发送交易，首先构造Transaction，然后再构造UnverifiedTransaction，其中signature为Transaction结构的Hash值进行签名得到的字符串，用来保证Transaction未被修改。Crypto用来表示使用的哪一种签名方法。</p>
+<p>其中 Transaction 为原始的交易的内容，UnverifiedTransaction 为带签名的交易，SignedTransaction 为验证通过的交易。</p>
+<p>用户要发送交易，首先构造 Transaction，然后再构造 UnverifiedTransaction，其中 signature 为 Transaction 结构的 Hash 值进行签名得到的字符串，用来保证 Transaction 未被修改。Crypto 用来表示使用的哪一种签名方法。</p>
 <h2><a class="anchor" aria-hidden="true" id="交易验证"></a><a href="#交易验证" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易验证</h2>
-<p>CITA中交易通过消息总线进行转发，用户通过RPC模块和系统进行交互。RPC请求分为两种：一种是对链上状态进行查询的请求，一种是需要打包到区块中的交易。</p>
-<p>首先在RPC模块，对用户请求进行验证：</p>
+<p>CITA 中交易通过消息总线进行转发，用户通过 RPC 模块和系统进行交互。RPC 请求分为两种：一种是对链上状态进行查询的请求，一种是需要打包到区块中的交易。</p>
+<p>首先在 RPC 模块，对用户请求进行验证：</p>
 <ul>
-<li>是否符合服务规范（目前支持JSON-RPC 2.0）;</li>
-<li>服务API方法是否合法；</li>
+<li>是否符合服务规范（目前支持 JSON-RPC 2.0）;</li>
+<li>服务 API 方法是否合法；</li>
 <li>参数个数和格式是否合法。</li>
 </ul>
-<p>如果验证通过，则根据请求类型发往不同模块。对于查询请求，发送到相关模块，相关模块解析请求，并执行然后返回结果。对于交易，则发送到Auth模块，Auth模块通过验证后，将交易放入交易池。</p>
-<p>在Auth模块，需要验证</p>
+<p>如果验证通过，则根据请求类型发往不同模块。对于查询请求，发送到相关模块，相关模块解析请求，并执行然后返回结果。对于交易，则发送到 Auth 模块，Auth 模块通过验证后，将交易放入交易池。</p>
+<p>在 Auth 模块，需要验证</p>
 <ul>
 <li>交易签名是否合法；</li>
 <li>是否拥有权限；</li>
 <li>发送人是否有足够的配额；</li>
 <li>交易是否为重复交易。</li>
 </ul>
-<p>交易验证通过后，以SignedTransaction的结构进行保存，并转发给其他模块。SignedTransaction主要用来缓存签名和Hash，这样避免了其他服务再去解签名，以及计算交易Hash的开销。</p>
+<p>交易验证通过后，以 SignedTransaction 的结构进行保存，并转发给其他模块。SignedTransaction 主要用来缓存签名和 Hash，这样避免了其他服务再去解签名，以及计算交易Hash的开销。</p>
 <h2><a class="anchor" aria-hidden="true" id="交易打包"></a><a href="#交易打包" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易打包</h2>
-<p>最终共识将交易打包成Block，发送到Chain和Executor模块，进行相应处理。</p>
+<p>最终共识将交易打包成 Block，发送到 Chain 和 Executor 模块，进行相应处理。</p>
 <p>Block的结构如下：</p>
 <pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Block</span> </span>{
     <span class="hljs-built_in">uint32</span> version = <span class="hljs-number">1</span>;
@@ -139,31 +139,31 @@
     <span class="hljs-built_in">bytes</span> state_root = <span class="hljs-number">4</span>;
     <span class="hljs-built_in">bytes</span> transactions_root = <span class="hljs-number">5</span>;
     <span class="hljs-built_in">bytes</span> receipts_root = <span class="hljs-number">6</span>;
-    <span class="hljs-built_in">uint64</span> gas_used = <span class="hljs-number">7</span>;
-    <span class="hljs-built_in">uint64</span> gas_limit = <span class="hljs-number">8</span>;
+    <span class="hljs-built_in">uint64</span> quota_used = <span class="hljs-number">7</span>;
+    <span class="hljs-built_in">uint64</span> quota_limit = <span class="hljs-number">8</span>;
     Proof proof = <span class="hljs-number">9</span>;
     <span class="hljs-built_in">bytes</span> proposer = <span class="hljs-number">10</span>;
 }
 </code></pre>
-<p>共识对Block格式的验证包括：</p>
+<p>共识对 Block 格式的验证包括：</p>
 <ul>
-<li>PreHash是否正确；</li>
+<li>PreHash 是否正确；</li>
 <li>区块签名是否正确；</li>
 <li>签名个数是否满足。</li>
 </ul>
-<p>交易验证成功则正常执行，验证失败则将错误信息保存在交易回执中。CITA中交易处理具有原子性，当交易在执行过程中发生错误，整个交易状态会回滚。</p>
-<p>其中BlockHeader中的transactions_root用来保存Body中的交易Root，在共识模块中构造Proposal时进行构造，以及验证Proposal时进行验证。在这里构造好transactions_root，对于本节点共识的块，后续的Chain/Executor不需要再对交易格式进行验证，也不需要再计算transactions_root。</p>
+<p>交易验证成功则正常执行，验证失败则将错误信息保存在交易回执中。CITA 中交易处理具有原子性，当交易在执行过程中发生错误，整个交易状态会回滚。</p>
+<p>其中 BlockHeader 中的 transactions_root 用来保存 Body 中的交易 Root，在共识模块中构造 Proposal 时进行构造，以及验证 Proposal 时进行验证。在这里构造好 transactions_root，对于本节点共识的块，后续的 Chain/Executor 不需要再对交易格式进行验证，也不需要再计算transactions_root。</p>
 <h2><a class="anchor" aria-hidden="true" id="交易执行"></a><a href="#交易执行" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易执行</h2>
-<p>Chain模块负责存储和保存Block相关结构，Executor模块负责处理交易。交易在处理过程中，采用针对交易的每一步执行进行单步扣费的方式：先检查费用，再进行执行的方式。Chain/Executor处理完成后，将处理的结果，包括state_root，receipts_root，gas_used信息写入Block，并进行落盘保存。</p>
+<p>Chain 模块负责存储和保存 Block 相关结构，Executor 模块负责处理交易。交易在处理过程中，采用针对交易的每一步执行进行单步扣费的方式：先检查费用，再进行执行的方式。Chain/Executor 处理完成后，将处理的结果，包括 state_root，receipts_root，quota_used 信息写入 Block，并进行落盘保存。</p>
 <h2><a class="anchor" aria-hidden="true" id="异步交易处理"></a><a href="#异步交易处理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>异步交易处理</h2>
 <p>区块链节点的最主要职责包括点对点网络交互、共识、交易处理以及数据存储四个方面。节点通过共识算法，在系统中形成对交易排序的全局共识，再按照共识
 后的顺序对交易进行逐个处理。只要处理过程能保证确定性，所有节点最后都能达到一致的状态，产生相同的本地数据。</p>
 <p>在当前的区块链设计中，共识与交易处理耦合程度较高，共识的性能受到交易处理能力的影响。
-CITA将共识与交易处理解耦为独立的微服务，共识服务只负责交易排序，并不关心交易内容，交易处理服务只负责对排好顺序的交易进行处理。
+CITA 将共识与交易处理解耦为独立的微服务，共识服务只负责交易排序，并不关心交易内容，交易处理服务只负责对排好顺序的交易进行处理。
 此时共识过程可以先于交易处理完成，交易处理服务可以异步执行。异步交易处理技术不仅使CITA具有更好的共识性能，还带来了更有弹性的交易处理能力，
 交易负荷可以被更均匀的分摊到一段时间内。</p>
 <p>由于交易异步处理，在共识前只能对交易进行有限的检查，例如签名验证。无效的交易有可能通过共识进入交易处理服务，产生一定程度的垃圾数据。
-在有必要的情况下，可以通过CITA的交易控制或者垃圾清理技术解决该问题。</p>
+在有必要的情况下，可以通过 CITA 的交易控制或者垃圾清理技术解决该问题。</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/cita/architecture/cons"><span class="arrow-prev">← </span><span>共识</span></a><a class="docs-next button" href="/en/next/cita/architecture/view"><span>视图</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#交易构造">交易构造</a></li><li><a href="#交易验证">交易验证</a></li><li><a href="#交易打包">交易打包</a></li><li><a href="#交易执行">交易执行</a></li><li><a href="#异步交易处理">异步交易处理</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

@@ -266,7 +266,7 @@ wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_tes
 <ul>
 <li><p>查询节点个数</p>
 <p>Request:</p>
-<pre><code class="hljs css language-shell">./env.sh ./curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
+<pre><code class="hljs css language-shell">./env.sh ./ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{
@@ -277,7 +277,7 @@ wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_tes
 </code></pre></li>
 <li><p>查询当前块高度。</p>
 <p>Request:</p>
-<pre><code class="hljs css language-shell">./env.sh ./curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+<pre><code class="hljs css language-shell">./env.sh ./ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{

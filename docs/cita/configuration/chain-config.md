@@ -31,6 +31,7 @@ usage: create_cita_config.py create [-h]
                                     [--jsonrpc_port JSONRPC_PORT]
                                     [--ws_port WS_PORT] [--enable_tls]
                                     [--enable_version] [--stdout]
+                                    [--init_token INIT_TOKEN]
 ```
 
 我们一一解释：
@@ -162,6 +163,10 @@ usage: create_cita_config.py create [-h]
 ### `--stdout` 是否将 CITA 日志输出到标准输出
 * 配置当前链的日志信息输出到标准输出，CITA 的日志默认以文件形式输出到 `test-chain/*/logs` 下。
 * 创建链时加上此选项，会在 `test-chain/*/forever.toml` 配置文件中增加为每个微服务的启动参数添加 `-s` 选项。
+
+### `--init_token` 设置链的初始 Native Token 数量
+* 设置链的初始 Native Token 数量，`INIT_TOKEN` 为 16 进制数据；
+* 设置后，会在创世块中，给 `superadmin` 帐户存入 `INIT_TOKEN` 数量的原生代币。
 
 ## 初始化配置操作示例
 

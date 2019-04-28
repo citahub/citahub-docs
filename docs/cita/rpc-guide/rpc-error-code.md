@@ -18,119 +18,89 @@ title: JSON RPC 错误码
 
 ## 错误示例
 
-### 交易错误
+### 交易认证类错误
 
-```shell
-// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-```
+* 交易 `valid_until_block` 过时
 
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
     "error": {
         "code": -32006,
-        "message": "InvalidUntilBlock"//交易valid_until_block过时.
+        "message": "InvalidUntilBlock"
     }
 }
 ```
 
-```shell
-// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-```
+* 重复交易
 
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
     "error": {
         "code": -32006,
-        "message": "Dup"//重复交易
+        "message": "Dup"
     }
 }
 ```
 
-```shell
-// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-```
+* 非法 nonce
 
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
     "error": {
         "code": -32006,
-        "message": "InvalidNonce"//非法nonce
+        "message": "InvalidNonce"
     }
 }
 ```
 
-```shell
-// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-```
+* 处理交易繁忙
 
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
     "error": {
         "code": -32006,
-        "message": "Busy"//处理交易繁忙
+        "message": "Busy"
     }
 }
 ```
 
-```shell
-// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-```
+* 签名错误
 
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
     "error": {
         "code": -32006,
-        "message": "BadSig"//签名错误
+        "message": "BadSig"
     }
 }
 ```
 
-```shell
-// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-```
+* 内部错误
 
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
     "error": {
         "code": -32603,
-        "message": "NotReady"//内部错误
+        "message": "NotReady"
     }
 }
 ```
 
 ### 请求超时
 
-``` shell
-// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-```
-
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -143,13 +113,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":[".
 
 ### 请求错误
 
-``` json
-// request 应发送POST请求，而不是GET请求
+发送 `POST` 请求，而不是 `GET` ：
+
+```shell
 curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"1"}' 127.0.0.1:1337 | jq
 ```
 
+结果如下：
+
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": "1",
@@ -162,13 +134,16 @@ curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"1"}' 1
 
 ### 调用方法错误
 
+
+应使用 `peerCount` 方法，而不是 `perCount`：
+
 ```shell
-// request
-curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337 | jq
+curl -X POST --data '{"jsonrpc":"2.0","method":"perCount","params":[],"id":74}' 127.0.0.1:1337 | jq
 ```
 
+结果如下：
+
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": "74",
@@ -181,30 +156,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}'
 
 ### 非法参数
 
-```shell
-// request 参数不能是十进制整数,需要是十六进制
-curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[249, true],"id":1}' 127.0.0.1:1337 | jq
-```
-
-```json
-// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32602,
-        "message": "Invalid params: invalid type: integer `249`, expected a hex block number or 'latest', 'earliest'."
-    }
-}
-```
+参数个数不正确：
 
 ```shell
-// request 参数个数不正确
 curl -X POST -d '{"jsonrpc":"2.0","method":"getTransaction","params":["0x0063187e6a84ae731cf9",true],"id":2}' 127.0.0.1:1337 | jq
 ```
 
+结果如下：
+
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 2,
@@ -217,13 +177,13 @@ curl -X POST -d '{"jsonrpc":"2.0","method":"getTransaction","params":["0x0063187
 
 ### 其他错误信息
 
+交易个数为 0 或者地址不正确：
+
 ```shell
-// request 交易个数为０或者地址不正确
-curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["5b073e9233944b5e729e46d618f0d8edf3d9c342",2],"id":1}' 127.0.0.1:1337 | jq
+curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c342","0x2"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -231,13 +191,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["
 }
 ```
 
+地址没有部署合约：
+
 ```shell
-// request 没有部署合约
-curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["ea4f6bc98b456ef085da5c424db710489848cab9",35],"id":1}' 127.0.0.1:1337 | jq
+curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab9","0x35"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -245,13 +205,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["ea4f6bc98b45
 }
 ```
 
+高度未达到：
+
 ```shell
-// request 高度未达到
-curl -X POST -d '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[99999,true],"id":2}' 127.0.0.1:1337 | jq
+curl -X POST -d '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0x99999",true],"id":2}' 127.0.0.1:1337 | jq
 ```
 
+结果如下：
+
 ```json
-// Result
 {
     "jsonrpc": "2.0",
     "id": 2,
@@ -262,5 +224,4 @@ curl -X POST -d '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[99999,tr
 参考文档:
 
 1. [JSON RPC specification](http://www.jsonrpc.org/specification)
-
 2. [Ethereum wiki/JSON RPC Error Codes Improvement Proposal](https://github.com/ethereum/wiki/wiki/JSON-RPC-Error-Codes-Improvement-Proposal)

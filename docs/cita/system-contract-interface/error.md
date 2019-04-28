@@ -58,9 +58,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     "blockHash": "0xa860fb8f185fca757029dc4fe48e4100b134756aec7c33a1e23c29b48cd9160e",
     "blockNumber": "0x34f",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5b61",
+    "cumulativeQuotaUsed": "0x5b61",
     "errorMessage": null,
-    "gasUsed": "0x5b61",
+    "quotaUsed": "0x5b61",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff02000c",
@@ -99,11 +99,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "Not the admin account"
-      }
-    ]
+    }
     ```
 
 ### OutOfBaseLimit
@@ -118,9 +116,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     "blockHash": "0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0",
     "blockNumber": "0x487",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5f37",
+    "cumulativeQuotaUsed": "0x5f37",
     "errorMessage": null,
-    "gasUsed": "0x5f37",
+    "quotaUsed": "0x5f37",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020003",
@@ -159,11 +157,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "The value is out of base limit"
-      }
-    ]
+    }
     ```
 
 ### OutOfBlockLimit
@@ -178,9 +174,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     "blockHash": "0x010a48e24ec63d73ab04ec00143924bfeb4a70ef25a08cd44c5e97d1575086e3",
     "blockNumber": "0x61f",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5f66",
+    "cumulativeQuotaUsed": "0x5f66",
     "errorMessage": null,
-    "gasUsed": "0x5f66",
+    "quotaUsed": "0x5f66",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020003",
@@ -219,11 +215,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "The value is out of block limit"
-      }
-    ]
+    }
     ```
 
 ### NoParentChain
@@ -242,9 +236,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     "blockHash": "0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3",
     "blockNumber": "0x6f",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5bc7",
+    "cumulativeQuotaUsed": "0x5bc7",
     "errorMessage": null,
-    "gasUsed": "0x5bc7",
+    "quotaUsed": "0x5bc7",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020002",
@@ -283,11 +277,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "has no side chain"
-      }
-    ]
+    }
     ```
 
 ### NotOneOperate
@@ -306,9 +298,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     "blockHash": "0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212",
     "blockNumber": "0x2a",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x60f9",
+    "cumulativeQuotaUsed": "0x60f9",
     "errorMessage": null,
-    "gasUsed": "0x60f9",
+    "quotaUsed": "0x60f9",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020001",
@@ -347,11 +339,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "node does not close"
-      }
-    ]
+    }
     ```
 
 ### NotStart
@@ -366,9 +356,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     "blockHash": "0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4",
     "blockNumber": "0x79",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x5f65",
+    "cumulativeQuotaUsed": "0x5f65",
     "errorMessage": null,
-    "gasUsed": "0x5f65",
+    "quotaUsed": "0x5f65",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020001",
@@ -407,11 +397,9 @@ event ErrorLog(ErrorType indexed errorType, string msg);
     输出如下：
 
     ```json
-    [
-      {
+    {
         "string": "node does not start"
-      }
-    ]
+    }
     ```
 
 ### NotReady

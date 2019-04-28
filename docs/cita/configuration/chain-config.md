@@ -98,12 +98,13 @@ usage: create_cita_config.py create [-h]
  -VersionManager:
    version: 1
 ```
+
   * `SysConfig` : 初始化一些系统信息
     - `delayBlockNumber` : 表示系统合约在几个块之后生效，默认为 1 个块。当前此功能已废弃。
     - `checkCallPermission` : 合约调用权限检查开关
     - `checkSendTxPermission` : 发送交易权限检查开关
     - `checkCreateContractPermission` : 创建合约权限检查开关
-    - `checkQuota` : 配额检查开关
+    - `checkQuota` : 账户配额限制检查开关
     - `checkFeeBackPlatform` : 出块激励选择开关，默认为 false，表示返回给共识节点，为 true 时返回给运营方地址( chainOwner )
     - `chainOwner` : 运营方地址，结合 checkFeeBackPlatform 一块使用
     - `chainName` : 链的名字

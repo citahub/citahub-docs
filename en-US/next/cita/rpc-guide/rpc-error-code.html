@@ -85,191 +85,166 @@
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="错误示例"></a><a href="#错误示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>错误示例</h2>
-<h3><a class="anchor" aria-hidden="true" id="交易错误"></a><a href="#交易错误" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易错误</h3>
-<pre><code class="hljs css language-shell">// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-</code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "InvalidUntilBlock"//交易valid_until_block过时.
+<h3><a class="anchor" aria-hidden="true" id="交易认证类错误"></a><a href="#交易认证类错误" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易认证类错误</h3>
+<ul>
+<li>交易 <code>valid_until_block</code> 过时</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32006</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"InvalidUntilBlock"</span>
     }
 }
 </code></pre>
-<pre><code class="hljs css language-shell">// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-</code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "Dup"//重复交易
+<ul>
+<li>重复交易</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32006</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Dup"</span>
     }
 }
 </code></pre>
-<pre><code class="hljs css language-shell">// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-</code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "InvalidNonce"//非法nonce
+<ul>
+<li>非法 nonce</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32006</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"InvalidNonce"</span>
     }
 }
 </code></pre>
-<pre><code class="hljs css language-shell">// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-</code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "Busy"//处理交易繁忙
+<ul>
+<li>处理交易繁忙</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32006</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Busy"</span>
     }
 }
 </code></pre>
-<pre><code class="hljs css language-shell">// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-</code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32006,
-        "message": "BadSig"//签名错误
+<ul>
+<li>签名错误</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32006</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"BadSig"</span>
     }
 }
 </code></pre>
-<pre><code class="hljs css language-shell">// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-</code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32603,
-        "message": "NotReady"//内部错误
+<ul>
+<li>内部错误</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32603</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"NotReady"</span>
     }
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="请求超时"></a><a href="#请求超时" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>请求超时</h3>
-<pre><code class="hljs css language-shell">// request 发送交易
-curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["..."],"id":1}' 127.0.0.1:1337 | jq
-</code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32099,
-        "message": "System time out, please resend"
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32099</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"System time out, please resend"</span>
     }
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="请求错误"></a><a href="#请求错误" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>请求错误</h3>
-<pre><code class="hljs css language-json">// request 应发送POST请求，而不是GET请求
-curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"1"}' 127.0.0.1:1337 | jq
+<p>发送 <code>POST</code> 请求，而不是 <code>GET</code> ：</p>
+<pre><code class="hljs css language-shell">curl -X GET -d '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"1"}' 127.0.0.1:1337 | jq
 </code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": "1",
-    "error": {
-        "code": -32600,
-        "message": "Invalid request"
+<p>结果如下：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32600</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Invalid request"</span>
     }
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="调用方法错误"></a><a href="#调用方法错误" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用方法错误</h3>
-<pre><code class="hljs css language-shell">// request
-curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337 | jq
+<p>应使用 <code>peerCount</code> 方法，而不是 <code>perCount</code>：</p>
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"perCount","params":[],"id":74}' 127.0.0.1:1337 | jq
 </code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": "74",
-    "error": {
-        "code": -32601,
-        "message": "Method not found"
+<p>结果如下：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"74"</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32601</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Method not found"</span>
     }
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="非法参数"></a><a href="#非法参数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>非法参数</h3>
-<pre><code class="hljs css language-shell">// request 参数不能是十进制整数,需要是十六进制
-curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[249, true],"id":1}' 127.0.0.1:1337 | jq
+<p>参数个数不正确：</p>
+<pre><code class="hljs css language-shell">curl -X POST -d '{"jsonrpc":"2.0","method":"getTransaction","params":["0x0063187e6a84ae731cf9",true],"id":2}' 127.0.0.1:1337 | jq
 </code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "error": {
-        "code": -32602,
-        "message": "Invalid params: invalid type: integer `249`, expected a hex block number or 'latest', 'earliest'."
-    }
-}
-</code></pre>
-<pre><code class="hljs css language-shell">// request 参数个数不正确
-curl -X POST -d '{"jsonrpc":"2.0","method":"getTransaction","params":["0x0063187e6a84ae731cf9",true],"id":2}' 127.0.0.1:1337 | jq
-</code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 2,
-    "error": {
-        "code": -32602,
-        "message": "Invalid JSON-RPC params length"
+<p>结果如下：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32602</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Invalid JSON-RPC params length"</span>
     }
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="其他错误信息"></a><a href="#其他错误信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>其他错误信息</h3>
-<pre><code class="hljs css language-shell">// request 交易个数为０或者地址不正确
-curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["5b073e9233944b5e729e46d618f0d8edf3d9c342",2],"id":1}' 127.0.0.1:1337 | jq
+<p>交易个数为 0 或者地址不正确：</p>
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c342","0x2"],"id":1}' 127.0.0.1:1337 | jq
 </code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x0"
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0"</span>
 }
 </code></pre>
-<pre><code class="hljs css language-shell">// request 没有部署合约
-curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["ea4f6bc98b456ef085da5c424db710489848cab9",35],"id":1}' 127.0.0.1:1337 | jq
+<p>地址没有部署合约：</p>
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab9","0x35"],"id":1}' 127.0.0.1:1337 | jq
 </code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": null
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-literal">null</span>
 }
 </code></pre>
-<pre><code class="hljs css language-shell">// request 高度未达到
-curl -X POST -d '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[99999,true],"id":2}' 127.0.0.1:1337 | jq
+<p>高度未达到：</p>
+<pre><code class="hljs css language-shell">curl -X POST -d '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0x99999",true],"id":2}' 127.0.0.1:1337 | jq
 </code></pre>
-<pre><code class="hljs css language-json">// Result
-{
-    "jsonrpc": "2.0",
-    "id": 2,
-    "result": null
+<p>结果如下：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-literal">null</span>
 }
 </code></pre>
 <p>参考文档:</p>
 <ol>
-<li><p><a href="http://www.jsonrpc.org/specification">JSON RPC specification</a></p></li>
-<li><p><a href="https://github.com/ethereum/wiki/wiki/JSON-RPC-Error-Codes-Improvement-Proposal">Ethereum wiki/JSON RPC Error Codes Improvement Proposal</a></p></li>
+<li><a href="http://www.jsonrpc.org/specification">JSON RPC specification</a></li>
+<li><a href="https://github.com/ethereum/wiki/wiki/JSON-RPC-Error-Codes-Improvement-Proposal">Ethereum wiki/JSON RPC Error Codes Improvement Proposal</a></li>
 </ol>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/rpc-guide/rpc"><span class="arrow-prev">← </span><span>CITA JSON RPC List</span></a><a class="docs-next button" href="/en-US/next/cita/system-contract-interface/sys"><span>System Configuration Contract Interface</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#json-rpc标准错误码">JSON RPC标准错误码</a></li><li><a href="#错误示例">错误示例</a><ul class="toc-headings"><li><a href="#交易错误">交易错误</a></li><li><a href="#请求超时">请求超时</a></li><li><a href="#请求错误">请求错误</a></li><li><a href="#调用方法错误">调用方法错误</a></li><li><a href="#非法参数">非法参数</a></li><li><a href="#其他错误信息">其他错误信息</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/rpc-guide/rpc"><span class="arrow-prev">← </span><span>CITA JSON RPC List</span></a><a class="docs-next button" href="/en-US/next/cita/system-contract-interface/sys"><span>System Configuration Contract Interface</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#json-rpc标准错误码">JSON RPC标准错误码</a></li><li><a href="#错误示例">错误示例</a><ul class="toc-headings"><li><a href="#交易认证类错误">交易认证类错误</a></li><li><a href="#请求超时">请求超时</a></li><li><a href="#请求错误">请求错误</a></li><li><a href="#调用方法错误">调用方法错误</a></li><li><a href="#非法参数">非法参数</a></li><li><a href="#其他错误信息">其他错误信息</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

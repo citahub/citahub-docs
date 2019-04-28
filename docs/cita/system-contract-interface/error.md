@@ -101,7 +101,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
         "string": "Not the admin account"
       }
     ]
-  ```
+    ```
 
 ### OutOfBaseLimit
 
@@ -227,7 +227,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 交易回执：
 
-```
+```json
 {
   "id": 1,
   "jsonrpc": "2.0",
@@ -289,7 +289,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 交易回执：
 
-```
+```json
 {
   "id": 1,
   "jsonrpc": "2.0",
@@ -346,7 +346,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 交易回执：
 
-```
+```json
 {
   "id": 1,
   "jsonrpc": "2.0",

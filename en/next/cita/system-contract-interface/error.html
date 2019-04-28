@@ -145,14 +145,13 @@
 </code></pre>
 <p>其中：</p>
 <ul>
-<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000000</code></li>
-<li><code>logs.data</code> 为错误信息。
-对 data 进行解码：
-<pre><code class="hljs css language-bash">$ cita-cli ethabi decode params \
-  --<span class="hljs-built_in">type</span> string \
+<li><p><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000000</code></p></li>
+<li><p><code>logs.data</code> 为错误信息。对 data 进行解码：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+  --type string \
   --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000154e6f74207468652061646d696e206163636f756e740000000000000000000000
 </code></pre>
-输出如下：
+<p>输出如下：</p>
 <pre><code class="hljs css language-json">[
   {
     <span class="hljs-attr">"string"</span>: <span class="hljs-string">"Not the admin account"</span>
@@ -197,14 +196,13 @@
 </code></pre>
 <p>其中：</p>
 <ul>
-<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000001</code></li>
-<li><code>logs.data</code> 为错误信息。
-对 data 进行解码：
-<pre><code class="hljs css language-bash">$ cita-cli ethabi decode params \
-  --<span class="hljs-built_in">type</span> string \
+<li><p><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000001</code></p></li>
+<li><p><code>logs.data</code> 为错误信息。对 data 进行解码：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+  --type string \
   --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000
 </code></pre>
-输出如下：
+<p>输出如下：</p>
 <pre><code class="hljs css language-json">[
   {
     <span class="hljs-attr">"string"</span>: <span class="hljs-string">"The value is out of base limit"</span>
@@ -249,14 +247,13 @@
 </code></pre>
 <p>其中：</p>
 <ul>
-<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000002</code></li>
-<li><code>logs.data</code> 为错误信息。
-对 data 进行解码：
-<pre><code class="hljs css language-bash">$ cita-cli ethabi decode params \
-  --<span class="hljs-built_in">type</span> string \
+<li><p><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000002</code></p></li>
+<li><p><code>logs.data</code> 为错误信息。对 data 进行解码：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+  --type string \
   --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001f5468652076616c7565206973206f7574206f6620626c6f636b206c696d697400
 </code></pre>
-输出如下：
+<p>输出如下：</p>
 <pre><code class="hljs css language-json">[
   {
     <span class="hljs-attr">"string"</span>: <span class="hljs-string">"The value is out of block limit"</span>
@@ -305,14 +302,13 @@
 </code></pre>
 <p>其中：</p>
 <ul>
-<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000004</code></li>
-<li><code>logs.data</code> 为错误信息。
-对 data 进行解码：
-<pre><code class="hljs css language-bash">$ cita-cli ethabi decode params \
-  --<span class="hljs-built_in">type</span> string \
+<li><p><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000004</code></p></li>
+<li><p><code>logs.data</code> 为错误信息。对 data 进行解码：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+  --type string \
   --data 0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000
 </code></pre>
-输出如下：
+<p>输出如下：</p>
 <pre><code class="hljs css language-json">[
   {
     <span class="hljs-attr">"string"</span>: <span class="hljs-string">"has no side chain"</span>
@@ -361,14 +357,13 @@
 </code></pre>
 <p>其中：</p>
 <ul>
-<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000006</code></li>
-<li><code>logs.data</code> 为错误信息。
-对 data 进行解码：
-<pre><code class="hljs css language-bash">$ cita-cli ethabi decode params \
-  --<span class="hljs-built_in">type</span> string \
+<li><p><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000006</code></p></li>
+<li><p><code>logs.data</code> 为错误信息。对 data 进行解码：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+  --type string \
   --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000
 </code></pre>
-输出如下：
+<p>输出如下：</p>
 <pre><code class="hljs css language-json">[
   {
     <span class="hljs-attr">"string"</span>: <span class="hljs-string">"node does not close"</span>
@@ -413,14 +408,13 @@
 </code></pre>
 <p>其中：</p>
 <ul>
-<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000007</code></li>
-<li><code>logs.data</code> 为错误信息。
-对 data 进行解码：
-<pre><code class="hljs css language-bash">$ cita-cli ethabi decode params \
-  --<span class="hljs-built_in">type</span> string \
+<li><p><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000007</code></p></li>
+<li><p><code>logs.data</code> 为错误信息。对 data 进行解码：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+  --type string \
   --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000
 </code></pre>
-输出如下：
+<p>输出如下：</p>
 <pre><code class="hljs css language-json">[
   {
     <span class="hljs-attr">"string"</span>: <span class="hljs-string">"node does not start"</span>

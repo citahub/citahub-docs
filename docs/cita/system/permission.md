@@ -171,9 +171,9 @@ $ cita-cli rpc getTransactionReceipt \
     "blockHash": "0x5956727ccb1de4876be148ef6fa54c764544cfd78cdc48b083603b40fbb71b8b",
     "blockNumber": "0x14",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x27a38",
+    "cumulativeQuotaUsed": "0x27a38",
     "errorMessage": null,
-    "gasUsed": "0x27a38",
+    "quotaUsed": "0x27a38",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020006",
@@ -258,9 +258,9 @@ $ cita-cli rpc getTransactionReceipt \
     "blockHash": "0x8cf225903eb7c49b0494f991941dcb4d401b2c51c321defa931914fb8f0aa87b",
     "blockNumber": "0xf2",
     "contractAddress": "0x5839153e0efe76efe0c974b728c4f49ca7ed75cc",
-    "cumulativeGasUsed": "0xaef9",
+    "cumulativeQuotaUsed": "0xaef9",
     "errorMessage": null,
-    "gasUsed": "0xaef9",
+    "quotaUsed": "0xaef9",
     "logs": [
     ],
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -319,9 +319,9 @@ $ cita-cli rpc getTransactionReceipt \
     "blockHash": "0xea33ec74f7ce12fae0a6c5df4137d3234e120a8c6cfd2c557052184409729c98",
     "blockNumber": "0x282",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x2290fe",
+    "cumulativeQuotaUsed": "0x2290fe",
     "errorMessage": null,
-    "gasUsed": "0x2290fe",
+    "quotaUsed": "0x2290fe",
     "logs": [
       {
         "address": "0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee",
@@ -407,9 +407,9 @@ $ cita-cli rpc getTransactionReceipt \
     "blockHash": "0xbaf441b79671f0333adf1511361d258dcc606b3ecc6c42ac04d7e31794e1726b",
     "blockNumber": "0x554",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x13587",
+    "cumulativeQuotaUsed": "0x13587",
     "errorMessage": null,
-    "gasUsed": "0x13587",
+    "quotaUsed": "0x13587",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020006",
@@ -502,9 +502,9 @@ $ cita-cli rpc getTransactionReceipt \
     "blockHash": "0x2984cd1ad2beaf267d3bff78e8dcb64bbf75bcc9721007d0f2a7c4a01ac68a1b",
     "blockNumber": "0x152e",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x4f51",
+    "cumulativeQuotaUsed": "0x4f51",
     "errorMessage": null,
-    "gasUsed": "0x4f51",
+    "quotaUsed": "0x4f51",
     "logs": [
     ],
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",

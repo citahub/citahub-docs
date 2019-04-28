@@ -155,7 +155,7 @@ $ cita-cli rpc getTransactionReceipt \
 
 输出：
 
-```
+```json
 {
   "id": 1,
   "jsonrpc": "2.0",
@@ -163,9 +163,9 @@ $ cita-cli rpc getTransactionReceipt \
     "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
     "blockNumber": "0xba",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x11660",
+    "cumulativeQuotaUsed": "0x11660",
     "errorMessage": null,
-    "gasUsed": "0x11660",
+    "quotaUsed": "0x11660",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020001",
@@ -278,9 +278,9 @@ $ cita-cli rpc getTransactionReceipt \
     "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
     "blockNumber": "0x1db",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x558c",
+    "cumulativeQuotaUsed": "0x558c",
     "errorMessage": null,
-    "gasUsed": "0x558c",
+    "quotaUsed": "0x558c",
     "logs": [
       {
         "address": "0xffffffffffffffffffffffffffffffffff020001",

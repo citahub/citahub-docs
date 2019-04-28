@@ -49,9 +49,9 @@ $ scm GroupManagement newGroup \
     "blockHash": "0x0771624fa18da8380cf87238bd0dbb1e4114f2d707bdf9be6265c4ed50016960",
     "blockNumber": "0x6922",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x1b8fcf",
+    "cumulativeQuotaUsed": "0x1b8fcf",
     "errorMessage": null,
-    "gasUsed": "0x1b8fcf",
+    "quotaUsed": "0x1b8fcf",
     "logs": [
       {
         "address": "0xce6cd8f8562e31d44b1101986204cec34b1df025",

@@ -172,7 +172,7 @@ enum Crypto {
 message Transaction {
     string to = 1;
     string nonce = 2;
-    uint64 quota = 3; // gas
+    uint64 quota = 3; // quota
     uint64 valid_until_block = 4;
     bytes data = 5;
     bytes value = 6;
@@ -236,11 +236,11 @@ contract SimpleStorage {
 
 #### 构造签名
 
-1. 构造Transaction对象tx，填充to, nonce, valid_until_block, quota, data, value, chain_id, version 8个字段。
-2. tx对象protobuf序列化后 sha3 -> hash
+1. 构造 Transaction 对象 tx，填充 to, nonce, valid_until_block, quota, data, value, chain_id, version 8 个字段。
+2. tx 对象 protobuf 序列化后 sha3 -> hash
 3. 对 hash 进行签名 -> signature
-4. 构造UnverifiedTransaction, 使用hash, signature, SECP填充UnverifiedTransaction  -> unverify_tx
-5. unverify_tx对象protobuf序列化
+4. 构造 UnverifiedTransaction, 使用 hash, signature, SECP 填充 UnverifiedTransaction  -> unverify_tx
+5. unverify_tx 对象 protobuf 序列化
 
 伪代码描述:
 
@@ -253,19 +253,19 @@ if not depoly_contract {
     tx.setTo(address);
 }
 
-// current_block_height 可以通过CITA JSON-RPC接口 blockNumber 获取
+// current_block_height 可以通过 CITA JSON-RPC 接口 blockNumber 获取
 let valid_util_block = current_block_height + 88;
 tx.set_valid_until_block(valid_util_block);
 
 tx.set_nonce(nonce);
 
-// 如果是solidity合约，可以通过solc --gas获取估算gas值，在此基础上加50%，或者在remix中运行获取的实际消耗gas上加一点
+// 如果是 solidity 合约，可以通过 `solc --gas` 获取估算 gas 值，在此基础上加 50%，或者在 Remix 中运行获取的实际消耗 gas 上加一点
 tx.set_quota(quota);
 
-// 当前version 默认为0
+// 当前 version 默认为 0
 tx.set_version(verison);
 
-// language_depend_method和sign 分别是相应的语言或库中处理私钥和签名的方法
+// language_depend_method 和 sign 分别是相应的语言或库中处理私钥和签名的方法
 let privkey = language_depend_method("966fc50326cf6e2b30b06d8214737fcc2cda5bdce84eb23e14b6dbf3540d3f84");
 let signature = sign(privkey, tx.protobuf_serialize().hash());
 
@@ -285,7 +285,7 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
 
 * Returns
 
-`Data32` - 交易hash
+`Data32` - 交易 hash
 
 * Example
 
@@ -359,7 +359,7 @@ Result:
 
 ### getBlockByHash
 
-根据块hash查询块的信息。
+根据块 hash 查询块的信息。
 
 * Parameters
 
@@ -411,7 +411,7 @@ Result:
             "stateRoot": "0xe29266e5574bc0c848b513d36403d4da71f99f328d3324e8d3134809c33d4fb4",
             "transactionsRoot": "0xf31e32611322f410f430ef8141c2237c19dd1034eddef8dedba692ec9851799b",
             "receiptsRoot": "0x9646cf2572734b4b13fe1616446ab2658e208cfdbaf25e47ebea9b6327e10c5b",
-            "gasUsed": "0x0",
+            "quotaUsed": "0x0",
             "number": "0x387",
             "proposer":"0xe6d430a2d830236d3774d148cbee72bbf26cd481"
         },
@@ -498,8 +498,8 @@ Object - A receipt object:
 * transactionIndex: `Quantity` - transaction index.
 * blockHash: `Data32` - hash of the block where this transaction was in. null when its not in block.
 * blockNumber: `Quantity` - block number where this transaction was in. null when its not in block.
-* cumulativeGasUsed: `Quantity` - The total amount of gas used when this transaction was executed in the block.
-* gasUsed: `Quantity` - The amount of gas used by this specific transaction alone.
+* cumulativeQuotaUsed: `Quantity` - The total amount of quota used when this transaction was executed in the block.
+* quotaUsed: `Quantity` - The amount of quota used by this specific transaction alone.
 * contractAddress: `Data20` - The contract address created, if the transaction was a contract creation, otherwise null.
 * logs: `Array` - Array of log objects, which this transaction generated.
 * root: `Data32` of post-transaction stateroot.
@@ -541,8 +541,8 @@ Result:
         "transactionIndex":"0x0",
         "blockHash":"0xe068cf7299450b78fe97ed370fd9ebe09ecbd6786968e474fae862ccbd5c5020",
         "blockNumber":"0xa",
-        "cumulativeGasUsed":"0x17a0f",
-        "gasUsed":"0x17a0f",
+        "cumulativeQuotaUsed":"0x17a0f",
+        "quotaUsed":"0x17a0f",
         "contractAddress":"0xea4f6bc98b456ef085da5c424db710489848cab5",
         "logs":[
             {
@@ -570,7 +570,7 @@ Error:
 ```json
 {
     "contractAddress": "0xbb6f8266fae605da373c2526c386fe07542b4957",
-    "cumulativeGasUsed": "0x0",
+    "cumulativeQuotaUsed": "0x0",
     "logs": [],
     "blockHash": "0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329",
     "transactionHash": "0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236",
@@ -579,7 +579,7 @@ Error:
     "blockNumber": "0x1da3",
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
     "transactionIndex": "0x0",
-    "gasUsed": "0x0"
+    "quotaUsed": "0x0"
 }
 ```
 

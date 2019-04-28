@@ -60,9 +60,9 @@ $ rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e02122
     "blockHash": "0xd2e2d34783d9d30505ed23d90dca7c11ce42eda99306a153ad9e72095832ba26",
     "blockNumber": "0x583d",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x1b25fd",
+    "cumulativeQuotaUsed": "0x1b25fd",
     "errorMessage": null,
-    "gasUsed": "0x1b25fd",
+    "quotaUsed": "0x1b25fd",
     "logs": [
       {
         "address": "0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee",

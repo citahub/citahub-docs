@@ -159,39 +159,43 @@
         <span class="hljs-string">"string"</span>: <span class="hljs-string">"Not the admin account"</span>
       }
     ]
-</code></pre>
-<h3><a class="anchor" aria-hidden="true" id="outofbaselimit"></a><a href="#outofbaselimit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OutOfBaseLimit</h3>
-<p>交易回执：</p>
-<pre><code class="hljs css language-json">{
-  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-  <span class="hljs-attr">"result"</span>: {
-    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0"</span>,
-    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x487"</span>,
-    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"cumulativeGasUsed"</span>: <span class="hljs-string">"0x5f37"</span>,
-    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"gasUsed"</span>: <span class="hljs-string">"0x5f37"</span>,
-    <span class="hljs-attr">"logs"</span>: [
+    ```
+
+<span class="hljs-comment">### OutOfBaseLimit</span>
+
+交易回执：
+
+```json
+{
+  <span class="hljs-string">"id"</span>: 1,
+  <span class="hljs-string">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-string">"result"</span>: {
+    <span class="hljs-string">"blockHash"</span>: <span class="hljs-string">"0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0"</span>,
+    <span class="hljs-string">"blockNumber"</span>: <span class="hljs-string">"0x487"</span>,
+    <span class="hljs-string">"contractAddress"</span>: null,
+    <span class="hljs-string">"cumulativeGasUsed"</span>: <span class="hljs-string">"0x5f37"</span>,
+    <span class="hljs-string">"errorMessage"</span>: null,
+    <span class="hljs-string">"gasUsed"</span>: <span class="hljs-string">"0x5f37"</span>,
+    <span class="hljs-string">"logs"</span>: [
       {
-        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020003"</span>,
-        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0"</span>,
-        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x487"</span>,
-        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000"</span>,
-        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
-        <span class="hljs-attr">"topics"</span>: [
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020003"</span>,
+        <span class="hljs-string">"blockHash"</span>: <span class="hljs-string">"0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0"</span>,
+        <span class="hljs-string">"blockNumber"</span>: <span class="hljs-string">"0x487"</span>,
+        <span class="hljs-string">"data"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000"</span>,
+        <span class="hljs-string">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-string">"topics"</span>: [
           <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
           <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000001"</span>
         ],
-        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xf94f721973d67b0263e42d6dcddd0f4da4c1dc85003faecbde271dedbe5d6bde"</span>,
-        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
-        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+        <span class="hljs-string">"transactionHash"</span>: <span class="hljs-string">"0xf94f721973d67b0263e42d6dcddd0f4da4c1dc85003faecbde271dedbe5d6bde"</span>,
+        <span class="hljs-string">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-string">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
       }
     ],
-    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000002000000000000000000000000080000000010000000000000000000000000000000000000000040000000000000000000000000100000000000000000800040000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000"</span>,
-    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xf94f721973d67b0263e42d6dcddd0f4da4c1dc85003faecbde271dedbe5d6bde"</span>,
-    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+    <span class="hljs-string">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000002000000000000000000000000080000000010000000000000000000000000000000000000000040000000000000000000000000100000000000000000800040000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-string">"root"</span>: null,
+    <span class="hljs-string">"transactionHash"</span>: <span class="hljs-string">"0xf94f721973d67b0263e42d6dcddd0f4da4c1dc85003faecbde271dedbe5d6bde"</span>,
+    <span class="hljs-string">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
   }
 }
 </code></pre>
@@ -277,59 +281,155 @@
 
 交易回执：
 
+```json
+{
+  <span class="hljs-string">"id"</span>: 1,
+  <span class="hljs-string">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-string">"result"</span>: {
+    <span class="hljs-string">"blockHash"</span>: <span class="hljs-string">"0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3"</span>,
+    <span class="hljs-string">"blockNumber"</span>: <span class="hljs-string">"0x6f"</span>,
+    <span class="hljs-string">"contractAddress"</span>: null,
+    <span class="hljs-string">"cumulativeGasUsed"</span>: <span class="hljs-string">"0x5bc7"</span>,
+    <span class="hljs-string">"errorMessage"</span>: null,
+    <span class="hljs-string">"gasUsed"</span>: <span class="hljs-string">"0x5bc7"</span>,
+    <span class="hljs-string">"logs"</span>: [
+      {
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020002"</span>,
+        <span class="hljs-string">"blockHash"</span>: <span class="hljs-string">"0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3"</span>,
+        <span class="hljs-string">"blockNumber"</span>: <span class="hljs-string">"0x6f"</span>,
+        <span class="hljs-string">"data"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000"</span>,
+        <span class="hljs-string">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-string">"topics"</span>: [
+          <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000004"</span>
+        ],
+        <span class="hljs-string">"transactionHash"</span>: <span class="hljs-string">"0xc07e9ffbabc3e21ae47450592bc94d9607c87e4c603102abbae5302c6184c96f"</span>,
+        <span class="hljs-string">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-string">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+      }
+    ],
+    <span class="hljs-string">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000080000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000048000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000002000000000000000000000000000000000000000000000000000008800000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-string">"root"</span>: null,
+    <span class="hljs-string">"transactionHash"</span>: <span class="hljs-string">"0xc07e9ffbabc3e21ae47450592bc94d9607c87e4c603102abbae5302c6184c96f"</span>,
+    <span class="hljs-string">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
 </code></pre>
-<p>{ &quot;id&quot;: 1, &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: { &quot;blockHash&quot;: &quot;0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3&quot;, &quot;blockNumber&quot;: &quot;0x6f&quot;, &quot;contractAddress&quot;: null, &quot;cumulativeGasUsed&quot;: &quot;0x5bc7&quot;, &quot;errorMessage&quot;: null, &quot;gasUsed&quot;: &quot;0x5bc7&quot;, &quot;logs&quot;: [ { &quot;address&quot;: &quot;0xffffffffffffffffffffffffffffffffff020002&quot;, &quot;blockHash&quot;: &quot;0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3&quot;, &quot;blockNumber&quot;: &quot;0x6f&quot;, &quot;data&quot;: &quot;0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000&quot;, &quot;logIndex&quot;: &quot;0x0&quot;, &quot;topics&quot;: [ &quot;0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c&quot;, &quot;0x0000000000000000000000000000000000000000000000000000000000000004&quot; ], &quot;transactionHash&quot;: &quot;0xc07e9ffbabc3e21ae47450592bc94d9607c87e4c603102abbae5302c6184c96f&quot;, &quot;transactionIndex&quot;: &quot;0x0&quot;, &quot;transactionLogIndex&quot;: &quot;0x0&quot; } ], &quot;logsBloom&quot;: &quot;0x00000000000000000000000000000000000000000000000000000000000000000000000080000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000048000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000002000000000000000000000000000000000000000000000000000008800000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;, &quot;root&quot;: null, &quot;transactionHash&quot;: &quot;0xc07e9ffbabc3e21ae47450592bc94d9607c87e4c603102abbae5302c6184c96f&quot;, &quot;transactionIndex&quot;: &quot;0x0&quot; } }</p>
-<pre><code class="hljs">&lt;br /&gt;其中：
-
-* `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000004`
-* `logs.data` 为错误信息。
-    对 data 进行解码：
-    ```bash
-    $ cita-cli ethabi decode params \
-      --type string \
+<p>其中：</p>
+<ul>
+<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000004</code></li>
+<li><code>logs.data</code> 为错误信息。 对 data 进行解码：</li>
+</ul>
+<pre><code class="hljs css language-bash">    $ cita-cli ethabi decode params \
+      --<span class="hljs-built_in">type</span> string \
       --data 0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000
     ```
     输出如下：
     ```json
     [
       {
-        &quot;string&quot;: &quot;has no side chain&quot;
+        <span class="hljs-string">"string"</span>: <span class="hljs-string">"has no side chain"</span>
       }
     ]
     ```
 
-### NotOneOperate
+<span class="hljs-comment">### NotOneOperate</span>
 
-&amp;gt; 废弃
+&gt; 废弃
 
-### NotClose
+<span class="hljs-comment">### NotClose</span>
 
 交易回执：
-</code></pre>
-<p>{ &quot;id&quot;: 1, &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: { &quot;blockHash&quot;: &quot;0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212&quot;, &quot;blockNumber&quot;: &quot;0x2a&quot;, &quot;contractAddress&quot;: null, &quot;cumulativeGasUsed&quot;: &quot;0x60f9&quot;, &quot;errorMessage&quot;: null, &quot;gasUsed&quot;: &quot;0x60f9&quot;, &quot;logs&quot;: [ { &quot;address&quot;: &quot;0xffffffffffffffffffffffffffffffffff020001&quot;, &quot;blockHash&quot;: &quot;0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212&quot;, &quot;blockNumber&quot;: &quot;0x2a&quot;, &quot;data&quot;: &quot;0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000&quot;, &quot;logIndex&quot;: &quot;0x0&quot;, &quot;topics&quot;: [ &quot;0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c&quot;, &quot;0x0000000000000000000000000000000000000000000000000000000000000006&quot; ], &quot;transactionHash&quot;: &quot;0x590e663789bcfff2b49791f8793702614784174e104b6d175369a807cad90929&quot;, &quot;transactionIndex&quot;: &quot;0x0&quot;, &quot;transactionLogIndex&quot;: &quot;0x0&quot; } ], &quot;logsBloom&quot;: &quot;0x00000000000000000000000000000000000200000000000000000000000000000000000080000000010000000000000000000000000400000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;, &quot;root&quot;: null, &quot;transactionHash&quot;: &quot;0x590e663789bcfff2b49791f8793702614784174e104b6d175369a807cad90929&quot;, &quot;transactionIndex&quot;: &quot;0x0&quot; } }</p>
-<pre><code class="hljs">&lt;br /&gt;其中：
 
-* `logs.topics[1]` 表示错误类型 `0x0000000000000000000000000000000000000000000000000000000000000006`
-* `logs.data` 为错误信息。
-    对 data 进行解码：
-    ```bash
-    $ cita-cli ethabi decode params \
-      --type string \
+```json
+{
+  <span class="hljs-string">"id"</span>: 1,
+  <span class="hljs-string">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-string">"result"</span>: {
+    <span class="hljs-string">"blockHash"</span>: <span class="hljs-string">"0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212"</span>,
+    <span class="hljs-string">"blockNumber"</span>: <span class="hljs-string">"0x2a"</span>,
+    <span class="hljs-string">"contractAddress"</span>: null,
+    <span class="hljs-string">"cumulativeGasUsed"</span>: <span class="hljs-string">"0x60f9"</span>,
+    <span class="hljs-string">"errorMessage"</span>: null,
+    <span class="hljs-string">"gasUsed"</span>: <span class="hljs-string">"0x60f9"</span>,
+    <span class="hljs-string">"logs"</span>: [
+      {
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020001"</span>,
+        <span class="hljs-string">"blockHash"</span>: <span class="hljs-string">"0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212"</span>,
+        <span class="hljs-string">"blockNumber"</span>: <span class="hljs-string">"0x2a"</span>,
+        <span class="hljs-string">"data"</span>: <span class="hljs-string">"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000"</span>,
+        <span class="hljs-string">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-string">"topics"</span>: [
+          <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000006"</span>
+        ],
+        <span class="hljs-string">"transactionHash"</span>: <span class="hljs-string">"0x590e663789bcfff2b49791f8793702614784174e104b6d175369a807cad90929"</span>,
+        <span class="hljs-string">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-string">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+      }
+    ],
+    <span class="hljs-string">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000200000000000000000000000000000000000080000000010000000000000000000000000400000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-string">"root"</span>: null,
+    <span class="hljs-string">"transactionHash"</span>: <span class="hljs-string">"0x590e663789bcfff2b49791f8793702614784174e104b6d175369a807cad90929"</span>,
+    <span class="hljs-string">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000006</code></li>
+<li><code>logs.data</code> 为错误信息。 对 data 进行解码：</li>
+</ul>
+<pre><code class="hljs css language-bash">    $ cita-cli ethabi decode params \
+      --<span class="hljs-built_in">type</span> string \
       --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000
     ```
     输出如下：
     ```json
     [
       {
-        &quot;string&quot;: &quot;node does not close&quot;
+        <span class="hljs-string">"string"</span>: <span class="hljs-string">"node does not close"</span>
       }
     ]
     ```
-### NotStart
+<span class="hljs-comment">### NotStart</span>
 
 交易回执：
+
+```json
+{
+  <span class="hljs-string">"id"</span>: 1,
+  <span class="hljs-string">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-string">"result"</span>: {
+    <span class="hljs-string">"blockHash"</span>: <span class="hljs-string">"0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4"</span>,
+    <span class="hljs-string">"blockNumber"</span>: <span class="hljs-string">"0x79"</span>,
+    <span class="hljs-string">"contractAddress"</span>: null,
+    <span class="hljs-string">"cumulativeGasUsed"</span>: <span class="hljs-string">"0x5f65"</span>,
+    <span class="hljs-string">"errorMessage"</span>: null,
+    <span class="hljs-string">"gasUsed"</span>: <span class="hljs-string">"0x5f65"</span>,
+    <span class="hljs-string">"logs"</span>: [
+      {
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020001"</span>,
+        <span class="hljs-string">"blockHash"</span>: <span class="hljs-string">"0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4"</span>,
+        <span class="hljs-string">"blockNumber"</span>: <span class="hljs-string">"0x79"</span>,
+        <span class="hljs-string">"data"</span>: <span class="hljs-string">"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000"</span>,
+        <span class="hljs-string">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-string">"topics"</span>: [
+          <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000007"</span>
+        ],
+        <span class="hljs-string">"transactionHash"</span>: <span class="hljs-string">"0x07634595c9418a36ecd63d9c4ce4d5329d17ade89bb571c2f372b4fb6b269dde"</span>,
+        <span class="hljs-string">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-string">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+      }
+    ],
+    <span class="hljs-string">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000200000000000000000000000000000000000080000000010000000000000000001000000000000000000000000000000020000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-string">"root"</span>: null,
+    <span class="hljs-string">"transactionHash"</span>: <span class="hljs-string">"0x07634595c9418a36ecd63d9c4ce4d5329d17ade89bb571c2f372b4fb6b269dde"</span>,
+    <span class="hljs-string">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
 </code></pre>
-<p>{ &quot;id&quot;: 1, &quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: { &quot;blockHash&quot;: &quot;0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4&quot;, &quot;blockNumber&quot;: &quot;0x79&quot;, &quot;contractAddress&quot;: null, &quot;cumulativeGasUsed&quot;: &quot;0x5f65&quot;, &quot;errorMessage&quot;: null, &quot;gasUsed&quot;: &quot;0x5f65&quot;, &quot;logs&quot;: [ { &quot;address&quot;: &quot;0xffffffffffffffffffffffffffffffffff020001&quot;, &quot;blockHash&quot;: &quot;0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4&quot;, &quot;blockNumber&quot;: &quot;0x79&quot;, &quot;data&quot;: &quot;0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000&quot;, &quot;logIndex&quot;: &quot;0x0&quot;, &quot;topics&quot;: [ &quot;0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c&quot;, &quot;0x0000000000000000000000000000000000000000000000000000000000000007&quot; ], &quot;transactionHash&quot;: &quot;0x07634595c9418a36ecd63d9c4ce4d5329d17ade89bb571c2f372b4fb6b269dde&quot;, &quot;transactionIndex&quot;: &quot;0x0&quot;, &quot;transactionLogIndex&quot;: &quot;0x0&quot; } ], &quot;logsBloom&quot;: &quot;0x00000000000000000000000000000000000200000000000000000000000000000000000080000000010000000000000000001000000000000000000000000000000020000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000&quot;, &quot;root&quot;: null, &quot;transactionHash&quot;: &quot;0x07634595c9418a36ecd63d9c4ce4d5329d17ade89bb571c2f372b4fb6b269dde&quot;, &quot;transactionIndex&quot;: &quot;0x0&quot; } } ```</p>
 <p>其中：</p>
 <ul>
 <li><p><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000007</code></p></li>
@@ -350,7 +450,7 @@ $ cita-cli ethabi decode params <br>
 <blockquote>
 <p>废弃</p>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/system-contract-interface/version-mng"><span class="arrow-prev">← </span><span>协议版本管理合约接口</span></a><a class="docs-next button" href="/en-US/next/cita/architecture/architecture"><span>Architecture</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#示例">示例</a><ul class="toc-headings"><li><a href="#notadmin">NotAdmin</a></li><li><a href="#outofbaselimit">OutOfBaseLimit</a></li><li><a href="#notready">NotReady</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/system-contract-interface/version-mng"><span class="arrow-prev">← </span><span>协议版本管理合约接口</span></a><a class="docs-next button" href="/en-US/next/cita/architecture/architecture"><span>Architecture</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#示例">示例</a><ul class="toc-headings"><li><a href="#notadmin">NotAdmin</a></li><li><a href="#notready">NotReady</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

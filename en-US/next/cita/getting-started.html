@@ -228,62 +228,6 @@ Run `cita help` for more detailed information.
 <p>更多其他操作使用以下命令查看帮助信息：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita bebop <span class="hljs-built_in">help</span></span>
 </code></pre>
-<p>输出如下：</p>
-<pre><code class="hljs css language-shell">Usage: cita &lt;command&gt; &lt;node&gt; [options]
-This is the primary script for controlling the cita node.
- INFORMATIONAL COMMANDS
-    help
-        You are here.
- BUILDING COMMANDS
-    create &lt;config&gt;
-        Creates blockchains according to the following config,
-        use "cita create -h" to get more information.
-        "cita-config" has the same function.
-    port &lt;ports&gt;
-        Sets docker port, for example: "cita port 1337:1337"
- SERVICE CONTROL COMMANDS
-    setup &lt;node&gt;
-        Ensuring the required runtime environment for cita node, like
-        RabbitMQ service. You should run this command at the first time
-        of running cita node.
-    start &lt;node&gt;
-        Starts the cita node in the background. If the node is already
-        started, you will get the message "Node is already running!" If the
-        node is not already running, no output will be given.
-    stop &lt;node&gt; [debug] [mock]
-        Stops the running cita node. Prints "ok" when successful.  When
-        the node is already stopped or not responding, prints:
-        "Node 'NODE_NAME' not responding to pings."
-    restart &lt;node&gt;
-        Stops and then starts the running cita node. Prints "ok"
-        when successful.  When the node is already stopped or not
-        responding, prints: "Node 'NODE_NAME' not responding to
-        pings."
- DIAGNOSTIC COMMANDS
-    ping &lt;node&gt;
-        Checks that the cita node is running. Prints "pong" when
-        successful.  When the node is stopped or not responding, prints:
-        "Node 'NODE_NAME' not responding to pings."
-    top &lt;node&gt;
-        Prints services processes information similar
-        to the information provided by the `top` command.
-    stat &lt;node&gt; (deprecated, use 'top' instead)
-    logs &lt;node&gt; &lt;service&gt;
-        Fetch the logs of the specified service.
- SCRIPTING COMMANDS
-    backup &lt;node&gt;
-        Backup the node's data and logs into backup directory, which actually
-        copy that data and logs into backup directory. Prints the specified
-        backup commands. When the node is running, prints:
-        "Node is already running!"
-    clean &lt;node&gt;
-        Clean the node's data and logs, which actually move that data and logs
-        into backup directory. Prints the specified backup commands. When the
-        node is running, prints: "Node is already running!"
-    logrotate &lt;node&gt;
-        Archives the current node logs, starts fresh logs. Prints the archived
-        logs path.
-</code></pre>
 <blockquote>
 <p><strong>Notice</strong></p>
 <ul>

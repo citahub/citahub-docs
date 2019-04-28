@@ -216,65 +216,6 @@ $ bin/cita stop test-chain/0
 $ bin/cita bebop help
 ```
 
-输出如下：
-
-```shell
-Usage: cita <command> <node> [options]
-This is the primary script for controlling the cita node.
- INFORMATIONAL COMMANDS
-    help
-        You are here.
- BUILDING COMMANDS
-    create <config>
-        Creates blockchains according to the following config,
-        use "cita create -h" to get more information.
-        "cita-config" has the same function.
-    port <ports>
-        Sets docker port, for example: "cita port 1337:1337"
- SERVICE CONTROL COMMANDS
-    setup <node>
-        Ensuring the required runtime environment for cita node, like
-        RabbitMQ service. You should run this command at the first time
-        of running cita node.
-    start <node>
-        Starts the cita node in the background. If the node is already
-        started, you will get the message "Node is already running!" If the
-        node is not already running, no output will be given.
-    stop <node> [debug] [mock]
-        Stops the running cita node. Prints "ok" when successful.  When
-        the node is already stopped or not responding, prints:
-        "Node 'NODE_NAME' not responding to pings."
-    restart <node>
-        Stops and then starts the running cita node. Prints "ok"
-        when successful.  When the node is already stopped or not
-        responding, prints: "Node 'NODE_NAME' not responding to
-        pings."
- DIAGNOSTIC COMMANDS
-    ping <node>
-        Checks that the cita node is running. Prints "pong" when
-        successful.  When the node is stopped or not responding, prints:
-        "Node 'NODE_NAME' not responding to pings."
-    top <node>
-        Prints services processes information similar
-        to the information provided by the `top` command.
-    stat <node> (deprecated, use 'top' instead)
-    logs <node> <service>
-        Fetch the logs of the specified service.
- SCRIPTING COMMANDS
-    backup <node>
-        Backup the node's data and logs into backup directory, which actually
-        copy that data and logs into backup directory. Prints the specified
-        backup commands. When the node is running, prints:
-        "Node is already running!"
-    clean <node>
-        Clean the node's data and logs, which actually move that data and logs
-        into backup directory. Prints the specified backup commands. When the
-        node is running, prints: "Node is already running!"
-    logrotate <node>
-        Archives the current node logs, starts fresh logs. Prints the archived
-        logs path.
-```
-
 >**Notice**
 >
 > * 请不要先进到 bin 目录，再执行以上的部署操作，错误示范：

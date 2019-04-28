@@ -934,7 +934,7 @@ $ cita-cli rpc getAbi \
 
 ### getBalance
 
-获取合约余额。
+获取账户余额。
 
 * Parameters
 

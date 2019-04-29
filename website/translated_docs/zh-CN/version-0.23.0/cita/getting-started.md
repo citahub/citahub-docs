@@ -112,9 +112,9 @@ $ ./env.sh make release
 
 * 先切换到发布件目录
     
-    * 如果之前选择从源码开始编译：
+  * 如果之前选择从源码开始编译：
 
-```shell
+    ```shell
     $ cd target/install
     ```
 
@@ -135,16 +135,18 @@ $ ./env.sh make release
 > 下同
 
 
-  ```shell
-  $ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
-  ```
+```shell
+$ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+```
 
-  节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
+节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
 
-  * test-chain/0
-  * test-chain/1
-  * test-chain/2
-  * test-chain/3
+```
+test-chain/0
+test-chain/1
+test-chain/2
+test-chain/3
+```
 
 * 执行以下命令依次配置四个节点
 
@@ -176,7 +178,7 @@ $ ./env.sh make release
 
 ### 节点命令
 
-通过 `bin/cita bebop` 查看节点命令。
+通过 `bin/cita` 查看节点命令。
 
 ```shell
 Usage: cita <command> <node> [options]
@@ -210,7 +212,7 @@ $ bin/cita stop test-chain/0
 更多其他操作使用以下命令查看帮助信息：
 
 ```shell
-$ bin/cita bebop help
+$ bin/cita help
 ```
 
 输出如下：

@@ -99,42 +99,44 @@ usage: create_cita_config.py create [-h]
    version: 1
 ```
 
-  * `SysConfig` : 初始化一些系统信息
-    - `delayBlockNumber` : 表示系统合约在几个块之后生效，默认为 1 个块。当前此功能已废弃。
-    - `checkCallPermission` : 合约调用权限检查开关
-    - `checkSendTxPermission` : 发送交易权限检查开关
-    - `checkCreateContractPermission` : 创建合约权限检查开关
-    - `checkQuota` : 账户配额限制检查开关
-    - `checkFeeBackPlatform` : 出块激励选择开关，默认为 false，表示返回给共识节点，为 true 时返回给运营方地址( chainOwner )
-    - `chainOwner` : 运营方地址，结合 checkFeeBackPlatform 一块使用
-    - `chainName` : 链的名字
-    - `chainId` : 链 Id
-    - `operator` : 运营方名称
-    - `website` : 运营方网站
-    - `blockInterval` ： 出块间隔，默认 3 秒
-    - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型，交易只需不超过限额即可，限额由管理员设置，详细机制可查看[配额管理](../system/quota)；`economicalModel = 1` 表示 Charge 模型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看[配额价格管理](../system/price)。
-    - `name` : Token 名称
-    - `symbol` : Token 符号
-    - `avatar` : Token 图标链接
-    - `autoExec` : 自动执行开关（默认：false）
-  * `QuotaManager` : 初始化配额管理合约的管理员地址
-    - `admin` : 默认管理员地址
-  * `NodeManager` : 初始化共识节点管理合约
-    - `nodes` : 共识节点地址
-    - `stakes` : 共识节点对应的出块权重
-  * `ChainManager` : 初始化链的一些信息，用于跨链。
-    - `parentChainId` : 父链 ID
-    - `parentChainAuthorities` : 父链的共识节点列表
-  * `Authorization` : 初始化权限管理合约
-    - `superAdmin` : 管理员地址
-  * `Group` : 初始化用户组管理合约
-    - `parent` : 父组的地址
-    - `name` : 组的名称
-    - `accounts` : 组内用户列表
-  * `Admin` : 管理员
-    - `admin` : 管理员地址
-  * `VersionManager` : 协议版本管理合约
-    - `version` : 协议版本号
+示例配置项详细解释:
+
+* `SysConfig` : 初始化一些系统信息
+  - `delayBlockNumber` : 表示系统合约在几个块之后生效，默认为 1 个块。当前此功能已废弃。
+  - `checkCallPermission` : 合约调用权限检查开关
+  - `checkSendTxPermission` : 发送交易权限检查开关
+  - `checkCreateContractPermission` : 创建合约权限检查开关
+  - `checkQuota` : 账户配额限制检查开关
+  - `checkFeeBackPlatform` : 出块激励选择开关，默认为 false，表示返回给共识节点，为 true 时返回给运营方地址( chainOwner )
+  - `chainOwner` : 运营方地址，结合 checkFeeBackPlatform 一块使用
+  - `chainName` : 链的名字
+  - `chainId` : 链 Id
+  - `operator` : 运营方名称
+  - `website` : 运营方网站
+  - `blockInterval` ： 出块间隔，默认 3 秒
+  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由管理员设置，详细机制可查看[配额管理](../system/quota)；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看[配额价格管理](../system/price)。
+  - `name` : Token 名称
+  - `symbol` : Token 符号
+  - `avatar` : Token 图标链接
+  - `autoExec` : 自动执行开关（默认：false）
+* `QuotaManager` : 初始化配额管理合约的管理员地址
+  - `admin` : 默认管理员地址
+* `NodeManager` : 初始化共识节点管理合约
+  - `nodes` : 共识节点地址
+  - `stakes` : 共识节点对应的出块权重
+* `ChainManager` : 初始化链的一些信息，用于跨链。
+  - `parentChainId` : 父链 ID
+  - `parentChainAuthorities` : 父链的共识节点列表
+* `Authorization` : 初始化权限管理合约
+  - `superAdmin` : 管理员地址
+* `Group` : 初始化用户组管理合约
+  - `parent` : 父组的地址
+  - `name` : 组的名称
+  - `accounts` : 组内用户列表
+* `Admin` : 管理员
+  - `admin` : 管理员地址
+* `VersionManager` : 协议版本管理合约
+  - `version` : 协议版本号
 
 ### `--time_stamp` 指定起链的时间戳
 * 具体数值是指自 1970-1-1 以来的毫秒数，默认是取当前的时间，如果时间取在未来，则链起来之后不会出块。

@@ -3,6 +3,7 @@ id: version-0.20-transaction-process
 title: Transaction Process
 original_id: transaction-process
 ---
+
 CITA 采用微服务架构，各个服务之间通过消息通道进行消息的传递，服务间的消息采用 Protobuf 格式进行编码。各个服务在收到消息后，根据实际情况将消息转化为服务内的结构，进行相应处理。
 
 在 CITA 中交易的生命周期内，用户在客户端按照 Protobuf 结构进行交易构造，将 Protobuf 结构序列化为 bytes 结构，将消息以 JSON-RPC 格式发送到 RPC 模块。RPC 模块对消息进行简单验证，验证通过后将消息发送到 Auth 模块。Auth 模块进行签名验证等，将验证结果通过消息通道返回给 RPC 模块，与此同时，如果验证通过，会将消息插入交易池。最终共识模块打包交易，发送给 Chain&Auth 进行处理。

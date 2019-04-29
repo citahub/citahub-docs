@@ -4,7 +4,6 @@ title: Role management Contract Interface
 original_id: role-mng
 ---
 
-
 <h2 class="hover-list">Role Management</h2>
 
 * [newRole](#newrole)

@@ -3,7 +3,6 @@ id: group
 title: Group System Contract
 ---
 
-
 <h2 class="hover-list">Users Management</h2>
 
 * [queryInfo](#queryInfo)
@@ -12,6 +11,7 @@ title: Group System Contract
 * [queryChild](#queryChild)
 * [queryChildLength](#queryChildLength)
 * [queryParent](#queryParent)
+* [inGroup](#inGroup)
 
 * * *
 
@@ -123,4 +123,24 @@ $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF02000
 
 ```shell
 $ scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
+```
+
+### inGroup
+
+查询账户是否在组内。
+
+* 参数
+    
+    `address` - 待查询账户
+
+* 返回值
+    
+    `bool` - 如果在组内则返回真，反之则反
+
+* 示例
+
+```shell
+$ scm Group inGroup \
+        --account 0xce6cd8f8562e31d44b1101986204cec34b1df025 \
+        --address 0xffffffffffffffffffffffffffffffffff020009
 ```

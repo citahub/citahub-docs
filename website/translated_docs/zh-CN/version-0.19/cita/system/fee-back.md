@@ -3,6 +3,7 @@ id: version-0.19-fee-back
 title: 出块奖励返回
 original_id: fee-back
 ---
+
 ## 简述
 
 CITA 中存在两种经济模型：`Quota` 和 `Charge` 模型，默认经济模型 `Quota` ，没有余额概念。 在具有余额的 `Charge` 经济模型中，出块奖励默认返还给矿工，但运营方可以通过配置，将出块奖励返还给自己。

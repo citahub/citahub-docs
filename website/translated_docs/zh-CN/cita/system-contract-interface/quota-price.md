@@ -3,7 +3,6 @@ id: quota-price
 title: 配额价格管理合约接口
 ---
 
-
 <h2 class="hover-list">Price Management</h2>
 
 * [setQuotaPrice](#setQuotaPrice)

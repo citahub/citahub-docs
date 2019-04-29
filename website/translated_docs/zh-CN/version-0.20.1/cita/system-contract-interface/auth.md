@@ -3,6 +3,7 @@ id: version-0.20.1-auth
 title: 授权管理合约接口
 original_id: auth
 ---
+
 # 授权管理合约接口
 
 <h2 class="hover-list">Authorization Management</h2>

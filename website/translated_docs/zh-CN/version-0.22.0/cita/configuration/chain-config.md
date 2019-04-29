@@ -3,6 +3,7 @@ id: version-0.22.0-chain-config
 title: 链级配置
 original_id: chain-config
 ---
+
 当拿到发布件解压后，或从源码编译后，不要着急动节点，在这之前，很重要的一步就是我们需要对链进行初始化配置。 这些配置信息将被写入链的创世块，创世块一旦生成，SysConfig 中只有 `chainName`，`operator`，`website` 这三项可以在链运行之后再进行修改，其他项均不可再修改, 因此请大家慎重设定各配置项。 在 CITA 里面，我们提供了工具 config tool 来帮助你在起链前对链进行初始化配置, 提供了命令行工具 CITA-CLI 来帮助你在起链后修改个别配置。
 
 本文档将为你详细介绍链的各个可配置项，包括链自身的一些属性、系统合约、RPC接口、节点间网络连接等； 然后通过具体的操作示例，演示如何起链前对链进行初始化配置； 并带你详细了解初始化配置后文件的目录结构； 最后，将通过具体示例，演示起链后如何修改个别配置。 相信阅读完此文档后，你将可以自己定制一条满足你需求的链。
@@ -12,7 +13,7 @@ original_id: chain-config
 执行以下命令查看各个配置项：
 
 ```shell
-$ bin/cita create --help
+$ ./env.sh ./scripts/create_cita_config.py create --help
 usage: create_cita_config.py create [-h]
                                     [--authorities AUTHORITY[,AUTHORITY[,AUTHORITY[,AUTHORITY[, ...]]]]]
                                     [--chain_name CHAIN_NAME]
@@ -163,13 +164,13 @@ usage: create_cita_config.py create [-h]
 以下是最基础起链命令，该命令生成一条包含四个节点的新链，端口默认 4000 , 4001 , 4002 , 4003， 默认超级管理员，经济模型为 `Quota`, 所有权限控制关闭。
 
 ```shell
-$ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+$ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
 接下来演示来生成一条高级配置的链, 命令如下：
 
 ```shell
-$ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.checkSendTxPermission=true SysConfig.checkCallPermission=true SysConfig.economicalModel=1 SysConfig.checkFeeBackPlatform=true SysConfig.chainOwner=0x9a6bd7272edb238f13002911d8c93dd6bb646d15
+$ ./env.sh ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.checkSendTxPermission=true SysConfig.checkCallPermission=true SysConfig.economicalModel=1 SysConfig.checkFeeBackPlatform=true SysConfig.chainOwner=0x9a6bd7272edb238f13002911d8c93dd6bb646d15
 ```
 
 上述命令，生成一条包含四个节点，端口默认 4000 , 4001 , 4002 , 4003， 超级管理员地址 `0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523`， 运营方地址 `0x9a6bd7272edb238f13002911d8c93dd6bb646d15`， 经济模型 `Charge`， 出块激励返回运营方，权限全开的链。

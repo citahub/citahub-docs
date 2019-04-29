@@ -2,13 +2,14 @@
 id: faq
 title: CITA FAQ
 ---
+
 ## CITA 介绍、架构、原理
 
 ### CITA 介绍及整体架构
 
 #### CITA 是什么？
 
-CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级应用的支持智能合约的区块链框架， 旨在为企业级区块链应用提供一个稳固、高效、灵活、可适应未来的运行平台。 CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network。各组件之间通过消息总线交换信息相互协作。 通过配置和定制相应的服务，CITA 能够满足企业级用户的全部需要。
+CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级应用的支持智能合约的高性能区块链内核， 旨在为企业级区块链应用提供一个稳固、高效、灵活、可适应未来的运行平台。 CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network。各组件之间通过消息总线交换信息相互协作。 通过配置和定制相应的服务，CITA 能够满足企业级用户的全部需要。
 
 #### CITA 是否支持高可用？
 
@@ -44,7 +45,7 @@ https://docs.citahub.com/zh-CN/cita/architecture/architecture
 
 #### 为什么选择 Rust？
 
-秘猿科技在 2016 年发起 CITA 开源项目，当时我们想要做面向企业应用的高性能许可链平台 ，因为 Python 开发效率非常高，适合用来做原型，所以，选用了 Python 来做原型。但是我们发现使用 **Python 做原型有几个弊端**：
+秘猿科技在 2016 年发起 CITA 开源项目，当时我们想要做面向企业应用的高性能区块链内核 ，因为 Python 开发效率非常高，适合用来做原型，所以，选用了 Python 来做原型。但是我们发现使用 **Python 做原型有几个弊端**：
 
 * **性能差**：脚本语言无法与编译性语言媲美；
 * **多核支持差**：有一个大的进程锁，在状态机上无法完全利用多核 CPU。在我们做完第一个原型时，某企业想要尝试，直接提供 4 台 56 核服务器，然而 Python 只能使用一个核是满的，其余 55 个核全都...所以，我们决定不再用 Python；

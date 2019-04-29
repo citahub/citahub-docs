@@ -3,7 +3,6 @@ id: role
 title: 角色合约接口
 ---
 
-
 <h2 class="hover-list">角色合约接口</h2>
 
 * [queryName](#queryname)

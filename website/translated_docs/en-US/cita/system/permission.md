@@ -2,6 +2,7 @@
 id: permission
 title: Permission Management
 ---
+
 CITA实现了对账户的权限管理，并支持基于角色的权限管理。
 
 CITA通过智能合约的方式来对权限进行管理。
@@ -65,7 +66,7 @@ $ bin/cita create \
     --contract_arguments SysConfig.checkCallPermission=true SysConfig.checkSendTxPermission=true SysConfig.checkCreateContractPermission=true
 ```
 
-其中 `checkCallPermission`, `checkSendTxPermission`, `checkCreateContractPermission` 分别为合约调用、发送交易及创建合约的开关。
+其中 `checkCallPermission`, `checkSendTxPermission`, `checkCreateContractPermission` 分别为合约调用、发送交易及创建合约的开关。请注意这里的 `checkCallPermission` 与 JSON-RPC 中的 Call 并不同， JSON-RPC 中的 Call 是指对链上数据的查询，是读数据而非写数据。而这里的`checkCallPermission` 是指通过发送交易的方式调用合约接口，是指写数据的操作。
 
 启动链接下来的步骤见[快速搭链](../getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 

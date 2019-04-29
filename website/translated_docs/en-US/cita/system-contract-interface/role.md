@@ -3,7 +3,6 @@ id: role
 title: Role Contract
 ---
 
-
 <h2 class="hover-list">Role Contract Interface</h2>
 
 * [queryName](#queryname)

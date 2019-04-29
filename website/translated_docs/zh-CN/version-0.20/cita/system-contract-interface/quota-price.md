@@ -4,7 +4,6 @@ title: 配额价格管理合约接口
 original_id: quota-price
 ---
 
-
 <h2 class="hover-list">Price Management</h2>
 
 - [setQuotaPrice](#setQuotaPrice)

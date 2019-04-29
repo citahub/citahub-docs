@@ -3,7 +3,6 @@ id: version-0.18-batch-tx
 title: 批量交易
 original_id: batch-tx
 ---
- 
 
 `CITA` 支持批量交易，目前只能进行批量合约的调用。
 

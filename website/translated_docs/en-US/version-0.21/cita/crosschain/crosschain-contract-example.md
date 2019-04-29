@@ -4,6 +4,7 @@ title: Example of a cross-chain contract
 sidebar_label: Crosschain
 original_id: crosschain-contract-example
 ---
+
 ## 跨链合约编写
 
 ### Example of a cross-chain contract

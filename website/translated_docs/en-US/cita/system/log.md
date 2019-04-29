@@ -2,6 +2,7 @@
 id: log
 title: Log Management
 ---
+
 日志在系统调试，问题定位，甚至业务运维方面有着重要的作用。
 
 CITA 每个微服务的日志信息都会被记录到一个单独的日志文件。
@@ -39,7 +40,7 @@ CITA 默认日志等级为`Info`。示例如下：
 
 日志优先级可以在启动 CITA 的时候通过参数修改：
 
-    ./daemon.sh ./bin/cita start test-chain/0 trace
+    bin/cita start test-chain/0 trace
     
 
 这时`Trace`级别的日志也可以打印出来了：
@@ -73,7 +74,7 @@ CITA 节点需要长时间持续运行，因此日志文件会越来越大，需
 
 对于一个节点内的多个微服务，有如下的命令封装：
 
-    ./env.sh ./bin/cita logrotate test-chain/0
+    bin/cita logrotate test-chain/0
     
 
 效果如下：

@@ -4,7 +4,6 @@ title: 授权管理合约接口
 original_id: auth
 ---
 
-
 <h2 class="hover-list">Authorization Management</h2>
 
 * [queryPermissions](#queryPermissions)

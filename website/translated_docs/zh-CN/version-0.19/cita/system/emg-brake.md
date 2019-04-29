@@ -3,6 +3,7 @@ id: version-0.19-emg-brake
 title: 紧急制动
 original_id: emg-brake
 ---
+
 ## 简述
 
 超级管理员在极端情况下的维护手段，开启紧急制动模式后，链上只接收超级管理员发送的交易，其他交易全部拒绝。

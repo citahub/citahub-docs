@@ -3,7 +3,6 @@ id: quota-manager
 title: Quota Management Contract
 ---
 
-
 <h2 class="hover-list">Quota Management</h2>
 
 * [setBQL](#setBQL)
@@ -14,7 +13,7 @@ title: Quota Management Contract
 * [getBQL](#getBQL)
 * [getDefaultAQL](#getDefaultAQL)
 * [getAQL](#getAQL)
-* [getAutoExecAQL](#getAQL)
+* [getAutoExecQL](#getAutoExecQL)
 
 ### setBQL
 

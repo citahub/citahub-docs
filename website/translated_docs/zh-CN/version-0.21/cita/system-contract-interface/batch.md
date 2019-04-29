@@ -4,7 +4,6 @@ title: 批量交易合约接口
 original_id: batch
 ---
 
-
 <h2 class="hover-list">Batch Tx</h2>
 
 * [multiTxs](#multiTxs)

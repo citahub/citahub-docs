@@ -4,7 +4,6 @@ title: Quota Management Contract Interface
 original_id: quota-manager
 ---
 
-
 <h2 class="hover-list">Quota Management</h2>
 
 - [setBQL](#setBQL)

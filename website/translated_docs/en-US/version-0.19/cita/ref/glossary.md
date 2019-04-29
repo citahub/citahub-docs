@@ -3,6 +3,7 @@ id: version-0.19-glossary
 title: Glossary
 original_id: glossary
 ---
+
 ## 区块链
 
 - 区块

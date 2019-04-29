@@ -4,7 +4,6 @@ title: Batch Transactions Contract Interface
 original_id: batch
 ---
 
-
 <h2 class="hover-list">Emergency brake</h2>
 
 - [setState](#setState)

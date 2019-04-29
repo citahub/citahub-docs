@@ -3,7 +3,6 @@ id: permission
 title: Permission Contract
 ---
 
-
 <h2 class="hover-list">Permission Contract Interface</h2>
 
 * [inPermission](#inPermission)

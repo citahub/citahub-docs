@@ -3,7 +3,6 @@ id: group-mng
 title: Group Management Contract
 ---
 
-
 <h2 class="hover-list">Group Management</h2>
 
 * [newGroup](#newGroup)

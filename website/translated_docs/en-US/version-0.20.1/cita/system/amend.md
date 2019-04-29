@@ -3,6 +3,7 @@ id: version-0.20.1-amend
 title: Amend
 original_id: amend
 ---
+
 ## 简述
 
 数据订正 Amend 是超级管理员 Super Admin 通过发送特定的交易到链上，来干预或者修正链的运行

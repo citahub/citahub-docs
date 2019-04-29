@@ -3,6 +3,7 @@ title: Microscope Introduction
 id: microscope-intro
 sidebar_label: Microscope Introduction
 ---
+
 Microscope 区块链浏览器，可用于查询所有 CITA 链上信息，并支持多链，可通过在元数据面板中切换目标链。技术栈为 React、TypeScript、Rxjs。主要功能模块包括：首页信息、区块信息、交易信息、账户信息、账户信息、配置页面。可访问[官方浏览器](https://microscope.cryptape.com/#/)进行体验。
 
 ## 开发&用户手册

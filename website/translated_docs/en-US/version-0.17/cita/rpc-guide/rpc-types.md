@@ -3,6 +3,7 @@ id: version-0.17-rpc-types
 title: JSON RPC Types
 original_id: rpc-types
 ---
+
 ## 基本类型
 
 ### `Quantity`

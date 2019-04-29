@@ -3,6 +3,7 @@ title: CLI Introduction
 id: cli-intro
 sidebar_label: CITA-CLI Introduction
 ---
+
 CITA CLI 是在开发中调试 CITA 的命令行工具，并且支持搜索历史命令，默认支持 secp256k1 和 SM2 加密算法，方便用户与 CITA 交互。
 
 ## 代码结构

@@ -4,6 +4,7 @@ id: version-0.22.0-web-debugger-intro
 sidebar_label: CITA Web Debugger Introduction
 original_id: web-debugger-intro
 ---
+
 CITA Web Debugger 作为 DApp 调试工具，是一个基于 Chrome 浏览器的插件，用户在开发 DApp 时，在手机上调试很不方便，使用 CITA Web Debugger 能够在浏览器上调试交易方面的功能，能方便地获取交易具体详情和反馈。
 
 ## 注意事项

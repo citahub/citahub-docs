@@ -3,6 +3,7 @@ id: version-0.21-error
 title: System contract Error Type
 original_id: error
 ---
+
 当在调用系统合约接口的时候，可以通过查看交易回执中日志信息来获得具体执行过程中的错误类型。
 
 通过 [Solidity Event](https://solidity.readthedocs.io/en/latest/contracts.html#events) 实现，回执返回中包含错误码及具体的错误信息。
@@ -252,7 +253,7 @@ original_id: error
     
     ### NotOneOperate
     
-    !&gt; 废弃
+    &gt; 废弃
     
     ### NotClose
     

@@ -3,6 +3,7 @@ id: version-0.20-getting-started
 title: 快速入门
 original_id: getting-started
 ---
+
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](https://docs.nervos.org/nervos-appchain-docs/#/quick-start/deploy-appchain)。

@@ -3,7 +3,6 @@ id: quota-manager
 title: 配额管理合约接口
 ---
 
-
 <h2 class="hover-list">配额管理</h2>
 
 * [setBQL](#setBQL)
@@ -14,7 +13,7 @@ title: 配额管理合约接口
 * [getBQL](#getBQL)
 * [getDefaultAQL](#getDefaultAQL)
 * [getAQL](#getAQL)
-* [getAutoExecAQL](#getAQL)
+* [getAutoExecQL](#getAutoExecQL)
 
 ### setBQL
 

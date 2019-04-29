@@ -3,7 +3,6 @@ id: batch
 title: Batch Transaction Contract
 ---
 
-
 <h2 class="hover-list">Batch Tx</h2>
 
 * [multiTxs](#multiTxs)

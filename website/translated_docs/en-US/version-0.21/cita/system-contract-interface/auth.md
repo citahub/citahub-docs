@@ -4,7 +4,6 @@ title: Authorization Management Contract
 original_id: auth
 ---
 
-
 <h2 class="hover-list">Authorization Management</h2>
 
 * [queryPermissions](#queryPermissions)

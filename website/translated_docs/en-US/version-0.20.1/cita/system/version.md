@@ -3,6 +3,7 @@ id: version-0.20.1-version
 title: Version Management
 original_id: version
 ---
+
 CITA use protocol version number to activate hard fork for upgrading. This contract implement setter and getter for protocol version number.
 
 ### Operations

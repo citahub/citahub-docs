@@ -4,7 +4,6 @@ title: 权限管理合约接口
 original_id: permission-management
 ---
 
-
 <h2 class="hover-list">权限合约接口</h2>
 
 - [inPermission](#inPermission)

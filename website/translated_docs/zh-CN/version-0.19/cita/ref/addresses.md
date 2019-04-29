@@ -3,6 +3,7 @@ id: version-0.19-addresses
 title: 系统预留地址
 original_id: addresses
 ---
+
 > **系统保留地址更改！** 老版本用户请注意，为了让地址更加规范，最新版本的 CITA 将 0.16 版本及之前版本中无规律的系统保留地址规范到了一个地址段内。
 
 ## Ethereum Builtin

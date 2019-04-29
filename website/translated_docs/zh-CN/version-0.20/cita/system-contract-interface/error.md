@@ -4,7 +4,6 @@ title: 系统合约错误码
 original_id: error
 ---
 
-
 <h2 class="hover-list">Emergency brake</h2>
 
 - [setState](#setState)

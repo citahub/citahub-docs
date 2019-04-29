@@ -3,6 +3,7 @@ id: version-0.21-rpc-error-code
 title: JSON RPC Error code
 original_id: rpc-error-code
 ---
+
 ## JSON RPC标准错误码
 
 | 错误码    | 错误消息     | 描述             |

@@ -4,7 +4,6 @@ title: 角色授权合约接口
 original_id: role-auth
 ---
 
-
 <h2 class="hover-list">Role Authorization</h2>
 
 - [queryRoles](#queryRoles)

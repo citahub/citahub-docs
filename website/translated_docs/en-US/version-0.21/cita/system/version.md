@@ -3,6 +3,7 @@ id: version-0.21-version
 title: Protocol Versions Management
 original_id: version
 ---
+
 CITA 通过设置协议版本号的方式，激活硬分叉，升级系统。该合约实现了协议版本号的设置与查询。
 
 ### 操作示例

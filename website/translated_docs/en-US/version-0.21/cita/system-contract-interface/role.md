@@ -4,7 +4,6 @@ title: Role Contract
 original_id: role
 ---
 
-
 <h2 class="hover-list">Role Contract Interface</h2>
 
 * [queryName](#queryname)

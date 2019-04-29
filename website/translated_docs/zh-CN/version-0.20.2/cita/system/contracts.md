@@ -3,6 +3,7 @@ id: version-0.20.2-system-contracts
 title: 系统合约
 original_id: system-contracts
 ---
+
 CITA 链生成时，通过系统合约来生成创世块，并作为链的最基本配置。拥有权限的管理员可以发送交易修改创世块的部分配置，所以了解系统合约至关重要。 你可以在 `/scripts/contracts/src` 目录下查看所有的系统合约，当然，接下来我们会一一解释。
 
 另外在 `test-chain/template/contracts/docs` 目录（`test-chain` 为默认链名称）提供了所有系统合约函数签名，感兴趣的朋友可以自行查阅。

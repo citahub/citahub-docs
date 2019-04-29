@@ -3,7 +3,6 @@ id: auto-exec
 title: 自动执行合约接口
 ---
 
-
 <h2 class="hover-list">自动执行</h2>
 
 * [register](#register)

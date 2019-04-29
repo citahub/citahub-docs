@@ -3,7 +3,6 @@ id: node
 title: 共识节点管理合约接口
 ---
 
-
 <h2 class="hover-list">节点管理</h2>
 
 * [approveNode](#approveNode)

@@ -3,7 +3,6 @@ id: auth
 title: Authorization Management Contract
 ---
 
-
 <h2 class="hover-list">Authorization Management</h2>
 
 * [queryPermissions](#queryPermissions)

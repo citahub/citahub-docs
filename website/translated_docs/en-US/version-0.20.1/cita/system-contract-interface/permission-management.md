@@ -4,7 +4,6 @@ title: Permission Management Contract Interface
 original_id: permission-management
 ---
 
-
 <h2 class="hover-list">Permission Management</h2>
 
 - [newPermission](#newPermission)

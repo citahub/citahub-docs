@@ -3,6 +3,7 @@ id: version-0.20-snapshot
 title: Snapshot
 original_id: snapshot
 ---
+
 # Snapshot
 
 从字面上解释，“快照”这个词来源于照相、摄影等领域，后来延展到范围很广，当需要保留某件事物某个时间的状态时，就可以说对其做一次“快照”。

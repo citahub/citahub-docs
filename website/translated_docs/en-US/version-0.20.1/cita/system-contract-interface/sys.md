@@ -4,7 +4,6 @@ title: System Configuration Contract Interface
 original_id: sys
 ---
 
-
 <h2 class="hover-list">System Config</h2>
 
 - [setChainName](#setChainName)

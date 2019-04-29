@@ -4,6 +4,7 @@ title: 跨链合约示例
 sidebar_label: 跨链
 original_id: crosschain-contract-example
 ---
+
 ## 跨链合约编写
 
 ### 跨链合约示例

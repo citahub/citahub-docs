@@ -3,6 +3,7 @@ id: version-0.18-config-tool
 title: Chain Level Configuration
 original_id: config-tool
 ---
+
 ## 主要功能
 
 create_cita_config.py 分为两种模式：

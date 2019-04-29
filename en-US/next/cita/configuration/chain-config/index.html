@@ -147,45 +147,62 @@ usage: create_cita_config.py create [-h]
    admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
  -VersionManager:
    version: 1
-
-
-* `SysConfig` : 初始化一些系统信息
-  - `delayBlockNumber` : 表示系统合约在几个块之后生效，默认为 1 个块。当前此功能已废弃。
-  - `checkCallPermission` : 合约调用权限检查开关
-  - `checkSendTxPermission` : 发送交易权限检查开关
-  - `checkCreateContractPermission` : 创建合约权限检查开关
-  - `checkQuota` : 账户配额限制检查开关
-  - `checkFeeBackPlatform` : 出块激励选择开关，默认为 false，表示返回给共识节点，为 true 时返回给运营方地址( chainOwner )
-  - `chainOwner` : 运营方地址，结合 checkFeeBackPlatform 一块使用
-  - `chainName` : 链的名字
-  - `chainId` : 链 Id
-  - `operator` : 运营方名称
-  - `website` : 运营方网站
-  - `blockInterval` ： 出块间隔，默认 3 秒
-  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型，交易只需不超过限额即可，限额由管理员设置，详细机制可查看[配额管理](../system/quota)；`economicalModel = 1` 表示 Charge 模型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看[配额价格管理](../system/price)。
-  - `name` : Token 名称
-  - `symbol` : Token 符号
-  - `avatar` : Token 图标链接
-  - `autoExec` : 自动执行开关（默认：false）
-* `QuotaManager` : 初始化配额管理合约的管理员地址
-  - `admin` : 默认管理员地址
-* `NodeManager` : 初始化共识节点管理合约
-  - `nodes` : 共识节点地址
-  - `stakes` : 共识节点对应的出块权重
-* `ChainManager` : 初始化链的一些信息，用于跨链。
-  - `parentChainId` : 父链 ID
-  - `parentChainAuthorities` : 父链的共识节点列表
-* `Authorization` : 初始化权限管理合约
-  - `superAdmin` : 管理员地址
-* `Group` : 初始化用户组管理合约
-  - `parent` : 父组的地址
-  - `name` : 组的名称
-  - `accounts` : 组内用户列表
-* `Admin` : 管理员
-  - `admin` : 管理员地址
-* `VersionManager` : 协议版本管理合约
-  - `version` : 协议版本号
 </code></pre>
+<p>示例配置项详细解释:</p>
+<ul>
+<li><code>SysConfig</code> : 初始化一些系统信息
+<ul>
+<li><code>delayBlockNumber</code> : 表示系统合约在几个块之后生效，默认为 1 个块。当前此功能已废弃。</li>
+<li><code>checkCallPermission</code> : 合约调用权限检查开关</li>
+<li><code>checkSendTxPermission</code> : 发送交易权限检查开关</li>
+<li><code>checkCreateContractPermission</code> : 创建合约权限检查开关</li>
+<li><code>checkQuota</code> : 账户配额限制检查开关</li>
+<li><code>checkFeeBackPlatform</code> : 出块激励选择开关，默认为 false，表示返回给共识节点，为 true 时返回给运营方地址( chainOwner )</li>
+<li><code>chainOwner</code> : 运营方地址，结合 checkFeeBackPlatform 一块使用</li>
+<li><code>chainName</code> : 链的名字</li>
+<li><code>chainId</code> : 链 Id</li>
+<li><code>operator</code> : 运营方名称</li>
+<li><code>website</code> : 运营方网站</li>
+<li><code>blockInterval</code> ： 出块间隔，默认 3 秒</li>
+<li><code>economicalModel</code>： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。<code>economicalModel = 0</code> 表示 Quota 模型交易只需不超过限额即可，限额由管理员设置，详细机制可查看<a href="../system/quota">配额管理</a>；<code>economicalModel = 1</code> 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看<a href="../system/price">配额价格管理</a>。</li>
+<li><code>name</code> : Token 名称</li>
+<li><code>symbol</code> : Token 符号</li>
+<li><code>avatar</code> : Token 图标链接</li>
+<li><code>autoExec</code> : 自动执行开关（默认：false）</li>
+</ul></li>
+<li><code>QuotaManager</code> : 初始化配额管理合约的管理员地址
+<ul>
+<li><code>admin</code> : 默认管理员地址</li>
+</ul></li>
+<li><code>NodeManager</code> : 初始化共识节点管理合约
+<ul>
+<li><code>nodes</code> : 共识节点地址</li>
+<li><code>stakes</code> : 共识节点对应的出块权重</li>
+</ul></li>
+<li><code>ChainManager</code> : 初始化链的一些信息，用于跨链。
+<ul>
+<li><code>parentChainId</code> : 父链 ID</li>
+<li><code>parentChainAuthorities</code> : 父链的共识节点列表</li>
+</ul></li>
+<li><code>Authorization</code> : 初始化权限管理合约
+<ul>
+<li><code>superAdmin</code> : 管理员地址</li>
+</ul></li>
+<li><code>Group Contract Interface</code> : 初始化用户组管理合约
+<ul>
+<li><code>parent</code> : 父组的地址</li>
+<li><code>name</code> : 组的名称</li>
+<li><code>accounts</code> : 组内用户列表</li>
+</ul></li>
+<li><code>Admin Contract Interface</code> : 管理员
+<ul>
+<li><code>admin</code> : 管理员地址</li>
+</ul></li>
+<li><code>VersionManager</code> : 协议版本管理合约
+<ul>
+<li><code>version</code> : 协议版本号</li>
+</ul></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="time-stamp-指定起链的时间戳"></a><a href="#time-stamp-指定起链的时间戳" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--time_stamp</code> 指定起链的时间戳</h3>
 <ul>
 <li>具体数值是指自 1970-1-1 以来的毫秒数，默认是取当前的时间，如果时间取在未来，则链起来之后不会出块。</li>

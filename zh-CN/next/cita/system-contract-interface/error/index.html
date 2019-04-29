@@ -148,54 +148,47 @@
 <li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000000</code></li>
 <li><code>logs.data</code> 为错误信息。对 data 进行解码：</li>
 </ul>
-<pre><code class="hljs css language-shell">    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000154e6f74207468652061646d696e206163636f756e740000000000000000000000
-    ```
-
-    输出如下：
-
-    ```json
-    {
-        "string": "Not the admin account"
-    }
-    ```
-<span class="hljs-meta">
-#</span><span class="bash"><span class="hljs-comment">## OutOfBaseLimit</span></span>
-
-交易回执：
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHash": "0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0",
-    "blockNumber": "0x487",
-    "contractAddress": null,
-    "cumulativeQuotaUsed": "0x5f37",
-    "errorMessage": null,
-    "quotaUsed": "0x5f37",
-    "logs": [
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+  --type string \
+  --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000154e6f74207468652061646d696e206163636f756e740000000000000000000000
+</code></pre>
+<p>输出如下：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"string"</span>: <span class="hljs-string">"Not the admin account"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="outofbaselimit"></a><a href="#outofbaselimit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OutOfBaseLimit</h3>
+<p>交易回执：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x487"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x5f37"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x5f37"</span>,
+    <span class="hljs-attr">"logs"</span>: [
       {
-        "address": "0xffffffffffffffffffffffffffffffffff020003",
-        "blockHash": "0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0",
-        "blockNumber": "0x487",
-        "data": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000",
-        "logIndex": "0x0",
-        "topics": [
-          "0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c",
-          "0x0000000000000000000000000000000000000000000000000000000000000001"
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020003"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xbee7f3f7f3aa27e24dfc125d711eaf84f7fc5b36e64118846906be5c594bb4c0"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x487"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000001"</span>
         ],
-        "transactionHash": "0xf94f721973d67b0263e42d6dcddd0f4da4c1dc85003faecbde271dedbe5d6bde",
-        "transactionIndex": "0x0",
-        "transactionLogIndex": "0x0"
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xf94f721973d67b0263e42d6dcddd0f4da4c1dc85003faecbde271dedbe5d6bde"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
       }
     ],
-    "logsBloom": "0x00000000000000000000000000000000000000000000002000000000000000000000000080000000010000000000000000000000000000000000000000040000000000000000000000000100000000000000000800040000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000",
-    "root": null,
-    "transactionHash": "0xf94f721973d67b0263e42d6dcddd0f4da4c1dc85003faecbde271dedbe5d6bde",
-    "transactionIndex": "0x0"
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000002000000000000000000000000080000000010000000000000000000000000000000000000000040000000000000000000000000100000000000000000800040000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xf94f721973d67b0263e42d6dcddd0f4da4c1dc85003faecbde271dedbe5d6bde"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
   }
 }
 </code></pre>
@@ -204,54 +197,47 @@
 <li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000001</code></li>
 <li><code>logs.data</code> 为错误信息。对 data 进行解码：</li>
 </ul>
-<pre><code class="hljs css language-shell">    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000
-    ```
-
-    输出如下：
-
-    ```json
-    {
-        "string": "The value is out of base limit"
-    }
-    ```
-<span class="hljs-meta">
-#</span><span class="bash"><span class="hljs-comment">## OutOfBlockLimit</span></span>
-
-交易回执：
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHash": "0x010a48e24ec63d73ab04ec00143924bfeb4a70ef25a08cd44c5e97d1575086e3",
-    "blockNumber": "0x61f",
-    "contractAddress": null,
-    "cumulativeQuotaUsed": "0x5f66",
-    "errorMessage": null,
-    "quotaUsed": "0x5f66",
-    "logs": [
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+    --type string \
+    --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e5468652076616c7565206973206f7574206f662062617365206c696d69740000
+</code></pre>
+<p>输出如下：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"string"</span>: <span class="hljs-string">"The value is out of base limit"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="outofblocklimit"></a><a href="#outofblocklimit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OutOfBlockLimit</h3>
+<p>交易回执：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x010a48e24ec63d73ab04ec00143924bfeb4a70ef25a08cd44c5e97d1575086e3"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x61f"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x5f66"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x5f66"</span>,
+    <span class="hljs-attr">"logs"</span>: [
       {
-        "address": "0xffffffffffffffffffffffffffffffffff020003",
-        "blockHash": "0x010a48e24ec63d73ab04ec00143924bfeb4a70ef25a08cd44c5e97d1575086e3",
-        "blockNumber": "0x61f",
-        "data": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001f5468652076616c7565206973206f7574206f6620626c6f636b206c696d697400",
-        "logIndex": "0x0",
-        "topics": [
-          "0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c",
-          "0x0000000000000000000000000000000000000000000000000000000000000002"
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020003"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x010a48e24ec63d73ab04ec00143924bfeb4a70ef25a08cd44c5e97d1575086e3"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x61f"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001f5468652076616c7565206973206f7574206f6620626c6f636b206c696d697400"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000002"</span>
         ],
-        "transactionHash": "0x2e411813f5990c0889b1a752b38882636601538b9185a07ff6ebea6a7a748487",
-        "transactionIndex": "0x0",
-        "transactionLogIndex": "0x0"
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x2e411813f5990c0889b1a752b38882636601538b9185a07ff6ebea6a7a748487"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
       }
     ],
-    "logsBloom": "0x04000000000000000000000000000000000000000000002000000000000000000000000080000000010000000000000000000000000000000000000000000000000000000000000000000100000000000000000800000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000",
-    "root": null,
-    "transactionHash": "0x2e411813f5990c0889b1a752b38882636601538b9185a07ff6ebea6a7a748487",
-    "transactionIndex": "0x0"
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x04000000000000000000000000000000000000000000002000000000000000000000000080000000010000000000000000000000000000000000000000000000000000000000000000000100000000000000000800000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x2e411813f5990c0889b1a752b38882636601538b9185a07ff6ebea6a7a748487"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
   }
 }
 </code></pre>
@@ -260,58 +246,51 @@
 <li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000002</code></li>
 <li><code>logs.data</code> 为错误信息。对 data 进行解码：</li>
 </ul>
-<pre><code class="hljs css language-shell">    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001f5468652076616c7565206973206f7574206f6620626c6f636b206c696d697400
-    ```
-
-    输出如下：
-
-    ```json
-    {
-        "string": "The value is out of block limit"
-    }
-    ```
-<span class="hljs-meta">
-#</span><span class="bash"><span class="hljs-comment">## NoParentChain</span></span>
-<span class="hljs-meta">
-&gt;</span><span class="bash"> 废弃</span>
-<span class="hljs-meta">
-#</span><span class="bash"><span class="hljs-comment">## NoSideChain</span></span>
-
-交易回执：
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHash": "0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3",
-    "blockNumber": "0x6f",
-    "contractAddress": null,
-    "cumulativeQuotaUsed": "0x5bc7",
-    "errorMessage": null,
-    "quotaUsed": "0x5bc7",
-    "logs": [
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+    --type string \
+    --data 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001f5468652076616c7565206973206f7574206f6620626c6f636b206c696d697400
+</code></pre>
+<p>输出如下：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"string"</span>: <span class="hljs-string">"The value is out of block limit"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="noparentchain"></a><a href="#noparentchain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NoParentChain</h3>
+<blockquote>
+<p>废弃</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="nosidechain"></a><a href="#nosidechain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NoSideChain</h3>
+<p>交易回执：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x6f"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x5bc7"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x5bc7"</span>,
+    <span class="hljs-attr">"logs"</span>: [
       {
-        "address": "0xffffffffffffffffffffffffffffffffff020002",
-        "blockHash": "0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3",
-        "blockNumber": "0x6f",
-        "data": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000",
-        "logIndex": "0x0",
-        "topics": [
-          "0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c",
-          "0x0000000000000000000000000000000000000000000000000000000000000004"
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020002"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x236b9896d89cbb97a918e0233c7f4a9b7883788a9663922cba4d521e79ee66f3"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x6f"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000004"</span>
         ],
-        "transactionHash": "0xc07e9ffbabc3e21ae47450592bc94d9607c87e4c603102abbae5302c6184c96f",
-        "transactionIndex": "0x0",
-        "transactionLogIndex": "0x0"
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xc07e9ffbabc3e21ae47450592bc94d9607c87e4c603102abbae5302c6184c96f"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
       }
     ],
-    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000080000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000048000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000002000000000000000000000000000000000000000000000000000008800000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "root": null,
-    "transactionHash": "0xc07e9ffbabc3e21ae47450592bc94d9607c87e4c603102abbae5302c6184c96f",
-    "transactionIndex": "0x0"
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000080000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000048000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000002000000000000000000000000000000000000000000000000000008800000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xc07e9ffbabc3e21ae47450592bc94d9607c87e4c603102abbae5302c6184c96f"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
   }
 }
 </code></pre>
@@ -320,58 +299,51 @@
 <li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000004</code></li>
 <li><code>logs.data</code> 为错误信息。对 data 进行解码：</li>
 </ul>
-<pre><code class="hljs css language-shell">    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000
-    ```
-
-    输出如下：
-
-    ```json
-    {
-        "string": "has no side chain"
-    }
-    ```
-<span class="hljs-meta">
-#</span><span class="bash"><span class="hljs-comment">## NotOneOperate</span></span>
-<span class="hljs-meta">
-&gt;</span><span class="bash"> 废弃</span>
-<span class="hljs-meta">
-#</span><span class="bash"><span class="hljs-comment">## NotClose</span></span>
-
-交易回执：
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHash": "0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212",
-    "blockNumber": "0x2a",
-    "contractAddress": null,
-    "cumulativeQuotaUsed": "0x60f9",
-    "errorMessage": null,
-    "quotaUsed": "0x60f9",
-    "logs": [
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+    --type string \
+    --data 0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011686173206e6f207369646520636861696e000000000000000000000000000000
+</code></pre>
+<p>输出如下：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"string"</span>: <span class="hljs-string">"has no side chain"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="notoneoperate"></a><a href="#notoneoperate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NotOneOperate</h3>
+<blockquote>
+<p>废弃</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="notclose"></a><a href="#notclose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NotClose</h3>
+<p>交易回执：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x2a"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x60f9"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x60f9"</span>,
+    <span class="hljs-attr">"logs"</span>: [
       {
-        "address": "0xffffffffffffffffffffffffffffffffff020001",
-        "blockHash": "0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212",
-        "blockNumber": "0x2a",
-        "data": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000",
-        "logIndex": "0x0",
-        "topics": [
-          "0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c",
-          "0x0000000000000000000000000000000000000000000000000000000000000006"
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020001"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xbd8e9336f7d10886f90bfd49a9e7c915e8092ee3db21d641b834d2316ccd0212"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x2a"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000006"</span>
         ],
-        "transactionHash": "0x590e663789bcfff2b49791f8793702614784174e104b6d175369a807cad90929",
-        "transactionIndex": "0x0",
-        "transactionLogIndex": "0x0"
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x590e663789bcfff2b49791f8793702614784174e104b6d175369a807cad90929"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
       }
     ],
-    "logsBloom": "0x00000000000000000000000000000000000200000000000000000000000000000000000080000000010000000000000000000000000400000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "root": null,
-    "transactionHash": "0x590e663789bcfff2b49791f8793702614784174e104b6d175369a807cad90929",
-    "transactionIndex": "0x0"
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000200000000000000000000000000000000000080000000010000000000000000000000000400000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x590e663789bcfff2b49791f8793702614784174e104b6d175369a807cad90929"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
   }
 }
 </code></pre>
@@ -380,76 +352,69 @@
 <li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000006</code></li>
 <li><code>logs.data</code> 为错误信息。对 data 进行解码：</li>
 </ul>
-<pre><code class="hljs css language-shell">    $ cita-cli ethabi decode params \
-      --type string \
-      --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000
-    ```
-
-    输出如下：
-
-    ```json
-    {
-        "string": "node does not close"
-    }
-    ```
-<span class="hljs-meta">
-#</span><span class="bash"><span class="hljs-comment">## NotStart</span></span>
-
-交易回执：
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHash": "0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4",
-    "blockNumber": "0x79",
-    "contractAddress": null,
-    "cumulativeQuotaUsed": "0x5f65",
-    "errorMessage": null,
-    "quotaUsed": "0x5f65",
-    "logs": [
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
+    --type string \
+    --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420636c6f736500000000000000000000000000
+</code></pre>
+<p>输出如下：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"string"</span>: <span class="hljs-string">"node does not close"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="notstart"></a><a href="#notstart" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NotStart</h3>
+<p>交易回执：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x79"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x5f65"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x5f65"</span>,
+    <span class="hljs-attr">"logs"</span>: [
       {
-        "address": "0xffffffffffffffffffffffffffffffffff020001",
-        "blockHash": "0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4",
-        "blockNumber": "0x79",
-        "data": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000",
-        "logIndex": "0x0",
-        "topics": [
-          "0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c",
-          "0x0000000000000000000000000000000000000000000000000000000000000007"
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020001"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x631fd5c8ee6aca8b60d74e5b3d3eed517f93004a403c2849f12d7a55b17a52c4"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x79"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x9655ba40cfc2f0950c16e93cc6fd1acfa27ea642762ffcd4cab2c64344ad212c"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000007"</span>
         ],
-        "transactionHash": "0x07634595c9418a36ecd63d9c4ce4d5329d17ade89bb571c2f372b4fb6b269dde",
-        "transactionIndex": "0x0",
-        "transactionLogIndex": "0x0"
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x07634595c9418a36ecd63d9c4ce4d5329d17ade89bb571c2f372b4fb6b269dde"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
       }
     ],
-    "logsBloom": "0x00000000000000000000000000000000000200000000000000000000000000000000000080000000010000000000000000001000000000000000000000000000000020000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000",
-    "root": null,
-    "transactionHash": "0x07634595c9418a36ecd63d9c4ce4d5329d17ade89bb571c2f372b4fb6b269dde",
-    "transactionIndex": "0x0"
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000200000000000000000000000000000000000080000000010000000000000000001000000000000000000000000000000020000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x07634595c9418a36ecd63d9c4ce4d5329d17ade89bb571c2f372b4fb6b269dde"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
   }
 }
 </code></pre>
 <p>其中：</p>
 <ul>
-<li><p><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000007</code></p></li>
-<li><p><code>logs.data</code> 为错误信息。对 data 进行解码：</p>
+<li><code>logs.topics[1]</code> 表示错误类型 <code>0x0000000000000000000000000000000000000000000000000000000000000007</code></li>
+<li><code>logs.data</code> 为错误信息。对 data 进行解码：</li>
+</ul>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi decode params \</span>
-  --type string \
-  --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000
+    --type string \
+    --data 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000136e6f646520646f6573206e6f7420737461727400000000000000000000000000
 </code></pre>
 <p>输出如下：</p>
 <pre><code class="hljs css language-json">{
-    <span class="hljs-attr">"string"</span>: <span class="hljs-string">"node does not start"</span>
+  <span class="hljs-attr">"string"</span>: <span class="hljs-string">"node does not start"</span>
 }
-</code></pre></li>
-</ul>
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="notready"></a><a href="#notready" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NotReady</h3>
 <blockquote>
 <p>废弃</p>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/system-contract-interface/version-mng"><span class="arrow-prev">← </span><span>协议版本管理合约接口</span></a><a class="docs-next button" href="/zh-CN/next/cita/architecture/architecture"><span>系统架构</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#示例">示例</a><ul class="toc-headings"><li><a href="#notadmin">NotAdmin</a></li><li><a href="#notready">NotReady</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/system-contract-interface/version-mng"><span class="arrow-prev">← </span><span>协议版本管理合约接口</span></a><a class="docs-next button" href="/zh-CN/next/cita/architecture/architecture"><span>系统架构</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#示例">示例</a><ul class="toc-headings"><li><a href="#notadmin">NotAdmin</a></li><li><a href="#outofbaselimit">OutOfBaseLimit</a></li><li><a href="#outofblocklimit">OutOfBlockLimit</a></li><li><a href="#noparentchain">NoParentChain</a></li><li><a href="#nosidechain">NoSideChain</a></li><li><a href="#notoneoperate">NotOneOperate</a></li><li><a href="#notclose">NotClose</a></li><li><a href="#notstart">NotStart</a></li><li><a href="#notready">NotReady</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

@@ -114,7 +114,7 @@ $ ./env.sh make release
     ```shell
     $ cd target/install
     ```
-    
+
   * 如果之前选择下载编译好的发布包：
 
     ```shell
@@ -288,7 +288,7 @@ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
   Request:
 
   ```shell
-  ./env.sh ./curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
+  ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
   ```
   Result:
 
@@ -305,7 +305,7 @@ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
   Request:
 
   ```shell
-  ./env.sh ./curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+  ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
   ```
 
   Result:

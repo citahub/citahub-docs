@@ -81,7 +81,7 @@ CITA-BFT是一种专为区块链设计的高性能共识算法，基于半同步
 
 ### 状态转换图
 
-![state convert](/docs/_image/state_convert.jpg)
+![state convert](assets/cita-assets/state_convert.jpg)
 
 ### 状态转换描述
 

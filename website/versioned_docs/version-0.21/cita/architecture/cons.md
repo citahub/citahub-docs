@@ -82,7 +82,7 @@ CITA共识节点通过点对点共识消息交换协议对每一个区块交换�
 **CommitWait**：等待 Chain 发来的最新状态（rich_status）消息
 
 ### 状态转换图
-![state convert](/docs/_image/state_convert.jpg)
+![state convert](assets/cita-assets/state_convert.jpg)
 
 ### 状态转换描述
 

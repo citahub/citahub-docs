@@ -173,7 +173,7 @@ CITA 目前由 6 个微服务组成。因为微服务之间通过消息总线通
 ### 节点操作
 
 #### 如何获取节点的地址？
-https://docs.citahub.com/zh-CN/cita/configuration/chain-config#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84
+https://docs.citahub.com/zh-CN/cita/operation/chain-config#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84
 
 #### 请问现在 CITA 的节点数量有上限吗？
 CITA 的初始化的时候共识节点的最大数量是 256，在链运行之后可以增加和删除，这个没有限制。我们推荐共识节点不超过 100 个。

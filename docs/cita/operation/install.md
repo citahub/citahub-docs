@@ -1,9 +1,9 @@
 ---
-id: getting-started
-title: 快速入门
+id: install
+title: 部署 CITA
 ---
 
-CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
+CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。
 
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](./huawei)。
 > * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [CITA 测试链](https://docs.citahub.com/zh-CN/toolchain/testnet/testchain)。
@@ -12,7 +12,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4) 
 
-如果你使用的是 MacOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA。
+如果你使用的是 macOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA。
 
 ## 硬件配置建议
 
@@ -23,12 +23,10 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ## 软件依赖声明
 
-* 依赖 Docker，安装 Docker 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/install/)。
+* 依赖 docker，安装 docker 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/install/)。
 * CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-build/) 。 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。
 
-## 安装步骤
-
-### 安装 CITA 客户端工具
+## 安装 CITA 命令行工具
 
 1. 创建目录
 
@@ -76,43 +74,110 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    }
    ```
 
-   > 注：此处为示例公私钥对，不要在生产环境复制使用。"address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。
+   > 注：此处为示例公私钥对，请不要在生产环境复制使用。"address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。
 
-### 安装 CITA
+## 部署 CITA
 
-1. 切换目录
+<!--DOCUSAURUS_CODE_TABS-->
+<!--发布件部署-->
 
-   ```
-   $ cd /data/cita/
-   ```
+### 从发布件部署 CITA
 
-2. 下载 CITA 安装包
+1. 下载 CITA安装包
 
    ```
    $ wget https://github.com/cryptape/cita/releases/download/v0.23.1/cita_secp256k1_sha3.tar.gz
    ```
 
-3. 解压 CITA 程序
+2. 解压 CITA 程序
 
    ```
    $ tar zxvf cita_secp256k1_sha3.tar.gz
    ```
      
-4. 进入 CITA 目录
+3. 进入 CITA 目录
 
    ```
    $ cd cita_secp256k1_sha3
    ```
-5. 初始化链 （super_admin 地址是超级管理员账号即 CITA-CLI 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））
+
+<!--源码部署-->
+
+### 从源码编译部署 CITA
+
+1. 下载 CITA 源码
+
+从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
+
+```shell
+$ git clone https://github.com/cryptape/cita.git
+$ cd cita
+$ git submodule init
+$ git submodule update
+```
+
+2. 编译源码
+
+可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）
+
+```shell
+$ ./env.sh make debug
+```
+
+或者
+
+```shell
+$ ./env.sh make release
+```
+
+> 可选择替换 Rust Crates 的官方源，详细教程可以参考：
+>
+> - [USTC Mirror Help for Rust Crates](http://mirrors.ustc.edu.cn/help/crates.io-index.html)
+> - [Source Replacement for Rust Crates](https://doc.rust-lang.org/cargo/reference/source-replacement.html)
+> - [How to map a configuration file into docker](https://docs.docker.com/storage/volumes/)
+
+> **Docker env 使用说明**
+>
+> * 在源码根目录下，我们提供了 `env.sh` 脚本，封装了 Docker 相关的操作。
+运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。
+例如：
+>
+>   ```shell
+>   $ ./env.sh make debug
+>   ```
+>
+>   即表示在 Docker 环境中运行 `make debug`。
+> * 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
+> * 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误：
+>
+>   ```shell
+>   $ ./env.sh
+>   error: failed switching to "user": unable to find user user: no matching entries in passwd file
+>   ```
+>   因此要保证操作使用的始终是同一个系统用户。
+> * 如果出现 Docker 相关的报错，可以执行如下命令并重试：
+>   ```shell
+>   docker kill $(docker ps -a -q)
+>   ```
+
+3. 进入 CITA 目录
+
+```shell
+$ cd target/install
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+4. 初始化链 （super_admin 地址是超级管理员账号即 cita-cli 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））
 
    ```
    $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
    ```
 
-   > * 注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 [链接配置](https://docs.citahub.com/zh-CN/cita/operation/chain-config)
+   > * 注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 [链接配置](./chain-config)
    > * 注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP。
 
-### 启动 CITA
+## 启动 CITA
 
 1. 启动节点 0
 
@@ -142,7 +207,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    $ /bin/cita start test-chain/3
    ```
 
-### 验证 CITA 是否运行正常
+## 验证 CITA 是否运行正常
 
 1. 查看进程是否启动成功
 
@@ -195,80 +260,3 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    ```
    {"jsonrpc":"2.0","id":83,"result":"0x7d"}
    ```
-
-### 停止节点
-
-以“0”节点为例，执行以下命令即可停止“0”节点：
-
-```shell
-$ bin/cita stop test-chain/0
-```
-
-### 其他操作
-
-更多其他操作使用以下命令查看帮助信息：
-
-```shell
-$ bin/cita help
-```
-
->**Notice**
->
-> * 请不要先进到 bin 目录，再执行以上的部署操作，错误示范：
->
->   ```shell
->   $ cd bin
->   $ cita setup test-chain/0
->   ```
->
-> * 请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。
-> * 请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突。
-
-## 验证
-
-CITA 提供了支持 JSON-RPC 2.0 (https://www.jsonrpc.org/specification)  协议的API，方便客户端进行区块信息的查询，具体文档在[RPC 列表](./rpc-guide/rpc)。
-
-默认启动的 4 个节点的 JSON-RPC 服务端口分别是 1337、1338、1339、1340，下列指令查看第一个节点的相关信息。
-
-* 查看当前节点上连接其他节点的数量（返回结果 +1 即是节点所在网络中的所有节点数量）
-
-  Request:
-
-  ```shell
-  curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
-  ```
-  
-  Result:
-
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "id": 74,
-    "result": "0x3"
-  }
-  ```
-
-* 查看当前节点区块高度
-
-  Request:
-
-  ```shell
-  curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
-  ```
-
-  Result:
-
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "id": 83,
-    "result": "0x8"
-  }
-  ```
-
-  返回块高度，表示节点已经开始正常出块。
-
->Tips：JSON-RPC 协议要求发送 JSON 格式的请求参数，其中 "jsonrpc":"2.0" 是固定的协议版本， 另外包含三个关键元素：
-> 1. method：表示要调用的方法
-> 2. params：表示参数的数组
-> 3. id：客户端分配的一个标识符，可以包含字符串，数字或者为空。如果没有 id，就会被当成是广播通知。这个值一般不能为 Null，且为数字时不能有小数。如果请求中含有这个字段，服务器在响应时，必须原样返回该字段，当有多个请求并使用异步队列发送时可以用来区分请求和响应。

@@ -31,7 +31,8 @@
           "cita/system/amend",
           "cita/system/fee-back",
           "cita/system/version",
-          "cita/system/auto-exec"
+          "cita/system/auto-exec",
+          "cita/system/zktx"
         ]
       },
       {

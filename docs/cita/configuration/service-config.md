@@ -25,8 +25,7 @@ $ ls 0
 
 auth.toml 是 Auth 微服务的配置文件，如下：
 
-```bash
-
+```toml
 count_per_batch = 30
 buffer_duration = 30
 tx_verify_thread_num = 4
@@ -35,7 +34,6 @@ tx_pool_limit = 0
 wal_enable = false
 prof_start = 0
 prof_duration = 0
-
 ```
 
 * `count_per_batch` : 表示批量处理阈值
@@ -60,13 +58,11 @@ prof_duration = 0
 
 consensus.toml 是 Consensus 微服务的配置文件，如下：
 
-```bash
-
+```toml
 [ntp_config]
 enabled = true
 threshold = 1000
 address = "0.pool.ntp.org:123"
-
 ```
 
 * `enabled` : 为 true 表示开启 ntp
@@ -82,10 +78,8 @@ address = "0.pool.ntp.org:123"
 
 chain.toml 是 Chain 微服务的配置文件，如下：
 
-```bash
-
+```toml
 prooftype = 2
-
 ```
 
 * `prooftype` : 表示当前的共识算法，目前只支持 CITA-BFT 算法。
@@ -99,15 +93,13 @@ prooftype = 2
 
 executor.toml 是 Executor 微服务的配置文件，如下：
 
-```bash
-
+```toml
 journaldb_type = "archive"
 prooftype = 2
 grpc_port = 5000
 genesis_path = "./genesis.json"
 statedb_cache_size = 5242880
 eth_compatibility = false
-
 ```
 
 * `journaldb_type` : 表示当前使用的 JournalDB 算法，有 "archive" "light" "fast" "basic" 等4种类型，默认是 archive。
@@ -126,7 +118,7 @@ eth_compatibility = false
 
 jsonrpc.toml 是 RPC 微服务的配置文件， CITA 支持 JsonRpc 和 Websocket 两种通信协议，该文件主要是协议配置相关。如下:
 
-```shell
+```toml
 backlog_capacity = 1000
 
 [profile_config]
@@ -230,7 +222,7 @@ count_per_batch = 30
 
 network.toml 是 Network 微服务的配置文件。文件记录了总节点数、本地节点端口以及其它节点的ip和端口号，用户可以通过增加节点信息来添加节点，并且支持热更新，直接把修改后的文件拷贝过来覆盖即可生效，不用重启进程。
 
-```shell
+```toml
 # Current node ip is 127.0.0.1
 id_card = 0
 port = 4000
@@ -267,7 +259,7 @@ port = 4003
 
 forever.toml 是守护进程的配置文件，每个进程对应一个微服务，`respawn` 表示唤醒次数。
 
-```
+```toml
 name="cita-forever"
 command = "cita-forever"
 pidfile = ".cita-forever.pid"
@@ -319,7 +311,8 @@ respawn = 3
 ### 提示
 
 日志默认输出到文件中，为达到输出到控制台的目的，可以在 forever.toml 中修改进程的启动参数。例如修改 Chain 进程输出到控制台：
-```
+
+```toml
 [[process]]
 name = "cita-chain"
 command = "cita-chain"

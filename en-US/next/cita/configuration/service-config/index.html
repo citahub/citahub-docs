@@ -84,15 +84,14 @@ $ ls 0
 <li>'-s, --stdout' : 日志输出到控制台</li>
 </ul>
 <p>auth.toml 是 Auth 微服务的配置文件，如下：</p>
-<pre><code class="hljs css language-bash">&lt;br /&gt;count_per_batch = 30
-buffer_duration = 30
-tx_verify_thread_num = 4
-tx_verify_cache_size = 100000
-tx_pool_limit = 0
-wal_enable = <span class="hljs-literal">false</span>
-prof_start = 0
-prof_duration = 0
-
+<pre><code class="hljs css language-toml"><span class="hljs-attr">count_per_batch</span> = <span class="hljs-number">30</span>
+<span class="hljs-attr">buffer_duration</span> = <span class="hljs-number">30</span>
+<span class="hljs-attr">tx_verify_thread_num</span> = <span class="hljs-number">4</span>
+<span class="hljs-attr">tx_verify_cache_size</span> = <span class="hljs-number">100000</span>
+<span class="hljs-attr">tx_pool_limit</span> = <span class="hljs-number">0</span>
+<span class="hljs-attr">wal_enable</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">prof_start</span> = <span class="hljs-number">0</span>
+<span class="hljs-attr">prof_duration</span> = <span class="hljs-number">0</span>
 </code></pre>
 <ul>
 <li><code>count_per_batch</code> : 表示批量处理阈值</li>
@@ -114,11 +113,10 @@ prof_duration = 0
 <li>'-s, --stdout' : 日志输出到控制台</li>
 </ul>
 <p>consensus.toml 是 Consensus 微服务的配置文件，如下：</p>
-<pre><code class="hljs css language-bash">&lt;br /&gt;[ntp_config]
-enabled = <span class="hljs-literal">true</span>
-threshold = 1000
-address = <span class="hljs-string">"0.pool.ntp.org:123"</span>
-
+<pre><code class="hljs css language-toml"><span class="hljs-section">[ntp_config]</span>
+<span class="hljs-attr">enabled</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">threshold</span> = <span class="hljs-number">1000</span>
+<span class="hljs-attr">address</span> = <span class="hljs-string">"0.pool.ntp.org:123"</span>
 </code></pre>
 <ul>
 <li><code>enabled</code> : 为 true 表示开启 ntp</li>
@@ -132,8 +130,7 @@ address = <span class="hljs-string">"0.pool.ntp.org:123"</span>
 <li>'-s, --stdout' : 日志输出到控制台</li>
 </ul>
 <p>chain.toml 是 Chain 微服务的配置文件，如下：</p>
-<pre><code class="hljs css language-bash">&lt;br /&gt;prooftype = 2
-
+<pre><code class="hljs css language-toml"><span class="hljs-attr">prooftype</span> = <span class="hljs-number">2</span>
 </code></pre>
 <ul>
 <li><code>prooftype</code> : 表示当前的共识算法，目前只支持 CITA-BFT 算法。</li>
@@ -145,13 +142,12 @@ address = <span class="hljs-string">"0.pool.ntp.org:123"</span>
 <li>'-s, --stdout' : 日志输出到控制台</li>
 </ul>
 <p>executor.toml 是 Executor 微服务的配置文件，如下：</p>
-<pre><code class="hljs css language-bash">&lt;br /&gt;journaldb_type = <span class="hljs-string">"archive"</span>
-prooftype = 2
-grpc_port = 5000
-genesis_path = <span class="hljs-string">"./genesis.json"</span>
-statedb_cache_size = 5242880
-eth_compatibility = <span class="hljs-literal">false</span>
-
+<pre><code class="hljs css language-toml"><span class="hljs-attr">journaldb_type</span> = <span class="hljs-string">"archive"</span>
+<span class="hljs-attr">prooftype</span> = <span class="hljs-number">2</span>
+<span class="hljs-attr">grpc_port</span> = <span class="hljs-number">5000</span>
+<span class="hljs-attr">genesis_path</span> = <span class="hljs-string">"./genesis.json"</span>
+<span class="hljs-attr">statedb_cache_size</span> = <span class="hljs-number">5242880</span>
+<span class="hljs-attr">eth_compatibility</span> = <span class="hljs-literal">false</span>
 </code></pre>
 <ul>
 <li><code>journaldb_type</code> : 表示当前使用的 JournalDB 算法，有 &quot;archive&quot; &quot;light&quot; &quot;fast&quot; &quot;basic&quot; 等4种类型，默认是 archive。</li>
@@ -168,53 +164,53 @@ eth_compatibility = <span class="hljs-literal">false</span>
 <li>'-s, --stdout' : 日志输出到控制台</li>
 </ul>
 <p>jsonrpc.toml 是 RPC 微服务的配置文件， CITA 支持 JsonRpc 和 Websocket 两种通信协议，该文件主要是协议配置相关。如下:</p>
-<pre><code class="hljs css language-shell">backlog_capacity = 1000
-
-[profile_config]
-flag_prof_start = 0
-enable = false
-flag_prof_duration = 0
-
-[http_config]
-allow_origin = "*"
-timeout = 3
-enable = true
-listen_port = "1337"
-listen_ip = "0.0.0.0"
-
-[ws_config]
-panic_on_internal = true
-fragments_grow = true
-panic_on_protocol = false
-enable = true
-in_buffer_capacity = 2048
-panic_on_queue = false
-fragment_size = 65535
-panic_on_timeout = false
-method_strict = false
-thread_number = 2
-panic_on_capacity = false
-masking_strict = false
-key_strict = false
-max_connections = 800
-listen_ip = "0.0.0.0"
-listen_port = "4337"
-queue_size = 200
-fragments_capacity = 100
-tcp_nodelay = false
-shutdown_on_interrupt = true
-out_buffer_grow = true
-panic_on_io = false
-panic_on_new_connection = false
-out_buffer_capacity = 2048
-encrypt_server = false
-in_buffer_grow = true
-panic_on_shutdown = false
-panic_on_encoding = false
-
-[new_tx_flow_config]
-buffer_duration = 30000000
-count_per_batch = 30
+<pre><code class="hljs css language-toml"><span class="hljs-attr">backlog_capacity</span> = <span class="hljs-number">1000</span>
+<span class="hljs-section">
+[profile_config]</span>
+<span class="hljs-attr">flag_prof_start</span> = <span class="hljs-number">0</span>
+<span class="hljs-attr">enable</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">flag_prof_duration</span> = <span class="hljs-number">0</span>
+<span class="hljs-section">
+[http_config]</span>
+<span class="hljs-attr">allow_origin</span> = <span class="hljs-string">"*"</span>
+<span class="hljs-attr">timeout</span> = <span class="hljs-number">3</span>
+<span class="hljs-attr">enable</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">listen_port</span> = <span class="hljs-string">"1337"</span>
+<span class="hljs-attr">listen_ip</span> = <span class="hljs-string">"0.0.0.0"</span>
+<span class="hljs-section">
+[ws_config]</span>
+<span class="hljs-attr">panic_on_internal</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">fragments_grow</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">panic_on_protocol</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">enable</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">in_buffer_capacity</span> = <span class="hljs-number">2048</span>
+<span class="hljs-attr">panic_on_queue</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">fragment_size</span> = <span class="hljs-number">65535</span>
+<span class="hljs-attr">panic_on_timeout</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">method_strict</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">thread_number</span> = <span class="hljs-number">2</span>
+<span class="hljs-attr">panic_on_capacity</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">masking_strict</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">key_strict</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">max_connections</span> = <span class="hljs-number">800</span>
+<span class="hljs-attr">listen_ip</span> = <span class="hljs-string">"0.0.0.0"</span>
+<span class="hljs-attr">listen_port</span> = <span class="hljs-string">"4337"</span>
+<span class="hljs-attr">queue_size</span> = <span class="hljs-number">200</span>
+<span class="hljs-attr">fragments_capacity</span> = <span class="hljs-number">100</span>
+<span class="hljs-attr">tcp_nodelay</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">shutdown_on_interrupt</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">out_buffer_grow</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">panic_on_io</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">panic_on_new_connection</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">out_buffer_capacity</span> = <span class="hljs-number">2048</span>
+<span class="hljs-attr">encrypt_server</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">in_buffer_grow</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">panic_on_shutdown</span> = <span class="hljs-literal">false</span>
+<span class="hljs-attr">panic_on_encoding</span> = <span class="hljs-literal">false</span>
+<span class="hljs-section">
+[new_tx_flow_config]</span>
+<span class="hljs-attr">buffer_duration</span> = <span class="hljs-number">30000000</span>
+<span class="hljs-attr">count_per_batch</span> = <span class="hljs-number">30</span>
 </code></pre>
 <ul>
 <li><code>backlog_capacity</code>: 连接容量大小</li>
@@ -277,23 +273,23 @@ count_per_batch = 30
 <li>'-s, --stdout' : 日志输出到控制台</li>
 </ul>
 <p>network.toml 是 Network 微服务的配置文件。文件记录了总节点数、本地节点端口以及其它节点的ip和端口号，用户可以通过增加节点信息来添加节点，并且支持热更新，直接把修改后的文件拷贝过来覆盖即可生效，不用重启进程。</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> Current node ip is 127.0.0.1</span>
-id_card = 0
-port = 4000
-[[peers]]
-id_card = 1
-ip = "127.0.0.1"
-port = 4001
-
-[[peers]]
-id_card = 2
-ip = "127.0.0.1"
-port = 4002
-
-[[peers]]
-id_card = 3
-ip = "127.0.0.1"
-port = 4003
+<pre><code class="hljs css language-toml"><span class="hljs-comment"># Current node ip is 127.0.0.1</span>
+<span class="hljs-attr">id_card</span> = <span class="hljs-number">0</span>
+<span class="hljs-attr">port</span> = <span class="hljs-number">4000</span>
+<span class="hljs-section">[[peers]]</span>
+<span class="hljs-attr">id_card</span> = <span class="hljs-number">1</span>
+<span class="hljs-attr">ip</span> = <span class="hljs-string">"127.0.0.1"</span>
+<span class="hljs-attr">port</span> = <span class="hljs-number">4001</span>
+<span class="hljs-section">
+[[peers]]</span>
+<span class="hljs-attr">id_card</span> = <span class="hljs-number">2</span>
+<span class="hljs-attr">ip</span> = <span class="hljs-string">"127.0.0.1"</span>
+<span class="hljs-attr">port</span> = <span class="hljs-number">4002</span>
+<span class="hljs-section">
+[[peers]]</span>
+<span class="hljs-attr">id_card</span> = <span class="hljs-number">3</span>
+<span class="hljs-attr">ip</span> = <span class="hljs-string">"127.0.0.1"</span>
+<span class="hljs-attr">port</span> = <span class="hljs-number">4003</span>
 
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="forever"></a><a href="#forever" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Forever</h2>
@@ -310,61 +306,62 @@ port = 4003
 <li>'&quot;&quot;' : 后台启动所有进程</li>
 </ul>
 <p>forever.toml 是守护进程的配置文件，每个进程对应一个微服务，<code>respawn</code> 表示唤醒次数。</p>
-<pre><code class="hljs">name=&quot;cita-forever&quot;
-command = &quot;cita-forever&quot;
-pidfile = &quot;.cita-forever.pid&quot;
+<pre><code class="hljs css language-toml"><span class="hljs-attr">name</span>=<span class="hljs-string">"cita-forever"</span>
+<span class="hljs-attr">command</span> = <span class="hljs-string">"cita-forever"</span>
+<span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-forever.pid"</span>
+<span class="hljs-section">
+[[process]]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">"cita-auth"</span>
+<span class="hljs-attr">command</span> = <span class="hljs-string">"cita-auth"</span>
+<span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"auth.toml"</span>]
+<span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-auth.pid"</span>
+<span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
+<span class="hljs-section">
+[[process]]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">"cita-network"</span>
+<span class="hljs-attr">command</span> = <span class="hljs-string">"cita-network"</span>
+<span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"network.toml"</span>]
+<span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-network.pid"</span>
+<span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
+<span class="hljs-section">
+[[process]]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">"cita-bft"</span>
+<span class="hljs-attr">command</span> = <span class="hljs-string">"cita-bft"</span>
+<span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"consensus.toml"</span>,<span class="hljs-string">"-p"</span>,<span class="hljs-string">"privkey"</span>]
+<span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-bft.pid"</span>
+<span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
+<span class="hljs-section">
+[[process]]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">"cita-jsonrpc"</span>
+<span class="hljs-attr">command</span> = <span class="hljs-string">"cita-jsonrpc"</span>
+<span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"jsonrpc.toml"</span>]
+<span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-jsonrpc.pid"</span>
+<span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
+<span class="hljs-section">
 
-[[process]]
-name = &quot;cita-auth&quot;
-command = &quot;cita-auth&quot;
-args = [&quot;-c&quot;,&quot;auth.toml&quot;]
-pidfile = &quot;.cita-auth.pid&quot;
-respawn = 3
-
-[[process]]
-name = &quot;cita-network&quot;
-command = &quot;cita-network&quot;
-args = [&quot;-c&quot;,&quot;network.toml&quot;]
-pidfile = &quot;.cita-network.pid&quot;
-respawn = 3
-
-[[process]]
-name = &quot;cita-bft&quot;
-command = &quot;cita-bft&quot;
-args = [&quot;-c&quot;,&quot;consensus.toml&quot;,&quot;-p&quot;,&quot;privkey&quot;]
-pidfile = &quot;.cita-bft.pid&quot;
-respawn = 3
-
-[[process]]
-name = &quot;cita-jsonrpc&quot;
-command = &quot;cita-jsonrpc&quot;
-args = [&quot;-c&quot;,&quot;jsonrpc.toml&quot;]
-pidfile = &quot;.cita-jsonrpc.pid&quot;
-respawn = 3
-
-
-[[process]]
-name = &quot;cita-chain&quot;
-command = &quot;cita-chain&quot;
-args = [&quot;-c&quot;,&quot;chain.toml&quot;]
-pidfile = &quot;.cita-chain.pid&quot;
-respawn = 3
-
-[[process]]
-name = &quot;cita-executor&quot;
-command = &quot;cita-executor&quot;
-args = [&quot;-c&quot;,&quot;executor.toml&quot;]
-pidfile = &quot;.cita-executor.pid&quot;
-respawn = 3
+[[process]]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">"cita-chain"</span>
+<span class="hljs-attr">command</span> = <span class="hljs-string">"cita-chain"</span>
+<span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"chain.toml"</span>]
+<span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-chain.pid"</span>
+<span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
+<span class="hljs-section">
+[[process]]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">"cita-executor"</span>
+<span class="hljs-attr">command</span> = <span class="hljs-string">"cita-executor"</span>
+<span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"executor.toml"</span>]
+<span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-executor.pid"</span>
+<span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="提示"></a><a href="#提示" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>提示</h3>
 <p>日志默认输出到文件中，为达到输出到控制台的目的，可以在 forever.toml 中修改进程的启动参数。例如修改 Chain 进程输出到控制台：</p>
-<pre><code class="hljs">[[process]]
-name = &quot;cita-chain&quot;
-command = &quot;cita-chain&quot;
-args = [&quot;-c&quot;,&quot;chain.toml&quot;, &quot;-s&quot;]
-pidfile = &quot;.cita-chain.pid&quot;
-respawn = 3</code></pre>
+<pre><code class="hljs css language-toml"><span class="hljs-section">[[process]]</span>
+<span class="hljs-attr">name</span> = <span class="hljs-string">"cita-chain"</span>
+<span class="hljs-attr">command</span> = <span class="hljs-string">"cita-chain"</span>
+<span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"chain.toml"</span>, <span class="hljs-string">"-s"</span>]
+<span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-chain.pid"</span>
+<span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
+</code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/configuration/chain-config"><span class="arrow-prev">← </span><span>Chain Configuration</span></a><a class="docs-next button" href="/en-US/next/cita/system/contracts"><span>System Contracts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#auth-contract-interface">Auth Contract Interface</a><ul class="toc-headings"><li><a href="#启动参数">启动参数</a></li></ul></li><li><a href="#consensus">Consensus</a><ul class="toc-headings"><li><a href="#启动参数-1">启动参数</a></li></ul></li><li><a href="#chain">Chain</a><ul class="toc-headings"><li><a href="#启动参数-2">启动参数</a></li></ul></li><li><a href="#executor">Executor</a><ul class="toc-headings"><li><a href="#启动参数-3">启动参数</a></li></ul></li><li><a href="#rpc">RPC</a><ul class="toc-headings"><li><a href="#启动参数-4">启动参数</a></li></ul></li><li><a href="#network">Network</a><ul class="toc-headings"><li><a href="#启动参数-5">启动参数</a></li></ul></li><li><a href="#forever">Forever</a><ul class="toc-headings"><li><a href="#启动参数-6">启动参数</a></li><li><a href="#子命令">子命令</a></li><li><a href="#提示">提示</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

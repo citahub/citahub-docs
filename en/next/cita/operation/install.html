@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>部署 CITA · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。&lt;/p&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="部署 CITA · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/cryptape/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/operation/install">English</a></li><li><a href="/zh-CN/next/cita/operation/install">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/cryptape/edit/master/docs/cita/operation/install.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">部署 CITA</h1></header><article><div><span><p>CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。</p>
+<blockquote>
+<ul>
+<li>如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考<a href="./huawei">云服务支持</a>。</li>
+<li>如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 <a href="https://docs.citahub.com/zh-CN/toolchain/testnet/testchain">CITA 测试链</a>。</li>
+</ul>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="适用操作系统声明"></a><a href="#适用操作系统声明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>适用操作系统声明</h2>
+<p>系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)</p>
+<p>如果你使用的是 macOS, 可以直接参考 <a href="https://github.com/cryptape/homebrew-cita">这里</a> 来安装试用 CITA。</p>
+<h2><a class="anchor" aria-hidden="true" id="硬件配置建议"></a><a href="#硬件配置建议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>硬件配置建议</h2>
+<p>配置取决于自身业务，请根据实际情况搭配，以下是建议最低配置：</p>
+<p>体验配置：CPU：2核心、内存：4GB、硬盘：30G
+生产配置：CPU：4核心、内存：8GB、硬盘：200G</p>
+<h2><a class="anchor" aria-hidden="true" id="软件依赖声明"></a><a href="#软件依赖声明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>软件依赖声明</h2>
+<ul>
+<li>依赖 docker，安装 docker 参见 <a href="https://yeasy.gitbooks.io/docker_practice/content/install/">在线资料</a>。</li>
+<li>CITA 的 Docker 镜像托管在 <a href="https://hub.docker.com/r/cita/cita-build/">DockerHub</a> 。 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="安装-cita-命令行工具"></a><a href="#安装-cita-命令行工具" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 CITA 命令行工具</h2>
+<ol>
+<li><p>创建目录</p>
+<pre><code class="hljs">$ mkdir -p /<span class="hljs-class"><span class="hljs-keyword">data</span>/cita</span>
+</code></pre></li>
+<li><p>切换目录</p>
+<pre><code class="hljs">$ cd /<span class="hljs-class"><span class="hljs-keyword">data</span>/cita/</span>
+</code></pre></li>
+<li><p>下载 CITA-CLI 安装包</p>
+<pre><code class="hljs">$ wget https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/cryptape/</span>cita-cli<span class="hljs-regexp">/releases/</span>download<span class="hljs-regexp">/0.19.4/</span>cita-cli-x86_64-musl-tls-<span class="hljs-number">0.19</span>.<span class="hljs-number">4</span>.tar.gz
+</code></pre></li>
+<li><p>解压程序</p>
+<pre><code class="hljs">$ tar zxvf cita-cli-x86_64-musl-tls-<span class="hljs-number">0.19</span>.<span class="hljs-number">4</span><span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>
+</code></pre></li>
+<li><p>复制 CITA-CLI 到 系统可执行文件目录下</p>
+<pre><code class="hljs">$ <span class="hljs-meta">cp</span> -rp cita-cli /<span class="hljs-keyword">bin/
+</span></code></pre></li>
+<li><p>创建管理员账户地址、私钥、公钥</p>
+<pre><code class="hljs">$ cita-cli <span class="hljs-built_in">key</span> <span class="hljs-keyword">create</span>
+</code></pre>
+<p>返回以下内容，</p>
+<pre><code class="hljs">{
+<span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x141d051b1b1922bf686f5df8aad45cefbcb0b696"</span>,
+<span class="hljs-attr">"private"</span>: <span class="hljs-string">"0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768"</span>,
+<span class="hljs-attr">"public"</span>: <span class="hljs-string">"0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"</span>
+}
+</code></pre>
+<blockquote>
+<p>注：此处为示例公私钥对，请不要在生产环境复制使用。&quot;address&quot;: &quot;0x141d051b1b1922bf686f5df8aad45cefbcb0b696&quot; 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。</p>
+</blockquote></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="部署-cita"></a><a href="#部署-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署 CITA</h2>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="2-tab" data-group="group_1" data-tab="tabpanel_2">发布件部署</div><div class="nav-link" id="3-tab" data-group="group_1" data-tab="tabpanel_3">源码部署</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_1" tabindex="-1" id="tabpanel_2"><div><span><h3><a class="anchor" aria-hidden="true" id="从发布件部署-cita"></a><a href="#从发布件部署-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>从发布件部署 CITA</h3>
+<ol>
+<li><p>下载 CITA安装包</p>
+<pre><code class="hljs">$ wget https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/cryptape/</span>cita<span class="hljs-regexp">/releases/</span>download<span class="hljs-regexp">/v0.23.1/</span>cita_secp256k1_sha3.tar.gz
+</code></pre></li>
+<li><p>解压 CITA 程序</p>
+<pre><code class="hljs">$ tar zxvf cita_secp256k1_sha3<span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>
+</code></pre></li>
+<li><p>进入 CITA 目录</p>
+<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita_secp256k1_sha3</span>
+</code></pre></li>
+</ol>
+</span></div></div><div class="tab-pane" data-group="group_1" tabindex="-1" id="tabpanel_3"><div><span><h3><a class="anchor" aria-hidden="true" id="从源码编译部署-cita"></a><a href="#从源码编译部署-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>从源码编译部署 CITA</h3>
+<ol>
+<li>下载 CITA 源码</li>
+</ol>
+<p>从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">clone</span> https://github.com/cryptape/cita.git</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita</span>
+<span class="hljs-meta">$</span><span class="bash"> git submodule init</span>
+<span class="hljs-meta">$</span><span class="bash"> git submodule update</span>
+</code></pre>
+<ol start="2">
+<li>编译源码</li>
+</ol>
+<p>可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make debug</span>
+</code></pre>
+<p>或者</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make release</span>
+</code></pre>
+<blockquote>
+<p>可选择替换 Rust Crates 的官方源，详细教程可以参考：</p>
+<ul>
+<li><a href="http://mirrors.ustc.edu.cn/help/crates.io-index.html">USTC Mirror Help for Rust Crates</a></li>
+<li><a href="https://doc.rust-lang.org/cargo/reference/source-replacement.html">Source Replacement for Rust Crates</a></li>
+<li><a href="https://docs.docker.com/storage/volumes/">How to map a configuration file into docker</a></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>Docker env 使用说明</strong></p>
+<ul>
+<li><p>在源码根目录下，我们提供了 <code>env.sh</code> 脚本，封装了 Docker 相关的操作。
+运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。
+例如：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make debug</span>
+</code></pre>
+<p>即表示在 Docker 环境中运行 <code>make debug</code>。</p></li>
+<li><p>不带任何参数运行 <code>./env.sh</code>，将直接获取一个 Docker 环境的 shell。</p></li>
+<li><p>如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 <code>./env.sh</code> 会出现如下错误：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh</span>
+error: failed switching to "user": unable to find user user: no matching entries in passwd file
+</code></pre>
+<p>因此要保证操作使用的始终是同一个系统用户。</p></li>
+<li><p>如果出现 Docker 相关的报错，可以执行如下命令并重试：</p>
+<pre><code class="hljs css language-shell">docker kill $(docker ps -a -q)
+</code></pre></li>
+</ul>
+</blockquote>
+<ol start="3">
+<li>进入 CITA 目录</li>
+</ol>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> target/install</span>
+</code></pre>
+</span></div></div></div></div><div><span><ol start="4">
+<li><p>初始化链 （super_admin 地址是超级管理员账号即 cita-cli 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））</p>
+<pre><code class="hljs">$ bin/cita create --super_admin "<span class="hljs-number">0</span>x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "<span class="hljs-number">127.0.0.1</span>:<span class="hljs-number">4000,127.0</span>.<span class="hljs-number">0.1:4001</span>,<span class="hljs-number">127.0.0.1</span>:<span class="hljs-number">4002,127.0</span>.<span class="hljs-number">0.1:4003</span>"
+</code></pre>
+<blockquote>
+<ul>
+<li>注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 <a href="./chain-config">链接配置</a></li>
+<li>注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP。</li>
+</ul>
+</blockquote></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="启动-cita"></a><a href="#启动-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 CITA</h2>
+<ol>
+<li><p>启动节点 0</p>
+<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> /bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> /bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
+</code></pre></li>
+<li><p>启动节点 1</p>
+<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> /bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>
+<span class="hljs-meta">$</span><span class="bash"> /bin/cita start <span class="hljs-built_in">test</span>-chain/1</span>
+</code></pre></li>
+<li><p>启动节点 2</p>
+<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> /bin/cita setup <span class="hljs-built_in">test</span>-chain/2</span>
+<span class="hljs-meta">$</span><span class="bash"> /bin/cita start <span class="hljs-built_in">test</span>-chain/2</span>
+</code></pre></li>
+<li><p>启动节点 3</p>
+<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> /bin/cita setup <span class="hljs-built_in">test</span>-chain/3</span>
+<span class="hljs-meta">$</span><span class="bash"> /bin/cita start <span class="hljs-built_in">test</span>-chain/3</span>
+</code></pre></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="验证-cita-是否运行正常"></a><a href="#验证-cita-是否运行正常" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证 CITA 是否运行正常</h2>
+<ol>
+<li><p>查看进程是否启动成功</p>
+<pre><code class="hljs">$ <span class="hljs-keyword">ps</span> -ef | <span class="hljs-keyword">grep</span> cita- |<span class="hljs-keyword">grep</span> -v <span class="hljs-keyword">grep</span> |wc -<span class="hljs-keyword">l</span> &amp;&amp; <span class="hljs-keyword">ps</span> -ef | <span class="hljs-keyword">grep</span> cita- |<span class="hljs-keyword">grep</span> -v <span class="hljs-keyword">grep</span>
+</code></pre>
+<p>返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）</p>
+<pre><code class="hljs"><span class="hljs-number">28</span>
+cita      <span class="hljs-number">6180</span> <span class="hljs-number">32335</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-forever
+cita      <span class="hljs-number">6188</span>  <span class="hljs-number">6180</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-auth -c auth.toml
+cita      <span class="hljs-number">6191</span>  <span class="hljs-number">6180</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-network -c network.toml
+cita      <span class="hljs-number">6193</span>  <span class="hljs-number">6180</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-jsonrpc -c jsonrpc.toml
+cita      <span class="hljs-number">6194</span>  <span class="hljs-number">6180</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-executor -c executor.toml
+cita      <span class="hljs-number">6195</span>  <span class="hljs-number">6180</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-chain -c chain.toml
+cita      <span class="hljs-number">6202</span>  <span class="hljs-number">6180</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-bft -c consensus.toml -p privkey
+cita      <span class="hljs-number">6394</span> <span class="hljs-number">32335</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-forever
+cita      <span class="hljs-number">6402</span>  <span class="hljs-number">6394</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-chain -c chain.toml
+cita      <span class="hljs-number">6405</span>  <span class="hljs-number">6394</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-executor -c executor.toml
+cita      <span class="hljs-number">6407</span>  <span class="hljs-number">6394</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-network -c network.toml
+cita      <span class="hljs-number">6408</span>  <span class="hljs-number">6394</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-bft -c consensus.toml -p privkey
+cita      <span class="hljs-number">6409</span>  <span class="hljs-number">6394</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-auth -c auth.toml
+cita      <span class="hljs-number">6413</span>  <span class="hljs-number">6394</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-jsonrpc -c jsonrpc.toml
+cita      <span class="hljs-number">6613</span> <span class="hljs-number">32335</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-forever
+cita      <span class="hljs-number">6622</span>  <span class="hljs-number">6613</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-bft -c consensus.toml -p privkey
+cita      <span class="hljs-number">6625</span>  <span class="hljs-number">6613</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-executor -c executor.toml
+cita      <span class="hljs-number">6626</span>  <span class="hljs-number">6613</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-jsonrpc -c jsonrpc.toml
+cita      <span class="hljs-number">6627</span>  <span class="hljs-number">6613</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-chain -c chain.toml
+cita      <span class="hljs-number">6628</span>  <span class="hljs-number">6613</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-network -c network.toml
+cita      <span class="hljs-number">6635</span>  <span class="hljs-number">6613</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-auth -c auth.toml
+cita      <span class="hljs-number">6831</span> <span class="hljs-number">32335</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-forever
+cita      <span class="hljs-number">6839</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-executor -c executor.toml
+cita      <span class="hljs-number">6841</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-jsonrpc -c jsonrpc.toml
+cita      <span class="hljs-number">6843</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-bft -c consensus.toml -p privkey
+cita      <span class="hljs-number">6845</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-chain -c chain.toml
+cita      <span class="hljs-number">6846</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-network -c network.toml
+cita      <span class="hljs-number">6857</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-auth -c auth.toml
+</code></pre></li>
+<li><p>调用 RPC 接口 查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化</p>
+<pre><code class="hljs">$ ./env.sh curl -X POST --data '{<span class="hljs-string">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,<span class="hljs-string">"method"</span>:<span class="hljs-string">"blockNumber"</span>,<span class="hljs-string">"params"</span>:<span class="hljs-string">[]</span>,<span class="hljs-string">"id"</span>:<span class="hljs-number">83</span>}' <span class="hljs-number">127.0.0.1:1337</span>
+</code></pre>
+<p>返回结果</p>
+<pre><code class="hljs">{<span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,<span class="hljs-attr">"id"</span>:<span class="hljs-number">83</span>,<span class="hljs-attr">"result"</span>:<span class="hljs-string">"0x7d"</span>}
+</code></pre></li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/cita/huawei"><span class="arrow-prev">← </span><span>华为云一键部署</span></a><a class="docs-next button" href="/en/next/cita/operation/chain-config"><span>链级配置</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#适用操作系统声明">适用操作系统声明</a></li><li><a href="#硬件配置建议">硬件配置建议</a></li><li><a href="#软件依赖声明">软件依赖声明</a></li><li><a href="#安装-cita-命令行工具">安装 CITA 命令行工具</a></li><li><a href="#部署-cita">部署 CITA</a><ul class="toc-headings"><li><a href="#从发布件部署-cita">从发布件部署 CITA</a></li><li><a href="#从源码编译部署-cita">从源码编译部署 CITA</a></li></ul></li><li><a href="#启动-cita">启动 CITA</a></li><li><a href="#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en","version:next"]}
+              });
+            </script></body></html>

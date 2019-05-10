@@ -552,7 +552,7 @@ params = unverify_tx.protobuf_serialize().to_hex_string();
 
 ```shell
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "0x6"],"id":2}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "latest"],"id":2}'
 
 // Result
 {
@@ -627,7 +627,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b
 * Example
 
     ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","0x1f"],"id":1}'
+    curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","latest"],"id":1}'
 
     // Result:
     {
@@ -656,7 +656,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b
 * Example
 
     ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
+    curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}'
 
     // Result:
     {
@@ -787,7 +787,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e96
 * Example
 
     ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
+    curl -X POST --data '{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}'
 
     // Result:
     {
@@ -1002,7 +1002,7 @@ Returns an array of all logs matching filter with given id.
 * Example
 
     ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"id":1}' 127.0.0.1:1337
+    curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}' 127.0.0.1:1337
 
     {
         "jsonrpc": "2.0",

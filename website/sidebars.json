@@ -23,19 +23,26 @@
           "cita/system/node",
           "cita/system/permission",
           "cita/system/user",
-          "cita/system/quota",
-          "cita/system/price",
           "cita/system/log",
           "cita/system/snapshot",
           "cita/system/batch-tx",
           "cita/system/emg-brake",
           "cita/system/amend",
-          "cita/system/fee-back",
           "cita/system/version",
           "cita/system/auto-exec",
           "cita/system/zktx"
         ]
       },
+      {
+        "label": "Economics Model",
+        "type": "subcategory",
+        "ids": [
+          "cita/economics/model",
+          "cita/economics/quotalimit",
+          "cita/economics/quota",
+          "cita/economics/charge"
+        ]
+      }, 
       {
         "label": "JSON-RPC",
         "type": "subcategory",

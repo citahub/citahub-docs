@@ -117,29 +117,29 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 1. 启动节点 0
 
    ```
-   $ /bin/cita setup test-chain/0
-   $ /bin/cita start test-chain/0
+   $ ./bin/cita setup test-chain/0
+   $ ./bin/cita start test-chain/0
    ```
 
 2. 启动节点 1
 
    ```
-   $ /bin/cita setup test-chain/1
-   $ /bin/cita start test-chain/1
+   $ ./bin/cita setup test-chain/1
+   $ ./bin/cita start test-chain/1
    ```
 
 3. 启动节点 2
 
    ```
-   $ /bin/cita setup test-chain/2
-   $ /bin/cita start test-chain/2
+   $ ./bin/cita setup test-chain/2
+   $ ./bin/cita start test-chain/2
    ```
 
 4. 启动节点 3
 
    ```
-   $ /bin/cita setup test-chain/3
-   $ /bin/cita start test-chain/3
+   $ ./bin/cita setup test-chain/3
+   $ ./bin/cita start test-chain/3
    ```
 
 ### 验证 CITA 是否运行正常

@@ -6,12 +6,13 @@
       "cita/getting-started",
       "cita/huawei",
       {
-        "label": "Configuration",
+        "label": "Operation",
         "type": "subcategory",
         "ids": [
-          "cita/configuration/config-overview",
-          "cita/configuration/chain-config",
-          "cita/configuration/service-config"
+          "cita/operation/install",
+          "cita/operation/chain-config",
+          "cita/operation/service-config",
+          "cita/operation/protocol"
         ]
       },
       {
@@ -77,11 +78,6 @@
       },
       "cita/crosschain/crosschain-contract-example",
       {
-        "label": "Protocol Upgrade",
-        "type": "subcategory",
-        "ids": ["cita/protocol-upgrade/overview", "cita/protocol-upgrade/v0", "cita/protocol-upgrade/v1"]
-      },
-      {
         "label": "Reference",
         "type": "subcategory",
         "ids": ["cita/ref/addresses", "cita/ref/glossary","cita/ref/faq"]
@@ -138,6 +134,11 @@
         "label": "CITA Web Debugger",
         "type": "subcategory",
         "ids": ["toolchain/web-debugger/web-debugger-intro"]
+      },
+      {
+        "label": "CITA Testnet",
+        "type": "subcategory",
+        "ids": ["toolchain/testnet/testchain"]
       }
     ],
     "Contributing": ["contributing", "roadmap"]

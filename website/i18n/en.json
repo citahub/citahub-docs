@@ -23,15 +23,6 @@
       "cita/cita-intro": {
         "title": "关于 CITA"
       },
-      "cita/configuration/chain-config": {
-        "title": "链级配置"
-      },
-      "cita/configuration/config-overview": {
-        "title": "配置概览"
-      },
-      "cita/configuration/service-config": {
-        "title": "微服务配置"
-      },
       "cita/crosschain/crosschain-contract-example": {
         "title": "跨链合约示例",
         "sidebar_label": "跨链"
@@ -42,14 +33,17 @@
       "cita/huawei": {
         "title": "华为云一键部署"
       },
-      "cita/protocol-upgrade/overview": {
-        "title": "协议升级概览"
+      "cita/operation/chain-config": {
+        "title": "链级配置"
       },
-      "cita/protocol-upgrade/v0": {
-        "title": "v0 协议"
+      "cita/operation/install": {
+        "title": "部署 CITA"
       },
-      "cita/protocol-upgrade/v1": {
-        "title": "v1 协议"
+      "cita/operation/protocol": {
+        "title": "协议升级"
+      },
+      "cita/operation/service-config": {
+        "title": "微服务配置"
       },
       "cita/ref/addresses": {
         "title": "系统保留地址"
@@ -213,6 +207,9 @@
       },
       "toolchain/sdk/swift-sdk": {
         "title": "CITA Swift SDK"
+      },
+      "toolchain/testnet/testchain": {
+        "title": "测试链"
       },
       "toolchain/toolchain-intro/toolchain-intro": {
         "title": "CITA Toolchain 简介",
@@ -2253,6 +2250,24 @@
       },
       "version-0.20.2-toolchain/sdk/java-sdk": {
         "title": "CITA Java SDK"
+      },
+      "cita/configuration/chain-config": {
+        "title": "链级配置"
+      },
+      "cita/configuration/config-overview": {
+        "title": "配置概览"
+      },
+      "cita/configuration/service-config": {
+        "title": "微服务配置"
+      },
+      "cita/protocol-upgrade/overview": {
+        "title": "协议升级概览"
+      },
+      "cita/protocol-upgrade/v0": {
+        "title": "v0 协议"
+      },
+      "cita/protocol-upgrade/v1": {
+        "title": "v1 协议"
       },
       "version-0.23.0-cita/configuration/service-config": {
         "title": "微服务配置"

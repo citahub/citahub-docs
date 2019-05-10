@@ -27,6 +27,18 @@
         "title": "跨链合约示例",
         "sidebar_label": "跨链"
       },
+      "cita/economics/charge": {
+        "title": "Charge 模式"
+      },
+      "cita/economics/model": {
+        "title": "选择经济模型"
+      },
+      "cita/economics/quota": {
+        "title": "Quota 模式"
+      },
+      "cita/economics/quotalimit": {
+        "title": "设置  Quota Limit"
+      },
       "cita/getting-started": {
         "title": "快速入门"
       },
@@ -161,6 +173,9 @@
       },
       "cita/system/version": {
         "title": "协议版本号管理"
+      },
+      "cita/system/zktx": {
+        "title": "隐私交易示例"
       },
       "contributing": {
         "title": "Contributing"

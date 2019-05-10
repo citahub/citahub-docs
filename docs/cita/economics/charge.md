@@ -5,19 +5,19 @@ title: Charge 模式
 
 Charge 模式，链上是存在原生代币的，运营方不仅可以对原生代币自身的一些属性（名字，标识等，请参考[链级配置](../operation/chain-config）进行配置，也可以对代币总量，代币的分发方式，代币的流转模型进行个性化定制。
 
-概括的来说，系统会将用户发送交易（转账，部署合约，调用合约）需要消耗的 Quota 换算成原生代币，并收取该数量的原生代币作为交易手续费，这部分交易手续费可以给到负责出块的共识节点（矿工），也可以给到一个特定的地址（由管理员设置）。除了用交易手续费来奖励负责出块的共识节点（矿工）之外，还可以设置一定的出块奖励给矿工，这一部分奖励可以通过上层合约实现，以便更好的根据实际业务场景进行设计和调整。下面我们将展开更多细节。
+概括的来说，系统会将用户发送交易（转账，部署合约，调用合约）需要消耗的 Quota 换算成原生代币，并收取该数量的原生代币作为交易手续费，这部分交易手续费可以给到负责出块的共识节点（矿工），也可以给到一个特定的地址（由管理员设置）。除了用交易手续费来奖励负责出块的共识节点（矿工）之外，还可以设置一定的出块奖励给矿工，这一部分奖励可以通过上层合约实现，以便更好地根据实际业务场景进行设计和调整。下面我们将展开更多细节。
 
 ## 代币总量设置
 
-在生成链配置的时候可以通过 `--init_token` 选择来指定代币发行总量，这部分代币将会在链启动后，存到 `superadmin` 账户，代币将由 `superadmin` 统一再分配。
+在生成链配置的时候可以通过 `--init_token` 选项来指定代币发行总量，这部分代币将会在链启动后，存到 `superadmin` 账户，代币将由 `superadmin` 统一再分配。
 
 若没有指定 `init_token` ，系统会默认将代币总量设置为 `0xffffffffffffffffffffffffff` 。
 
 ### 设置代币总量操作示例：
 
-设置链的代币总量为 10,000,000,000 (0x2540BE400):
+设置链的代币总量为 10_000_000_000 (0x2540BE400):
 
-```
+```shell
 bin/cita bebop create --init_token 0x2540BE400 --contract_arguments SysConfig.economicalModel=1 --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
@@ -37,18 +37,19 @@ CITA 提供灵活的分发方式，以适配多样的业务需求:
 
 在 CITA 中，`手续费 = quotaUsed * quotaPrice`
 
-* 手续费：用户以原生代币进行支付。单位：ctt（以测试链上的原生代币 CTT 为例）。
-* quotaUsed：虚拟机中的每个命令都被设置了相应的 quota 消耗值。quotaUsed 是所有被执行的命令的 Quota 消耗值总和。单位：quota。
+* 手续费：用户以原生代币进行支付。
+* quotaUsed：虚拟机中的每个命令都被设置了相应的 quota 消耗值。quotaUsed 是所有被执行的指令的 Quota 消耗值总和。
+* quotaPrice ：单位 quota 需要消耗的原生代币数量。quotaPrice 默认为1000000，而且为了更好的满足运营方的需求，我们提供了设置 `quotaPrice` 的接口，拥有权限的管理员在起链后可以通过发送交易动态的来设置 quotaPrice的值。具体操作示例可参考下面的修改 quotaPrice 操作示例。
 
-* quotaPrice ：单位 quota 需要消耗的原生代币数量。单位：ctt/quota。quotaPrice默认为1000000 ctt/quota，而且为了更好的满足运营方的需求，我们提供了设置 `quotaPrice` 的接口，拥有权限的管理员在起链后可以通过发送交易动态的来设置 quotaPrice的值。具体操作示例可参考下面的修改 quotaPrice 操作示例
+系统规定 1 native-token（原生代币） = 10^18 quota，运营方可以通过调节 Quota Price 高低来调整原生代币的使用价值。
 
-交易手续费默认是返还给打包该块的共识节点，但运营方也可以通过设置 `checkFeeBackPlatform` 和 `chainOwner`，将出块奖励返还给一个特定的地址。具体操作示例参考设置交易手续费返还的地址操作示例()
+交易手续费默认是返还给打包该块的共识节点，但运营方也可以通过设置 `checkFeeBackPlatform` 和 `chainOwner`，将出块奖励返还给一个特定的地址。具体操作示例参考下面的设置交易手续费返还的地址操作示例。
 
 ### 修改 quotaPrice 操作示例
 
-默认的 `quotaPrice` 默认为 1000000 ctt/quota， 接下来演示管理员如何修改 quotaPrice。
+默认的 `quotaPrice` 默认为 1000000， 接下来演示管理员如何修改 quotaPrice。
 
-> * 0.20 版本之前的默认 `quotaPrice` 是 1 ctt/quota.
+> * 0.20 版本之前的默认 `quotaPrice` 是 1。
 > * 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式进行演示。
 
 首先查询当前的 `quotaPrice`：
@@ -68,7 +69,7 @@ $ cita-cli scm PriceManager getQuotaPrice
 ```
 
 得到 `quotaPrice` 是十六进制的默认值。
-修改 `quotaPrice`， 我们把 `quotaPrice` 由 1000000 ctt/quota 改为 2000000 ctt/quota：
+修改 `quotaPrice`， 我们把 `quotaPrice` 由 1000000 改为 2000000：
 
 ```shell
 $ cita-cli scm PriceManager setQuotaPrice \
@@ -89,6 +90,33 @@ $ cita-cli scm PriceManager getQuotaPrice
   "id": 1,
   "jsonrpc": "2.0",
   "result": "0x00000000000000000000000000000000000000000000000000000000001e8480"
+}
+```
+
+**特殊情况**
+现在 CITA 支持在创建链的时候将 quotaPrice 设置成 0。
+
+> 初始化设置 quotaPrice 为 0，之后还是可以设置为大于 0 的。不建议反向操作。
+
+1. 用以下命令对链进行初始化
+
+```shell
+./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.economicalModel=1 PriceManager.quotaPrice=0
+```
+
+2. 链启动后，进行验证
+
+```shell
+cita-cli scm PriceManager getQuotaPrice
+```
+
+得到
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
 }
 ```
 
@@ -143,7 +171,7 @@ $ ./bin/cita create \
    }
    ```
 
-3. 让我们来发一个[部署合约的交易]()并获取回执，来看看余额的变化吧。
+3. 让我们来发一个部署合约的交易并获取回执，来看看余额的变化吧。
 
    ```shell
    $ rpc sendRawTransaction \ 
@@ -152,28 +180,28 @@ $ ./bin/cita create \
    $ rpc getTransactionReceipt --hash "0x39c4cd332892fb5db11c250275b9a130bf3c087ebdf47b6504d65347ec349406"
    ```
 
-    回执输出：
+   回执输出：
 
-    ```json
-    {
-      "id": 1,
-      "jsonrpc": "2.0",
-      "result": {
-        "blockHash": "0x72d1eb886dda61bc5b58f024d5edcf920b15f2e5978ab55f034941b18beb56a8",
-        "blockNumber": "0x1b",
-        "contractAddress": "0x27ec3678e4d61534ab8a87cf8feb8ac110ddeda5",
-        "cumulativeQuotaUsed": "0x1a004",
-        "errorMessage": null,
-        "logs": [
-        ],
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "quotaUsed": "0x1a004",
-        "root": null,
-        "transactionHash": "0x59df5370e52c4a6af60c869c35222ae7e32b6259e901e94e89be4810dfe7e711",
-        "transactionIndex": "0x0"
-      }
-    }
-    ```
+   ```json
+   {
+     "id": 1,
+     "jsonrpc": "2.0",
+     "result": {
+       "blockHash": "0x72d1eb886dda61bc5b58f024d5edcf920b15f2e5978ab55f034941b18beb56a8",
+       "blockNumber": "0x1b",
+       "contractAddress": "0x27ec3678e4d61534ab8a87cf8feb8ac110ddeda5",
+       "cumulativeQuotaUsed": "0x1a004",
+       "errorMessage": null,
+       "logs": [
+       ],
+       "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+       "quotaUsed": "0x1a004",
+       "root": null,
+       "transactionHash": "0x59df5370e52c4a6af60c869c35222ae7e32b6259e901e94e89be4810dfe7e711",
+       "transactionIndex": "0x0"
+     }
+   }
+   ```
 
 4. 再来查一下管理员余额：
 

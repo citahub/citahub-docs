@@ -1,6 +1,6 @@
 ---
 id: quotalimit
-title: 设置  Quota Limit
+title: 设置 Quota Limit
 ---
 
 ## 概述
@@ -60,7 +60,6 @@ $ scm QuotaManager getBQL
   "id": 1,
   "jsonrpc": "2.0",
   "result": "0x0000000000000000000000000000000000000000000000000000000020000000"
-  "
 }
 ```
 

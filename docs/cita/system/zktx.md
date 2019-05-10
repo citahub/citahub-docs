@@ -9,10 +9,10 @@ title: 隐私交易示例
 
 示例中使用的环境如下：
 
-* [Rust]: `rustc 1.36.0-nightly (d628c2e64 2019-05-05)`
-* [CITA]: develop commit 为 `6f8fcdf3dc5bc36fb72f0c183ae9fecfe791dacc`
-* [zktx]: master commit 为 `df9371c58296885a780bdf44c270703ffa7ac5e9`
-* [zktx_example]: master commit 为 `1b2f149245184ab84261f137509af8d865276fad`
+* [Rust]: `rustc 1.34.1 (fc50f328b 2019-04-24)`
+* [CITA]: develop commit 为 `87e11818081a9d2a883341bebf2aeb95c59c15fd`
+* [zktx]: master commit 为 `03fcc4b02432f42e53563deccdaaa767fd7a0ad6`
+* [zktx_example]: master commit 为 `b37ec8fe88fb2d8a48a4651419ed0c536d047c73`
 
 ### 准备工作
 
@@ -39,7 +39,11 @@ cd zktx_example && cargo run --release --bin gen_params
 
 #### 编译 `CITA`
 
-使用 `make debug` 或者 `make release`
+详细信息可查看 [编译 CITA] 文档，如下操作：
+
+```shell
+./env.sh make
+```
 
 #### 生成 `CITA` 配置
 
@@ -86,4 +90,5 @@ cd ../../zktx_example && cargo run --release --bin client
 [zktx]: (https://github.com/cryptape/zktx)
 [zktx_example]: (https://github.com/cryptape/zktx_example)
 [快速入门]: (https://docs.citahub.com/zh-CN/cita/getting-started)
+[编译 CITA]: (https://docs.citahub.com/zh-CN/cita/getting-started#%E7%BC%96%E8%AF%91-cita)
 [配置]: (https://docs.citahub.com/zh-CN/cita/configuration/config-overview)

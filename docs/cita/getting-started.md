@@ -185,17 +185,21 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    cita      6857  6831  0 10:54 ?        00:00:00 cita-auth -c auth.toml
    ```
 
-2. 调用 RPC 接口 查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化
+2. 调用 RPC 接口查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化
 
    ```shell
-   $ ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+   $ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
    ```
 
-   返回结果
+   返回结果：
 
    ```json
    {"jsonrpc":"2.0","id":83,"result":"0x7d"}
    ```
+   其中 `0x7d` 表示返回块高度，具体数据以所查询的链实际块高为准。
+   只要能连续查询到块高度，并且块高度在增长，则表示节点已经开始正常出块
+
+   更多信息请查看[验证](#验证)。
 
 ### 停止节点
 
@@ -249,27 +253,8 @@ CITA 提供了支持 JSON-RPC 2.0 (https://www.jsonrpc.org/specification)  协�
   }
   ```
 
-* 查看当前节点区块高度
-
-  Request:
-
-  ```shell
-  curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
-  ```
-
-  Result:
-
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "id": 83,
-    "result": "0x8"
-  }
-  ```
-
-  返回块高度，表示节点已经开始正常出块。
-
->Tips：JSON-RPC 协议要求发送 JSON 格式的请求参数，其中 "jsonrpc":"2.0" 是固定的协议版本， 另外包含三个关键元素：
+> Tips：JSON-RPC 协议要求发送 JSON 格式的请求参数，其中 "jsonrpc":"2.0" 是固定的协议版本， 另外包含三个关键元素：
+>
 > 1. method：表示要调用的方法
 > 2. params：表示参数的数组
 > 3. id：客户端分配的一个标识符，可以包含字符串，数字或者为空。如果没有 id，就会被当成是广播通知。这个值一般不能为 Null，且为数字时不能有小数。如果请求中含有这个字段，服务器在响应时，必须原样返回该字段，当有多个请求并使用异步队列发送时可以用来区分请求和响应。

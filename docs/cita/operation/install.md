@@ -10,7 +10,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ## 适用操作系统声明
 
-系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4) 
+系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
 
 如果你使用的是 macOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA。
 
@@ -19,7 +19,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 配置取决于自身业务，请根据实际情况搭配，以下是建议最低配置：
 
 体验配置：CPU：2核心、内存：4GB、硬盘：30G
-生产配置：CPU：4核心、内存：8GB、硬盘：200G 
+生产配置：CPU：4核心、内存：8GB、硬盘：200G
 
 ## 软件依赖声明
 
@@ -63,7 +63,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    ```
    $ cita-cli key create
    ```
-    
+
    返回以下内容，
 
    ```
@@ -94,7 +94,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    ```
    $ tar zxvf cita_secp256k1_sha3.tar.gz
    ```
-     
+
 3. 进入 CITA 目录
 
    ```
@@ -247,7 +247,7 @@ $ cd target/install
    cita      6845  6831  0 10:54 ?        00:00:00 cita-chain -c chain.toml
    cita      6846  6831  0 10:54 ?        00:00:00 cita-network -c network.toml
    cita      6857  6831  0 10:54 ?        00:00:00 cita-auth -c auth.toml
-   ``` 
+   ```
 
 2. 调用 RPC 接口 查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化
 
@@ -255,7 +255,7 @@ $ cd target/install
    $ ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
    ```
 
-   返回结果 
+   返回结果
 
    ```
    {"jsonrpc":"2.0","id":83,"result":"0x7d"}

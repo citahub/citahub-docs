@@ -15,6 +15,8 @@ $ yarn install
 $ ENABLE_SOURCE_DOCS=true yarn start # use set ENABLE_SOURCE_DOCS to set the environment
 ```
 
+Open your brower, and enter the `http://localhost:3000/en/next/welcome`
+
 ### Build the documentation site
 
 #### Initializing the website

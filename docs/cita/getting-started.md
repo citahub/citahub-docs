@@ -32,47 +32,47 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 1. 创建目录
 
-   ```
+   ```shell
    $ mkdir -p /data/cita
    ```
 
 2. 切换目录
 
-   ```
+   ```shell
    $ cd /data/cita/
    ```
 
 3. 下载 CITA-CLI 安装包
 
-   ```
+   ```shell
    $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.4/cita-cli-x86_64-musl-tls-0.19.4.tar.gz
    ```
 
 4. 解压程序
 
-   ```
+   ```shell
    $ tar zxvf cita-cli-x86_64-musl-tls-0.19.4.tar.gz
    ```
 
 5. 复制 CITA-CLI 到 系统可执行文件目录下
 
-   ```
+   ```shell
    $ cp -rp cita-cli /bin/
    ```
 
 6. 创建管理员账户地址、私钥、公钥
 
-   ```
+   ```shell
    $ cita-cli key create
    ```
 
    返回以下内容，
 
-   ```
+   ```json
    {
-   "address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696",
-   "private": "0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768",
-   "public": "0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"
+     "address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696",
+     "private": "0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768",
+     "public": "0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"
    }
    ```
 
@@ -82,30 +82,31 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 1. 切换目录
 
-   ```
+   ```shell
    $ cd /data/cita/
    ```
 
 2. 下载 CITA 安装包
 
-   ```
+   ```shell
    $ wget https://github.com/cryptape/cita/releases/download/v0.23.1/cita_secp256k1_sha3.tar.gz
    ```
 
 3. 解压 CITA 程序
 
-   ```
+   ```shell
    $ tar zxvf cita_secp256k1_sha3.tar.gz
    ```
 
 4. 进入 CITA 目录
 
-   ```
+   ```shell
    $ cd cita_secp256k1_sha3
    ```
+
 5. 初始化链 （super_admin 地址是超级管理员账号即 CITA-CLI 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））
 
-   ```
+   ```shell
    $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
    ```
 
@@ -116,28 +117,28 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 1. 启动节点 0
 
-   ```
+   ```shell
    $ ./bin/cita setup test-chain/0
    $ ./bin/cita start test-chain/0
    ```
 
 2. 启动节点 1
 
-   ```
+   ```shell
    $ ./bin/cita setup test-chain/1
    $ ./bin/cita start test-chain/1
    ```
 
 3. 启动节点 2
 
-   ```
+   ```shell
    $ ./bin/cita setup test-chain/2
    $ ./bin/cita start test-chain/2
    ```
 
 4. 启动节点 3
 
-   ```
+   ```shell
    $ ./bin/cita setup test-chain/3
    $ ./bin/cita start test-chain/3
    ```
@@ -146,7 +147,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 1. 查看进程是否启动成功
 
-   ```
+   ```shell
    $ ps -ef | grep cita- |grep -v grep |wc -l && ps -ef | grep cita- |grep -v grep
    ```
 
@@ -186,13 +187,13 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 2. 调用 RPC 接口 查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化
 
-   ```
+   ```shell
    $ ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
    ```
 
    返回结果
 
-   ```
+   ```json
    {"jsonrpc":"2.0","id":83,"result":"0x7d"}
    ```
 

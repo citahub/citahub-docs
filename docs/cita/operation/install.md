@@ -6,12 +6,12 @@ title: 部署 CITA
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。
 
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](./huawei)。
-> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [CITA 测试链](https://docs.citahub.com/zh-CN/toolchain/testnet/testchain)。
+> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [CITA 测试链](../../toolchain/testnet/testchain)。
 
 ## [适用操作系统声明](../getting-started#适用操作系统声明)
 ## [硬件配置建议](../getting-started#硬件配置建议)
 ## [软件依赖声明](../getting-started#软件依赖声明)
-## [安装 CITA 命令行工具](../getting-started#软件依赖声明)
+## [安装 CITA 客户端工具](../getting-started#安装-cita-客户端工具)
 ## 部署 CITA
 
 <!--DOCUSAURUS_CODE_TABS-->

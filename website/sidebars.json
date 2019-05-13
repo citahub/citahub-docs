@@ -33,7 +33,8 @@
           "cita/system/fee-back",
           "cita/system/version",
           "cita/system/auto-exec",
-          "cita/system/zktx"
+          "cita/system/zktx",
+          "cita/system/store"
         ]
       },
       {

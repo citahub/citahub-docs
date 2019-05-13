@@ -91,81 +91,82 @@
 <h3><a class="anchor" aria-hidden="true" id="安装-cita-客户端工具"></a><a href="#安装-cita-客户端工具" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 CITA 客户端工具</h3>
 <ol>
 <li><p>创建目录</p>
-<pre><code class="hljs">$ mkdir -p /<span class="hljs-class"><span class="hljs-keyword">data</span>/cita</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> mkdir -p /data/cita</span>
 </code></pre></li>
 <li><p>切换目录</p>
-<pre><code class="hljs">$ cd /<span class="hljs-class"><span class="hljs-keyword">data</span>/cita/</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
 </code></pre></li>
 <li><p>下载 CITA-CLI 安装包</p>
-<pre><code class="hljs">$ wget https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/cryptape/</span>cita-cli<span class="hljs-regexp">/releases/</span>download<span class="hljs-regexp">/0.19.4/</span>cita-cli-x86_64-musl-tls-<span class="hljs-number">0.19</span>.<span class="hljs-number">4</span>.tar.gz
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> wget https://github.com/cryptape/cita-cli/releases/download/0.19.4/cita-cli-x86_64-musl-tls-0.19.4.tar.gz</span>
 </code></pre></li>
 <li><p>解压程序</p>
-<pre><code class="hljs">$ tar zxvf cita-cli-x86_64-musl-tls-<span class="hljs-number">0.19</span>.<span class="hljs-number">4</span><span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> tar zxvf cita-cli-x86_64-musl-tls-0.19.4.tar.gz</span>
 </code></pre></li>
 <li><p>复制 CITA-CLI 到 系统可执行文件目录下</p>
-<pre><code class="hljs">$ <span class="hljs-meta">cp</span> -rp cita-cli /<span class="hljs-keyword">bin/
-</span></code></pre></li>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cp -rp cita-cli /bin/</span>
+</code></pre></li>
 <li><p>创建管理员账户地址、私钥、公钥</p>
-<pre><code class="hljs">$ cita-cli <span class="hljs-built_in">key</span> <span class="hljs-keyword">create</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli key create</span>
 </code></pre>
 <p>返回以下内容，</p>
-<pre><code class="hljs">{
-<span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x141d051b1b1922bf686f5df8aad45cefbcb0b696"</span>,
-<span class="hljs-attr">"private"</span>: <span class="hljs-string">"0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768"</span>,
-<span class="hljs-attr">"public"</span>: <span class="hljs-string">"0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"</span>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x141d051b1b1922bf686f5df8aad45cefbcb0b696"</span>,
+  <span class="hljs-attr">"private"</span>: <span class="hljs-string">"0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768"</span>,
+  <span class="hljs-attr">"public"</span>: <span class="hljs-string">"0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"</span>
 }
 </code></pre>
 <blockquote>
 <p>注：此处为示例公私钥对，不要在生产环境复制使用。&quot;address&quot;: &quot;0x141d051b1b1922bf686f5df8aad45cefbcb0b696&quot; 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。</p>
 </blockquote></li>
 </ol>
-<h3><a class="anchor" aria-hidden="true" id="安装-cita"></a><a href="#安装-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 CITA</h3>
+<h3><a class="anchor" aria-hidden="true" id="下载-cita"></a><a href="#下载-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>下载 CITA</h3>
 <ol>
 <li><p>切换目录</p>
-<pre><code class="hljs">$ cd /<span class="hljs-class"><span class="hljs-keyword">data</span>/cita/</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
 </code></pre></li>
 <li><p>下载 CITA 安装包</p>
-<pre><code class="hljs">$ wget https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/cryptape/</span>cita<span class="hljs-regexp">/releases/</span>download<span class="hljs-regexp">/v0.23.1/</span>cita_secp256k1_sha3.tar.gz
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> wget https://github.com/cryptape/cita/releases/download/v0.23.1/cita_secp256k1_sha3.tar.gz</span>
 </code></pre></li>
 <li><p>解压 CITA 程序</p>
-<pre><code class="hljs">$ tar zxvf cita_secp256k1_sha3<span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> tar zxvf cita_secp256k1_sha3.tar.gz</span>
 </code></pre></li>
 <li><p>进入 CITA 目录</p>
-<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita_secp256k1_sha3</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita_secp256k1_sha3</span>
 </code></pre></li>
-<li><p>初始化链 （super_admin 地址是超级管理员账号即 CITA-CLI 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））</p>
-<pre><code class="hljs">$ bin/cita create --super_admin "<span class="hljs-number">0</span>x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "<span class="hljs-number">127.0.0.1</span>:<span class="hljs-number">4000,127.0</span>.<span class="hljs-number">0.1:4001</span>,<span class="hljs-number">127.0.0.1</span>:<span class="hljs-number">4002,127.0</span>.<span class="hljs-number">0.1:4003</span>"
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="配置-cita"></a><a href="#配置-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置 CITA</h3>
+<p>初始化链 （super_admin 地址是超级管理员账号即 CITA-CLI 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita create --super_admin <span class="hljs-string">"0x141d051b1b1922bf686f5df8aad45cefbcb0b696"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
 </code></pre>
 <blockquote>
 <ul>
-<li>注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 <a href="https://docs.citahub.com/zh-CN/cita/operation/chain-config">链接配置</a></li>
+<li>注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 <a href="./operation/chain-config">链接配置</a></li>
 <li>注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP。</li>
 </ul>
-</blockquote></li>
-</ol>
+</blockquote>
 <h3><a class="anchor" aria-hidden="true" id="启动-cita"></a><a href="#启动-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 CITA</h3>
 <ol>
 <li><p>启动节点 0</p>
-<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> /bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
-<span class="hljs-meta">$</span><span class="bash"> /bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
 </code></pre></li>
 <li><p>启动节点 1</p>
-<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> /bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>
-<span class="hljs-meta">$</span><span class="bash"> /bin/cita start <span class="hljs-built_in">test</span>-chain/1</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/1</span>
 </code></pre></li>
 <li><p>启动节点 2</p>
-<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> /bin/cita setup <span class="hljs-built_in">test</span>-chain/2</span>
-<span class="hljs-meta">$</span><span class="bash"> /bin/cita start <span class="hljs-built_in">test</span>-chain/2</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/2</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/2</span>
 </code></pre></li>
 <li><p>启动节点 3</p>
-<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> /bin/cita setup <span class="hljs-built_in">test</span>-chain/3</span>
-<span class="hljs-meta">$</span><span class="bash"> /bin/cita start <span class="hljs-built_in">test</span>-chain/3</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/3</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/3</span>
 </code></pre></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="验证-cita-是否运行正常"></a><a href="#验证-cita-是否运行正常" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证 CITA 是否运行正常</h3>
 <ol>
 <li><p>查看进程是否启动成功</p>
-<pre><code class="hljs">$ <span class="hljs-keyword">ps</span> -ef | <span class="hljs-keyword">grep</span> cita- |<span class="hljs-keyword">grep</span> -v <span class="hljs-keyword">grep</span> |wc -<span class="hljs-keyword">l</span> &amp;&amp; <span class="hljs-keyword">ps</span> -ef | <span class="hljs-keyword">grep</span> cita- |<span class="hljs-keyword">grep</span> -v <span class="hljs-keyword">grep</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ps -ef | grep cita- |grep -v grep |wc -l &amp;&amp; ps -ef | grep cita- |grep -v grep</span>
 </code></pre>
 <p>返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）</p>
 <pre><code class="hljs"><span class="hljs-number">28</span>
@@ -198,12 +199,15 @@ cita      <span class="hljs-number">6845</span>  <span class="hljs-number">6831<
 cita      <span class="hljs-number">6846</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-network -c network.toml
 cita      <span class="hljs-number">6857</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-auth -c auth.toml
 </code></pre></li>
-<li><p>调用 RPC 接口 查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化</p>
-<pre><code class="hljs">$ ./env.sh curl -X POST --data '{<span class="hljs-string">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,<span class="hljs-string">"method"</span>:<span class="hljs-string">"blockNumber"</span>,<span class="hljs-string">"params"</span>:<span class="hljs-string">[]</span>,<span class="hljs-string">"id"</span>:<span class="hljs-number">83</span>}' <span class="hljs-number">127.0.0.1:1337</span>
+<li><p>调用 RPC 接口查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}'</span> 127.0.0.1:1337</span>
 </code></pre>
-<p>返回结果</p>
-<pre><code class="hljs">{<span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,<span class="hljs-attr">"id"</span>:<span class="hljs-number">83</span>,<span class="hljs-attr">"result"</span>:<span class="hljs-string">"0x7d"</span>}
-</code></pre></li>
+<p>返回结果：</p>
+<pre><code class="hljs css language-json">{<span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,<span class="hljs-attr">"id"</span>:<span class="hljs-number">83</span>,<span class="hljs-attr">"result"</span>:<span class="hljs-string">"0x7d"</span>}
+</code></pre>
+<p>其中 <code>0x7d</code> 表示返回块高度，具体数据以所查询的链实际块高为准。
+只要能连续查询到块高度，并且块高度在增长，则表示节点已经开始正常出块</p>
+<p>更多信息请查看<a href="#验证">验证</a>。</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="停止节点"></a><a href="#停止节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>停止节点</h3>
 <p>以“0”节点为例，执行以下命令即可停止“0”节点：</p>
@@ -239,18 +243,6 @@ cita      <span class="hljs-number">6857</span>  <span class="hljs-number">6831<
   <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x3"</span>
 }
 </code></pre></li>
-<li><p>查看当前节点区块高度</p>
-<p>Request:</p>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
-</code></pre>
-<p>Result:</p>
-<pre><code class="hljs css language-json">{
-  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-number">83</span>,
-  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x8"</span>
-}
-</code></pre>
-<p>返回块高度，表示节点已经开始正常出块。</p></li>
 </ul>
 <blockquote>
 <p>Tips：JSON-RPC 协议要求发送 JSON 格式的请求参数，其中 &quot;jsonrpc&quot;:&quot;2.0&quot; 是固定的协议版本， 另外包含三个关键元素：</p>
@@ -260,7 +252,7 @@ cita      <span class="hljs-number">6857</span>  <span class="hljs-number">6831<
 <li>id：客户端分配的一个标识符，可以包含字符串，数字或者为空。如果没有 id，就会被当成是广播通知。这个值一般不能为 Null，且为数字时不能有小数。如果请求中含有这个字段，服务器在响应时，必须原样返回该字段，当有多个请求并使用异步队列发送时可以用来区分请求和响应。</li>
 </ol>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/cita/cita-intro"><span class="arrow-prev">← </span><span>关于 CITA</span></a><a class="docs-next button" href="/en/next/cita/huawei"><span>华为云一键部署</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#适用操作系统声明">适用操作系统声明</a></li><li><a href="#硬件配置建议">硬件配置建议</a></li><li><a href="#软件依赖声明">软件依赖声明</a></li><li><a href="#安装步骤">安装步骤</a><ul class="toc-headings"><li><a href="#安装-cita-客户端工具">安装 CITA 客户端工具</a></li><li><a href="#安装-cita">安装 CITA</a></li><li><a href="#启动-cita">启动 CITA</a></li><li><a href="#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></li><li><a href="#停止节点">停止节点</a></li><li><a href="#其他操作">其他操作</a></li></ul></li><li><a href="#验证">验证</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/cita/cita-intro"><span class="arrow-prev">← </span><span>关于 CITA</span></a><a class="docs-next button" href="/en/next/cita/huawei"><span>华为云一键部署</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#适用操作系统声明">适用操作系统声明</a></li><li><a href="#硬件配置建议">硬件配置建议</a></li><li><a href="#软件依赖声明">软件依赖声明</a></li><li><a href="#安装步骤">安装步骤</a><ul class="toc-headings"><li><a href="#安装-cita-客户端工具">安装 CITA 客户端工具</a></li><li><a href="#下载-cita">下载 CITA</a></li><li><a href="#配置-cita">配置 CITA</a></li><li><a href="#启动-cita">启动 CITA</a></li><li><a href="#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></li><li><a href="#停止节点">停止节点</a></li><li><a href="#其他操作">其他操作</a></li></ul></li><li><a href="#验证">验证</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

@@ -8,16 +8,30 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](./huawei)。
 > * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [CITA 测试链](../../toolchain/testnet/testchain)。
 
-## [适用操作系统声明](../getting-started#适用操作系统声明)
-## [硬件配置建议](../getting-started#硬件配置建议)
-## [软件依赖声明](../getting-started#软件依赖声明)
-## [安装 CITA 客户端工具](../getting-started#安装-cita-客户端工具)
+## 适用操作系统声明
+
+参见[适用操作系统声明](../getting-started#适用操作系统声明)
+
+## 硬件配置建议
+
+参见[硬件配置建议](../getting-started#硬件配置建议)
+
+## 软件依赖声明
+
+参见[软件依赖声明](../getting-started#软件依赖声明)
+
+## 安装 CITA 客户端工具
+
+参见[安装 CITA 客户端工具](../getting-started#安装-cita-客户端工具)
+
 ## 部署 CITA
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--发布件部署-->
 
-### [从发布件部署 CITA](../getting-started#下载-cita)
+### 从发布件部署 CITA
+
+参见[下载 CITA 发布件](../getting-started#下载-cita)
 
 <!--源码部署-->
 
@@ -25,28 +39,34 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 1. 下载 CITA 源码
 
-从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
+   从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
 
-```shell
-$ git clone https://github.com/cryptape/cita.git
-$ cd cita
-$ git submodule init
-$ git submodule update
-```
+   ```shell
+   $ git clone https://github.com/cryptape/cita.git
+   $ cd cita
+   $ git submodule init
+   $ git submodule update
+   ```
 
 2. 编译源码
 
-可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）
+   可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）
 
-```shell
-$ ./env.sh make debug
-```
+   ```shell
+   $ ./env.sh make debug
+   ```
 
-或者
+   或者
 
-```shell
-$ ./env.sh make release
-```
+   ```shell
+   $ ./env.sh make release
+   ```
+
+3. 进入 CITA 运行目录
+
+   ```shell
+   $ cd target/install
+   ```
 
 > 可选择替换 Rust Crates 的官方源，详细教程可以参考：
 >
@@ -72,20 +92,23 @@ $ ./env.sh make release
 >   $ ./env.sh
 >   error: failed switching to "user": unable to find user user: no matching entries in passwd file
 >   ```
+
 >   因此要保证操作使用的始终是同一个系统用户。
 > * 如果出现 Docker 相关的报错，可以执行如下命令并重试：
 >   ```shell
 >   docker kill $(docker ps -a -q)
 >   ```
 
-3. 进入 CITA 运行目录
-
-```shell
-$ cd target/install
-```
-
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## [配置 CITA](../getting-started#配置-cita)
-## [启动 CITA](../getting-started#启动-cita)
-## [验证 CITA 是否运行正常](../getting-started#验证-cita-是否运行正常)
+## 配置 CITA
+
+参见[配置 CITA](../getting-started#配置-cita)
+
+## 启动 CITA
+
+参见[启动 CITA](../getting-started#启动-cita)
+
+## 验证 CITA 是否运行正常
+
+参见[验证 CITA 是否运行正常](../getting-started#验证-cita-是否运行正常)

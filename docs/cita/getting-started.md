@@ -230,7 +230,7 @@ $ bin/cita help
 > * 请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。
 > * 请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突。
 
-## 接口测试
+## 验证
 
 CITA 提供了支持 JSON-RPC 2.0 (https://www.jsonrpc.org/specification)  协议的API，方便客户端进行区块信息的查询，具体文档在[RPC 列表](./rpc-guide/rpc)。
 

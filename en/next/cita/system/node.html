@@ -150,8 +150,7 @@ Function signatures:
 <p>下面我们需要将新增的普通节点通过交易的方式升级为共识节点，新增的普通节点的公钥地址，演示中，为 <code>0x59a316df602568957f47973332f1f85ae1e2e75e</code>。</p>
 <h4><a class="anchor" aria-hidden="true" id="approve-节点"></a><a href="#approve-节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>approve 节点</h4>
 <ul>
-<li>发送交易</li>
-</ul>
+<li><p>发送交易</p>
 <pre><code class="hljs css language-bash">$ cita-cli scm NodeManager approveNode \
     --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
@@ -167,10 +166,8 @@ Function signatures:
     <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
   }
 }
-</code></pre>
-<ul>
-<li>获取 receipt</li>
-</ul>
+</code></pre></li>
+<li><p>获取 receipt</p>
 <pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
     --<span class="hljs-built_in">hash</span> 0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2 \
     --url http://127.0.0.1:1337
@@ -204,12 +201,13 @@ Function signatures:
     ],
     <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
     <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2"</span>,
+   <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2"</span>,
     <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
   }
 }
 </code></pre>
-<p>从 <code>log</code> 中可以看出本次操作的相关信息。</p>
+<p>从 <code>log</code> 中可以看出本次操作的相关信息。</p></li>
+</ul>
 <h4><a class="anchor" aria-hidden="true" id="查看当前的共识节点数"></a><a href="#查看当前的共识节点数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看当前的共识节点数</h4>
 <pre><code class="hljs">$ cita-<span class="hljs-keyword">cli</span> scm NodeManager listNode --url http://<span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">1337</span>
 </code></pre>
@@ -237,8 +235,7 @@ Function signatures:
 <p>(由于接着上面步骤操作，所以这里有五个共识节点)</p>
 <h4><a class="anchor" aria-hidden="true" id="delete-共识节点"></a><a href="#delete-共识节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>delete 共识节点</h4>
 <ul>
-<li>发送交易</li>
-</ul>
+<li><p>发送交易</p>
 <pre><code class="hljs css language-bash">$ cita-cli scm NodeManager deleteNode \
     --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
@@ -254,10 +251,8 @@ Function signatures:
     <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
   }
 }
-</code></pre>
-<ul>
-<li>获取 receipt</li>
-</ul>
+</code></pre></li>
+<li><p>获取 receipt</p>
 <pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
     --<span class="hljs-built_in">hash</span> 0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393 \
     --url http://127.0.0.1:1337
@@ -296,7 +291,8 @@ Function signatures:
   }
 }
 </code></pre>
-<p>从 <code>log</code> 中可以看出本次操作的相关信息。</p>
+<p>从 <code>log</code> 中可以看出本次操作的相关信息。</p></li>
+</ul>
 <h4><a class="anchor" aria-hidden="true" id="查看当前的共识节点数-1"></a><a href="#查看当前的共识节点数-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查看当前的共识节点数</h4>
 <pre><code class="hljs css language-bash">$ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 </code></pre>

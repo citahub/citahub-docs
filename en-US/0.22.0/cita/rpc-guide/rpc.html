@@ -568,7 +568,7 @@ true
 </code></pre>
 <p>发送和获取数据</p>
 <p>Request:</p>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "0x6"],"id":2}'
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "latest"],"id":2}'
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{
@@ -638,7 +638,7 @@ true
 <li>Example</li>
 </ul>
 <p>Request:</p>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","0x1f"],"id":1}'
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","latest"],"id":1}'
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{
@@ -666,7 +666,7 @@ true
 <li>Example</li>
 </ul>
 <p>Request:</p>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}'
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{
@@ -786,7 +786,7 @@ c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f7574
 <ul>
 <li>Example</li>
 </ul>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "0x1f"],"id":1}'
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}'
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{
@@ -997,7 +997,7 @@ c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f7574
 <li><code>economicalModel</code>, <code>EconomicalModel</code> - The economical model</li>
 <li>Example</li>
 </ul>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"id":1}' 127.0.0.1:1337
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}' 127.0.0.1:1337
 </code></pre>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -1040,7 +1040,7 @@ c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f7574
 <li>Returns <code>Data</code> - Block header serialized into bytes.</li>
 <li>Example</li>
 </ul>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockHeader","params":["3"],"id":1}' 127.0.0.1:1337
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockHeader","params":["latest"],"id":1}' 127.0.0.1:1337
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{
@@ -1064,7 +1064,7 @@ c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f7574
 <li>Returns <code>Data</code> - State proof of special value. Include address, account proof, key, value proof.</li>
 <li>Example</li>
 </ul>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getStateProof","params":["0xad54ae137c6c39fa413fa1da7db6463e3ae45664", "0xa40893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423e", "16"],"id":1}' 127.0.0.1:1337
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getStateProof","params":["0xad54ae137c6c39fa413fa1da7db6463e3ae45664", "0xa40893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423e", "latest"],"id":1}' 127.0.0.1:1337
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{
@@ -1088,7 +1088,7 @@ c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f7574
 <li>Returns <code>Data</code> - H256 value of the key in address.</li>
 <li>Example</li>
 </ul>
-<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getStorageAt","params":["0xffffffffffffffffffffffffffffffffff020000", "0x0000000000000000000000000000000000000000000000000000000000000007", "16"],"id":1}' 127.0.0.1:1337
+<pre><code class="hljs css language-shell">curl -X POST --data '{"jsonrpc":"2.0","method":"getStorageAt","params":["0xffffffffffffffffffffffffffffffffff020000", "0x0000000000000000000000000000000000000000000000000000000000000007", "latest"],"id":1}' 127.0.0.1:1337
 </code></pre>
 <p>Result:</p>
 <pre><code class="hljs css language-json">{

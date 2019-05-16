@@ -19,6 +19,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 配置取决于自身业务，请根据实际情况搭配，以下是建议最低配置：
 
 体验配置：CPU：2核心、内存：4GB、硬盘：30G
+
 生产配置：CPU：4核心、内存：8GB、硬盘：200G
 
 ## 软件依赖声明
@@ -26,9 +27,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 * 依赖 Docker，安装 Docker 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/install/)。
 * CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-build/) 。 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。
 
-## 安装步骤
-
-### 安装 CITA 客户端工具
+## 安装 CITA 客户端工具
 
 1. 创建目录
 
@@ -78,7 +77,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
    > 注：此处为示例公私钥对，不要在生产环境复制使用。"address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。
 
-### 下载 CITA
+## 下载 CITA
 
 1. 切换目录
 
@@ -104,7 +103,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    $ cd cita_secp256k1_sha3
    ```
 
-### 配置 CITA
+## 配置 CITA
 
 初始化链 （super_admin 地址是超级管理员账号即 CITA-CLI 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））
 
@@ -115,7 +114,7 @@ $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --n
 > * 注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 [链接配置](./operation/chain-config)
 > * 注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP。
 
-### 启动 CITA
+## 启动 CITA
 
 1. 启动节点 0
 
@@ -145,7 +144,7 @@ $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --n
    $ ./bin/cita start test-chain/3
    ```
 
-### 验证 CITA 是否运行正常
+## 验证 CITA 是否运行正常
 
 1. 查看进程是否启动成功
 
@@ -203,7 +202,7 @@ $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --n
 
    更多信息请查看[验证](#验证)。
 
-### 停止节点
+## 停止节点
 
 以“0”节点为例，执行以下命令即可停止“0”节点：
 
@@ -211,7 +210,7 @@ $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --n
 $ bin/cita stop test-chain/0
 ```
 
-### 其他操作
+## 其他操作
 
 更多其他操作使用以下命令查看帮助信息：
 

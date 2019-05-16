@@ -168,6 +168,9 @@
       "cita/system/snapshot": {
         "title": "快照"
       },
+      "cita/system/store": {
+        "title": "存证"
+      },
       "cita/system/user": {
         "title": "用户管理"
       },

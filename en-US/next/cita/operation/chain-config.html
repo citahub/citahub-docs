@@ -73,81 +73,32 @@
 <h2><a class="anchor" aria-hidden="true" id="可配置项"></a><a href="#可配置项" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>可配置项</h2>
 <p>执行以下命令查看各个配置项：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita create --<span class="hljs-built_in">help</span></span>
-usage: create_cita_config.py create [-h]
-                                    [--authorities AUTHORITY[,AUTHORITY[,AUTHORITY[,AUTHORITY[, ...]]]]]
-                                    [--chain_name CHAIN_NAME]
-                                    [--nodes IP:PORT[,IP:PORT[,IP:PORT[,IP:PORT[, ...]]]]]
-                                    [--super_admin SUPER_ADMIN]
-                                    [--contract_arguments Contract.Argument=Value [Contract.Argument=Value ...]]
-                                    [--timestamp TIMESTAMP]
-                                    [--resource_dir RESOURCE_DIR]
-                                    [--grpc_port GRPC_PORT]
-                                    [--jsonrpc_port JSONRPC_PORT]
-                                    [--ws_port WS_PORT] [--enable_tls]
-                                    [--enable_version] [--stdout]
-                                    [--init_token INIT_TOKEN]
 </code></pre>
 <p>我们一一解释：</p>
 <blockquote>
 <p><strong>Notice</strong> 起链时，强制要求的配置项为 <code>super_admin</code> 和 <code>nodes</code>，系统不提供默认配置。</p>
 </blockquote>
-<h3><a class="anchor" aria-hidden="true" id="authorities-将共识节点的地址写到链上"></a><a href="#authorities-将共识节点的地址写到链上" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--authorities</code> 将共识节点的地址写到链上</h3>
+<h3><a class="anchor" aria-hidden="true" id="authorities"></a><a href="#authorities" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--authorities</code></h3>
+<p>将共识节点的地址写到链上。</p>
 <ul>
 <li>安全起见，我们建议的流程是：先由每个共识节点单独生成各自的私钥和地址，私钥请务必由自己妥善保管；地址交由负责起链的管理员，通过该命令写到链上。起链后，生成的 <code>test-chain/*/privkey</code> 文件为空，由各节点独自将自己的私钥填写进来。</li>
 <li>没有传递参数的话，默认会自动生成对应节点数量的私钥/地址对：地址写到链上；私钥存放在各个节点的 <code>test-chain/*/privkey</code> 文件里。</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="chain-name-指定链的名字"></a><a href="#chain-name-指定链的名字" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--chain_name</code> 指定链的名字</h3>
+<h3><a class="anchor" aria-hidden="true" id="chain-name"></a><a href="#chain-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--chain_name</code></h3>
+<p>指定链的名字。</p>
 <ul>
 <li>执行该命令后会生成以链的名字为名称的文件夹，该文件夹里面再按节点序号创建 0，1，2 等节点文件夹，分别存放每个节点的配置文件。</li>
 <li>如果没有传递 <code>chain_name</code> 参数，则默认链的名字为 <code>test-chain</code>。</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="nodes-指定节点的-ip-地址和端口"></a><a href="#nodes-指定节点的-ip-地址和端口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--nodes</code> 指定节点的 ip 地址和端口</h3>
+<h3><a class="anchor" aria-hidden="true" id="nodes"></a><a href="#nodes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--nodes</code></h3>
+<p>指定节点的 ip 地址和端口。</p>
 <p>每个节点都需要提供 ip 和 port，ip 与 port 用冒号隔开，节点间用逗号隔开。这个参数有多少个网络地址，最终将会生成对应数量的节点(上限256)，并且相对应的节点序号就按照参数中网络地址的顺序，从 0 开始，往后递增。</p>
-<h3><a class="anchor" aria-hidden="true" id="super-admin-指定超级管理员地址"></a><a href="#super-admin-指定超级管理员地址" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--super_admin</code> 指定超级管理员地址</h3>
+<h3><a class="anchor" aria-hidden="true" id="super-admin"></a><a href="#super-admin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--super_admin</code></h3>
+<p>指定超级管理员地址：</p>
 <p>该账户拥有最高权限，用来管理整条链的运行状态。用户<strong>必须</strong>自己设置超级管理员。</p>
-<h3><a class="anchor" aria-hidden="true" id="contract-arguments-指定链自身的一些系统配置和系统合约的配置"></a><a href="#contract-arguments-指定链自身的一些系统配置和系统合约的配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--contract_arguments</code> 指定链自身的一些系统配置和系统合约的配置</h3>
-<p><code>test-chain/template</code> 目录下的 <code>init_data.yml</code> 中记录了一种示例配置，我们可以看到各配置项如下：</p>
-<pre><code class="hljs">-Contracts:
- -SysConfig:
-   delayBlockNumber: 1
-   checkCallPermission: false
-   checkSendTxPermission: false
-   checkCreateContractPermission: false
-   checkQuota: false
-   checkFeeBackPlatform:false
-   chainOwner: '0x0000000000000000000000000000000000000000'
-   chainName: test-chain
-   chainId: 1
-   operator: test-operator
-   website: https://www.example.com (https://www.example.com/)
-   blockInterval: 3000
-   economicalModel: 0
-   name: CITA Test Token
-   symbol: CTT
-   avatar: https://cdn.cryptape.com/icon_cita.png
-   autoExec: false
- -QuotaManager:
-   admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -NodeManager:
-   nodes:
-   '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
-   stakes:
-   0
- -ChainManager:
-   parentChainId: 0
-   parentChainAuthorities: []
- -Authorization:
-   superAdmin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -Group:
-   parent: '0x0000000000000000000000000000000000000000'
-   name: rootGroup
-   accounts:
-   '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -Admin:
-   admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -VersionManager:
-   version: 1
-</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="contract-arguments"></a><a href="#contract-arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--contract_arguments</code></h3>
+<p>指定链自身的一些系统配置和系统合约的配置。</p>
+<p><code>test-chain/template</code> 目录下的 <code>init_data.yml</code> 中记录了一种示例配置。</p>
 <p>示例配置项详细解释:</p>
 <ul>
 <li><code>SysConfig</code> : 初始化一些系统信息
@@ -202,18 +153,25 @@ usage: create_cita_config.py create [-h]
 <ul>
 <li><code>version</code> : 协议版本号</li>
 </ul></li>
+<li><code>PriceManager</code>: 配额价格管理合约
+<ul>
+<li><code>quotaPrice</code>: 配额价格</li>
+</ul></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="time-stamp-指定起链的时间戳"></a><a href="#time-stamp-指定起链的时间戳" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--time_stamp</code> 指定起链的时间戳</h3>
+<h3><a class="anchor" aria-hidden="true" id="time-stamp"></a><a href="#time-stamp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--time_stamp</code></h3>
+<p>指定起链的时间戳。</p>
 <ul>
 <li>具体数值是指自 1970-1-1 以来的毫秒数，默认是取当前的时间，如果时间取在未来，则链起来之后不会出块。</li>
 <li>这个值在生成的genesis.son文件中可以查看到。</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="resource-dir-指定资源目录"></a><a href="#resource-dir-指定资源目录" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--resource_dir</code> 指定资源目录</h3>
+<h3><a class="anchor" aria-hidden="true" id="resource-dir"></a><a href="#resource-dir" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--resource_dir</code></h3>
+<p>指定资源目录。</p>
 <ul>
 <li>除了创世块中的数组，链有时候还需要额外自带一些数据（比如说零知识证明），但是因为数据比较大，无法放入创世块，因此在这里可以通过传递参数指定一个单独的资源目录。</li>
 <li>指定该参数后，生成的配置会多一个 resource 目录，用户指定目录下的文件将会被拷贝进来，然后，配置工具会计算该目录下所有文件的 hash 值，作为 genesis.json 中 prevhash 字段中的值。prevhash 默认全部是 0，通过传入此参数，prevhash 的值将发生改变。</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="grpc-port-jsonrpc-port-ws-port-指定起始端口号"></a><a href="#grpc-port-jsonrpc-port-ws-port-指定起始端口号" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--grpc_port</code>、<code>jsonrpc_port</code>、<code>ws_port</code> 指定起始端口号</h3>
+<h3><a class="anchor" aria-hidden="true" id="grpc-port-jsonrpc-port-ws-port"></a><a href="#grpc-port-jsonrpc-port-ws-port" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--grpc_port</code>、<code>jsonrpc_port</code>、<code>ws_port</code></h3>
+<p>指定起始端口号。</p>
 <ul>
 <li>grpc，jsonrpc，ws_port 等参数指定的端口号是一个起始端口号。节点实际使用的端口号，按照节点排列顺序顺延，即 port+n（ n 为节点序号）。比如总共 4 个节点，传递 grpc_port 参数为 7000 ，则 test-chain/0 的 grpc 端口号为 7000，test-chain/1 的 grpc 端口号为 7001，以此类推。</li>
 <li>grpc_port 存在 <code>test-chain/*/executor.toml</code> 中，jsonrpc port 和 ws port 都存在 <code>test-chain/*/jsonrpc.toml</code> 中 。</li>
@@ -225,22 +183,26 @@ usage: create_cita_config.py create [-h]
 <li>默认的 <code>rabbitmq</code> 端口：4369(epmd)/25672(Erlang distribution)/5671，5672(AMQP)/15672(management plugin)</li>
 </ul></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="enable-tls-是否开通节点间通讯加密"></a><a href="#enable-tls-是否开通节点间通讯加密" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--enable_tls</code> 是否开通节点间通讯加密</h3>
+<h3><a class="anchor" aria-hidden="true" id="enable-tls"></a><a href="#enable-tls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--enable_tls</code></h3>
+<p>是否开通节点间通讯加密。</p>
 <ul>
 <li>指定节点间数据是否使用 TLS (Transport Layer Security) 加密传输，不加此选项默认为不加密传输。</li>
 <li>创建链时加上此选项，会在 <code>test-chain/*/network.toml</code> 配置文件中增加 <code>enable_tls = true</code> 的配置项。</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="enable-version-是否使能-json-rpc-接口-getversion"></a><a href="#enable-version-是否使能-json-rpc-接口-getversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--enable_version</code> 是否使能 JSON-RPC 接口 <code>getVersion</code></h3>
+<h3><a class="anchor" aria-hidden="true" id="enable-version"></a><a href="#enable-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--enable_version</code></h3>
+<p>是否使能 JSON-RPC 接口 <code>getVersion</code>。</p>
 <ul>
 <li>配置当前链是否能够通过 JSON-RPC 的 <code>getVersion</code> 接口来获得当前链的 CITA 软件版本号。不加此选项默认为不开启这个接口。</li>
 <li>创建链时加上此选项，会在 <code>test-chain/*/jsonrpc.toml</code> 配置文件中增加 <code>enable_version = true</code> 的配置项。</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="stdout-是否将-cita-日志输出到标准输出"></a><a href="#stdout-是否将-cita-日志输出到标准输出" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--stdout</code> 是否将 CITA 日志输出到标准输出</h3>
+<h3><a class="anchor" aria-hidden="true" id="stdout"></a><a href="#stdout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--stdout</code></h3>
+<p>是否将 CITA 日志输出到标准输出。</p>
 <ul>
 <li>配置当前链的日志信息输出到标准输出，CITA 的日志默认以文件形式输出到 <code>test-chain/*/logs</code> 下。</li>
 <li>创建链时加上此选项，会在 <code>test-chain/*/forever.toml</code> 配置文件中增加为每个微服务的启动参数添加 <code>-s</code> 选项。</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="init-token-设置链的初始-native-token-数量"></a><a href="#init-token-设置链的初始-native-token-数量" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--init_token</code> 设置链的初始 Native Token 数量</h3>
+<h3><a class="anchor" aria-hidden="true" id="init-token"></a><a href="#init-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--init_token</code></h3>
+<p>设置链的初始 Native Token 数量。</p>
 <ul>
 <li>设置链的初始 Native Token 数量，<code>INIT_TOKEN</code> 为 16 进制数据；</li>
 <li>设置后，会在创世块中，给 <code>superadmin</code> 帐户存入 <code>INIT_TOKEN</code> 数量的原生代币。</li>
@@ -305,7 +267,7 @@ chain.toml  executor.toml   jsonrpc.toml       privkey
 
 </code></pre>
 <p><code>chainName</code> 已更新。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/operation/install"><span class="arrow-prev">← </span><span>部署 CITA</span></a><a class="docs-next button" href="/en-US/next/cita/operation/service-config"><span>Microservice Configuration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#可配置项">可配置项</a><ul class="toc-headings"><li><a href="#authorities-将共识节点的地址写到链上"><code>--authorities</code> 将共识节点的地址写到链上</a></li><li><a href="#chain-name-指定链的名字"><code>--chain_name</code> 指定链的名字</a></li><li><a href="#nodes-指定节点的-ip-地址和端口"><code>--nodes</code> 指定节点的 ip 地址和端口</a></li><li><a href="#super-admin-指定超级管理员地址"><code>--super_admin</code> 指定超级管理员地址</a></li><li><a href="#contract-arguments-指定链自身的一些系统配置和系统合约的配置"><code>--contract_arguments</code> 指定链自身的一些系统配置和系统合约的配置</a></li><li><a href="#time-stamp-指定起链的时间戳"><code>--time_stamp</code> 指定起链的时间戳</a></li><li><a href="#resource-dir-指定资源目录"><code>--resource_dir</code> 指定资源目录</a></li><li><a href="#grpc-port-jsonrpc-port-ws-port-指定起始端口号"><code>--grpc_port</code>、<code>jsonrpc_port</code>、<code>ws_port</code> 指定起始端口号</a></li><li><a href="#enable-tls-是否开通节点间通讯加密"><code>--enable_tls</code> 是否开通节点间通讯加密</a></li><li><a href="#enable-version-是否使能-json-rpc-接口-getversion"><code>--enable_version</code> 是否使能 JSON-RPC 接口 <code>getVersion</code></a></li><li><a href="#stdout-是否将-cita-日志输出到标准输出"><code>--stdout</code> 是否将 CITA 日志输出到标准输出</a></li><li><a href="#init-token-设置链的初始-native-token-数量"><code>--init_token</code> 设置链的初始 Native Token 数量</a></li></ul></li><li><a href="#初始化配置操作示例">初始化配置操作示例</a></li><li><a href="#初始化配置后生成的目录结构">初始化配置后生成的目录结构</a></li><li><a href="#修改个别配置操作示例">修改个别配置操作示例</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/operation/install"><span class="arrow-prev">← </span><span>部署 CITA</span></a><a class="docs-next button" href="/en-US/next/cita/operation/service-config"><span>Microservice Configuration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#可配置项">可配置项</a><ul class="toc-headings"><li><a href="#authorities"><code>--authorities</code></a></li><li><a href="#chain-name"><code>--chain_name</code></a></li><li><a href="#nodes"><code>--nodes</code></a></li><li><a href="#super-admin"><code>--super_admin</code></a></li><li><a href="#contract-arguments"><code>--contract_arguments</code></a></li><li><a href="#time-stamp"><code>--time_stamp</code></a></li><li><a href="#resource-dir"><code>--resource_dir</code></a></li><li><a href="#grpc-port-jsonrpc-port-ws-port"><code>--grpc_port</code>、<code>jsonrpc_port</code>、<code>ws_port</code></a></li><li><a href="#enable-tls"><code>--enable_tls</code></a></li><li><a href="#enable-version"><code>--enable_version</code></a></li><li><a href="#stdout"><code>--stdout</code></a></li><li><a href="#init-token"><code>--init_token</code></a></li></ul></li><li><a href="#初始化配置操作示例">初始化配置操作示例</a></li><li><a href="#初始化配置后生成的目录结构">初始化配置后生成的目录结构</a></li><li><a href="#修改个别配置操作示例">修改个别配置操作示例</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

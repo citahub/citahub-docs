@@ -43,7 +43,7 @@
           "cita/economics/quota",
           "cita/economics/charge"
         ]
-      }, 
+      },
       {
         "label": "JSON-RPC",
         "type": "subcategory",

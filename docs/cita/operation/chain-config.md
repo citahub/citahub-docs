@@ -19,19 +19,6 @@ title: 链级配置
 
 ```shell
 $ bin/cita create --help
-usage: create_cita_config.py create [-h]
-                                    [--authorities AUTHORITY[,AUTHORITY[,AUTHORITY[,AUTHORITY[, ...]]]]]
-                                    [--chain_name CHAIN_NAME]
-                                    [--nodes IP:PORT[,IP:PORT[,IP:PORT[,IP:PORT[, ...]]]]]
-                                    [--super_admin SUPER_ADMIN]
-                                    [--contract_arguments Contract.Argument=Value [Contract.Argument=Value ...]]
-                                    [--timestamp TIMESTAMP]
-                                    [--resource_dir RESOURCE_DIR]
-                                    [--grpc_port GRPC_PORT]
-                                    [--jsonrpc_port JSONRPC_PORT]
-                                    [--ws_port WS_PORT] [--enable_tls]
-                                    [--enable_version] [--stdout]
-                                    [--init_token INIT_TOKEN]
 ```
 
 我们一一解释：
@@ -39,65 +26,37 @@ usage: create_cita_config.py create [-h]
 > **Notice**
 > 起链时，强制要求的配置项为 `super_admin` 和 `nodes`，系统不提供默认配置。
 
-### `--authorities` 将共识节点的地址写到链上
+### `--authorities`
+
+将共识节点的地址写到链上。
+
 * 安全起见，我们建议的流程是：先由每个共识节点单独生成各自的私钥和地址，私钥请务必由自己妥善保管；地址交由负责起链的管理员，通过该命令写到链上。起链后，生成的 `test-chain/*/privkey` 文件为空，由各节点独自将自己的私钥填写进来。
 * 没有传递参数的话，默认会自动生成对应节点数量的私钥/地址对：地址写到链上；私钥存放在各个节点的 `test-chain/*/privkey` 文件里。
 
-### `--chain_name` 指定链的名字
+### `--chain_name`
+
+指定链的名字。
+
 * 执行该命令后会生成以链的名字为名称的文件夹，该文件夹里面再按节点序号创建 0，1，2 等节点文件夹，分别存放每个节点的配置文件。
 * 如果没有传递 `chain_name` 参数，则默认链的名字为 `test-chain`。
 
-### `--nodes` 指定节点的 ip 地址和端口
+### `--nodes`
+
+指定节点的 ip 地址和端口。
+
 每个节点都需要提供 ip 和 port，ip 与 port 用冒号隔开，节点间用逗号隔开。这个参数有多少个网络地址，最终将会生成对应数量的节点(上限256)，并且相对应的节点序号就按照参数中网络地址的顺序，从 0 开始，往后递增。
 
-### `--super_admin` 指定超级管理员地址
+### `--super_admin`
+
+指定超级管理员地址：
+
 该账户拥有最高权限，用来管理整条链的运行状态。用户**必须**自己设置超级管理员。
 
-### `--contract_arguments` 指定链自身的一些系统配置和系统合约的配置
-`test-chain/template` 目录下的 `init_data.yml` 中记录了一种示例配置，我们可以看到各配置项如下：
+### `--contract_arguments`
 
-```
--Contracts:
- -SysConfig:
-   delayBlockNumber: 1
-   checkCallPermission: false
-   checkSendTxPermission: false
-   checkCreateContractPermission: false
-   checkQuota: false
-   checkFeeBackPlatform:false
-   chainOwner: '0x0000000000000000000000000000000000000000'
-   chainName: test-chain
-   chainId: 1
-   operator: test-operator
-   website: https://www.example.com (https://www.example.com/)
-   blockInterval: 3000
-   economicalModel: 0
-   name: CITA Test Token
-   symbol: CTT
-   avatar: https://cdn.cryptape.com/icon_cita.png
-   autoExec: false
- -QuotaManager:
-   admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -NodeManager:
-   nodes:
-   '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
-   stakes:
-   0
- -ChainManager:
-   parentChainId: 0
-   parentChainAuthorities: []
- -Authorization:
-   superAdmin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -Group:
-   parent: '0x0000000000000000000000000000000000000000'
-   name: rootGroup
-   accounts:
-   '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -Admin:
-   admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
- -VersionManager:
-   version: 1
-```
+指定链自身的一些系统配置和系统合约的配置。
+
+`test-chain/template` 目录下的 `init_data.yml` 中记录了一种示例配置。
 
 示例配置项详细解释:
 
@@ -137,16 +96,27 @@ usage: create_cita_config.py create [-h]
   - `admin` : 管理员地址
 * `VersionManager` : 协议版本管理合约
   - `version` : 协议版本号
+* `PriceManager`: 配额价格管理合约
+  - `quotaPrice`: 配额价格
 
-### `--time_stamp` 指定起链的时间戳
+### `--time_stamp`
+
+指定起链的时间戳。
+
 * 具体数值是指自 1970-1-1 以来的毫秒数，默认是取当前的时间，如果时间取在未来，则链起来之后不会出块。
 * 这个值在生成的genesis.son文件中可以查看到。
 
-### `--resource_dir` 指定资源目录
+### `--resource_dir`
+
+指定资源目录。
+
 * 除了创世块中的数组，链有时候还需要额外自带一些数据（比如说零知识证明），但是因为数据比较大，无法放入创世块，因此在这里可以通过传递参数指定一个单独的资源目录。
 * 指定该参数后，生成的配置会多一个 resource 目录，用户指定目录下的文件将会被拷贝进来，然后，配置工具会计算该目录下所有文件的 hash 值，作为 genesis.json 中 prevhash 字段中的值。prevhash 默认全部是 0，通过传入此参数，prevhash 的值将发生改变。
 
-### `--grpc_port`、`jsonrpc_port`、`ws_port` 指定起始端口号
+### `--grpc_port`、`jsonrpc_port`、`ws_port`
+
+指定起始端口号。
+
 * grpc，jsonrpc，ws_port 等参数指定的端口号是一个起始端口号。节点实际使用的端口号，按照节点排列顺序顺延，即 port+n（ n 为节点序号）。比如总共 4 个节点，传递 grpc_port 参数为 7000 ，则 test-chain/0 的 grpc 端口号为 7000，test-chain/1 的 grpc 端口号为 7001，以此类推。
 * grpc_port 存在 `test-chain/*/executor.toml` 中，jsonrpc port 和 ws port 都存在 `test-chain/*/jsonrpc.toml` 中 。
 * CITA有一些保留端口，设置节点网络端口，或者自定义端口的时候要避免产生端口冲突。保留端口有：
@@ -155,19 +125,31 @@ usage: create_cita_config.py create [-h]
   * 默认的 `websocket` 端口：4337 到 4337+N
   * 默认的 `rabbitmq` 端口：4369(epmd)/25672(Erlang distribution)/5671，5672(AMQP)/15672(management plugin)
 
-###  `--enable_tls` 是否开通节点间通讯加密
+###  `--enable_tls`
+
+是否开通节点间通讯加密。
+
 * 指定节点间数据是否使用 TLS (Transport Layer Security) 加密传输，不加此选项默认为不加密传输。
 * 创建链时加上此选项，会在 `test-chain/*/network.toml` 配置文件中增加 `enable_tls = true` 的配置项。
 
-### `--enable_version` 是否使能 JSON-RPC 接口 `getVersion`
+### `--enable_version`
+
+是否使能 JSON-RPC 接口 `getVersion`。
+
 * 配置当前链是否能够通过 JSON-RPC 的 `getVersion` 接口来获得当前链的 CITA 软件版本号。不加此选项默认为不开启这个接口。
 * 创建链时加上此选项，会在 `test-chain/*/jsonrpc.toml` 配置文件中增加 `enable_version = true` 的配置项。
 
-### `--stdout` 是否将 CITA 日志输出到标准输出
+### `--stdout`
+
+是否将 CITA 日志输出到标准输出。
+
 * 配置当前链的日志信息输出到标准输出，CITA 的日志默认以文件形式输出到 `test-chain/*/logs` 下。
 * 创建链时加上此选项，会在 `test-chain/*/forever.toml` 配置文件中增加为每个微服务的启动参数添加 `-s` 选项。
 
-### `--init_token` 设置链的初始 Native Token 数量
+### `--init_token`
+
+设置链的初始 Native Token 数量。
+
 * 设置链的初始 Native Token 数量，`INIT_TOKEN` 为 16 进制数据；
 * 设置后，会在创世块中，给 `superadmin` 帐户存入 `INIT_TOKEN` 数量的原生代币。
 

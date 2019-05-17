@@ -21,8 +21,6 @@
         "ids": [
           "cita/system/contracts",
           "cita/system/node",
-          "cita/system/permission",
-          "cita/system/user",
           "cita/system/log",
           "cita/system/snapshot",
           "cita/system/batch-tx",
@@ -43,7 +41,18 @@
           "cita/economics/quota",
           "cita/economics/charge"
         ]
-      }, 
+      },
+      {
+        "label": "Account and Permission System",
+        "type": "subcategory",
+        "ids": [
+          "cita/account-permission/account",
+          "cita/account-permission/permission",
+          "cita/account-permission/permission-extend",
+          "cita/account-permission/account-example",
+          "cita/account-permission/permission-example"
+        ]
+      },
       {
         "label": "JSON-RPC",
         "type": "subcategory",
@@ -55,6 +64,7 @@
         "ids": [
           "cita/system-contract-interface/sys",
           "cita/system-contract-interface/node",
+          "cita/system-contract-interface/permission-mng",
           "cita/system-contract-interface/auth",
           "cita/system-contract-interface/permission",
           "cita/system-contract-interface/role-mng",

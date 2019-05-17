@@ -1,64 +1,13 @@
 ---
-id: permission
-title: 权限管理
+id: permission-example
+title: 权限系统使用示例
 ---
 
-CITA实现了对账户的权限管理，并支持基于角色的权限管理。
+本次示例演示如何在 CITA 开启权限系统的情况下如何部署合约以及调用合约。
 
-CITA通过智能合约的方式来对权限进行管理。
+## 修改系统配置
 
-## 账户概述
-
-* 账户(account)： 链上唯一的标识，权限管理的主体对象。
-
-    - 外部账户： 拥有公私钥对，可发送交易的用户。
-    - 合约账户： 拥有相关的代码(code)及存储(storage)。
-
-目前权限管理针对外部账户进行细粒度管理。CITA 默认集成了 superAdmin 账户，拥有权限管理涉及到的所有权限。在 CITA 启动前可以对 superAdmin 进行配置。
-在权限系统开启时，由用户生成的外部账户，在 CITA 系统中没有任何权限，需要 superAdmin 对其进行授权。
-
-权限管理默认未开启，配置相关信息查看[系统合约](../operation/chain-config)
-
-## 权限管理概述
-
-权限(permission)在此系统中的定义为多个资源(resource)的集合，其中资源(resource)为一个合约地址及一个函数签名。
-
-### 系统默认权限类型
-
-用户可自定义权限，其中系统内置了几种权限(禁止对其进行删除操作)，如下所示：
-
-* `sendTx`:            表示发交易权限
-* `createContract`:    表示创建合约权限
-* `newPermission`:     表示创建一个新的权限权限
-* `deletePermission`:  表示删除一个权限权限
-* `updatePermission`:  表示更新一个权限权限
-* `setAuth`:           表示对账号进行授权权限
-* `cancelAuth`:        表示对帐号取消授权权限
-* `newRole`:           表示创建一个新的角色权限
-* `deleteRole`:        表示删除一个角色权限
-* `updateRole`:        表示更新一个角色权限
-* `setRole`:           表示对账号授予角色权限
-* `cancelRole`:        表示对帐号取消授予角色权限
-* `newGroup`:          表示创建一个新组权限
-* `deleteGroup`:       表示删除一个组权限
-* `updateGroup`:       表示更新一个组权限
-* `newNode`:           表示增加普通节点权限
-* `deleteNode`:        表示删除节点权限
-* `updateNode`:        表示更新节点权限
-* `accountQuota`:      表示账户配额设置权限
-* `blockQuota`:        表示块配额设置权限
-* `batchTx`:           表示批量交易权限
-* `ermergencyBrake`:   表示紧急制动权限
-* `quotaPrice`:        表示设置 quotaPrice 权限
-* `version`:           表示设置版本权限
-
-可以查看具体[权限的地址信息](https://github.com/cryptape/cita/blob/develop/cita-chain/types/src/reserved_addresses.rs)
-
-## 权限管理操作实例
-
-### 修改系统配置
-
-通过以下命令生成配置文件(打开权限开关)：
+通过以下命令生成配置文件(打开所有权限系统配置)：
 
 ```bash
 $ bin/cita create \
@@ -67,11 +16,9 @@ $ bin/cita create \
 	--contract_arguments SysConfig.checkCallPermission=true SysConfig.checkSendTxPermission=true SysConfig.checkCreateContractPermission=true
 ```
 
-其中 `checkCallPermission`, `checkSendTxPermission`, `checkCreateContractPermission` 分别为合约调用、发送交易及创建合约的开关。请注意这里的 `checkCallPermission` 与 JSON-RPC 中的 Call 并不同， JSON-RPC 中的 Call 是指对链上数据的查询，是读数据而非写数据。而这里的`checkCallPermission` 是指通过发送交易的方式调用合约接口，是指写数据的操作。
-
 启动链接下来的步骤见[快速搭链](../getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
-### 生成普通账户
+## 生成普通账户
 
 ```bash
 $ cita-cli key create
@@ -87,11 +34,11 @@ $ cita-cli key create
 }
 ```
 
-### 部署合约
+## 部署合约
 
 使用[测试合约](https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol)
 
-#### 获得合约的相关信息
+### 获得合约的相关信息
 
 * 字节码
 
@@ -122,7 +69,7 @@ Function signatures:
 60fe47b1: set(uint256)
 ```
 
-#### 部署合约
+### 部署合约
 
 由于设置了权限的检查开关，所有用户默认是没有发交易及创建合约的权限的。首先需要通过 superAdmin 对其授 sendTx 发送交易及 createContract 创建合约权限。
 
@@ -275,7 +222,7 @@ $ cita-cli rpc getTransactionReceipt \
 
 如果用户想要调用测试合约的接口，需要根据接口生成一个新的权限，然后由 admin 把权限赋予用户。
 
-### 生成新的权限
+## 生成新的权限
 
 由管理员进行操作
 
@@ -362,9 +309,9 @@ $ cita-cli rpc getTransactionReceipt \
 
 从 logs[0] 中获得新权限的地址为 `0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee`
 
-### 使用新权限
+## 使用新权限
 
-* 把新权限赋予测试用户
+### 把新权限赋予测试用户
 
 由管理员进行操作。
 
@@ -435,9 +382,7 @@ $ cita-cli rpc getTransactionReceipt \
 }
 ```
 
-* 查询账户权限
-
-### 调用测试合约
+### 查询账户权限
 
 查询测试账号的权限：
 
@@ -459,7 +404,7 @@ $ cita-cli scm Authorization queryPermissions \
 
 已经可以看到新添加的权限了。
 
-### 调用测试合约
+## 调用测试合约
 
 调用测试合约 set 方法，传入参数为 1 ：
 
@@ -515,7 +460,7 @@ $ cita-cli rpc getTransactionReceipt \
 }
 ```
 
-从 errMessage 中已经可以看出交易成功了。
+从 `errorMessage` 中已经可以看出交易成功了。
 
 通过调用 get 方法查询结果：
 
@@ -537,13 +482,3 @@ $ cita-cli rpc call \
 ```
 
 可以看出结果已经是 1 了。
-
-## 角色管理概述
-
-在权限之上封装了一层更贴近于现实生活中的角色类型，角色包含多种权限。可对用户赋予角色，则用户拥有角色内的所有权限。
-
-* 角色的增删改等相关操作独立于权限管理。操作需要权限管理赋予相应权限，不会造成权限管理的变动。
-* 关于角色的授权操作： 授予角色时会调用权限管理的授权接口，所以会造成权限管理的变动。 ***建议角色的授权与权限的授权二者选其一，应该尽量避免同时使用***
-* 关于角色的鉴权： 鉴权是在底层操作，底层没有角色的概念，鉴权与权限管理统一。
-
-用户可自定义角色。

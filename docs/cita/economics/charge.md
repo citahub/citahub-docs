@@ -54,7 +54,7 @@ CITA 提供灵活的分发方式，以适配多样的业务需求:
 
 首先查询当前的 `quotaPrice`：
 
-```shell 
+```shell
 $ cita-cli scm PriceManager getQuotaPrice
 ```
 
@@ -133,7 +133,7 @@ $ ./bin/cita create \
         --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" \
         --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" \
         --contract_arguments "SysConfig.checkFeeBackPlatform=true" \
-        --contract_arguments "SysConfig.chainOwner=0x36a60d575b0dee0423abb6a57dbc6ca60bf47545" \ 
+        --contract_arguments "SysConfig.chainOwner=0x36a60d575b0dee0423abb6a57dbc6ca60bf47545" \
         --contract_arguments "SysConfig.economicalModel=1"
 ```
 
@@ -174,7 +174,7 @@ $ ./bin/cita create \
 3. 让我们来发一个部署合约的交易并获取回执，来看看余额的变化吧。
 
    ```shell
-   $ rpc sendRawTransaction \ 
+   $ rpc sendRawTransaction \
      --code "0x606060405260008055341561001357600080fd5b60f2806100216000396000f3006060604052600436106053576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f2be91f1460585780636d4ce63c14606a578063d826f88f146090575b600080fd5b3415606257600080fd5b606860a2565b005b3415607457600080fd5b607a60b4565b6040518082815260200191505060405180910390f35b3415609a57600080fd5b60a060bd565b005b60016000808282540192505081905550565b60008054905090565b600080819055505600a165627a7a72305820906dc3fa7444ee6bea2e59c94fe33064e84166909760c82401f65dfecbd307d50029" \
      --private-key "0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6" \
    $ rpc getTransactionReceipt --hash "0x39c4cd332892fb5db11c250275b9a130bf3c087ebdf47b6504d65347ec349406"

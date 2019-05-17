@@ -3,15 +3,7 @@ id: admin
 title: 管理员合约接口
 ---
 
-<h2 class="hover-list">Admin Management</h2>
-
-* [admin](#admin)
-* [isAdmin](#isAdmin)
-* [update](#update)
-
-***
-
-### admin
+## admin
 
 查询当前的管理员账户地址
 
@@ -23,7 +15,7 @@ title: 管理员合约接口
 
     `address` - 管理员地址
 
-### isAdmin
+## isAdmin
 
 判断账户是否是管理员
 
@@ -35,7 +27,7 @@ title: 管理员合约接口
 
     `bool` - 是管理员则为真，反之则反
 
-### update
+## update
 
 更新管理员账户
 

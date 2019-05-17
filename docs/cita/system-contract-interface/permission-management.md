@@ -1,5 +1,5 @@
 ---
-id: permission-management
+id: permission-mng
 title: 权限管理合约接口
 ---
 

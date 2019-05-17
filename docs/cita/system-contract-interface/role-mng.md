@@ -136,7 +136,7 @@ $ scm RoleManagement updateRoleName \
 ```shell
 $ scm RoleManagement addPermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
-        --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \ 
+        --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
@@ -157,7 +157,7 @@ $ scm RoleManagement addPermissions \
 * 示例
 
 ```shell
-$ scm RoleManagement deletePermissions \ 
+$ scm RoleManagement deletePermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
         --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e66

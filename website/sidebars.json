@@ -19,7 +19,7 @@
         "label": "System Management",
         "type": "subcategory",
         "ids": [
-          "cita/system/contracts",
+          "cita/system/sys-contracts",
           "cita/system/node",
           "cita/system/log",
           "cita/system/snapshot",

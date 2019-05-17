@@ -7,10 +7,10 @@ title: 紧急制动
 
 超级管理员在极端情况下的维护手段，开启紧急制动模式后，链上只接收超级管理员发送的交易，其他交易全部拒绝。
 
-可能需要这个合约的场景：
+使用场景：
 
-- 运营方需要对系统合约进行 `amend` 操作，这个操作是风险性很大的，需要拒绝任何其他人交易带来的意外影响
-- 链正常运行期间，进行一些升级，维护等操作，不希望有其他人的干扰
+- 运营方需要对系统合约进行 `amend` 操作，这个操作是风险性很大的，需要拒绝任何其他交易带来的意外影响
+- 链正常运行期间，进行一些升级，维护等操作，不希望有其他交易干扰
 
 ### 合约信息
 
@@ -24,7 +24,7 @@ ac9f0222: setState(bool)
 c19d93fb: state()
 ```
 
-初始默认值为 `false`，超级管理员可以通过发交易的方式修改状态值，当状态为 `true` 时，进入紧急制动模式。
+默认值为 `false`，超级管理员可以发交易修改状态值，当状态为 `true` 时，进入紧急制动模式。
 
 ### 操作示例
 
@@ -47,6 +47,7 @@ cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
   "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
 }
 ```
+
 可以看到，当前链未开启紧急制动模式
 
 - 开启紧急制动模式并确认：
@@ -58,17 +59,7 @@ cita-cli scm EmergencyBrake setState \
     --url http://127.0.0.1:1337
 ```
 
-输出：
-```json
-{
-  "id": 3,
-  "jsonrpc": "2.0",
-  "result": {
-    "hash": "0x45d1436927f3fe013c8e35481283317dda23f4c17b8aa4f5b4c42ecb2e81c817",
-    "status": "OK"
-  }
-}
-```
+- 查询制动状态
 
 ```bash
 cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
@@ -82,7 +73,8 @@ cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
   "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
 }
 ```
-可以确认，当前状态已经改为紧急制动模式
+
+当前状态已经改为紧急制动模式
 
 - 用随机私钥发送转账交易，确认紧急制动功能正常：
 
@@ -100,6 +92,7 @@ cita-cli key create
 ```
 
 任意私钥发送交易被拒绝
+
 ```bash
 cita-cli transfer \
     --address 0x23e2aef1f034f4e2db0ede35bfd92999a4b081d9 \
@@ -120,7 +113,8 @@ cita-cli transfer \
 }
 ```
 
-超管发送交易，正常执行
+超级管理员发送交易，正常执行
+
 ```bash
 $ cita-cli transfer \
       --address 0xdd7342f637100daac32dc42823e111bcfc90943d \
@@ -151,6 +145,7 @@ cita-cli scm EmergencyBrake setState \
 ```
 
 输出：
+
 ```json
 {
   "id": 3,
@@ -172,27 +167,5 @@ cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
   "id": 1,
   "jsonrpc": "2.0",
   "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
-}
-```
-
-- 确认已经取消紧急制动：
-
-```bash
-cita-cli transfer \
-    --address 0x23e2aef1f034f4e2db0ede35bfd92999a4b081d9 \
-    --private-key 0xf2c9b7ebd64c079928e6873f6b2f0551ecedf87d4a1cab30851b8592aa4b2396 \
-    --value 0x10 \
-    --url http://127.0.0.1:1337
-```
-
-输出：
-```json
-{
-  "id": 3,
-  "jsonrpc": "2.0",
-  "result": {
-    "hash": "0x99d7efd6932f43a041512ac88cbfe2997b1a286c288c84d42c22109b4a55c819",
-    "status": "OK"
-  }
 }
 ```

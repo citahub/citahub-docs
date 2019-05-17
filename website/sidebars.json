@@ -24,12 +24,18 @@
           "cita/system/log",
           "cita/system/snapshot",
           "cita/system/batch-tx",
-          "cita/system/emg-brake",
-          "cita/system/amend",
           "cita/system/version",
           "cita/system/auto-exec",
           "cita/system/zktx",
           "cita/system/store"
+        ]
+      },
+      {
+        "label": "Special Govern",
+        "type": "subcategory",
+        "ids": [
+          "cita/special-govern/emg-brake",
+          "cita/special-govern/amend"
         ]
       },
       {

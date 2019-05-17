@@ -31,14 +31,6 @@
         ]
       },
       {
-        "label": "Special Govern",
-        "type": "subcategory",
-        "ids": [
-          "cita/special-govern/emg-brake",
-          "cita/special-govern/amend"
-        ]
-      },
-      {
         "label": "Economics Model",
         "type": "subcategory",
         "ids": [
@@ -57,6 +49,14 @@
           "cita/account-permission/permission-extend",
           "cita/account-permission/account-example",
           "cita/account-permission/permission-example"
+        ]
+      },
+      {
+        "label": "Special Govern",
+        "type": "subcategory",
+        "ids": [
+          "cita/special-govern/emg-brake",
+          "cita/special-govern/amend"
         ]
       },
       {

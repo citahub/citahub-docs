@@ -3,17 +3,7 @@ id: auth
 title: 授权管理合约接口
 ---
 
-<h2 class="hover-list">Authorization Management</h2>
-
-* [queryPermissions](#queryPermissions)
-* [queryAccounts](#queryAccounts)
-* [queryAllAccounts](#queryAllAccounts)
-* [checkResource](#checkResource)
-* [checkPermission](#checkPermission)
-
-***
-
-### queryPermissions
+## queryPermissions
 
 查询账户拥有的权限
 
@@ -25,7 +15,7 @@ title: 授权管理合约接口
 
     `address[]` - 权限地址列表
 
-### queryAccounts
+## queryAccounts
 
 查询拥有某个权限的所有账户
 
@@ -37,7 +27,7 @@ title: 授权管理合约接口
 
     `address[]` - 账户地址列表
 
-### queryAllAccounts
+## queryAllAccounts
 
 查询拥有权限的所有账户
 
@@ -49,11 +39,11 @@ title: 授权管理合约接口
 
     `address[]` - 账户地址列表
 
-### checkResource
+## checkResource
 
 > 废弃
 
-### checkPermission
+## checkPermission
 
 * 参数
 

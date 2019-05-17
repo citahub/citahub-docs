@@ -30,23 +30,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
  | 7         | NotStart        | node does not start                              |
  | 8         | NotReady        | node does not start (deprecation)                |
 
-## 示例
-
-<h2 class="hover-list">ErrorType</h2>
-
-* [NotAdmin](#NotAdmin)
-* [OutOfBaseLimit](#OutOfBaseLimit)
-* [OutOfBlockLimit](#OutOfBlockLimit)
-* [NoParentChain](#NoParentChain)
-* [NoSideChain](#NoSideChain)
-* [NotOneOperate](#NotOneOperate)
-* [NotClose](#NotClose)
-* [NotStart](#NotStart)
-* [NotReady](#NotReady)
-
-***
-
-### NotAdmin
+## NotAdmin
 
 交易回执：
 
@@ -104,7 +88,7 @@ $ cita-cli ethabi decode params \
 }
 ```
 
-### OutOfBaseLimit
+## OutOfBaseLimit
 
 交易回执：
 
@@ -162,7 +146,7 @@ $ cita-cli ethabi decode params \
 }
 ```
 
-### OutOfBlockLimit
+## OutOfBlockLimit
 
 交易回执：
 
@@ -220,11 +204,11 @@ $ cita-cli ethabi decode params \
 }
 ```
 
-### NoParentChain
+## NoParentChain
 
 > 废弃
 
-### NoSideChain
+## NoSideChain
 
 交易回执：
 
@@ -282,11 +266,11 @@ $ cita-cli ethabi decode params \
 }
 ```
 
-### NotOneOperate
+## NotOneOperate
 
 > 废弃
 
-### NotClose
+## NotClose
 
 交易回执：
 
@@ -344,7 +328,7 @@ $ cita-cli ethabi decode params \
 }
 ```
 
-### NotStart
+## NotStart
 
 交易回执：
 
@@ -402,6 +386,6 @@ $ cita-cli ethabi decode params \
 }
 ```
 
-### NotReady
+## NotReady
 
 > 废弃

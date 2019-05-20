@@ -3,13 +3,7 @@ id: auto-exec
 title: Auto Execution Contract
 ---
 
-<h2 class="hover-list">Auto Execution</h2>
-
-* [register](#register)
-* [autoExec](#autoExec)
-* [contAddr](#contAddr)
-
-### register
+## register
 
 注册自动执行合约，只能管理员调用，新注册的地址会覆盖旧地址。
 
@@ -21,7 +15,7 @@ title: Auto Execution Contract
     
     空
 
-### autoExec
+## autoExec
 
 仅供底层调用的接口，不对用户开放。
 
@@ -33,7 +27,7 @@ title: Auto Execution Contract
     
     空
 
-### contAddr
+## contAddr
 
 * 参数
     

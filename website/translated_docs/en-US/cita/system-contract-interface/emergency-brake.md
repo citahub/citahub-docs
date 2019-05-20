@@ -3,13 +3,7 @@ id: emergency-brake
 title: Emergency Brake Contract Interface
 ---
 
-<h2 class="hover-list">Emergency brake</h2>
-
-* [setState](#setState)
-
-* * *
-
-### setState
+## setState
 
 开启紧急制动模式。
 

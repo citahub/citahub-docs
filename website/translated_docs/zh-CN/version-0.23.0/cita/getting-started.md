@@ -112,9 +112,9 @@ $ ./env.sh make release
 
 * 先切换到发布件目录
     
-  * 如果之前选择从源码开始编译：
+    * 如果之前选择从源码开始编译：
 
-    ```shell
+```shell
     $ cd target/install
     ```
 
@@ -141,16 +141,15 @@ $ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --n
 
 节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
 
-```
-test-chain/0
-test-chain/1
-test-chain/2
-test-chain/3
-```
+    test-chain/0
+    test-chain/1
+    test-chain/2
+    test-chain/3
+    
 
 * 执行以下命令依次配置四个节点
 
-  ```shell
+```shell
   $ bin/cita setup test-chain/0
   $ bin/cita setup test-chain/1
   $ bin/cita setup test-chain/2

@@ -3,19 +3,7 @@ id: group
 title: Group System Contract
 ---
 
-<h2 class="hover-list">Users Management</h2>
-
-* [queryInfo](#queryInfo)
-* [queryName](#queryName)
-* [queryAccounts](#queryAccounts)
-* [queryChild](#queryChild)
-* [queryChildLength](#queryChildLength)
-* [queryParent](#queryParent)
-* [inGroup](#inGroup)
-
-* * *
-
-### queryInfo
+## queryInfo
 
 查询组信息。
 
@@ -35,7 +23,7 @@ title: Group System Contract
 $ scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 ```
 
-### queryName
+## queryName
 
 查询组名字。
 
@@ -53,7 +41,7 @@ $ scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 ```
 
-### queryAccounts
+## queryAccounts
 
 查询组内所有用户。
 
@@ -71,7 +59,7 @@ $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 ```
 
-### queryChild
+## queryChild
 
 查询子组。
 
@@ -89,7 +77,7 @@ $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 ```
 
-### queryChildLength
+## queryChildLength
 
 查询子组个数。
 
@@ -107,7 +95,7 @@ $ scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
 ```
 
-### queryParent
+## queryParent
 
 查询父组。
 
@@ -125,7 +113,7 @@ $ scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF02000
 $ scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 ```
 
-### inGroup
+## inGroup
 
 查询账户是否在组内。
 

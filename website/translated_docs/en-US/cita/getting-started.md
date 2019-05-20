@@ -6,197 +6,203 @@ title: Getting Started
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](./huawei)。
-> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 CITA 测试链。测试链的水龙头的地址为：https://dapp.cryptape.com/faucet/, 可以在这里领取 Testnet 的代币。测试链的内核 CITA 的版本为 [`v0.22.0`](https://github.com/cryptape/cita/releases/tag/v0.22.0)。该测试链由4个节点组成，各节点的 ip 地址和端口如下：
+> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 [CITA 测试链](../toolchain/testnet/testchain)。
 
-    node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.cryptape.com
-    node 2: 116.62.221.89:1338
-    node 3: 47.96.84.91:1339
-    node 4: 121.43.163.31:1340
-    
+## 适用操作系统声明
 
-## 依赖
+系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
 
-### 系统平台要求
+如果你使用的是 MacOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA。
 
-系统需支持 Docker 的安装。
+## 硬件配置建议
 
-CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-build/) 。 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。
+配置取决于自身业务，请根据实际情况搭配，以下是建议最低配置：
 
-如果你使用的是 macOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA.
+体验配置：CPU：2核心、内存：4GB、硬盘：30G
 
-### 安装 Docker
+生产配置：CPU：4核心、内存：8GB、硬盘：200G
 
-参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/install/)。
+## 软件依赖声明
 
-可使用下面的命令来检查 Docker 是否已经成功安装：
+* 依赖 Docker，安装 Docker 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/install/)。
+* CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-build/) 。 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。
 
-    $ sudo docker run hello-world
-    
+## 安装 CITA 客户端工具
 
-### 获取 Docker 镜像
-
-CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-build/)。
-
-可以使用 `docker pull` 命令直接从 DockerHub 获取， 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/image/pull.html)。
-
-对于内网环境，也可以通过 `docker save` 和 `docker load` 传递镜像， 参见 [在线资料](https://yeasy.gitbooks.io/docker_practice/content/image/other.html)。
-
-## 编译 CITA
-
-> 下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 [CITA 正式发布版本](https://github.com/cryptape/cita/releases)，直接下载你想要的版本发布包然后部署即可。
-
-### 获取源码
-
-从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
+1. 创建目录
 
 ```shell
-$ git clone https://github.com/cryptape/cita.git
-$ cd cita
-$ git submodule init
-$ git submodule update
+   $ mkdir -p /data/cita
+   ```
+
+2. 切换目录
+
+   ```shell
+   $ cd /data/cita/
+   ```
+
+3. 下载 CITA-CLI 安装包
+
+   ```shell
+   $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.4/cita-cli-x86_64-musl-tls-0.19.4.tar.gz
+   ```
+
+4. 解压程序
+
+   ```shell
+   $ tar zxvf cita-cli-x86_64-musl-tls-0.19.4.tar.gz
+   ```
+
+5. 复制 CITA-CLI 到 系统可执行文件目录下
+
+   ```shell
+   $ cp -rp cita-cli /bin/
+   ```
+
+6. 创建管理员账户地址、私钥、公钥
+
+   ```shell
+   $ cita-cli key create
+   ```
+
+   返回以下内容，
+
+   ```json
+   {
+     "address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696",
+     "private": "0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768",
+     "public": "0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"
+   }
+   ```
+
+   > 注：此处为示例公私钥对，不要在生产环境复制使用。"address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。
+
+## 下载 CITA
+
+1. 切换目录
+
+   ```shell
+   $ cd /data/cita/
+   ```
+
+2. 下载 CITA 安装包
+
+   ```shell
+   $ wget https://github.com/cryptape/cita/releases/download/v0.23.1/cita_secp256k1_sha3.tar.gz
+   ```
+
+3. 解压 CITA 程序
+
+   ```shell
+   $ tar zxvf cita_secp256k1_sha3.tar.gz
+   ```
+
+4. 进入 CITA 目录
+
+   ```shell
+   $ cd cita_secp256k1_sha3
+   ```
+
+## 配置 CITA
+
+初始化链 （super_admin 地址是超级管理员账号即 CITA-CLI 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））
+
+```shell
+$ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
-### 编译源代码
+> * 注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 [链接配置](./operation/chain-config)
+> * 注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP。
 
-可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）
+## 启动 CITA
 
-```shell
-$ ./env.sh make debug
-```
-
-或者
+1. 启动节点 0
 
 ```shell
-$ ./env.sh make release
-```
+   $ ./bin/cita setup test-chain/0
+   $ ./bin/cita start test-chain/0
+   ```
 
-> 可选择替换 Rust Crates 的官方源，详细教程可以参考：
-> 
-> * [USTC Mirror Help for Rust Crates](http://mirrors.ustc.edu.cn/help/crates.io-index.html)
-> * [Source Replacement for Rust Crates](https://doc.rust-lang.org/cargo/reference/source-replacement.html)
-> * [How to map a configuration file into docker](https://docs.docker.com/storage/volumes/)
+2. 启动节点 1
 
-编译生成的文件在发布件目录 `target/install` 下，生产环境下只需要这个目录即可。
+   ```shell
+   $ ./bin/cita setup test-chain/1
+   $ ./bin/cita start test-chain/1
+   ```
 
-> **Docker env 使用说明**
-> 
-> * 在源码根目录下，我们提供了 `env.sh` 脚本，封装了 Docker 相关的操作。 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。 例如：
->     
->     ```shell
->     $ ./env.sh make debug
->     ```
->     
->     即表示在 Docker 环境中运行 `make debug`。
-> 
-> * 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
-> 
-> **Notice**
-> 
-> * 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误：
->     
->     ```shell
->     $ ./env.sh
->     error: failed switching to "user": unable to find user user: no matching entries in passwd file
->     ```
->     
->     因此要保证操作使用的始终是同一个系统用户。
-> 
-> * 如果出现 Docker 相关的报错，可以执行如下命令并重试： 
->         shell
->         docker kill $(docker ps -a -q)
+3. 启动节点 2
 
-## 部署CITA
+   ```shell
+   $ ./bin/cita setup test-chain/2
+   $ ./bin/cita start test-chain/2
+   ```
 
-### 配置节点
+4. 启动节点 3
 
-* 先切换到发布件目录
-    
-    * 如果之前选择从源码开始编译：
+   ```shell
+   $ ./bin/cita setup test-chain/3
+   $ ./bin/cita start test-chain/3
+   ```
 
-```shell
-    $ cd target/install
-    ```
+## 验证 CITA 是否运行正常
 
-  * 如果之前选择下载编译好的发布包：
+1. 查看进程是否启动成功
 
-    ```shell
-    $ cd cita_secp256k1_sha3/
-    ```
+   ```shell
+   $ ps -ef | grep cita- |grep -v grep |wc -l && ps -ef | grep cita- |grep -v grep
+   ```
 
-* 使用发布件目录中的 `create_cita_config.py` 工具用来生成节点配置文件，包括创世块配置、节点相关配置、网络连接配置、私钥配置等。执行以下命令行可使用该工具生成默认的本地 4 个节点的 Demo 示例配置：
+   返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）
 
-> **Notice**
-> `bin/cita` 脚本默认是通过启动容器执行命令，若是本地配置了相关的环境直接使用，请 加上 `bebop` 关键词
->
->   ```shell
->   $ bin/cita bebop create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
->   ```
-> 下同
+   ```
+   28
+   cita      6180 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6188  6180  0 10:54 ?        00:00:00 cita-auth -c auth.toml
+   cita      6191  6180  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6193  6180  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6194  6180  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6195  6180  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6202  6180  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   cita      6394 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6402  6394  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6405  6394  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6407  6394  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6408  6394  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   cita      6409  6394  0 10:54 ?        00:00:00 cita-auth -c auth.toml
+   cita      6413  6394  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6613 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6622  6613  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   cita      6625  6613  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6626  6613  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6627  6613  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6628  6613  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6635  6613  0 10:54 ?        00:00:00 cita-auth -c auth.toml
+   cita      6831 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6839  6831  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6841  6831  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6843  6831  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   cita      6845  6831  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6846  6831  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6857  6831  0 10:54 ?        00:00:00 cita-auth -c auth.toml
+   ```
 
+2. 调用 RPC 接口查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化
 
-  ```shell
-  $ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
-  ```
+   ```shell
+   $ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+   ```
 
-  节点初始化操作成功后，将在发布件目录下生成节点的配置文件，其生成的节点目录为：
+   返回结果：
 
-  * test-chain/0
-  * test-chain/1
-  * test-chain/2
-  * test-chain/3
+   ```json
+   {"jsonrpc":"2.0","id":83,"result":"0x7d"}
+   ```
+   其中 `0x7d` 表示返回块高度，具体数据以所查询的链实际块高为准。
+   只要能连续查询到块高度，并且块高度在增长，则表示节点已经开始正常出块
 
-* 执行以下命令依次配置四个节点
+   更多信息请查看[验证](#验证)。
 
-  ```shell
-  $ bin/cita setup test-chain/0
-  $ bin/cita setup test-chain/1
-  $ bin/cita setup test-chain/2
-  $ bin/cita setup test-chain/3
-  ```
-
-> **Note**
->
-> * 生产环境中，用户需要根据实际情况更改默认配置。使用命令 `bin/cita create -h` 来获得详细帮助信息，允许自定义的配置包括：
->   * 系统管理员账户
->   * 出块时间间隔
->   * 累积多少历史交易量后进行重复交易的检查
->   * 系统合约详细参数
->   * 共识节点地址
->
->   该工具更详细的使用说明请参考 [Config Tool](./configuration/chain-config)。
-> * 对于多服务器部署一条链，选择一台服务器执行命令之后把相关节点目录进行拷贝。不可多服务器都执行配置脚本。
-> * 在不同服务器部署多条链主要规划相关端口配置，参见 [Config_Tool的功能和用法](./configuration/chain-config)。在同一台服务器上部署多条链，除了规划端口配置外，由于 `RabbitMQ` 系统服务限制，多条链只能在一个Docker里运行。基于上面 test-chain 链所在的目录，生成一条新链：
->
->   ```shell
->   $ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"  --chain_name test2-chain --jsonrpc_port 2337 --ws_port 5337 --grpc_port 6000 --nodes "127.0.0.1:8000,127.0.0.1:8001,127.0.0.1:8002,127.0.0.1:8003"
->   ```
->
->   运行 test2-chain 方式与上面 test-chain 一致，并且只能在同一个Docker 里运行。
-
-### 节点命令
-
-通过 `bin/cita bebop` 查看节点命令。
-
-```shell
-Usage: cita <command> <node> [options]
-where <command> is one of the following:
-    { help | create | port | setup | start | stop | restart
-      ping | top | backup | clean | logs | logrotate }
-Run `cita help` for more detailed information.
-```
-
-### 启动节点
-
-执行以下命令依次启动四个节点，该命令正常情况下不会返回，节点后台运行。
-
-```shell
-$ bin/cita start test-chain/0
-$ bin/cita start test-chain/1
-$ bin/cita start test-chain/2
-$ bin/cita start test-chain/3
-```
-
-### 停止节点
+## 停止节点
 
 以“0”节点为例，执行以下命令即可停止“0”节点：
 
@@ -204,71 +210,12 @@ $ bin/cita start test-chain/3
 $ bin/cita stop test-chain/0
 ```
 
-### 其他操作
+## 其他操作
 
 更多其他操作使用以下命令查看帮助信息：
 
 ```shell
-$ bin/cita bebop help
-```
-
-输出如下：
-
-```shell
-Usage: cita <command> <node> [options]
-This is the primary script for controlling the cita node.
- INFORMATIONAL COMMANDS
-    help
-        You are here.
- BUILDING COMMANDS
-    create <config>
-        Creates blockchains according to the following config,
-        use "cita create -h" to get more information.
-        "cita-config" has the same function.
-    port <ports>
-        Sets docker port, for example: "cita port 1337:1337"
- SERVICE CONTROL COMMANDS
-    setup <node>
-        Ensuring the required runtime environment for cita node, like
-        RabbitMQ service. You should run this command at the first time
-        of running cita node.
-    start <node>
-        Starts the cita node in the background. If the node is already
-        started, you will get the message "Node is already running!" If the
-        node is not already running, no output will be given.
-    stop <node> [debug] [mock]
-        Stops the running cita node. Prints "ok" when successful.  When
-        the node is already stopped or not responding, prints:
-        "Node 'NODE_NAME' not responding to pings."
-    restart <node>
-        Stops and then starts the running cita node. Prints "ok"
-        when successful.  When the node is already stopped or not
-        responding, prints: "Node 'NODE_NAME' not responding to
-        pings."
- DIAGNOSTIC COMMANDS
-    ping <node>
-        Checks that the cita node is running. Prints "pong" when
-        successful.  When the node is stopped or not responding, prints:
-        "Node 'NODE_NAME' not responding to pings."
-    top <node>
-        Prints services processes information similar
-        to the information provided by the `top` command.
-    stat <node> (deprecated, use 'top' instead)
-    logs <node> <service>
-        Fetch the logs of the specified service.
- SCRIPTING COMMANDS
-    backup <node>
-        Backup the node's data and logs into backup directory, which actually
-        copy that data and logs into backup directory. Prints the specified
-        backup commands. When the node is running, prints:
-        "Node is already running!"
-    clean <node>
-        Clean the node's data and logs, which actually move that data and logs
-        into backup directory. Prints the specified backup commands. When the
-        node is running, prints: "Node is already running!"
-    logrotate <node>
-        Archives the current node logs, starts fresh logs. Prints the archived
-        logs path.
+$ bin/cita help
 ```
 
 > **Notice**
@@ -282,72 +229,15 @@ This is the primary script for controlling the cita node.
 > 
 > * 请勿在一台服务器上运行多个容器。因为虽然 CITA 在 Docker 中运行，但是容器并没有做网络隔离。
 > 
-> * 请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突
-
-### 使用docker-compose
-
-前面运行节点的方法，是将所有节点放在同一个容器中，并且容器没有做网络隔离。
-
-对于复杂的测试场景，会造成一些不便。
-
-使用`docker-compose`可以让每个节点单独一个容器，网络也是隔离的。
-
-##### 安装docker-compose
-
-    sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
-    docker-compose --version
-    
-
-##### 准备发布件
-
-    latest_release_tag=$(curl --silent "https://api.github.com/repos/cryptape/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-    echo "latest release tag: $latest_release_tag"
-    wget https://github.com/cryptape/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
-    tar zxvf cita_secp256k1_sha3.tar.gz
-    cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node0
-    cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node1
-    cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
-    cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
-    
-    wget https://raw.githubusercontent.com/cryptape/cita/$latest_release_tag/tests/integrate_test/docker-compose.yaml
-    
-
-##### 启动
-
-    USER_ID=`id -u $USER` docker-compose up
-    
-
-后台启动
-
-    USER_ID=`id -u $USER` docker-compose up -d
-    
-
-##### 停止
-
-    docker-compose down
-    
-
-##### 进入容器内执行命令
-
-    docker-compose exec node0 /usr/bin/gosu user /bin/bash
-    
-
-##### 日志
-
-容器默认输出的是`chain`微服务的日志
-
-    docker-compose logs -f
-    
-
-也可以直接到挂载目录下查看所有微服务的日志
-
-    tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
-    
+> * 请不要同时在 host 系统里面运行 CITA 以及相关的 RabbitMQ 等软件，以免造成端口冲突。
 
 ## 验证
 
-* 查询节点个数
+CITA 提供了支持 JSON-RPC 2.0 (https://www.jsonrpc.org/specification) 协议的API，方便客户端进行区块信息的查询，具体文档在[RPC 列表](./rpc-guide/rpc)。
+
+默认启动的 4 个节点的 JSON-RPC 服务端口分别是 1337、1338、1339、1340，下列指令查看第一个节点的相关信息。
+
+* 查看当前节点上连接其他节点的数量（返回结果 +1 即是节点所在网络中的所有节点数量）
     
     Request:
     
@@ -365,24 +255,8 @@ This is the primary script for controlling the cita node.
     }
     ```
 
-* 查询当前块高度。
-    
-    Request:
-    
-    ```shell
-    curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
-    ```
-    
-    Result:
-    
-    ```json
-    {
-    "jsonrpc": "2.0",
-    "id": 83,
-    "result": "0x8"
-    }
-    ```
-    
-    返回块高度，表示节点已经开始正常出块。
-
-更多 API（如合约调用、交易查询）请参见[RPC 调用](./rpc-guide/rpc)。
+> Tips：JSON-RPC 协议要求发送 JSON 格式的请求参数，其中 "jsonrpc":"2.0" 是固定的协议版本， 另外包含三个关键元素：
+> 
+> 1. method：表示要调用的方法
+> 2. params：表示参数的数组
+> 3. id：客户端分配的一个标识符，可以包含字符串，数字或者为空。如果没有 id，就会被当成是广播通知。这个值一般不能为 Null，且为数字时不能有小数。如果请求中含有这个字段，服务器在响应时，必须原样返回该字段，当有多个请求并使用异步队列发送时可以用来区分请求和响应。

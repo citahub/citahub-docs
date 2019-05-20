@@ -277,7 +277,7 @@ $ ./env.sh ./bin/cita help
     Request:
     
     ```shell
-    ./env.sh ./ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
+    ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337
     ```
     
     Result:
@@ -295,7 +295,7 @@ $ ./env.sh ./bin/cita help
     Request:
     
     ```shell
-    ./env.sh ./ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
+    ./env.sh curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
     ```
     
     Result:

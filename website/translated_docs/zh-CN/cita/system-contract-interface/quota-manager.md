@@ -3,19 +3,7 @@ id: quota-manager
 title: 配额管理合约接口
 ---
 
-<h2 class="hover-list">配额管理</h2>
-
-* [setBQL](#setBQL)
-* [setDefaultAQL](#setDefaultAQL)
-* [setAQL](#setAQL)
-* [getAccounts](#getAccounts)
-* [getQuotas](#getQuotas)
-* [getBQL](#getBQL)
-* [getDefaultAQL](#getDefaultAQL)
-* [getAQL](#getAQL)
-* [getAutoExecQL](#getAutoExecQL)
-
-### setBQL
+## setBQL
 
 设置区块配额上限。
 
@@ -35,7 +23,7 @@ $ scm QuotaManager setBQL \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### setDefaultAQL
+## setDefaultAQL
 
 设置默认账号配额上限
 
@@ -55,7 +43,7 @@ $ scm QuotaManager setDefaultAQL \
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### setAQL
+## setAQL
 
 设置指定账号配额上限。
 
@@ -75,7 +63,7 @@ $ scm QuotaManager setAQL \
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### getAccounts
+## getAccounts
 
 查询所有指定账号。
 
@@ -93,7 +81,7 @@ $ scm QuotaManager setAQL \
 $ scm QuotaManager getAccounts
 ```
 
-### getQuotas
+## getQuotas
 
 查询所有指定账号的配额上限。
 
@@ -111,7 +99,7 @@ $ scm QuotaManager getAccounts
 $ scm QuotaManager getQuotas
 ```
 
-### getBQL
+## getBQL
 
 查询默认块配额。
 
@@ -137,7 +125,7 @@ $ scm QuotaManager getBQL
 }
 ```
 
-### getDefaultAQL
+## getDefaultAQL
 
 查询默认账户配额。
 
@@ -163,7 +151,7 @@ $ scm QuotaManager getDefaultAQL
 }
 ```
 
-### getAQL
+## getAQL
 
 查询某一账户配额。
 
@@ -189,7 +177,7 @@ $ scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523
 }
 ```
 
-### getAutoExecQL
+## getAutoExecQL
 
 查询自动执行配额限制。
 

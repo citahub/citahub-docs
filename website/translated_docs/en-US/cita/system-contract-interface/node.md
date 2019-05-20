@@ -3,19 +3,7 @@ id: node
 title: Consensus Node Management Contract
 ---
 
-<h2 class="hover-list">Node Management</h2>
-
-* [approveNode](#approveNode)
-* [deleteNode](#deleteNode)
-* [listNode](#listNode)
-* [setStake](#setStake)
-* [getStatus](#getStatus)
-* [listStake](#listStake)
-* [stakePermillage](#stakePermillage)
-
-* * *
-
-### approveNode
+## approveNode
 
 确认共识节点。
 
@@ -35,7 +23,7 @@ $ scm NodeManager approveNode \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### deleteNode
+## deleteNode
 
 删除共识节点。
 
@@ -55,7 +43,7 @@ $ scm NodeManager deleteNode \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### listNode
+## listNode
 
 共识节点列表。
 
@@ -73,7 +61,7 @@ $ scm NodeManager deleteNode \
 $ scm NodeManager listNode
 ```
 
-### setStake
+## setStake
 
 设置共识节点 stake 。
 
@@ -96,7 +84,7 @@ $ scm NodeManager setStake \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### getStatus
+## getStatus
 
 获取共识节点状态。
 
@@ -114,7 +102,7 @@ $ scm NodeManager setStake \
 $ scm NodeManager getStatus --address 0xae0f69a2d95146d104365e0502a0d521717ced7f
 ```
 
-### listStake
+## listStake
 
 共识节点 stake 列表。
 
@@ -132,7 +120,7 @@ $ scm NodeManager getStatus --address 0xae0f69a2d95146d104365e0502a0d521717ced7f
 $ scm NodeManager listStake
 ```
 
-### stakePermillage
+## stakePermillage
 
 共识节点出块权重千分比。
 

@@ -3,16 +3,7 @@ id: permission
 title: 权限合约接口
 ---
 
-<h2 class="hover-list">权限合约接口</h2>
-
-* [inPermission](#inPermission)
-* [queryInfo](#queryInfo)
-* [queryName](#queryName)
-* [queryResource](#queryResource)
-
-* * *
-
-### inPermission
+## inPermission
 
 检查资源是否在权限中
 
@@ -45,7 +36,7 @@ $ scm Permission inPermission \
 }
 ```
 
-### queryInfo
+## queryInfo
 
 查询权限信息，包括权限名称及包含的资源列表
 
@@ -77,7 +68,7 @@ $ scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dc
 }
 ```
 
-### queryName
+## queryName
 
 查询权限的名称
 
@@ -105,7 +96,7 @@ $ scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dc
 }
 ```
 
-### queryResource
+## queryResource
 
 查询权限的资源
 

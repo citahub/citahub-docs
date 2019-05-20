@@ -3,14 +3,7 @@ id: role-auth
 title: 角色授权合约接口
 ---
 
-<h2 class="hover-list">Role Authorization</h2>
-
-* [queryRoles](#queryRoles)
-* [queryAccounts](#queryAccounts)
-
-* * *
-
-### queryRoles
+## queryRoles
 
 查询某一账户的所有角色。
 
@@ -38,7 +31,7 @@ $ scm RoleManagement queryRoles --account 0x101e99e1a654a99308175042aff4833a6528
 }
 ```
 
-### queryAccounts
+## queryAccounts
 
 查询某一角色下的所有账户。
 

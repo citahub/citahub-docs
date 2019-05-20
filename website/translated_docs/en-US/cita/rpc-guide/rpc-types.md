@@ -177,7 +177,7 @@ Topics are order-dependent. A transaction with a log with topics [A, B] will be 
     * `stateRoot`- 状态树根
     * `transactionsRoot` - 交易树根
     * `receiptsRoot`- 回执树根
-    * `gasUsed`- The amount of gas used in the block
+    * `quotaUsed`- The amount of quota used in the block
     * `proof`- 
         * `BFT` 
             * `proposal`- 提议内容的hash

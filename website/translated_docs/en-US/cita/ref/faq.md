@@ -27,7 +27,7 @@ CITA 单个节点本身不是高可用，但 CITA 网络整体上是个多节点
 
 对于比特币因为交易都是 UTXO，交易的处理的只需要验证 UTXO。比特币对块的大小进行限制，其实是在限制在有限时间内，能处理完块内交易，对交易复杂度进行限制，并达成一定程度的全网共识。
 
-对于支持图灵完备的智能合约的联盟链，因为交易可以触发合约调用，并且交易复杂度是任意的，所以需要限制交易的复杂度，而通 过简单的限定区块大小并不能起到作用。因为即使交易很小，也有可能计算很复杂，比如调用合约内循环计算 sha3，即使交易内容很大，可能计算也很快，比较简单的存证处理。且在对于联盟链，由于节点数量相对较少，且联盟链组织会提供更好的网络连接，更快的传输效率，所以区块大小对于共识的影响较小。
+对于支持图灵完备的智能合约的许可链，因为交易可以触发合约调用，并且交易复杂度是任意的，所以需要限制交易的复杂度，而通 过简单的限定区块大小并不能起到作用。因为即使交易很小，也有可能计算很复杂，比如调用合约内循环计算 sha3，即使交易内容很大，可能计算也很快，比较简单的存证处理。且在对于许可链，由于节点数量相对较少，且许可链组织会提供更好的网络连接，更快的传输效率，所以区块大小对于共识的影响较小。
 
 针对以上情况，CITA 采用了更为精确的方式来进行对块内计算量的限制，包括计算复杂度，存储大小，系统带宽等等考虑，重新制定了每个交易对链内系统资源的使用规则，使用类似于以太坊的配额管理制度。CITA 采用的是跟以太坊类似的方案。每个块有一个 quota limit，不是以交易笔数或者大小为限制，而是以处理块中所有交易的计算量为限制。这个 limit 也是可配置的，并且可以动态修改。这个 limit 的设置跟出块间隔有关系。出块间隔小，limit 就要设置小一点，否则当前块处理不完，下一个块就会往后拖，导致实时性变差。
 
@@ -57,16 +57,6 @@ https://docs.citahub.com/zh-CN/cita/architecture/architecture
 * **性能好**：Rust 被普遍认为是更好的 C++，从 C++ 标准演化过程中，你可以发现 C++ 和 Rust 殊途同归，最终的选择都差不多。与 Go 相比，Rust 没有 GC 的，性能确实是好一些。
 * **多核支持好**。
 * **类型系统**：在编译阶段杜绝很多代码问题，对软件质量非常有帮助。
-
-### CITA 与 Fabric 对比
-
-#### 与 Fabric 相比，CITA 有什么优点？
-
-* **成本较高。** 咨询成本: IBM 咨询费用比较高; 维护成本: 包括升级的时候，链码的 package 必须在每一个背书节点中升级才可以，所以如果一个通道中的不同节点被不同的机构所掌握的话，可能需要联系独家机构才可以完成升级维护; 人员成本: 这样就要求一个开发人员至少具备两点：第一点就是需要对 Fabric 的概念很熟悉，有背书节点，peer 节点，通道的概念。 对于链码的部署，还需要一个背书策略。第二点就是对容器比较熟悉，因为智能合约，在 Fabric 中叫做链码。是单独作为一个容器以沙盒的形式运行在一个节点中，要通过 Fabric 修改升级删除链码需要通过命令行来实现。这样其实要求是一个底层工程师，一般成本要超过 50W 人民币一年。传统程序员很难胜任。
-* **操作复杂。** 用证书进行权限控制。进行增加节点的时候过程繁琐，在增加的时候，需要在新增的节点中再次加入链码的 package。
-* **性能不高。** 由于 Fabric 中每一个交易流程复杂，所以性能较低，官方宣布一万，但是实测可能较低，只有 200 TPS。 可能只有在 IBM 自己的硬件上面才可以达到很高的标准，因为 IBM 最终还是想要推广自己的硬件。
-* **生态位不合理。** IBM 不接小的项目，但是他们本身的团队在有大的项目的时候，会接单提供技术支持。这个时候，如果你也是采用的 IBM 底层技术的话，竞标上面是有很大的劣势的。
-* **Fabric 其实不是一个区块链**，准确的表达是**一个加入共识算法的中心化数据库**。这样就引发了两个问题，1. 没有原生代币，不需要挖矿，这样其实不能够提供一个经济激励，导致有一些需要激励的场景是没有办法用 Fabric 的。2. 无法进行跨链，Fabric 中通道就是一条链，跨通道就是跨链。但是通道并不是常规意义上的跨链，因为不可能所有的企业都在一个 Fabric 的网络上，所以他们不能跨通道，或者说跨通道技术非常不成熟。3.权限限制无法从链本身灵活实现，比如某个合约需要限制权限，而另一个不需要，两者又又互相调用关系。
 
 #### Fabric 的合约能直接迁移到 CITA 上面吗？
 
@@ -112,7 +102,7 @@ CITA目前采用局部共识的隐私方案： 支持一种特殊的隐私交易
 
 #### 交易中的 quota 的作用？
 
-CITA 当前支持以太坊的 EVM，由于 EVM 支持图灵完备的语言，所以就存在停机问题。在公链上，以太坊的 gas 是为了解决停机问题，以及因为计算需要消耗资源，配合 gasPrice 来解决交易的市场化问题。CITA 是面向企业的区块链管理平台，同样有支持智能合约的虚拟机，所以 quota 也是起到类似解决停机问题，另外因为联盟链内部一般不需要购买代币。所以这里的 quota 是系统定时分配，这样可以在一定程度上可以杜绝用户对计算资源的滥用。
+CITA 当前支持以太坊的 EVM，由于 EVM 支持图灵完备的语言，所以就存在停机问题。在公链上，以太坊的 gas 是为了解决停机问题，以及因为计算需要消耗资源，配合 gasPrice 来解决交易的市场化问题。CITA 是面向企业的区块链管理平台，同样有支持智能合约的虚拟机，所以 quota 也是起到类似解决停机问题，另外因为许可链内部一般不需要购买代币。所以这里的 quota 是系统定时分配，这样可以在一定程度上可以杜绝用户对计算资源的滥用。
 
 ## CITA 权限管理系统
 
@@ -156,7 +146,7 @@ CITA 支持 Go 合约，但是现在 Go 合约不能够和 solidity 的合约互
 
 #### chainid 是写在配置文件中的，如何获取？
 
-chainId可以通过getMetaData这个jsonRPC方法来获取。 示例命令：`curl -X POST —data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"id":1}' ipAddr:port`。
+chainId可以通过getMetaData这个jsonRPC方法来获取。 示例命令：`curl -X POST —data '{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}' ipAddr:port`。
 
 #### sdk 中新出现的参数 value（智能合约反向生成的 java 类，在 deploy 中出现的 value）具体代表什么含义，需要给应用层暴露么？
 
@@ -200,7 +190,7 @@ CPU 关键
 
 CITA 目前由 6 个微服务组成。因为微服务之间通过消息总线通信，所以 RabbitMQ 以及这 6 个微服务可以部署在不同的服务器上，形成集群。但是进一步的扩容，比如每个微服务运行多个实例，这个目前还在我们的开发计划中。
 
-#### 想要在已经运行的一条链（如标准分平台）上增加对国密的支持，现在一条链上不支持多种加密算法，有什么建议？
+#### 想要在已经运行的一条链上增加对国密的支持，现在一条链上不支持多种加密算法，有什么建议？
 
 目前不支持。
 
@@ -208,7 +198,7 @@ CITA 目前由 6 个微服务组成。因为微服务之间通过消息总线通
 
 #### 如何获取节点的地址？
 
-https://docs.citahub.com/zh-CN/cita/configuration/chain-config#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84
+https://docs.citahub.com/zh-CN/cita/operation/chain-config#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84
 
 #### 请问现在 CITA 的节点数量有上限吗？
 
@@ -244,7 +234,7 @@ CITA 采用的微服务架构，微服务之间通过消息总线通信。消息
 
 #### cita链有指令可以查询版本号吗？
 
-CITA 查询版本，不是通过 RPC 返回值查看。通过 binary 运行 ./bin/cita-auth —version 查看当前 CITA 版本。
+在 v0.23.0 及以后版本，如果打开了 --enable_version 配置，可以通过 JSON-RPC 接口 getVersion 获取，详细见[这里](https://docs.citahub.com/zh-CN/next/cita/rpc-guide/rpc#getversion)。其他版本需要通过运行 binary 文件方式, 运行 cita-jsonrpc --version 查看。
 
 #### 升级后 chain-id 会变化吗？
 
@@ -274,60 +264,6 @@ node1/logs下。
 
 ## 故障诊断
 
-### 安装部署报错
-
-#### Mac安装部署报错：thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "Failed to run `\"pkg-config\" \"—libs\" \"—cflags\" \"libsodium\"`: No such file or directory (os error 2)"', libcore/result.rs:945:5
-
-解决办法： `brew install pkg-config`
-
-#### Mac安装部署报错：thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "`\"pkg-config\" \"—libs\" \"—cflags\" \"libsodium\"` did not exit successfully: exit code: 1\n\--- stderr\nPackage libsodium was not found in the pkg-config search path.\nPerhaps you should add the directory containing `libsodium.pc\'\nto the PKG_CONFIG_PATH environment variable\nNo package \'libsodium\' found\n"', libcore/result.rs:945:5
-
-解决办法：`brew install libsodium`
-
-#### Mac安装部署报错：= note: ld: library not found for -lprofiler clang: error: linker command failed with exit code 1 (use -v to see invocation)
-
-解决办法： `brew install gperftools`
-
-#### Mac安装部署报错：error[E0460]: found possibly newer version of crate num_traits which num_traits depends on → /Users/rain/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-0.8.0/src/[lib.rs:40:1](http://lib.rs:40:1)
-
-解决办法：`cargo check`
-
-### 运行报错、微服务异常
-
-#### Mac 运行 CITA 报错：/scripts/create_cita_config.py create —nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" Traceback (most recent call last): File "./scripts/create_cita_config.py", line 12, in <module> import toml ModuleNotFoundError: No module named ‘toml'
-
-解决办法 `pip3 install toml`
-
-#### Mac 运行 CITA 报错：git clone https://github.com/ethereum/pyethereum.git python3 setup.py install 会卡死。
-
-解决办法：`pip3 install -r requirements.txt` 或者 `pip3 install ethereum`
-
-#### Mac运行 CITA 报错：Failed to import bitcoin. This is not a fatal error but does mean that you will not be able to determine the address from your wallet file.
-
-解决办法：`pip3 install bitcoin`
-
-#### Mac 运行 CITA 报错：Internal compiler error during compilation: /tmp/solidity-20180515-88303-7oxibo/solidity_0.4.23/libsolidity/interface/CompilerStack.cpp(732): Throw in function void dev::solidity::CompilerStack::compileContract(const dev::solidity::ContractDefinition &, map<const dev::solidity::contractdefinition *, const eth::assembly *> &) Dynamic exception type: boost::exception_detail::clone_impl<dev::solidity::internalcompilererror>
-
-解决办法： `brew upgrade solidity`
-
-#### Mac运行 CITA 报错：/Users/leeyr/Documents/cryptape/code/cita/tests/integrate_test/cita_blockNumber.sh: line 17: jq: command not found
-
-解决办法：`brew install jq`
-
-#### Mac 运行 CITA 报错：Error: unable to perform an operation on node 'rabbit@localhost'. Please see diagnostics information and suggestions below
-
-解决办法： `brew services start rabbitmq`
-
-#### Mac 运行 CITA 报错：Initializing chain from provided state sys_config.sol:66:16: Error: Expected identifier, got 'LParen' constructor( ^
-
-解决办法：更新docker `docker pull cita/cita-build:ubuntu-18.04-20180523`
-
-#### Mac 运行 CITA 报错：File "/Users/rain/.pyenv/versions/3.6.4/lib/python3.6/site-packages/ethereum/utils.py", line 13, in <module>
-
-from rlp.utils import decode_hex, encode_hex, ascii_chr, str_to_bytes ImportError: cannot import name 'decode_hex'
-
-解决办法：`pip3 install 'rlp==0.6.0'`
-
 #### 机器没有重启，为什么进程挂了？
 
 在不使用 Docker 镜像的情况而使用自编译环境，终端窗口一关，进程就挂了，加上 nohup 就没问题了。推荐使用 Docker 环境就不会出现这个问题。
@@ -351,10 +287,6 @@ from rlp.utils import decode_hex, encode_hex, ascii_chr, str_to_bytes ImportErro
 原因：连接 rabbitmq 不成功。可能因为：1. rabbitmq 未成功启动：rabbitmq 端口被占用（冲突）、rabbitmq 服务本身异常等。2. rabbitmq 成功启动可能注册id不可用
 
 解决方案：对于1，请先确认端口是否被占用，系统已启动 rabbitmq，然后在 docker 里再启动 rabbitmq 会导致 docker 里的启动失败。重启 rabbitmq 服务。对于2，删除无效 id：`sudo rabbitmqctl list_vhosts`, 然后 `sudo rabbitmqctl delete_vhost`
-
-#### Tread <unnamed> panicked at save_current_block_poof DB write failed.:"10 error: ./data/nosql/007258.log: Too many open files in system", libcore/[result.rs:945](http://result.rs:945/)
-
-请参考：https://blog.csdn.net/fdipzone/article/details/34588803，可以先改一下相关的配置，然后持续观察一下，看是否有文件句柄泄漏的情况。
 
 ### 合约相关报错
 

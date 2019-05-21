@@ -20,60 +20,13 @@ $ bin/cita create \
 
 ## 生成普通账户
 
-```bash
-$ cita-cli key create
-```
-
-输出：
-
-```json
-{
-  "address": "0x37d1c7449bfe76fe9c445e626da06265e9377601",
-  "private": "0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002",
-  "public": "0x9dc6fc7856f5271e6e8c45e5c5fe22d2ff699ac3b24497599be77803d3c25fb4e2fe7da616c65a291910c947c89923009f354634421bddd0a25cd0a509bcf6a9"
-}
-```
+参考[生成账户]。
 
 ## 部署合约
 
-使用[测试合约](https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol)
-
-### 获得合约的相关信息
-
-* 字节码
-
-```bash
-$ solc SimpleStorage.sol --bin
-```
-
-输出：
-
-```
-======= SimpleStorage.sol:SimpleStorage =======
-Binary:
-608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029
-```
-
-* 函数签名
-
-```bash
-$ solc SimpleStorage.sol --hashes
-```
-
-输出：
-
-```
-======= SimpleStorage.sol:SimpleStorage =======
-Function signatures:
-6d4ce63c: get()
-60fe47b1: set(uint256)
-```
-
-### 部署合约
+### 授予发交易和部署合约权限
 
 由于设置了权限的检查开关，所有用户默认是没有发交易及创建合约的权限的。首先需要通过 superAdmin 对其授 sendTx 发送交易及 createContract 创建合约权限。
-
-* 授予发送交易和创建合约权限
 
 发送交易权限地址为 `0xffffffffffffffffffffffffffffffffff021000`，创建合约权限地址为 `0xffffffffffffffffffffffffffffffffff021001`
 
@@ -163,62 +116,9 @@ $ cita-cli rpc getTransactionReceipt \
 
 授予权限成功。
 
-* 部署合约
+### 部署合约
 
-由测试用户进行操作
-
-```bash
-$ cita-cli rpc sendRawTransaction \
-    --code 0x608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029 \
-    --private-key 0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002 \
-    --url http://127.0.0.1:1337
-```
-
-输出：
-
-```json
-{
-  "id": 3,
-  "jsonrpc": "2.0",
-  "result": {
-    "hash": "0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa",
-    "status": "OK"
-  }
-}
-```
-
-获取 receipt 信息：
-
-```bash
-$ cita-cli rpc getTransactionReceipt \
-    --hash 0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa \
-    --url http://127.0.0.1:1337
-```
-
-输出：
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHash": "0x8cf225903eb7c49b0494f991941dcb4d401b2c51c321defa931914fb8f0aa87b",
-    "blockNumber": "0xf2",
-    "contractAddress": "0x5839153e0efe76efe0c974b728c4f49ca7ed75cc",
-    "cumulativeQuotaUsed": "0xaef9",
-    "errorMessage": null,
-    "quotaUsed": "0xaef9",
-    "logs": [
-    ],
-    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "root": null,
-    "transactionHash": "0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa",
-    "transactionIndex": "0x0"
-  }
-}
-```
-
-得到合约地址为 `0x5839153e0efe76efe0c974b728c4f49ca7ed75cc`
+参考[部署合约]。
 
 如果用户想要调用测试合约的接口，需要根据接口生成一个新的权限，然后由 admin 把权限赋予用户。
 
@@ -406,79 +306,9 @@ $ cita-cli scm Authorization queryPermissions \
 
 ## 调用测试合约
 
-调用测试合约 set 方法，传入参数为 1 ：
+参考[调用合约]，查看是否调用成功。
 
-```bash
-$ cita-cli rpc sendRawTransaction \
-    --code 0x60fe47b10000000000000000000000000000000000000000000000000000000000000001 \
-    --private-key 0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002 \
-    --address 0x5839153e0efe76efe0c974b728c4f49ca7ed75cc \
-    --url http://127.0.0.1:1337
-```
-
-输出：
-
-```json
-{
-  "id": 3,
-  "jsonrpc": "2.0",
-  "result": {
-    "hash": "0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b",
-    "status": "OK"
-  }
-}
-```
-
-查看 receipt 信息：
-
-```bash
-$ cita-cli rpc getTransactionReceipt \
-    --hash 0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b \
-    --url http://127.0.0.1:1337
-```
-
-输出：
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": {
-    "blockHash": "0x2984cd1ad2beaf267d3bff78e8dcb64bbf75bcc9721007d0f2a7c4a01ac68a1b",
-    "blockNumber": "0x152e",
-    "contractAddress": null,
-    "cumulativeQuotaUsed": "0x4f51",
-    "errorMessage": null,
-    "quotaUsed": "0x4f51",
-    "logs": [
-    ],
-    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "root": null,
-    "transactionHash": "0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b",
-    "transactionIndex": "0x0"
-  }
-}
-```
-
-从 `errorMessage` 中已经可以看出交易成功了。
-
-通过调用 get 方法查询结果：
-
-```bash
-$ cita-cli rpc call \
-    --to 0x5839153e0efe76efe0c974b728c4f49ca7ed75cc \
-    --data 0x6d4ce63c \
-    --url http://127.0.0.1:1337
-```
-
-输出：
-
-```json
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
-}
-```
-
-可以看出结果已经是 1 了。
+[测试合约]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol
+[生成账户]: ../contracts/solidity
+[调用合约]: ../contracts/solidity#调用
+[部署合约]: ../contracts/solidity#部署

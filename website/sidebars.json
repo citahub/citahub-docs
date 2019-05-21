@@ -23,7 +23,6 @@
           "cita/system/node",
           "cita/system/log",
           "cita/system/snapshot",
-          "cita/system/batch-tx",
           "cita/system/version",
           "cita/system/auto-exec",
           "cita/system/zktx",
@@ -57,6 +56,15 @@
         "ids": [
           "cita/special-govern/emg-brake",
           "cita/special-govern/amend"
+        ]
+      },
+      {
+        "label": "Hacking",
+        "type": "subcategory",
+        "ids": [
+          "cita/contracts/solidity",
+          "cita/contracts/rust",
+          "cita/contracts/batch-tx"
         ]
       },
       {

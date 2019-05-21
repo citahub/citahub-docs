@@ -108,11 +108,7 @@
       }
     ],
     "Toolchain": [
-      {
-        "label": "CITA-Toolchain-intro",
-        "type": "subcategory",
-        "ids": ["toolchain/toolchain-intro/toolchain-intro"]
-      },
+      "toolchain/toolchain-intro/toolchain-intro",
       {
         "label": "CITA-CLI",
         "type": "subcategory",
@@ -145,7 +141,7 @@
         "ids": ["toolchain/microscope/microscope-intro"]
       },
       {
-        "label": "CITA-IDE",
+        "label": "CITA IDE",
         "type": "subcategory",
         "ids": ["toolchain/ide/ide-intro"]
       },
@@ -163,6 +159,14 @@
         "label": "CITA Testnet",
         "type": "subcategory",
         "ids": ["toolchain/testnet/testchain"]
+      },
+      {
+        "label": "CITA Monitor",
+        "type": "subcategory",
+        "ids": [
+          "toolchain/monitor/monitor-intro",
+          "toolchain/monitor/monitor-start"
+        ]
       }
     ],
     "Contributing": ["contributing", "roadmap"]

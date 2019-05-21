@@ -49,4 +49,4 @@ CITA 实现了基于组的账户系统，组之间为树形的关系，可对应
 
 [已使用地址列表]: ../ref/addresses#已使用地址列表
 [账户系统接口]: ../system-contract-interface/group-mng
-[链级配置]: ../operation/chain-config
+[链级配置]: ../configuration-guide/chain-config

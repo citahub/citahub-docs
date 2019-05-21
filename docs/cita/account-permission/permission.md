@@ -91,4 +91,4 @@ CITA 在起链的时候可以对权限系统进行配置，默认是关闭的（
 [权限系统接口]: ../system-contract-interface/permission-management
 [权限系统操作示例]: ./permission-example
 [账户概述]: ./account#账户概述
-[链级配置]: ../operation/chain-config
+[链级配置]: ../configuration-guide/chain-config

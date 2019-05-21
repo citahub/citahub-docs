@@ -12,14 +12,20 @@
           "cita/getting-started/basic-usage"
         ]
       },
+      {
+        "label": "Configuration Guide",
+        "type": "subcategory",
+        "ids": [
+          "cita/configuration-guide/chain-config",
+          "cita/configuration-guide/service-config"
+        ]
+      },
       "cita/huawei",
       {
         "label": "Operation",
         "type": "subcategory",
         "ids": [
           "cita/operation/install",
-          "cita/operation/chain-config",
-          "cita/operation/service-config",
           "cita/operation/protocol"
         ]
       },

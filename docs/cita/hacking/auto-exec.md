@@ -7,7 +7,7 @@ title: 自动执行
 
 ## 简述
 
-自动执行是底层的一个扩展功能，只有管理员可以注册，注册的自动执行合约需要继承 `IAutoExec.sol`，实现 autoExec 函数作为自动执行的入口。
+自动执行是底层的一个扩展功能，只有管理员可以注册，注册的自动执行合约需要继承 [`IAutoExec.sol`]，实现 autoExec 函数作为自动执行的入口。
 
 ### 合约信息
 
@@ -38,9 +38,9 @@ $ bin/cita create \
 
 其中 `autoExec` 为自动执行开关。
 
-启动链接下来的步骤见[快速入门](../getting-started)部分。
+详细步骤见[运行 CITA]部分。
 
-其中[测试合约](https://github.com/cryptape/test-contracts/blob/master/AutoExec.sol)函数签名如下:
+其中[测试合约]函数签名如下:
 
 ```
 ======= contracts/AutoExec.sol:AutoExec =======
@@ -232,6 +232,9 @@ $ cita-cli rpc call \
 }
 ```
 
-数值变为 26
+数值变为 26，自动执行生效。
 
-自动执行生效。
+ [`IAutoExec.sol`]: https://github.com/cryptape/cita-sys-interaction/blob/master/interface/IAutoExec.sol
+[cita-cli]: https://github.com/cryptape/cita-cli
+[测试合约]: https://github.com/cryptape/test-contracts/blob/master/AutoExec.sol
+[运行 CITA]: ../getting-started/run-cita

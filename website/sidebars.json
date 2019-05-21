@@ -71,9 +71,12 @@
         "type": "subcategory",
         "ids": [
           "cita/hacking/compile-cita",
-          "cita/contracts/solidity",
-          "cita/contracts/rust",
-          "cita/contracts/batch-tx"
+          "cita/hacking/log",
+          "cita/hacking/auto-exec",
+          "cita/hacking/chain-gov",
+          "cita/hacking/contracts/solidity",
+          "cita/hacking/contracts/rust",
+          "cita/hacking/contracts/batch-tx"
         ]
       },
       {

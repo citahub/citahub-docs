@@ -4,40 +4,45 @@ title: 日志管理
 ---
 
 日志在系统调试，问题定位，甚至业务运维方面有着重要的作用。
-
 CITA 每个微服务的日志信息都会被记录到一个单独的日志文件。
 
 ## 日志位置
-CITA 日志文件位于节点文件夹下的 logs 目录中，每个微服务单独一个日志文件。
+
+CITA 日志文件位于各节点文件夹下 `logs` 目录中，每个微服务单独一个日志文件。
+
+```shell
+ls test-chain/0/logs
+```
+
+如下：
 
 ```
-~/cita/test-chain/0$ ls logs/
 cita-auth.log  cita-bft.log  cita-chain.log  cita-executor.log  cita-forever.log  cita-jsonrpc.log  cita-network.log
 ```
 
 ## 日志优先级
+
 日志优先级定义如下：
 
-```
-Error,         //error是日志分级的最高等级
-Warn,
-Info,
-Debug,
-Trace,         //trace是最低等级
-```
+* Error: 错误信息，是日志分级的最高等级
+* Warn: 警告信息
+* Info: 默认信息等级
+* Debug: 调试信息
+* Trace: 最低等级
 
-CITA 默认日志等级为`Info`。示例如下：
+CITA 会打印所设置等级及以上的日志。
 
-```
-2018-04-02T14:38:12.463454121+08:00 - INFO - pre_proc_prevote not have any thing in 9449 35
-2018-04-02T14:38:13.964462688+08:00 - INFO - pre_proc_prevote height 9449,round 35 hash None locked_round None
-```
-
-当然`Info`级别以上的日志也会输出：
+CITA 默认日志等级为 `Info`。示例如下：
 
 ```
-2018-04-02T13:18:18.629297896+08:00 - WARN - Buffer is not enough for payload 257 > 167.
-2018-04-02T13:18:20.101335388+08:00 - ERROR - Buffer is malformed 5135603446501605376 != 16045690981097406464.
+2019-05-21 - 14:12:21 | cita_executor        - 172   | INFO  - CITA:executor
+2019-05-21 - 14:12:21 | cita_executor        - 176   | INFO  - Version: v0.23.1-112-gc57f107
+```
+
+`Info` 级别以上的日志：
+
+```
+2019-05-21 - 17:03:12 | cita_bft::core::cita - 1074  | WARN  - verify_version Bft { h: 755, r: 0, s: 0 } self.version is none
 ```
 
 日志优先级可以在启动 CITA 的时候通过参数修改：
@@ -46,36 +51,24 @@ CITA 默认日志等级为`Info`。示例如下：
 bin/cita start test-chain/0 trace
 ```
 
-这时`Trace`级别的日志也可以打印出来了：
+这时 `Trace` 级别的日志也可以打印出来了：
 
 ```
-2018-04-02T14:38:09.842824387+08:00 - TRACE - response block's tx hashes for height:9350
-2018-04-02T14:38:09.843117154+08:00 - TRACE - response block's tx hashes for height:9351
+2019-05-22 - 10:44:47 | core_executor::state - 443   | TRACE - Account::cache_given_code: ic=false; self.code_hash=0x25cd5cc7338b2d3e0cef19d160b1de56dfb09ee94ac7fdf5651aab5496afa26d, self.code_cache=
 ```
 
 CITA 支持为不同模块设置不同的优先级，这个在系统调试的时候非常有帮助。
 
-但是为了简化使用，通过`./bin/cita`设置的时候是所有模块用统一的日志等级。
-
-如果有系统调试的需要，用户可以临时修改`./bin/cita`中`start`函数中的如下内容：
-
-```
-50          RUST_LOG=cita_auth=${debug},cita_chain=${debug},cita_executor=${debug},cita_jsonrpc=${debug},cita_network=${debug},cita_bft=${debug},\
-51  core=${debug},engine=${debug},jsonrpc_types=${debug},libproto=${debug},proof=${debug},txpool=${debug} \
-52          cita-forever start > /dev/null 2>&1
-```
+为了简化使用，通过 `./bin/cita` 设置的时候是所有模块用统一的日志等级。
+如果有系统调试的需要，用户可以临时修改 `./bin/cita` 中 `start` 函数。
 
 ## 日志分割
+
 CITA 节点需要长时间持续运行，因此日志文件会越来越大，需要定期清理。
-
-或者需要将某一段比较重要的日志单独备份。
-
-这都会涉及到日志分割的功能。
-
+或者需要将某一段比较重要的日志单独备份。这都会涉及到日志分割的功能。
 为了适应不同场景的需要，CITA 的日志分割功能采用比较灵活的方式。
 
 通过向进程发信号，触发日志分割和日志文件的转储，保证切换期间没有日志丢失。
-
 对于一个节点内的多个微服务，有如下的命令封装：
 
 ```
@@ -100,7 +93,6 @@ bin/cita logrotate test-chain/0
 ```
 
 原有日志内容转移到带有当前日期的备份日志文件中，原有日志文件清空，进程继续往原有的日志文件里面写入。
-
 可通过如下命令将备份的日志文件筛选出来：
 
 ```
@@ -108,7 +100,5 @@ find ./test-chain/*/logs | grep `date "+%Y-%m-%d"`
 ```
 
 然后可以根据用户的需要，移动到专门的备份的地方，压缩保存，甚至直接删除。
-
 如果用户想要定时备份/清理日志，可以将上述命令设置为系统的周期任务。
-
 更多详细的用法请参见 cron 或者 logrotate 工具的文档。

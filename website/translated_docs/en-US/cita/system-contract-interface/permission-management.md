@@ -1,24 +1,9 @@
 ---
-id: permission-management
+id: permission-mng
 title: Permission Management Contract Interface
 ---
 
-<h2 class="hover-list">Permission Management</h2>
-
-* [newPermission](#newPermission)
-* [deletePermission](#deletePermission)
-* [updatePermissionName](#updatePermissionName)
-* [addResources](#addResources)
-* [deleteResources](#deleteResources)
-* [setAuthorizations](#setAuthorizations)
-* [setAuthorization](#setAuthorization)
-* [cancelAuthorizations](#cancelAuthorizations)
-* [cancelAuthorization](#cancelAuthorization)
-* [clearAuthorization](#clearAuthorization)
-
-* * *
-
-### newPermission
+## newPermission
 
 创建新权限。
 
@@ -60,9 +45,9 @@ $ rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e02122
     "blockHash": "0xd2e2d34783d9d30505ed23d90dca7c11ce42eda99306a153ad9e72095832ba26",
     "blockNumber": "0x583d",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x1b25fd",
+    "cumulativeQuotaUsed": "0x1b25fd",
     "errorMessage": null,
-    "gasUsed": "0x1b25fd",
+    "quotaUsed": "0x1b25fd",
     "logs": [
       {
         "address": "0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee",
@@ -103,7 +88,7 @@ $ rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e02122
 
 从 logs[0] 中获得新权限的地址为 `0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee`
 
-### deletePermission
+## deletePermission
 
 删除权限。
 
@@ -117,7 +102,7 @@ $ rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e02122
 
 * 示例
 
-### updatePermissionName
+## updatePermissionName
 
 更新权限名称。
 
@@ -140,7 +125,7 @@ $ rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e02122
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### addResources
+## addResources
 
 添加资源。
 
@@ -166,7 +151,7 @@ $ scm PermissionManagement addResources \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### deleteResources
+## deleteResources
 
 删除资源。
 
@@ -192,7 +177,7 @@ $ scm PermissionManagement deleteResources \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### setAuthorizations
+## setAuthorizations
 
 多次授权。
 
@@ -215,7 +200,7 @@ $ scm PermissionManagement setAuthorizations \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### setAuthorization
+## setAuthorization
 
 授权。
 
@@ -238,7 +223,7 @@ $ scm PermissionManagement setAuthorization \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### cancelAuthorizations
+## cancelAuthorizations
 
 取消多次授权。
 
@@ -261,7 +246,7 @@ $ scm PermissionManagement cancelAuthorizations \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### cancelAuthorization
+## cancelAuthorization
 
 取消授权
 
@@ -284,7 +269,7 @@ $ scm PermissionManagement cancelAuthorization \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### clearAuthorization
+## clearAuthorization
 
 取消账户的所有授权。
 

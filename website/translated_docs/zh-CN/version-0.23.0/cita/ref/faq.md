@@ -157,7 +157,7 @@ CITA 支持 Go 合约，但是现在 Go 合约不能够和 solidity 的合约互
 
 #### chainid 是写在配置文件中的，如何获取？
 
-chainId可以通过getMetaData这个jsonRPC方法来获取。 示例命令：`curl -X POST —data '{"jsonrpc":"2.0","method":"getMetaData","params":["0xff"],"id":1}' ipAddr:port`。
+chainId可以通过getMetaData这个jsonRPC方法来获取。 示例命令：`curl -X POST —data '{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}' ipAddr:port`。
 
 #### sdk 中新出现的参数 value（智能合约反向生成的 java 类，在 deploy 中出现的 value）具体代表什么含义，需要给应用层暴露么？
 

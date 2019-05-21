@@ -3,21 +3,7 @@ id: sys
 title: System Configuration Contract Interface
 ---
 
-<h2 class="hover-list">System Config</h2>
-
-* [setChainName](#setChainName)
-* [setOperator](#setOperator)
-* [setWebsite](#setWebsite)
-* [getPermissionCheck](#getPermissionCheck)
-* [getSendTxPermissionCheck](#getSendTxPermissionCheck)
-* [getCreateContractPermissionCheck](#getCreateContractPermissionCheck)
-* [getQuotaCheck](#getQuotaCheck)
-* [getFeeBackPlatformCheck](#getFeeBackPlatformCheck)
-* [getChainOwner](#getChainOwner)
-
-* * *
-
-### setChainName
+## setChainName
 
 设置链名称。
 
@@ -37,7 +23,7 @@ $ scm SysConfig setChainName \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### setOperator
+## setOperator
 
 设置运营方名称。
 
@@ -57,7 +43,7 @@ $ scm SysConfig setChainName \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### setWebsite
+## setWebsite
 
 设置运营方网站。
 
@@ -77,7 +63,7 @@ $ scm SysConfig setWebsite \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### getPermissionCheck
+## getPermissionCheck
 
 查询调用合约权限检查是否开启， 默认关闭。
 
@@ -95,7 +81,7 @@ $ scm SysConfig setWebsite \
 $ scm SysConfig getPermissionCheck
 ```
 
-### getSendTxPermissionCheck
+## getSendTxPermissionCheck
 
 查询发送交易权限检查是否开启, 默认关闭。
 
@@ -113,7 +99,7 @@ $ scm SysConfig getPermissionCheck
 $ scm SysConfig getSendTxPermissionCheck
 ```
 
-### getCreateContractPermissionCheck
+## getCreateContractPermissionCheck
 
 查询创建合约权限检查是否开启, 默认关闭。
 
@@ -131,7 +117,7 @@ $ scm SysConfig getSendTxPermissionCheck
 $ scm SysConfig getCreateContractPermissionCheck
 ```
 
-### getQuotaCheck
+## getQuotaCheck
 
 查询配额检查是否开启， 默认关闭。
 
@@ -149,7 +135,7 @@ $ scm SysConfig getCreateContractPermissionCheck
 $ scm SysConfig getQuotaCheck
 ```
 
-### getFeeBackPlatformCheck
+## getFeeBackPlatformCheck
 
 查询出块激励返回开关是否开启， 默认关闭。
 
@@ -167,7 +153,7 @@ $ scm SysConfig getQuotaCheck
 $ scm SysConfig getFeeBackPlatformCheck
 ```
 
-### getChainOwner
+## getChainOwner
 
 查询链的持有者地址。
 

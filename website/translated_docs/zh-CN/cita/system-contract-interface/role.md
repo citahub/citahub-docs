@@ -3,16 +3,7 @@ id: role
 title: 角色合约接口
 ---
 
-<h2 class="hover-list">角色合约接口</h2>
-
-* [queryName](#queryname)
-* [queryPermissions](#querypermissions)
-* [lengthOfPermissions](#lengthOfpermissions)
-* [inPermissions](#inpermissions)
-
-* * *
-
-### queryName
+## queryName
 
 查询角色名称。
 
@@ -40,7 +31,7 @@ $ scm Role queryName --address 0x558c280233cee856fb53931eb18747a40e688a43
 }
 ```
 
-### queryPermissions
+## queryPermissions
 
 查询角色所有权限。
 
@@ -68,7 +59,7 @@ $ scm Role queryPermissions --address 0x558c280233cee856fb53931eb18747a40e688a43
 }
 ```
 
-### lengthOfPermissions
+## lengthOfPermissions
 
 查询角色拥有权限数。
 
@@ -97,7 +88,7 @@ $ scm Role lengthOfPermissions --address 0x558c280233cee856fb53931eb18747a40e688
 
 ```
 
-### inPermissions
+## inPermissions
 
 判断权限是否存在角色中
 

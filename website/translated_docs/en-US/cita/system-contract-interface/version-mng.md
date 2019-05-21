@@ -3,14 +3,7 @@ id: version-mng
 title: 协议版本管理合约接口
 ---
 
-<h2 class="hover-list">Version Manager</h2>
-
-* [setVersion](#setVersion)
-* [getVersion](#getVersion)
-
-* * *
-
-### setVersion
+## setVersion
 
 设置协议版本
 
@@ -31,7 +24,7 @@ $ cita-cli scm VersionManager setVersion \
               --url http://127.0.0.1:1337
 ```
 
-### getVersion
+## getVersion
 
 查询当前链协议版本
 

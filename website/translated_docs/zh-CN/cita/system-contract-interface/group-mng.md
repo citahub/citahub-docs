@@ -3,19 +3,7 @@ id: group-mng
 title: 组管理合约接口
 ---
 
-<h2 class="hover-list">Group Management</h2>
-
-* [newGroup](#newGroup)
-* [deleteGroup](#deleteGroup)
-* [updateGroupName](#updateGroupName)
-* [addAccounts](#addAccounts)
-* [deleteAccounts](#deleteAccounts)
-* [checkScope](#checkScope)
-* [queryGroups](#queryGroups)
-
-* * *
-
-### newGroup
+## newGroup
 
 创建一个用户组。
 
@@ -49,9 +37,9 @@ $ scm GroupManagement newGroup \
     "blockHash": "0x0771624fa18da8380cf87238bd0dbb1e4114f2d707bdf9be6265c4ed50016960",
     "blockNumber": "0x6922",
     "contractAddress": null,
-    "cumulativeGasUsed": "0x1b8fcf",
+    "cumulativeQuotaUsed": "0x1b8fcf",
     "errorMessage": null,
-    "gasUsed": "0x1b8fcf",
+    "quotaUsed": "0x1b8fcf",
     "logs": [
       {
         "address": "0xce6cd8f8562e31d44b1101986204cec34b1df025",
@@ -110,7 +98,7 @@ $ scm GroupManagement newGroup \
 
 从 log 中可知，新用户组的地址是: 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
-### deleteGroup
+## deleteGroup
 
 删除用户组。
 
@@ -133,7 +121,7 @@ $ scm GroupManagement deleteGroup \
          --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### updateGroupName
+## updateGroupName
 
 更新用户组名称。
 
@@ -158,7 +146,7 @@ $ scm GroupManagement updateGroupName \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### addAccounts
+## addAccounts
 
 添加用户。
 
@@ -183,7 +171,7 @@ $ scm GroupManagement updateGroupName \
           --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### deleteAccounts
+## deleteAccounts
 
 删除用户。
 
@@ -209,7 +197,7 @@ $ scm GroupManagement deleteAccounts \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### checkScope
+## checkScope
 
 * 参数
     
@@ -229,7 +217,7 @@ $ scm GroupManagement checkScope \
         --target 0xce6cd8f8562e31d44b1101986204cec34b1df025 \
 ```
 
-### queryGroups
+## queryGroups
 
 查询所有组。
 

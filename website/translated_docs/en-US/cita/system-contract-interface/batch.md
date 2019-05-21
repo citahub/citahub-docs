@@ -3,13 +3,7 @@ id: batch
 title: Batch Transaction Contract
 ---
 
-<h2 class="hover-list">Batch Tx</h2>
-
-* [multiTxs](#multiTxs)
-
-* * *
-
-### multiTxs
+## multiTxs
 
 通过一定的数据组装规则，可以在一个交易中多次调用合约
 

@@ -3,14 +3,7 @@ id: quota-price
 title: Quota Price Management Contract
 ---
 
-<h2 class="hover-list">Price Management</h2>
-
-* [setQuotaPrice](#setQuotaPrice)
-* [getQuotaPrice](#getQuotaPrice)
-
-* * *
-
-### setQuotaPrice
+## setQuotaPrice
 
 设置 `quota price`，默认为 1。
 
@@ -30,7 +23,7 @@ $ cita-cli scm PriceManager setQuotaPrice \
               --price 0x0000000000000000000000000000000000000000000000000000000000000002
 ```
 
-### getQuotaPrice
+## getQuotaPrice
 
 查询当前链 quota price。
 

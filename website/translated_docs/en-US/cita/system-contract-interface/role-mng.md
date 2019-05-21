@@ -3,20 +3,7 @@ id: role-mng
 title: Role management Contract Interface
 ---
 
-<h2 class="hover-list">Role Management</h2>
-
-* [newRole](#newrole)
-* [updateRoleName](#updaterolename)
-* [addPermissions](#addpermissions)
-* [deletePermissions](#deleterermissions)
-* [setRole](#setrole)
-* [cancelRole](#cancelrole)
-* [clearRole](#clearrole)
-* [deleteRole](#deleterole)
-
-* * *
-
-### newRole
+## newRole
 
 新建角色。
 
@@ -94,7 +81,7 @@ $ scm RoleManagement newRole \
 
 从 log topic[1] 中找到新的角色合约地址：`0x000000000000000000000000558c280233cee856fb53931eb18747a40e688a43`
 
-### updateRoleName
+## updateRoleName
 
 更新角色名称。
 
@@ -117,7 +104,7 @@ $ scm RoleManagement updateRoleName \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### addPermissions
+## addPermissions
 
 为角色添加权限。
 
@@ -136,11 +123,11 @@ $ scm RoleManagement updateRoleName \
 ```shell
 $ scm RoleManagement addPermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
-        --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \ 
+        --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### deletePermissions
+## deletePermissions
 
 删除权限。
 
@@ -157,13 +144,13 @@ $ scm RoleManagement addPermissions \
 * 示例
 
 ```shell
-$ scm RoleManagement deletePermissions \ 
+$ scm RoleManagement deletePermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
         --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e66
 ```
 
-### setRole
+## setRole
 
 为某一个账户设置角色。
 
@@ -186,7 +173,7 @@ $ scm RoleManagement setRole \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### cancelRole
+## cancelRole
 
 清除某个账户的指定权限
 
@@ -209,7 +196,7 @@ $ scm RoleManagement cancelRole \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e
 ```
 
-### clearRole
+## clearRole
 
 清除某个账户的所有权限。
 
@@ -229,7 +216,7 @@ $ scm RoleManagement clearRole \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
-### deleteRole
+## deleteRole
 
 删除角色。
 

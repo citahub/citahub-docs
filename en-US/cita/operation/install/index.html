@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>部署 CITA · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。&lt;/p&gt;
+"/><meta name="docsearch:version" content="0.24.0"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="部署 CITA · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en-US"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en-US/versions"><h3>0.24.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en-US/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/cryptape/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/zh-CN/cita/operation/install">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Welcome<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/welcome">CITAHub 文档概览</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/cita/cita-intro">CITA Introduction</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/huawei">Huawei</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Operation</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/en-US/cita/operation/install">部署 CITA</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/operation/chain-config">Chain Configuration</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/operation/service-config">Microservice Configuration</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/operation/protocol">协议升级</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Management</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/cita/system/sys-contracts">System Contracts</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system/node">Node Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system/log">Log Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system/snapshot">Snapshot</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system/batch-tx">Batch Transaction</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system/version">Version Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system/auto-exec">Auto Execution</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system/zktx">隐私交易示例</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system/store">存证</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Economics Model</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/cita/economics/model">选择经济模型</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/economics/quotalimit">设置 Quota Limit</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/economics/quota">Quota 模式</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/economics/charge">Charge 模式</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Account and Permission System</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/cita/account-permission/account">账户系统</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/account-permission/permission">权限系统</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/account-permission/permission-extend">权限系统插件</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/account-permission/account-example">账户系统使用示例</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/account-permission/permission-example">权限系统使用示例</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Special Govern</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/cita/special-govern/emg-brake">Emergency Braking</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/special-govern/amend">Amend</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/cita/rpc-guide/rpc-types">JSON RPC Types</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/rpc-guide/rpc">CITA JSON RPC List</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/rpc-guide/rpc-error-code">JSON RPC Error code</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Contract Interface</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/sys">System Configuration Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/node">Consensus Node Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/permission-mng">Permission Mng</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/auth">Authorization Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/permission">Permission Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/role-mng">Role management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/role-auth">Role Authorization Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/role">Role Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/group-mng">Group Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/group">Group System Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/all-groups">All-groups System Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/quota-manager">Quota Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/quota-price">Quota Price Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/batch">Batch Transaction Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/emergency-brake">Emergency Brake Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/admin">Administrator Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/auto-exec">Auto Execution Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/version-mng">协议版本管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/system-contract-interface/error">System contract Error Type</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Architecture</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/cita/architecture/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/architecture/comp">System Components</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/architecture/cons">Consensus</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/architecture/transaction-process">Transaction Processing</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/architecture/view">View</a></li></ul></div><li class="navListItem"><a class="navItem" href="/en-US/cita/crosschain/crosschain-contract-example">跨链</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Reference</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/cita/ref/addresses">Reserved System Addresses</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/ref/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/en-US/cita/ref/faq">CITA FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Toolchain<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-Toolchain-intro</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/toolchain-intro/toolchain-intro">Toolchain 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/cli/cli-intro">CITA-CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SDK</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/sdk/javascript-sdk">JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/toolchain/sdk/java-sdk">Java SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/toolchain/sdk/swift-sdk">Swift SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/toolchain/sdk/ruby-sdk">Ruby SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/toolchain/sdk/rust-sdk">Rust SDK</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">ReBirth</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/rebirth/rebirth-intro">ReBirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Web Debugger</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/web-debugger/web-debugger-intro">CITA Web Debugger 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Testnet</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/toolchain/testnet/testchain">测试链</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Contributing<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/contributing">Contributing</a></li><li class="navListItem"><a class="navItem" href="/en-US/roadmap">Roadmap</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">部署 CITA</h1></header><article><div><span><p>CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。</p>
+<blockquote>
+<ul>
+<li>如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考<a href="./huawei">云服务支持</a>。</li>
+<li>如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 <a href="../../toolchain/testnet/testchain">CITA 测试链</a>。</li>
+</ul>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="适用操作系统声明"></a><a href="#适用操作系统声明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>适用操作系统声明</h2>
+<p>参见<a href="../getting-started#适用操作系统声明">适用操作系统声明</a></p>
+<h2><a class="anchor" aria-hidden="true" id="硬件配置建议"></a><a href="#硬件配置建议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>硬件配置建议</h2>
+<p>参见[硬件配置建议](../getting-started#硬件配置建议)</p>
+<h2><a class="anchor" aria-hidden="true" id="软件依赖声明"></a><a href="#软件依赖声明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>软件依赖声明</h2>
+<p>参见<a href="../getting-started#软件依赖声明">软件依赖声明</a></p>
+<h2><a class="anchor" aria-hidden="true" id="安装-cita-客户端工具"></a><a href="#安装-cita-客户端工具" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 CITA 客户端工具</h2>
+<p>参见[安装 CITA 客户端工具](../getting-started#安装-cita-客户端工具)</p>
+<h2><a class="anchor" aria-hidden="true" id="部署-cita"></a><a href="#部署-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署 CITA</h2>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="23-tab" data-group="group_22" data-tab="tabpanel_23">发布件部署</div><div class="nav-link" id="24-tab" data-group="group_22" data-tab="tabpanel_24">源码部署</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_22" tabindex="-1" id="tabpanel_23"><div><span><h3><a class="anchor" aria-hidden="true" id="从发布件部署-cita"></a><a href="#从发布件部署-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>从发布件部署 CITA</h3>
+<p>参见<a href="../getting-started#下载-cita">下载 CITA 发布件</a></p>
+</span></div></div><div class="tab-pane" data-group="group_22" tabindex="-1" id="tabpanel_24"><div><span><h3><a class="anchor" aria-hidden="true" id="从源码编译部署-cita"></a><a href="#从源码编译部署-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>从源码编译部署 CITA</h3>
+<ol>
+<li><p>下载 CITA 源码</p>
+<p>从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录</p></li>
+</ol>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> git <span class="hljs-built_in">clone</span> https://github.com/cryptape/cita.git</span>
+<span class="hljs-meta">   $</span><span class="bash"> <span class="hljs-built_in">cd</span> cita</span>
+<span class="hljs-meta">   $</span><span class="bash"> git submodule init</span>
+<span class="hljs-meta">   $</span><span class="bash"> git submodule update</span>
+</code></pre>
+<ol start="2">
+<li><p>编译源码</p>
+<p>可以按照自己的需求自行选择相应的编译方式（Debug-调试模式 或 Release-发行模式）</p></li>
+</ol>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> ./env.sh make debug</span>
+</code></pre>
+<p>或者</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> ./env.sh make release</span>
+</code></pre>
+<ol start="3">
+<li>进入 CITA 运行目录</li>
+</ol>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> <span class="hljs-built_in">cd</span> target/install</span>
+</code></pre>
+<blockquote>
+<p>可选择替换 Rust Crates 的官方源，详细教程可以参考：</p>
+<ul>
+<li><a href="http://mirrors.ustc.edu.cn/help/crates.io-index.html">USTC Mirror Help for Rust Crates</a></li>
+<li><a href="https://doc.rust-lang.org/cargo/reference/source-replacement.html">Source Replacement for Rust Crates</a></li>
+<li><a href="https://docs.docker.com/storage/volumes/">How to map a configuration file into docker</a></li>
+</ul>
+<p><strong>Docker env 使用说明</strong></p>
+<ul>
+<li><p>在源码根目录下，我们提供了 <code>env.sh</code> 脚本，封装了 Docker 相关的操作。 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。 例如：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make debug</span>
+</code></pre>
+<p>即表示在 Docker 环境中运行 <code>make debug</code>。</p></li>
+<li><p>不带任何参数运行 <code>./env.sh</code>，将直接获取一个 Docker 环境的 shell。</p></li>
+<li><p>如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 <code>./env.sh</code> 会出现如下错误：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh</span>
+error: failed switching to "user": unable to find user user: no matching entries in passwd file
+</code></pre>
+<p>因此要保证操作使用的始终是同一个系统用户。</p></li>
+<li><p>如果出现 Docker 相关的报错，可以执行如下命令并重试：
+shell
+docker kill $(docker ps -a -q)</p></li>
+</ul>
+</blockquote>
+</span></div></div></div></div><div><span><h2><a class="anchor" aria-hidden="true" id="配置-cita"></a><a href="#配置-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置 CITA</h2>
+<p>参见[配置 CITA](../getting-started#配置-cita)</p>
+<h2><a class="anchor" aria-hidden="true" id="启动-cita"></a><a href="#启动-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 CITA</h2>
+<p>参见<a href="../getting-started#启动-cita">启动 CITA</a></p>
+<h2><a class="anchor" aria-hidden="true" id="验证-cita-是否运行正常"></a><a href="#验证-cita-是否运行正常" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证 CITA 是否运行正常</h2>
+<p>参见<a href="../getting-started#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/cita/huawei"><span class="arrow-prev">← </span><span>Huawei Cloud Deployment</span></a><a class="docs-next button" href="/en-US/cita/operation/chain-config"><span>Chain Configuration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#适用操作系统声明">适用操作系统声明</a></li><li><a href="#硬件配置建议">硬件配置建议</a></li><li><a href="#软件依赖声明">软件依赖声明</a></li><li><a href="#安装-cita-客户端工具">安装 CITA 客户端工具</a></li><li><a href="#部署-cita">部署 CITA</a><ul class="toc-headings"><li><a href="#从发布件部署-cita">从发布件部署 CITA</a></li><li><a href="#从源码编译部署-cita">从源码编译部署 CITA</a></li></ul></li><li><a href="#配置-cita">配置 CITA</a></li><li><a href="#启动-cita">启动 CITA</a></li><li><a href="#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en-US","version:0.24.0"]}
+              });
+            </script></body></html>

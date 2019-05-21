@@ -26,7 +26,7 @@ $ bin/cita create \
     --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
-启动链接下来的步骤见[快速入门](../getting-started)部分。
+启动链接下来的步骤见[启动 CITA]部分。
 
 为了简化操作，以下将用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式进行演示。
 所涉及的 JSON-RPC 接口，将在过程中做简要的说明，详细 JSON-RPC 说明，请参考 [这里](../rpc-guide/rpc.md)。
@@ -151,3 +151,5 @@ tx decode-unverifiedTransaction --content 0x0ab101122064356565386436313239333634
 ```
 
 其中，解析后的 `data` 域正是上文存证的原始数据。
+
+[启动 CITA]: ../getting-started/run-cita#启动-CITA 

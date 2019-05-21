@@ -10,7 +10,7 @@ CITA 链生成时，通过系统合约来生成创世块，并作为链的最基
 
 ## 节点管理
 
-按照[快速搭链]的步骤，生成的链默认包含四个节点。
+按照[运行 CITA]的步骤，生成的链默认包含四个节点。
 如果需要增加或是删除共识节点的话，管理员可以通过修改节点配置文件并发送交易来完成。
 
 节点管理合约存放在`/scripts/contracts/src/system/node_manager.sol`，
@@ -94,7 +94,7 @@ CITA 提供一种仅供管理员使用的交易自动执行的功能。当打开
 相关描述见[自动执行]。
 
 [协议版本管理]: ./version
-[快速搭链]: ../getting-started
+[运行 CITA]: ../getting-started/run-cita
 [批量交易]: ./batch-tx
 [权限系统]: ../account-permission/permission
 [紧急制动]: ../special-govern/emg-brake

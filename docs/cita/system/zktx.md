@@ -64,7 +64,7 @@ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nod
 
 #### 运行 `CITA`
 
-详细信息查看[快速入门]
+详细信息查看[运行 CITA]
 
 1. 初始化
 
@@ -89,6 +89,6 @@ cd ../../zktx_example && cargo run --release --bin client
 [zk_privacy]: https://github.com/cryptape/cita/blob/develop/cita-executor/core/src/contracts/native/zk_privacy.md
 [zktx]: https://github.com/cryptape/zktx
 [zktx_example]: https://github.com/cryptape/zktx_example
-[快速入门]: ../getting-started
-[编译 CITA]: ../getting-started#%E7%BC%96%E8%AF%91-cita
+[运行 CITA]: ../getting-started/run-cita
+[编译 CITA]: ../hacking/compile-cita
 [配置]: ../operation/chain-config

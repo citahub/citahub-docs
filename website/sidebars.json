@@ -3,7 +3,15 @@
     "Welcome": ["welcome"],
     "CITA": [
       "cita/cita-intro",
-      "cita/getting-started",
+      {
+        "label": "Getting-started",
+        "type": "subcategory",
+        "ids": [
+          "cita/getting-started/setup",
+          "cita/getting-started/run-cita",
+          "cita/getting-started/basic-usage"
+        ]
+      },
       "cita/huawei",
       {
         "label": "Operation",
@@ -62,6 +70,7 @@
         "label": "Hacking",
         "type": "subcategory",
         "ids": [
+          "cita/hacking/compile-cita"
           "cita/contracts/solidity",
           "cita/contracts/rust",
           "cita/contracts/batch-tx"

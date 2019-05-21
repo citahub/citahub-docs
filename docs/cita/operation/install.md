@@ -10,19 +10,19 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ## 适用操作系统声明
 
-参见[适用操作系统声明](../getting-started#适用操作系统声明)
+参见[适用操作系统声明]
 
 ## 硬件配置建议
 
-参见[硬件配置建议](../getting-started#硬件配置建议)
+参见[硬件配置建议]
 
 ## 软件依赖声明
 
-参见[软件依赖声明](../getting-started#软件依赖声明)
+参见[软件依赖声明]
 
 ## 安装 CITA 客户端工具
 
-参见[安装 CITA 客户端工具](../getting-started#安装-cita-客户端工具)
+参见[安装 CITA 客户端工具]
 
 ## 部署 CITA
 
@@ -31,7 +31,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ### 从发布件部署 CITA
 
-参见[下载 CITA 发布件](../getting-started#下载-cita)
+参见[下载 CITA 发布件]
 
 <!--源码部署-->
 
@@ -103,12 +103,22 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ## 配置 CITA
 
-参见[配置 CITA](../getting-started#配置-cita)
+参见[配置 CITA]
 
 ## 启动 CITA
 
-参见[启动 CITA](../getting-started#启动-cita)
+参见[启动 CITA]
 
 ## 验证 CITA 是否运行正常
 
-参见[验证 CITA 是否运行正常](../getting-started#验证-cita-是否运行正常)
+参见[验证 CITA 是否运行正常]
+
+
+[下载 CITA 发布件]: ../getting-started/setup#下载-cita
+[启动 CITA]: ../getting-started/run-cita#启动-cita
+[安装 CITA 客户端工具]: ../getting-started/setup/#安装-cita-客户端工具
+[硬件配置建议]: ../getting-started/setup#硬件配置建议
+[软件依赖声明]: ../getting-started/setup#软件依赖声明
+[适用操作系统声明]: ../getting-started/setup#适用操作系统声明
+[配置 CITA]: ../getting-started/run-cita#配置-cita
+[验证 CITA 是否运行正常]: ../getting-started/run-cita#验证-cita-是否运行正常

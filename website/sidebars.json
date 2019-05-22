@@ -33,8 +33,7 @@
           "cita/system/snapshot",
           "cita/system/version",
           "cita/system/auto-exec",
-          "cita/system/zktx",
-          "cita/system/store"
+          "cita/system/zktx"
         ]
       },
       {
@@ -66,6 +65,7 @@
           "cita/special-govern/amend"
         ]
       },
+      "cita/store",
       {
         "label": "Hacking",
         "type": "subcategory",

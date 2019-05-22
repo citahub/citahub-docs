@@ -1,11 +1,11 @@
 ---
 id: error
-title: 系统合约错误类型
+title: 错误类型
 ---
 
 当在调用系统合约接口的时候，可以通过查看交易回执中日志信息来获得具体执行过程中的错误类型。
 
-通过 [Solidity Event](https://solidity.readthedocs.io/en/latest/contracts.html#events) 实现，回执返回中包含错误码及具体的错误信息。
+通过 [Solidity Event] 实现，回执返回中包含错误码及具体的错误信息。
 
 ```
 event ErrorLog(ErrorType indexed errorType, string msg);
@@ -14,7 +14,7 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 其中:
 
 * `errorType`: 错误类型，存储在 `topics` 字段中
-* `msg`: 错误信息，存储在 `data` 中，遵循 [ABI规范](https://solidity.readthedocs.io/en/latest/abi-spec.html)
+* `msg`: 错误信息，存储在 `data` 中，遵循 [ABI规范]
 
 ***
 
@@ -389,3 +389,6 @@ $ cita-cli ethabi decode params \
 ## NotReady
 
 > 废弃
+
+[ABI规范]: https://solidity.readthedocs.io/en/latest/abi-spec.html
+[Solidity Event]: https://solidity.readthedocs.io/en/latest/contracts.html#events

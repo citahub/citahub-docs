@@ -94,25 +94,8 @@
         "label": "System Contract Interface",
         "type": "subcategory",
         "ids": [
-          "cita/system-contract-interface/sys",
-          "cita/system-contract-interface/node",
-          "cita/system-contract-interface/permission-mng",
-          "cita/system-contract-interface/auth",
-          "cita/system-contract-interface/permission",
-          "cita/system-contract-interface/role-mng",
-          "cita/system-contract-interface/role-auth",
-          "cita/system-contract-interface/role",
-          "cita/system-contract-interface/group-mng",
-          "cita/system-contract-interface/group",
-          "cita/system-contract-interface/all-groups",
-          "cita/system-contract-interface/quota-manager",
-          "cita/system-contract-interface/quota-price",
-          "cita/system-contract-interface/batch",
-          "cita/system-contract-interface/emergency-brake",
-          "cita/system-contract-interface/admin",
-          "cita/system-contract-interface/auto-exec",
-          "cita/system-contract-interface/version-mng",
-          "cita/system-contract-interface/error"
+          "cita/sys-contract-interface/interface",
+          "cita/sys-contract-interface/error"
         ]
       },
       {

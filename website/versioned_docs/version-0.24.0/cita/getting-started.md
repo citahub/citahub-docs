@@ -45,13 +45,13 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 3. 下载 CITA-CLI 安装包
 
    ```shell
-   $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.4/cita-cli-x86_64-musl-tls-0.19.4.tar.gz
+   $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-musl-tls-0.19.6.tar.gz
    ```
 
 4. 解压程序
 
    ```shell
-   $ tar zxvf cita-cli-x86_64-musl-tls-0.19.4.tar.gz
+   $ tar zxvf cita-cli-x86_64-musl-tls-0.19.6.tar.gz
    ```
 
 5. 复制 CITA-CLI 到 系统可执行文件目录下
@@ -89,7 +89,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 2. 下载 CITA 安装包
 
    ```shell
-   $ wget https://github.com/cryptape/cita/releases/download/v0.23.1/cita_secp256k1_sha3.tar.gz
+   $ wget https://github.com/cryptape/cita/releases/download/v0.24.0/cita_secp256k1_sha3.tar.gz
    ```
 
 3. 解压 CITA 程序

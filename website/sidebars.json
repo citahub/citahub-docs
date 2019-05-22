@@ -18,9 +18,15 @@
         "type": "subcategory",
         "ids": [
           "cita/operation/install",
-          "cita/operation/chain-config",
-          "cita/operation/service-config",
           "cita/operation/protocol"
+        ]
+      },
+      {
+        "label": "Configuration",
+        "type": "subcategory",
+        "ids": [
+          "cita/operation/chain-config",
+          "cita/operation/service-config"
         ]
       },
       {

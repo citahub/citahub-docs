@@ -126,11 +126,12 @@
           "cita/architecture/view"
         ]
       },
+      "cita/addresses",
       "cita/crosschain/crosschain-contract-example",
       {
         "label": "Reference",
         "type": "subcategory",
-        "ids": ["cita/ref/addresses", "cita/ref/glossary","cita/ref/faq"]
+        "ids": ["cita/ref/glossary","cita/ref/faq"]
       }
     ],
     "Toolchain": [

@@ -1,7 +1,7 @@
 ---
 id: crosschain-contract-example
 title: 跨链合约示例
-sidebar_label: 跨链
+sidebar_label: 侧链
 ---
 
 ## 跨链合约编写

@@ -46,8 +46,7 @@
         "ids": [
           "cita/system/sys-contracts",
           "cita/system/log",
-          "cita/system/auto-exec",
-          "cita/system/zktx"
+          "cita/system/auto-exec"
         ]
       },
       {
@@ -67,6 +66,15 @@
           "cita/account-permission/account",
           "cita/account-permission/permission",
           "cita/account-permission/permission-extend"
+        ]
+      },
+      {
+        "label": "Privacy Protection",
+        "type": "subcategory",
+        "ids": [
+          "cita/privacy/privacy-intro",
+          "cita/privacy/zktx",
+          "cita/privacy/crosschain-contract-example"
         ]
       },
       {

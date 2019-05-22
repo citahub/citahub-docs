@@ -4,7 +4,7 @@
     "CITA": [
       "cita/cita-intro",
       {
-        "label": "Getting-started",
+        "label": "Getting Started",
         "type": "subcategory",
         "ids": [
           "cita/getting-started/setup",

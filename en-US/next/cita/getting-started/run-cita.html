@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>运行 CITA · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;创建超级管理员账户地址-私钥-公钥&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#创建超级管理员账户地址-私钥-公钥&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;创建超级管理员账户地址、私钥、公钥&lt;/h2&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="运行 CITA · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;创建超级管理员账户地址-私钥-公钥&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#创建超级管理员账户地址-私钥-公钥&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;创建超级管理员账户地址、私钥、公钥&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en-US"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en-US/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en-US/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/cryptape/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/zh-CN/next/cita/getting-started/run-cita">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Welcome<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/next/welcome">CITAHub Docs Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/next/cita/cita-intro">About CITA</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Getting-started</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/getting-started/setup">环境准备</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/en-US/next/cita/getting-started/run-cita">运行 CITA</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/getting-started/basic-usage">基本操作</a></li></ul></div><li class="navListItem"><a class="navItem" href="/en-US/next/cita/huawei">Huawei Cloud Deployment</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Operation</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/operation/install">部署 CITA</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/operation/chain-config">Chain Configuration</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/operation/service-config">Microservice Configuration</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/operation/protocol">协议升级</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Management</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system/sys-contracts">System Contracts</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system/node">Node Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system/log">Log Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system/snapshot">Snapshot</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system/version">Protocol Versions Management</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system/auto-exec">Automated Execution</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system/zktx">隐私交易示例</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system/store">存证</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Economics Model</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/economics/model">选择经济模型</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/economics/quotalimit">设置 Quota Limit</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/economics/quota">Quota 模式</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/economics/charge">Charge 模式</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Account and Permission System</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/account-permission/account">账户系统</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/account-permission/permission">权限系统</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/account-permission/permission-extend">权限系统插件</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/account-permission/account-example">账户系统使用示例</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/account-permission/permission-example">权限系统使用示例</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Special Govern</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/special-govern/emg-brake">Emergency Braking</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/special-govern/amend">Amend</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Hacking</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/hacking/compile-cita">编译CITA</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/contracts/solidity">Solidity 合约开发</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/contracts/rust">Rust 原生合约开发</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/contracts/batch-tx">Batch Transaction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON RPC</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/rpc-guide/rpc-types">JSON RPC Types</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/rpc-guide/rpc">CITA JSON RPC List</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/rpc-guide/rpc-error-code">JSON RPC Error code</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">System Contract Interface</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/sys">System Configuration Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/node">Consensus Node Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/permission-mng">Permission Mng</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/auth">Authorization Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/permission">Permission Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/role-mng">Role management Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/role-auth">Role Authorization Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/role">Role Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/group-mng">Group Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/group">Group System Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/all-groups">All-groups System Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/quota-manager">Quota Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/quota-price">Quota Price Management Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/batch">Batch Transaction Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/emergency-brake">Emergency Brake Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/admin">Administrator Contract Interface</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/auto-exec">Auto Execution Contract</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/version-mng">协议版本管理合约接口</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/system-contract-interface/error">System contract Error Type</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Architecture</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/architecture/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/architecture/comp">System Components</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/architecture/cons">Consensus</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/architecture/transaction-process">Transaction Processing</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/architecture/view">View</a></li></ul></div><li class="navListItem"><a class="navItem" href="/en-US/next/cita/crosschain/crosschain-contract-example">Crosschain</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Reference</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/cita/ref/addresses">Reserved System Addresses</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/ref/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/cita/ref/faq">CITA FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Toolchain<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-Toolchain-intro</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/toolchain-intro/toolchain-intro">CITA Toolchain Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-CLI</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/cli/cli-intro">CITA-CLI Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">SDK</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/sdk/javascript-sdk">CITA JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/sdk/java-sdk">CITA Java SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/sdk/swift-sdk">CITA Swift SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/sdk/ruby-sdk">CITA Ruby SDK</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/sdk/rust-sdk">CITA Rust SDK</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">ReBirth</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/rebirth/rebirth-intro">BeBirth Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cyton</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/cyton/cyton-intro">Cyton Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Microscope</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/microscope/microscope-intro">Microscope Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA-IDE</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/ide/ide-intro">CITA IDE Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Truffle Box</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Web Debugger</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/web-debugger/web-debugger-intro">CITA Web Debugger Introduction</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">CITA Testnet</h4><ul><li class="navListItem"><a class="navItem" href="/en-US/next/toolchain/testnet/testchain">测试链</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Contributing<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/en-US/next/contributing">Contributing</a></li><li class="navListItem"><a class="navItem" href="/en-US/next/roadmap">Roadmap</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">运行 CITA</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="创建超级管理员账户地址-私钥-公钥"></a><a href="#创建超级管理员账户地址-私钥-公钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建超级管理员账户地址、私钥、公钥</h2>
+<p>执行命令：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> cita-cli key create</span>
+</code></pre>
+<p>命令返回:</p>
+<pre><code class="hljs css language-json">   {
+     <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x141d051b1b1922bf686f5df8aad45cefbcb0b696"</span>,
+     <span class="hljs-attr">"private"</span>: <span class="hljs-string">"0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768"</span>,
+     <span class="hljs-attr">"public"</span>: <span class="hljs-string">"0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"</span>
+   }
+</code></pre>
+<blockquote>
+<p>注：此处为示例公私钥对，不要在生产环境复制使用，其中：</p>
+<ul>
+<li>&quot;address&quot;, 为帐号地址；</li>
+<li>&quot;private&quot;, 为帐号私钥；</li>
+<li>&quot;public&quot;, 为帐户公钥。</li>
+</ul>
+<p>由于每次执行命令生成的结果都不同，以下所有的示例操作均使用本次生成的结果。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="配置-cita"></a><a href="#配置-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置 CITA</h2>
+<ol>
+<li>进入 CITA 目录：</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ cd cita_secp256k1_sha3
+</code></pre>
+<ol start="2">
+<li>初始化链：</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+</code></pre>
+<pre><code class="hljs">  其中：
+
+  * super_admin 为管理员账号地址；请采用上一步执行结果的为准。
+  * nodes 是要部署的节点地址（IP:Port）。
+
+  &gt; * 注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 [链接配置]；
+  &gt; * 注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP:PORT。
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="启动-cita"></a><a href="#启动-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 CITA</h2>
+<ol>
+<li>启动节点 0</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita setup test-chain/0
+      $ bin/cita start test-chain/0
+</code></pre>
+<ol start="2">
+<li>启动节点 1</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita setup test-chain/1
+      $ bin/cita start test-chain/1
+</code></pre>
+<ol start="3">
+<li>启动节点 2</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita setup test-chain/2
+      $ bin/cita start test-chain/2
+</code></pre>
+<ol start="4">
+<li>启动节点 3</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita setup test-chain/3
+      $ bin/cita start test-chain/3
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="验证-cita-是否运行正常"></a><a href="#验证-cita-是否运行正常" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证 CITA 是否运行正常</h2>
+<p>查看进程是否启动成功</p>
+<pre><code class="hljs">shell
+   $ ps -ef | grep cita- |grep -v grep |wc -l &amp;&amp; ps -ef | grep cita- |grep -v grep
+</code></pre>
+<p>返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）</p>
+<pre><code class="hljs">28
+   cita      6180 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6188  6180  0 10:54 ?        00:00:00 cita-auth -c auth.toml
+   cita      6191  6180  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6193  6180  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6194  6180  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6195  6180  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6202  6180  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   cita      6394 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6402  6394  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6405  6394  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6407  6394  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6408  6394  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   cita      6409  6394  0 10:54 ?        00:00:00 cita-auth -c auth.toml
+   cita      6413  6394  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6613 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6622  6613  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   cita      6625  6613  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6626  6613  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6627  6613  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6628  6613  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6635  6613  0 10:54 ?        00:00:00 cita-auth -c auth.toml
+   cita      6831 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6839  6831  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6841  6831  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6843  6831  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   cita      6845  6831  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6846  6831  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6857  6831  0 10:54 ?        00:00:00 cita-auth -c auth.toml</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/getting-started/setup"><span class="arrow-prev">← </span><span>环境准备</span></a><a class="docs-next button" href="/en-US/next/cita/getting-started/basic-usage"><span>基本操作</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#创建超级管理员账户地址-私钥-公钥">创建超级管理员账户地址、私钥、公钥</a></li><li><a href="#配置-cita">配置 CITA</a></li><li><a href="#启动-cita">启动 CITA</a></li><li><a href="#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en-US","version:next"]}
+              });
+            </script></body></html>

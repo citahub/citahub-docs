@@ -30,11 +30,19 @@
         ]
       },
       {
+        "label": "Node Management",
+        "type": "subcategory",
+        "ids": [
+          "cita/node/node-intro",
+          "cita/node/ordi-node",
+          "cita/node/cons-node"
+        ]
+      },
+      {
         "label": "System Management",
         "type": "subcategory",
         "ids": [
           "cita/system/sys-contracts",
-          "cita/system/node",
           "cita/system/log",
           "cita/system/snapshot",
           "cita/system/version",

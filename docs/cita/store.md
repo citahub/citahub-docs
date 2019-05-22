@@ -28,8 +28,8 @@ $ bin/cita create \
 
 启动链接下来的步骤见[启动 CITA]部分。
 
-为了简化操作，以下将用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式进行演示。
-所涉及的 JSON-RPC 接口，将在过程中做简要的说明，详细 JSON-RPC 说明，请参考 [这里](../rpc-guide/rpc.md)。
+为了简化操作，以下将用 [cita-cli] 命令行模式进行演示。
+所涉及的 JSON-RPC 接口，将在过程中做简要的说明，详细使用方式请参考 [JSON-RPC 说明] 。
 
 ### 发送数据存证交易
 
@@ -152,4 +152,6 @@ tx decode-unverifiedTransaction --content 0x0ab101122064356565386436313239333634
 
 其中，解析后的 `data` 域正是上文存证的原始数据。
 
-[启动 CITA]: ../getting-started/run-cita#启动-CITA 
+[JSON-RPC 说明]: rpc-guide/rpc
+[cita-cli]: https://github.com/cryptape/cita-cli
+[启动 CITA]: getting-started/run-cita#启动-CITA

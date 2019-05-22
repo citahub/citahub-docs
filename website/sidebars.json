@@ -20,12 +20,17 @@
           "cita/configuration-guide/service-config"
         ]
       },
-      "cita/huawei",
+      {
+        "label": "Deploy Guide",
+        "type": "subcategory",
+        "ids": [
+          "cita/deploy/install"
+        ]
+      },
       {
         "label": "Operation",
         "type": "subcategory",
         "ids": [
-          "cita/operation/install",
           "cita/operation/protocol"
         ]
       },

@@ -1,11 +1,12 @@
 ---
 id: compile-cita
-title: 编译CITA
+title: 编译 CITA
 ---
 
 ## 环境准备
-   编译 CITA 前需要准备好编译的环境，其操作步骤同快速入门的 [环境准备]。
-   
+
+编译 CITA 前需要准备好编译的环境，其操作步骤同快速入门的 [环境准备]。
+
 ## 源代码准备
 
 从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录:
@@ -16,7 +17,7 @@ $ cd cita
 $ git submodule init
 $ git submodule update
 ```
-  
+
 ## 编译源代码
 
 可以按照自己的需求自行选择相应的编译方式, 其中
@@ -40,9 +41,9 @@ $ ./env.sh make release
 
 > 可选择替换 Rust Crates 的官方源，详细教程可以参考：
 >
-> - [USTC Mirror Help for Rust Crates](http://mirrors.ustc.edu.cn/help/crates.io-index.html)
-> - [Source Replacement for Rust Crates](https://doc.rust-lang.org/cargo/reference/source-replacement.html)
-> - [How to map a configuration file into docker](https://docs.docker.com/storage/volumes/)
+> - [USTC Mirror Help for Rust Crates]
+> - [Source Replacement for Rust Crates]
+> - [How to map a configuration file into docker]
 
 编译生成的文件在发布件目录 `target/install` 下，生产环境下只需要这个目录即可。
 
@@ -71,6 +72,9 @@ $ ./env.sh make release
 > * 如果出现 Docker 相关的报错，可以执行如下命令并重试：
 >   ```shell
 >   docker kill $(docker ps -a -q)
-> 
+>
 
+[How to map a configuration file into docker]: https://docs.docker.com/storage/volumes/
+[Source Replacement for Rust Crates]: https://doc.rust-lang.org/cargo/reference/source-replacement.html
+[USTC Mirror Help for Rust Crates]: http://mirrors.ustc.edu.cn/help/crates.io-index.html
 [环境准备]: ../getting-started/setup

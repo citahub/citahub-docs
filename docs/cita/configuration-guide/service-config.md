@@ -226,7 +226,7 @@ network.toml 是 Network 微服务的配置文件。
 # Current node ip is 127.0.0.1
 enable_tls = true
 max_connects = 100
-enable_discovery = true       
+enable_discovery = true
 port = 4000
 
 [[peers]]

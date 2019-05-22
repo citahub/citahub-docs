@@ -3,15 +3,13 @@ id: chain-config
 title: 链级配置
 ---
 
-链级配置主要是指链自身的一些属性、系统合约、RPC接口、节点间网络连接等的配置，需要用户在**起链前**进行初始化配置。当拿到发布件解压后，或从源码编译后，不要着急启动节点，在这之前，很重要的一步就是我们需要对链进行初始化配置。
-这些配置信息将被写入链的创世块，创世块一旦生成，SysConfig 中只有 `chainName`，`operator`，`website` 这三项可以在链运行之后再进行修改，其他项均不可再修改, 因此请大家慎重设定各配置项。
-在 CITA 里面，我们提供了工具 config tool 来帮助你在起链前对链进行初始化配置, 提供了命令行工具 CITA-CLI 来帮助你在起链后修改个别配置。
+> **注意**
+>
+> 当你计划使用 CITA 设计产品时，[环境准备] 好之后，不要着急启动节点，请仔细阅读本节内容，并选择最适合你产品需求的配置。
 
-本文档将为你详细介绍链的各个可配置项，包括链自身的一些属性、系统合约、RPC接口、节点间网络连接等；
-然后通过具体的操作示例，演示如何起链前对链进行初始化配置；
-并带你详细了解初始化配置后文件的目录结构；
-最后，将通过具体示例，演示起链后如何修改个别配置。
-相信阅读完此文档后，你将可以自己定制一条满足你需求的链。
+链级配置指的是链自身的一些属性、系统合约、RPC接口、节点间网络连接等的配置，用户在 **起链前** 进行初始化配置，配置信息将会被保存在链上。
+
+本文档会详细介绍链的各个可配置项，然后通过具体的操作示例，演示如何起链前对链进行初始化配置，相信阅读完此文档后，你将可以自己定制一条满足你需求的链。
 
 ## 可配置项
 
@@ -23,8 +21,9 @@ $ bin/cita create --help
 
 我们一一解释：
 
-> **Notice**
-> 起链时，强制要求的配置项为 `super_admin` 和 `nodes`，系统不提供默认配置。
+> **注意**
+>
+> 必选配置项配置项有 `super_admin` 和 `nodes`，系统不提供默认配置。
 
 ### `--authorities`
 
@@ -73,7 +72,7 @@ $ bin/cita create --help
   - `operator` : 运营方名称
   - `website` : 运营方网站
   - `blockInterval` ： 出块间隔，默认 3 秒
-  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由管理员设置，详细机制可查看[配额管理](../system/quota)；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看[配额价格管理](../system/price)。
+  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由管理员设置，详细机制可查看 [配额管理]；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理]。
   - `name` : Token 名称
   - `symbol` : Token 符号
   - `avatar` : Token 图标链接
@@ -98,6 +97,10 @@ $ bin/cita create --help
   - `version` : 协议版本号
 * `PriceManager`: 配额价格管理合约
   - `quotaPrice`: 配额价格
+
+> **注意**
+>
+> SysConfig 中只有 `chainName`，`operator`，`website` 这三项可以在链运行之后再进行修改，其他项均不可再修改, 因此请大家慎重设定各配置项。
 
 ### `--time_stamp`
 
@@ -195,7 +198,7 @@ chain.toml  executor.toml   jsonrpc.toml       privkey
 
 ## 修改个别配置操作示例
 
-起链后，也就是说创世块一旦生成，除 chainName, operator, website 三项可以在运行时更改，其他配置均无法修改。接下来我们用 [cita-cli](https://github.com/cryptape/cita-cli) 来进行演示，以管理员修改 `chainName` 作为示例：
+起链后，也就是说创世块一旦生成，除 chainName, operator, website 三项可以在运行时更改，其他配置均无法修改。接下来我们用 [cita-cli] 来进行演示，以管理员修改 `chainName` 作为示例：
 
 确保你的链正常运行，进入 cita-cli 交互式模式，输入命令：
 
@@ -236,3 +239,8 @@ $ rpc getMetaData
 
 ```
 `chainName` 已更新。
+
+[环境准备]: ../getting-started/setup
+[配额价格管理]: ../system/price
+[配额管理]: ../system/quota
+[cita-cli]: https://github.com/cryptape/cita-cli

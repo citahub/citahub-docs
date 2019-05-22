@@ -240,7 +240,7 @@ message UnverifiedTransaction {
 
 ### getVersion
 
-获取当前 CITA 软件的版本号, 该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 [链级配置](../operation/chain-config) 中的 `--enable_version` 选项说明。
+获取当前 CITA 软件的版本号, 该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 [链级配置] 中的 `--enable_version` 选项说明。
 
 * 参数
 
@@ -1191,3 +1191,4 @@ Result:
 [Ethereum Contract ABI]: https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI
 [Solidity docs]: https://solidity.readthedocs.io/en/develop/
 [Test contract]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol
+[链级配置]: ../configuration-guide/chain-config

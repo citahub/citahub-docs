@@ -20,13 +20,7 @@
           "cita/configuration-guide/service-config"
         ]
       },
-      {
-        "label": "Deploy Guide",
-        "type": "subcategory",
-        "ids": [
-          "cita/deploy/install"
-        ]
-      },
+      "cita/install",
       {
         "label": "Upgrade Guide",
         "type": "subcategory",

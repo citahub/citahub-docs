@@ -49,7 +49,6 @@
         "ids": [
           "cita/system/sys-contracts",
           "cita/system/log",
-          "cita/system/snapshot",
           "cita/system/version",
           "cita/system/auto-exec",
           "cita/system/zktx"
@@ -82,6 +81,15 @@
         "ids": [
           "cita/special-govern/emg-brake",
           "cita/special-govern/amend"
+        ]
+      },
+      {
+        "label": "Data Management",
+        "type": "subcategory",
+        "ids": [
+          "cita/data/sync",
+          "cita/data/migration",
+          "cita/data/snapshot"
         ]
       },
       "cita/store",

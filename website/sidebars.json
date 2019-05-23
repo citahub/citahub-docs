@@ -30,6 +30,7 @@
           "cita/upgrade/protocol-upgrade"
         ]
       },
+      "cita/commands",
       {
         "label": "Node Management",
         "type": "subcategory",

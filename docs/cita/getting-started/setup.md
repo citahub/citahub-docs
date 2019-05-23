@@ -39,13 +39,18 @@ title: 环境准备
    3. 下载 CITA-CLI 安装包
 
       ```shell
-      $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.5/cita-cli-x86_64-musl-0.19.5.tar.gz
+      $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-musl-tls-0.19.6.tar.gz
       ```
-   
+      
+      > 注：这里所下载的是 CITA-CLI 是 linux 系统下的二进制发布包，如果你使用 MacOS，请按以下命令下载对应系统的 CITA-CLI：
+      > ```
+      > wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-mac-osx-tls-0.19.6.tar.gz
+      > ```
+      
    4. 解压程序
 
       ```shell
-      $ tar zxvf cita-cli-x86_64-musl-0.19.5.tar.gz
+      $ tar zxvf cita-cli-x86_64-musl-tls-0.19.6.tar.gz
       ```
 
    5. 复制 CITA-CLI 到 系统可执行文件目录下

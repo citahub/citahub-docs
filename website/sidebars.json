@@ -28,10 +28,12 @@
         ]
       },
       {
-        "label": "Operation",
+        "label": "Upgrade Guide",
         "type": "subcategory",
         "ids": [
-          "cita/operation/protocol"
+          "cita/upgrade/overview",
+          "cita/upgrade/software-upgrade",
+          "cita/upgrade/protocol-upgrade"
         ]
       },
       {
@@ -49,7 +51,6 @@
         "ids": [
           "cita/system/sys-contracts",
           "cita/system/log",
-          "cita/system/version",
           "cita/system/auto-exec",
           "cita/system/zktx"
         ]

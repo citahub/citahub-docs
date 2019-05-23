@@ -1,5 +1,5 @@
 ---
-id: version
+id: number
 title: 协议版本号管理
 ---
 

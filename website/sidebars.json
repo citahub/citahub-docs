@@ -28,13 +28,6 @@
         ]
       },
       {
-        "label": "Operation",
-        "type": "subcategory",
-        "ids": [
-          "cita/operation/protocol"
-        ]
-      },
-      {
         "label": "Node Management",
         "type": "subcategory",
         "ids": [
@@ -50,7 +43,6 @@
           "cita/system/sys-contracts",
           "cita/system/log",
           "cita/system/snapshot",
-          "cita/system/version",
           "cita/system/auto-exec",
           "cita/system/zktx"
         ]
@@ -82,6 +74,16 @@
         "ids": [
           "cita/special-govern/emg-brake",
           "cita/special-govern/amend"
+        ]
+      },
+      {
+        "label": "Update Guide",
+        "type": "subcategory",
+        "ids": [
+          "cita/update/update-intro",
+          "cita/update/version",
+          "cita/update/protocol",
+          "cita/update/number"
         ]
       },
       "cita/store",

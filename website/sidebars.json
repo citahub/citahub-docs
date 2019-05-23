@@ -66,14 +66,12 @@
         ]
       },
       {
-        "label": "Account and Permission System",
+        "label": "Account & Permission",
         "type": "subcategory",
         "ids": [
           "cita/account-permission/account",
           "cita/account-permission/permission",
-          "cita/account-permission/permission-extend",
-          "cita/account-permission/account-example",
-          "cita/account-permission/permission-example"
+          "cita/account-permission/permission-extend"
         ]
       },
       {

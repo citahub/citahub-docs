@@ -74,17 +74,17 @@
 </code></pre>
 <p>命令返回:</p>
 <pre><code class="hljs css language-json">   {
-     <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x141d051b1b1922bf686f5df8aad45cefbcb0b696"</span>,
-     <span class="hljs-attr">"private"</span>: <span class="hljs-string">"0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768"</span>,
-     <span class="hljs-attr">"public"</span>: <span class="hljs-string">"0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"</span>
+     <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x37d1c7449bfe76fe9c445e626da06265e9377601"</span>,
+     <span class="hljs-attr">"private"</span>: <span class="hljs-string">"0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002"</span>,
+     <span class="hljs-attr">"public"</span>: <span class="hljs-string">"0x9dc6fc7856f5271e6e8c45e5c5fe22d2ff699ac3b24497599be77803d3c25fb4e2fe7da616c65a291910c947c89923009f354634421bddd0a25cd0a509bcf6a9"</span>
    }
 </code></pre>
 <blockquote>
 <p>注：此处为示例公私钥对，不要在生产环境复制使用，其中：</p>
 <ul>
-<li>&quot;address&quot;, 为帐号地址；</li>
-<li>&quot;private&quot;, 为帐号私钥；</li>
-<li>&quot;public&quot;, 为帐户公钥。</li>
+<li>&quot;address&quot;, 帐号地址；</li>
+<li>&quot;private&quot;, 帐号私钥；</li>
+<li>&quot;public&quot;, 帐户公钥。</li>
 </ul>
 <p>由于每次执行命令生成的结果都不同，以下所有的示例操作均使用本次生成的结果。</p>
 </blockquote>
@@ -97,7 +97,7 @@
 <ol start="2">
 <li>初始化链：</li>
 </ol>
-<pre><code class="hljs css language-shell">      $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+<pre><code class="hljs css language-shell">      $ bin/cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 </code></pre>
 <pre><code class="hljs">  其中：
 
@@ -133,40 +133,61 @@
       $ bin/cita start test-chain/3
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="验证-cita-是否运行正常"></a><a href="#验证-cita-是否运行正常" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证 CITA 是否运行正常</h2>
-<p>查看进程是否启动成功</p>
-<pre><code class="hljs">shell
-   $ ps -ef | grep cita- |grep -v grep |wc -l &amp;&amp; ps -ef | grep cita- |grep -v grep
+<ol>
+<li>查看节点 0</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita top test-chain/0
+      user      1953     0  0 17:10 ?        00:00:00 cita-forever
+      user      1968  1953  0 17:10 ?        00:00:00 cita-auth -c auth.toml
+      user      1963  1953  0 17:10 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+      user      1966  1953  0 17:10 ?        00:00:00 cita-chain -c chain.toml
+      user      1969  1953  0 17:10 ?        00:00:00 cita-executor -c executor.toml
+      user      1967  1953  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+      user      1965  1953  0 17:10 ?        00:00:00 cita-network -c network.toml
 </code></pre>
-<p>返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）</p>
-<pre><code class="hljs">28
-   cita      6180 32335  0 10:54 ?        00:00:00 cita-forever
-   cita      6188  6180  0 10:54 ?        00:00:00 cita-auth -c auth.toml
-   cita      6191  6180  0 10:54 ?        00:00:00 cita-network -c network.toml
-   cita      6193  6180  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
-   cita      6194  6180  0 10:54 ?        00:00:00 cita-executor -c executor.toml
-   cita      6195  6180  0 10:54 ?        00:00:00 cita-chain -c chain.toml
-   cita      6202  6180  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
-   cita      6394 32335  0 10:54 ?        00:00:00 cita-forever
-   cita      6402  6394  0 10:54 ?        00:00:00 cita-chain -c chain.toml
-   cita      6405  6394  0 10:54 ?        00:00:00 cita-executor -c executor.toml
-   cita      6407  6394  0 10:54 ?        00:00:00 cita-network -c network.toml
-   cita      6408  6394  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
-   cita      6409  6394  0 10:54 ?        00:00:00 cita-auth -c auth.toml
-   cita      6413  6394  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
-   cita      6613 32335  0 10:54 ?        00:00:00 cita-forever
-   cita      6622  6613  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
-   cita      6625  6613  0 10:54 ?        00:00:00 cita-executor -c executor.toml
-   cita      6626  6613  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
-   cita      6627  6613  0 10:54 ?        00:00:00 cita-chain -c chain.toml
-   cita      6628  6613  0 10:54 ?        00:00:00 cita-network -c network.toml
-   cita      6635  6613  0 10:54 ?        00:00:00 cita-auth -c auth.toml
-   cita      6831 32335  0 10:54 ?        00:00:00 cita-forever
-   cita      6839  6831  0 10:54 ?        00:00:00 cita-executor -c executor.toml
-   cita      6841  6831  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
-   cita      6843  6831  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
-   cita      6845  6831  0 10:54 ?        00:00:00 cita-chain -c chain.toml
-   cita      6846  6831  0 10:54 ?        00:00:00 cita-network -c network.toml
-   cita      6857  6831  0 10:54 ?        00:00:00 cita-auth -c auth.toml</code></pre>
+<pre><code class="hljs">  检查 7 个服务是否都已经启动。
+</code></pre>
+<ol start="2">
+<li>查看节点 1</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita top test-chain/1
+      user      2107     0  0 17:10 ?        00:00:00 cita-forever
+      user      2124  2107  0 17:10 ?        00:00:00 cita-auth -c auth.toml
+      user      2117  2107  0 17:10 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+      user      2125  2107  0 17:10 ?        00:00:00 cita-chain -c chain.toml
+      user      2123  2107  0 17:10 ?        00:00:00 cita-executor -c executor.toml
+      user      2116  2107  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+      user      2130  2107  0 17:10 ?        00:00:01 cita-network -c network.toml
+</code></pre>
+<pre><code class="hljs">  检查 7 个服务是否都已经启动。
+</code></pre>
+<ol start="3">
+<li>查看节点 2</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita top test-chain/2
+      user      2274     0  0 17:10 ?        00:00:00 cita-forever
+      user      2286  2274  0 17:10 ?        00:00:00 cita-auth -c auth.toml
+      user      2291  2274  0 17:10 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+      user      2284  2274  0 17:10 ?        00:00:00 cita-chain -c chain.toml
+      user      2297  2274  0 17:10 ?        00:00:00 cita-executor -c executor.toml
+      user      2287  2274  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+      user      2288  2274  0 17:10 ?        00:00:01 cita-network -c network.toml
+</code></pre>
+<pre><code class="hljs">  检查 7 个服务是否都已经启动。
+</code></pre>
+<ol start="4">
+<li>查看节点 3</li>
+</ol>
+<pre><code class="hljs css language-shell">      $ bin/cita top test-chain/3
+      user      2437     0  0 17:10 ?        00:00:00 cita-forever
+      user      2450  2437  0 17:10 ?        00:00:00 cita-auth -c auth.toml
+      user      2458  2437  0 17:10 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+      user      2451  2437  0 17:10 ?        00:00:00 cita-chain -c chain.toml
+      user      2459  2437  0 17:10 ?        00:00:00 cita-executor -c executor.toml
+      user      2447  2437  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+      user      2449  2437  0 17:10 ?        00:00:01 cita-network -c network.toml
+</code></pre>
+<pre><code class="hljs">  检查 7 个服务是否都已经启动。</code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/getting-started/setup"><span class="arrow-prev">← </span><span>环境准备</span></a><a class="docs-next button" href="/zh-CN/next/cita/getting-started/basic-usage"><span>基本操作</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#创建超级管理员账户地址-私钥-公钥">创建超级管理员账户地址、私钥、公钥</a></li><li><a href="#配置-cita">配置 CITA</a></li><li><a href="#启动-cita">启动 CITA</a></li><li><a href="#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

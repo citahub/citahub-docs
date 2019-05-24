@@ -15,17 +15,17 @@ title: 运行 CITA
 
    ```json
    {
-     "address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696",
-     "private": "0xa2c4ce22f3ee18d4ca6e560d4a5a6b54823773348b95cd95afb3ee2843ff7768",
-     "public": "0x37aa832ae77a580c2c305dfee234af424a90274b236b8925d7c452e1834f3fa34cd87178c2116d34dc816d0b06c869b01409a328d7a28fcfcfca994f6095d166"
+     "address": "0x37d1c7449bfe76fe9c445e626da06265e9377601",
+     "private": "0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002",
+     "public": "0x9dc6fc7856f5271e6e8c45e5c5fe22d2ff699ac3b24497599be77803d3c25fb4e2fe7da616c65a291910c947c89923009f354634421bddd0a25cd0a509bcf6a9"
    }
    ```
 
    > 注：此处为示例公私钥对，不要在生产环境复制使用，其中：
    >
-   > * "address", 为帐号地址；
-   > * "private", 为帐号私钥；
-   > * "public", 为帐户公钥。
+   > * "address", 帐号地址；
+   > * "private", 帐号私钥；
+   > * "public", 帐户公钥。
    > 
    > 由于每次执行命令生成的结果都不同，以下所有的示例操作均使用本次生成的结果。
 
@@ -40,7 +40,7 @@ title: 运行 CITA
    2. 初始化链：
 
       ```shell
-      $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+      $ bin/cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
       ```
    
       其中：
@@ -82,44 +82,64 @@ title: 运行 CITA
 
 ## 验证 CITA 是否运行正常
 
-   查看进程是否启动成功
+   1. 查看节点 0
+   
+      ```shell
+      $ bin/cita top test-chain/0
+      user      1953     0  0 17:10 ?        00:00:00 cita-forever
+      user      1968  1953  0 17:10 ?        00:00:00 cita-auth -c auth.toml
+      user      1963  1953  0 17:10 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+      user      1966  1953  0 17:10 ?        00:00:00 cita-chain -c chain.toml
+      user      1969  1953  0 17:10 ?        00:00:00 cita-executor -c executor.toml
+      user      1967  1953  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+      user      1965  1953  0 17:10 ?        00:00:00 cita-network -c network.toml
+      ```
+      
+      检查 7 个服务是否都已经启动。
+   
+   2. 查看节点 1
+    
+      ```shell
+      $ bin/cita top test-chain/1
+      user      2107     0  0 17:10 ?        00:00:00 cita-forever
+      user      2124  2107  0 17:10 ?        00:00:00 cita-auth -c auth.toml
+      user      2117  2107  0 17:10 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+      user      2125  2107  0 17:10 ?        00:00:00 cita-chain -c chain.toml
+      user      2123  2107  0 17:10 ?        00:00:00 cita-executor -c executor.toml
+      user      2116  2107  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+      user      2130  2107  0 17:10 ?        00:00:01 cita-network -c network.toml
+      ```
+      
+      检查 7 个服务是否都已经启动。
+   
+   3. 查看节点 2
+    
+      ```shell
+      $ bin/cita top test-chain/2
+      user      2274     0  0 17:10 ?        00:00:00 cita-forever
+      user      2286  2274  0 17:10 ?        00:00:00 cita-auth -c auth.toml
+      user      2291  2274  0 17:10 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+      user      2284  2274  0 17:10 ?        00:00:00 cita-chain -c chain.toml
+      user      2297  2274  0 17:10 ?        00:00:00 cita-executor -c executor.toml
+      user      2287  2274  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+      user      2288  2274  0 17:10 ?        00:00:01 cita-network -c network.toml
+      ```
+      
+      检查 7 个服务是否都已经启动。
 
-   ```shell
-   $ ps -ef | grep cita- |grep -v grep |wc -l && ps -ef | grep cita- |grep -v grep
-   ```
-
-   返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）
-
-   ```
-   28
-   cita      6180 32335  0 10:54 ?        00:00:00 cita-forever
-   cita      6188  6180  0 10:54 ?        00:00:00 cita-auth -c auth.toml
-   cita      6191  6180  0 10:54 ?        00:00:00 cita-network -c network.toml
-   cita      6193  6180  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
-   cita      6194  6180  0 10:54 ?        00:00:00 cita-executor -c executor.toml
-   cita      6195  6180  0 10:54 ?        00:00:00 cita-chain -c chain.toml
-   cita      6202  6180  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
-   cita      6394 32335  0 10:54 ?        00:00:00 cita-forever
-   cita      6402  6394  0 10:54 ?        00:00:00 cita-chain -c chain.toml
-   cita      6405  6394  0 10:54 ?        00:00:00 cita-executor -c executor.toml
-   cita      6407  6394  0 10:54 ?        00:00:00 cita-network -c network.toml
-   cita      6408  6394  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
-   cita      6409  6394  0 10:54 ?        00:00:00 cita-auth -c auth.toml
-   cita      6413  6394  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
-   cita      6613 32335  0 10:54 ?        00:00:00 cita-forever
-   cita      6622  6613  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
-   cita      6625  6613  0 10:54 ?        00:00:00 cita-executor -c executor.toml
-   cita      6626  6613  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
-   cita      6627  6613  0 10:54 ?        00:00:00 cita-chain -c chain.toml
-   cita      6628  6613  0 10:54 ?        00:00:00 cita-network -c network.toml
-   cita      6635  6613  0 10:54 ?        00:00:00 cita-auth -c auth.toml
-   cita      6831 32335  0 10:54 ?        00:00:00 cita-forever
-   cita      6839  6831  0 10:54 ?        00:00:00 cita-executor -c executor.toml
-   cita      6841  6831  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
-   cita      6843  6831  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
-   cita      6845  6831  0 10:54 ?        00:00:00 cita-chain -c chain.toml
-   cita      6846  6831  0 10:54 ?        00:00:00 cita-network -c network.toml
-   cita      6857  6831  0 10:54 ?        00:00:00 cita-auth -c auth.toml
-   ```
-
+   4. 查看节点 3
+    
+      ```shell
+      $ bin/cita top test-chain/3
+      user      2437     0  0 17:10 ?        00:00:00 cita-forever
+      user      2450  2437  0 17:10 ?        00:00:00 cita-auth -c auth.toml
+      user      2458  2437  0 17:10 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+      user      2451  2437  0 17:10 ?        00:00:00 cita-chain -c chain.toml
+      user      2459  2437  0 17:10 ?        00:00:00 cita-executor -c executor.toml
+      user      2447  2437  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+      user      2449  2437  0 17:10 ?        00:00:01 cita-network -c network.toml
+      ```
+      
+      检查 7 个服务是否都已经启动。
+   
 [链接配置]: ../operation/chain-config

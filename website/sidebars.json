@@ -41,15 +41,6 @@
         ]
       },
       {
-        "label": "System Management",
-        "type": "subcategory",
-        "ids": [
-          "cita/system/sys-contracts",
-          "cita/system/log",
-          "cita/system/auto-exec"
-        ]
-      },
-      {
         "label": "Economics Model",
         "type": "subcategory",
         "ids": [
@@ -134,12 +125,7 @@
       },
       "cita/addresses",
       "cita/faq",
-      "cita/crosschain/crosschain-contract-example",
-      {
-        "label": "Reference",
-        "type": "subcategory",
-        "ids": ["cita/ref/glossary"]
-      }
+      "cita/glossary"
     ],
     "Toolchain": [
       {

@@ -100,7 +100,7 @@ $ cita-cli scm PriceManager getQuotaPrice
 
 1. 用以下命令对链进行初始化
 
-   ``shell
+   ```shell
    ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.economicalModel=1 PriceManager.quotaPrice=0
    ```
 

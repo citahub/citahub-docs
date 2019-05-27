@@ -5,17 +5,20 @@
     "previous": "Previous",
     "tagline": "Documents of CITAHub",
     "docs": {
+      "cita/account-permission/account-example": {
+        "title": "账户系统使用示例"
+      },
       "cita/account-permission/account": {
         "title": "账户系统"
+      },
+      "cita/account-permission/permission-example": {
+        "title": "权限系统使用示例"
       },
       "cita/account-permission/permission-extend": {
         "title": "权限系统插件"
       },
       "cita/account-permission/permission": {
         "title": "权限系统"
-      },
-      "cita/addresses": {
-        "title": "系统保留地址"
       },
       "cita/architecture/architecture": {
         "title": "系统架构"
@@ -35,23 +38,9 @@
       "cita/cita-intro": {
         "title": "关于 CITA"
       },
-      "cita/commands": {
-        "title": "命令说明"
-      },
-      "cita/configuration-guide/chain-config": {
-        "title": "链级配置"
-      },
-      "cita/configuration-guide/service-config": {
-        "title": "微服务配置"
-      },
-      "cita/data/migration": {
-        "title": "数据迁移"
-      },
-      "cita/data/snapshot": {
-        "title": "数据裁剪"
-      },
-      "cita/data/sync": {
-        "title": "数据同步"
+      "cita/crosschain/crosschain-contract-example": {
+        "title": "跨链合约示例",
+        "sidebar_label": "跨链"
       },
       "cita/economics/charge": {
         "title": "Charge 模式"
@@ -65,63 +54,32 @@
       "cita/economics/quotalimit": {
         "title": "设置 Quota Limit"
       },
-      "cita/faq": {
+      "cita/getting-started": {
+        "title": "快速入门"
+      },
+      "cita/huawei": {
+        "title": "华为云一键部署"
+      },
+      "cita/operation/chain-config": {
+        "title": "链级配置"
+      },
+      "cita/operation/install": {
+        "title": "部署 CITA"
+      },
+      "cita/operation/protocol": {
+        "title": "协议升级"
+      },
+      "cita/operation/service-config": {
+        "title": "微服务配置"
+      },
+      "cita/ref/addresses": {
+        "title": "系统保留地址"
+      },
+      "cita/ref/faq": {
         "title": "CITA FAQ"
       },
-      "cita/getting-started/basic-usage": {
-        "title": "基本操作"
-      },
-      "cita/getting-started/run-cita": {
-        "title": "运行 CITA"
-      },
-      "cita/getting-started/setup": {
-        "title": "环境准备"
-      },
-      "cita/glossary": {
+      "cita/ref/glossary": {
         "title": "词汇表"
-      },
-      "cita/hacking/auto-exec": {
-        "title": "自动执行"
-      },
-      "cita/hacking/chain-gov": {
-        "title": "链上治理"
-      },
-      "cita/hacking/compile-cita": {
-        "title": "编译 CITA"
-      },
-      "cita/hacking/contracts/batch-tx": {
-        "title": "批量交易"
-      },
-      "cita/hacking/contracts/rust": {
-        "title": "Rust 原生合约开发"
-      },
-      "cita/hacking/contracts/solidity": {
-        "title": "Solidity 合约开发"
-      },
-      "cita/hacking/log": {
-        "title": "日志管理"
-      },
-      "cita/install": {
-        "title": "CITA 部署指南"
-      },
-      "cita/node/cons-node": {
-        "title": "共识节点管理"
-      },
-      "cita/node/node-intro": {
-        "title": "节点分类"
-      },
-      "cita/node/ordi-node": {
-        "title": "普通节点管理"
-      },
-      "cita/privacy/crosschain-contract-example": {
-        "title": "跨链合约示例",
-        "sidebar_label": "侧链"
-      },
-      "cita/privacy/privacy-intro": {
-        "title": "隐私保护概述"
-      },
-      "cita/privacy/zktx": {
-        "title": "零知识证明"
       },
       "cita/rpc-guide/rpc-error-code": {
         "title": "JSON RPC 错误码"
@@ -138,23 +96,98 @@
       "cita/special-govern/emg-brake": {
         "title": "紧急制动"
       },
-      "cita/store": {
+      "cita/system-contract-interface/admin": {
+        "title": "管理员合约接口"
+      },
+      "cita/system-contract-interface/all-groups": {
+        "title": "所有组合约接口"
+      },
+      "cita/system-contract-interface/auth": {
+        "title": "授权管理合约接口"
+      },
+      "cita/system-contract-interface/auto-exec": {
+        "title": "自动执行合约接口"
+      },
+      "cita/system-contract-interface/batch": {
+        "title": "批量交易合约接口"
+      },
+      "cita/system-contract-interface/emergency-brake": {
+        "title": "紧急制动合约接口"
+      },
+      "cita/system-contract-interface/error": {
+        "title": "系统合约错误类型"
+      },
+      "cita/system-contract-interface/group-mng": {
+        "title": "组管理合约接口"
+      },
+      "cita/system-contract-interface/group": {
+        "title": "组合约接口"
+      },
+      "cita/system-contract-interface/node": {
+        "title": "共识节点管理合约接口"
+      },
+      "cita/system-contract-interface/permission-mng": {
+        "title": "Permission Mng"
+      },
+      "cita/system-contract-interface/permission": {
+        "title": "权限合约接口"
+      },
+      "cita/system-contract-interface/quota-manager": {
+        "title": "配额管理合约接口"
+      },
+      "cita/system-contract-interface/quota-price": {
+        "title": "配额价格管理合约接口"
+      },
+      "cita/system-contract-interface/role-auth": {
+        "title": "角色授权合约接口"
+      },
+      "cita/system-contract-interface/role-mng": {
+        "title": "角色管理合约接口"
+      },
+      "cita/system-contract-interface/role": {
+        "title": "角色合约接口"
+      },
+      "cita/system-contract-interface/sys": {
+        "title": "系统配置合约接口"
+      },
+      "cita/system-contract-interface/version-mng": {
+        "title": "协议版本管理合约接口"
+      },
+      "cita/system/auto-exec": {
+        "title": "自动执行"
+      },
+      "cita/system/batch-tx": {
+        "title": "批量交易"
+      },
+      "cita/system/fee-back": {
+        "title": "出块奖励返回"
+      },
+      "cita/system/log": {
+        "title": "日志管理"
+      },
+      "cita/system/node": {
+        "title": "节点管理"
+      },
+      "cita/system/price": {
+        "title": "配额价格管理"
+      },
+      "cita/system/quota": {
+        "title": "配额管理"
+      },
+      "cita/system/snapshot": {
+        "title": "快照"
+      },
+      "cita/system/store": {
         "title": "存证"
       },
-      "cita/sys-contract-interface/error": {
-        "title": "错误类型"
+      "cita/system/sys-contracts": {
+        "title": "系统合约"
       },
-      "cita/sys-contract-interface/interface": {
-        "title": "接口列表"
+      "cita/system/version": {
+        "title": "协议版本号管理"
       },
-      "cita/upgrade/overview": {
-        "title": "升级概述"
-      },
-      "cita/upgrade/protocol-upgrade": {
-        "title": "协议升级"
-      },
-      "cita/upgrade/software-upgrade": {
-        "title": "软件升级"
+      "cita/system/zktx": {
+        "title": "隐私交易示例"
       },
       "contributing": {
         "title": "Contributing"
@@ -1648,9 +1681,6 @@
       "version-0.24.0-toolchain/web-debugger/web-debugger-intro": {
         "title": "Web Debugger Intro"
       },
-      "cita/system-contract-interface/permission-mng": {
-        "title": "Permission Mng"
-      },
       "version-0.21-toolchain/cli/cli-intro": {
         "title": "Cli Intro"
       },
@@ -2785,114 +2815,6 @@
       "version-0.24.0-toolchain/testnet/testchain": {
         "title": "测试链"
       },
-      "cita/operation/service-config": {
-        "title": "微服务配置"
-      },
-      "cita/system/sys-contracts": {
-        "title": "系统合约"
-      },
-      "cita/operation/install": {
-        "title": "部署 CITA"
-      },
-      "cita/operation/chain-config": {
-        "title": "链级配置"
-      },
-      "cita/operation/protocol": {
-        "title": "协议升级"
-      },
-      "cita/system/node": {
-        "title": "节点管理"
-      },
-      "cita/system/log": {
-        "title": "日志管理"
-      },
-      "cita/system/snapshot": {
-        "title": "快照"
-      },
-      "cita/system/batch-tx": {
-        "title": "批量交易"
-      },
-      "cita/system/version": {
-        "title": "协议版本号管理"
-      },
-      "cita/system/auto-exec": {
-        "title": "自动执行"
-      },
-      "cita/system/zktx": {
-        "title": "隐私交易示例"
-      },
-      "cita/system/store": {
-        "title": "存证"
-      },
-      "cita/account-permission/account-example": {
-        "title": "账户系统使用示例"
-      },
-      "cita/account-permission/permission-example": {
-        "title": "权限系统使用示例"
-      },
-      "cita/system-contract-interface/sys": {
-        "title": "系统配置合约接口"
-      },
-      "cita/system-contract-interface/node": {
-        "title": "共识节点管理合约接口"
-      },
-      "cita/system-contract-interface/auth": {
-        "title": "授权管理合约接口"
-      },
-      "cita/system-contract-interface/permission": {
-        "title": "权限合约接口"
-      },
-      "cita/system-contract-interface/role-mng": {
-        "title": "角色管理合约接口"
-      },
-      "cita/system-contract-interface/role-auth": {
-        "title": "角色授权合约接口"
-      },
-      "cita/system-contract-interface/role": {
-        "title": "角色合约接口"
-      },
-      "cita/system-contract-interface/group-mng": {
-        "title": "组管理合约接口"
-      },
-      "cita/system-contract-interface/group": {
-        "title": "组合约接口"
-      },
-      "cita/system-contract-interface/all-groups": {
-        "title": "所有组合约接口"
-      },
-      "cita/system-contract-interface/quota-manager": {
-        "title": "配额管理合约接口"
-      },
-      "cita/system-contract-interface/quota-price": {
-        "title": "配额价格管理合约接口"
-      },
-      "cita/system-contract-interface/batch": {
-        "title": "批量交易合约接口"
-      },
-      "cita/system-contract-interface/emergency-brake": {
-        "title": "紧急制动合约接口"
-      },
-      "cita/system-contract-interface/admin": {
-        "title": "管理员合约接口"
-      },
-      "cita/system-contract-interface/auto-exec": {
-        "title": "自动执行合约接口"
-      },
-      "cita/system-contract-interface/version-mng": {
-        "title": "协议版本管理合约接口"
-      },
-      "cita/system-contract-interface/error": {
-        "title": "系统合约错误类型"
-      },
-      "cita/ref/addresses": {
-        "title": "系统保留地址"
-      },
-      "cita/ref/glossary": {
-        "title": "词汇表"
-      },
-      "cita/ref/faq": {
-        "title": "CITA FAQ"
-      },
       "version-0.21-cita/configuration/config-overview": {
         "title": "配置概览"
       },
@@ -3183,15 +3105,6 @@
       },
       "version-0.23.0-cita/getting-started": {
         "title": "快速入门"
-      },
-      "cita/getting-started": {
-        "title": "快速入门"
-      },
-      "cita/huawei": {
-        "title": "华为云一键部署"
-      },
-      "cita/crosschain/crosschain-contract-example": {
-        "title": "跨链合约示例"
       }
     },
     "links": {

@@ -52,15 +52,15 @@ cd zktx_example && cargo run --release --bin gen_params
 1. 进入 `target/install`
 2. 拷贝 `PARAMS` 到 `resource`
 
-```shell
-cp ../../../zktx_example/PARAMS resource -r
-```
+   ```shell
+   cp ../../../zktx_example/PARAMS resource -r
+   ```
 
 3. 生成配置信息
 
-```shell
-bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000" --resource_dir resource
-```
+   ```shell
+   bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000" --resource_dir resource
+   ``` 
 
 #### 运行 `CITA`
 
@@ -68,21 +68,21 @@ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nod
 
 1. 初始化
 
-```shell
-bin/cita setup test-chain/0
-```
+   ```shell
+   bin/cita setup test-chain/0
+   ```
 
 2. 启动
 
-```shell
-bin/cita start test-chain/0
-```
+   ```shell
+   bin/cita start test-chain/0
+   ```
 
 ### 运行 `zktx_example` 的测试
 
-```
-cd ../../zktx_example && cargo run --release --bin client
-```
+   ```
+   cd ../../zktx_example && cargo run --release --bin client
+   ```
 
 [CITA]: https://github.com/cryptape/cita
 [Rust]: https://www.rust-lang.org/
@@ -91,4 +91,4 @@ cd ../../zktx_example && cargo run --release --bin client
 [zktx_example]: https://github.com/cryptape/zktx_example
 [运行 CITA]: ../getting-started/run-cita
 [编译 CITA]: ../hacking/compile-cita
-[配置]: ../operation/chain-config
+[配置]: ../configuration-guide/chain-config

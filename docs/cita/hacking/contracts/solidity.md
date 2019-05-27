@@ -18,14 +18,14 @@ Version: 0.4.24+commit.e67f0147.Linux.g++
 
 * 参考[Solidity 编译器安装]安装 `v0.24.0` 版本。成功后查询版本号:
 
-  ```
-  solc --version
+  ```shell
+  $ solc --version
   ```
 
 * CITA 的 build 镜像也集成了 Solidity 编译器，下载 CITA 源码后可查询版本号：
 
-  ```
-  ./env.sh solc --version
+  ```shell
+  $ ./env.sh solc --version
   ```
 
 本文档使用[测试合约]来演示合约在 CITA 上的部署和调用过程。
@@ -64,36 +64,36 @@ $ cita-cli key create
 
 * 字节码
 
-部署合约需要字节码信息。
+  部署合约需要字节码信息。
 
-```bash
-$ solc SimpleStorage.sol --bin
-```
+  ```bash
+  $ solc SimpleStorage.sol --bin
+  ```
 
-输出：
+  输出：
 
-```
-======= SimpleStorage.sol:SimpleStorage =======
-Binary:
-608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029
-```
+  ```
+  ======= SimpleStorage.sol:SimpleStorage =======
+  Binary:
+  608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029
+  ```
 
 * 函数签名
 
-调用合约需要函数签名信息。
+  调用合约需要函数签名信息。
 
-```bash
-$ solc SimpleStorage.sol --hashes
-```
+  ```bash
+  $ solc SimpleStorage.sol --hashes
+  ```
 
-输出：
+  输出：
 
-```
-======= SimpleStorage.sol:SimpleStorage =======
-Function signatures:
-6d4ce63c: get()
-60fe47b1: set(uint256)
-```
+  ```
+  ======= SimpleStorage.sol:SimpleStorage =======
+  Function signatures:
+  6d4ce63c: get()
+  60fe47b1: set(uint256)
+  ```
 
 ## 合约
 

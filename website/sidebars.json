@@ -25,7 +25,7 @@
         "label": "Upgrade Guide",
         "type": "subcategory",
         "ids": [
-          "cita/upgrade/overview",
+          "cita/upgrade/upgrade-overview",
           "cita/upgrade/software-upgrade",
           "cita/upgrade/protocol-upgrade"
         ]
@@ -100,19 +100,6 @@
         ]
       },
       {
-        "label": "JSON-RPC",
-        "type": "subcategory",
-        "ids": ["cita/rpc-guide/rpc-types", "cita/rpc-guide/rpc", "cita/rpc-guide/rpc-error-code"]
-      },
-      {
-        "label": "System Contract Interface",
-        "type": "subcategory",
-        "ids": [
-          "cita/sys-contract-interface/interface",
-          "cita/sys-contract-interface/error"
-        ]
-      },
-      {
         "label": "Architecture",
         "type": "subcategory",
         "ids": [
@@ -121,6 +108,19 @@
           "cita/architecture/cons",
           "cita/architecture/transaction-process",
           "cita/architecture/view"
+        ]
+      },
+      {
+        "label": "JSON-RPC",
+        "type": "subcategory",
+        "ids": ["cita/rpc-guide/rpc", "cita/rpc-guide/rpc-types", "cita/rpc-guide/rpc-error-code"]
+      },
+      {
+        "label": "System Contract Interface",
+        "type": "subcategory",
+        "ids": [
+          "cita/sys-contract-interface/interface",
+          "cita/sys-contract-interface/error"
         ]
       },
       "cita/addresses",

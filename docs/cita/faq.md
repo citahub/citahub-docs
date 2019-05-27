@@ -1,6 +1,6 @@
 ---
 id: faq
-title: CITA FAQ
+title: FAQ
 ---
 
 ## CITA 介绍、架构、原理

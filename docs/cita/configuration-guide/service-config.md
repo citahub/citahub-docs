@@ -10,7 +10,7 @@ $ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --n
 $ ls test—chain/
   0  1  2  3  template
 $ ls 0
-  auth.toml executor.toml jsonrpc.toml chain.toml forever.toml logs
+   address auth.toml executor.toml jsonrpc.toml chain.toml forever.toml logs
   consensus.toml network.toml genesis.json privkey
 ```
 

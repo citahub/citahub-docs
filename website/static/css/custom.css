@@ -5,16 +5,21 @@
 }
 
 .navGroupCategoryTitle {
-  font-size: 18px !important;
+  font-size: 20px !important;
+  font-weight: 550 !important;
+  color: black;
 }
 .navGroupSubcategoryTitle{
   font-size: 16px !important;
+  font-weight: 450 !important;
 }
 .navGroup .navItem {
   font-size: 16px !important;
+  font-weight: 450 !important;
 }
 .navGroup.subNavGroup .navItem{
   font-size: 14px !important;
+  color: #717171 !important;
 }
 .toc .toggleNav .navGroup .navGroupCategoryTitle,
 .toc .toggleNav .navGroup .navGroupSubcategoryTitle,
@@ -24,14 +29,12 @@
 }
 .toc .toggleNav .navGroup .navListItem.navListItemActive a.navItem{
   font-weight: bold !important;
-  color: #000;
+  color: #000 !important;
 }
-.toc .toggleNav .navGroup a.navItem:visited {
-  color: #717171;
-}
+
 .toc .toggleNav .navGroup a.navItem:hover {
   font-weight: bold !important;
-  color: #000;
+  color: black !important;
 }
 
 .fixedHeaderContainer header h3 {

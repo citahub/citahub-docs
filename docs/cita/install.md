@@ -1,6 +1,6 @@
 ---
 id: install
-title: CITA 部署指南
+title: 部署指南
 ---
 
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。
@@ -102,7 +102,86 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ### CITA 分布式部署
 
-Todo
+案例：4 台服务器 IP 地址为 192.168.100~103
+
+1. 使用真实 IP 初始化链
+
+   ```shell
+   $ bin/cita create —super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" —nodes "192.168.1.100:4000,192.168.1.101:4000,192.168.1.102:4000,192.168.1.103:4000"
+   ```
+   
+2. 在 4 台服务器上创建目录
+   
+   ```shell
+   $ mkdir -p /data/cita/
+   ```
+   
+3. 将生成的节点拷贝到所有主机  
+
+   ```shell
+   $ scp -r cita_secp256k1_sha3 192.168.1.100:/data/cita/
+   $ scp -r cita_secp256k1_sha3 192.168.1.101:/data/cita/
+   $ scp -r cita_secp256k1_sha3 192.168.1.102:/data/cita/
+   $ scp -r cita_secp256k1_sha3 192.168.1.103:/data/cita/
+   ```
+   
+4. 启动节点，需要登录到各节点服务器启动对应节点
+   
+   节点对应关系：
+   
+   * node0-192.168.1.100
+   * node1-192.168.1.101
+   * node3-192.168.1.103
+   * node2-192.168.1.102
+   
+   启动节点 0
+   
+   ```shell
+   $ ssh root@192.168.1.100
+   $ cd /data/cita/
+   $ ./bin/cita setup test-chain/0
+   $ ./bin/cita start test-chain/0
+   ```
+    
+   启动节点 1
+   
+   ```shell
+   $ ssh root@192.168.1.101
+   $ cd /data/cita/
+   $ ./bin/cita setup test-chain/1
+   $ ./bin/cita start test-chain/1
+   ```
+    
+   启动节点 2
+   
+   ```shell
+   $ ssh root@192.168.1.102
+   $ cd /data/cita/
+   $ ./bin/cita setup test-chain/2
+   $ ./bin/cita start test-chain/2
+   ```
+    
+   启动节点 3
+   
+   ```shell
+   $ ssh root@192.168.1.103
+   $ cd /data/cita/
+   $ ./bin/cita setup test-chain/3
+   $ ./bin/cita start test-chain/3
+   ```
+    
+5. 验证操作与单机部署相同，区别在与返回的结果只会显示当前节点进程数信息
+   
+   ```
+   7
+   cita      6180 32335  0 10:54 ?        00:00:00 cita-forever
+   cita      6188  6180  0 10:54 ?        00:00:00 cita-auth -c auth.toml
+   cita      6191  6180  0 10:54 ?        00:00:00 cita-network -c network.toml
+   cita      6193  6180  0 10:54 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+   cita      6194  6180  0 10:54 ?        00:00:00 cita-executor -c executor.toml
+   cita      6195  6180  0 10:54 ?        00:00:00 cita-chain -c chain.toml
+   cita      6202  6180  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+   ```
 
 <!--云部署-->
 
@@ -184,7 +263,6 @@ $ docker-compose --version
 #### 准备发布件
 
 ```shell
-
 $ latest_release_tag=$(curl --silent "https://api.github.com/repos/cryptape/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 echo "latest release tag: $latest_release_tag"
 

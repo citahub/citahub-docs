@@ -73,23 +73,22 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 >
 > * 在源码根目录下，我们提供了 `env.sh` 脚本，封装了 Docker 相关的操作。
 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。
-例如：
+例如下面的命令即表示在 Docker 环境中运行 `make debug`。
 >
 >   ```shell
 >   $ ./env.sh make debug
 >   ```
->
->   即表示在 Docker 环境中运行 `make debug`。
+>   
 > * 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
-> * 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误：
+> * 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误，因此要保证操作使用的始终是同一个系统用户。
 >
 >   ```shell
 >   $ ./env.sh
 >   error: failed switching to "user": unable to find user user: no matching entries in passwd file
 >   ```
-
->   因此要保证操作使用的始终是同一个系统用户。
+>
 > * 如果出现 Docker 相关的报错，可以执行如下命令并重试：
+>
 >   ```shell
 >   docker kill $(docker ps -a -q)
 >   ```

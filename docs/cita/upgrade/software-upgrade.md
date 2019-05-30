@@ -21,9 +21,9 @@ title: 软件升级
 
 1. 创建临时目录
 
-    ```shell
-    $ mkdir -p /data/cita-tmp
-    ```
+   ```shell
+   $ mkdir -p /data/cita-tmp
+   ```
 
 2. 下载新版本
 

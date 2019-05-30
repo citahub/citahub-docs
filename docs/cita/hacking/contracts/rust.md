@@ -10,7 +10,7 @@ CITA 支持用 Rust 编写的原生合约。
 Rust 原生智能合约目前需要与 CITA 源码工程一起编译、部署。
 因此，首先获得 [CITA 源码库]，推荐在 CITA 工程（cita-executor/core/src/native）中编写 Rust 原生合约代码。
 
-*需要有 RUst 变成基础*
+*需要有 Rust 编程基础*
 
 ## 编写智能合约
 

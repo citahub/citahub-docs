@@ -140,8 +140,10 @@ $ ./env.sh scripts/amend_sys_cont_to_v0-20.sh 0x5f0258a4778057a8a7d97809bd209055
 
 > 注意：这里的admin-private私钥仅作为演示使用，请实际操作时替换为目标链的实际私钥。
 
+> 注意：这里的URL地址请改成实际链的地址。
+
 ```sh
-$ cita-cli scm VersionManager setVersion --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 --version 1
+$ cita-cli scm VersionManager setVersion --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 --version 1 --url http://127.0.0.1:1337
 ```
 
 4. 用户升级相关工具和 SDK 至明确支持 v1 协议的版本，具体请参见 SDK 和 工具的 RELEASE NOTES。
@@ -178,8 +180,10 @@ v2 之前的版本存在两个问题:
 
 > 注意：这里的 admin-private 私钥仅作为演示使用，请实际操作时替换为目标链的实际私钥。
 
+> 注意：这里的URL地址请改成实际链的地址。
+
 ```sh
-$ cita-cli scm VersionManager setVersion --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 --version 2
+$ cita-cli scm VersionManager setVersion --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 --version 2 --url http://127.0.0.1:1337
 ```
 
 3. 用户升级相关工具和 SDK 至明确支持 v2 协议的版本，具体请参见 SDK 和 工具的 RELEASE NOTES。

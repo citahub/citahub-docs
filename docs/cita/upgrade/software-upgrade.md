@@ -59,7 +59,7 @@ title: 软件升级
 7. 查看运行程序版本
 
    ```shell
-   $ ./bin/cita-jsonrpc --version | head -2
+   $ ./bin/cita-env ./bin/cita-jsonrpc --version | head -1
    ```
 
 8. 返回结果

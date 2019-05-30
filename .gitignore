@@ -1,5 +1,15 @@
-.DS_Store
+# editor specific
+# vim stuff
+*.swp
+# emacs stuff
+*~
+# vscode
 .vscode
+# jetbrains ide stuff
+.idea
+*.iml
+# mac stuff
+.DS_Store
 
 node_modules
 /cita

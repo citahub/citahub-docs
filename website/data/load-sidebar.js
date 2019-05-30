@@ -12,6 +12,7 @@ const collect = {
       "System Management": "System Management",
       "Economics Model": "Economics Model",
       "Account & Permission": "Account & Permission",
+      "Privacy Protection":"Privacy Protection",
       "Special Govern": "Special Govern",
       "Data Management": "Data Management",
       "Hacking": "Hacking",

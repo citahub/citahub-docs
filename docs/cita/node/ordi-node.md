@@ -12,7 +12,7 @@ title: 普通节点管理
 
 1. 假设目前的工作目录在 `../cita/target/install/` 下：
 
-   ```bash
+   ```shell
    $ pwd
    ../cita/target/install
    $ ls test-chain/
@@ -23,7 +23,7 @@ title: 普通节点管理
 
 2. 生成新 node：
 
-   ```bash
+   ```shell
    $ ./scripts/create_cita_config.py append --chain_name test-chain --node "127.0.0.1:4004"
    $ ls test-chain/
      0  1  2  3  4  template
@@ -38,7 +38,7 @@ title: 普通节点管理
 
    新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，**注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求**。
 
-   ```bash
+   ```shell
    $ ./bin/cita setup test-chain/4
    $ ./bin/cita start test-chain/4
    ```

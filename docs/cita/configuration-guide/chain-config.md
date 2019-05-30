@@ -241,6 +241,6 @@ $ rpc getMetaData
 `chainName` 已更新。
 
 [环境准备]: ../getting-started/setup
-[配额价格管理]: ../system/price
-[配额管理]: ../system/quota
+[配额价格管理]: ../economics/price
+[配额管理]: ../economics/quota
 [cita-cli]: https://github.com/cryptape/cita-cli

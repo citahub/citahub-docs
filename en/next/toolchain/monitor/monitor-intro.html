@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>CITA 监控系统简介 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;这是一套基于 Prometheus 框架的 &lt;a href=&quot;https://github.com/cryptape/cita&quot;&gt;CITA&lt;/a&gt; 区块链服务运行状态监控系统 。&lt;/p&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="CITA 监控系统简介 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;这是一套基于 Prometheus 框架的 &lt;a href=&quot;https://github.com/cryptape/cita&quot;&gt;CITA&lt;/a&gt; 区块链服务运行状态监控系统 。&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/cryptape/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/toolchain/monitor/monitor-intro">English</a></li><li><a href="/zh-CN/next/toolchain/monitor/monitor-intro">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Toolchain</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/cryptape/edit/master/docs/toolchain/monitor/monitor-intro.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">CITA 监控系统简介</h1></header><article><div><span><p>这是一套基于 Prometheus 框架的 <a href="https://github.com/cryptape/cita">CITA</a> 区块链服务运行状态监控系统 。</p>
+<p>监控指标包括区块链数据、服务进程状态、运行环境的 CPU/存储器/磁盘使用率等主机信息等。</p>
+<p>项目开源在 <a href="https://github.com/cryptape/cita-monitor">GitHub</a>。</p>
+<h2><a class="anchor" aria-hidden="true" id="仪表板dashboard-截图"></a><a href="#仪表板dashboard-截图" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>仪表板(Dashboard) 截图</h2>
+<p>Summary Dashboard Demo
+<img src="https://user-images.githubusercontent.com/71397/57682153-b9a5c700-7663-11e9-93c6-a29758e7d3a1.png" alt="summary-dashboard-demo-fs8"></p>
+<p>CITA Node Info Dashboard Demo
+<img src="https://user-images.githubusercontent.com/71397/57681838-15bc1b80-7663-11e9-91b4-202c306a0f3b.png" alt="cita-node-info-dashboard-demo-fs8"></p>
+<p>Host Info Dashboard Demo
+<img src="https://user-images.githubusercontent.com/71397/57681906-3ab08e80-7663-11e9-9229-76b85c0eaaa4.png" alt="host-info-dashboard-demo-fs8"></p>
+<p>Rabbitmq Dashboard Demo
+<img src="https://user-images.githubusercontent.com/71397/57682140-b0b4f580-7663-11e9-8db0-c4e2a0e29606.png" alt="rabbitmq-dashboard-demo-fs8"></p>
+<h2><a class="anchor" aria-hidden="true" id="功能列表"></a><a href="#功能列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>功能列表</h2>
+<ul>
+<li>CITA 服务进程监控
+<ul>
+<li>CITA 微服务及MQ进程的存活、进程的 CPU、内存使用率、IO</li>
+</ul></li>
+<li>区块链数据健康监控
+<ul>
+<li>节点出块高度历史、出块时间、出块间隔趋势、Quota、交易量历史、TPS、磁盘占用比例、数据目录大小增长趋势</li>
+</ul></li>
+<li>运行环境监控
+<ul>
+<li>主机运行环境的系统负载、CPU、内存、磁盘空间使用情况、网络流量、TCP 连接数等</li>
+</ul></li>
+<li>故障告警通知
+<ul>
+<li><a href="https://github.com/cryptape/cita-monitor/tree/master/docs/alert_strategies.md">监控告警策略</a></li>
+<li>支持邮件通知、Slack 通知、短信通知（Pro 版）</li>
+</ul></li>
+<li>节点网络监控（Pro 版）
+<ul>
+<li>连接节点数、网络拓扑、地理位置等</li>
+</ul></li>
+<li>鉴源限流（Pro 版）
+<ul>
+<li>鉴别请求来源、工具；限制访问来源、频率</li>
+</ul></li>
+<li>JSONRPC 接口调用分析（Pro 版）
+<ul>
+<li>统计分析 RPC 方法的请求时间、请求次数</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="仪表板的监控指标"></a><a href="#仪表板的监控指标" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>仪表板的监控指标</h3>
+<ul>
+<li>Summary Dashboard
+<ul>
+<li>各节点最新块高</li>
+<li>各节点监控进程存活</li>
+<li>各节点 CPU 使用率变化</li>
+<li>节点列表</li>
+</ul></li>
+<li>CITA Node Info Dashboard
+<ul>
+<li>CITA Meta Data - 链的配置信息，如 Chain Name、创建时间等</li>
+<li>Chain Info - 链的最新块高、共识节点数、共识节点出块历史趋势</li>
+<li>Node Info - 选定节点的详细信息，包括区块链数据、运行环境、运行软件信息</li>
+</ul></li>
+<li>Host Info Dashboard
+<ul>
+<li>各节点运行主机的信息，包括系统负载、CPU、内存、硬盘使用率、网络流量</li>
+</ul></li>
+<li>Process Info Dashboard
+<ul>
+<li>节点中 CITA 微服进程的存活历史、CPU、内存、IO 变化历史</li>
+</ul></li>
+<li>RabbitMQ Dashboard
+<ul>
+<li>RabbitMQ 服务的存活状态、channels 、consumers、connections、queues 等的变化记录</li>
+</ul></li>
+</ul>
+<p>更细节可查看：<a href="https://github.com/cryptape/cita-monitor/tree/master/docs/information_architecture.md">监控指标信息结构</a></p>
+<p>更多信息请查看<a href="https://github.com/cryptape/cita-monitor">项目 GitHub Repo</a>。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/toolchain/testnet/testchain"><span class="arrow-prev">← </span><span>测试链</span></a><a class="docs-next button" href="/en/next/toolchain/monitor/monitor-start"><span>快速入门</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#仪表板dashboard-截图">仪表板(Dashboard) 截图</a></li><li><a href="#功能列表">功能列表</a><ul class="toc-headings"><li><a href="#仪表板的监控指标">仪表板的监控指标</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en","version:next"]}
+              });
+            </script></body></html>

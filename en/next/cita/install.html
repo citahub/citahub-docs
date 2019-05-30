@@ -117,21 +117,15 @@
 <ul>
 <li><p>在源码根目录下，我们提供了 <code>env.sh</code> 脚本，封装了 Docker 相关的操作。
 运行此脚本，以实际要运行的命令作为参数，即表示在 Docker 环境中运行相关命令。
-例如：</p>
+例如下面的命令即表示在 Docker 环境中运行 <code>make debug</code>。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh make debug</span>
-</code></pre>
-<p>即表示在 Docker 环境中运行 <code>make debug</code>。</p></li>
+</code></pre></li>
 <li><p>不带任何参数运行 <code>./env.sh</code>，将直接获取一个 Docker 环境的 shell。</p></li>
-<li><p>如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 <code>./env.sh</code> 会出现如下错误：</p>
+<li><p>如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 <code>./env.sh</code> 会出现如下错误，因此要保证操作使用的始终是同一个系统用户。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh</span>
 error: failed switching to "user": unable to find user user: no matching entries in passwd file
 </code></pre></li>
-</ul>
-</blockquote>
-<blockquote>
-<p>因此要保证操作使用的始终是同一个系统用户。</p>
-<ul>
-<li>如果出现 Docker 相关的报错，可以执行如下命令并重试：
+<li><p>如果出现 Docker 相关的报错，可以执行如下命令并重试：</p>
 <pre><code class="hljs css language-shell">docker kill $(docker ps -a -q)
 </code></pre></li>
 </ul>

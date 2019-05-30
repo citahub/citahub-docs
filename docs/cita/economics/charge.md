@@ -18,7 +18,7 @@ Charge 模式，链上是存在原生代币的，运营方不仅可以对原生�
 设置链的代币总量为 10_000_000_000 (0x2540BE400):
 
 ```shell
-bin/cita bebop create --init_token 0x2540BE400 --contract_arguments SysConfig.economicalModel=1 --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+$ bin/cita bebop create --init_token 0x2540BE400 --contract_arguments SysConfig.economicalModel=1 --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
 ## 代币分发方式
@@ -101,7 +101,7 @@ $ cita-cli scm PriceManager getQuotaPrice
 1. 用以下命令对链进行初始化
 
    ```shell
-   ./scripts/create_cita_config.py create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.economicalModel=1 PriceManager.quotaPrice=0
+   $ ./bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --contract_arguments SysConfig.economicalModel=1 PriceManager.quotaPrice=0
    ```
 
 2. 链启动后，进行验证

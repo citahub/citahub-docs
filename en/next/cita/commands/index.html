@@ -74,43 +74,34 @@
 <h2><a class="anchor" aria-hidden="true" id="节点创建及环境准备命令"></a><a href="#节点创建及环境准备命令" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点创建及环境准备命令</h2>
 <h3><a class="anchor" aria-hidden="true" id="create"></a><a href="#create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create</h3>
 <ul>
-<li>说明</li>
-</ul>
-<p>根据给定的 <a href="configuration-guide/chain-config">配置信息</a>，生成区块链初始化配置文件，其中包括区世块与节点信息配置。</p>
-<ul>
-<li>使用场景</li>
-</ul>
-<p>创建一条新的区块链。</p>
-<ul>
-<li>示例</li>
-</ul>
+<li><p>说明</p>
+<p>根据给定的 <a href="configuration-guide/chain-config">配置信息</a>，生成区块链初始化配置文件，其中包括区世块与节点信息配置。</p></li>
+<li><p>使用场景</p>
+<p>创建一条新的区块链。</p></li>
+<li><p>示例</p>
 <p>生成一条包含 4 个节点的区块链 <code>test</code>，节点间连接端口分别为 4000 , 4001 , 4002 , 4003。</p>
 <blockquote>
 <p>特别说明：所有在 <code>create</code> 命令中指定的节点，均为共识节点。</p>
 </blockquote>
-<pre><code class="hljs">$ bin/cita create --super_admin "<span class="hljs-number">0</span>x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "<span class="hljs-number">127.0.0.1</span>:<span class="hljs-number">4000,127.0</span>.<span class="hljs-number">0.1:4001</span>,<span class="hljs-number">127.0.0.1</span>:<span class="hljs-number">4002,127.0</span>.<span class="hljs-number">0.1:4003</span>" --chain_name test
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span> --chain_name <span class="hljs-built_in">test</span></span>
 </code></pre>
 <p>命令执行完成后，会在当前目录下创建名为 <code>test</code> 的文件夹，里面包括 4 个节点的配置文件以及一个 <strong>模板</strong> 文件夹。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ls <span class="hljs-built_in">test</span></span>
 0  1  2  3  template
-</code></pre>
+</code></pre></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="append"></a><a href="#append" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>append</h3>
 <ul>
-<li>说明</li>
-</ul>
+<li><p>说明</p>
 <p>新添加一个区块链节点配置。</p>
 <p>可以通过 <code>bin/cita append --help</code> 获得 <code>append</code> 命令帮助信息，其中：</p>
 <p><code>--chain_name</code>： 指定所添加新节点的链名称。</p>
 <p><code>--node</code>： 指定所添加新节点的 IP:PORT 。</p>
 <p><code>--address</code>： 指定所添加新节点的地址。</p>
-<p>注意，当指定 <code>--address</code> 时，需要 <strong>手工</strong> 将 <code>address</code> 对应的 <code>privkey</code> 添加到生成后的节点目录下。</p>
-<ul>
-<li>使用场景</li>
-</ul>
-<p>区块链配置已经生成，需要新加入一个节点。</p>
-<ul>
-<li>示例</li>
-</ul>
+<p>注意，当指定 <code>--address</code> 时，需要 <strong>手工</strong> 将 <code>address</code> 对应的 <code>privkey</code> 添加到生成后的节点目录下。</p></li>
+<li><p>使用场景</p>
+<p>区块链配置已经生成，需要新加入一个节点。</p></li>
+<li><p>示例</p>
 <p>在区块链 <code>test</code> 中添加一个节点配置。</p>
 <blockquote>
 <p>特别说明：使用 <code>append</code> 添加的节点，初始化为 <strong>只读</strong> 节点。</p>
@@ -120,11 +111,11 @@
 <p>命令执行成功后，会在链目录 <code>test</code> 下，多一个节点 <code>4</code> 的文件夹。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ls <span class="hljs-built_in">test</span></span>
 0  1  2  3  4  template
-</code></pre>
+</code></pre></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="port"></a><a href="#port" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>port</h3>
 <ul>
-<li>说明</li>
-</ul>
+<li><p>说明</p>
 <p>使用 <code>cita</code> 命令运行 CITA 时，会默认启动 <code>docker</code> 容器； <code>port</code> 命令可以将容器内的端口映射到宿主机。</p>
 <p>方便用户在宿主机上使用 CITA 提供的 JSON-RPC 服务。</p>
 <blockquote>
@@ -133,15 +124,13 @@
 <li>在 linux 下，<code>docker</code> 使用 <code>host</code> 选项将所有容器内的端口映射到宿主机；</li>
 <li>在 MacOS 下，需要用户自行决定所映射到宿主机的端口号，默认只映射 <code>1337</code> 端口。</li>
 </ol>
-</blockquote>
-<ul>
+</blockquote></li>
 <li><p>使用场景</p>
 <ul>
-<li><p>在 MacOS 下启动时，发现默认的 <code>1337</code> 有冲突，需要更换其它的端口；</p></li>
-<li><p>在 MacOS 下启动，需要映射其它更多端口到宿主机。</p></li>
+<li>在 MacOS 下启动时，发现默认的 <code>1337</code> 有冲突，需要更换其它的端口；</li>
+<li>在 MacOS 下启动，需要映射其它更多端口到宿主机。</li>
 </ul></li>
-<li><p>示例</p></li>
-</ul>
+<li><p>示例</p>
 <p>映射 <code>1337, 1338, 1339, 1340</code> 4 个端口到宿主机。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita port 1337:1337 1338:1338 1339:1339 1340:1340</span>
 </code></pre>
@@ -149,78 +138,60 @@
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> docker ps</span>
 CONTAINER ID        IMAGE                                 COMMAND                  CREATED             STATUS              PORTS                              NAMES
 6d2d0701f332        cita/cita-run:ubuntu-18.04-20190419   "/usr/bin/entrypoint…"   13 seconds ago      Up 11 seconds       0.0.0.0:1337-1340-&gt;1337-1340/tcp   cita_run_container
-</code></pre>
+</code></pre></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="节点服务控制命令"></a><a href="#节点服务控制命令" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点服务控制命令</h2>
 <h3><a class="anchor" aria-hidden="true" id="setup"></a><a href="#setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setup</h3>
 <ul>
-<li>说明</li>
-</ul>
-<p>建立 CITA 运行时所依赖的执行环境，其中包括 <code>RabbitMQ</code> 服务。</p>
-<ul>
-<li>使用场景</li>
-</ul>
-<p>执行 <code>start</code> 前，必须先执行 <code>setup</code>。</p>
-<ul>
-<li>示例</li>
-</ul>
+<li><p>说明</p>
+<p>建立 CITA 运行时所依赖的执行环境，其中包括 <code>RabbitMQ</code> 服务。</p></li>
+<li><p>使用场景</p>
+<p>执行 <code>start</code> 前，必须先执行 <code>setup</code>。</p></li>
+<li><p>示例</p>
 <p>建立节点 0 执行环境。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita setup <span class="hljs-built_in">test</span>/0</span>
-</code></pre>
+</code></pre></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="start"></a><a href="#start" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>start</h3>
 <ul>
-<li>说明</li>
-</ul>
-<p>启动一个 CITA 节点。</p>
-<ul>
-<li>使用场景</li>
-</ul>
-<p>启动一个 CITA 节点。</p>
-<ul>
-<li>示例</li>
-</ul>
+<li><p>说明</p>
+<p>启动一个 CITA 节点。</p></li>
+<li><p>使用场景</p>
+<p>启动一个 CITA 节点。</p></li>
+<li><p>示例</p>
 <p>启动节点 0。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita start <span class="hljs-built_in">test</span>/0</span>
-</code></pre>
+</code></pre></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="stop"></a><a href="#stop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>stop</h3>
 <ul>
-<li>说明</li>
-</ul>
-<p>停止一个 CITA 节点。</p>
-<ul>
-<li>使用场景</li>
-</ul>
-<p>停止一个 CITA 节点。</p>
-<ul>
-<li>示例</li>
-</ul>
+<li><p>说明</p>
+<p>停止一个 CITA 节点。</p></li>
+<li><p>使用场景</p>
+<p>停止一个 CITA 节点。</p></li>
+<li><p>示例</p>
 <p>停止节点 0。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita stop <span class="hljs-built_in">test</span>/0</span>
 stop...ok
-</code></pre>
+</code></pre></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="restart"></a><a href="#restart" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>restart</h3>
 <ul>
-<li>说明</li>
-</ul>
-<p>重启一个 CITA 节点。</p>
-<ul>
-<li>使用场景</li>
-</ul>
-<p>重启一个 CITA 节点。</p>
-<ul>
-<li>示例</li>
-</ul>
+<li><p>说明</p>
+<p>重启一个 CITA 节点。</p></li>
+<li><p>使用场景</p>
+<p>重启一个 CITA 节点。</p></li>
+<li><p>示例</p>
 <p>重启节点 0。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita restart <span class="hljs-built_in">test</span>/0</span>
-</code></pre>
+</code></pre></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="节点诊断命令"></a><a href="#节点诊断命令" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点诊断命令</h2>
 <h3><a class="anchor" aria-hidden="true" id="ping"></a><a href="#ping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ping</h3>
 <ul>
-<li>说明</li>
-</ul>
-<p>检查一个节点是否正在运行。</p>
-<ul>
-<li>示例</li>
-</ul>
+<li><p>说明</p>
+<p>检查一个节点是否正在运行。</p></li>
+<li><p>示例</p>
 <p>检查节点 0 是否正在运行。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita ping <span class="hljs-built_in">test</span>/0</span>
 pong
@@ -228,15 +199,13 @@ pong
 <p>检查节点 1 是否正在运行。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita ping <span class="hljs-built_in">test</span>/1</span>
 Node 'test/1' not responding to pings.
-</code></pre>
+</code></pre></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="top"></a><a href="#top" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>top</h3>
 <ul>
-<li>说明</li>
-</ul>
-<p>类似于系统的 <code>top</code> 命令，查看服务的进程信息。</p>
-<ul>
-<li>示例</li>
-</ul>
+<li><p>说明</p>
+<p>类似于系统的 <code>top</code> 命令，查看服务的进程信息。</p></li>
+<li><p>示例</p>
 <p>查看节点 0 的服务进程信息。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita top <span class="hljs-built_in">test</span>/0</span>
 user      2825     0  0 14:39 ?        00:00:00 cita-forever
@@ -246,19 +215,17 @@ user      2836  2825  0 14:39 ?        00:00:01 cita-chain -c chain.toml
 user      2838  2825  0 14:39 ?        00:00:05 cita-executor -c executor.toml
 user      2855  2825  0 14:39 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
 user      2847  2825  0 14:39 ?        00:00:04 cita-network -c network.toml
-</code></pre>
+</code></pre></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="stat"></a><a href="#stat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>stat</h3>
 <p>即将弃用，请使用 <code>top</code> 命令替代。</p>
 <h3><a class="anchor" aria-hidden="true" id="logs"></a><a href="#logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>logs</h3>
 <ul>
-<li>说明</li>
-</ul>
+<li><p>说明</p>
 <p>获取节点中某个服务的日志，命令效果类似于 <code>tail -f</code>。
 当前 CITA 运行过程中存在 7 个服务进程，它们分别是：
-<code>cita-forever</code>, <code>cita-auth</code>, <code>cita-bft</code>, <code>cita-chain</code>, <code>cita-executor</code>, <code>cita-jsonrpc</code>, <code>cita-network</code>.</p>
-<ul>
-<li>示例</li>
-</ul>
+<code>cita-forever</code>, <code>cita-auth</code>, <code>cita-bft</code>, <code>cita-chain</code>, <code>cita-executor</code>, <code>cita-jsonrpc</code>, <code>cita-network</code>.</p></li>
+<li><p>示例</p>
 <p>获得节点 0 的 <code>cita-forever</code> 日志。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita logs <span class="hljs-built_in">test</span>/0 cita-forever</span>
 2019-05-23 - 14:39:54 | cita_forever::proces - 84    | INFO  - process id: 2837
@@ -271,50 +238,44 @@ user      2847  2825  0 14:39 ?        00:00:04 cita-network -c network.toml
 2019-05-23 - 14:39:55 | cita_forever::proces - 98    | INFO  - cita-jsonrpc started
 2019-05-23 - 14:39:56 | cita_forever::proces - 84    | INFO  - process id: 2858
 2019-05-23 - 14:39:56 | cita_forever::proces - 98    | INFO  - cita-bft started
-</code></pre>
+</code></pre></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="其它命令"></a><a href="#其它命令" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>其它命令</h2>
 <h3><a class="anchor" aria-hidden="true" id="backup"></a><a href="#backup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>backup</h3>
 <ul>
-<li>说明</li>
-</ul>
+<li><p>说明</p>
 <p>备份节点数据与日志。</p>
 <blockquote>
 <p>说明：该命令需要在节点停止运行的场景下使用。</p>
-</blockquote>
-<ul>
-<li>示例</li>
-</ul>
+</blockquote></li>
+<li><p>示例</p>
 <p>备份节点 0 数据与日志。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita backup <span class="hljs-built_in">test</span>/0</span>
 cp -r /opt/cita/test/0/data /opt/cita/test/0/backup.2019-05-23T15:13:48+08:00/
 cp -r /opt/cita/test/0/logs /opt/cita/test/0/backup.2019-05-23T15:13:48+08:00/
 </code></pre>
-<p>命令执行成功后，会在节点 0 的目录下生成一个 <code>backup.*</code> 的目录，里面存在数据与日志的备份。</p>
+<p>命令执行成功后，会在节点 0 的目录下生成一个 <code>backup.*</code> 的目录，里面存在数据与日志的备份。</p></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="clean"></a><a href="#clean" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>clean</h3>
 <ul>
-<li>说明</li>
-</ul>
+<li><p>说明</p>
 <p>清空节点数据与日志。</p>
 <blockquote>
 <p>说明：该命令需要在节点停止运行的场景下使用。</p>
-</blockquote>
-<ul>
-<li>示例</li>
-</ul>
+</blockquote></li>
+<li><p>示例</p>
 <p>清空节点 0 数据与日志。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita clean <span class="hljs-built_in">test</span>/0</span>
 mv /opt/cita/test/0/data /opt/cita/test/0/backup.2019-05-23T15:17:43+08:00/
 mv /opt/cita/test/0/logs /opt/cita/test/0/backup.2019-05-23T15:17:43+08:00/
 </code></pre>
-<p>命令执行成功后，会在节点 0 的目录下生成一个 <code>backup.*</code> 的目录，里面存在所删除的数据与日志。</p>
+<p>命令执行成功后，会在节点 0 的目录下生成一个 <code>backup.*</code> 的目录，里面存在所删除的数据与日志。</p></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="logrotate"></a><a href="#logrotate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>logrotate</h3>
 <ul>
-<li>说明</li>
-</ul>
-<p>归档节点日志。</p>
-<ul>
-<li>示例</li>
-</ul>
+<li><p>说明</p>
+<p>归档节点日志。</p></li>
+<li><p>示例</p>
 <p>归档节点 0 日志。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita logrotate <span class="hljs-built_in">test</span>/0</span>
 ./test/0/logs/cita-auth_2019-05-23_15-24-23.log
@@ -324,7 +285,8 @@ mv /opt/cita/test/0/logs /opt/cita/test/0/backup.2019-05-23T15:17:43+08:00/
 ./test/0/logs/cita-jsonrpc_2019-05-23_15-24-23.log
 ./test/0/logs/cita-network_2019-05-23_15-24-23.log
 </code></pre>
-<p>命令执行成功后，会在节点 0 的 <code>logs</code> 目录下生成每个服务的日志归档，原日志文件信息被清空。</p>
+<p>命令执行成功后，会在节点 0 的 <code>logs</code> 目录下生成每个服务的日志归档，原日志文件信息被清空。</p></li>
+</ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/cita/upgrade/protocol-upgrade"><span class="arrow-prev">← </span><span>协议升级</span></a><a class="docs-next button" href="/en/next/cita/node/node-intro"><span>节点分类</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#概述">概述</a></li><li><a href="#节点创建及环境准备命令">节点创建及环境准备命令</a><ul class="toc-headings"><li><a href="#create">create</a></li><li><a href="#append">append</a></li><li><a href="#port">port</a></li></ul></li><li><a href="#节点服务控制命令">节点服务控制命令</a><ul class="toc-headings"><li><a href="#setup">setup</a></li><li><a href="#start">start</a></li><li><a href="#stop">stop</a></li><li><a href="#restart">restart</a></li></ul></li><li><a href="#节点诊断命令">节点诊断命令</a><ul class="toc-headings"><li><a href="#ping">ping</a></li><li><a href="#top">top</a></li><li><a href="#stat">stat</a></li><li><a href="#logs">logs</a></li></ul></li><li><a href="#其它命令">其它命令</a><ul class="toc-headings"><li><a href="#backup">backup</a></li><li><a href="#clean">clean</a></li><li><a href="#logrotate">logrotate</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

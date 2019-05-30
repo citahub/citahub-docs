@@ -77,10 +77,10 @@
 <h2><a class="anchor" aria-hidden="true" id="编译"></a><a href="#编译" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编译</h2>
 <ul>
 <li><p>参考<a href="https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html">Solidity 编译器安装</a>安装 <code>v0.24.0</code> 版本。成功后查询版本号:</p>
-<pre><code class="hljs">solc <span class="hljs-comment">--version</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> solc --version</span>
 </code></pre></li>
 <li><p>CITA 的 build 镜像也集成了 Solidity 编译器，下载 CITA 源码后可查询版本号：</p>
-<pre><code class="hljs"><span class="hljs-string">./env.sh</span> solc <span class="hljs-params">--version</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh solc --version</span>
 </code></pre></li>
 </ul>
 <p>本文档使用<a href="https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol">测试合约</a>来演示合约在 CITA 上的部署和调用过程。</p>
@@ -103,8 +103,7 @@
 <h3><a class="anchor" aria-hidden="true" id="获得合约的相关信息"></a><a href="#获得合约的相关信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获得合约的相关信息</h3>
 <p>使用 <code>solc</code> 命令得到一些部署和调用需要的信息：</p>
 <ul>
-<li>字节码</li>
-</ul>
+<li><p>字节码</p>
 <p>部署合约需要字节码信息。</p>
 <pre><code class="hljs css language-bash">$ solc SimpleStorage.sol --bin
 </code></pre>
@@ -112,10 +111,8 @@
 <pre><code class="hljs">======= SimpleStorage.sol:SimpleStorage =======
 Binary:
 <span class="hljs-number">608060405234801561001057600080</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">5060</span>df<span class="hljs-number">8061001</span>f<span class="hljs-number">6000396000</span>f<span class="hljs-number">3006080604052600436106049576000357</span><span class="hljs-keyword">c</span><span class="hljs-number">0100000000000000000000000000000000000000000000000000000000900463</span>ffffffff<span class="hljs-number">16806360</span>fe<span class="hljs-number">47</span>b<span class="hljs-number">114604e5780636</span>d<span class="hljs-number">4</span>ce<span class="hljs-number">63</span><span class="hljs-keyword">c</span><span class="hljs-number">146078575</span>b<span class="hljs-number">600080</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">348015605957600080</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">5060766004803603810190808035906020019092919050505060</span>a<span class="hljs-number">0565</span>b<span class="hljs-number">005</span>b<span class="hljs-number">348015608357600080</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">50608</span>a<span class="hljs-number">60</span>aa<span class="hljs-number">565</span>b<span class="hljs-number">6040518082815260200191505060405180910390</span>f<span class="hljs-number">35</span>b<span class="hljs-number">8060008190555050565</span>b<span class="hljs-number">600080549050905600</span>a<span class="hljs-number">165627</span>a<span class="hljs-number">7</span>a<span class="hljs-number">723058205</span>aed<span class="hljs-number">214856</span>a<span class="hljs-number">5</span><span class="hljs-keyword">c</span><span class="hljs-number">433292</span>a<span class="hljs-number">354261</span><span class="hljs-keyword">c</span><span class="hljs-number">9</span>eb<span class="hljs-number">88</span>eed<span class="hljs-number">1396</span><span class="hljs-keyword">c</span><span class="hljs-number">83</span>dabbe<span class="hljs-number">105</span>bde<span class="hljs-number">142e49838</span>ac<span class="hljs-number">0029</span>
-</code></pre>
-<ul>
-<li>函数签名</li>
-</ul>
+</code></pre></li>
+<li><p>函数签名</p>
 <p>调用合约需要函数签名信息。</p>
 <pre><code class="hljs css language-bash">$ solc SimpleStorage.sol --hashes
 </code></pre>
@@ -124,7 +121,8 @@ Binary:
 Function signature<span class="hljs-variable">s:</span>
 <span class="hljs-number">6</span>d4ce63c: <span class="hljs-built_in">get</span>()
 <span class="hljs-number">60</span>fe47b1: <span class="hljs-keyword">set</span>(uint256)
-</code></pre>
+</code></pre></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="合约"></a><a href="#合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约</h2>
 <p>由测试用户进行操作：</p>
 <pre><code class="hljs css language-bash">$ cita-cli rpc sendRawTransaction \

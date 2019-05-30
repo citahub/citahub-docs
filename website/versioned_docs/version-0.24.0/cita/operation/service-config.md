@@ -221,28 +221,34 @@ count_per_batch = 30
 * '-a, --address=[FILE]' : 配置地址文件
 * '-s, --stdout' : 日志输出到控制台
 
-network.toml 是 Network 微服务的配置文件。文件记录了总节点数、本地节点端口以及其它节点的ip和端口号，用户可以通过增加节点信息来添加节点，并且支持热更新，直接把修改后的文件拷贝过来覆盖即可生效，不用重启进程。
+network.toml 是 Network 微服务的配置文件。
 
 ```toml
 # Current node ip is 127.0.0.1
-id_card = 0
+enable_tls = true
+max_connects = 100
+enable_discovery = true
 port = 4000
+
 [[peers]]
-id_card = 1
 ip = "127.0.0.1"
 port = 4001
 
 [[peers]]
-id_card = 2
 ip = "127.0.0.1"
 port = 4002
 
 [[peers]]
-id_card = 3
 ip = "127.0.0.1"
 port = 4003
-
 ```
+
+* `enable_tls` : 使能通信加密开关。如果不设置，该配置项默认为 `false`；当配置为 `true` 时，表示打开通信加密，当前 CITA 仅支持 `secp256k1` 的加密方式。
+* `max_connects` : 配置本节点的最大连接数。本节点到达最大连接数时，将拒绝连接其它节点。如果不设置，该配置项默认为 `666`。
+* `enable_discovery` : 使能节点自动发现开关，如果不设置，该配置项默认为 `true`，即开启节点自动发现功能。
+* `peers` : 配置对端节点信息。在网络服务启动时会首先连接 `peers` 中的节点。
+    - 当 `enable_discovery = true` 时， 本节点会自动通过所配置的 `peers` 发现网络中的其它节点并尝试连接。
+    - 当 `enable_discovery = false` 时，本节点仅连接 `peers` 中所配置的节点。在该配置下，`peers` 配置项支持热更新，修改 `peers` 配置项后不需要重启本节点。
 
 ## Forever
 

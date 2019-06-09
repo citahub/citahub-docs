@@ -19,7 +19,7 @@ CITA 提供了快照工具，给当前区块链某一个节点做快照，对节
 
 ## 使用说明
 
-snapshot_tool 有两个功能：创建快照和快照恢复
+snapshot-tool 有两个功能：创建快照和快照恢复
 
 - 创建快照是将当前区块链的状态等数据保存到文件中。
 - 快照恢复是根据保存下来的文件将区块链数据恢复到创建快照时的状态。
@@ -27,8 +27,8 @@ snapshot_tool 有两个功能：创建快照和快照恢复
 命令格式如下：
 
 ```
-snapshot_tool -m snapshot [-e HEIGHT]  [-f FILE]
-snapshot_tool -m restore [-f FILE]
+snapshot-tool -m snapshot [-e HEIGHT]  [-f FILE]
+snapshot-tool -m restore [-f FILE]
 ```
 
 中括号中的选项是可选的。
@@ -43,7 +43,7 @@ snapshot_tool -m restore [-f FILE]
 
 ```
 $ cd test-chain/0
-$ ../../bin/snapshot_tool -m snapshot -e 1000
+$ ../../bin/snapshot-tool -m snapshot -e 1000
 $ ls snap*
 snapshot_chain.rlp  snapshot_executor.rlp
 ```
@@ -68,7 +68,7 @@ snapshot_chain.rlp  snapshot_executor.rlp
    快照命令行工具接受恢复参数后，依据快照文件恢复数据。
 
    ```bash
-   $ ../../bin/snapshot_tool -m restore
+   $ ../../bin/snapshot-tool -m restore
    ```
 
 节点 1 恢复完后从块 1001 开始从链上同步数据达到当前链的高度。

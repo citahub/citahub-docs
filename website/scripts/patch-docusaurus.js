@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 
-const patches = ['docusaurus/lib/server/generate.js']
+const patches = ['docusaurus/lib/server/generate.js','docusaurus/lib/core/nav/SideNav.js']
 
 patches.forEach(patch => {
   fs.readFile(path.join(__dirname, '../patches/', patch), (err, data) => {

@@ -72,22 +72,20 @@
 <p><strong>异地迁移</strong>：节点地址变更时（如机房搬迁），需将节点迁移到新的服务器。</p>
 <h2><a class="anchor" aria-hidden="true" id="本地-磁盘空间不足扩容-迁移到新硬盘"></a><a href="#本地-磁盘空间不足扩容-迁移到新硬盘" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>本地 （磁盘空间不足扩容，迁移到新硬盘）</h2>
 <ol>
-<li>案例新硬盘挂载到 <code>/data2/</code>，创建目录</li>
-</ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> mkdir -p /data2/cita</span>
-</code></pre>
-<ol start="2">
+<li><p>案例新硬盘挂载到 <code>/data2/</code>，创建目录</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> mkdir -p /data2/cita</span>
+</code></pre></li>
 <li><p>停止节点</p>
-<pre><code class="hljs">$ ./bin/cita stop test-chain/0
+<pre><code class="hljs">$ ./bin/cita <span class="hljs-keyword">stop</span> <span class="hljs-keyword">test</span>-<span class="hljs-keyword">chain</span>/<span class="hljs-number">0</span>
 </code></pre></li>
 <li><p>拷贝到目标目录</p>
-<pre><code class="hljs">$ cd /data/cita
-$ cp -rp cita_secp256k1_sha3 /data2/cita
+<pre><code class="hljs">$ <span class="hljs-keyword">cd</span> <span class="hljs-string">/data/cita</span>
+$ cp -rp cita_secp256k1_sha3 <span class="hljs-string">/data2/cita</span>
 </code></pre></li>
 <li><p>启动节点</p>
-<pre><code class="hljs">$ cd /data2/cita/cita_secp256k1_sha3/
-$ ./bin/cita setup test-chain/0
-$ ./bin/cita start test-chain/0
+<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data2/cita/cita_secp256k1_sha3/</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
 </code></pre></li>
 <li><p>验证</p>
 <p>参考快速入门中的<a href="../getting-started/run-cita#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></p></li>
@@ -95,18 +93,18 @@ $ ./bin/cita start test-chain/0
 <h2><a class="anchor" aria-hidden="true" id="异地迁移-节点地址变更-如机房搬迁"></a><a href="#异地迁移-节点地址变更-如机房搬迁" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>异地迁移 (节点地址变更，如机房搬迁）</h2>
 <ol>
 <li><p>停止节点</p>
-<pre><code class="hljs">$ ./bin/cita stop test-chain/0
+<pre><code class="hljs">$ ./bin/cita <span class="hljs-keyword">stop</span> <span class="hljs-keyword">test</span>-<span class="hljs-keyword">chain</span>/<span class="hljs-number">0</span>
 </code></pre></li>
 <li><p>拷贝到目标地址 案例 本地 ：192.168.1.104 远程：192.168.1.105</p>
-<pre><code class="hljs">$ scp -r /data/cita/cita_secp256k1_sha3 192.168.1.105:/data/cita/
+<pre><code class="hljs"><span class="hljs-variable">$ </span>scp -r /data/cita/cita_secp256k1_sha3 <span class="hljs-number">192.168</span>.<span class="hljs-number">1.105</span><span class="hljs-symbol">:/data/cita/</span>
 </code></pre></li>
 <li><p>修改配置 （所有节点network.toml 配置中节点IP都需要变更）</p>
 <pre><code class="hljs">$ cd /data/cita/`cita_secp256k1_sha3
-$ sed -i “s/192.168.1.104/192.168.1.105/g”  test-chain/0/network.toml
+$ sed -i “s/<span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.104</span>/<span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.105</span>/g”  test-chain/<span class="hljs-number">0</span>/network.toml
 </code></pre></li>
 <li><p>启动节点</p>
-<pre><code class="hljs">$ ./bin/cita setup test-chain/0
-$ ./bin/cita start test-chain/0
+<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
 </code></pre></li>
 <li><p>验证</p>
 <p>参考快速入门中的<a href="../getting-started/run-cita#验证-cita-是否运行正常">验证 CITA 是否运行正常</a></p></li>

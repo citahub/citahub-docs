@@ -82,20 +82,16 @@
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="安装-cita-客户端工具"></a><a href="#安装-cita-客户端工具" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 CITA 客户端工具</h2>
 <ol>
-<li>创建目录</li>
+<li><p>创建目录</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> mkdir -p /data/cita</span>
+</code></pre></li>
+<li><p>切换目录</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
+</code></pre></li>
+<li><p>下载 CITA-CLI 安装包</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-musl-tls-0.19.6.tar.gz</span>
+</code></pre></li>
 </ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> mkdir -p /data/cita</span>
-</code></pre>
-<ol start="2">
-<li>切换目录</li>
-</ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
-</code></pre>
-<ol start="3">
-<li>下载 CITA-CLI 安装包</li>
-</ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-musl-tls-0.19.6.tar.gz</span>
-</code></pre>
 <blockquote>
 <p>注：这里所下载的是 CITA-CLI 是 linux 系统下的二进制发布包，如果你使用 MacOS，请按以下命令下载对应系统的 CITA-CLI：</p>
 <pre><code class="hljs css language-shell"></code></pre>
@@ -104,30 +100,26 @@
 <pre><code class="hljs">
 <span class="hljs-number">4.</span> 解压程序
 
-```shell
+   ```shell
    $ tar zxvf cita-cli-x86_64-musl-tls<span class="hljs-number">-0.19</span><span class="hljs-number">.6</span>.tar.gz
 </code></pre>
 <ol start="5">
-<li>复制 CITA-CLI 到 系统可执行文件目录下</li>
+<li><p>复制 CITA-CLI 到 系统可执行文件目录下</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> sudo cp -rp cita-cli /usr/<span class="hljs-built_in">local</span>/bin/</span>
+</code></pre></li>
 </ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> sudo cp -rp cita-cli /usr/<span class="hljs-built_in">local</span>/bin/</span>
-</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="下载-cita"></a><a href="#下载-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>下载 CITA</h2>
 <ol>
-<li>切换目录</li>
+<li><p>切换目录</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
+</code></pre></li>
+<li><p>下载 CITA 安装包</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> wget https://github.com/cryptape/cita/releases/download/v0.24.0/cita_secp256k1_sha3.tar.gz</span>
+</code></pre></li>
+<li><p>解压 CITA 程序</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> tar zxvf cita_secp256k1_sha3.tar.gz</span>
+</code></pre></li>
 </ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
-</code></pre>
-<ol start="2">
-<li>下载 CITA 安装包</li>
-</ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> wget https://github.com/cryptape/cita/releases/download/v0.24.0/cita_secp256k1_sha3.tar.gz</span>
-</code></pre>
-<ol start="3">
-<li>解压 CITA 程序</li>
-</ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> tar zxvf cita_secp256k1_sha3.tar.gz</span>
-</code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/cita-intro"><span class="arrow-prev">← </span><span>About CITA</span></a><a class="docs-next button" href="/en-US/next/cita/getting-started/run-cita"><span>运行 CITA</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#适用操作系统声明">适用操作系统声明</a></li><li><a href="#硬件配置建议">硬件配置建议</a></li><li><a href="#软件依赖声明">软件依赖声明</a></li><li><a href="#安装-cita-客户端工具">安装 CITA 客户端工具</a></li><li><a href="#下载-cita">下载 CITA</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

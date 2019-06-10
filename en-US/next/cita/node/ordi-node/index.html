@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>普通节点管理 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;目前 CITA 对于普通节点的准入管理采用白名单的方式。每个节点本地保存白名单配置文件，其中记录着允许连接的p2p通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。 白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。&lt;/p&gt;
-"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="普通节点管理 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;目前 CITA 对于普通节点的准入管理采用白名单的方式。每个节点本地保存白名单配置文件，其中记录着允许连接的p2p通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。 白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。&lt;/p&gt;
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>普通节点管理 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;普通节点的管理，是指普通节点的添加与删除。当前 CITA 的节点发现提供两种机制：&lt;/p&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="普通节点管理 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="&lt;p&gt;普通节点的管理，是指普通节点的添加与删除。当前 CITA 的节点发现提供两种机制：&lt;/p&gt;
 "/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
         document.addEventListener('DOMContentLoaded', function() {
           addBackToTop(
@@ -68,39 +68,47 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">普通节点管理</h1></header><article><div><span><p>目前 CITA 对于普通节点的准入管理采用白名单的方式。每个节点本地保存白名单配置文件，其中记录着允许连接的p2p通信和数据同步的节点，包括其公钥、IP 地址、端口、对应的身份信息等。 白名单由管理机构生成并分发，运维人员可对其进行维护和管理，可选择连接若干其他节点同时可配置若干普通节点，使其承担数据分析等工作。</p>
-<p>普通节点的管理，包括添加和删除。下面我们将用具体的示例来阐述。</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">普通节点管理</h1></header><article><div><span><p>普通节点的管理，是指普通节点的添加与删除。当前 CITA 的节点发现提供两种机制：</p>
+<ul>
+<li>自动发现机制，本节点会自动通过所配置的 <code>peers</code> 发现网络中的其它节点并尝试连接。</li>
+<li>配置文件发现机制，本节点仅连接 <code>peers</code> 中所配置的节点。</li>
+</ul>
+<p>CITA 的节点发现机制通过 <a href="../configuration-guide/service-config#network">network 网络配置</a> 中的 <code>enable_discovery</code> 配置项设置。</p>
+<p>下面我们将用具体的示例来阐述 CITA 的普通节点管理。</p>
 <h2><a class="anchor" aria-hidden="true" id="添加普通节点-以下以-4-号节点举例"></a><a href="#添加普通节点-以下以-4-号节点举例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>添加普通节点（以下以 4 号节点举例）</h2>
 <ol>
-<li>假设目前的工作目录在 <code>../cita/target/install/</code> 下：</li>
+<li><p>假设目前的工作目录在 <code>cita/target/install/</code> 下：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ls <span class="hljs-built_in">test</span>-chain/</span>
+  0  1  2  3  template
+</code></pre></li>
 </ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> <span class="hljs-built_in">pwd</span></span>
-   ../cita/target/install
-<span class="hljs-meta">   $</span><span class="bash"> ls <span class="hljs-built_in">test</span>-chain/</span>
-     0  1  2  3  template
-</code></pre>
 <p>template 中保存了当前节点的公钥地址 <code>template/authorities.list</code>，以及创世块信息 <code>template/configs/genesis.json</code>，目前地址有四个。</p>
 <ol start="2">
-<li>生成新 node：</li>
+<li><p>生成新 node：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita append --chain_name <span class="hljs-built_in">test</span>-chain --node <span class="hljs-string">"127.0.0.1:4004"</span></span>
+<span class="hljs-meta">$</span><span class="bash"> ls <span class="hljs-built_in">test</span>-chain/</span>
+  0  1  2  3  4  template
+</code></pre></li>
 </ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> ./scripts/create_cita_config.py append --chain_name <span class="hljs-built_in">test</span>-chain --node <span class="hljs-string">"127.0.0.1:4004"</span></span>
-<span class="hljs-meta">   $</span><span class="bash"> ls <span class="hljs-built_in">test</span>-chain/</span>
-     0  1  2  3  4  template
-</code></pre>
 <ul>
 <li>append 子命令，在指定链中增加对应 ip 地址的节点</li>
 <li>脚本将自动生成 4 号节点，并在原有节点中 <code>test-chain/*/network.toml</code> 中插入新节点的 ip 及端口配置</li>
 </ul>
 <ol start="3">
 <li><p>启动新节点：</p>
-<p>对于原来的节点，如果正在运行，那么 network.toml 修改后，将自动重新加载 p2p 网络配置，并开始尝试寻找新节点。</p>
-<p>新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据，<strong>注意，此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求</strong>。</p></li>
+<p>新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据。</p>
+<p><strong>注意：</strong></p>
+<p><strong>a. 此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求。</strong></p>
+<p><strong>b. 当 <a href="../configuration-guide/service-config#network">network 网络配置</a> 为 <code>enable_discovery = false</code> 时，需要在原来节点的 <code>network.toml</code> 文件中 <code>peers</code> 域添加新节点信息。</strong></p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/4</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/4</span>
+</code></pre></li>
 </ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/4</span>
-<span class="hljs-meta">   $</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/4</span>
-</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="删除普通节点"></a><a href="#删除普通节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>删除普通节点</h2>
-<p>到对应节点目录下，找到 <code>network.toml</code>，删除对应 <code>peers</code> 条目即可。</p>
+<ul>
+<li><p>当 <a href="../configuration-guide/service-config#network">network 网络配置</a> 为 <code>enable_discovery = false</code> 时，到对应节点目录下，找到 <code>network.toml</code>，删除对应 <code>peers</code> 条目即可。</p></li>
+<li><p>当 <a href="../configuration-guide/service-config#network">network 网络配置</a> 为 <code>enable_discovery = true</code> 时，一个节点主动下线，该节点便在网络中被移除。</p></li>
+</ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/node/node-intro"><span class="arrow-prev">← </span><span>节点分类</span></a><a class="docs-next button" href="/en-US/next/cita/node/cons-node"><span>共识节点管理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#添加普通节点-以下以-4-号节点举例">添加普通节点（以下以 4 号节点举例）</a></li><li><a href="#删除普通节点">删除普通节点</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

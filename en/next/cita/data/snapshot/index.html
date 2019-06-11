@@ -71,8 +71,7 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/cryptape/edit/master/docs/cita/data/snapshot.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">数据裁剪</h1></header><article><div><span><p>CITA 提供了快照工具，给当前区块链某一个节点做快照，对节点数据进行了一定的裁剪，只保存某个高度的状态、区块等数据。</p>
 <p>留存数据：</p>
 <ul>
-<li>快照数据只包含做快照时最近 100 个历史块数据(不包括交易回执和日志信息)，和这 100 个块之前的裁剪后的数据。</li>
-<li>被裁剪后的节点数据（也就是 100 个块之前的块数据）只包含区块头 (block_header)；不包含 body，即没有交易相关内容。</li>
+<li>被裁剪后的节点数据只包含区块头 (block_header)；不包含 body，即没有交易相关内容。</li>
 </ul>
 <p>使用场景：</p>
 <ul>

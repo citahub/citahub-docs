@@ -1911,6 +1911,9 @@ $ scm SysConfig getChainOwner
 
 ## 协议版本管理合约
 
+> `setVerison` 和 `getVersion` 即将废弃，从 `v0.24.0` 之后的几个版本依然会保留。
+> 新的接口为 `setProtocolVersion` 及 `getProtocolVersion`
+
 ### setVersion
 
 设置协议版本

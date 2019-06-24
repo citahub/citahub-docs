@@ -595,7 +595,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li>返回值</li>
 </ul>
-<p><code>Quantity</code> - 指定账户在指定块中交易数量</p>
+<p><code>Quantity</code> - 指定账户从块高 0 到指定高度所发送的交易总量</p>
 <p>示例:</p>
 <p>Request:</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>

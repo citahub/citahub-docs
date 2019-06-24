@@ -41,14 +41,14 @@ title: 环境准备
    ```shell
    $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-musl-tls-0.19.6.tar.gz
    ```
-      
+
    > 注：这里所下载的是 CITA-CLI 是 linux 系统下的二进制发布包，如果你使用 MacOS，请按以下命令下载对应系统的 CITA-CLI：
    >
    > ```shell
    > $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-mac-osx-tls-0.19.6.tar.gz
    > ```
    >
-      
+
 4. 解压程序
 
    ```shell
@@ -80,7 +80,7 @@ title: 环境准备
    ```shell
    $ tar zxvf cita_secp256k1_sha3.tar.gz
    ```
-      
+
 [Docker 在线资料]: https://yeasy.gitbooks.io/docker_practice/content/install
 [DockerHub]: https://hub.docker.com/r/cita/cita-build
 [homebrew-cita]: https://github.com/cryptape/homebrew-cita

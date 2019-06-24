@@ -60,7 +60,7 @@ cd zktx_example && cargo run --release --bin gen_params
 
    ```shell
    bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000" --resource_dir resource
-   ``` 
+   ```
 
 #### 运行 `CITA`
 

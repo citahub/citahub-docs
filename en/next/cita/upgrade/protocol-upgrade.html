@@ -83,20 +83,20 @@
 <blockquote>
 <p><strong>注意</strong></p>
 <ol>
-<li>管理员实施协议升级过程中，最好暂停一下业务。老的交易如果在协议升级生效之前进入交易池，协议升级生效之后才打包上链，将会在打包交易阶段报错，此时错误已经无法反馈给用户，
+<li>超级管理员实施协议升级过程中，最好暂停一下业务。老的交易如果在协议升级生效之前进入交易池，协议升级生效之后才打包上链，将会在打包交易阶段报错，此时错误已经无法反馈给用户，
 会给用户制造一些困扰。可以参考 [紧急制动]。</li>
-<li>如果节点没有及时升级 CITA 版本，管理员实施协议升级之后，节点将停止工作，并可能会出现各种异常情况。</li>
+<li>如果节点没有及时升级 CITA 版本，超级管理员实施协议升级之后，节点将停止工作，并可能会出现各种异常情况。</li>
 <li>如果链实施完协议升级，但是普通用户没有及时升级工具和 SDK 版本。发送交易将会得到 <code>InvalidVersion</code> 错误。</li>
 <li>使用支持新版本协议的 CITA 版本重新创建一条链，除非在生成链配置的时候指定协议版本号，否则默认使用该 CITA 支持的最新版本协议。</li>
 </ol>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="协议升级交易说明"></a><a href="#协议升级交易说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>协议升级交易说明</h2>
-<p>CITA 中内置了专门的 <code>version_manager</code> 合约，存放一个单调递增的协议版本号, 管理员发送交易变更版本号来, 激活硬分叉, 触发协议升级。</p>
+<p>CITA 中内置了专门的 <code>version_manager</code> 合约，存放一个单调递增的协议版本号, 超级管理员发送交易变更版本号来, 激活硬分叉, 触发协议升级。</p>
 <h3><a class="anchor" aria-hidden="true" id="操作示例"></a><a href="#操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作示例</h3>
 <blockquote>
 <p>接下来的测试，用 <a href="https://github.com/cryptape/cita-cli">cita-cli</a> 交互模式进行演示。</p>
 </blockquote>
-<p>假设当前的协议版本号为 1， 接下来演示管理员如何修改协议版本号:</p>
+<p>假设当前的协议版本号为 1， 接下来演示超级管理员如何修改协议版本号:</p>
 <p>确保你的链正常运行，并且拥有相应的权限，进入 cita-cli 交互式模式，输入命令：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> scm VersionManager setVersion --version 2 --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6</span>
 </code></pre>
@@ -157,12 +157,19 @@
 <h3><a class="anchor" aria-hidden="true" id="实施协议升级"></a><a href="#实施协议升级" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实施协议升级</h3>
 <ol>
 <li>安排所有节点升级 CITA 版本至 v0.20 及以上版本。</li>
-<li>升级系统合约。 参数是 <code>Admin</code>, <code>private key</code>, <code>chain id</code>, <code>version</code>, <code>url</code>.</li>
+<li>升级系统合约。 参数是 <code>Admin</code>, <code>private key</code>, <code>chain id</code>, <code>version</code>, <code>url</code>, 其中 <code>version</code> 指当前链协议版本号。</li>
 </ol>
 <blockquote>
 <p>注意：这里的参数仅作为演示使用，请实际操作时替换为目标链的相应参数</p>
 </blockquote>
+<p>在 v0.20 及其子版本发布包中使用命令：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh scripts/amend_sys_cont_to_v0-20.sh 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 1 0 http://127.0.0.1:1337</span>
+</code></pre>
+<p>在 v0.21, v0.22 版本发布包中使用命令：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh scripts/amend_system_contracts.sh 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 1 0 http://127.0.0.1:1337</span>
+</code></pre>
+<p>在 v0.23 及版本发布包中使用命令：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita-env scripts/amend_system_contracts.sh 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 1 0 http://127.0.0.1:1337</span>
 </code></pre>
 <ol start="3">
 <li>使用超级管理员账户，执行如下 <code>协议升级</code>命令</li>
@@ -196,6 +203,7 @@
 <h3><a class="anchor" aria-hidden="true" id="实施协议升级"></a><a href="#实施协议升级" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实施协议升级</h3>
 <ol>
 <li>安排所有节点升级 CITA 版本至 v0.24.0 及以上版本。</li>
+<li>若当前链的协议版本 v0, <strong>必须</strong> 按照 <code>v1 协议</code> 升级说明, 将链协议版本升级到 v1, 并正常出块后, 才可执行 v2 的升级命令。</li>
 <li>使用超级管理员账户，执行如下协议升级命令</li>
 </ol>
 <blockquote>

@@ -29,7 +29,7 @@ $ bin/cita create --help
 
 将共识节点的地址写到链上。
 
-* 安全起见，我们建议的流程是：先由每个共识节点单独生成各自的私钥和地址，私钥请务必由自己妥善保管；地址交由负责起链的管理员，通过该命令写到链上。起链后，生成的 `test-chain/*/privkey` 文件为空，由各节点独自将自己的私钥填写进来。
+* 安全起见，我们建议的流程是：先由每个共识节点单独生成各自的私钥和地址，私钥请务必由自己妥善保管；地址交由负责起链的超级管理员，通过该命令写到链上。起链后，生成的 `test-chain/*/privkey` 文件为空，由各节点独自将自己的私钥填写进来。
 * 没有传递参数的话，默认会自动生成对应节点数量的私钥/地址对：地址写到链上；私钥存放在各个节点的 `test-chain/*/privkey` 文件里。
 
 ### `--chain_name`
@@ -72,12 +72,12 @@ $ bin/cita create --help
   - `operator` : 运营方名称
   - `website` : 运营方网站
   - `blockInterval` ： 出块间隔，默认 3 秒
-  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由管理员设置，详细机制可查看 [配额管理]；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理]。
+  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由超级管理员设置，详细机制可查看 [配额管理]；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理]。
   - `name` : Token 名称
   - `symbol` : Token 符号
   - `avatar` : Token 图标链接
   - `autoExec` : 自动执行开关（默认：false）
-* `QuotaManager` : 初始化配额管理合约的管理员地址
+* `QuotaManager` : 初始化配额管理合约的管理地址
   - `admin` : 默认管理员地址
 * `NodeManager` : 初始化共识节点管理合约
   - `nodes` : 共识节点地址
@@ -86,13 +86,13 @@ $ bin/cita create --help
   - `parentChainId` : 父链 ID
   - `parentChainAuthorities` : 父链的共识节点列表
 * `Authorization` : 初始化权限管理合约
-  - `superAdmin` : 管理员地址
+  - `superAdmin` : 超级管理员地址(由 `--super_admin` 统一设置)
 * `Group` : 初始化用户组管理合约
   - `parent` : 父组的地址
   - `name` : 组的名称
   - `accounts` : 组内用户列表
-* `Admin` : 管理员
-  - `admin` : 管理员地址
+* `Admin` : 超级管理员合约
+  - `admin` : 超级管理员地址(由 `--super_admin` 统一设置)
 * `VersionManager` : 协议版本管理合约
   - `version` : 协议版本号
 * `PriceManager`: 配额价格管理合约
@@ -198,7 +198,7 @@ chain.toml  executor.toml   jsonrpc.toml       privkey
 
 ## 修改个别配置操作示例
 
-起链后，也就是说创世块一旦生成，除 chainName, operator, website 三项可以在运行时更改，其他配置均无法修改。接下来我们用 [cita-cli] 来进行演示，以管理员修改 `chainName` 作为示例：
+起链后，也就是说创世块一旦生成，除 chainName, operator, website 三项可以在运行时更改，其他配置均无法修改。接下来我们用 [cita-cli] 来进行演示，以超级管理员修改 `chainName` 作为示例：
 
 确保你的链正常运行，进入 cita-cli 交互式模式，输入命令：
 

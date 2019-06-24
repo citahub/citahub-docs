@@ -6,10 +6,10 @@ title: 运行 CITA
 ## 创建超级管理员账户地址、私钥、公钥
 
 执行命令：
-   
+
 ```shell
 $ cita-cli key create
-```                   
+```
 
 命令返回:
 
@@ -26,7 +26,7 @@ $ cita-cli key create
 > * "address", 帐号地址；
 > * "private", 帐号私钥；
 > * "public", 帐户公钥。
-> 
+>
 > 由于每次执行命令生成的结果都不同，以下所有的示例操作均使用本次生成的结果。
 
 ## 配置 CITA
@@ -36,17 +36,17 @@ $ cita-cli key create
    ```shell
    $ cd cita_secp256k1_sha3
    ```
-   
+
 2. 初始化链：
 
    ```shell
    $ bin/cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
    ```
-   
+
    其中：
-   * super_admin 为管理员账号地址；请采用上一步执行结果的为准。
+   * super_admin 为超级管理员账号地址；请采用上一步执行结果的为准。
    * nodes 是要部署的节点地址（IP:Port）。
-      
+
    > * 注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 [链接配置]；
    > * 注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP:PORT。
 
@@ -83,7 +83,7 @@ $ cita-cli key create
 ## 验证 CITA 是否运行正常
 
 1. 查看节点 0
-   
+
    ```shell
    $ bin/cita top test-chain/0
    user      1953     0  0 17:10 ?        00:00:00 cita-forever
@@ -94,11 +94,11 @@ $ cita-cli key create
    user      1967  1953  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
    user      1965  1953  0 17:10 ?        00:00:00 cita-network -c network.toml
    ```
-      
+
    检查 7 个服务是否都已经启动。
-   
+
 2. 查看节点 1
-    
+
    ```shell
    $ bin/cita top test-chain/1
    user      2107     0  0 17:10 ?        00:00:00 cita-forever
@@ -109,11 +109,11 @@ $ cita-cli key create
    user      2116  2107  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
    user      2130  2107  0 17:10 ?        00:00:01 cita-network -c network.toml
    ```
-      
+
    检查 7 个服务是否都已经启动。
-   
+
 3. 查看节点 2
-    
+
    ```shell
    $ bin/cita top test-chain/2
    user      2274     0  0 17:10 ?        00:00:00 cita-forever
@@ -124,11 +124,11 @@ $ cita-cli key create
    user      2287  2274  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
    user      2288  2274  0 17:10 ?        00:00:01 cita-network -c network.toml
    ```
-      
+
    检查 7 个服务是否都已经启动。
 
 4. 查看节点 3
-    
+
    ```shell
    $ bin/cita top test-chain/3
    user      2437     0  0 17:10 ?        00:00:00 cita-forever
@@ -139,7 +139,7 @@ $ cita-cli key create
    user      2447  2437  0 17:10 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
    user      2449  2437  0 17:10 ?        00:00:01 cita-network -c network.toml
    ```
-      
+
    检查 7 个服务是否都已经启动。
-   
+
 [链接配置]: ../configuration-guide/chain-config

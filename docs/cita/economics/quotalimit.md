@@ -41,7 +41,7 @@ $ scm QuotaManager getBQL
 }
 ```
 
-管理员修改块配额， 输入命令：
+超级管理员修改块配额， 输入命令：
 
 ```shell
 scm QuotaManager setBQL --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
@@ -83,7 +83,7 @@ $ scm QuotaManager getDefaultAQL
 }
 ```
 
-管理员修改账户配额， 输入命令：
+超级管理员修改账户配额， 输入命令：
 
 ```shell
 $ scm QuotaManager setDefaultAQL --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6

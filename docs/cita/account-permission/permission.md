@@ -110,7 +110,7 @@ $ bin/cita create \
 
 发送交易权限地址为 `0xffffffffffffffffffffffffffffffffff021000`，创建合约权限地址为 `0xffffffffffffffffffffffffffffffffff021001`
 
-由管理员进行操作。调用 `setAuthorizations`接口。
+由超级管理员进行操作。调用 `setAuthorizations`接口。
 
 ```bash
 $ cita-cli scm PermissionManagement setAuthorizations \
@@ -204,7 +204,7 @@ $ cita-cli rpc getTransactionReceipt \
 
 ### 生成新的权限
 
-由管理员进行操作
+由超级管理员进行操作
 
 ```bash
 $ cita-cli scm PermissionManagement newPermission \
@@ -293,7 +293,7 @@ $ cita-cli rpc getTransactionReceipt \
 
 #### 把新权限赋予测试用户
 
-由管理员进行操作。
+由超级管理员进行操作。
 
 ```bash
 $ cita-cli scm PermissionManagement setAuthorization \

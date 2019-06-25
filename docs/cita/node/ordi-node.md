@@ -37,11 +37,11 @@ CITA 的节点发现机制通过 [network 网络配置] 中的 `enable_discovery
 3. 启动新节点：
 
    新节点只需要按照正常流程启动，就可以连接入网络，并开始同步链上的块数据。
-   
+
    **注意：**
-   
+
    **a. 此时的新节点为普通节点，不参与共识选举，即只能同步数据和接收 jsonrpc 请求。**
-   
+
    **b. 当 [network 网络配置] 为 `enable_discovery = false` 时，需要在原来节点的 `network.toml` 文件中 `peers` 域添加新节点信息。**
 
    ```shell

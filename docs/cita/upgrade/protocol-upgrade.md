@@ -143,6 +143,8 @@ $ ./env.sh scripts/amend_system_contracts.sh 0x5f0258a4778057a8a7d97809bd209055b
 $ bin/cita-env scripts/amend_system_contracts.sh 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 1 0 http://127.0.0.1:1337
 ```
 
+> 注意： 如果过程中终端输出了错误信息，需要重新跑一遍脚本。
+
 3. 使用超级管理员账户，执行如下 `协议升级`命令
 
 > 注意：这里的admin-private私钥仅作为演示使用，请实际操作时替换为目标链的实际私钥。

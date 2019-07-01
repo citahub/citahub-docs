@@ -1,13 +1,13 @@
 ---
 id: version-0.21-crosschain-contract-example
-title: Example of a cross-chain contract
+title: Cross-chain Contract Example
 sidebar_label: Crosschain
 original_id: crosschain-contract-example
 ---
 
 ## 跨链合约编写
 
-### Example of a cross-chain contract
+### Cross-chain Contract Example
 
 可以参照[示例合约](https://github.com/cryptape/test-contracts/blob/master/MyToken.sol)。
 

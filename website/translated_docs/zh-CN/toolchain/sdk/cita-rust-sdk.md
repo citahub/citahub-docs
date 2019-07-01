@@ -1,5 +1,5 @@
 ---
-title: CITA Ruby SDK
+title: CITA Rust SDK
 id: rust-sdk
 ---
 

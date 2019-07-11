@@ -398,8 +398,8 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>transactionIndex: <code>Quantity</code> - 交易 <code>index</code></li>
 <li>blockHash: <code>Data32</code> - 交易所在块的块哈希</li>
 <li>blockNumber: <code>Quantity</code> - 交易所在块的块高度</li>
-<li>cumulativeQuotaUsed: <code>Quantity</code> - 虚拟机执行交易消耗 quota 数量</li>
-<li>quotaUsed: <code>Quantity</code> - 交易消耗的 quota 总量</li>
+<li>cumulativeQuotaUsed: <code>Quantity</code> - 块中该交易之前(包含该交易)的所有交易消耗的 quota 总量</li>
+<li>quotaUsed: <code>Quantity</code> - 交易消耗的 quota 数量</li>
 <li>contractAddress: <code>Data20</code> - 如果是部署合约, 这个地址指的是新创建出来的合约地址. 否则为空</li>
 <li>logs: <code>Array</code> - 交易产生的日志集合</li>
 <li>root: <code>Data32</code> - 状态树根</li>

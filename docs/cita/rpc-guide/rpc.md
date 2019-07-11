@@ -393,8 +393,8 @@ Object - 回执对象
 * transactionIndex: `Quantity` - 交易 `index`
 * blockHash: `Data32` - 交易所在块的块哈希
 * blockNumber: `Quantity` - 交易所在块的块高度
-* cumulativeQuotaUsed: `Quantity` - 虚拟机执行交易消耗 quota 数量
-* quotaUsed: `Quantity` - 交易消耗的 quota 总量
+* cumulativeQuotaUsed: `Quantity` - 块中该交易之前(包含该交易)的所有交易消耗的 quota 总量
+* quotaUsed: `Quantity` - 交易消耗的 quota 数量
 * contractAddress: `Data20` - 如果是部署合约, 这个地址指的是新创建出来的合约地址. 否则为空
 * logs: `Array` - 交易产生的日志集合
 * root: `Data32` - 状态树根

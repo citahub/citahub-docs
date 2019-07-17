@@ -23,7 +23,7 @@ $ bin/cita create --help
 
 > **注意**
 >
-> 必选配置项配置项有 `super_admin` 和 `nodes`，系统不提供默认配置。
+> 必选配置项有 `super_admin` 和 `nodes`，系统不提供默认配置。
 
 ### `--authorities`
 

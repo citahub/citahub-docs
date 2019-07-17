@@ -16,7 +16,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ## 部署 CITA
 
-[CITA 测试链]: ../../toolchain/testnet/testchain
+[CITA 测试链]: ../toolchain/testnet/testchain
 
 <!--DOCUSAURUS_CODE_TABS-->
 
@@ -26,7 +26,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 参见 [下载 CITA 发布件]
 
-[下载 CITA 发布件]: ../getting-started/setup#下载-cita
+[下载 CITA 发布件]: getting-started/setup#下载-cita
 
 <!--源码部署-->
 
@@ -368,7 +368,7 @@ $ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
 
 更多 API（如合约调用、交易查询）请参见 [RPC 调用]。
 
-[RPC 调用]: ../rpc-guide/rpc
+[RPC 调用]: rpc-guide/rpc
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -386,10 +386,10 @@ $ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
 
 参见 [验证 CITA 是否运行正常]
 
-[启动 CITA]: ../getting-started/run-cita#启动-cita
-[安装 CITA 客户端工具]: ../getting-started/setup#安装-cita-客户端工具
-[硬件配置建议]: ../getting-started/setup#硬件配置建议
-[软件依赖声明]: ../getting-started/setup#软件依赖声明
-[适用操作系统声明]: ../getting-started/setup#适用操作系统声明
-[配置 CITA]: ../getting-started/run-cita#配置-cita
-[验证 CITA 是否运行正常]: ../getting-started/run-cita#验证-cita-是否运行正常
+[启动 CITA]: getting-started/run-cita#启动-cita
+[安装 CITA 客户端工具]: getting-started/setup#安装-cita-客户端工具
+[硬件配置建议]: getting-started/setup#硬件配置建议
+[软件依赖声明]: getting-started/setup#软件依赖声明
+[适用操作系统声明]: getting-started/setup#适用操作系统声明
+[配置 CITA]: getting-started/run-cita#配置-cita
+[验证 CITA 是否运行正常]: getting-started/run-cita#验证-cita-是否运行正常

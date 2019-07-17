@@ -394,9 +394,9 @@ $ cita-cli scm Authorization queryPermissions \
 [权限系统接口]: ../system-contract-interface/permission-management
 [权限系统操作示例]: ./permission-example
 [测试合约]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol
-[生成账户]: ../contracts/solidity
-[调用合约]: ../contracts/solidity#调用
+[生成账户]: ../hacking/contracts/solidity
+[调用合约]: ../hacking/contracts/solidity#调用
 [账户概述]: ./account#账户概述
 [运行 CITA]: ../getting-started/run-cita
-[部署合约]: ../contracts/solidity#部署
+[部署合约]: ../hacking/contracts/solidity#部署
 [链级配置]: ../configuration-guide/chain-config

@@ -28,17 +28,17 @@ Version: 0.4.24+commit.e67f0147.Linux.g++
   $ ./env.sh solc --version
   ```
 
-本文档使用[测试合约]来演示合约在 CITA 上的部署和调用过程。
+本文档使用[ 测试合约 ]来演示合约在 CITA 上的部署和调用过程。
 
 ## 准备工作
 
 ### 起链
 
-查看[快速入门]启动一条链。
+查看[ 快速入门 ]启动一条链。
 
 ### 生成账户
 
-使用 [cita-cli] 生成一个测试账户：
+使用 [ cita-cli ] 生成一个测试账户：
 
 ```shell
 $ cita-cli key create

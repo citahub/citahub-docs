@@ -146,7 +146,7 @@ $ cita-cli rpc call \
 $ cita-cli rpc sendRawTransaction \
     --code 0x4420e486000000000000000000000000d48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-    --address 0xffffffffffffffffffffffffffffffffff020013
+    --address 0xffffffffffffffffffffffffffffffffff020013 \
     --url http://127.0.0.1:1337
 ```
 

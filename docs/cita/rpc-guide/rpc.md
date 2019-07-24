@@ -52,7 +52,7 @@ Result:
 PeerInfo object - 节点信息对象
 
 * amount: `Quantity` - 和该节点相连的节点数量
-* peers: `Object` - 节点信息, 包括节点地址和节点 `ip` 地址
+* peers: `Object` - 节点信息，包括节点地址和节点 `ip` 地址
 * errorMessage: `String` - 错误信息
 
 示例:
@@ -209,11 +209,11 @@ message UnverifiedTransaction {
 
 * `quota` 交易配额。
 
-合约执行是图灵完备的，这也意味着交易执行过程中可能出现死循环等无法终止的情况。因此，每个交易都要填写一个配额，交易执行过程中不断消耗配额, 配额耗光后, 交易终止执行。
+合约执行是图灵完备的，这也意味着交易执行过程中可能出现死循环等无法终止的情况。因此，每个交易都要填写一个配额，交易执行过程中不断消耗配额，配额耗光后，交易终止执行。
 
 * `valid_until_block` 交易上链最大区块高度。
 
-区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值, 甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态(失败还是拥堵)。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此, 需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。
+区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值，甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态(失败还是拥堵)。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此，需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。
 
 `valid_until_block` 字段就是这样一种机制，用来表示用户愿意等待交易上链的最大区块高度。在区块链达到该高度之后，交易就确定不会再上链了，用户可以放心地重新发送交易，或者进行其他的后续处理。实际使用中，**可选值**当前区块高度到当前区块高度 +100 之间。
 
@@ -240,7 +240,7 @@ message UnverifiedTransaction {
 
 ### getVersion
 
-获取当前 CITA 软件的版本号, 该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 [链级配置] 中的 `--enable_version` 选项说明。
+获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 [链级配置] 中的 `--enable_version` 选项说明。
 
 * 参数
 
@@ -283,7 +283,7 @@ Result:
 
 * 返回值
 
-1. `Object` - 块对象, 如果不存在, 则返回空
+1. `Object` - 块对象，如果不存在，则返回空
 
 示例:
 
@@ -371,7 +371,7 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[249, true],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-高度参数可以用 0x 开头的十六进制。0X 开头或者十进制整数都是错误的参数格式。
+高度参数可以用 0x 开头的十六进制。0x 开头或者十进制整数都是错误的参数格式。
 
 结果同 [getBlockByHash](#getblockbyhash)
 
@@ -478,7 +478,7 @@ Error:
 }
 ```
 
-如果出现 **Timeout，errorcode 99** ,请查看可能的解决方法[Can't assign requested Address](https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux)
+如果出现 **Timeout，errorcode 99** ，请查看可能的解决方法[Can't assign requested Address](https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux)
 
 * * *
 
@@ -488,11 +488,11 @@ Error:
 
 * 参数
 
-1. `Filter` - 过滤器对象, 详见 `Filter` 的说明
+1. `Filter` - 过滤器对象，详见 `Filter` 的说明
 
 * 返回值
 
-`Array` - 日志对象集合, 如果没有则为空
+`Array` - 日志对象集合，如果没有则为空
 
 * `address` - 合约地址
 * `topics`- 用来构造过滤器的索引数组
@@ -538,7 +538,7 @@ Result:
 
 * 参数
 
-1. `CallRequest` - `Call` 请求对象, 详见 `CallRequest` 的说明
+1. `CallRequest` - `Call` 请求对象，详见 `CallRequest` 的说明
 2. `BlockNumber` - 块高度
 
 * 返回值
@@ -576,14 +576,14 @@ Result:
 
 * 返回值
 
-Object - 交易对象, 如果没有则为空
+Object - 交易对象，如果没有则为空
 
 * hash: `Data32` - 交易哈希
 * content: `Data` 交易内容
 * from: `Data20` - 交易发送者
-* blockHash: `Data32` - 交易所在块的块哈希, 如果没有, 则为空
-* blockNumber: `Quantity` - 交易所在块的块高度, 如果没有, 则为空
-* index: `Quantity` - 交易在块交易体内的位置, 如果没有, 则为空
+* blockHash: `Data32` - 交易所在块的块哈希，如果没有，则为空
+* blockNumber: `Quantity` - 交易所在块的块高度，如果没有，则为空
+* index: `Quantity` - 交易在块交易体内的位置，如果没有，则为空
 
 示例:
 
@@ -715,7 +715,7 @@ Result:
 
 默认将接收方地址为`0xffffffffffffffffffffffffffffffffff010001` 的交易视为保存合约 `ABI` 交易类型。
 
-#### 保存ABI
+#### 保存 ABI
 
 主要步骤：
 
@@ -726,7 +726,7 @@ Result:
 
 以 [Test contract] 作为示例:
 
-* 链上部署该合约, 得到合约地址
+* 链上部署该合约，得到合约地址
 * 首先可以通过 `solc` 得到合约的`ABI`
 
 ```shell
@@ -738,7 +738,7 @@ $ solc SimpleStorage.sol --abi
 [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]
 ```
 
-* 将 `ABI` 作为 `String` 类型, 构造 `data`，编码结果如下：
+* 将 `ABI` 作为 `String` 类型，构造 `data`，编码结果如下：
 
 ```shell
 $ cita-cli ethabi encode params --param string "[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]
@@ -752,11 +752,11 @@ $ cita-cli ethabi encode params --param string "[{"constant":false,"inputs":[{"n
 * Store ABI
 
 ```bash
-$ $ cita-cli store abi
+$ cita-cli store abi \
     --content 0xcf73525b380c5b706f35c1ff02aa798cc9950860000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000ef5b7b636f6e7374616e743a66616c73652c696e707574733a5b7b6e616d653a782c747970653a75696e743235367d5d2c6e616d653a7365742c6f7574707574733a5b5d2c70617961626c653a66616c73652c73746174654d75746162696c6974793a6e6f6e70617961626c652c747970653a66756e6374696f6e7d2c7b636f6e7374616e743a747275652c696e707574733a5b5d2c6e616d653a6765742c6f7574707574733a5b7b6e616d653a2c747970653a75696e743235367d5d2c70617961626c653a66616c73652c73746174654d75746162696c6974793a766965772c747970653a66756e6374696f6e7d5d0000000000000000000000000000000000 \
     --address 0xcf73525b380c5b706f35c1ff02aa798cc9950860 \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-     --url http://127.0.0.1:1337
+    --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -829,7 +829,7 @@ Result:
 
 * 参数
 
-1. `Filter` - 过滤器对象, 详见 `Filter` 的说明
+1. `Filter` - 过滤器对象，详见 `Filter` 的说明
 
 * 返回值
 
@@ -893,7 +893,7 @@ Result:
 
 * 返回值
 
-`Boolean` - 卸载成功返回 true, 否则 false
+`Boolean` - 卸载成功返回 true，否则 false
 
 示例:
 
@@ -923,7 +923,7 @@ Result:
 
 * 返回值
 
-`Array` - log 对象集合,如果没有,则为空
+`Array` - log 对象集合，如果没有，则为空
 
 * 块过滤器(`BlockFilter`)会返回自过滤器创建以来产生新块的块哈希值集合
 * 状态过滤器(`NewFilter`)会根据 `topic` 返回状态变化
@@ -989,7 +989,7 @@ BlockFilter Result:
 
 * 返回值
 
-`Array` - log 对象集合,如果自上次轮询以来没有发生变化, 则为空
+`Array` - log 对象集合，如果自上次轮询以来没有发生变化，则为空
 
 示例:
 
@@ -1007,7 +1007,7 @@ BlockFilter Result:
 
 * 返回值
 
-`Data` - 一份包含交易,交易回执, 回执树根和块头的证明
+`Data` - 一份包含交易，交易回执，回执树根和块头的证明
 
 示例:
 
@@ -1093,7 +1093,7 @@ Result:
 
 ### getBlockHeader
 
-根据块高度获取块头, 为侧链设计。
+根据块高度获取块头，为侧链设计。
 
 * 参数
 
@@ -1125,7 +1125,7 @@ Result:
 
 ### getStateProof
 
-获取指定高度状态里, 某个键值的状态证明, 为侧链设计。
+获取指定高度状态里，某个键值的状态证明，为侧链设计。
 
 * 参数
 
@@ -1135,7 +1135,7 @@ Result:
 
 * 返回值
 
-`Data` - 某一个值的状态证明, 包含合约地址, 账户证明, 键值证明
+`Data` - 某一个值的状态证明，包含合约地址，账户证明，键值证明
 
 示例:
 
@@ -1167,7 +1167,7 @@ Result:
 
 * 返回值
 
-`Data` - 指定高度下, 合约 `key` 值对应的 `value` 值
+`Data` - 指定高度下，合约 `key` 值对应的 `value` 值
 
 示例:
 

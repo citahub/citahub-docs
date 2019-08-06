@@ -7,7 +7,6 @@ title: 环境准备
 
 系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
 
-如果你使用的是 MacOS, 可以直接参考 [homebrew-cita] 来安装试用 CITA。
 
 ## 硬件配置建议
 
@@ -72,7 +71,7 @@ title: 环境准备
 2. 下载 CITA 安装包
 
    ```shell
-   $ wget https://github.com/cryptape/cita/releases/download/v0.24.0/cita_secp256k1_sha3.tar.gz
+   $ wget https://github.com/cryptape/cita/releases/download/v0.25.0/cita_secp256k1_sha3.tar.gz
    ```
 
 3. 解压 CITA 程序
@@ -83,4 +82,3 @@ title: 环境准备
 
 [Docker 在线资料]: https://yeasy.gitbooks.io/docker_practice/content/install
 [DockerHub]: https://hub.docker.com/r/cita/cita-build
-[homebrew-cita]: https://github.com/cryptape/homebrew-cita

@@ -39,11 +39,9 @@
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="安装-cita-客户端工具"></a><a href="#安装-cita-客户端工具" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 CITA 客户端工具</h2>
 <ol>
-<li>创建目录</li>
-</ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> mkdir -p /data/cita</span>
-</code></pre>
-<ol start="2">
+<li><p>创建目录</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> mkdir -p /data/cita</span>
+</code></pre></li>
 <li><p>切换目录</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
 </code></pre></li>
@@ -58,7 +56,8 @@
 </code></pre></li>
 <li><p>创建管理员账户地址、私钥、公钥</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli key create</span>
-</code></pre>
+</code></pre></li>
+</ol>
 <p>返回以下内容，</p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x141d051b1b1922bf686f5df8aad45cefbcb0b696"</span>,
@@ -68,8 +67,7 @@
 </code></pre>
 <blockquote>
 <p>注：此处为示例公私钥对，不要在生产环境复制使用。&quot;address&quot;: &quot;0x141d051b1b1922bf686f5df8aad45cefbcb0b696&quot; 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。</p>
-</blockquote></li>
-</ol>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="下载-cita"></a><a href="#下载-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>下载 CITA</h2>
 <ol>
 <li><p>切换目录</p>
@@ -91,18 +89,16 @@
 </code></pre>
 <blockquote>
 <ul>
-<li>注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 <a href="./operation/chain-config">链接配置</a></li>
+<li>注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见 <a href="./operation/chain-config">链级配置</a></li>
 <li>注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP。</li>
 </ul>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="启动-cita"></a><a href="#启动-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 CITA</h2>
 <ol>
-<li>启动节点 0</li>
-</ol>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">   $</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
-<span class="hljs-meta">   $</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
-</code></pre>
-<ol start="2">
+<li><p>启动节点 0</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
+<span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
+</code></pre></li>
 <li><p>启动节点 1</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/1</span>
@@ -120,7 +116,8 @@
 <ol>
 <li><p>查看进程是否启动成功</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ps -ef | grep cita- |grep -v grep |wc -l &amp;&amp; ps -ef | grep cita- |grep -v grep</span>
-</code></pre>
+</code></pre></li>
+</ol>
 <p>返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）</p>
 <pre><code class="hljs"><span class="hljs-number">28</span>
 cita      <span class="hljs-number">6180</span> <span class="hljs-number">32335</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-forever
@@ -151,17 +148,17 @@ cita      <span class="hljs-number">6843</span>  <span class="hljs-number">6831<
 cita      <span class="hljs-number">6845</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-chain -c chain.toml
 cita      <span class="hljs-number">6846</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-network -c network.toml
 cita      <span class="hljs-number">6857</span>  <span class="hljs-number">6831</span>  <span class="hljs-number">0</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> cita-auth -c auth.toml
-</code></pre></li>
+</code></pre>
+<ol start="2">
 <li><p>调用 RPC 接口查看高度是否持续增长，默认 3s 出一个块，重复执行查询命令，观察返回值 result 是否发生变化</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}'</span> 127.0.0.1:1337</span>
-</code></pre>
+</code></pre></li>
+</ol>
 <p>返回结果：</p>
 <pre><code class="hljs css language-json">{<span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,<span class="hljs-attr">"id"</span>:<span class="hljs-number">83</span>,<span class="hljs-attr">"result"</span>:<span class="hljs-string">"0x7d"</span>}
 </code></pre>
-<p>其中 <code>0x7d</code> 表示返回块高度，具体数据以所查询的链实际块高为准。
-只要能连续查询到块高度，并且块高度在增长，则表示节点已经开始正常出块</p>
-<p>更多信息请查看<a href="#验证">验证</a>。</p></li>
-</ol>
+<p>其中 <code>0x7d</code> 表示返回块高度，具体数据以所查询的链实际块高为准。 只要能连续查询到块高度，并且块高度在增长，则表示节点已经开始正常出块</p>
+<p>更多信息请查看<a href="#验证">验证</a>。</p>
 <h2><a class="anchor" aria-hidden="true" id="停止节点"></a><a href="#停止节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>停止节点</h2>
 <p>以“0”节点为例，执行以下命令即可停止“0”节点：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita stop <span class="hljs-built_in">test</span>-chain/0</span>

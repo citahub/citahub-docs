@@ -42,7 +42,7 @@ CITA 在起链的时候可以对权限系统进行配置，默认是关闭的（
 
 * `checkCallPermission`: 表示对合约调用的权限进行检查
 * `checkSendTxPermission`: 表示对发送交易的权限进行检查
-* `checkCreateContractPermission` 表示对创建合约的权限进行检查
+* `checkCreateContractPermission`: 表示对创建合约的权限进行检查
 
 **注意：**
 

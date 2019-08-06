@@ -163,8 +163,8 @@ PRECOMMIT<H, R> → PRECOMMITWAIT<H, R>
 
 * prevhash ：上一个块的哈希值
 * timestamp ：Unix 时间戳
-* proof ：Proof结构，出块人签名
-* commit ：Commit 结构，Chain处理结果
+* proof ：Proof 结构，出块人签名
+* commit ：Commit 结构，Chain 处理结果
 * height ：uint64 块号
 
 ### BlockBody 结构
@@ -235,16 +235,16 @@ proof 是对链上区块合法性的证明，包含了当前高度 H 的区块 +
 
 当共识节点状态低于 Precommit<H, R> 状态时，如果收到 +2/3 的对更高轮次 R' 的 proposal<H, R’, B> 投票的 prevote<H, R‘, P> 且 proposal<H, R’, B> 亦已收到且通过基本检查，则该共识节点锁定区块 B，并且节点的状态跃迁到  PrevoteWait<H, R'> 。
 
-### CITA-BFT交易池操作流程
+### CITA-BFT 交易池操作流程
 
-1. 交易池启动时，尝试从KV数据库恢复数据
-2. 交易池订阅MQ的交易信息
-3. 交易池收到交易后，持久化到KV数据库
+1. 交易池启动时，尝试从 KV 数据库恢复数据
+2. 交易池订阅 MQ 的交易信息
+3. 交易池收到交易后，持久化到 KV 数据库
 4. 交易池收到打包请求，检查交易的有效性，输出有效交易列表
 5. 交易池根据出块的交易列表，删除已经上链的交易
 
-### CITA-BFT故障重启流程
+### CITA-BFT 故障重启流程
 
-1. 从WAL模块中，恢复某个块高度的投票信息
+1. 从 WAL 模块中，恢复某个块高度的投票信息
 2. 根据恢复后的状态信息，重复投票信息
 3. 进程根据当前状态，继续运行

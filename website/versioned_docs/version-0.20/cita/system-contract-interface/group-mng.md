@@ -256,7 +256,7 @@ $ scm GroupManagement deleteGroup \
 
   `address origin` - The sender's orgin group
 
-  `address target` - The target group to be deleted
+  `address target` - The target group
 
   `bytes32 name` - The new name to be updated
 
@@ -281,7 +281,7 @@ $ scm GroupManagement updateGroupName \
 
   `address origin` - The sender's orgin group
 
-  `address target` - The target group to be deleted
+  `address target` - The target group
 
   `address[] accounts` - The accounts to be added
 
@@ -306,7 +306,7 @@ $ scm GroupManagement updateGroupName \
 
   `address origin` - The sender's orgin group
 
-  `address target` - The target group to be deleted
+  `address target` - The target group
 
   `address[] accounts` - The accounts to be added
 
@@ -330,7 +330,7 @@ $ scm GroupManagement deleteAccounts \
 
   `address origin` - The sender's orgin group
 
-  `address target` - The target group to be deleted
+  `address target` - The target group
 
 - Returns
 

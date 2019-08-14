@@ -308,7 +308,7 @@ $ scm GroupManagement updateGroupName \
     
     `address target` - The target group
     
-    `address[] accounts` - The accounts to be added
+    `address[] accounts` - The accounts to be deleted
 
 - Returns
     

@@ -22,7 +22,7 @@ CITA 采用[共识节点管理系统合约]来实现共识节点的管理，通�
 共识节点管理合约是系统合约，默认将放在创世块上，下面使用 [solc] 命令(solidity 的命令行编译器，在 CITA 镜像中已安装)查看共识节点管理合约的 hash：
 
 ```bash
-# solc --hashes system/node_manager.sol --allow-paths .
+$ solc --hashes system/node_manager.sol --allow-paths .
 contract address: 0xffffffffffffffffffffffffffffffffff020001
 Function signatures:
     dd4c97a0: approveNode(address)

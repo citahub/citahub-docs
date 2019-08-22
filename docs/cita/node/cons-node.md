@@ -63,72 +63,72 @@ $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 
 * 发送交易
 
-  ```bash
-  $ cita-cli scm NodeManager approveNode \
-      --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
-      --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-      --url http://127.0.0.1:1337
-  ```
+```bash
+$ cita-cli scm NodeManager approveNode \
+    --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
+    --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+```
 
   其中 `--admin-privkey` 是超级管理员私钥，系统默认的超级管理员私钥可以看 [超级管理员账户信息]。
 
-  输出：
+输出：
 
-  ```json
-  {
-    "id": 3,
-    "jsonrpc": "2.0",
-    "result": {
-      "hash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
-      "status": "OK"
-    }
+```json
+{
+  "id": 3,
+  "jsonrpc": "2.0",
+  "result": {
+    "hash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
+    "status": "OK"
   }
-  ```
+}
+```
 
 * 获取 receipt
 
-  ```bash
-  $ cita-cli rpc getTransactionReceipt \
-      --hash 0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2 \
-      --url http://127.0.0.1:1337
-  ```
+```bash
+$ cita-cli rpc getTransactionReceipt \
+    --hash 0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2 \
+    --url http://127.0.0.1:1337
+```
 
-  输出：
+输出：
 
-  ```json
-  {
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-      "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
-      "blockNumber": "0xba",
-      "contractAddress": null,
-      "cumulativeQuotaUsed": "0x11660",
-      "errorMessage": null,
-      "quotaUsed": "0x11660",
-      "logs": [
-        {
-          "address": "0xffffffffffffffffffffffffffffffffff020001",
-          "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
-          "blockNumber": "0xba",
-          "data": "0x",
-          "logIndex": "0x0",
-          "topics": [
-            "0x5d55f24dd047ef52a5f36ddefc8c424e4b26c8415d8758be1bbb88b5c65e04eb",
-            "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
-          ],
-          "transactionHash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
-          "transactionIndex": "0x0",
-          "transactionLogIndex": "0x0"
-        }
-      ],
-      "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-      "root": null,
-     "transactionHash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
-      "transactionIndex": "0x0"
-    }
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
+    "blockNumber": "0xba",
+    "contractAddress": null,
+    "cumulativeQuotaUsed": "0x11660",
+    "errorMessage": null,
+    "quotaUsed": "0x11660",
+    "logs": [
+      {
+        "address": "0xffffffffffffffffffffffffffffffffff020001",
+        "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
+        "blockNumber": "0xba",
+        "data": "0x",
+        "logIndex": "0x0",
+        "topics": [
+          "0x5d55f24dd047ef52a5f36ddefc8c424e4b26c8415d8758be1bbb88b5c65e04eb",
+          "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
+        ],
+        "transactionHash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
+        "transactionIndex": "0x0",
+        "transactionLogIndex": "0x0"
+      }
+    ],
+    "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "root": null,
+    "transactionHash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
+    "transactionIndex": "0x0"
   }
-  ```
+}
+```
 
   从 `log` 中可以看出本次操作的相关信息。
 
@@ -178,72 +178,72 @@ $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 
 * 发送交易
 
-  ```bash
-  $ cita-cli scm NodeManager deleteNode \
-      --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
-      --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-      --url http://127.0.0.1:1337
-  ```
+```bash
+$ cita-cli scm NodeManager deleteNode \
+    --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
+    --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+```
 
   其中 `--admin-privkey` 是超级管理员私钥，系统默认的超级管理员私钥可以看 [超级管理员账户信息]。
 
-  输出：
+输出：
 
-  ```json
-  {
-    "id": 3,
-    "jsonrpc": "2.0",
-    "result": {
-      "hash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
-      "status": "OK"
-    }
+```json
+{
+  "id": 3,
+  "jsonrpc": "2.0",
+  "result": {
+    "hash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
+    "status": "OK"
   }
-  ```
+}
+```
 
 * 获取 receipt
 
-  ```bash
-  $ cita-cli rpc getTransactionReceipt \
-      --hash 0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393 \
-      --url http://127.0.0.1:1337
-  ```
+```bash
+$ cita-cli rpc getTransactionReceipt \
+    --hash 0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393 \
+    --url http://127.0.0.1:1337
+```
 
-  输出：
+输出：
 
-  ```json
-  {
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-      "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
-      "blockNumber": "0x1db",
-      "contractAddress": null,
-      "cumulativeQuotaUsed": "0x558c",
-      "errorMessage": null,
-      "quotaUsed": "0x558c",
-      "logs": [
-        {
-          "address": "0xffffffffffffffffffffffffffffffffff020001",
-          "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
-          "blockNumber": "0x1db",
-          "data": "0x",
-          "logIndex": "0x0",
-          "topics": [
-            "0x74976f07ac4bfb6a02b2dbd3bc158d4984ee6027d938e870692126ca9e1931d5",
-            "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
-          ],
-          "transactionHash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
-          "transactionIndex": "0x0",
-          "transactionLogIndex": "0x0"
-        }
-      ],
-      "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000400000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-      "root": null,
-      "transactionHash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
-      "transactionIndex": "0x0"
-    }
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
+    "blockNumber": "0x1db",
+    "contractAddress": null,
+    "cumulativeQuotaUsed": "0x558c",
+    "errorMessage": null,
+    "quotaUsed": "0x558c",
+    "logs": [
+      {
+        "address": "0xffffffffffffffffffffffffffffffffff020001",
+        "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
+        "blockNumber": "0x1db",
+        "data": "0x",
+        "logIndex": "0x0",
+        "topics": [
+          "0x74976f07ac4bfb6a02b2dbd3bc158d4984ee6027d938e870692126ca9e1931d5",
+          "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
+        ],
+        "transactionHash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
+        "transactionIndex": "0x0",
+        "transactionLogIndex": "0x0"
+      }
+    ],
+    "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000400000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "root": null,
+    "transactionHash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
+    "transactionIndex": "0x0"
   }
-  ```
+}
+```
 
   从 `log` 中可以看出本次操作的相关信息。
 

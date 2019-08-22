@@ -87,7 +87,7 @@
 <p>节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由超级管理员(拥有超级管理员角色的账号)确认才完成了添加操作。</p>
 <p>从普通节点升级到共识节点，具体操作需要用到上面合约方法 <code>approveNode(address)</code>。</p>
 <p>共识节点管理合约是系统合约，默认将放在创世块上，下面使用 <a href="https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html">solc</a> 命令(solidity 的命令行编译器，在 CITA 镜像中已安装)查看共识节点管理合约的 hash：</p>
-<pre><code class="hljs css language-bash"><span class="hljs-comment"># solc --hashes system/node_manager.sol --allow-paths .</span>
+<pre><code class="hljs css language-bash">$ solc --hashes system/node_manager.sol --allow-paths .
 contract address: 0xffffffffffffffffffffffffffffffffff020001
 Function signatures:
     dd4c97a0: approveNode(address)

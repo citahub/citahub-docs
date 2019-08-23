@@ -825,7 +825,8 @@ Result:
 
 ### newFilter
 
-基于给定的 `topic` 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 `getFilterChanges` 查看状态变化内容。
+基于给定的 `Filter` 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 `getFilterChanges` 查看状态变化内容。
+当 `60s` 内不对 `filter id` 进行操作时，系统会清除建立的过滤器。若要继续使用需重新建立
 
 * 参数
 
@@ -855,7 +856,8 @@ Result:
 
 ### newBlockFilter
 
-创建新块产生过滤器，当新块产生时，记录块哈希值。调用 `getFilterChanges` 查看新块哈希列表。
+创建新块产生过滤器，当新块产生时，记录块哈希值。调用 `getFilterChanges` 查看 `newFilter` 创建时高度之后的块哈希列表。
+当 `60s` 内不对 `filter id` 进行操作时，系统会清除建立的过滤器。若要继续使用需重新建立
 
 * 参数
 
@@ -885,7 +887,7 @@ Result:
 
 ### uninstallFilter
 
-卸载 `filter` 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。当然，如果你在创建过滤器后的很长一段时间，没有调用 `getFilterChanges`， 过滤器会自动卸载。
+卸载 `filter` 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。
 
 * 参数
 
@@ -925,8 +927,8 @@ Result:
 
 `Array` - log 对象集合，如果没有，则为空
 
-* 块过滤器(`BlockFilter`)会返回自过滤器创建以来产生新块的块哈希值集合
-* 状态过滤器(`NewFilter`)会根据 `topic` 返回状态变化
+* 块过滤器(`BlockFilter`)会返回自上次操作过滤器（调用 newBlockFilter 以及 getFilterChanges）以来产生新块的块哈希值集合
+* 状态过滤器(`NewFilter`)会根据 `Filter` 过滤返回自上次操作过滤器（调用 newFilter, getFilterLogs 以及 getFilterChanges）状态变化
 
 示例:
 

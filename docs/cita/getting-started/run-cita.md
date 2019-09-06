@@ -53,6 +53,9 @@ $ cita-cli key create
 
 ## 启动 CITA
 
+第一次启动 CITA 时需要使用 `setup` 命令初始化每个节点，之后重新启动不需要再次操作。
+更多信息可查看 `bin/cita help` 中 `setup` 部分。
+
 1. 启动节点 0
 
    ```shell

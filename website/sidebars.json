@@ -17,7 +17,8 @@
         "type": "subcategory",
         "ids": [
           "cita/configuration-guide/chain-config",
-          "cita/configuration-guide/service-config"
+          "cita/configuration-guide/service-config",
+          "cita/configuration-guide/algorithm-config"
         ]
       },
       "cita/install",

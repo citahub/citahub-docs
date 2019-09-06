@@ -667,7 +667,7 @@ $ scm NodeManager listStake
 
 ### stakePermillage
 
-共识节点出块权重千分比。
+共识节点出块权重千分比。（目前只对 Charge 模型开放）
 
 * 参数
 

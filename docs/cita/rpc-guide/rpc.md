@@ -402,20 +402,20 @@ Object - 回执对象
 
 回执错误:
 
-* No transaction permission
-* No contract permission
-* Not enough base quota
-* Block quota limit reached
-* Account quota limit reached
-* Out of quota
-* Jump position wasn't marked with JUMPDEST instruction
-* Instruction is not supported
-* Not enough stack elements to execute instruction
-* Execution would exceed defined Stack Limit
-* EVM internal error
-* Mutable call in static context
-* Out of bounds
-* Reverted
+* No transaction permission - 没有发交易权限
+* No contract permission - 没有创建合约权限
+* Not enough base quota - 基础配额不够
+* Block quota limit reached - 达到块配额限制
+* Account quota limit reached - 达到账户配额限制
+* Out of quota - 配额不够
+* Jump position wasn't marked with JUMPDEST instruction - EVM 内部错误
+* Instruction is not supported - EVM 内部错误
+* Not enough stack elements to execute instruction - EVM 内部错误
+* Execution would exceed defined Stack Limit - EVM 内部错误
+* EVM internal error - EVM 内部错误
+* Mutable call in static context - EVM 内部错误
+* Out of bounds - EVM 内部错误
+* Reverted - EVM 内部错误，[REVERTED instruction](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-140.md)
 
 示例:
 

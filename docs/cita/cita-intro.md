@@ -36,7 +36,7 @@ CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Co
 
 - **兼容性**
 
-  CITA上支持使用 Solidity，Go 语言，Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppeling，Remix 等）。
+  CITA上支持使用 Solidity, Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppeling，Remix 等）。
 
 - **链间互动**
 

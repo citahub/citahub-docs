@@ -117,7 +117,7 @@ Solidity，Rust
 
 同时考虑到客户对 Go 智能合约的需求并不强烈。因些, 在版本 v1.0.0 中, CITA 暂时取消了对 Go 智能合约的支持。
 
-###版本
+### 版本
 
 #### CITA 0.17 和 0.18 的solc 版本分别最高支持多少？
 0.4.19 和 0.4.24
@@ -139,6 +139,10 @@ chainId可以通过getMetaData这个jsonRPC方法来获取。
 
 #### quota 和 value 有什么差别，应用如何对应输入参数？
 quota 是你发送一个交易（包括调用合约，部署合约和转账）所需要付出的矿工费，如果不足则该交易无法入链，value 是你要在该交易中发送的币的数量，比如你要给A转账1个币，那么value就是1(注意这里的单位是ether)，quota 是 100000 quota. (quota 的最小单位就叫quota, 类似以太坊的 wei, 但是注意我们不要用 ethereum 的单位体系)。如果交易失败了你的 quota 仍然会损失，但是 value 是不会损失的。
+
+#### 什么是交易的基础配额
+交易的基础配额, 指的是一个交易在执行前必须滿足的最小配额 (quota) 值。在当前 CITA 中, 发送部署合约的交易，其基础配额是 53000; 而发送一个普通交易, 其基础配额是 21000 。
+当交易所设定的 quota_limit 小于基础配额时, CITA 将会返回 "Not enough base quota" 错误。
 
 #### eventlog的查询有示例代码么？
 有的，在 github 上有一个 develop 分支，里面有个 project 叫 tests，里面都是例子，其中叫 TokenFilterTest 的是关于 event 的实例

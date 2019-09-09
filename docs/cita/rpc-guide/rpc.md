@@ -404,7 +404,7 @@ Object - 回执对象
 
 * No transaction permission - 没有发交易权限
 * No contract permission - 没有创建合约权限
-* Not enough base quota - 基础配额不够
+* Not enough base quota - [基础配额] 不够
 * Block quota limit reached - 达到块配额限制
 * Account quota limit reached - 达到账户配额限制
 * Out of quota - 配额不够
@@ -1195,3 +1195,4 @@ Result:
 [Solidity docs]: https://solidity.readthedocs.io/en/develop/
 [Test contract]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol
 [链级配置]: ../configuration-guide/chain-config
+[基础配额]: ../faq#什么是交易的基础配额

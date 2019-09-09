@@ -28,7 +28,6 @@ title: 系统保留地址
 | 所有保留地址 | 0xffffffffffffffffffffffffffffffffff000000 | 0xffffffffffffffffffffffffffffffffffffffff |
 | 所有指令地址 | 0xffffffffffffffffffffffffffffffffff010000 | 0xffffffffffffffffffffffffffffffffff01ffff |
 | 一般指令地址 | 0xffffffffffffffffffffffffffffffffff010000 | 0xffffffffffffffffffffffffffffffffff0100ff |
-| Go 指令地址  | 0xffffffffffffffffffffffffffffffffff018000 | 0xffffffffffffffffffffffffffffffffff018fff |
 | 所有系统合约 | 0xffffffffffffffffffffffffffffffffff020000 | 0xffffffffffffffffffffffffffffffffff02ffff |
 | 一般系统合约 | 0xffffffffffffffffffffffffffffffffff020000 | 0xffffffffffffffffffffffffffffffffff0200ff |
 | 权限系统合约 | 0xffffffffffffffffffffffffffffffffff021000 | 0xffffffffffffffffffffffffffffffffff0210ff |
@@ -41,7 +40,6 @@ title: 系统保留地址
 | 0xffffffffffffffffffffffffffffffffff010000 | 存证指令                         |
 | 0xffffffffffffffffffffffffffffffffff010001 | 存 ABI 指令                      |
 | 0xffffffffffffffffffffffffffffffffff010002 | 修改合约内容指令                 |
-| 0xffffffffffffffffffffffffffffffffff018000 | Go 合约指令                      |
 | 0xffffffffffffffffffffffffffffffffff020000 | 系统参数配置                     |
 | 0xffffffffffffffffffffffffffffffffff020001 | 共识节点管理                     |
 | 0xffffffffffffffffffffffffffffffffff020002 | 链管理                           |

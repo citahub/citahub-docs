@@ -69,7 +69,7 @@ title: 环境准备
 2. 下载 CITA 安装包
 
    ```shell
-   $ wget https://github.com/cryptape/cita/releases/download/v0.25.0/cita_secp256k1_sha3.tar.gz
+   $ wget https://github.com/cryptape/cita/releases/download/v1.0.0/cita_secp256k1_sha3.tar.gz
    ```
 
 3. 解压 CITA 程序

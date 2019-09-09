@@ -275,7 +275,8 @@ CITA 作为许可链共识节点采用轮流出块的方式进行出块。作为
 每次出块时，查询共识节点的权重，根据权重计算出每个节点在 1000 个块中可以出的块个数，这 1000 个块算为一个 epoch，再将这1000个块出块顺序以创世块的时间戳为种子进行随机排序。
 如果在同一个 epoch 中出块节点列表和权重没有变化，共识将会按照此顺序进行出块；如果节点列表和权重有变化，将按照新的顺序进行出块。
 
-我们提供 [setStake 接口] 可对共识节点出块权重进行配置。
+[setStake 接口] 可对共识节点出块权重进行配置。
+[stakepermillage 接口] 可查询共识节点出块权重千分比（目前只对 Charge 模型开放）。
 
 [共识节点管理系统合约]: ../system-contract-interface/node
 [setStake 接口]: https://docs.citahub.com/zh-CN/0.23.0/cita/system-contract-interface/node#setstake
@@ -283,3 +284,4 @@ CITA 作为许可链共识节点采用轮流出块的方式进行出块。作为
 [超级管理员账户信息]: ../getting-started/run-cita
 [cita-cli]: https://github.com/cryptape/cita-cli
 [Largest_remainder_method]: https://en.wikipedia.org/wiki/Largest_remainder_method
+[stakepermillage 接口]: https://docs.citahub.com/zh-CN/cita/sys-contract-interface/interface#stakepermillage

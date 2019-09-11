@@ -167,7 +167,7 @@ $ ./bin/cita start <span class="hljs-built_in">test</span>-chain/4
 <p>从普通节点升级到共识节点，具体操作需要用到上面合约方法 <code>approveNode(address)</code>。</p>
 <p>共识节点管理合约是系统合约，默认将放在创世块上，下面是共识节点管理合约的 hash：</p>
 <pre><code class="hljs">
-<span class="hljs-symbol">contract address: 0xffffffffffffffffffffffffffffffffff020001 Function signatures: dd4c97a0: approveNode(address) 2d4ede93: deleteNode(address) 30ccebb5: getStatus(address) 609df32f: listNode() 645b8b1b:</span> status(address)
+<span class="hljs-title">contract address: 0xffffffffffffffffffffffffffffffffff020001 Function signatures: dd4c97a0: approveNode(address) 2d4ede93: deleteNode(address) 30ccebb5: getStatus(address) 609df32f: listNode() 645b8b1b:</span> status(address)
 
     &lt;br /&gt;#### 首先，获取当前链上的共识节点列表：
     
@@ -187,7 +187,7 @@ $ ./bin/cita start <span class="hljs-built_in">test</span>-chain/4
 
 #### 构造交易格式并发送
 
-<span class="hljs-symbol">调用合约遵循 [ABI](https:</span>//solidity.readthedocs.io/en/develop/abi-spec.html), 提供工具 `make_tx.py`：
+<span class="hljs-title">调用合约遵循 [ABI](https:</span>//solidity.readthedocs.io/en/develop/abi-spec.html), 提供工具 `make_tx.py`：
 
 <span class="hljs-number">1</span>. 构造 approveNode 交易信息
 

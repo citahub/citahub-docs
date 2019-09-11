@@ -128,7 +128,7 @@ contract HelloWorld {
         }
     }
     <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">Box</span>&lt;Contract&gt; {
-        <span class="hljs-built_in">Box</span>::new(HelloWorld::<span class="hljs-keyword">default</span>())
+        <span class="hljs-built_in">Box</span>::new(HelloWorld::default())
     }
 }
 </code></pre>
@@ -193,7 +193,7 @@ contract HelloWorld {
 <pre><code class="hljs css language-rust"><span class="hljs-comment">// here we register contracts with addresses defined in genesis.json.</span>
 {
     <span class="hljs-keyword">use</span> super::myContract::HelloWorld;
-    factory.register(Address::from(<span class="hljs-number">0x500</span>), <span class="hljs-built_in">Box</span>::new(HelloWorld::<span class="hljs-keyword">default</span>()));
+    factory.register(Address::from(<span class="hljs-number">0x500</span>), <span class="hljs-built_in">Box</span>::new(HelloWorld::default()));
 }
 </code></pre>
 <p>同时还需要在同目录下的代码 <code>mod.rs</code>中加入 <code>rust_hello</code> 的模块，使得可以编译进 CITA。</p>

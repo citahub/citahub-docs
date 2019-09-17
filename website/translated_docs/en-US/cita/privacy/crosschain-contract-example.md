@@ -4,6 +4,8 @@ title: Cross-chain Contract Example
 sidebar_label: 侧链
 ---
 
+> **注意! 此功能在 `v1.0.0` 版本中暂时不支持，计划后续实现**
+
 ## 跨链合约编写
 
 ### Cross-chain Contract Example

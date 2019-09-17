@@ -77,7 +77,7 @@ title: Amend
 
 命令参数如下：
 
-- kv-h256: 数据库的 KV 信息，命令中的 kv 参数值为一系列的 Key-Value 对， 前面的 H256 信息 Key，后面的 H256 信息为 Value,交替存放.
+- kv-h256: 数据库的 KV 信息，命令中的 kv 参数值为一系列的 Key-Value 对， 前面的 H256 信息 Key，后面的 H256 信息为 Value，交替存放。
 
 示例：
 

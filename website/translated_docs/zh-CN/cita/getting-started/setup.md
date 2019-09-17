@@ -7,7 +7,6 @@ title: 环境准备
 
 系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
 
-
 ## 硬件配置建议
 
 配置取决于自身业务，请根据实际情况搭配，以下是建议最低配置：
@@ -43,9 +42,7 @@ title: 环境准备
 
 > 注：这里所下载的是 CITA-CLI 是 linux 系统下的二进制发布包，如果你使用 MacOS，请按以下命令下载对应系统的 CITA-CLI：
 > 
-> ```shell
-$ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-mac-osx-tls-0.19.6.tar.gz
-```
+> $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-mac-osx-tls-0.19.6.tar.gz
 
 4. 解压程序
 
@@ -70,7 +67,7 @@ $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x8
 2. 下载 CITA 安装包
 
    ```shell
-   $ wget https://github.com/cryptape/cita/releases/download/v0.25.0/cita_secp256k1_sha3.tar.gz
+   $ wget https://github.com/cryptape/cita/releases/download/v1.0.0/cita_secp256k1_sha3.tar.gz
    ```
 
 3. 解压 CITA 程序

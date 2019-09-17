@@ -17,7 +17,7 @@ CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级�
 
 - **高性能**
     
-    微服务架构将 Chain 与 Executor 独立出来，Executor 仅负责计算和执行交易，Chain 负责存储交易， 使得计算和存储分离，极大程度的提高了交易处理能力； 编程语言采用 Rust，Rust 强调并秉持零开销抽象的理念在提供诸多高级语言特性的同时，没有引入额外的开销，性能可以媲美 C++。 最新版本的交易性能已经可以达到 15,000+ TPS（数据来自 CITA 0.16 版本，在四台 32 核，64G 的云服务器上部署 4 个节点，每台服务器配置百兆带宽）
+    微服务架构将 Chain 与 Executor 独立出来，Executor 仅负责计算和执行交易，Chain 负责存储交易， 使得计算和存储分离，极大程度的提高了交易处理能力； 编程语言采用 Rust，Rust 强调并秉持零开销抽象的理念在提供诸多高级语言特性的同时，没有引入额外的开销，性能可以媲美 C++。 最新版本的交易性能已经可以达到 15,000+ TPS（数据来自 CITA 0.16 版本，在四台 32 核，64G 的云服务器上部署 4 个节点，每台服务器配置百兆带宽）。
 
 - **稳定可靠**
     
@@ -25,7 +25,7 @@ CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级�
 
 - **兼容性**
     
-    CITA上支持使用 Solidity，Go 语言，Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppeling，Remix 等）。
+    CITA上支持使用 Solidity, Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppeling，Remix 等）。
 
 - **链间互动**
     

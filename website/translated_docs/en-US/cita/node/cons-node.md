@@ -22,7 +22,7 @@ CITA 采用[共识节点管理系统合约](../system-contract-interface/node)�
 共识节点管理合约是系统合约，默认将放在创世块上，下面使用 [solc](https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html) 命令(solidity 的命令行编译器，在 CITA 镜像中已安装)查看共识节点管理合约的 hash：
 
 ```bash
-# solc --hashes system/node_manager.sol --allow-paths .
+$ solc --hashes system/node_manager.sol --allow-paths .
 contract address: 0xffffffffffffffffffffffffffffffffff020001
 Function signatures:
     dd4c97a0: approveNode(address)
@@ -64,89 +64,88 @@ $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 * 发送交易
 
 ```bash
-  $ cita-cli scm NodeManager approveNode \
-      --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
-      --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-      --url http://127.0.0.1:1337
-  ```
+$ cita-cli scm NodeManager approveNode \
+    --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
+    --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+```
 
-  其中 `--admin-privkey` 是超级管理员私钥，系统默认的超级管理员私钥可以看 [超级管理员账户信息]。
+其中 `--admin-privkey` 是超级管理员私钥，系统默认的超级管理员私钥可以看 [超级管理员账户信息](../getting-started/run-cita)。
 
-  输出：
+输出：
 
-  ```json
-  {
-    "id": 3,
-    "jsonrpc": "2.0",
-    "result": {
-      "hash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
-      "status": "OK"
-    }
+```json
+{
+  "id": 3,
+  "jsonrpc": "2.0",
+  "result": {
+    "hash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
+    "status": "OK"
   }
-  ```
+}
+```
 
 * 获取 receipt
 
-  ```bash
-  $ cita-cli rpc getTransactionReceipt \
-      --hash 0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2 \
-      --url http://127.0.0.1:1337
-  ```
+```bash
+$ cita-cli rpc getTransactionReceipt \
+    --hash 0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2 \
+    --url http://127.0.0.1:1337
+```
 
-  输出：
+输出：
 
-  ```json
-  {
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-      "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
-      "blockNumber": "0xba",
-      "contractAddress": null,
-      "cumulativeQuotaUsed": "0x11660",
-      "errorMessage": null,
-      "quotaUsed": "0x11660",
-      "logs": [
-        {
-          "address": "0xffffffffffffffffffffffffffffffffff020001",
-          "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
-          "blockNumber": "0xba",
-          "data": "0x",
-          "logIndex": "0x0",
-          "topics": [
-            "0x5d55f24dd047ef52a5f36ddefc8c424e4b26c8415d8758be1bbb88b5c65e04eb",
-            "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
-          ],
-          "transactionHash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
-          "transactionIndex": "0x0",
-          "transactionLogIndex": "0x0"
-        }
-      ],
-      "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-      "root": null,
-     "transactionHash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
-      "transactionIndex": "0x0"
-    }
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
+    "blockNumber": "0xba",
+    "contractAddress": null,
+    "cumulativeQuotaUsed": "0x11660",
+    "errorMessage": null,
+    "quotaUsed": "0x11660",
+    "logs": [
+      {
+        "address": "0xffffffffffffffffffffffffffffffffff020001",
+        "blockHash": "0xe7bb245d4ee718703746241c8cf3352063c7761b789b79a74a991d993f6d48e1",
+        "blockNumber": "0xba",
+        "data": "0x",
+        "logIndex": "0x0",
+        "topics": [
+          "0x5d55f24dd047ef52a5f36ddefc8c424e4b26c8415d8758be1bbb88b5c65e04eb",
+          "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
+        ],
+        "transactionHash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
+        "transactionIndex": "0x0",
+        "transactionLogIndex": "0x0"
+      }
+    ],
+    "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000020000000000800000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "root": null,
+    "transactionHash": "0x286402ed9e27a11dbbcf5fc3b8296c36f66cb39068a3c468c632ee370e81bdb2",
+    "transactionIndex": "0x0"
   }
-  ```
+}
+```
 
-  从 `log` 中可以看出本次操作的相关信息。
+从 `log` 中可以看出本次操作的相关信息。
 
 ### 查看当前的共识节点数
 
+    $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
+    
+
+输出：
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005000000000000000000000000d0f05f536ffc6a5d27b17cd14a544418b0500e92000000000000000000000000cccda2959225fc79f61f99bed213bd1172a7ea830000000000000000000000000014e2a75b4b5399f09732ecb6ed1a5b389c9e700000000000000000000000003e91911ba91b10dfa41f0a34d4a3c5a4f838eace00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
+}
 ```
-
-$ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
-
-    <br />输出：
-    
-    ```json
-    {
-      "id": 1,
-      "jsonrpc": "2.0",
-      "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005000000000000000000000000d0f05f536ffc6a5d27b17cd14a544418b0500e92000000000000000000000000cccda2959225fc79f61f99bed213bd1172a7ea830000000000000000000000000014e2a75b4b5399f09732ecb6ed1a5b389c9e700000000000000000000000003e91911ba91b10dfa41f0a34d4a3c5a4f838eace00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
-    }
-    
 
 返回值为目前的共识节点地址列表（可以看到新添加的共识节点地址 `0x59a316df602568957f47973332f1f85ae1e2e75e`）
 
@@ -179,73 +178,73 @@ $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 * 发送交易
 
 ```bash
-  $ cita-cli scm NodeManager deleteNode \
-      --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
-      --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-      --url http://127.0.0.1:1337
-  ```
+$ cita-cli scm NodeManager deleteNode \
+    --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
+    --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+```
 
-  其中 `--admin-privkey` 是超级管理员私钥，系统默认的超级管理员私钥可以看 [超级管理员账户信息]。
+其中 `--admin-privkey` 是超级管理员私钥，系统默认的超级管理员私钥可以看 [超级管理员账户信息](../getting-started/run-cita)。
 
-  输出：
+输出：
 
-  ```json
-  {
-    "id": 3,
-    "jsonrpc": "2.0",
-    "result": {
-      "hash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
-      "status": "OK"
-    }
+```json
+{
+  "id": 3,
+  "jsonrpc": "2.0",
+  "result": {
+    "hash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
+    "status": "OK"
   }
-  ```
+}
+```
 
 * 获取 receipt
 
-  ```bash
-  $ cita-cli rpc getTransactionReceipt \
-      --hash 0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393 \
-      --url http://127.0.0.1:1337
-  ```
+```bash
+$ cita-cli rpc getTransactionReceipt \
+    --hash 0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393 \
+    --url http://127.0.0.1:1337
+```
 
-  输出：
+输出：
 
-  ```json
-  {
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-      "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
-      "blockNumber": "0x1db",
-      "contractAddress": null,
-      "cumulativeQuotaUsed": "0x558c",
-      "errorMessage": null,
-      "quotaUsed": "0x558c",
-      "logs": [
-        {
-          "address": "0xffffffffffffffffffffffffffffffffff020001",
-          "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
-          "blockNumber": "0x1db",
-          "data": "0x",
-          "logIndex": "0x0",
-          "topics": [
-            "0x74976f07ac4bfb6a02b2dbd3bc158d4984ee6027d938e870692126ca9e1931d5",
-            "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
-          ],
-          "transactionHash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
-          "transactionIndex": "0x0",
-          "transactionLogIndex": "0x0"
-        }
-      ],
-      "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000400000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-      "root": null,
-      "transactionHash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
-      "transactionIndex": "0x0"
-    }
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
+    "blockNumber": "0x1db",
+    "contractAddress": null,
+    "cumulativeQuotaUsed": "0x558c",
+    "errorMessage": null,
+    "quotaUsed": "0x558c",
+    "logs": [
+      {
+        "address": "0xffffffffffffffffffffffffffffffffff020001",
+        "blockHash": "0xc57c25447a24f7bd2b0d5699dfa151ba42456309d9da70101cfb3f599ec77c8d",
+        "blockNumber": "0x1db",
+        "data": "0x",
+        "logIndex": "0x0",
+        "topics": [
+          "0x74976f07ac4bfb6a02b2dbd3bc158d4984ee6027d938e870692126ca9e1931d5",
+          "0x00000000000000000000000059a316df602568957f47973332f1f85ae1e2e75e"
+        ],
+        "transactionHash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
+        "transactionIndex": "0x0",
+        "transactionLogIndex": "0x0"
+      }
+    ],
+    "logsBloom": "0x00000000000000020040000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000000000000000000000000000800000000000000002000000000000000000000000400000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "root": null,
+    "transactionHash": "0x01a4eac643589780090d5ed9fa1ac56d139776dd79ebc74a6414594d4d607393",
+    "transactionIndex": "0x0"
   }
-  ```
+}
+```
 
-  从 `log` 中可以看出本次操作的相关信息。
+从 `log` 中可以看出本次操作的相关信息。
 
 ### 查看当前的共识节点数
 
@@ -273,4 +272,4 @@ CITA 作为许可链共识节点采用轮流出块的方式进行出块。作为
 
 出块权重按照每个出块节点所占的千分比进行分配，对于小数部分采用的 [Largest_remainder_method](https://en.wikipedia.org/wiki/Largest_remainder_method) 算法进行分配。 每次出块时，查询共识节点的权重，根据权重计算出每个节点在 1000 个块中可以出的块个数，这 1000 个块算为一个 epoch，再将这1000个块出块顺序以创世块的时间戳为种子进行随机排序。 如果在同一个 epoch 中出块节点列表和权重没有变化，共识将会按照此顺序进行出块；如果节点列表和权重有变化，将按照新的顺序进行出块。
 
-我们提供 [setStake 接口](https://docs.citahub.com/zh-CN/0.23.0/cita/system-contract-interface/node#setstake) 可对共识节点出块权重进行配置。
+[setStake 接口](https://docs.citahub.com/zh-CN/0.23.0/cita/system-contract-interface/node#setstake) 可对共识节点出块权重进行配置。 [stakepermillage 接口](https://docs.citahub.com/zh-CN/cita/sys-contract-interface/interface#stakepermillage) 可查询共识节点出块权重千分比（目前只对 Charge 模型开放）。

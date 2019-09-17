@@ -307,7 +307,7 @@ node1/logs下。
 
 解决办法：`pip3 install bitcoin`
 
-#### Mac 运行 CITA 报错：Internal compiler error during compilation: /tmp/solidity-20180515-88303-7oxibo/solidity_0.4.23/libsolidity/interface/CompilerStack.cpp(732): Throw in function void dev::solidity::CompilerStack::compileContract(const dev::solidity::ContractDefinition &, map<const dev::solidity::contractdefinition *, const eth::assembly *> &) Dynamic exception type: boost::exception_detail::clone_impl<dev::solidity::internalcompilererror>
+#### Mac 运行 CITA 报错：Internal compiler error during compilation: /tmp/solidity-20180515-88303-7oxibo/solidity_0.4.23/libsolidity/interface/CompilerStack.cpp(732): Throw in function void dev::solidity::CompilerStack::compileContract(const dev::solidity::ContractDefinition &, map<const dev::solidity::ContractDefinition *, const eth::Assembly *> &) Dynamic exception type: boost::exception_detail::clone_impl<dev::solidity::InternalCompilerError>
 
 解决办法： `brew upgrade solidity`
 

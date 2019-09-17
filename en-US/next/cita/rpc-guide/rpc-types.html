@@ -200,8 +200,8 @@
 <li><p><code>BlockTag(String)</code></p>
 <ul>
 <li><code>&quot;earliest&quot;</code> - 代表链的第一个块, 即创世块</li>
-<li><code>&quot;latest&quot;</code> - 代表最新出的块</li>
-<li><code>&quot;pending&quot;</code> - 代表 <code>latest</code> 块的下一个块, 包含等待执行的交易和状态</li>
+<li><code>&quot;latest&quot;</code> - 代表 <code>pending</code> 块的上一个块，表示当前块的交易列表以及交易执行结果都经过了共识</li>
+<li><code>&quot;pending&quot;</code> - 代表最新出的块，表示当前块的交易列表经过了共识，而交易执行结果尚未经过共识</li>
 </ul></li>
 <li><p><code>EconomicalModel(Integer)</code></p>
 <ul>

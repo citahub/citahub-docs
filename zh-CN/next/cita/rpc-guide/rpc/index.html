@@ -117,7 +117,7 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
 <p>PeerInfo object - 节点信息对象</p>
 <ul>
 <li>amount: <code>Quantity</code> - 和该节点相连的节点数量</li>
-<li>peers: <code>Object</code> - 节点信息, 包括节点地址和节点 <code>ip</code> 地址</li>
+<li>peers: <code>Object</code> - 节点信息，包括节点地址和节点 <code>ip</code> 地址</li>
 <li>errorMessage: <code>String</code> - 错误信息</li>
 </ul>
 <p>示例:</p>
@@ -242,11 +242,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li><code>quota</code> 交易配额。</li>
 </ul>
-<p>合约执行是图灵完备的，这也意味着交易执行过程中可能出现死循环等无法终止的情况。因此，每个交易都要填写一个配额，交易执行过程中不断消耗配额, 配额耗光后, 交易终止执行。</p>
+<p>合约执行是图灵完备的，这也意味着交易执行过程中可能出现死循环等无法终止的情况。因此，每个交易都要填写一个配额，交易执行过程中不断消耗配额，配额耗光后，交易终止执行。</p>
 <ul>
 <li><code>valid_until_block</code> 交易上链最大区块高度。</li>
 </ul>
-<p>区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值, 甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态(失败还是拥堵)。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此, 需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。</p>
+<p>区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值，甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态(失败还是拥堵)。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此，需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。</p>
 <p><code>valid_until_block</code> 字段就是这样一种机制，用来表示用户愿意等待交易上链的最大区块高度。在区块链达到该高度之后，交易就确定不会再上链了，用户可以放心地重新发送交易，或者进行其他的后续处理。实际使用中，<strong>可选值</strong>当前区块高度到当前区块高度 +100 之间。</p>
 <ul>
 <li><p><code>data</code> 合约对应的 <code>Bytecode</code>, 参考:</p>
@@ -270,7 +270,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </blockquote>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getversion"></a><a href="#getversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getVersion</h3>
-<p>获取当前 CITA 软件的版本号, 该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 <a href="../configuration-guide/chain-config">链级配置</a> 中的 <code>--enable_version</code> 选项说明。</p>
+<p>获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 <a href="../configuration-guide/chain-config">链级配置</a> 中的 <code>--enable_version</code> 选项说明。</p>
 <ul>
 <li>参数</li>
 </ul>
@@ -306,7 +306,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <ol>
-<li><code>Object</code> - 块对象, 如果不存在, 则返回空</li>
+<li><code>Object</code> - 块对象，如果不存在，则返回空</li>
 </ol>
 <p>示例:</p>
 <p>Request:</p>
@@ -378,7 +378,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <p>或者</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBlockByNumber","params":[249, true],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>高度参数可以用 0x 开头的十六进制。0X 开头或者十进制整数都是错误的参数格式。</p>
+<p>高度参数可以用 0x 开头的十六进制。0x 开头或者十进制整数都是错误的参数格式。</p>
 <p>结果同 <a href="#getblockbyhash">getBlockByHash</a></p>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="gettransactionreceipt"></a><a href="#gettransactionreceipt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTransactionReceipt</h3>
@@ -398,8 +398,8 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>transactionIndex: <code>Quantity</code> - 交易 <code>index</code></li>
 <li>blockHash: <code>Data32</code> - 交易所在块的块哈希</li>
 <li>blockNumber: <code>Quantity</code> - 交易所在块的块高度</li>
-<li>cumulativeQuotaUsed: <code>Quantity</code> - 虚拟机执行交易消耗 quota 数量</li>
-<li>quotaUsed: <code>Quantity</code> - 交易消耗的 quota 总量</li>
+<li>cumulativeQuotaUsed: <code>Quantity</code> - 块中该交易之前(包含该交易)的所有交易消耗的 quota 总量</li>
+<li>quotaUsed: <code>Quantity</code> - 交易消耗的 quota 数量</li>
 <li>contractAddress: <code>Data20</code> - 如果是部署合约, 这个地址指的是新创建出来的合约地址. 否则为空</li>
 <li>logs: <code>Array</code> - 交易产生的日志集合</li>
 <li>root: <code>Data32</code> - 状态树根</li>
@@ -407,20 +407,20 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </ul>
 <p>回执错误:</p>
 <ul>
-<li>No transaction permission</li>
-<li>No contract permission</li>
-<li>Not enough base quota</li>
-<li>Block quota limit reached</li>
-<li>Account quota limit reached</li>
-<li>Out of quota</li>
-<li>Jump position wasn't marked with JUMPDEST instruction</li>
-<li>Instruction is not supported</li>
-<li>Not enough stack elements to execute instruction</li>
-<li>Execution would exceed defined Stack Limit</li>
-<li>EVM internal error</li>
-<li>Mutable call in static context</li>
-<li>Out of bounds</li>
-<li>Reverted</li>
+<li>No transaction permission - 没有发交易权限</li>
+<li>No contract permission - 没有创建合约权限</li>
+<li>Not enough base quota - <a href="../faq#什么是交易的基础配额">基础配额</a> 不够</li>
+<li>Block quota limit reached - 达到块配额限制</li>
+<li>Account quota limit reached - 达到账户配额限制</li>
+<li>Out of quota - 配额不够</li>
+<li>Jump position wasn't marked with JUMPDEST instruction - EVM 内部错误</li>
+<li>Instruction is not supported - EVM 内部错误</li>
+<li>Not enough stack elements to execute instruction - EVM 内部错误</li>
+<li>Execution would exceed defined Stack Limit - EVM 内部错误</li>
+<li>EVM internal error - EVM 内部错误</li>
+<li>Mutable call in static context - EVM 内部错误</li>
+<li>Out of bounds - EVM 内部错误</li>
+<li>Reverted - EVM 内部错误，<a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-140.md">REVERTED instruction</a></li>
 </ul>
 <p>示例:</p>
 <p>Request:</p>
@@ -473,7 +473,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
     <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x0"</span>
 }
 </code></pre>
-<p>如果出现 <strong>Timeout，errorcode 99</strong> ,请查看可能的解决方法<a href="https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux">Can't assign requested Address</a></p>
+<p>如果出现 <strong>Timeout，errorcode 99</strong> ，请查看可能的解决方法<a href="https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux">Can't assign requested Address</a></p>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getlogs"></a><a href="#getlogs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getLogs</h3>
 <p>根据 <code>Topic</code> 查询 <code>logs</code>。</p>
@@ -481,12 +481,12 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>参数</li>
 </ul>
 <ol>
-<li><code>Filter</code> - 过滤器对象, 详见 <code>Filter</code> 的说明</li>
+<li><code>Filter</code> - 过滤器对象，详见 <code>Filter</code> 的说明</li>
 </ol>
 <ul>
 <li>返回值</li>
 </ul>
-<p><code>Array</code> - 日志对象集合, 如果没有则为空</p>
+<p><code>Array</code> - 日志对象集合，如果没有则为空</p>
 <ul>
 <li><code>address</code> - 合约地址</li>
 <li><code>topics</code>- 用来构造过滤器的索引数组</li>
@@ -524,7 +524,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>参数</li>
 </ul>
 <ol>
-<li><code>CallRequest</code> - <code>Call</code> 请求对象, 详见 <code>CallRequest</code> 的说明</li>
+<li><code>CallRequest</code> - <code>Call</code> 请求对象，详见 <code>CallRequest</code> 的说明</li>
 <li><code>BlockNumber</code> - 块高度</li>
 </ol>
 <ul>
@@ -555,14 +555,14 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li>返回值</li>
 </ul>
-<p>Object - 交易对象, 如果没有则为空</p>
+<p>Object - 交易对象，如果没有则为空</p>
 <ul>
 <li>hash: <code>Data32</code> - 交易哈希</li>
 <li>content: <code>Data</code> 交易内容</li>
 <li>from: <code>Data20</code> - 交易发送者</li>
-<li>blockHash: <code>Data32</code> - 交易所在块的块哈希, 如果没有, 则为空</li>
-<li>blockNumber: <code>Quantity</code> - 交易所在块的块高度, 如果没有, 则为空</li>
-<li>index: <code>Quantity</code> - 交易在块交易体内的位置, 如果没有, 则为空</li>
+<li>blockHash: <code>Data32</code> - 交易所在块的块哈希，如果没有，则为空</li>
+<li>blockNumber: <code>Quantity</code> - 交易所在块的块高度，如果没有，则为空</li>
+<li>index: <code>Quantity</code> - 交易在块交易体内的位置，如果没有，则为空</li>
 </ul>
 <p>示例:</p>
 <p>Request:</p>
@@ -661,7 +661,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="保存-abi-和读取-abi-说明"></a><a href="#保存-abi-和读取-abi-说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>保存 <code>ABI</code> 和读取 <code>ABI</code> 说明</h4>
 <p>默认将接收方地址为<code>0xffffffffffffffffffffffffffffffffff010001</code> 的交易视为保存合约 <code>ABI</code> 交易类型。</p>
-<h4><a class="anchor" aria-hidden="true" id="保存abi"></a><a href="#保存abi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>保存ABI</h4>
+<h4><a class="anchor" aria-hidden="true" id="保存-abi"></a><a href="#保存-abi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>保存 ABI</h4>
 <p>主要步骤：</p>
 <ol>
 <li>部署合约，得到合约地址。</li>
@@ -671,7 +671,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </ol>
 <p>以 <a href="https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol">Test contract</a> 作为示例:</p>
 <ul>
-<li>链上部署该合约, 得到合约地址</li>
+<li>链上部署该合约，得到合约地址</li>
 <li>首先可以通过 <code>solc</code> 得到合约的<code>ABI</code></li>
 </ul>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> solc SimpleStorage.sol --abi</span>
@@ -680,20 +680,20 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <pre><code class="hljs css language-json">[{<span class="hljs-attr">"constant"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"inputs"</span>:[{<span class="hljs-attr">"name"</span>:<span class="hljs-string">"x"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"uint256"</span>}],<span class="hljs-attr">"name"</span>:<span class="hljs-string">"set"</span>,<span class="hljs-attr">"outputs"</span>:[],<span class="hljs-attr">"payable"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"stateMutability"</span>:<span class="hljs-string">"nonpayable"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"function"</span>},{<span class="hljs-attr">"constant"</span>:<span class="hljs-literal">true</span>,<span class="hljs-attr">"inputs"</span>:[],<span class="hljs-attr">"name"</span>:<span class="hljs-string">"get"</span>,<span class="hljs-attr">"outputs"</span>:[{<span class="hljs-attr">"name"</span>:<span class="hljs-string">""</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"uint256"</span>}],<span class="hljs-attr">"payable"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"stateMutability"</span>:<span class="hljs-string">"view"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"function"</span>}]
 </code></pre>
 <ul>
-<li>将 <code>ABI</code> 作为 <code>String</code> 类型, 构造 <code>data</code>，编码结果如下：</li>
+<li>将 <code>ABI</code> 作为 <code>String</code> 类型，构造 <code>data</code>，编码结果如下：</li>
 </ul>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi encode params --param string <span class="hljs-string">"[{"</span>constant<span class="hljs-string">":false,"</span>inputs<span class="hljs-string">":[{"</span>name<span class="hljs-string">":"</span>x<span class="hljs-string">","</span><span class="hljs-built_in">type</span><span class="hljs-string">":"</span>uint256<span class="hljs-string">"}],"</span>name<span class="hljs-string">":"</span><span class="hljs-built_in">set</span><span class="hljs-string">","</span>outputs<span class="hljs-string">":[],"</span>payable<span class="hljs-string">":false,"</span>stateMutability<span class="hljs-string">":"</span>nonpayable<span class="hljs-string">","</span><span class="hljs-built_in">type</span><span class="hljs-string">":"</span><span class="hljs-keyword">function</span><span class="hljs-string">"},{"</span>constant<span class="hljs-string">":true,"</span>inputs<span class="hljs-string">":[],"</span>name<span class="hljs-string">":"</span>get<span class="hljs-string">","</span>outputs<span class="hljs-string">":[{"</span>name<span class="hljs-string">":"</span><span class="hljs-string">","</span><span class="hljs-built_in">type</span><span class="hljs-string">":"</span>uint256<span class="hljs-string">"}],"</span>payable<span class="hljs-string">":false,"</span>stateMutability<span class="hljs-string">":"</span>view<span class="hljs-string">","</span><span class="hljs-built_in">type</span><span class="hljs-string">":"</span><span class="hljs-keyword">function</span><span class="hljs-string">"}]</span></span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi encode params --param string <span class="hljs-string">"[{"</span>constant<span class="hljs-string">":false,"</span>inputs<span class="hljs-string">":[{"</span>name<span class="hljs-string">":"</span>x<span class="hljs-string">","</span><span class="hljs-built_in">type</span><span class="hljs-string">":"</span>uint256<span class="hljs-string">"}],"</span>name<span class="hljs-string">":"</span><span class="hljs-built_in">set</span><span class="hljs-string">","</span>outputs<span class="hljs-string">":[],"</span>payable<span class="hljs-string">":false,"</span>stateMutability<span class="hljs-string">":"</span>nonpayable<span class="hljs-string">","</span><span class="hljs-built_in">type</span><span class="hljs-string">":"</span><span class="hljs-keyword">function</span><span class="hljs-string">"},{"</span>constant<span class="hljs-string">":true,"</span>inputs<span class="hljs-string">":[],"</span>name<span class="hljs-string">":"</span>get<span class="hljs-string">","</span>outputs<span class="hljs-string">":[{"</span>name<span class="hljs-string">":"</span><span class="hljs-string">","</span><span class="hljs-built_in">type</span><span class="hljs-string">":"</span>uint256<span class="hljs-string">"}],"</span>payable<span class="hljs-string">":false,"</span>stateMutability<span class="hljs-string">":"</span>view<span class="hljs-string">","</span><span class="hljs-built_in">type</span><span class="hljs-string">":"</span><span class="hljs-keyword">function</span><span class="hljs-string">"}]"</span></span>
 </code></pre>
 <pre><code class="hljs">0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002aa307863663733353235623338306335623730366633356331666630326161373938636339393530383630303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303032303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030656635623762363336663665373337343631366537343361363636313663373336353263363936653730373537343733336135623762366536313664363533613738326337343739373036353361373536393665373433323335333637643564326336653631366436353361373336353734326336663735373437303735373437333361356235643263373036313739363136323663363533613636363136633733363532633733373436313734363534643735373436313632363936633639373437393361366536663665373036313739363136323663363532633734373937303635336136363735366536333734363936663665376432633762363336663665373337343631366537343361373437323735363532633639366537303735373437333361356235643263366536313664363533613637363537343263366637353734373037353734373333613562376236653631366436353361326337343739373036353361373536393665373433323335333637643564326337303631373936313632366336353361363636313663373336353263373337343631373436353464373537343631363236393663363937343739336137363639363537373263373437393730363533613636373536653633373436393666366537643564303030303030303030303030303030303030303030303030303030303030303030300000000000000000000000000000000000000000000000
 </code></pre>
 <ul>
 <li>Store ABI</li>
 </ul>
-<pre><code class="hljs css language-bash">$ $ cita-cli store abi
+<pre><code class="hljs css language-bash">$ cita-cli store abi \
     --content 0xcf73525b380c5b706f35c1ff02aa798cc9950860000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000ef5b7b636f6e7374616e743a66616c73652c696e707574733a5b7b6e616d653a782c747970653a75696e743235367d5d2c6e616d653a7365742c6f7574707574733a5b5d2c70617961626c653a66616c73652c73746174654d75746162696c6974793a6e6f6e70617961626c652c747970653a66756e6374696f6e7d2c7b636f6e7374616e743a747275652c696e707574733a5b5d2c6e616d653a6765742c6f7574707574733a5b7b6e616d653a2c747970653a75696e743235367d5d2c70617961626c653a66616c73652c73746174654d75746162696c6974793a766965772c747970653a66756e6374696f6e7d5d0000000000000000000000000000000000 \
     --address 0xcf73525b380c5b706f35c1ff02aa798cc9950860 \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-     --url http://127.0.0.1:1337
+    --url http://127.0.0.1:1337
 </code></pre>
 <p>输出：</p>
 <pre><code class="hljs css language-json">{
@@ -743,12 +743,12 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="newfilter"></a><a href="#newfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>newFilter</h3>
-<p>基于给定的 <code>topic</code> 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 <code>getFilterChanges</code> 查看状态变化内容。</p>
+<p>基于给定的 <code>Filter</code> 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 <code>getFilterChanges</code> 查看状态变化内容。 当 <code>60s</code> 内不对 <code>filter id</code> 进行操作时，系统会清除建立的过滤器。若要继续使用需重新建立</p>
 <ul>
 <li>参数</li>
 </ul>
 <ol>
-<li><code>Filter</code> - 过滤器对象, 详见 <code>Filter</code> 的说明</li>
+<li><code>Filter</code> - 过滤器对象，详见 <code>Filter</code> 的说明。 由于是获取上次操作以来的状态改变，所以 Filter 中的 <code>from_block</code> 以及 <code>to_block</code> 没有作用，可以不用设置。</li>
 </ol>
 <ul>
 <li>返回值</li>
@@ -766,7 +766,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="newblockfilter"></a><a href="#newblockfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>newBlockFilter</h3>
-<p>创建新块产生过滤器，当新块产生时，记录块哈希值。调用 <code>getFilterChanges</code> 查看新块哈希列表。</p>
+<p>创建新块产生过滤器，当新块产生时，记录块哈希值。调用 <code>getFilterChanges</code> 查看 <code>newFilter</code> 创建时高度之后的块哈希列表。 当 <code>60s</code> 内不对 <code>filter id</code> 进行操作时，系统会清除建立的过滤器。若要继续使用需重新建立</p>
 <ul>
 <li>参数</li>
 </ul>
@@ -787,7 +787,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="uninstallfilter"></a><a href="#uninstallfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>uninstallFilter</h3>
-<p>卸载 <code>filter</code> 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。当然，如果你在创建过滤器后的很长一段时间，没有调用 <code>getFilterChanges</code>， 过滤器会自动卸载。</p>
+<p>卸载 <code>filter</code> 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。</p>
 <ul>
 <li>参数</li>
 </ul>
@@ -797,7 +797,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li>返回值</li>
 </ul>
-<p><code>Boolean</code> - 卸载成功返回 true, 否则 false</p>
+<p><code>Boolean</code> - 卸载成功返回 true，否则 false</p>
 <p>示例:</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":73}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
@@ -820,10 +820,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li>返回值</li>
 </ul>
-<p><code>Array</code> - log 对象集合,如果没有,则为空</p>
+<p><code>Array</code> - log 对象集合，如果没有，则为空</p>
 <ul>
-<li>块过滤器(<code>BlockFilter</code>)会返回自过滤器创建以来产生新块的块哈希值集合</li>
-<li>状态过滤器(<code>NewFilter</code>)会根据 <code>topic</code> 返回状态变化</li>
+<li>块过滤器(<code>BlockFilter</code>)会返回自上次操作过滤器（调用 newBlockFilter 以及 getFilterChanges）以来产生新块的块哈希值集合</li>
+<li>状态过滤器(<code>NewFilter</code>)会根据 <code>Filter</code> 过滤返回自上次操作过滤器（调用 newFilter, getFilterLogs 以及 getFilterChanges）状态变化</li>
 </ul>
 <p>示例:</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}'</span> 127.0.0.1:1337 | jq</span>
@@ -875,7 +875,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li>返回值</li>
 </ul>
-<p><code>Array</code> - log 对象集合,如果自上次轮询以来没有发生变化, 则为空</p>
+<p><code>Array</code> - log 对象集合，如果自上次轮询以来没有发生变化，则为空</p>
 <p>示例:</p>
 <p>结果同 <a href="#getfilterchanges">getFilterChanges</a></p>
 <hr>
@@ -890,7 +890,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li>返回值</li>
 </ul>
-<p><code>Data</code> - 一份包含交易,交易回执, 回执树根和块头的证明</p>
+<p><code>Data</code> - 一份包含交易，交易回执，回执树根和块头的证明</p>
 <p>示例:</p>
 <p>Request:</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransactionProof","params":["0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
@@ -960,7 +960,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getblockheader"></a><a href="#getblockheader" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getBlockHeader</h3>
-<p>根据块高度获取块头, 为侧链设计。</p>
+<p>根据块高度获取块头，为侧链设计。</p>
 <ul>
 <li>参数</li>
 </ul>
@@ -984,7 +984,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </code></pre>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getstateproof"></a><a href="#getstateproof" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getStateProof</h3>
-<p>获取指定高度状态里, 某个键值的状态证明, 为侧链设计。</p>
+<p>获取指定高度状态里，某个键值的状态证明，为侧链设计。</p>
 <ul>
 <li>参数</li>
 </ul>
@@ -996,7 +996,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li>返回值</li>
 </ul>
-<p><code>Data</code> - 某一个值的状态证明, 包含合约地址, 账户证明, 键值证明</p>
+<p><code>Data</code> - 某一个值的状态证明，包含合约地址，账户证明，键值证明</p>
 <p>示例:</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getStateProof","params":["0xad54ae137c6c39fa413fa1da7db6463e3ae45664", "0xa40893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423e", "16"],"id":1}'</span> 127.0.0.1:1337</span>
 </code></pre>
@@ -1021,7 +1021,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li>返回值</li>
 </ul>
-<p><code>Data</code> - 指定高度下, 合约 <code>key</code> 值对应的 <code>value</code> 值</p>
+<p><code>Data</code> - 指定高度下，合约 <code>key</code> 值对应的 <code>value</code> 值</p>
 <p>示例:</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getStorageAt","params":["0xffffffffffffffffffffffffffffffffff020000", "0x0000000000000000000000000000000000000000000000000000000000000007", "latest"],"id":1}'</span> 127.0.0.1:1337</span>
 </code></pre>

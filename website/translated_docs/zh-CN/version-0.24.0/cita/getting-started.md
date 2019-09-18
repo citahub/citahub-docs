@@ -32,7 +32,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 1. 创建目录
 
-```shell
+   ```shell
    $ mkdir -p /data/cita
    ```
 
@@ -66,7 +66,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    $ cita-cli key create
    ```
 
-   返回以下内容，
+返回以下内容，
 
    ```json
    {
@@ -76,7 +76,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    }
    ```
 
-   > 注：此处为示例公私钥对，不要在生产环境复制使用。"address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。
+> 注：此处为示例公私钥对，不要在生产环境复制使用。"address": "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" 为超级管理员帐号地址，下面的节点管理操作中会频繁使用。
 
 ## 下载 CITA
 
@@ -119,7 +119,7 @@ $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --n
 
 1. 启动节点 0
 
-```shell
+   ```shell
    $ ./bin/cita setup test-chain/0
    $ ./bin/cita start test-chain/0
    ```
@@ -153,7 +153,7 @@ $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --n
    $ ps -ef | grep cita- |grep -v grep |wc -l && ps -ef | grep cita- |grep -v grep
    ```
 
-   返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）
+返回结果可以看到启动了 28 个进程（每个节点有 7 个服务 * 4 个节点）
 
    ```
    28
@@ -193,15 +193,15 @@ $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --n
    $ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337
    ```
 
-   返回结果：
+返回结果：
 
    ```json
    {"jsonrpc":"2.0","id":83,"result":"0x7d"}
    ```
-   其中 `0x7d` 表示返回块高度，具体数据以所查询的链实际块高为准。
-   只要能连续查询到块高度，并且块高度在增长，则表示节点已经开始正常出块
 
-   更多信息请查看[验证](#验证)。
+其中 `0x7d` 表示返回块高度，具体数据以所查询的链实际块高为准。 只要能连续查询到块高度，并且块高度在增长，则表示节点已经开始正常出块
+
+更多信息请查看[验证](#验证)。
 
 ## 停止节点
 

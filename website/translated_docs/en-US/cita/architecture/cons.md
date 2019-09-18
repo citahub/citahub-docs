@@ -138,9 +138,9 @@ PRECOMMIT<H, R> → PRECOMMITWAIT<H, R>
 
 共识节点收到 Chain 发来的最新共识区块返回的消息 rich_status 后，进入 CommitWait<H, R> 状态。
 
-#### COMMITWAIT<H, R> → PROPOSE<h + 1, 0>
+#### COMMITWAIT<H, R> → PROPOSE<H + 1, 0>
 
-共识节点等待 T0 超时，进入 Propose<h + 1, 0> 状态。
+共识节点等待 T0 超时，进入 Propose<H + 1, 0> 状态。
 
 ## 处理机制
 
@@ -162,8 +162,8 @@ PRECOMMIT<H, R> → PRECOMMITWAIT<H, R>
 
 * prevhash ：上一个块的哈希值
 * timestamp ：Unix 时间戳
-* proof ：Proof结构，出块人签名
-* commit ：Commit 结构，Chain处理结果
+* proof ：Proof 结构，出块人签名
+* commit ：Commit 结构，Chain 处理结果
 * height ：uint64 块号
 
 ### BlockBody 结构
@@ -221,28 +221,28 @@ PRECOMMIT<H, R> → PRECOMMITWAIT<H, R>
 
 ### 并行处理
 
-proof 是对链上区块合法性的证明，包含了当前高度 H 的区块 +2/3 的 precommit 。为了确保每个节点保存的 proof 一致，同时为了提升效率，CITA-BFT 将 commit 和 proposal 两个阶段做并行处理。当共识节点在 Commit<h - 1, r> 状态收到 Chain 微服务保存最新共识区块返回的消息后，生成 proof<h - 1> 并保存在本地，当共识节点进入 Propose<H, R'> 状态，且共识节点是 proposer<H, R'> 时，共识节点将 auth 提供的区块内容与 proof<h - 1> 一起组成区块放入 proposal 中广播出去。即高度为 H 的 proposer 区块的 proposal 中包含高度为 H - 1 的 proof。当该区块达成最终共识后，前一个区块的 proof 也同时完成了最终的共识。
+proof 是对链上区块合法性的证明，包含了当前高度 H 的区块 +2/3 的 precommit 。为了确保每个节点保存的 proof 一致，同时为了提升效率，CITA-BFT 将 commit 和 proposal 两个阶段做并行处理。当共识节点在 Commit<H - 1, R> 状态收到 Chain 微服务保存最新共识区块返回的消息后，生成 proof<H - 1> 并保存在本地，当共识节点进入 Propose<H, R'> 状态，且共识节点是 proposer<H, R'> 时，共识节点将 auth 提供的区块内容与 proof<H - 1> 一起组成区块放入 proposal 中广播出去。即高度为 H 的 proposer 区块的 proposal 中包含高度为 H - 1 的 proof。当该区块达成最终共识后，前一个区块的 proof 也同时完成了最终的共识。
 
 ### LOCK 机制
 
 如果共识节点收到 +2/3 的对 proposal<H, R, B> 投票的 prevote<H, R, P>， 则该共识节点锁定该 proposal 的区块 B。如果该共识节点在同一高度更高轮次 R' 收到 +2/3 的对 proposal<H, R', B'> 投票的 prevote<H, R', P‘>，则该共识节点解锁区块 B，并锁定新的区块 B'。如果该共识节点在同一高度更高轮次 R' 收到 +2/3 的 对 nil<H, R'> 投票的 prevote<H, R', P’>，则该共识节点解锁之前锁定的区块 B。如果共识节点收到 auth 对锁定区块 B 的验证结果为不通过，则该共识节点解除区块 B 的锁定。
 
-如果共识节点处于 Propose<H, R> 状态，且该节点是 proposer<H, R>，若该共识节点已锁定区块 B，则广播 proposal<H, R, B>，若该共识节点未锁定任何区块，则根据 Auth 提供的区块内容与 proof<h - 1> 组成区块 B，之后广播 proposal<H, R, B>。 如果共识节点已锁定区块 B，即使共识节点收到 proposal<H, R, B'>，仍然只对 B 投 prevote<H, R, P> 。
+如果共识节点处于 Propose<H, R> 状态，且该节点是 proposer<H, R>，若该共识节点已锁定区块 B，则广播 proposal<H, R, B>，若该共识节点未锁定任何区块，则根据 Auth 提供的区块内容与 proof<H - 1> 组成区块 B，之后广播 proposal<H, R, B>。 如果共识节点已锁定区块 B，即使共识节点收到 proposal<H, R, B'>，仍然只对 B 投 prevote<H, R, P> 。
 
 ### 轮次跃迁机制
 
 当共识节点状态低于 Precommit<H, R> 状态时，如果收到 +2/3 的对更高轮次 R' 的 proposal<H, R’, B> 投票的 prevote<H, R‘, P> 且 proposal<H, R’, B> 亦已收到且通过基本检查，则该共识节点锁定区块 B，并且节点的状态跃迁到 PrevoteWait<H, R'> 。
 
-### CITA-BFT交易池操作流程
+### CITA-BFT 交易池操作流程
 
-1. 交易池启动时，尝试从KV数据库恢复数据
-2. 交易池订阅MQ的交易信息
-3. 交易池收到交易后，持久化到KV数据库
+1. 交易池启动时，尝试从 KV 数据库恢复数据
+2. 交易池订阅 MQ 的交易信息
+3. 交易池收到交易后，持久化到 KV 数据库
 4. 交易池收到打包请求，检查交易的有效性，输出有效交易列表
 5. 交易池根据出块的交易列表，删除已经上链的交易
 
-### CITA-BFT故障重启流程
+### CITA-BFT 故障重启流程
 
-1. 从WAL模块中，恢复某个块高度的投票信息
+1. 从 WAL 模块中，恢复某个块高度的投票信息
 2. 根据恢复后的状态信息，重复投票信息
 3. 进程根据当前状态，继续运行

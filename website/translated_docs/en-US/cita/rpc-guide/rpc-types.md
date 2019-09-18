@@ -131,8 +131,8 @@ title: JSON RPC Types
 * `BlockTag(String)`
     
     * `"earliest"` - 代表链的第一个块, 即创世块
-    * `"latest"` - 代表最新出的块
-    * `"pending"` - 代表 `latest` 块的下一个块, 包含等待执行的交易和状态
+    * `"latest"` - 代表 `pending` 块的上一个块，表示当前块的交易列表以及交易执行结果都经过了共识
+    * `"pending"` - 代表最新出的块，表示当前块的交易列表经过了共识，而交易执行结果尚未经过共识
 
 * `EconomicalModel(Integer)`
     

@@ -38,6 +38,9 @@
       "cita/commands": {
         "title": "命令说明"
       },
+      "cita/configuration-guide/algorithm-config": {
+        "title": "算法配置"
+      },
       "cita/configuration-guide/chain-config": {
         "title": "链级配置"
       },

@@ -8,7 +8,4 @@ original_id: testchain
 
 该测试链由4个节点组成，域名访问如下：
 
-```
-https://node.cryptape.com
-
-```
+    https://node.cryptape.com

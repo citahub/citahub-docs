@@ -52,7 +52,7 @@ Result:
 PeerInfo object - 节点信息对象
 
 * amount: `Quantity` - 和该节点相连的节点数量
-* peers: `Object` - 节点信息, 包括节点地址和节点 `ip` 地址
+* peers: `Object` - 节点信息，包括节点地址和节点 `ip` 地址
 * errorMessage: `String` - 错误信息
 
 示例:
@@ -209,11 +209,11 @@ message UnverifiedTransaction {
 
 * `quota` 交易配额。
 
-合约执行是图灵完备的，这也意味着交易执行过程中可能出现死循环等无法终止的情况。因此，每个交易都要填写一个配额，交易执行过程中不断消耗配额, 配额耗光后, 交易终止执行。
+合约执行是图灵完备的，这也意味着交易执行过程中可能出现死循环等无法终止的情况。因此，每个交易都要填写一个配额，交易执行过程中不断消耗配额，配额耗光后，交易终止执行。
 
 * `valid_until_block` 交易上链最大区块高度。
 
-区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值, 甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态(失败还是拥堵)。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此, 需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。
+区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值，甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态(失败还是拥堵)。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此，需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。
 
 `valid_until_block` 字段就是这样一种机制，用来表示用户愿意等待交易上链的最大区块高度。在区块链达到该高度之后，交易就确定不会再上链了，用户可以放心地重新发送交易，或者进行其他的后续处理。实际使用中，**可选值**当前区块高度到当前区块高度 +100 之间。
 
@@ -240,7 +240,7 @@ message UnverifiedTransaction {
 
 ### getVersion
 
-获取当前 CITA 软件的版本号, 该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 [链级配置](../configuration-guide/chain-config) 中的 `--enable_version` 选项说明。
+获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 [链级配置](../configuration-guide/chain-config) 中的 `--enable_version` 选项说明。
 
 * 参数
 
@@ -283,7 +283,7 @@ Result:
 
 * 返回值
 
-1. `Object` - 块对象, 如果不存在, 则返回空
+1. `Object` - 块对象，如果不存在，则返回空
 
 示例:
 
@@ -371,7 +371,7 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[249, true],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-高度参数可以用 0x 开头的十六进制。0X 开头或者十进制整数都是错误的参数格式。
+高度参数可以用 0x 开头的十六进制。0x 开头或者十进制整数都是错误的参数格式。
 
 结果同 [getBlockByHash](#getblockbyhash)
 
@@ -393,8 +393,8 @@ Object - 回执对象
 * transactionIndex: `Quantity` - 交易 `index`
 * blockHash: `Data32` - 交易所在块的块哈希
 * blockNumber: `Quantity` - 交易所在块的块高度
-* cumulativeQuotaUsed: `Quantity` - 虚拟机执行交易消耗 quota 数量
-* quotaUsed: `Quantity` - 交易消耗的 quota 总量
+* cumulativeQuotaUsed: `Quantity` - 块中该交易之前(包含该交易)的所有交易消耗的 quota 总量
+* quotaUsed: `Quantity` - 交易消耗的 quota 数量
 * contractAddress: `Data20` - 如果是部署合约, 这个地址指的是新创建出来的合约地址. 否则为空
 * logs: `Array` - 交易产生的日志集合
 * root: `Data32` - 状态树根
@@ -402,20 +402,20 @@ Object - 回执对象
 
 回执错误:
 
-* No transaction permission
-* No contract permission
-* Not enough base quota
-* Block quota limit reached
-* Account quota limit reached
-* Out of quota
-* Jump position wasn't marked with JUMPDEST instruction
-* Instruction is not supported
-* Not enough stack elements to execute instruction
-* Execution would exceed defined Stack Limit
-* EVM internal error
-* Mutable call in static context
-* Out of bounds
-* Reverted
+* No transaction permission - 没有发交易权限
+* No contract permission - 没有创建合约权限
+* Not enough base quota - [基础配额](../faq#什么是交易的基础配额) 不够
+* Block quota limit reached - 达到块配额限制
+* Account quota limit reached - 达到账户配额限制
+* Out of quota - 配额不够
+* Jump position wasn't marked with JUMPDEST instruction - EVM 内部错误
+* Instruction is not supported - EVM 内部错误
+* Not enough stack elements to execute instruction - EVM 内部错误
+* Execution would exceed defined Stack Limit - EVM 内部错误
+* EVM internal error - EVM 内部错误
+* Mutable call in static context - EVM 内部错误
+* Out of bounds - EVM 内部错误
+* Reverted - EVM 内部错误，[REVERTED instruction](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-140.md)
 
 示例:
 
@@ -478,7 +478,7 @@ Error:
 }
 ```
 
-如果出现 **Timeout，errorcode 99** ,请查看可能的解决方法[Can't assign requested Address](https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux)
+如果出现 **Timeout，errorcode 99** ，请查看可能的解决方法[Can't assign requested Address](https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux)
 
 * * *
 
@@ -488,11 +488,11 @@ Error:
 
 * 参数
 
-1. `Filter` - 过滤器对象, 详见 `Filter` 的说明
+1. `Filter` - 过滤器对象，详见 `Filter` 的说明
 
 * 返回值
 
-`Array` - 日志对象集合, 如果没有则为空
+`Array` - 日志对象集合，如果没有则为空
 
 * `address` - 合约地址
 * `topics`- 用来构造过滤器的索引数组
@@ -538,7 +538,7 @@ Result:
 
 * 参数
 
-1. `CallRequest` - `Call` 请求对象, 详见 `CallRequest` 的说明
+1. `CallRequest` - `Call` 请求对象，详见 `CallRequest` 的说明
 2. `BlockNumber` - 块高度
 
 * 返回值
@@ -576,14 +576,14 @@ Result:
 
 * 返回值
 
-Object - 交易对象, 如果没有则为空
+Object - 交易对象，如果没有则为空
 
 * hash: `Data32` - 交易哈希
 * content: `Data` 交易内容
 * from: `Data20` - 交易发送者
-* blockHash: `Data32` - 交易所在块的块哈希, 如果没有, 则为空
-* blockNumber: `Quantity` - 交易所在块的块高度, 如果没有, 则为空
-* index: `Quantity` - 交易在块交易体内的位置, 如果没有, 则为空
+* blockHash: `Data32` - 交易所在块的块哈希，如果没有，则为空
+* blockNumber: `Quantity` - 交易所在块的块高度，如果没有，则为空
+* index: `Quantity` - 交易在块交易体内的位置，如果没有，则为空
 
 示例:
 
@@ -715,7 +715,7 @@ Result:
 
 默认将接收方地址为`0xffffffffffffffffffffffffffffffffff010001` 的交易视为保存合约 `ABI` 交易类型。
 
-#### 保存ABI
+#### 保存 ABI
 
 主要步骤：
 
@@ -726,7 +726,7 @@ Result:
 
 以 [Test contract](https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol) 作为示例:
 
-* 链上部署该合约, 得到合约地址
+* 链上部署该合约，得到合约地址
 * 首先可以通过 `solc` 得到合约的`ABI`
 
 ```shell
@@ -739,10 +739,10 @@ $ solc SimpleStorage.sol --abi
 [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]
 ```
 
-* 将 `ABI` 作为 `String` 类型, 构造 `data`，编码结果如下：
+* 将 `ABI` 作为 `String` 类型，构造 `data`，编码结果如下：
 
 ```shell
-$ cita-cli ethabi encode params --param string "[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]
+$ cita-cli ethabi encode params --param string "[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]"
 ```
 
     0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002aa307863663733353235623338306335623730366633356331666630326161373938636339393530383630303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303032303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030656635623762363336663665373337343631366537343361363636313663373336353263363936653730373537343733336135623762366536313664363533613738326337343739373036353361373536393665373433323335333637643564326336653631366436353361373336353734326336663735373437303735373437333361356235643263373036313739363136323663363533613636363136633733363532633733373436313734363534643735373436313632363936633639373437393361366536663665373036313739363136323663363532633734373937303635336136363735366536333734363936663665376432633762363336663665373337343631366537343361373437323735363532633639366537303735373437333361356235643263366536313664363533613637363537343263366637353734373037353734373333613562376236653631366436353361326337343739373036353361373536393665373433323335333637643564326337303631373936313632366336353361363636313663373336353263373337343631373436353464373537343631363236393663363937343739336137363639363537373263373437393730363533613636373536653633373436393666366537643564303030303030303030303030303030303030303030303030303030303030303030300000000000000000000000000000000000000000000000
@@ -751,11 +751,11 @@ $ cita-cli ethabi encode params --param string "[{"constant":false,"inputs":[{"n
 * Store ABI
 
 ```bash
-$ $ cita-cli store abi
+$ cita-cli store abi \
     --content 0xcf73525b380c5b706f35c1ff02aa798cc9950860000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000ef5b7b636f6e7374616e743a66616c73652c696e707574733a5b7b6e616d653a782c747970653a75696e743235367d5d2c6e616d653a7365742c6f7574707574733a5b5d2c70617961626c653a66616c73652c73746174654d75746162696c6974793a6e6f6e70617961626c652c747970653a66756e6374696f6e7d2c7b636f6e7374616e743a747275652c696e707574733a5b5d2c6e616d653a6765742c6f7574707574733a5b7b6e616d653a2c747970653a75696e743235367d5d2c70617961626c653a66616c73652c73746174654d75746162696c6974793a766965772c747970653a66756e6374696f6e7d5d0000000000000000000000000000000000 \
     --address 0xcf73525b380c5b706f35c1ff02aa798cc9950860 \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-     --url http://127.0.0.1:1337
+    --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -824,11 +824,11 @@ Result:
 
 ### newFilter
 
-基于给定的 `topic` 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 `getFilterChanges` 查看状态变化内容。
+基于给定的 `Filter` 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 `getFilterChanges` 查看状态变化内容。 当 `60s` 内不对 `filter id` 进行操作时，系统会清除建立的过滤器。若要继续使用需重新建立
 
 * 参数
 
-1. `Filter` - 过滤器对象, 详见 `Filter` 的说明
+1. `Filter` - 过滤器对象，详见 `Filter` 的说明。 由于是获取上次操作以来的状态改变，所以 Filter 中的 `from_block` 以及 `to_block` 没有作用，可以不用设置。
 
 * 返回值
 
@@ -854,7 +854,7 @@ Result:
 
 ### newBlockFilter
 
-创建新块产生过滤器，当新块产生时，记录块哈希值。调用 `getFilterChanges` 查看新块哈希列表。
+创建新块产生过滤器，当新块产生时，记录块哈希值。调用 `getFilterChanges` 查看 `newFilter` 创建时高度之后的块哈希列表。 当 `60s` 内不对 `filter id` 进行操作时，系统会清除建立的过滤器。若要继续使用需重新建立
 
 * 参数
 
@@ -884,7 +884,7 @@ Result:
 
 ### uninstallFilter
 
-卸载 `filter` 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。当然，如果你在创建过滤器后的很长一段时间，没有调用 `getFilterChanges`， 过滤器会自动卸载。
+卸载 `filter` 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。
 
 * 参数
 
@@ -892,7 +892,7 @@ Result:
 
 * 返回值
 
-`Boolean` - 卸载成功返回 true, 否则 false
+`Boolean` - 卸载成功返回 true，否则 false
 
 示例:
 
@@ -922,10 +922,10 @@ Result:
 
 * 返回值
 
-`Array` - log 对象集合,如果没有,则为空
+`Array` - log 对象集合，如果没有，则为空
 
-* 块过滤器(`BlockFilter`)会返回自过滤器创建以来产生新块的块哈希值集合
-* 状态过滤器(`NewFilter`)会根据 `topic` 返回状态变化
+* 块过滤器(`BlockFilter`)会返回自上次操作过滤器（调用 newBlockFilter 以及 getFilterChanges）以来产生新块的块哈希值集合
+* 状态过滤器(`NewFilter`)会根据 `Filter` 过滤返回自上次操作过滤器（调用 newFilter, getFilterLogs 以及 getFilterChanges）状态变化
 
 示例:
 
@@ -988,7 +988,7 @@ BlockFilter Result:
 
 * 返回值
 
-`Array` - log 对象集合,如果自上次轮询以来没有发生变化, 则为空
+`Array` - log 对象集合，如果自上次轮询以来没有发生变化，则为空
 
 示例:
 
@@ -1006,7 +1006,7 @@ BlockFilter Result:
 
 * 返回值
 
-`Data` - 一份包含交易,交易回执, 回执树根和块头的证明
+`Data` - 一份包含交易，交易回执，回执树根和块头的证明
 
 示例:
 
@@ -1092,7 +1092,7 @@ Result:
 
 ### getBlockHeader
 
-根据块高度获取块头, 为侧链设计。
+根据块高度获取块头，为侧链设计。
 
 * 参数
 
@@ -1124,7 +1124,7 @@ Result:
 
 ### getStateProof
 
-获取指定高度状态里, 某个键值的状态证明, 为侧链设计。
+获取指定高度状态里，某个键值的状态证明，为侧链设计。
 
 * 参数
 
@@ -1134,7 +1134,7 @@ Result:
 
 * 返回值
 
-`Data` - 某一个值的状态证明, 包含合约地址, 账户证明, 键值证明
+`Data` - 某一个值的状态证明，包含合约地址，账户证明，键值证明
 
 示例:
 
@@ -1166,7 +1166,7 @@ Result:
 
 * 返回值
 
-`Data` - 指定高度下, 合约 `key` 值对应的 `value` 值
+`Data` - 指定高度下，合约 `key` 值对应的 `value` 值
 
 示例:
 

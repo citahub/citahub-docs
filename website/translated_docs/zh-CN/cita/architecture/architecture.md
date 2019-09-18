@@ -83,42 +83,42 @@ title: 系统架构
 
 ## ProtocolBuffer
 
-ProtocolBuffer_ 是一种用于序列化结构数据的语言无关、平台无关的扩展机制， 经常被用于跨进程、跨机器的应用程序间的数据通信，特别是微服务间的数据通 信。它的编译器接受接口描述语言（[IDL](https://en.wikipedia.org/wiki/Interface_description_language)）作为输入，通过不同语言的插件，可以编译 成各自语言的本地代码。
+ProtocolBuffer 是一种用于序列化结构数据的语言无关、平台无关的扩展机制， 经常被用于跨进程、跨机器的应用程序间的数据通信，特别是微服务间的数据通 信。它的编译器接受接口描述语言（[IDL](https://en.wikipedia.org/wiki/Interface_description_language)）作为输入，通过不同语言的插件，可以编译成各自语言的本地代码。
 
-CITA采用了ProtocolBuffer作为数据序列化的方法。一方面，序列化/反序列化 性能高，另一方面，不同微服务间可以通过接口描述语言很方便的集成到CITA的 微服务架构中。
+CITA 采用了 ProtocolBuffer 作为数据序列化的方法。一方面，序列化/反序列化 性能高，另一方面，不同微服务间可以通过接口描述语言很方便的集成到 CITA 的微服务架构中。
 
 ## Block
 
-Block结构
+Block 结构
 
 * version: u32
-* header: BlockHeader结构
-* body: BlockBody结构
+* header: BlockHeader 结构
+* body: BlockBody 结构
 
-BlockHeader结构
+BlockHeader 结构
 
-* prevhash: 上一个块的Keccak 256-bit哈希值
-* timestamp: Unix时间戳
-* proof: Proof结构，出块人签名
-* commit: Commit 结构，Chain处理结果
+* prevhash: 上一个块的 Keccak 256-bit 哈希值
+* timestamp: Unix 时间戳
+* proof: Proof 结构，出块人签名
+* commit: Commit 结构，Chain 处理结果
 * height: uint64 块号
 
-BlockBody结构
+BlockBody 结构
 
 * transactions: 交易列表
 
-Commit结构
+Commit 结构
 
-* stateRoot: Keccak 256-bit，状态root
-* transactionsRoot: Keccak 256-bit，交易列表root
-* receiptsRoot: Keccak 256-bit，交易回执root
+* stateRoot: Keccak 256-bit，状态 root
+* transactionsRoot: Keccak 256-bit，交易列表 root
+* receiptsRoot: Keccak 256-bit，交易回执 root
 
 ## Transaction
 
 Transaction 结构
 
 * to: 160-bit address；如果为空表示创建合约
-* content: bytes，交易data
+* content: bytes，交易 data
 * valid_until_block: 交易超时设置
 * signature: bytes，签名
 * crypto: 签名类型

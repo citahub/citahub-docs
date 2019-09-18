@@ -90,5 +90,5 @@ cd zktx_example && cargo run --release --bin gen_params
 [zktx]: https://github.com/cryptape/zktx
 [zktx_example]: https://github.com/cryptape/zktx_example
 [运行 CITA]: ../getting-started/run-cita
-[编译 CITA]: ../hacking/compile-cita
+[编译 CITA]: ../install#cita-源码编译部署
 [配置]: ../configuration-guide/chain-config

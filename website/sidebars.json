@@ -88,16 +88,23 @@
       },
       "cita/store",
       {
-        "label": "Hacking",
+        "label": "Advanced Use",
         "type": "subcategory",
         "ids": [
-          "cita/hacking/compile-cita",
-          "cita/hacking/log",
-          "cita/hacking/auto-exec",
-          "cita/hacking/chain-gov",
-          "cita/hacking/contracts/solidity",
-          "cita/hacking/contracts/rust",
-          "cita/hacking/contracts/batch-tx"
+          "cita/advanced-use/contracts/solidity",
+          "cita/advanced-use/contracts/rust",
+          "cita/advanced-use/auto-exec",
+          "cita/advanced-use/chain-gov",
+          "cita/advanced-use/contracts/batch-tx"
+        ]
+      },
+      {
+        "label": "Ops",
+        "type": "subcategory",
+        "ids": [
+          "cita/ops/log",
+          "cita/ops/exception-handle",
+          "cita/ops/service-monitor"
         ]
       },
       {

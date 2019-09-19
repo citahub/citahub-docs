@@ -203,5 +203,5 @@ $ bin/cita help
 
 [CITA 命令说明]: ../commands
 [RPC 列表]: ../rpc-guide/rpc
-[合约的字节码]: ../hacking/contracts/solidity#获得合约的相关信息
-[调用 set 函数]: ../hacking/contracts/solidity#调用-set-函数
+[合约的字节码]: ../advanced-use/contracts/solidity#获得合约的相关信息
+[调用 set 函数]: ../advanced-use/contracts/solidity#调用-set-函数

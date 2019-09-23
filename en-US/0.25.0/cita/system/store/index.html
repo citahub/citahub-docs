@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>存证 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="简述
+"/><meta name="docsearch:version" content="0.25.0"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="存证 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="简述
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en-US"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en-US/versions"><h3>0.25.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en-US/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/cryptape/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/zh-CN/0.25.0/cita/system/store">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">存证</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="简述"></a><a href="#简述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>简述</h2>
+<p>存证功能是将 <strong>数据信息</strong> 通过交易的方式存储到区块链上。</p>
+<h3><a class="anchor" aria-hidden="true" id="账户信息"></a><a href="#账户信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>账户信息</h3>
+<p>账户地址为: <code>0xffffffffffffffffffffffffffffffffff010000</code></p>
+<p>注： CITA 系统会将所有发送至该账户地址的交易默认为 <strong>存证</strong> 交易。</p>
+<h2><a class="anchor" aria-hidden="true" id="操作示例"></a><a href="#操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作示例</h2>
+<p><em>首先需要启动一条链</em></p>
+<p>通过以下命令初始化一条链，生成配置文件：</p>
+<pre><code class="hljs css language-bash">$ bin/cita create \
+    --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> \
+    --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span>
+</code></pre>
+<p>启动链接下来的步骤见<a href="../getting-started">快速入门</a>部分。</p>
+<p>为了简化操作，以下将用 <a href="https://github.com/cryptape/cita-cli">cita-cli</a> 命令行模式进行演示。 所涉及的 JSON-RPC 接口，将在过程中做简要的说明，详细 JSON-RPC 说明，请参考 <a href="../rpc-guide/rpc.md">这里</a>。</p>
+<h3><a class="anchor" aria-hidden="true" id="发送数据存证交易"></a><a href="#发送数据存证交易" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>发送数据存证交易</h3>
+<p><em>使用默认私钥进行演示</em></p>
+<ul>
+<li>发送交易</li>
+</ul>
+<pre><code class="hljs css language-bash">store data --content 0x3474524832041587483261437874876510837787487658976141347658716817365465984753489650 --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xfeda91e7cd688d01838db6114126fa7e99d41dc96b009a3014e368d727628b1b"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<ul>
+<li>获取交易回执</li>
+</ul>
+<pre><code class="hljs css language-bash">rpc getTransactionReceipt --<span class="hljs-built_in">hash</span> 0xfeda91e7cd688d01838db6114126fa7e99d41dc96b009a3014e368d727628b1b
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xa2f815cd85d1c8957ee1864a5c2a16ceab65de9c20cdc39a2b092a357f9e6fd3"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x54f"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x7210"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"logs"</span>: [
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x7210"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xfeda91e7cd688d01838db6114126fa7e99d41dc96b009a3014e368d727628b1b"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<ul>
+<li><p>说明</p>
+<ul>
+<li>以上操作将数据 <code>0x3474524832041587483261437874876510837787487658976141347658716817365465984753489650</code> 以交易形式存储到了 区块链上；</li>
+<li>所存储的数据为 16 进制数据，应用层的数据需要用户自行转换与解析；</li>
+<li>其中使用的 JSON-RPC 为 <code>sendRawTransaction</code>；</li>
+<li>获取交易回执时，请使用实际交易 hash 获取。</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="查询存证内容"></a><a href="#查询存证内容" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询存证内容</h3>
+<p>存证数据实际上是以 <strong>交易</strong> 形式存储在区块链中；所以，查看存证内容实际上就是根据交易 hash 查看交易内容。</p>
+<ul>
+<li>查看交易内容</li>
+</ul>
+<pre><code class="hljs css language-bash">rpc getTransaction --<span class="hljs-built_in">hash</span> 0xfeda91e7cd688d01838db6114126fa7e99d41dc96b009a3014e368d727628b1b
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xa2f815cd85d1c8957ee1864a5c2a16ceab65de9c20cdc39a2b092a357f9e6fd3"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x54f"</span>,
+    <span class="hljs-attr">"content"</span>: <span class="hljs-string">"0x0ab101122064356565386436313239333634343735396462336265663561323132373366381880ade20420a50b2a2934745248320415874832614378748765108377874876589761413476587168173654659847534896503220000000000000000000000000000000000000000000000000000000000000000040014a14ffffffffffffffffffffffffffffffffff0100005220000000000000000000000000000000000000000000000000000000000000000112415c2b3ee0c4d42e34f64b315273ca043d2b4dd2067317dabb6c5c4c1423032408516e73bf1fcdcfb2a570f3d40f6a1a91c6eaa8cb2745f4b6c2acbc3937dc08e701"</span>,
+    <span class="hljs-attr">"from"</span>: <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span>,
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xfeda91e7cd688d01838db6114126fa7e99d41dc96b009a3014e368d727628b1b"</span>,
+    <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>交易中的 <code>content</code> 域是存证的数据，由于交易数据是签名后数据，需要进行相应的解析，才能看到所存储的原始数据。</p>
+<ul>
+<li>解析 content 数据</li>
+</ul>
+<pre><code class="hljs css language-bash">tx decode-unverifiedTransaction --content 0x0ab101122064356565386436313239333634343735396462336265663561323132373366381880ade20420a50b2a2934745248320415874832614378748765108377874876589761413476587168173654659847534896503220000000000000000000000000000000000000000000000000000000000000000040014a14ffffffffffffffffffffffffffffffffff0100005220000000000000000000000000000000000000000000000000000000000000000112415c2b3ee0c4d42e34f64b315273ca043d2b4dd2067317dabb6c5c4c1423032408516e73bf1fcdcfb2a570f3d40f6a1a91c6eaa8cb2745f4b6c2acbc3937dc08e701
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"crypto"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"signature"</span>: <span class="hljs-string">"0x5c2b3ee0c4d42e34f64b315273ca043d2b4dd2067317dabb6c5c4c1423032408516e73bf1fcdcfb2a570f3d40f6a1a91c6eaa8cb2745f4b6c2acbc3937dc08e701"</span>,
+  <span class="hljs-attr">"transaction"</span>: {
+    <span class="hljs-attr">"chain_id"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"chain_id_v1"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000001"</span>,
+    <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x3474524832041587483261437874876510837787487658976141347658716817365465984753489650"</span>,
+    <span class="hljs-attr">"encrypted_hash"</span>: <span class="hljs-string">"0x35630be9e9062c0cba0d59b9c9faa05389bceb1b0015db75c3852799d5b97b30"</span>,
+    <span class="hljs-attr">"nonce"</span>: <span class="hljs-string">"d5ee8d61293644759db3bef5a21273f8"</span>,
+    <span class="hljs-attr">"pub_key"</span>: <span class="hljs-string">"0xd2bdee2f7bbf540e1bef0a081f317bc8d99eb0777e6fd9e30cc1ddc220a17a0c2a18d56b4c1727149a2571a4ad25f1ff58f631c6a4ab3cd518d2fd695313acc2"</span>,
+    <span class="hljs-attr">"quota"</span>: <span class="hljs-number">10000000</span>,
+    <span class="hljs-attr">"sender"</span>: <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span>,
+    <span class="hljs-attr">"to"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"to_v1"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff010000"</span>,
+    <span class="hljs-attr">"valid_until_block"</span>: <span class="hljs-number">1445</span>,
+    <span class="hljs-attr">"value"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"version"</span>: <span class="hljs-number">1</span>
+  }
+}
+</code></pre>
+<p>其中，解析后的 <code>data</code> 域正是上文存证的原始数据。</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#简述">简述</a><ul class="toc-headings"><li><a href="#账户信息">账户信息</a></li></ul></li><li><a href="#操作示例">操作示例</a><ul class="toc-headings"><li><a href="#发送数据存证交易">发送数据存证交易</a></li><li><a href="#查询存证内容">查询存证内容</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en-US","version:0.25.0"]}
+              });
+            </script></body></html>

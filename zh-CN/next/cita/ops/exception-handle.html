@@ -1,4 +1,10 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>异常排查 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="CITAHub 文档"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="异常排查 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="CITAHub 文档"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>异常排查 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="
+不出块排查
+
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="异常排查 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="
+不出块排查
+
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
         document.addEventListener('DOMContentLoaded', function() {
           addBackToTop(
             {"zIndex":100}
@@ -73,7 +79,45 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">异常排查</h1></header><article><div><span></span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/ops/log"><span class="arrow-prev">← </span><span>日志管理</span></a><a class="docs-next button" href="/zh-CN/next/cita/ops/service-monitor"><span>服务监控</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">异常排查</h1></header><article><div><span><ol>
+<li>不出块排查</li>
+</ol>
+<ul>
+<li>查看进程是否存活，确保单节点有 7 个进程</li>
+</ul>
+<pre><code class="hljs css language-shell">bin/cita top test-chain/0
+</code></pre>
+<p>其中 <code>test-chain/0</code> 为节点名称。</p>
+<p>返回结果：</p>
+<pre><code class="hljs css language-shell">7
+cita 6180 32335 0 10:54 ? 00:00:00 cita-forever
+cita 6188 6180 0 10:54 ? 00:00:00 cita-auth -c auth.toml
+cita 6191 6180 0 10:54 ? 00:00:00 cita-network -c network.toml
+cita 6193 6180 0 10:54 ? 00:00:00 cita-jsonrpc -c jsonrpc.toml
+cita 6194 6180 0 10:54 ? 00:00:00 cita-executor -c executor.toml
+cita 6195 6180 0 10:54 ? 00:00:00 cita-chain -c chain.toml
+cita 6202 6180 0 10:54 ? 00:00:00 cita-bft -c consensus.toml -p privkey
+</code></pre>
+<ul>
+<li>查看日志是否有异常输出 （逐个应用排查）</li>
+</ul>
+<pre><code class="hljs css language-shell">bin/cita logs test-chain/0 bft
+</code></pre>
+<p>其中 <code>bft</code> 为服务名称。</p>
+<ul>
+<li>使用 <a href="../rpc-guide/rpc#peersinfo">peersInfo</a> 接口查看节点间是否互通</li>
+</ul>
+<pre><code class="hljs css language-shell">&lt;br /&gt;$ curl -X POST --data '{"jsonrpc":"2.0","method":"peersInfo","params":[],"id":83}' 127.0.0.1:1337 | jq
+</code></pre>
+<ol start="2">
+<li>开启详细日志输出（参见<a href="./log">日志管理</a>）：</li>
+</ol>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita restart <span class="hljs-built_in">test</span>-chain/0 trace</span>
+</code></pre>
+<ol start="3">
+<li>使用<a href="https://github.com/cryptape/cita-op-helper">运维工具</a>收集 CITA 运行异常时的错误信息，方便技术人员排查问题</li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/ops/log"><span class="arrow-prev">← </span><span>日志管理</span></a><a class="docs-next button" href="/zh-CN/next/cita/ops/service-monitor"><span>服务监控</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

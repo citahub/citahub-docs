@@ -33,7 +33,7 @@ cita-cli rpc sendRawTransaction \
     --private-key 0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002
 ```
 
-该命令将 [合约的字节码](../hacking/contracts/solidity#获得合约的相关信息) 部署到区块链上。
+该命令将 [合约的字节码](../advanced-use/contracts/solidity#获得合约的相关信息) 部署到区块链上。
 
 命令返回：
 
@@ -144,7 +144,7 @@ cita-cli tx decode-unverifiedTransaction --content 0x0af002122038306335313266393
 
 ## 调用合约
 
-执行命令，[调用 set 函数](../hacking/contracts/solidity#调用-set-函数) :
+执行命令，[调用 set 函数](../advanced-use/contracts/solidity#调用-set-函数) :
 
 ```shell
 cita-cli rpc sendRawTransaction \

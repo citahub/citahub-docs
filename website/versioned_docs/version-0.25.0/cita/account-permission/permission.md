@@ -391,7 +391,7 @@ $ cita-cli scm Authorization queryPermissions \
 
 可以看出结果已经是 1 了。
 
-[已使用地址列表]: ../ref/addresses#已使用地址列表
+[已使用地址列表]: ../addresses#已使用地址列表
 [权限系统接口]: ../system-contract-interface/permission-management
 [权限系统操作示例]: ./permission-example
 [测试合约]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol

@@ -390,13 +390,13 @@ $ cita-cli scm Authorization queryPermissions \
 
 可以看出结果已经是 1 了。
 
-[已使用地址列表]: ../ref/addresses#已使用地址列表
-[权限系统接口]: ../system-contract-interface/permission-management
+[已使用地址列表]: ../addresses#已使用地址列表
+[权限系统接口]: ../system-contract-interface/interface#newpermission
 [权限系统操作示例]: ./permission-example
 [测试合约]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol
-[生成账户]: ../contracts/solidity
-[调用合约]: ../contracts/solidity#调用
+[生成账户]: ../advanced-use/contracts/solidity
+[调用合约]: ../advanced-use/contracts/solidity#调用
 [账户概述]: ./account#账户概述
 [运行 CITA]: ../getting-started/run-cita
-[部署合约]: ../contracts/solidity#部署
+[部署合约]: ../advanced-use/contracts/solidity#部署
 [链级配置]: ../configuration-guide/chain-config

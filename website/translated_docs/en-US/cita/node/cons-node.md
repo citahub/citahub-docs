@@ -3,7 +3,7 @@ id: cons-node
 title: 共识节点管理
 ---
 
-CITA 采用[共识节点管理系统合约](../system-contract-interface/node)来实现共识节点的管理，通过区块链上的合约可以保证共识节点的安全性及一致性。
+CITA 采用[共识节点管理系统合约](../system-contract-interface/interface#interface#approveNode)来实现共识节点的管理，通过区块链上的合约可以保证共识节点的安全性及一致性。
 
 在 CITA 初始化创世块阶段，需要初始化一个超级管理员地址，其拥有超级管理员角色，将其写入到每个节点的创世块文件中，共识节点管理合约拥有的一个固定地址也写入其中。创世块内容在初始化以后不允许被修改。区块链正常启动之后，将合约写入到创世块中。链外的操作人员可以通过调用 RPC 接口来实现对共识节点的管理。
 
@@ -272,4 +272,4 @@ CITA 作为许可链共识节点采用轮流出块的方式进行出块。作为
 
 出块权重按照每个出块节点所占的千分比进行分配，对于小数部分采用的 [Largest_remainder_method](https://en.wikipedia.org/wiki/Largest_remainder_method) 算法进行分配。 每次出块时，查询共识节点的权重，根据权重计算出每个节点在 1000 个块中可以出的块个数，这 1000 个块算为一个 epoch，再将这1000个块出块顺序以创世块的时间戳为种子进行随机排序。 如果在同一个 epoch 中出块节点列表和权重没有变化，共识将会按照此顺序进行出块；如果节点列表和权重有变化，将按照新的顺序进行出块。
 
-[setStake 接口](https://docs.citahub.com/zh-CN/0.23.0/cita/system-contract-interface/node#setstake) 可对共识节点出块权重进行配置。 [stakepermillage 接口](https://docs.citahub.com/zh-CN/cita/sys-contract-interface/interface#stakepermillage) 可查询共识节点出块权重千分比（目前只对 Charge 模型开放）。
+[setStake 接口](https://docs.citahub.com/zh-CN/0.23.0/cita/system-contract-interface/interface#setstake) 可对共识节点出块权重进行配置。 [stakepermillage 接口](https://docs.citahub.com/zh-CN/cita/sys-contract-interface/interface#stakepermillage) 可查询共识节点出块权重千分比（目前只对 Charge 模型开放）。

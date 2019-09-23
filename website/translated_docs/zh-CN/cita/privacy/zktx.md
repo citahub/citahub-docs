@@ -39,7 +39,7 @@ cd zktx_example && cargo run --release --bin gen_params
 
 #### 编译 `CITA`
 
-详细信息可查看 [编译 CITA](../hacking/compile-cita) 文档，如下操作：
+详细信息可查看 [编译 CITA](../install#cita-源码编译部署) 文档，如下操作：
 
 ```shell
 ./env.sh make

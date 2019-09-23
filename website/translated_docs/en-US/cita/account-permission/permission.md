@@ -33,7 +33,7 @@ CITA 的权限系统对用户的操作进行控制，并支持基于角色的权
 * 授予权限： 授予账户权限
 * 取消授权： 撤销对目标账户某种权限
 
-具体接口定义可查看[权限系统接口](../system-contract-interface/permission-management)。
+具体接口定义可查看[权限系统接口](../system-contract-interface/interface#newpermission)。
 
 ## 权限系统配置
 
@@ -80,7 +80,7 @@ CITA 在起链的时候可以对权限系统进行配置，默认是关闭的（
 | `quotaPrice`       | 表示设置 quotaPrice 权限 |
 | `version`          | 表示设置版本权限           |
 
-对应地址信息可查看[已使用地址列表](../ref/addresses#已使用地址列表)。
+对应地址信息可查看[已使用地址列表](../addresses#已使用地址列表)。
 
 ## 操作示例
 
@@ -99,7 +99,7 @@ $ bin/cita create \
 
 ### 生成普通账户
 
-参考[生成账户](../contracts/solidity)。
+参考[生成账户](../advanced-use/contracts/solidity)。
 
 ### 部署合约
 
@@ -197,7 +197,7 @@ $ cita-cli rpc getTransactionReceipt \
 
 #### 部署合约
 
-参考[部署合约](../contracts/solidity#部署)。
+参考[部署合约](../advanced-use/contracts/solidity#部署)。
 
 如果用户想要调用测试合约的接口，需要根据接口生成一个新的权限，然后由 admin 把权限赋予用户。
 
@@ -385,6 +385,6 @@ $ cita-cli scm Authorization queryPermissions \
 
 ### 调用测试合约
 
-参考[调用合约](../contracts/solidity#调用)，查看是否调用成功。
+参考[调用合约](../advanced-use/contracts/solidity#调用)，查看是否调用成功。
 
 可以看出结果已经是 1 了。

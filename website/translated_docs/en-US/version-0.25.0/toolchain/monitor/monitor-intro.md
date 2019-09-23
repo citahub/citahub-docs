@@ -30,7 +30,7 @@ Rabbitmq Dashboard Demo ![rabbitmq-dashboard-demo-fs8](https://user-images.githu
 * 运行环境监控 
   * 主机运行环境的系统负载、CPU、内存、磁盘空间使用情况、网络流量、TCP 连接数等
 * 故障告警通知 
-  * [监控告警策略](https://github.com/cryptape/cita-monitor/tree/master/docs/alert_strategies.md)
+  * [监控告警策略](https://github.com/cryptape/cita-monitor/blob/master/docs/alert_strategies.md)
   * 支持邮件通知、Slack 通知、短信通知（Pro 版）
 * 节点网络监控（Pro 版） 
   * 连接节点数、网络拓扑、地理位置等

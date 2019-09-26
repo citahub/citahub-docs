@@ -29,17 +29,17 @@ Version: 0.4.24+commit.e67f0147.Linux.g++
   $ ./env.sh solc --version
   ```
 
-本文档使用[ 测试合约 ]来演示合约在 CITA 上的部署和调用过程。
+本文档使用[测试合约]来演示合约在 CITA 上的部署和调用过程。
 
 ## 准备工作
 
 ### 起链
 
-查看[ 快速入门 ]启动一条链。
+查看[快速入门]启动一条链。
 
 ### 生成账户
 
-使用 [ cita-cli ] 生成一个测试账户：
+使用 [cita-cli] 生成一个测试账户：
 
 ```shell
 $ cita-cli key create
@@ -239,5 +239,5 @@ $ cita-cli rpc call \
 [Solidity 官方文档]: https://solidity.readthedocs.io/en/v0.4.24/
 [Solidity 编译器安装]: https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html
 [cita-cli]: https://github.com/cryptape/cita-cli
-[快速入门]: ../getting-started
+[快速入门]: ../../getting-started/setup
 [测试合约]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol

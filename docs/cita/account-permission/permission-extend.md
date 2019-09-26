@@ -34,4 +34,4 @@ title: 权限系统插件
 * 对用户所在组的权限进行鉴定
 
 [权限系统]: ./permission
-[角色插件接口]: ../system-contract-interface/interface#newrole
+[角色插件接口]: ../sys-contract-interface/interface#newrole

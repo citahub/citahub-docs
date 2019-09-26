@@ -17,9 +17,10 @@ title: 紧急制动
 合约地址： `0xffffffffffffffffffffffffffffffffff02000f`
 
 接口签名如下：
+[紧急制动测试合约]
 
 ```
-======= emergency_brake.sol:EmergencyBrake =======
+======= EmergencyIntervention.sol:EmergencyIntervention =======
 ac9f0222: setState(bool)
 c19d93fb: state()
 ```
@@ -169,3 +170,4 @@ cita-cli scm EmergencyBrake state --url http://127.0.0.1:1337
   "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
 }
 ```
+[紧急制动测试合约]: https://github.com/cryptape/cita/blob/develop/scripts/contracts/src/system/EmergencyIntervention.sol

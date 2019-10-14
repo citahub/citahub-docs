@@ -52,6 +52,12 @@ title: 命令说明
 
   `--address`： 指定所添加新节点的地址。
 
+  `--enable_tls`: 是否开通节点间通讯加密。需要与链的其它节点保持一致，否则无法通信。
+
+  `--enable_version`: 是否使能 JSON-RPC 接口 `getVersion`　。
+
+  `--stdout`: 是否将 CITA 日志输出到标准输出。
+
   注意，当指定 `--address` 时，需要 **手工** 将 `address` 对应的 `privkey` 添加到生成后的节点目录下。
 
 * 使用场景

@@ -566,6 +566,40 @@ Result:
 
 * * *
 
+### estimateQuota
+
+估算一个调用合约交易的 quota 使用量。
+
+* 参数
+
+1. `CallRequest` - `Call` 请求对象，详见 `CallRequest` 的说明
+2. `BlockNumber` - 块高度
+
+* 返回值
+
+`Quantity` - 本次交易的 quota 估算值
+
+示例:
+
+Request:
+
+```shell
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"estimateQuota","params":[{"to": "0xb701924639d802dc8093d1a43dffa9939a4506de", "data": "0x13fb8817"}, "latest"],"id":1}'  127.0.0.1:1337 | jq
+```
+
+Result:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x0000000000000000000000000000000000000000000000000000000000007fc1"
+}
+
+```
+
+* * *
+
 ### getTransaction
 
 根据交易哈希查询交易。

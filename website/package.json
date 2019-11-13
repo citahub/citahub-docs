@@ -11,6 +11,6 @@
     "patches": "node ./scripts/patch-docusaurus.js"
   },
   "devDependencies": {
-    "docusaurus": "1.13.0"
+    "docusaurus": "1.7.2"
   }
 }

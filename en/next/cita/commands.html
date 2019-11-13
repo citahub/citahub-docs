@@ -105,6 +105,9 @@
 <p><code>--chain_name</code>： 指定所添加新节点的链名称。</p>
 <p><code>--node</code>： 指定所添加新节点的 IP:PORT 。</p>
 <p><code>--address</code>： 指定所添加新节点的地址。</p>
+<p><code>--enable_tls</code>: 是否开通节点间通讯加密。需要与链的其它节点保持一致，否则无法通信。</p>
+<p><code>--enable_version</code>: 是否使能 JSON-RPC 接口 <code>getVersion</code>　。</p>
+<p><code>--stdout</code>: 是否将 CITA 日志输出到标准输出。</p>
 <p>注意，当指定 <code>--address</code> 时，需要 <strong>手工</strong> 将 <code>address</code> 对应的 <code>privkey</code> 添加到生成后的节点目录下。</p></li>
 <li><p>使用场景</p>
 <p>区块链配置已经生成，需要新加入一个节点。</p></li>

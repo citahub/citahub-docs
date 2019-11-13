@@ -93,7 +93,7 @@
 </ul>
 <p>以下是一个智能合约部署的例子。
 通过 solc 生成智能合约的二进制文件，命令如下：</p>
-<pre><code class="hljs"><span class="hljs-variable">$solc</span> example<span class="hljs-selector-class">.sol</span> --bin
+<pre><code class="hljs"><span class="hljs-meta"><span class="hljs-meta-keyword">$solc</span> example.sol --bin</span>
 </code></pre>
 <p>根据生成的二进制文件和其他3个参数构造一个交易，代码如下：</p>
 <pre><code class="hljs">long currentHeight = current<span class="hljs-constructor">BlockNumber()</span>;
@@ -128,7 +128,7 @@ solidity 合约转化为 java 类操作如下：</p>
 <pre><code class="hljs">$ java -jar console-0.17-all.jar solidity generate [<span class="hljs-params">--javaTypes</span>|<span class="hljs-params">--solidityTypes</span>] <span class="hljs-string">/path/to/</span>{smart-contract}<span class="hljs-string">.bin</span> <span class="hljs-string">/path/to/</span>{smart-contract}<span class="hljs-string">.abi</span> -o <span class="hljs-string">/path/to/src/main/java</span> -p {package-path}
 </code></pre>
 <p>这个例子通过 <code>Token.sol</code>, <code>Token.bin</code> and <code>Token.abi</code> 这三个文件在 <code>tests/src/main/resources</code> 生成对应的 java 类，命令如下：</p>
-<pre><code class="hljs">`java -jar console/build/libs/console-<span class="hljs-number">0.17</span>-all<span class="hljs-selector-class">.jar</span> solidity generate tests/src/main/resources/Token<span class="hljs-selector-class">.bin</span> tests/src/main/resources/Token<span class="hljs-selector-class">.abi</span> -o tests/src/main/java/ -<span class="hljs-selector-tag">p</span> com<span class="hljs-selector-class">.cryptape</span><span class="hljs-selector-class">.cita</span><span class="hljs-selector-class">.tests</span>`
+<pre><code class="hljs">`java -jar console<span class="hljs-meta-keyword">/build/</span>libs/console<span class="hljs-number">-0.17</span>-all.jar solidity generate tests<span class="hljs-meta-keyword">/src/</span>main<span class="hljs-meta-keyword">/resources/</span>Token.bin tests<span class="hljs-meta-keyword">/src/</span>main<span class="hljs-meta-keyword">/resources/</span>Token.abi -o tests<span class="hljs-meta-keyword">/src/</span>main<span class="hljs-meta-keyword">/java/</span> -p com.cryptape.cita.tests`
 </code></pre>
 <p><code>Token.java</code> 会通过以上命令生成， <code>Token</code> 可以与 <code>CitaTransactionManager</code> 一起使用来和 Token 合约交互。</p>
 <h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h2>

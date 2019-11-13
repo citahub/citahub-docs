@@ -108,9 +108,9 @@ cita-sdk-js 用 lerna 作为包管理，主要包含 3 个模块：Signer 签名
 RPC 请求构造如下：</p>
 <pre><code class="hljs"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getBlockByNumber = {
   <span class="hljs-attr">name</span>: <span class="hljs-string">'getBlockByNumber'</span>,   <span class="hljs-comment">//函数名称</span>
-  call: <span class="hljs-string">'getBlockByNumber'</span>,   <span class="hljs-comment">//RPC名称</span>
-  params: <span class="hljs-number">2</span>,                  <span class="hljs-comment">//规定参数个数和参数预处理</span>
-  inputFormatter: [
+  <span class="hljs-attr">call</span>: <span class="hljs-string">'getBlockByNumber'</span>,   <span class="hljs-comment">//RPC名称</span>
+  <span class="hljs-attr">params</span>: <span class="hljs-number">2</span>,                  <span class="hljs-comment">//规定参数个数和参数预处理</span>
+  <span class="hljs-attr">inputFormatter</span>: [
     formatters.inputBlockNumberFormatter,
     <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val: any</span>) </span>{
       <span class="hljs-keyword">return</span> !!val

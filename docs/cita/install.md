@@ -68,9 +68,9 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 > 可选择替换 Rust Crates 的官方源，详细教程可以参考：
 >
-> - [USTC Mirror Help for Rust Crates]
-> - [Source Replacement for Rust Crates]
-> - [How to map a configuration file into docker]
+> - [USTC Mirror Help for Rust Crates](http://mirrors.ustc.edu.cn/help/crates.io-index.html)
+> - [Source Replacement for Rust Crates](https://doc.rust-lang.org/cargo/reference/source-replacement.html)
+> - [How to map a configuration file into docker](https://docs.docker.com/storage/volumes/)
 
 > **Docker env 使用说明**
 >
@@ -81,7 +81,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 >   ```shell
 >   $ ./env.sh make debug
 >   ```
->   
+>
 > * 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
 > * 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误，因此要保证操作使用的始终是同一个系统用户。
 >
@@ -97,10 +97,6 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 >   ```
 >
 
-[USTC Mirror Help for Rust Crates]: (http://mirrors.ustc.edu.cn/help/crates.io-index.html)
-[Source Replacement for Rust Crates]: (https://doc.rust-lang.org/cargo/reference/source-replacement.html)
-[How to map a configuration file into docker]: (https://docs.docker.com/storage/volumes/)
-
 <!--分布式部署-->
 
 ### CITA 分布式部署
@@ -112,14 +108,14 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    ```shell
    $ bin/cita create —super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" —nodes "192.168.1.100:4000,192.168.1.101:4000,192.168.1.102:4000,192.168.1.103:4000"
    ```
-   
+
 2. 在 4 台服务器上创建目录
-   
+
    ```shell
    $ mkdir -p /data/cita/
    ```
-   
-3. 将生成的节点拷贝到所有主机  
+
+3. 将生成的节点拷贝到所有主机
 
    ```shell
    $ scp -r cita_secp256k1_sha3 192.168.1.100:/data/cita/
@@ -127,54 +123,54 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    $ scp -r cita_secp256k1_sha3 192.168.1.102:/data/cita/
    $ scp -r cita_secp256k1_sha3 192.168.1.103:/data/cita/
    ```
-   
+
 4. 启动节点，需要登录到各节点服务器启动对应节点
-   
+
    节点对应关系：
-   
+
    * node0-192.168.1.100
    * node1-192.168.1.101
    * node3-192.168.1.103
    * node2-192.168.1.102
-   
+
    启动节点 0
-   
+
    ```shell
    $ ssh root@192.168.1.100
    $ cd /data/cita/
    $ ./bin/cita setup test-chain/0
    $ ./bin/cita start test-chain/0
    ```
-    
+
    启动节点 1
-   
+
    ```shell
    $ ssh root@192.168.1.101
    $ cd /data/cita/
    $ ./bin/cita setup test-chain/1
    $ ./bin/cita start test-chain/1
    ```
-    
+
    启动节点 2
-   
+
    ```shell
    $ ssh root@192.168.1.102
    $ cd /data/cita/
    $ ./bin/cita setup test-chain/2
    $ ./bin/cita start test-chain/2
    ```
-    
+
    启动节点 3
-   
+
    ```shell
    $ ssh root@192.168.1.103
    $ cd /data/cita/
    $ ./bin/cita setup test-chain/3
    $ ./bin/cita start test-chain/3
    ```
-    
+
 5. 验证操作与单机部署相同，区别在与返回的结果只会显示当前节点进程数信息
-   
+
    ```
    7
    cita      6180 32335  0 10:54 ?        00:00:00 cita-forever

@@ -18,7 +18,7 @@ Charge 模式，链上是存在原生代币的，运营方不仅可以对原生�
 设置链的代币总量为 10_000_000_000 (0x2540BE400):
 
 ```shell
-$ bin/cita bebop create --init_token 0x2540BE400 --contract_arguments SysConfig.economicalModel=1 --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+$ bin/cita create --init_token 0x2540BE400 --contract_arguments SysConfig.economicalModel=1 --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
 ```
 
 ## 代币分发方式

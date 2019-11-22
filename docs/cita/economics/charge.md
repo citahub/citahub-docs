@@ -26,7 +26,6 @@ $ bin/cita create --init_token 0x2540BE400 --contract_arguments SysConfig.econom
 CITA 提供灵活的分发方式，以适配多样的业务需求:
 
 * 超级管理员可以通过发交易的方式进行分配；
-* 也可以使用我们提供的[水龙头工具](https://github.com/cryptape/testnet-faucet-mri)，让用户自己领取代币；
 * 也可以采用类似挖矿奖励的方式分发。CITA 采用了[系统自动执行合约](https://docs.citahub.com/zh-CN/cita/system/auto-exec)的机制，可以实现每区块自动执行一个代币分发合约，向相关节点分发奖励。运营方可以在创世块创建足够多的系统代币，锁定到一个激励合约，并在激励合约中编写按照选举合约结果分发出块奖励的命令。
 
 注意：Charge 模型下，矿工默认是只有交易手续费作为激励，若需要出块激励，则需要在上层用合约实现第 3 种分发方式设置出块奖励。

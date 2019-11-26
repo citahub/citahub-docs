@@ -130,8 +130,8 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
    * node0-192.168.1.100
    * node1-192.168.1.101
-   * node3-192.168.1.103
    * node2-192.168.1.102
+   * node3-192.168.1.103
 
    启动节点 0
 
@@ -293,9 +293,13 @@ docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/
 
 参考 [docker-compose 安装说明] 来安装 docker-compose.
 
+[docker-compose 安装说明]: https://docs.docker.com/compose/install/
+
 #### 准备 docker-compose.yml
 
 [docker-compose Demo] 是一个启动两个 CITA 节点的样例。
+
+[docker-compose Demo]: https://github.com/cryptape/cita/blob/develop/docker/sample/docker-compose.yml
 
 #### 启动 CITA
 
@@ -306,10 +310,10 @@ USER_ID=`id -u $USER` docker-compose up
 #### 验证
 同上文描述。
 
-[RPC 调用]: ../rpc-guide/rpc
-[链级配置]: ../configuration-guide/chain-config
-[docker-compose 安装说明]: https://docs.docker.com/compose/install/
-[docker-compose Demo]: https://github.com/cryptape/cita/blob/develop/docker/sample/docker-compose.yml
+[RPC 调用]: ../cita/rpc-guide/rpc
+[链级配置]: ../cita/configuration-guide/chain-config
+
+
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 

@@ -31,8 +31,8 @@ CITA 的节点发现机制通过 [network 网络配置] 中的 `enable_discovery
      0  1  2  3  4  template
    ```
 
-   - append 子命令，在指定链中增加对应 ip 地址的节点
-   - 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置
+   - append 子命令，在指定链中增加对应 ip 地址的节点。
+   - 脚本将自动生成 4 号节点，并在原有节点中 `test-chain/*/network.toml` 中插入新节点的 ip 及端口配置。
 
 3. 启动新节点：
 

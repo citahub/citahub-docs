@@ -54,7 +54,7 @@ Function signatures:
 * `autoExec()`： 为自动执行的入口，实现对 x 加一
 * `x()`： 表示获取x数值
 
-接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 
 ### 部署测试合约
@@ -234,7 +234,7 @@ $ cita-cli rpc call \
 
 数值变为 26，自动执行生效，自动执行结果会随着块高的增加而增加。
 
- [IAutoExec.sol]: https://github.com/cryptape/cita-sys-interaction/blob/master/interface/IAutoExec.sol
-[cita-cli]: https://github.com/cryptape/cita-cli
-[测试合约]: https://github.com/cryptape/test-contracts/blob/master/AutoExec.sol
+ [IAutoExec.sol]: https://github.com/citahub/cita-sys-interaction/blob/master/interface/IAutoExec.sol
+[cita-cli]: https://github.com/citahub/cita-cli
+[测试合约]: https://github.com/citahub/test-contracts/blob/master/AutoExec.sol
 [运行 CITA]: ../getting-started/run-cita

@@ -1113,7 +1113,7 @@ Result:
         "economicalModel": 1,
         "genesisTimestamp": 1541058686340,
         "operator": "test-operator",
-        "tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+        "tokenAvatar": "https://cdn.citahub.com/icon_cita.png",
         "tokenName": "CITA Test Token",
         "tokenSymbol": "CTT",
         "validators": [
@@ -1229,6 +1229,6 @@ Result:
 [How-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser]: https://ethereum.stackexchange.com/questions/8115/how-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser
 [Ethereum Contract ABI]: https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI
 [Solidity docs]: https://solidity.readthedocs.io/en/develop/
-[Test contract]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol
+[Test contract]: https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol
 [链级配置]: ../configuration-guide/chain-config
 [基础配额]: ../faq#什么是交易的基础配额

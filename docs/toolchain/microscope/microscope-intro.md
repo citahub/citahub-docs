@@ -8,7 +8,7 @@ Microscope 区块链浏览器，可用于查询所有 CITA 链上信息，并支
 
 ## 开发&用户手册
 
-https://github.com/citahub/microscope/blob/develop/README-CN.md
+https://github.com/citahub/microscope-v2/blob/develop/README-CN.md
 
 ## 项目结构
 
@@ -29,7 +29,7 @@ https://github.com/citahub/microscope/blob/develop/README-CN.md
 
 ## 期待协作
 
-https://github.com/citahub/microscope/issues
+https://github.com/citahub/microscope-v2/issues
 
 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea
 

@@ -112,16 +112,16 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 2. 在 4 台服务器上创建目录
 
    ```shell
-   $ mkdir -p /data/cita/
+   $ mkdir -p /data/cita
    ```
 
 3. 将生成的节点拷贝到所有主机
 
    ```shell
-   $ scp -r cita_secp256k1_sha3 192.168.1.100:/data/cita/
-   $ scp -r cita_secp256k1_sha3 192.168.1.101:/data/cita/
-   $ scp -r cita_secp256k1_sha3 192.168.1.102:/data/cita/
-   $ scp -r cita_secp256k1_sha3 192.168.1.103:/data/cita/
+   $ scp -r cita_secp256k1_sha3 192.168.1.100:/data/cita
+   $ scp -r cita_secp256k1_sha3 192.168.1.101:/data/cita
+   $ scp -r cita_secp256k1_sha3 192.168.1.102:/data/cita
+   $ scp -r cita_secp256k1_sha3 192.168.1.103:/data/cita
    ```
 
 4. 启动节点，需要登录到各节点服务器启动对应节点
@@ -137,7 +137,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
    ```shell
    $ ssh root@192.168.1.100
-   $ cd /data/cita/
+   $ cd /data/cita/cita_secp256k1_sha3
    $ ./bin/cita setup test-chain/0
    $ ./bin/cita start test-chain/0
    ```
@@ -146,7 +146,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
    ```shell
    $ ssh root@192.168.1.101
-   $ cd /data/cita/
+   $ cd /data/cita/cita_secp256k1_sha3
    $ ./bin/cita setup test-chain/1
    $ ./bin/cita start test-chain/1
    ```
@@ -155,7 +155,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
    ```shell
    $ ssh root@192.168.1.102
-   $ cd /data/cita/
+   $ cd /data/cita/cita_secp256k1_sha3
    $ ./bin/cita setup test-chain/2
    $ ./bin/cita start test-chain/2
    ```
@@ -164,7 +164,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
    ```shell
    $ ssh root@192.168.1.103
-   $ cd /data/cita/
+   $ cd /data/cita/cita_secp256k1_sha3
    $ ./bin/cita setup test-chain/3
    $ ./bin/cita start test-chain/3
    ```

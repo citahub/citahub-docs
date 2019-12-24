@@ -17,4 +17,4 @@ CITA 支持三种算法的组合（分别为加密算法和散列算法）：
 [sha3]: https://en.wikipedia.org/wiki/SHA-3
 [sm2]: https://zh.wikipedia.org/wiki/SM2
 [sm3]: https://zh.wikipedia.org/wiki/SM3
-[发布件]: https://github.com/cryptape/cita/releases
+[发布件]: https://github.com/citahub/cita/releases

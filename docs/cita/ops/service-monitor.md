@@ -7,6 +7,6 @@ title: 服务监控
 2. 使用开源解决方案 [Zabbix]、[Prometheus]
 3. 针对 CITA 的开源监控系统 [CITA-Monitor]
 
-[CITA-Monitor]: https://github.com/cryptape/cita-monitor
+[CITA-Monitor]: https://github.com/citahub/cita-monitor
 [Prometheus]: https://github.com/prometheus/prometheus
 [Zabbix]: https://github.com/zabbix/zabbix

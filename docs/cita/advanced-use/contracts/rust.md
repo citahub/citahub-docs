@@ -164,7 +164,7 @@ self.balance
 Ok(InterpreterResult::Normal(self.output.clone(), 100, vec![]))
 ```
 
-查看 [这里](https://github.com/cryptape/test-contracts/blob/master/hello.rs) 阅读合约的完整代码。
+查看 [这里](https://github.com/citahub/test-contracts/blob/master/hello.rs) 阅读合约的完整代码。
 
 ## 注册合约地址
 
@@ -295,6 +295,6 @@ rpc call --to 0x0000000000000000000000000000000000000500 --data 0x832b4580
 
 符合我们编写的智能合约预期。
 
-[CITA 源码库]: https://github.com/cryptape/cita
+[CITA 源码库]: https://github.com/citahub/cita
 [JSON-RPC]: https://docs.citahub.com/zh-CN/next/cita/rpc-guide/rpc
-[cita-cli]: https://github.com/cryptape/cita-cli
+[cita-cli]: https://github.com/citahub/cita-cli

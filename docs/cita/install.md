@@ -40,7 +40,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
 
    ```shell
-   $ git clone https://github.com/cryptape/cita.git
+   $ git clone https://github.com/citahub/cita.git
    $ cd cita
    $ git submodule init
    $ git submodule update
@@ -299,7 +299,7 @@ docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/
 
 [docker-compose Demo] 是一个启动两个 CITA 节点的样例。
 
-[docker-compose Demo]: https://github.com/cryptape/cita/blob/develop/docker/sample/docker-compose.yml
+[docker-compose Demo]: https://github.com/citahub/cita/blob/develop/docker/sample/docker-compose.yml
 
 #### 启动 CITA
 

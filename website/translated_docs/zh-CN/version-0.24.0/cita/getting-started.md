@@ -13,7 +13,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
 
-如果你使用的是 MacOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA。
+如果你使用的是 macOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA。
 
 ## 硬件配置建议
 
@@ -106,7 +106,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ## 配置 CITA
 
-初始化链 （super_admin 地址是超级管理员账号即 CITA-CLI 生成，--nodes 是要部署的节点地址（IP:Port），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））
+初始化链 （super_admin 地址是超级管理员账号即 CITA-CLI 生成，--nodes 是要部署的节点地址（IP:PORT），RPC 端口从 1337 开始 递增；4个节点（1337、1338、1339、1340））
 
 ```shell
 $ bin/cita create --super_admin "0x141d051b1b1922bf686f5df8aad45cefbcb0b696" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"

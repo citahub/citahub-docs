@@ -127,7 +127,7 @@ update 方法中的参数 `amount` 需要从 `params` 中解析：
 let amount = U256::from(data.get(4..36).expect("no enough data"));
 ```
 
-#### 更新 balbance
+#### 更新 balance
 
 实现 `balance += amount`，如下：
 
@@ -212,7 +212,7 @@ $ rpc sendRawTransaction \
 关键信息简释：
 
 * code: 前 4 个 bytes 为函数签名，后 32 bytes 为 update 参数。相当于执行 `HelloWorld.update(11)`
-* addrss: 前文注册的合约地址
+* address: 前文注册的合约地址
 * private-key: 发交易需要的私钥
 
 返回：

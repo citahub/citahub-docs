@@ -41,7 +41,7 @@ original_id: setup
    $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-musl-tls-0.19.6.tar.gz
    ```
 
-> 注：这里所下载的是 CITA-CLI 是 linux 系统下的二进制发布包，如果你使用 MacOS，请按以下命令下载对应系统的 CITA-CLI：
+> 注：这里所下载的是 CITA-CLI 是 Linux 系统下的二进制发布包，如果你使用 macOS，请按以下命令下载对应系统的 CITA-CLI：
 > 
 > $ wget https://github.com/cryptape/cita-cli/releases/download/0.19.6/cita-cli-x86_64-mac-osx-tls-0.19.6.tar.gz 
 

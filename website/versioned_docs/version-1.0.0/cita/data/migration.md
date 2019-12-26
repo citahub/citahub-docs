@@ -60,7 +60,7 @@ original_id: migration
 3. 修改配置 （所有节点network.toml 配置中节点IP都需要变更）
 
    ```
-   $ cd /data/cita/`cita_secp256k1_sha3
+   $ cd /data/cita/cita_secp256k1_sha3
    $ sed -i “s/192.168.1.104/192.168.1.105/g”  test-chain/0/network.toml
    ```
 

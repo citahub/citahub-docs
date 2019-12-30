@@ -10,7 +10,7 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
             {"zIndex":100}
           )
         });
-        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/cryptape/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/rpc-guide/rpc">English</a></li><li><a href="/zh-CN/next/cita/rpc-guide/rpc">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/citahub/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/rpc-guide/rpc">English</a></li><li><a href="/zh-CN/next/cita/rpc-guide/rpc">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
         const languagesMenuItem = document.getElementById("languages-menu");
         const languagesDropDown = document.getElementById("languages-dropdown");
         languagesMenuItem.addEventListener("click", function(event) {
@@ -79,7 +79,7 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/cryptape/edit/master/docs/cita/rpc-guide/rpc.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">JSON-RPC 列表</h1></header><article><div><span><blockquote>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/citahub/edit/master/docs/cita/rpc-guide/rpc.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">JSON-RPC 列表</h1></header><article><div><span><blockquote>
 <p><strong>Methods Name Changed ！</strong> For the user of V0.16 and older versions: Please pay attention that we deprecated the pre-fix in the name of JSON-RPC interfaces, which makes it looks more tidy and easier to use.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="json-rpc"></a><a href="#json-rpc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON-RPC</h2>
@@ -696,7 +696,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>构造交易 <code>data</code>，前 20 字节为合约地址，后面字节为 <code>abi</code> 的编码成的。</li>
 <li>发送交易，使用 <code>sendRawTransaction</code> 接口。</li>
 </ol>
-<p>以 <a href="https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol">Test contract</a> 作为示例:</p>
+<p>以 <a href="https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol">Test contract</a> 作为示例:</p>
 <ul>
 <li>链上部署该合约，得到合约地址</li>
 <li>首先可以通过 <code>solc</code> 得到合约的<code>ABI</code></li>
@@ -973,7 +973,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
         <span class="hljs-attr">"economicalModel"</span>: <span class="hljs-number">1</span>,
         <span class="hljs-attr">"genesisTimestamp"</span>: <span class="hljs-number">1541058686340</span>,
         <span class="hljs-attr">"operator"</span>: <span class="hljs-string">"test-operator"</span>,
-        <span class="hljs-attr">"tokenAvatar"</span>: <span class="hljs-string">"https://cdn.cryptape.com/icon_cita.png"</span>,
+        <span class="hljs-attr">"tokenAvatar"</span>: <span class="hljs-string">"https://cdn.citahub.com/icon_cita.png"</span>,
         <span class="hljs-attr">"tokenName"</span>: <span class="hljs-string">"CITA Test Token"</span>,
         <span class="hljs-attr">"tokenSymbol"</span>: <span class="hljs-string">"CTT"</span>,
         <span class="hljs-attr">"validators"</span>: [

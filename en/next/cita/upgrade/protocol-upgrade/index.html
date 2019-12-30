@@ -6,7 +6,7 @@
             {"zIndex":100}
           )
         });
-        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/cryptape/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/upgrade/protocol-upgrade">English</a></li><li><a href="/zh-CN/next/cita/upgrade/protocol-upgrade">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/citahub/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/upgrade/protocol-upgrade">English</a></li><li><a href="/zh-CN/next/cita/upgrade/protocol-upgrade">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
         const languagesMenuItem = document.getElementById("languages-menu");
         const languagesDropDown = document.getElementById("languages-dropdown");
         languagesMenuItem.addEventListener("click", function(event) {
@@ -75,10 +75,10 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/cryptape/edit/master/docs/cita/upgrade/protocol-upgrade.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">协议升级</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="流程说明"></a><a href="#流程说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>流程说明</h2>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/citahub/edit/master/docs/cita/upgrade/protocol-upgrade.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">协议升级</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="流程说明"></a><a href="#流程说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>流程说明</h2>
 <ol>
 <li><p>待所有节点按照 [软件升级说明] 升级 CITA 版本完成后，链的超级管理员根据下文中的 <strong>协议升级交易说明</strong> 发送交易，实施协议升级。</p></li>
-<li><p>普通用户需要将使用的工具以及 SDK 升级至支持新版本协议的版本, 这些内容也会在相关文档中详细描述。</p></li>
+<li><p>普通用户需要将使用的工具以及 SDK 升级至支持新版本协议的版本， 这些内容也会在相关文档中详细描述。</p></li>
 </ol>
 <blockquote>
 <p><strong>注意</strong></p>
@@ -91,10 +91,10 @@
 </ol>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="协议升级交易说明"></a><a href="#协议升级交易说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>协议升级交易说明</h2>
-<p>CITA 中内置了专门的 <code>version_manager</code> 合约，存放一个单调递增的协议版本号, 超级管理员发送交易变更版本号来, 激活硬分叉, 触发协议升级。</p>
+<p>CITA 中内置了专门的 <code>version_manager</code> 合约，存放一个单调递增的协议版本号， 超级管理员发送交易变更版本号来， 激活硬分叉， 触发协议升级。</p>
 <h3><a class="anchor" aria-hidden="true" id="操作示例"></a><a href="#操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作示例</h3>
 <blockquote>
-<p>接下来的测试，用 <a href="https://github.com/cryptape/cita-cli">cita-cli</a> 交互模式进行演示。</p>
+<p>接下来的测试，用 <a href="https://github.com/citahub/cita-cli">cita-cli</a> 交互模式进行演示。</p>
 </blockquote>
 <p>假设当前的协议版本号为 1， 接下来演示超级管理员如何修改协议版本号:</p>
 <p>确保你的链正常运行，并且拥有相应的权限，进入 cita-cli 交互式模式，输入命令：</p>
@@ -115,13 +115,13 @@
 <p>可以看到，协议版本号成功修改为 2。</p>
 <h2><a class="anchor" aria-hidden="true" id="完整升级示例"></a><a href="#完整升级示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>完整升级示例</h2>
 <ol>
-<li>假设现在有一条正在运营的四节点 CITA v0.19 的链，当前使用的协议版本为 v0, 每个节点对应一名运维人员, 共 4 名运维人员，还有一个超级管理员。</li>
-<li>CITA v0.20 正式发布后, v0.20 支持 v0/v1 两个版本的协议。</li>
+<li>假设现在有一条正在运营的四节点 CITA v0.19 的链，当前使用的协议版本为 v0， 每个节点对应一名运维人员， 共 4 名运维人员，还有一个超级管理员。</li>
+<li>CITA v0.20 正式发布后， v0.20 支持 v0/v1 两个版本的协议。</li>
 <li>链的超级管理员通知 4 个节点的运维人员，可以开始升级 CITA v0.20 了，限期 10 天。</li>
-<li>4 个运维人员在这 10 天里的任何时间对自己维护的节点实施 <code>软件升级</code> CITA v0.20 的操作。所以这段时间 4 个共识节点会存在 v0.19 和 v0.20 混用的情况。这种情况没有任何问题，过程中业务也不会中断, 此时使用的依然是 v0 协议。</li>
+<li>4 个运维人员在这 10 天里的任何时间对自己维护的节点实施 <code>软件升级</code> CITA v0.20 的操作。所以这段时间 4 个共识节点会存在 v0.19 和 v0.20 混用的情况。这种情况没有任何问题，过程中业务也不会中断， 此时使用的依然是 v0 协议。</li>
 <li>10 天的期限结束。4 个节点都升级到 CITA v0.20 了。</li>
 <li>超级管理员开启紧急制动功能, 链的业务暂停，只有超级管理员可以发交易上链。</li>
-<li>超级管理员发交易，升级系统合约。我们提供了脚本 <a href="https://github.com/cryptape/cita/blob/v0.20/scripts/amend_sys_cont_to_v0-20.sh">scripts/amend_sys_cont_to_v0-20.sh</a> 辅助完成这项工作。</li>
+<li>超级管理员发交易，升级系统合约。我们提供了脚本 <a href="https://github.com/citahub/cita/blob/v0.20/scripts/amend_sys_cont_to_v0-20.sh">scripts/amend_sys_cont_to_v0-20.sh</a> 辅助完成这项工作。</li>
 <li>超级管理员发送交易，将 <code>VersionManager</code> 系统合约中的 <code>version</code> 从 0 改为 1 ，完成 <code>协议升级</code>。</li>
 <li>超级管理员关闭紧急制动功能，链的业务恢复。</li>
 <li>至此，只有使用 v1 协议的交易才能发送上链，依然使用 v0 协议的交易，发送时将会返回错误。</li>
@@ -132,9 +132,9 @@
 <p>CITA 从 v0.19 开始提供兼容性保证。除了一些特殊的情况，之前的 CITA 版本之间都不保证兼容性。</p>
 <p>v0.19 之前的版本链升级 CITA 最新版本需要重新创建链，无法兼容链上的历史数据。v0 协议即 CITA v0.19 时实际使用的协议。</p>
 <h3><a class="anchor" aria-hidden="true" id="对应-release-版本"></a><a href="#对应-release-版本" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>对应 RELEASE 版本</h3>
-<p><a href="https://github.com/cryptape/cita/releases/tag/v0.19">v0.19</a> 及以上版本</p>
+<p><a href="https://github.com/citahub/cita/releases/tag/v0.19">v0.19</a> 及以上版本</p>
 <h3><a class="anchor" aria-hidden="true" id="协议变更"></a><a href="#协议变更" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>协议变更</h3>
-<p>参考 <a href="https://github.com/cryptape/cita/releases/tag/v0.19">v0.19</a></p>
+<p>参考 <a href="https://github.com/citahub/cita/releases/tag/v0.19">v0.19</a></p>
 <h3><a class="anchor" aria-hidden="true" id="注意"></a><a href="#注意" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>注意</h3>
 <p>交易中的 version 字段必须填 0(默认也是 0)。v0.19 并没有校验 version，填非 0 值也可以正常工作。 v0.20 增加了对 version 的校验。因此，如果用户之前发送过 version 不为 0 的交易，升级 v0.20 版本之后，查询这些交易或者新节点同步过程中可能会出现异常情况。可以通过快照方式解决，不影响协议升级操作。</p>
 </span></div></div><div class="tab-pane" data-group="group_16" tabindex="-1" id="tabpanel_18"><div><span><h3><a class="anchor" aria-hidden="true" id="v1-协议说明"></a><a href="#v1-协议说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>v1 协议说明</h3>
@@ -157,7 +157,7 @@
 <h3><a class="anchor" aria-hidden="true" id="实施协议升级"></a><a href="#实施协议升级" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实施协议升级</h3>
 <ol>
 <li>安排所有节点升级 CITA 版本至 v0.20 及以上版本。</li>
-<li>升级系统合约。 参数是 <code>Admin</code>, <code>private key</code>, <code>chain id</code>, <code>version</code>, <code>url</code>, 其中 <code>version</code> 指当前链协议版本号。</li>
+<li>升级系统合约。 参数是 <code>Admin</code>， <code>private key</code>， <code>chain id</code>， <code>version</code>， <code>url</code>， 其中 <code>version</code> 指当前链协议版本号。</li>
 </ol>
 <blockquote>
 <p>注意：这里的参数仅作为演示使用，请实际操作时替换为目标链的相应参数</p>
@@ -165,7 +165,7 @@
 <p>在 v0.20 及其子版本发布包中使用命令：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh scripts/amend_sys_cont_to_v0-20.sh 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 1 0 http://127.0.0.1:1337</span>
 </code></pre>
-<p>在 v0.21, v0.22 版本发布包中使用命令：</p>
+<p>在 v0.21， v0.22 版本发布包中使用命令：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh scripts/amend_system_contracts.sh 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 1 0 http://127.0.0.1:1337</span>
 </code></pre>
 <p>在 v0.23 及以上版本发布包中使用命令：</p>
@@ -187,27 +187,27 @@
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="注意"></a><a href="#注意" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>注意</h3>
 <ol>
-<li>原来的 <code>to</code> 字段和 <code>chain_id</code> 字段一定不能填，否则会有交易可变性问题, 协议升级之后有相关的检查，发现 <code>to</code> 字段和 <code>chain_id</code> 字段不为空就报错。</li>
+<li>原来的 <code>to</code> 字段和 <code>chain_id</code> 字段一定不能填，否则会有交易可变性问题， 协议升级之后有相关的检查，发现 <code>to</code> 字段和 <code>chain_id</code> 字段不为空就报错。</li>
 <li>因为跨链功能目前还没有正式使用，因此升级后相关工具将不再支持 v0 协议，只支持 v1 协议。</li>
 </ol>
 </span></div></div><div class="tab-pane" data-group="group_16" tabindex="-1" id="tabpanel_19"><div><span><h3><a class="anchor" aria-hidden="true" id="v2-协议说明"></a><a href="#v2-协议说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>v2 协议说明</h3>
 <p>v2 之前的版本存在两个问题:</p>
 <ol>
-<li>使用自动执行功能时, coinbase 是地址默认值, 并非共识节点地址.</li>
-<li>Charge 模型下, 对合约执行 <code>self-destruct</code> 操作, 合约账户余额无法返还给 <code>refund account</code>.</li>
+<li>使用自动执行功能时， coinbase 是地址默认值， 并非共识节点地址。</li>
+<li>Charge 模型下， 对合约执行 <code>self-destruct</code> 操作， 合约账户余额无法返还给 <code>refund account</code>。</li>
 </ol>
-<p>所以我们在协议版本 v2 修复了以上两个问题.</p>
+<p>所以我们在协议版本 v2 修复了以上两个问题。</p>
 <ol>
-<li>自动执行功能中的 <code>coinbase</code> 是该块对应的出块节点地址,</li>
-<li>对合约执行 <code>self-destruct</code> 操作后, 合约账户有余额返还指定的 <code>refund account</code>.</li>
+<li>自动执行功能中的 <code>coinbase</code> 是该块对应的出块节点地址。</li>
+<li>对合约执行 <code>self-destruct</code> 操作后， 合约账户有余额返还指定的 <code>refund account</code>。</li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="对应-release-版本"></a><a href="#对应-release-版本" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>对应 RELEASE 版本</h3>
 <p>[v0.24.0] 及其以上版本</p>
 <h3><a class="anchor" aria-hidden="true" id="实施协议升级"></a><a href="#实施协议升级" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实施协议升级</h3>
 <ol>
 <li>安排所有节点升级 CITA 版本至 v0.24.0 及以上版本。</li>
-<li>若当前链的协议版本为 v0, <strong>必须</strong> 按照 <code>v1 协议</code> 升级说明, 将链协议版本升级到 v1, 并正常出块后, 才可执行 v2 的升级命令。</li>
-<li>使用超级管理员账户，执行如下协议升级命令</li>
+<li>若当前链的协议版本为 v0， <strong>必须</strong> 按照 <code>v1 协议</code> 升级说明， 将链协议版本升级到 v1， 并正常出块后， 才可执行 v2 的升级命令。</li>
+<li>使用超级管理员账户，执行如下协议升级命令。</li>
 </ol>
 <blockquote>
 <p>注意：这里的 admin-private 私钥仅作为演示使用，请实际操作时替换为目标链的实际私钥。</p>

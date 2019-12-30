@@ -6,7 +6,7 @@
             {"zIndex":100}
           )
         });
-        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/cryptape/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/install">English</a></li><li><a href="/zh-CN/next/cita/install">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/citahub/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita/install">English</a></li><li><a href="/zh-CN/next/cita/install">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
         const languagesMenuItem = document.getElementById("languages-menu");
         const languagesDropDown = document.getElementById("languages-dropdown");
         languagesMenuItem.addEventListener("click", function(event) {
@@ -75,7 +75,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/cryptape/edit/master/docs/cita/install.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">部署指南</h1></header><article><div><span><p>CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/citahub/edit/master/docs/cita/install.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">部署指南</h1></header><article><div><span><p>CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中将为你详解 CITA 的各种部署方案，用户可根据自身业务需要选择合适的部署方案。</p>
 <blockquote>
 <ul>
 <li>如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考下文中的云部署手册。</li>
@@ -95,7 +95,7 @@
 <ol>
 <li><p>下载 CITA 源码</p>
 <p>从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">clone</span> https://github.com/cryptape/cita.git</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">clone</span> https://github.com/citahub/cita.git</span>
 <span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita</span>
 <span class="hljs-meta">$</span><span class="bash"> git submodule init</span>
 <span class="hljs-meta">$</span><span class="bash"> git submodule update</span>
@@ -144,13 +144,13 @@ error: failed switching to "user": unable to find user user: no matching entries
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita create —super_admin <span class="hljs-string">"0x141d051b1b1922bf686f5df8aad45cefbcb0b696"</span> —nodes <span class="hljs-string">"192.168.1.100:4000,192.168.1.101:4000,192.168.1.102:4000,192.168.1.103:4000"</span></span>
 </code></pre></li>
 <li><p>在 4 台服务器上创建目录</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> mkdir -p /data/cita/</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> mkdir -p /data/cita</span>
 </code></pre></li>
 <li><p>将生成的节点拷贝到所有主机</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> scp -r cita_secp256k1_sha3 192.168.1.100:/data/cita/</span>
-<span class="hljs-meta">$</span><span class="bash"> scp -r cita_secp256k1_sha3 192.168.1.101:/data/cita/</span>
-<span class="hljs-meta">$</span><span class="bash"> scp -r cita_secp256k1_sha3 192.168.1.102:/data/cita/</span>
-<span class="hljs-meta">$</span><span class="bash"> scp -r cita_secp256k1_sha3 192.168.1.103:/data/cita/</span>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> scp -r cita_secp256k1_sha3 192.168.1.100:/data/cita</span>
+<span class="hljs-meta">$</span><span class="bash"> scp -r cita_secp256k1_sha3 192.168.1.101:/data/cita</span>
+<span class="hljs-meta">$</span><span class="bash"> scp -r cita_secp256k1_sha3 192.168.1.102:/data/cita</span>
+<span class="hljs-meta">$</span><span class="bash"> scp -r cita_secp256k1_sha3 192.168.1.103:/data/cita</span>
 </code></pre></li>
 <li><p>启动节点，需要登录到各节点服务器启动对应节点</p>
 <p>节点对应关系：</p>
@@ -162,25 +162,25 @@ error: failed switching to "user": unable to find user user: no matching entries
 </ul>
 <p>启动节点 0</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ssh root@192.168.1.100</span>
-<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/cita_secp256k1_sha3</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/0</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/0</span>
 </code></pre>
 <p>启动节点 1</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ssh root@192.168.1.101</span>
-<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/cita_secp256k1_sha3</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/1</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/1</span>
 </code></pre>
 <p>启动节点 2</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ssh root@192.168.1.102</span>
-<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/cita_secp256k1_sha3</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/2</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/2</span>
 </code></pre>
 <p>启动节点 3</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ssh root@192.168.1.103</span>
-<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /data/cita/cita_secp256k1_sha3</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita setup <span class="hljs-built_in">test</span>-chain/3</span>
 <span class="hljs-meta">$</span><span class="bash"> ./bin/cita start <span class="hljs-built_in">test</span>-chain/3</span>
 </code></pre></li>
@@ -258,7 +258,7 @@ cita/cita-release   1.0.1-secp256k1-sha3    ca17a2fad469        2 weeks ago     
 <h4><a class="anchor" aria-hidden="true" id="安装-docker-compose"></a><a href="#安装-docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装 docker-compose</h4>
 <p>参考 <a href="https://docs.docker.com/compose/install/">docker-compose 安装说明</a> 来安装 docker-compose.</p>
 <h4><a class="anchor" aria-hidden="true" id="准备-docker-composeyml"></a><a href="#准备-docker-composeyml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>准备 docker-compose.yml</h4>
-<p><a href="https://github.com/cryptape/cita/blob/develop/docker/sample/docker-compose.yml">docker-compose Demo</a> 是一个启动两个 CITA 节点的样例。</p>
+<p><a href="https://github.com/citahub/cita/blob/develop/docker/sample/docker-compose.yml">docker-compose Demo</a> 是一个启动两个 CITA 节点的样例。</p>
 <h4><a class="anchor" aria-hidden="true" id="启动-cita"></a><a href="#启动-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动 CITA</h4>
 <pre><code class="hljs css language-shell">USER_ID=`id -u $USER` docker-compose up
 </code></pre>

@@ -18,7 +18,7 @@ title: 环境准备
 
 ## 软件依赖声明
 
-* 依赖 Docker，安装 Docker 参见 [Docker 在线资料]。
+* 依赖 Docker，安装 Docker 参见 [Docker 在线资料] , 请安装 18.09 及以上的版本。
 * CITA 的 Docker 镜像托管在 [DockerHub]。 因为 CITA 是基于 Ubuntu 18.04 稳定版开发的，因此该镜像中封装了 Ubuntu 18.04 还有其他一些 CITA 运行所需要的配置和文件。
 
 ## 安装 CITA 客户端工具

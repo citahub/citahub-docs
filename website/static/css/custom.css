@@ -1,5 +1,31 @@
 /* your custom css */
-
+.firstPageImageParent {
+  position: relative;
+}
+.firstPageImageParent .mapItem{
+  cursor: pointer;
+  z-index: 2;
+}
+.firstPageImageParent .tooltip {
+  background: #fff;
+  text-align: center;
+  padding: 18px;
+  position: absolute;
+  width: 160px;
+  left: 100%;
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity .3s;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2) ;
+  z-index: 1;
+}
+.firstPageImageParent .tooltip .title{
+  margin-top: 10px;
+  color: #24292e;
+}
+.firstPageImageParent .tooltip.on {
+  opacity: 1;
+}
 .headerTitleWithLogo {
   white-space: nowrap;
 }

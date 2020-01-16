@@ -4,20 +4,19 @@
 }
 .firstPageImageParent .mapItem{
   cursor: pointer;
-  z-index: 2;
 }
 .firstPageImageParent .tooltip {
   background: #fff;
   text-align: center;
   padding: 18px;
   position: absolute;
-  width: 160px;
+  width: 140px;
   left: 100%;
   margin-left: 10px;
   opacity: 0;
+  cursor: default;
   transition: opacity .3s;
   box-shadow: 0 3px 10px rgba(0,0,0,.2) ;
-  z-index: 1;
 }
 .firstPageImageParent .tooltip .title{
   margin-top: 10px;
@@ -25,6 +24,8 @@
 }
 .firstPageImageParent .tooltip.on {
   opacity: 1;
+  cursor: pointer;
+
 }
 .headerTitleWithLogo {
   white-space: nowrap;

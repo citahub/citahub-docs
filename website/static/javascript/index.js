@@ -60,7 +60,7 @@ const items = [
     width: "9%",
     height: "8%",
     logo: "https://www.citahub.com/images/component/tool_monitor.png",
-    title: "CITA IDE 合约开发与部署工具"
+    title: "CITA Monitor"
   },
   {
     name: "CITA",
@@ -178,7 +178,8 @@ CoordinatesMaps.prototype.bindOne = function(item) {
     this.querySelector(".tooltip").classList.remove("on");
   });
   item.querySelector(".tooltip").addEventListener("mouseover", function(e) {
-    if (this.classList.contains("on")) {
+    console.log(e.currentTarget.classList)
+    if (!e.currentTarget.classList.contains("on")) {
       e.stopPropagation();
     }
   });

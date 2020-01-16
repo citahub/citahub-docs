@@ -139,7 +139,7 @@ const items = [
     height: "8.5%",
     logo: "https://www.citahub.com/images/component/tool_cli.png",
     title: "CITA-CLI"
-  },
+  }
 ];
 
 function CoordinatesMaps(items, srcUrl) {
@@ -158,10 +158,7 @@ CoordinatesMaps.prototype.getMapString = function() {
      height: ${item.height};left: ${item.left};top: ${item.top}"
     data-name="${item.name}"
     class="${this.mapClassName}" >
-    <a class="tooltip" href="${item.href}" target="_blank">
-      <img src="${item.logo}" alt="" width="80px">
-      <div class="title">${item.title}</div>
-    </a>
+
 </div>`;
       }.bind(this)
     )
@@ -169,20 +166,53 @@ CoordinatesMaps.prototype.getMapString = function() {
       return s + cul;
     }, "");
 };
+CoordinatesMaps.prototype.showItem = function(item) {
+  const found = this.items.find(function(i) {
+    return i.name === item.dataset.name;
+  });
+  const tooltipDom = htmlToElements(`<div class="tooltip"><a  href="${
+    found.href
+  }" target="_blank">
+      <img src="${found.logo}" alt="" width="80px">
+      <div class="title">${found.title}</div>
+    </a></div>`);
+
+
+  if(document.querySelectorAll('.tooltip').length > 0) {
+    return false
+  } else {
+    item.append(tooltipDom);
+    item.querySelector(".tooltip").classList.add("on");
+  }
+};
+
+CoordinatesMaps.prototype.hideItem = function(item) {
+  // item.querySelector(".tooltip").classList.remove("on");
+  item.querySelector(".tooltip") && item.querySelector(".tooltip").remove();
+};
 
 CoordinatesMaps.prototype.bindOne = function(item) {
-  item.addEventListener("mouseover", function() {
-    this.querySelector(".tooltip").classList.add("on");
-  });
-  item.addEventListener("mouseout", function() {
-    this.querySelector(".tooltip").classList.remove("on");
-  });
-  item.querySelector(".tooltip").addEventListener("mouseover", function(e) {
-    console.log(e.currentTarget.classList)
-    if (!e.currentTarget.classList.contains("on")) {
-      e.stopPropagation();
-    }
-  });
+  item.addEventListener(
+    "mouseover",
+    function(e) {
+      if (document.querySelectorAll('.tooltip').length > 0) {
+        return
+      }
+      this.showItem(item);
+    }.bind(this)
+  );
+
+  item.addEventListener(
+    "mouseout",
+    function(e) {
+      if (e.toElement.classList.contains("tooltip") ||  e.toElement.parentNode.classList.contains("tooltip") ||e.toElement.parentNode.parentNode.classList.contains("tooltip")) {
+        e.stopPropagation();
+        this.showItem(item);
+        return;
+      }
+      this.hideItem(item);
+    }.bind(this)
+  );
 };
 
 CoordinatesMaps.prototype.bindEvent = function() {

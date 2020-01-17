@@ -1,4 +1,4 @@
-const githubBase = "https://github.com/cryptape/cita/blob/develop/docs/zh-CN/";
+const githubBase = "https://github.com/citahub/cita/blob/develop/docs/zh-CN/";
 
 function htmlToElements(html) {
   var template = document.createElement("template");
@@ -120,7 +120,7 @@ const items = [
   },
   {
     name: "CITA SDK",
-    href: "https://github.com/citahub/cita-sdk-js",
+    href: "https://github.com/citahub?q=cita-sdk",
     shape: "rect",
     left: "62%",
     top: "49%",

@@ -19,8 +19,8 @@ const siteConfig = {
   docsUrl: '',
   cname: 'docs.citahub.com',
   projectName: 'citahub-docs',
-  organizationName: 'cryptape',
-  editUrl: 'https://github.com/cryptape/edit/master/docs/',
+  organizationName: 'citahub',
+  editUrl: 'https://github.com/citahub/edit/master/docs/',
   headerLinks: [{
       page: 'community',
       label: 'Community',
@@ -31,9 +31,9 @@ const siteConfig = {
     {
       language: true,
     },
-    { 
-      href: "https://github.com/cryptape/citahub-docs", 
-      label: "GitHub" 
+    {
+      href: "https://github.com/citahub/citahub-docs",
+      label: "GitHub"
     },
   ],
   headerIcon: 'img/citahub_logo.svg',

@@ -1,5 +1,45 @@
 /* your custom css */
-
+.firstPageImageParent {
+  position: relative;
+}
+.firstPageImageParent .mapItem {
+  cursor: pointer;
+}
+.firstPageImageParent .tooltip {
+  background: transparent;
+  text-align: center;
+  position: absolute;
+  width: 140px;
+  left: 100%;
+  opacity: 0;
+  cursor: default;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+.firstPageImageParent .tooltip a:after {
+  content: "";
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #fff;
+  position: absolute;
+  top: 27px;
+  left: 4px;
+}
+.firstPageImageParent .tooltip a {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 18px;
+  margin-left: 10px;
+  display: block;
+  background: #fff;
+}
+.firstPageImageParent .tooltip .title {
+  margin-top: 10px;
+  color: #24292e;
+}
+.firstPageImageParent .tooltip.on {
+  opacity: 1;
+  cursor: pointer;
+}
 .headerTitleWithLogo {
   white-space: nowrap;
 }
@@ -9,7 +49,7 @@
   font-weight: 550 !important;
   color: black;
 }
-.navGroupSubcategoryTitle{
+.navGroupSubcategoryTitle {
   font-size: 16px !important;
   font-weight: 450 !important;
 }
@@ -17,7 +57,7 @@
   font-size: 16px !important;
   font-weight: 450 !important;
 }
-.navGroup.subNavGroup .navItem{
+.navGroup.subNavGroup .navItem {
   font-size: 14px !important;
   color: #717171 !important;
 }
@@ -27,7 +67,7 @@
   font-weight: 400;
   color: #000;
 }
-.toc .toggleNav .navGroup .navListItem.navListItemActive a.navItem{
+.toc .toggleNav .navGroup .navListItem.navListItemActive a.navItem {
   font-weight: bold !important;
   color: #000 !important;
 }
@@ -57,7 +97,7 @@
 /* } */
 
 .post article a {
-  color: #C71810;
+  color: #c71810;
 }
 
 .post article p a img {
@@ -77,16 +117,16 @@ table.versions th {
 }
 
 blockquote {
-  background-color: #FEF3F3;
-  border-left-color: #FDDDDC;
+  background-color: #fef3f3;
+  border-left-color: #fddddc;
 }
 
 footer {
   display: none;
 }
 
-
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
 
 @media only screen and (min-width: 1024px) {
   .wrapper {
@@ -94,9 +134,11 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1023px) {}
+@media only screen and (max-width: 1023px) {
+}
 
-@media only screen and (min-width: 1400px) {}
+@media only screen and (min-width: 1400px) {
+}
 
 @media only screen and (min-width: 1500px) {
   /* .wrapper {

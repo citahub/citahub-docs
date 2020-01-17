@@ -156,10 +156,9 @@ CoordinatesMaps.prototype.getMapString = function() {
       function(item) {
         return `<div style="position: absolute;width: ${item.width};
      height: ${item.height};left: ${item.left};top: ${item.top}"
-    data-name="${item.name}"
-    class="${this.mapClassName}" >
-
-</div>`;
+                      data-name="${item.name}"
+                      class="${this.mapClassName}" >
+                </div>`;
       }.bind(this)
     )
     .reduce(function(s, cul) {
@@ -177,9 +176,8 @@ CoordinatesMaps.prototype.showItem = function(item) {
       <div class="title">${found.title}</div>
     </a></div>`);
 
-
-  if(document.querySelectorAll('.tooltip').length > 0) {
-    return false
+  if (document.querySelectorAll(".tooltip").length > 0) {
+    return false;
   } else {
     item.append(tooltipDom);
     item.querySelector(".tooltip").classList.add("on");
@@ -195,8 +193,8 @@ CoordinatesMaps.prototype.bindOne = function(item) {
   item.addEventListener(
     "mouseover",
     function(e) {
-      if (document.querySelectorAll('.tooltip').length > 0) {
-        return
+      if (document.querySelectorAll(".tooltip").length > 0) {
+        return;
       }
       this.showItem(item);
     }.bind(this)
@@ -205,7 +203,11 @@ CoordinatesMaps.prototype.bindOne = function(item) {
   item.addEventListener(
     "mouseout",
     function(e) {
-      if (e.toElement.classList.contains("tooltip") ||  e.toElement.parentNode.classList.contains("tooltip") ||e.toElement.parentNode.parentNode.classList.contains("tooltip")) {
+      if (
+        e.toElement.classList.contains("tooltip") ||
+        e.toElement.parentNode.classList.contains("tooltip") ||
+        e.toElement.parentNode.parentNode.classList.contains("tooltip")
+      ) {
         e.stopPropagation();
         this.showItem(item);
         return;

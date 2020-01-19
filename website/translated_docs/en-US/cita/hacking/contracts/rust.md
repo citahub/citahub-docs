@@ -7,7 +7,7 @@ CITA 支持用 Rust 编写的原生合约。
 
 ## 依赖说明
 
-Rust 原生智能合约目前需要与 CITA 源码工程一起编译、部署。 因此，首先获得 [CITA 源码库](https://github.com/cryptape/cita)，推荐在 CITA 工程（cita-executor/core/src/native）中编写 Rust 原生合约代码。
+Rust 原生智能合约目前需要与 CITA 源码工程一起编译、部署。 因此，首先获得 [CITA 源码库](https://github.com/citahub/cita)，推荐在 CITA 工程（cita-executor/core/src/native）中编写 Rust 原生合约代码。
 
 *需要有 Rust 编程基础*
 
@@ -199,7 +199,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0x000000
 
 ### 调用 update
 
-*使用 [cita-cli](https://github.com/cryptape/cita-cli) 交互式进行操作*
+*使用 [cita-cli](https://github.com/citahub/cita-cli) 交互式进行操作*
 
 ```shell
 $ rpc sendRawTransaction \

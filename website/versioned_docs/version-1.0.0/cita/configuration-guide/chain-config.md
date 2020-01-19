@@ -227,7 +227,7 @@ $ rpc getMetaData
     "economicalModel": 1,
     "genesisTimestamp": 1538101178583,
     "operator": "test-operator",
-    "tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+    "tokenAvatar": "https://cdn.citahub.com/icon_cita.png",
     "tokenName": "CITA Test Token",
     "tokenSymbol": "CTT",
     "validators": [
@@ -244,4 +244,4 @@ $ rpc getMetaData
 [环境准备]: ../getting-started/setup
 [配额价格管理]: ../economics/charge
 [配额管理]: ../economics/quota
-[cita-cli]: https://github.com/cryptape/cita-cli
+[cita-cli]: https://github.com/citahub/cita-cli

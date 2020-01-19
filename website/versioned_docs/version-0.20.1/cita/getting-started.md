@@ -36,14 +36,14 @@ CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-b
 
 ## 编译 CITA
 
-> 下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 [CITA 正式发布版本](https://github.com/cryptape/cita/releases)，直接下载你想要的版本发布包然后部署即可。
+> 下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 [CITA 正式发布版本](https://github.com/citahub/cita/releases)，直接下载你想要的版本发布包然后部署即可。
 
 ### 获取源码
 
 从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
 
 ```shell
-$ git clone https://github.com/cryptape/cita.git
+$ git clone https://github.com/citahub/cita.git
 $ cd cita
 $ git submodule init
 $ git submodule update
@@ -215,16 +215,16 @@ docker-compose --version
 ##### 准备发布件
 
 ```
-latest_release_tag=$(curl --silent "https://api.github.com/repos/cryptape/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+latest_release_tag=$(curl --silent "https://api.github.com/repos/citahub/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 echo "latest release tag: $latest_release_tag"
-wget https://github.com/cryptape/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
+wget https://github.com/citahub/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
 tar zxvf cita_secp256k1_sha3.tar.gz
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node0
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node1
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
 
-wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_test/docker-compose.yaml
+wget https://raw.githubusercontent.com/citahub/cita/develop/tests/integrate_test/docker-compose.yaml
 ```
 
 ##### 启动

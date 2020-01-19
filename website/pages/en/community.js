@@ -79,7 +79,7 @@ const Community = () => (
 
           <p>
             <translate>Read </translate>{' '}
-            <a href="https://github.com/cryptape/cita/blob/develop/CONTRIBUTING.md" alt="Contributing">
+            <a href="https://github.com/citahub/cita/blob/develop/CONTRIBUTING.md" alt="Contributing">
               <translate>contributing guide</translate>
             </a>{' '}
             <translate>for the first.</translate>

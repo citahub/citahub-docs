@@ -50,7 +50,7 @@ Function signatures:
 
 _首先需要启动一条链，具体方法见快速入门部分_
 
-其中[测试合约](https://github.com/cryptape/cita/blob/develop/scripts/contracts/src/system/BatchTx.sol)函数签名如下:
+其中[测试合约](https://github.com/citahub/cita/blob/develop/scripts/contracts/src/system/BatchTx.sol)函数签名如下:
 
 ```
 ======= contracts/test_batch-tx.sol:SelfAdd =======

@@ -29,7 +29,7 @@ $ bin/cita create \
 
 启动链接下来的步骤见[快速入门](../getting-started)部分。
 
-为了简化操作，以下将用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式进行演示。
+为了简化操作，以下将用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式进行演示。
 所涉及的 JSON-RPC 接口，将在过程中做简要的说明，详细 JSON-RPC 说明，请参考 [这里](../rpc-guide/rpc.md)。
 
 ### 发送数据存证交易

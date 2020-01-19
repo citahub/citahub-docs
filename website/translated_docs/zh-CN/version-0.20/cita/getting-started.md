@@ -36,14 +36,14 @@ CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-b
 
 ## 编译 CITA
 
-> 下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 [CITA 正式发布版本](https://github.com/cryptape/cita/releases)，直接下载你想要的版本发布包然后部署即可。
+> 下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 [CITA 正式发布版本](https://github.com/citahub/cita/releases)，直接下载你想要的版本发布包然后部署即可。
 
 ### 获取源码
 
 从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
 
 ```shell
-$ git clone https://github.com/cryptape/cita.git
+$ git clone https://github.com/citahub/cita.git
 $ cd cita
 $ git submodule init
 $ git submodule update

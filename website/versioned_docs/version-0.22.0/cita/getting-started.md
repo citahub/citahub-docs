@@ -7,10 +7,10 @@ original_id: getting-started
 CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建属于自己的一条区块链，在本文档中我们将带你搭建一条简单的链并运行其中的节点。
 
 > * 如果你想一键搭建属于你自己的链，你可以选择租用 CITA 的云服务。只需根据您的需求，在云服务平台选择适合自己的方案直接租用，帮你省去准备服务器以及部署 CITA 的一系列操作。具体请参考[云服务支持](./huawei)。
-> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 CITA 测试链。测试链的水龙头的地址为：https://dapp.cryptape.com/faucet/, 可以在这里领取 Testnet 的代币。测试链的内核 CITA 的版本为 [`v0.22.0`](https://github.com/cryptape/cita/releases/tag/v0.22.0)。该测试链由4个节点组成，各节点的 ip 地址和端口如下：
+> * 如果你想在 CITA 上直接开发您的应用，我们建议你使用我们已经搭好的 CITA 测试链。测试链的水龙头的地址为：https://dapp.citahub.com/faucet/, 可以在这里领取 Testnet 的代币。测试链的内核 CITA 的版本为 [`v0.22.0`](https://github.com/citahub/cita/releases/tag/v0.22.0)。该测试链由4个节点组成，各节点的 ip 地址和端口如下：
 
 ```
-node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.cryptape.com
+node 1: 121.196.200.225:1337 //或者通过域名访问： https://node.citahub.com
 node 2: 116.62.221.89:1338
 node 3: 47.96.84.91:1339
 node 4: 121.43.163.31:1340
@@ -46,14 +46,14 @@ CITA 的 Docker 镜像托管在 [DockerHub](https://hub.docker.com/r/cita/cita-b
 
 ## 编译 CITA
 
->下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 [CITA 正式发布版本](https://github.com/cryptape/cita/releases)，直接下载你想要的版本发布包然后部署即可。
+>下面的操作步骤是带你获取最新的源码进行编译，若你想直接下载编译好的发布包，可前往 Github 查看目前所有的 [CITA 正式发布版本](https://github.com/citahub/cita/releases)，直接下载你想要的版本发布包然后部署即可。
 
 ### 获取源码
 
 从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
 
 ```shell
-$ git clone https://github.com/cryptape/cita.git
+$ git clone https://github.com/citahub/cita.git
 $ cd cita
 $ git submodule init
 $ git submodule update
@@ -231,16 +231,16 @@ docker-compose --version
 ##### 准备发布件
 
 ```
-latest_release_tag=$(curl --silent "https://api.github.com/repos/cryptape/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+latest_release_tag=$(curl --silent "https://api.github.com/repos/citahub/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 echo "latest release tag: $latest_release_tag"
-wget https://github.com/cryptape/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
+wget https://github.com/citahub/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
 tar zxvf cita_secp256k1_sha3.tar.gz
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node0
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node1
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
 cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
 
-wget https://raw.githubusercontent.com/cryptape/cita/develop/tests/integrate_test/docker-compose.yaml
+wget https://raw.githubusercontent.com/citahub/cita/develop/tests/integrate_test/docker-compose.yaml
 ```
 
 ##### 启动

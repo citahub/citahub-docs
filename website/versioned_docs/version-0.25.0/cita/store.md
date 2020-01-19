@@ -154,5 +154,5 @@ tx decode-unverifiedTransaction --content 0x0ab101122064356565386436313239333634
 其中，解析后的 `data` 域正是上文存证的原始数据。
 
 [JSON-RPC 说明]: rpc-guide/rpc
-[cita-cli]: https://github.com/cryptape/cita-cli
+[cita-cli]: https://github.com/citahub/cita-cli
 [启动 CITA]: getting-started/run-cita#启动-cita

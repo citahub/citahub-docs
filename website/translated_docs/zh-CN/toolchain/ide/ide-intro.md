@@ -4,7 +4,7 @@ id: ide-intro
 sidebar_label: CITA IDE 简介
 ---
 
-CITA IDE 是基于 Ethereum 的 Solidity 编辑器进行修改并适配 CITA ，是面向 CITA 的智能合约编辑器，能够编写、编译、debug、部署智能合约。可直接运行官方 [CITA IDE](https://cita-ide.cryptape.com/) 进行体验。
+CITA IDE 是基于 Ethereum 的 Solidity 编辑器进行修改并适配 CITA ，是面向 CITA 的智能合约编辑器，能够编写、编译、debug、部署智能合约。可直接运行官方 [CITA IDE](https://cita-ide.citahub.com/) 进行体验。
 
 ## 用户手册
 
@@ -26,10 +26,10 @@ CITA IDE 是基于 Ethereum 的 Solidity 编辑器进行修改并适配 CITA ，
 
 ## 快速入门
 
-https://github.com/cryptape/cita-ide
+https://github.com/citahub/cita-ide
 
 ## 期待协作
 
-* https://github.com/cryptape/cita-ide/issues
+* https://github.com/citahub/cita-ide/issues
 
 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea

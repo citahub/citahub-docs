@@ -52,7 +52,7 @@ CITA通过智能合约的方式来对权限进行管理。
 * `quotaPrice`: 表示设置 quotaPrice 权限
 * `version`: 表示设置版本权限
 
-可以查看具体[权限的地址信息](https://github.com/cryptape/cita/blob/develop/cita-chain/types/src/reserved_addresses.rs)
+可以查看具体[权限的地址信息](https://github.com/citahub/cita/blob/develop/cita-chain/types/src/reserved_addresses.rs)
 
 ## 权限管理操作实例
 
@@ -69,7 +69,7 @@ $ bin/cita create \
 
 其中 `checkCallPermission`, `checkSendTxPermission`, `checkCreateContractPermission` 分别为合约调用、发送交易及创建合约的开关。请注意这里的 `checkCallPermission` 与 JSON-RPC 中的 Call 并不同， JSON-RPC 中的 Call 是指对链上数据的查询，是读数据而非写数据。而这里的`checkCallPermission` 是指通过发送交易的方式调用合约接口，是指写数据的操作。
 
-启动链接下来的步骤见[快速搭链](../getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+启动链接下来的步骤见[快速搭链](../getting-started)部分。接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 生成普通账户
 
@@ -89,7 +89,7 @@ $ cita-cli key create
 
 ### 部署合约
 
-使用[测试合约](https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol)
+使用[测试合约](https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol)
 
 #### 获得合约的相关信息
 

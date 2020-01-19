@@ -9,7 +9,7 @@ title: Quota Price Management
 
 ## 操作示例
 
-> 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式进行演示。
+> 接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式进行演示。
 
 默认的 `quotaPrice` 默认为 1000000， 接下来演示管理员如何修改 quotaPrice。
 

@@ -5,9 +5,9 @@ id: javascript-sdk
 
 JavaScript SDK 技术栈为 TypeScript 和 Protocol Buffers，是在 Ethereum [Web3.js](https://github.com/ethereum/web3.js/) 的基础上做了封装并且添加 CITA 的 RPC 请求以及CITA的签名模块。 cita-sdk-js 用 lerna 作为包管理，主要包含 3 个模块：Signer 签名模块，RPC 模块和 System Contract 模块。
 
-* SDK 代码：[cita-sdk](https://github.com/cryptape/cita-sdk-js/tree/develop/packages/cita-sdk) 
-* Signer 签名模块代码：[cita-signer](https://github.com/cryptape/cita-sdk-js/tree/develop/packages/cita-signer) 
-* RPC 模块代码：[rpc.ts](https://github.com/cryptape/cita-sdk-js/blob/develop/packages/cita-sdk/src/base/rpc.ts)
+* SDK 代码：[cita-sdk](https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-sdk) 
+* Signer 签名模块代码：[cita-signer](https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-signer) 
+* RPC 模块代码：[rpc.ts](https://github.com/citahub/cita-sdk-js/blob/develop/packages/cita-sdk/src/base/rpc.ts)
 
 ### 签名模块 Signer
 
@@ -22,9 +22,9 @@ JavaScript SDK 技术栈为 TypeScript 和 Protocol Buffers，是在 Ethereum [W
     
     * 私钥模块 privateKey：此部分与 Web3.js 中私钥模块一致。
 * 序列化 protobuf 
-    * 取得交易和私钥后要进行序列化，CITA 的 protobuf 文件单独抽离出来作为一个项目 [github.com/cryptape/cita-proto](http://github.com/cryptape/cita-proto) ，以 submodule 形式引入 SDK 项目，如果 CITA 更新了protobuf，那么所有的 SDK 都可以同步更新。
+    * 取得交易和私钥后要进行序列化，CITA 的 protobuf 文件单独抽离出来作为一个项目 [github.com/citahub/cita-proto](http://github.com/citahub/cita-proto) ，以 submodule 形式引入 SDK 项目，如果 CITA 更新了protobuf，那么所有的 SDK 都可以同步更新。
 * 签名过程：首先构建交易的 protobuf 实例，填入交易参数后序列化得到交易 msg，通过 privateKey 对 msg 做签名，然后构建 Unverified Transaction protobuf 实例，填入相关信息，比如加密方式，签名后序列化得到 rpc 需要的交易数据，这个交易数据是不可读的数据，在签名模块中含有解签模块，可恢复数据。
-* 测试：为了保证多个 SDK 之间的行为一致，也把测试模块单独抽离出来作为一个项目 [github.com/cryptape/cita-sdk-tests](http://github.com/cryptape/cita-sdk-tests) ，通过 submodule 形式引入，每次升级 CITA 时，SDK 也要对各个版本的数据做一次测试，因此 test 模块会有多个版本的签名的数据结果，需要把所有测试结果都运行一遍。
+* 测试：为了保证多个 SDK 之间的行为一致，也把测试模块单独抽离出来作为一个项目 [github.com/citahub/cita-sdk-tests](http://github.com/citahub/cita-sdk-tests) ，通过 submodule 形式引入，每次升级 CITA 时，SDK 也要对各个版本的数据做一次测试，因此 test 模块会有多个版本的签名的数据结果，需要把所有测试结果都运行一遍。
 
 ### RPC模块
 
@@ -46,11 +46,11 @@ JavaScript SDK 技术栈为 TypeScript 和 Protocol Buffers，是在 Ethereum [W
 
 ### System Contract
 
-系统合约涉及到管理员合约，quota price 管理，quota 管理。例如如果想调整节点的 quota limit，需要通过系统合约调整，需将系统合约封装到 SDK 中，为保证各个 SDK 统一，会将合约的 ABI 文件，即合约的接口描述文件(通过 ABI 可以知道合约暴露了哪些接口)，存放在 [github.com/cryptape/cita-sys-abi](http://github.com/cryptape/cita-sys-abi) 并以 submodule 形式引入，之后在 npm script 里添加一条 parse-abi 指令，这条指令会把 cita-sys-abi 转换成 typescript 文件，用于构建 sdk 实例时创建系统合约实例。
+系统合约涉及到管理员合约，quota price 管理，quota 管理。例如如果想调整节点的 quota limit，需要通过系统合约调整，需将系统合约封装到 SDK 中，为保证各个 SDK 统一，会将合约的 ABI 文件，即合约的接口描述文件(通过 ABI 可以知道合约暴露了哪些接口)，存放在 [github.com/citahub/cita-sys-abi](http://github.com/citahub/cita-sys-abi) 并以 submodule 形式引入，之后在 npm script 里添加一条 parse-abi 指令，这条指令会把 cita-sys-abi 转换成 typescript 文件，用于构建 sdk 实例时创建系统合约实例。
 
 ## Getting Started
 
-cita-sdk : [https://github.com/cryptape/cita-sdk-js/tree/develop/packages/cita-sdk](https://github.com/cryptape/cita-sdk-js/blob/develop/docs/zh-CN/cita-sdk.md) cita-signer: [https://github.com/cryptape/cita-sdk-js/tree/develop/packages/cita-signer](https://github.com/cryptape/cita-sdk-js/blob/develop/docs/zh-CN/cita-signer.md) 同时发布在 npm 平台：https://github.com/cryptape/cita-sdk-js/blob/develop/docs/zh-CN/overview.md
+cita-sdk : [https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-sdk](https://github.com/citahub/cita-sdk-js/blob/develop/docs/zh-CN/cita-sdk.md) cita-signer: [https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-signer](https://github.com/citahub/cita-sdk-js/blob/develop/docs/zh-CN/cita-signer.md) 同时发布在 npm 平台：https://github.com/citahub/cita-sdk-js/blob/develop/docs/zh-CN/overview.md
 
 ## 期待协作：
 

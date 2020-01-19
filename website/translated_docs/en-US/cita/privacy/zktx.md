@@ -10,18 +10,18 @@ title: 零知识证明
 示例中使用的环境如下：
 
 * [Rust](https://www.rust-lang.org/): `rustc 1.34.1 (fc50f328b 2019-04-24)`
-* [CITA](https://github.com/cryptape/cita): develop commit 为 `87e11818081a9d2a883341bebf2aeb95c59c15fd`
-* [zktx](https://github.com/cryptape/zktx): master commit 为 `03fcc4b02432f42e53563deccdaaa767fd7a0ad6`
-* [zktx_example](https://github.com/cryptape/zktx_example): master commit 为 `b37ec8fe88fb2d8a48a4651419ed0c536d047c73`
+* [CITA](https://github.com/citahub/cita): develop commit 为 `87e11818081a9d2a883341bebf2aeb95c59c15fd`
+* [zktx](https://github.com/citahub/zktx): master commit 为 `03fcc4b02432f42e53563deccdaaa767fd7a0ad6`
+* [zktx_example](https://github.com/citahub/zktx_example): master commit 为 `b37ec8fe88fb2d8a48a4651419ed0c536d047c73`
 
 ### 准备工作
 
-* `clone` [zktx_example](https://github.com/cryptape/zktx_example) 代码
-* `clone` [CITA](https://github.com/cryptape/cita) 代码
+* `clone` [zktx_example](https://github.com/citahub/zktx_example) 代码
+* `clone` [CITA](https://github.com/citahub/cita) 代码
 
 ### 生成参数
 
-使用 [zktx_example](https://github.com/cryptape/zktx_example) 生成隐私交易需要的参数文件，命令如下：
+使用 [zktx_example](https://github.com/citahub/zktx_example) 生成隐私交易需要的参数文件，命令如下：
 
 ```shell
 cd zktx_example && cargo run --release --bin gen_params
@@ -33,7 +33,7 @@ cd zktx_example && cargo run --release --bin gen_params
 
 #### `CITA` 开启隐私交易功能
 
-详细信息可查看 [zk_privacy](https://github.com/cryptape/cita/blob/develop/cita-executor/core/src/contracts/native/zk_privacy.md) 文档，如下操作：
+详细信息可查看 [zk_privacy](https://github.com/citahub/cita/blob/develop/cita-executor/core/src/contracts/native/zk_privacy.md) 文档，如下操作：
 
 > 修改 cita-executor/Cargo.toml。 在 [features] 下面 default 列表中增加 privatetx 。
 

@@ -41,7 +41,7 @@ CITA 同样采用类似公链分叉的方式进行协议升级, 只不过我们�
 4. 4 个运维人员在这 10 天里的任何时间对自己维护的节点实施 `软件升级` CITA v0.20 的操作。所以这段时间 4 个共识节点会存在 v0.19 和 v0.20 混用的情况。这种情况没有任何问题，过程中业务也不会中断, 此时使用的依然是 v0 协议。
 5. 10 天的期限结束。4 个节点都升级到 CITA v0.20 了。
 6. 超级管理员开启紧急制动功能, 链的业务暂停，只有超级管理员可以发交易上链。
-7. 超级管理员发交易，升级系统合约。我们提供了脚本 [scripts/amend_sys_cont_to_v0-20.sh](https://github.com/cryptape/cita/blob/v0.20/scripts/amend_sys_cont_to_v0-20.sh) 辅助完成这项工作。
+7. 超级管理员发交易，升级系统合约。我们提供了脚本 [scripts/amend_sys_cont_to_v0-20.sh](https://github.com/citahub/cita/blob/v0.20/scripts/amend_sys_cont_to_v0-20.sh) 辅助完成这项工作。
 8. 超级管理员发送交易，将 `VersionManager` 系统合约中的 `version` 从 0 改为 1 ，完成 `协议升级`。
 9. 超级管理员关闭紧急制动功能，链的业务恢复。
 10. 至此，只有使用 v1 协议的交易才能发送上链，依然使用 v0 协议的交易，发送时将会返回错误。
@@ -71,7 +71,7 @@ v0.19 之前的版本链升级 CITA 最新版本需要重新创建链，无法�
 
 交易中的 version 字段必须填 0(默认也是 0)。v0.19 并没有校验 version，填非 0 值也可以正常工作。 v0.20 增加了对 version 的校验。因此，如果用户之前发送过 version 不为 0 的交易，升级 v0.20 版本之后，查询这些交易或者新节点同步过程中可能会出现异常情况。可以通过快照方式解决，不影响协议升级操作。
 
-[v0.19]: https://github.com/cryptape/cita/releases/tag/v0.19
+[v0.19]: https://github.com/citahub/cita/releases/tag/v0.19
 
 <!--v1 协议-->
 
@@ -88,7 +88,7 @@ v0.19 之前的版本链升级 CITA 最新版本需要重新创建链，无法�
 
 ### 对应 RELEASE 版本
 
-[v0.20](https://github.com/cryptape/cita/releases/tag/v0.20) 及以上版本
+[v0.20](https://github.com/citahub/cita/releases/tag/v0.20) 及以上版本
 
 ### 协议变更
 

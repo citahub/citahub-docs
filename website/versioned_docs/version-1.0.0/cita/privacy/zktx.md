@@ -85,11 +85,11 @@ cd zktx_example && cargo run --release --bin gen_params
    cd ../../zktx_example && cargo run --release --bin client
    ```
 
-[CITA]: https://github.com/cryptape/cita
+[CITA]: https://github.com/citahub/cita
 [Rust]: https://www.rust-lang.org/
-[zk_privacy]: https://github.com/cryptape/cita/blob/develop/cita-executor/core/src/contracts/native/zk_privacy.md
-[zktx]: https://github.com/cryptape/zktx
-[zktx_example]: https://github.com/cryptape/zktx_example
+[zk_privacy]: https://github.com/citahub/cita/blob/develop/cita-executor/core/src/contracts/native/zk_privacy.md
+[zktx]: https://github.com/citahub/zktx
+[zktx_example]: https://github.com/citahub/zktx_example
 [运行 CITA]: ../getting-started/run-cita
 [编译 CITA]: ../install#cita-源码编译部署
 [配置]: ../configuration-guide/chain-config

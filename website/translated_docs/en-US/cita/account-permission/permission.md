@@ -95,7 +95,7 @@ $ bin/cita create \
     --contract_arguments SysConfig.checkCallPermission=true SysConfig.checkSendTxPermission=true SysConfig.checkCreateContractPermission=true
 ```
 
-启动链的接下来的步骤见 [运行 CITA](../getting-started/run-cita) 部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+启动链的接下来的步骤见 [运行 CITA](../getting-started/run-cita) 部分。接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 生成普通账户
 

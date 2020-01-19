@@ -13,7 +13,7 @@ original_id: compile-cita
 从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录:
 
 ```shell
-$ git clone https://github.com/cryptape/cita.git
+$ git clone https://github.com/citahub/cita.git
 $ cd cita
 $ git submodule init
 $ git submodule update

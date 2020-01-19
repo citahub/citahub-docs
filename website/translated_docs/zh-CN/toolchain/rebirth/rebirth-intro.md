@@ -28,8 +28,8 @@ ReBirth 业务逻辑包括：
 
 ## 快速入门
 
-https://github.com/cryptape/re-birth
+https://github.com/citahub/re-birth
 
 ## 期待协作
 
-https://github.com/cryptape/re-birth/issues 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea
+https://github.com/citahub/re-birth/issues 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea

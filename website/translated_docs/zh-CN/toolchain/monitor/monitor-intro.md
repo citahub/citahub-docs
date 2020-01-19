@@ -4,11 +4,11 @@ id: monitor-intro
 sidebar_label: 简介
 ---
 
-这是一套基于 Prometheus 框架的 [CITA](https://github.com/cryptape/cita) 区块链服务运行状态监控系统 。
+这是一套基于 Prometheus 框架的 [CITA](https://github.com/citahub/cita) 区块链服务运行状态监控系统 。
 
 监控指标包括区块链数据、服务进程状态、运行环境的 CPU/存储器/磁盘使用率等主机信息等。
 
-项目开源在 [GitHub](https://github.com/cryptape/cita-monitor)。
+项目开源在 [GitHub](https://github.com/citahub/cita-monitor)。
 
 ## 仪表板(Dashboard) 截图
 
@@ -29,7 +29,7 @@ Rabbitmq Dashboard Demo ![rabbitmq-dashboard-demo-fs8](https://user-images.githu
 * 运行环境监控 
   * 主机运行环境的系统负载、CPU、内存、磁盘空间使用情况、网络流量、TCP 连接数等
 * 故障告警通知 
-  * [监控告警策略](https://github.com/cryptape/cita-monitor/blob/master/docs/alert_strategies.md)
+  * [监控告警策略](https://github.com/citahub/cita-monitor/blob/master/docs/alert_strategies.md)
   * 支持邮件通知、Slack 通知、短信通知（Pro 版）
 * 节点网络监控（Pro 版） 
   * 连接节点数、网络拓扑、地理位置等
@@ -56,6 +56,6 @@ Rabbitmq Dashboard Demo ![rabbitmq-dashboard-demo-fs8](https://user-images.githu
 * RabbitMQ Dashboard 
   * RabbitMQ 服务的存活状态、channels 、consumers、connections、queues 等的变化记录
 
-更细节可查看：[监控指标信息结构](https://github.com/cryptape/cita-monitor/tree/master/docs/information_architecture.md)
+更细节可查看：[监控指标信息结构](https://github.com/citahub/cita-monitor/tree/master/docs/information_architecture.md)
 
-更多信息请查看[项目 GitHub Repo](https://github.com/cryptape/cita-monitor)。
+更多信息请查看[项目 GitHub Repo](https://github.com/citahub/cita-monitor)。

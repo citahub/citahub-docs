@@ -40,7 +40,7 @@ $ ./env.sh ./scripts/create_cita_config.py create \
 
 启动链接下来的步骤见[快速入门](../getting-started)部分。
 
-其中[测试合约](https://github.com/cryptape/test-contracts/blob/master/AutoExec.sol)函数签名如下:
+其中[测试合约](https://github.com/citahub/test-contracts/blob/master/AutoExec.sol)函数签名如下:
 
     ======= contracts/AutoExec.sol:AutoExec =======
     Function signatures:
@@ -53,7 +53,7 @@ $ ./env.sh ./scripts/create_cita_config.py create \
 * `autoExec()`： 为自动执行的入口，实现对 x 加一
 * `x()`： 表示获取x数值
 
-接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 部署测试合约
 

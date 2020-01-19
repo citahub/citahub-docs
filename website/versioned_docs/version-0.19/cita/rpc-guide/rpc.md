@@ -742,9 +742,9 @@ params: [
 
 Example
 
-以`https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
+以`https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
 
-用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 - 首先可以通过solc得到合约的ABI；
 

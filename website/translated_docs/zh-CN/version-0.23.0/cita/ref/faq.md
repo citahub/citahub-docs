@@ -311,7 +311,7 @@ node1/logs下。
 
 解决办法： `brew upgrade solidity`
 
-#### Mac运行 CITA 报错：/Users/leeyr/Documents/cryptape/code/cita/tests/integrate_test/cita_blockNumber.sh: line 17: jq: command not found
+#### Mac运行 CITA 报错：/Users/leeyr/Documents/citahub/code/cita/tests/integrate_test/cita_blockNumber.sh: line 17: jq: command not found
 
 解决办法：`brew install jq`
 

@@ -52,4 +52,4 @@ $ ./bin/cita restart test-chain/0 trace
 
 [peersInfo]: ../rpc-guide/rpc#peersinfo
 [日志管理]: ./log
-[运维工具]: https://github.com/cryptape/cita-op-helper
+[运维工具]: https://github.com/citahub/cita-op-helper

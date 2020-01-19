@@ -275,7 +275,7 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0x0000
 
 符合我们编写的智能合约预期。
 
-[CITA 源码库]: https://github.com/cryptape/cita
+[CITA 源码库]: https://github.com/citahub/cita
 [JSON-RPC]: https://docs.citahub.com/zh-CN/next/cita/rpc-guide/rpc
-[cita-cli]: https://github.com/cryptape/cita-cli
-[rust_hello]: https://github.com/cryptape/test-contracts/blob/master/rust_hello.rs
+[cita-cli]: https://github.com/citahub/cita-cli
+[rust_hello]: https://github.com/citahub/test-contracts/blob/master/rust_hello.rs

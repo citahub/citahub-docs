@@ -97,7 +97,7 @@ $ bin/cita create \
 	--contract_arguments SysConfig.checkCallPermission=true SysConfig.checkSendTxPermission=true SysConfig.checkCreateContractPermission=true
 ```
 
-启动链的接下来的步骤见 [运行 CITA] 部分。接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+启动链的接下来的步骤见 [运行 CITA] 部分。接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 生成普通账户
 
@@ -394,7 +394,7 @@ $ cita-cli scm Authorization queryPermissions \
 [已使用地址列表]: ../addresses#已使用地址列表
 [权限系统接口]: ../sys-contract-interface/interface#权限系统合约
 [权限系统操作示例]: ./permission-example
-[测试合约]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol
+[测试合约]: https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol
 [生成账户]: ../advanced-use/contracts/solidity
 [调用合约]: ../advanced-use/contracts/solidity#调用
 [账户概述]: ./account#账户概述

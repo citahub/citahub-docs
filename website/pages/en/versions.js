@@ -58,7 +58,7 @@ function Versions(props) {
                     <a href={`${siteConfig.baseUrl + siteConfig.docsUrl}${language}/next/welcome`}>Documentation</a>
                   </td>
                   <td>
-                    <a href="https://github.com/cryptape/cita/compare/develop...master" alt="compare" target="_blank">
+                    <a href="https://github.com/citahub/cita/compare/develop...master" alt="compare" target="_blank">
                       Commits since version {versions[0]}
                     </a>
                   </td>
@@ -81,7 +81,7 @@ function Versions(props) {
                     </td>
                     <td>
                       <a
-                        href={`https://github.com/cryptape/cita/releases/tag/v${version}`}
+                        href={`https://github.com/citahub/cita/releases/tag/v${version}`}
                         alt="Release Note"
                         target="_blank">
                         Release Note

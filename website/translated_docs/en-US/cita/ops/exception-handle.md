@@ -46,4 +46,4 @@ bin/cita logs test-chain/0 bft
 $ ./bin/cita restart test-chain/0 trace
 ```
 
-3. 使用[运维工具](https://github.com/cryptape/cita-op-helper)收集 CITA 运行异常时的错误信息，方便技术人员排查问题
+3. 使用[运维工具](https://github.com/citahub/cita-op-helper)收集 CITA 运行异常时的错误信息，方便技术人员排查问题

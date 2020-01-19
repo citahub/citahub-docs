@@ -10,7 +10,7 @@ sidebar_label: 侧链
 
 ### Cross-chain Contract Example
 
-可以参照[示例合约](https://github.com/cryptape/test-contracts/blob/master/MyToken.sol)。
+可以参照[示例合约](https://github.com/citahub/test-contracts/blob/master/MyToken.sol)。
 
 这是一个可以跨链转移 token 的 Token 合约。
 
@@ -46,7 +46,7 @@ sidebar_label: 侧链
 
 ### 新建、注册和启动侧链
 
-目前，侧链使用系统合约 [ChainManager](https://github.com/cryptape/cita/blob/develop/scripts/contracts/src/system/ChainManager.sol) 进行管理。
+目前，侧链使用系统合约 [ChainManager](https://github.com/citahub/cita/blob/develop/scripts/contracts/src/system/ChainManager.sol) 进行管理。
 
 * 生成侧链的验证节点的私钥，使用侧链的验证节点地址，在主链上使用系统合约 `ChainManager` 的方法 `newSideChain` 进行新建侧链，得到侧链的 Id 。
 * 在主链上使用系统合约 `ChainManager` 的方法 `enableSideChain` 启动指定 Id 的侧链。

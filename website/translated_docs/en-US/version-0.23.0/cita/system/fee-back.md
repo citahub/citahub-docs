@@ -29,7 +29,7 @@ $ bin/cita create \
         --contract_arguments "SysConfig.economicalModel=1"
 ```
 
-*接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示*。
+*接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 交互模式进行演示*。
 
 查看管理员和运营方地址余额
 

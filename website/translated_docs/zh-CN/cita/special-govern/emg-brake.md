@@ -29,7 +29,7 @@ title: 紧急制动
 
 *首先需要启动一条链，具体方法见快速入门部分*
 
-接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 - 首先查询链当前状态：
 

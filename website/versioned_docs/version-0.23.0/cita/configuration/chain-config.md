@@ -74,7 +74,7 @@ usage: create_cita_config.py create [-h]
    economicalModel: 0
    name: CITA Test Token
    symbol: CTT
-   avatar: https://cdn.cryptape.com/icon_cita.png
+   avatar: https://cdn.citahub.com/icon_cita.png
    autoExec: false
  -QuotaManager:
    admin: '0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523'
@@ -206,7 +206,7 @@ chain.toml  executor.toml   jsonrpc.toml       privkey
 
 ## 修改个别配置操作示例
 
-起链后，也就是说创世块一旦生成，除 chainName, operator, website 三项可以在运行时更改，其他配置均无法修改。接下来我们用 [cita-cli](https://github.com/cryptape/cita-cli) 来进行演示，以管理员修改 `chainName` 作为示例：
+起链后，也就是说创世块一旦生成，除 chainName, operator, website 三项可以在运行时更改，其他配置均无法修改。接下来我们用 [cita-cli](https://github.com/citahub/cita-cli) 来进行演示，以管理员修改 `chainName` 作为示例：
 
 确保你的链正常运行，进入 cita-cli 交互式模式，输入命令：
 
@@ -234,7 +234,7 @@ $ rpc getMetaData
     "economicalModel": 1,
     "genesisTimestamp": 1538101178583,
     "operator": "test-operator",
-    "tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+    "tokenAvatar": "https://cdn.citahub.com/icon_cita.png",
     "tokenName": "CITA Test Token",
     "tokenSymbol": "CTT",
     "validators": [

@@ -3,7 +3,7 @@ id: account-example
 title: 账户系统使用示例
 ---
 
-> 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式进行演示，操作类接口调用需要有相应的权限。
+> 接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式进行演示，操作类接口调用需要有相应的权限。
 
 ## 新建组
 

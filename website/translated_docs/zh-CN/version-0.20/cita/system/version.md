@@ -8,7 +8,7 @@ CITA use protocol version number to activate hard fork for upgrading. This contr
 
 ### Operations
 
-> 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示。
+> 接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 交互模式进行演示。
 
 目前的 `version协议版本号` 默认为 0， 接下来演示管理员如何修改协议版本号。
 

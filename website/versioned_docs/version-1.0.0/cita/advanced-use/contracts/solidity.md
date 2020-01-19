@@ -238,6 +238,6 @@ $ cita-cli rpc call \
 
 [Solidity 官方文档]: https://solidity.readthedocs.io/en/v0.4.24/
 [Solidity 编译器安装]: https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html
-[cita-cli]: https://github.com/cryptape/cita-cli
+[cita-cli]: https://github.com/citahub/cita-cli
 [快速入门]: ../../getting-started/setup
-[测试合约]: https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol
+[测试合约]: https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol

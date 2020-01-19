@@ -725,7 +725,7 @@ Result:
 3. 构造交易 `data`，前 20 字节为合约地址，后面字节为 `abi` 的编码成的。
 4. 发送交易，使用 `sendRawTransaction` 接口。
 
-以 [Test contract](https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol) 作为示例:
+以 [Test contract](https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol) 作为示例:
 
 * 链上部署该合约，得到合约地址
 * 首先可以通过 `solc` 得到合约的`ABI`
@@ -1074,7 +1074,7 @@ Result:
         "economicalModel": 1,
         "genesisTimestamp": 1541058686340,
         "operator": "test-operator",
-        "tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+        "tokenAvatar": "https://cdn.citahub.com/icon_cita.png",
         "tokenName": "CITA Test Token",
         "tokenSymbol": "CTT",
         "validators": [

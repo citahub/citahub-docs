@@ -212,4 +212,4 @@ $ scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 }
 ```
 
-[cita-cli]: https://github.com/cryptape/cita-cli
+[cita-cli]: https://github.com/citahub/cita-cli

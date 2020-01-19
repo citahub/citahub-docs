@@ -710,7 +710,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b
 
 Example
 
-以`https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
+以`https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol`这个合约为例子，正常在链上创建该合约；
 
 - 首先可以通过solc得到合约的ABI；
 

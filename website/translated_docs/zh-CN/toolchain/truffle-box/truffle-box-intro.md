@@ -8,4 +8,4 @@ CITA Truffle Box 是基于 [Truffle Box](https://github.com/truffle-box) 定制�
 
 ## 快速入门
 
-https://github.com/cryptape/cita-truffle-box 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea
+https://github.com/citahub/cita-truffle-box 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea

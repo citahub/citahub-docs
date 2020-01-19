@@ -273,7 +273,7 @@ node1/logs下。
 #### Mac 运行 CITA 报错：Internal compiler error during compilation: /tmp/solidity-20180515-88303-7oxibo/solidity_0.4.23/libsolidity/interface/CompilerStack.cpp(732): Throw in function void dev::solidity::CompilerStack::compileContract(const dev::solidity::ContractDefinition &, map<const dev::solidity::ContractDefinition *, const eth::Assembly *> &) Dynamic exception type: boost::exception_detail::clone_impl<dev::solidity::InternalCompilerError>
 解决办法： `brew upgrade solidity`
 
-#### Mac运行 CITA 报错：/Users/leeyr/Documents/cryptape/code/cita/tests/integrate_test/cita_blockNumber.sh: line 17: jq: command not found
+#### Mac运行 CITA 报错：/Users/leeyr/Documents/citahub/code/cita/tests/integrate_test/cita_blockNumber.sh: line 17: jq: command not found
 
 解决办法：`brew install jq`
 

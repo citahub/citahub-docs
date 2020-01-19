@@ -21,7 +21,7 @@ cita 中的配额数量存在两个限制：
 
 ## 操作示例
 
-> 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示。
+> 接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 交互模式进行演示。
 
 ### 块配额操作
 

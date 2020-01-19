@@ -85,11 +85,11 @@ bin/cita start test-chain/0
 cd ../../zktx_example && cargo run --release --bin client
 ```
 
-[CITA]: https://github.com/cryptape/cita
+[CITA]: https://github.com/citahub/cita
 [Rust]: https://www.rust-lang.org/
-[zk_privacy]: https://github.com/cryptape/cita/blob/develop/cita-executor/core/src/contracts/native/zk_privacy.md
-[zktx]: https://github.com/cryptape/zktx
-[zktx_example]: https://github.com/cryptape/zktx_example
+[zk_privacy]: https://github.com/citahub/cita/blob/develop/cita-executor/core/src/contracts/native/zk_privacy.md
+[zktx]: https://github.com/citahub/zktx
+[zktx_example]: https://github.com/citahub/zktx_example
 [快速入门]: ../getting-started
 [编译 CITA]: ../getting-started#%E7%BC%96%E8%AF%91-cita
 [配置]: ../operation/chain-config

@@ -35,7 +35,7 @@ original_id: system
 
 ## 接口
 
-调用接口，可以参考 [sys_config.sol](https://github.com/cryptape/cita/blob/develop/scripts/contracts/src/system/SysConfig.sol) 合约中的 SysConfigInterface，使用方法可以参考 Solidity 的文档，以及 CITA 交易发送的文档
+调用接口，可以参考 [sys_config.sol](https://github.com/citahub/cita/blob/develop/scripts/contracts/src/system/SysConfig.sol) 合约中的 SysConfigInterface，使用方法可以参考 Solidity 的文档，以及 CITA 交易发送的文档
 
 ## 初始化
 

@@ -16,7 +16,8 @@ const items = [
     width: "8%",
     height: "8%",
     logo: "https://www.citahub.com/images/component/tool_dappdemos.png",
-    title: "DApp Demos"
+    title: "DApp Demos",
+    subTitle: ''
   },
   {
     name: "Microscope",
@@ -27,7 +28,8 @@ const items = [
     width: "8%",
     height: "8%",
     logo: "https://www.citahub.com/images/component/tool_microscope.png",
-    title: "Microscope 多链浏览器"
+    title: "Microscope 多链浏览器",
+    subTitle: ''
   },
   {
     name: "Cyton",
@@ -38,7 +40,8 @@ const items = [
     width: "8%",
     height: "9%",
     logo: "https://www.citahub.com/images/component/tool_cyton.png",
-    title: "Cyton 多链钱包"
+    title: "Cyton 多链钱包",
+    subTitle: ''
   },
   {
     name: "ReBirth",
@@ -49,7 +52,8 @@ const items = [
     width: "9%",
     height: "8%",
     logo: "https://www.citahub.com/images/component/tool_rebirth.png",
-    title: "ReBirth 区块链缓存服务"
+    title: "ReBirth 区块链缓存服务",
+    subTitle: ''
   },
   {
     name: "CITA Monitor",
@@ -60,7 +64,8 @@ const items = [
     width: "9%",
     height: "8%",
     logo: "https://www.citahub.com/images/component/tool_monitor.png",
-    title: "CITA Monitor"
+    title: "CITA Monitor",
+    subTitle: ''
   },
   {
     name: "CITA",
@@ -71,7 +76,8 @@ const items = [
     width: "12%",
     height: "7%",
     logo: "/assets/cita.png",
-    title: "CITA"
+    title: "CITA",
+    subTitle: ''
   },
   {
     name: "Smart Contract",
@@ -82,7 +88,8 @@ const items = [
     width: "20%",
     height: "10%",
     logo: "https://www.citahub.com/images/component/tool_economics.png",
-    title: "智能合约样例"
+    title: "智能合约样例",
+    subTitle: ''
   },
   {
     name: "CITA IDE",
@@ -93,7 +100,8 @@ const items = [
     width: "9%",
     height: "8%",
     logo: "https://www.citahub.com/images/component/tool_citaIDE.png",
-    title: "CITA IDE 合约开发与部署工具"
+    title: "CITA IDE 合约开发与部署工具",
+    subTitle: ''
   },
   {
     name: "CITA Truffle Box",
@@ -104,7 +112,8 @@ const items = [
     width: "9%",
     height: "8%",
     logo: "https://www.citahub.com/images/component/tool_trufflebox.png",
-    title: "CITA Truffle Box"
+    title: "CITA Truffle Box",
+    subTitle: ''
   },
   {
     name: "CITA Web Debugger",
@@ -116,7 +125,8 @@ const items = [
     width: "9%",
     height: "8%",
     logo: "https://www.citahub.com/images/component/tool_webdebugger.png",
-    title: "CITA Web Debugger"
+    title: "CITA Web Debugger",
+    subTitle: ''
   },
   {
     name: "CITA SDK",
@@ -127,7 +137,8 @@ const items = [
     width: "9%",
     height: "8.5%",
     logo: "https://www.citahub.com/images/component/tool_sdk.png",
-    title: "全平台 SDK"
+    title: "全平台 SDK",
+    subTitle: ''
   },
   {
     name: "CITA CLI",
@@ -138,7 +149,20 @@ const items = [
     width: "9%",
     height: "8.5%",
     logo: "https://www.citahub.com/images/component/tool_cli.png",
-    title: "CITA-CLI"
+    title: "CITA-CLI",
+    subTitle: ''
+  },
+  {
+    name: "TESTNET",
+    href: "/zh-CN/toolchain/testnet/testchain",
+    shape: "rect",
+    left: "77%",
+    top: "75%",
+    width: "10%",
+    height: "4%",
+    logo: '',
+    title: "CITA 测试链",
+    subTitle: `<p class="subTitle">curl -sS -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}' https://testnet.citahub.com</p>`
   }
 ];
 
@@ -172,8 +196,9 @@ CoordinatesMaps.prototype.showItem = function(item) {
   const tooltipDom = htmlToElements(`<div class="tooltip"><a  href="${
     found.href
   }" target="_blank">
-      <img src="${found.logo}" alt="" width="80px">
+      ${found.logo && `<img src="${found.logo}" alt="" width="80px">`}
       <div class="title">${found.title}</div>
+      ${found.subTitle && `<p>${found.subTitle}</p>`}
     </a></div>`);
 
   if (document.querySelectorAll(".tooltip").length > 0) {

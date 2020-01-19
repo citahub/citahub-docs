@@ -279,7 +279,7 @@ CITA 作为许可链共识节点采用轮流出块的方式进行出块。作为
 [setStake 接口] 可对共识节点出块权重进行配置。
 [stakePermillage 接口] 可查询共识节点出块权重千分比（目前只对 Charge 模型开放）。
 
-[共识节点管理系统合约]: ../system-contract-interface/interface#interface#approveNode
+[共识节点管理系统合约]: ../sys-contract-interface/interface#interface#approveNode
 [setStake 接口]: https://docs.citahub.com/zh-CN/0.23.0/cita/system-contract-interface/interface#setstake
 [solc]: https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html
 [超级管理员账户信息]: ../getting-started/run-cita

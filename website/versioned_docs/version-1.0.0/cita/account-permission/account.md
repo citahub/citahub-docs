@@ -260,5 +260,5 @@ $ scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 [cita-cli]: https://github.com/cryptape/cita-cli
 [已使用地址列表]: ../addresses#已使用地址列表
-[账户系统接口]: ../system-contract-interface/interface#newgroup
+[账户系统接口]: ../sys-contract-interface/interface#newgroup
 [链级配置]: ../configuration-guide/chain-config

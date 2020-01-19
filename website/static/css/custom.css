@@ -9,7 +9,7 @@
   background: transparent;
   text-align: center;
   position: absolute;
-  width: 140px;
+  min-width: 140px;
   left: 100%;
   opacity: 0;
   cursor: default;
@@ -39,6 +39,15 @@
 .firstPageImageParent .tooltip.on {
   opacity: 1;
   cursor: pointer;
+}
+.firstPageImageParent .tooltip .subTitle {
+  font-size: 12px;
+  background: #fef3f3;
+  color: #333;
+  text-align: left;
+  padding: 8px;
+  border-radius: 4px;
+  width: 330px;
 }
 .headerTitleWithLogo {
   white-space: nowrap;

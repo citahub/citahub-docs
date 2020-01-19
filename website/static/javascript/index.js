@@ -288,6 +288,17 @@ function addGA() {
     document.body.append(googleScript);
   }
 }
+function addBaiduTongji() {
+  if(window.location.href.indexOf('docs.citahub.com') > -1) {
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?87fe8c7beae6c017f649daa66b27505d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  }
+}
 
 window.onload = () => {
   const welcome = "/welcome";
@@ -300,6 +311,8 @@ window.onload = () => {
   addEditOnGithub();
   translateEnUs();
   // add Google Analytics
-  addGA();
+  // addGA()
+  // add Baidu Tongji
+  addBaiduTongji()
   new CoordinatesMaps(items, "/assets/first-page.jpg").init();
-};
+}

@@ -125,7 +125,7 @@ Solidity，Rust
 ### 系统保留地址
 
 #### 对于 0xffffffffffffffffffffffffffffffffff010000 存证指令的这个地址，是怎么使用的呀？现在我向这个地址存了数据，该用什么方法去读取呢？
-就是普通的发交易,读取的话就是根据交易哈希查询 getReceipt，然后取出来。
+存证是向存证指令地址发交易，要存证的内容放在交易的data字段。读取是根据存证交易哈希调用 getTransaction，然后将结果中的 content 反序列化，得到交易的信息，其中的 data 字段即为存证内容。详见[存证操作说明]。
 
 ## RPC/SDK
 
@@ -266,3 +266,4 @@ node1/logs下。
 
 可能是端口没开
 
+[存证操作说明]: ./store.md

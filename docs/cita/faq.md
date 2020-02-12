@@ -225,7 +225,7 @@ CITA 采用的微服务架构，微服务之间通过消息总线通信。消息
 
 #### 目前 CITA 底层区块数据不断增长，占用空间很大，需要有办法压缩区块及日志数据，目前CITA有支持吗？
 做快照是可以减少目录大小，但老的数据会丢失。
-日志可以清理掉或者备份到其他服务器上，参考 CITA 文档：https://docs.citahub.com/en-US/next/cita/system/log
+日志可以清理掉或者备份到其他服务器上，参考 CITA 文档：https://docs.citahub.com/zh-CN/cita/ops/log
 
 ### 日志
 

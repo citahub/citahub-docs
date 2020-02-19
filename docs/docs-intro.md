@@ -70,4 +70,9 @@ Cyton Wallet 分为 Android 版和 iOS 版，提供账户管理功能，Token �
 
 Microscope 区块链浏览器，可用于查询所有 CITA 链上信息，并支持基于 CITA 的多链，可通过在元数据面板中切换目标链。
 
+## 资源列表
+
+- [精华文章](https://mp.weixin.qq.com/mp/homepage?__biz=MzI4ODk4ODYxMg==&hid=7)
+- [技术论坛](https://talk.citahub.com/)
+
 

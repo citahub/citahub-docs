@@ -116,14 +116,13 @@ $ bin/cita create --help
 * 除了创世块中的数组，链有时候还需要额外自带一些数据（比如说零知识证明），但是因为数据比较大，无法放入创世块，因此在这里可以通过传递参数指定一个单独的资源目录。
 * 指定该参数后，生成的配置会多一个 resource 目录，用户指定目录下的文件将会被拷贝进来，然后，配置工具会计算该目录下所有文件的 hash 值，作为 genesis.json 中 prevhash 字段中的值。prevhash 默认全部是 0，通过传入此参数，prevhash 的值将发生改变。
 
-### `--grpc_port`、`jsonrpc_port`、`ws_port`
+### `jsonrpc_port`、`ws_port`
 
 指定起始端口号。
 
-* grpc，jsonrpc，ws_port 等参数指定的端口号是一个起始端口号。节点实际使用的端口号，按照节点排列顺序顺延，即 port+n（ n 为节点序号）。比如总共 4 个节点，传递 grpc_port 参数为 7000 ，则 test-chain/0 的 grpc 端口号为 7000，test-chain/1 的 grpc 端口号为 7001，以此类推。
-* grpc_port 存在 `test-chain/*/executor.toml` 中，jsonrpc port 和 ws port 都存在 `test-chain/*/jsonrpc.toml` 中 。
+* jsonrpc，ws_port 等参数指定的端口号是一个起始端口号。节点实际使用的端口号，按照节点排列顺序顺延，即 port+n（ n 为节点序号）。比如总共 4 个节点，传递 jsonrpc_port 参数为 1337 ，则 test-chain/0 的 jsonrpc 端口号为 1337，test-chain/1 的 jsonrpc 端口号为 1338，以此类推。
+* jsonrpc port 和 ws port 存在 `test-chain/*/jsonrpc.toml` 中 。
 * CITA有一些保留端口，设置节点网络端口，或者自定义端口的时候要避免产生端口冲突。保留端口有：
-  * 默认的 `grpc` 端口：5000 到 5000 + N（N 为节点总数,以下相同）
   * 默认的 `jsonrpc` 端口：1337 到 1337 + N
   * 默认的 `websocket` 端口：4337 到 4337+N
   * 默认的 `rabbitmq` 端口：4369(epmd)/25672(Erlang distribution)/5671，5672(AMQP)/15672(management plugin)

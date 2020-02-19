@@ -192,12 +192,12 @@ CITA 在 1.0.1 及以后版本的发布件中提供 docker image 版本，并托
 
 如：
 
-**1.0.1-secp256k1-sha3**
+**20.2.0-secp256k1-sha3**
 
-可以使用 `docker pull` 命令将所需要的 CITA 版本的镜像下载到本地，如下载 `1.0.1-secp256k1-sha3` ：
+可以使用 `docker pull` 命令将所需要的 CITA 版本的镜像下载到本地，如下载 `20.2.0-secp256k1-sha3` ：
 
 ```shell
-docker pull cita/cita-release:1.0.1-secp256k1-sha3
+docker pull cita/cita-release:20.2.0-secp256k1-sha3
 ```
 
 查看下载结果：
@@ -205,7 +205,7 @@ docker pull cita/cita-release:1.0.1-secp256k1-sha3
 ```shell
 docker images
 REPOSITORY          TAG                     IMAGE ID            CREATED             SIZE
-cita/cita-release   1.0.1-secp256k1-sha3    ca17a2fad469        2 weeks ago         774MB
+cita/cita-release  20.2.0-secp256k1-sha3    020a7b1d2225        5 days ago          724MB
 ```
 
 ### Docker 命令运行 CITA
@@ -217,10 +217,10 @@ cita/cita-release   1.0.1-secp256k1-sha3    ca17a2fad469        2 weeks ago     
 执行命令：
 
 ```shell
- docker run -v "`pwd`":/opt/cita-run cita/cita-release:1.0.1-secp256k1-sha3 cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "192.168.10.96:4000, 192.168.10.96:4001"
+ docker run -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "192.168.10.96:4000, 192.168.10.96:4001"
 ```
 
-这个命分为两部分，前半部分 `docker run -v "`pwd`":/opt/cita-run cita/cita-release:1.0.1-secp256k1-sha3` 为 docker 命令，表示启动一个 docker 容器，而后半部分 `cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "192.168.10.96:4000, 192.168.10.96:4001"` 为需要执行的 CITA 命令，详见 [链级配置] 相关说明。
+这个命分为两部分，前半部分 `docker run -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3` 为 docker 命令，表示启动一个 docker 容器，而后半部分 `cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "192.168.10.96:4000, 192.168.10.96:4001"` 为需要执行的 CITA 命令，详见 [链级配置] 相关说明。
 
 注意，为了使两个节点的配置运行在两个不同的容器中，所以 `--nodes` 中的 `ip` 要写主机的 IP，这不同于在同一个容器中运行两个节点的配置。
 在 Linux 系统下可以通过 `ifconfig` 命令获得主机 IP，请注意更改以上命令中的主机 IP，以免后续命令不能正确执行。
@@ -232,13 +232,13 @@ cita/cita-release   1.0.1-secp256k1-sha3    ca17a2fad469        2 weeks ago     
 启动节点 0：
 
 ```shell
-docker run -d -p 192.168.10.96:1337:1337 -p 192.168.10.96:4000:4000 -v "`pwd`":/opt/cita-run cita/cita-release:1.0.1-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/0 && cita start test-chain/0 && sleep infinity'
+docker run -d -p 192.168.10.96:1337:1337 -p 192.168.10.96:4000:4000 -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/0 && cita start test-chain/0 && sleep infinity'
 ```
 
 启动节点 1：
 
 ```shell
-docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/opt/cita-run cita/cita-release:1.0.1-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/1 && cita start test-chain/1 && sleep infinity'
+docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/1 && cita start test-chain/1 && sleep infinity'
 ```
 
 注意，这里需要暴露 JSON-RPC 的端口外，还需要暴露 CITA 节点网络 (4000, 4001) 的端口，以便两个 CITA 节点可以互联。

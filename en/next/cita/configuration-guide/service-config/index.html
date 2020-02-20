@@ -151,7 +151,6 @@ $ ls 0
 <p>executor.toml 是 Executor 微服务的配置文件，如下：</p>
 <pre><code class="hljs css language-toml"><span class="hljs-attr">journaldb_type</span> = <span class="hljs-string">"archive"</span>
 <span class="hljs-attr">prooftype</span> = <span class="hljs-number">2</span>
-<span class="hljs-attr">grpc_port</span> = <span class="hljs-number">5000</span>
 <span class="hljs-attr">genesis_path</span> = <span class="hljs-string">"./genesis.json"</span>
 <span class="hljs-attr">statedb_cache_size</span> = <span class="hljs-number">5242880</span>
 <span class="hljs-attr">eth_compatibility</span> = <span class="hljs-literal">false</span>
@@ -159,7 +158,6 @@ $ ls 0
 <ul>
 <li><code>journaldb_type</code> : 表示当前使用的 JournalDB 算法，有 &quot;archive&quot; &quot;light&quot; &quot;fast&quot; &quot;basic&quot; 等4种类型，默认是 archive。</li>
 <li><code>prooftype</code> : 表示当前使用的共识算法，目前只支持 CITA-BFT 算法。</li>
-<li><code>grpc_port</code> : grpc 端口。</li>
 <li><code>genesis_path</code> : 创世块文件路径</li>
 <li><code>statedb_cache_size</code>: 表示 StateDB 中 global cache 的大小，用于缓存账户和 code， 默认是 5242880，即 5M。</li>
 <li><code>eth_compatibility</code> : 是否与以太坊兼容的开关(CITA默认与以太坊在块的时间戳精度上不兼容，CITA为毫秒，以太坊为秒)。</li>

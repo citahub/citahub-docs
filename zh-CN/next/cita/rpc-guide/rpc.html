@@ -544,33 +544,6 @@ syntax = <span class="hljs-string">"proto3"</span>;
 
 </code></pre>
 <hr>
-<h3><a class="anchor" aria-hidden="true" id="estimatequota"></a><a href="#estimatequota" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>estimateQuota</h3>
-<p>估算一个调用合约交易的 quota 使用量。</p>
-<ul>
-<li>参数</li>
-</ul>
-<ol>
-<li><code>CallRequest</code> - <code>Call</code> 请求对象，详见 <code>CallRequest</code> 的说明</li>
-<li><code>BlockNumber</code> - 块高度</li>
-</ol>
-<ul>
-<li>返回值</li>
-</ul>
-<p><code>Quantity</code> - 本次交易的 quota 估算值</p>
-<p>示例:</p>
-<p>Request:</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"estimateQuota","params":[{"to": "0xb701924639d802dc8093d1a43dffa9939a4506de", "data": "0x13fb8817"}, "latest"],"id":1}'</span>  127.0.0.1:1337 | jq</span>
-</code></pre>
-<p>Result:</p>
-<pre><code class="hljs css language-json">{
-  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000007fc1"</span>
-}
-
-</code></pre>
-<p>注意：如果在估算的合约中存在调用者权限的控制，需要在估算时添加 <code>&quot;from&quot;</code> 参数，否则会因权限检查不通过而导致估算失败。</p>
-<hr>
 <h3><a class="anchor" aria-hidden="true" id="gettransaction"></a><a href="#gettransaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTransaction</h3>
 <p>根据交易哈希查询交易。</p>
 <ul>
@@ -692,9 +665,8 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <p>主要步骤：</p>
 <ol>
 <li>部署合约，得到合约地址。</li>
-<li>使用 <code>solc</code> 编译合约代码得到 <code>ABI</code>，以 <code>String</code> 类型编码成相应参数，详情见 <a href="https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI">Ethereum Contract ABI</a>。</li>
-<li>构造交易 <code>data</code>，前 20 字节为合约地址，后面字节为 <code>abi</code> 的编码成的。</li>
-<li>发送交易，使用 <code>sendRawTransaction</code> 接口。</li>
+<li>使用 <code>solc</code> 编译合约代码得到 <code>ABI</code>内容，并填充 data 字段。</li>
+<li>使用 <code>cita-cli store abi</code> 保存 <code>ABI</code> 内容。</li>
 </ol>
 <p>以 <a href="https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol">Test contract</a> 作为示例:</p>
 <ul>
@@ -707,17 +679,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <pre><code class="hljs css language-json">[{<span class="hljs-attr">"constant"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"inputs"</span>:[{<span class="hljs-attr">"name"</span>:<span class="hljs-string">"x"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"uint256"</span>}],<span class="hljs-attr">"name"</span>:<span class="hljs-string">"set"</span>,<span class="hljs-attr">"outputs"</span>:[],<span class="hljs-attr">"payable"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"stateMutability"</span>:<span class="hljs-string">"nonpayable"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"function"</span>},{<span class="hljs-attr">"constant"</span>:<span class="hljs-literal">true</span>,<span class="hljs-attr">"inputs"</span>:[],<span class="hljs-attr">"name"</span>:<span class="hljs-string">"get"</span>,<span class="hljs-attr">"outputs"</span>:[{<span class="hljs-attr">"name"</span>:<span class="hljs-string">""</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"uint256"</span>}],<span class="hljs-attr">"payable"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"stateMutability"</span>:<span class="hljs-string">"view"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"function"</span>}]
 </code></pre>
 <ul>
-<li>将 <code>ABI</code> 作为 <code>String</code> 类型，构造 <code>data</code>，编码结果如下：</li>
-</ul>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli ethabi encode params --param string <span class="hljs-string">'[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]'</span></span>
-</code></pre>
-<pre><code class="hljs">000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002aa307863663733353235623338306335623730366633356331666630326161373938636339393530383630303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303032303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030656635623762363336663665373337343631366537343361363636313663373336353263363936653730373537343733336135623762366536313664363533613738326337343739373036353361373536393665373433323335333637643564326336653631366436353361373336353734326336663735373437303735373437333361356235643263373036313739363136323663363533613636363136633733363532633733373436313734363534643735373436313632363936633639373437393361366536663665373036313739363136323663363532633734373937303635336136363735366536333734363936663665376432633762363336663665373337343631366537343361373437323735363532633639366537303735373437333361356235643263366536313664363533613637363537343263366637353734373037353734373333613562376236653631366436353361326337343739373036353361373536393665373433323335333637643564326337303631373936313632366336353361363636313663373336353263373337343631373436353464373537343631363236393663363937343739336137363639363537373263373437393730363533613636373536653633373436393666366537643564303030303030303030303030303030303030303030303030303030303030303030300000000000000000000000000000000000000000000000
-</code></pre>
-<ul>
 <li>Store ABI</li>
 </ul>
 <pre><code class="hljs css language-bash">$ cita-cli store abi \
-    --content 000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000ef5b7b636f6e7374616e743a66616c73652c696e707574733a5b7b6e616d653a782c747970653a75696e743235367d5d2c6e616d653a7365742c6f7574707574733a5b5d2c70617961626c653a66616c73652c73746174654d75746162696c6974793a6e6f6e70617961626c652c747970653a66756e6374696f6e7d2c7b636f6e7374616e743a747275652c696e707574733a5b5d2c6e616d653a6765742c6f7574707574733a5b7b6e616d653a2c747970653a75696e743235367d5d2c70617961626c653a66616c73652c73746174654d75746162696c6974793a766965772c747970653a66756e6374696f6e7d5d0000000000000000000000000000000000 \
+    --content <span class="hljs-string">'[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]'</span> \
     --address 0xcf73525b380c5b706f35c1ff02aa798cc9950860 \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
     --url http://127.0.0.1:1337
@@ -741,9 +706,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
-    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002aa3078636637333532356233383063356237303666333563316666303261613739386363393935303836303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030323030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030306566356237623633366636653733373436313665373433613636363136633733363532633639366537303735373437333361356237623665363136643635336137383263373437393730363533613735363936653734333233353336376435643263366536313664363533613733363537343263366637353734373037353734373333613562356432633730363137393631363236633635336136363631366337333635326337333734363137343635346437353734363136323639366336393734373933613665366636653730363137393631363236633635326337343739373036353361363637353665363337343639366636653764326337623633366636653733373436313665373433613734373237353635326336393665373037353734373333613562356432633665363136643635336136373635373432633666373537343730373537343733336135623762366536313664363533613263373437393730363533613735363936653734333233353336376435643263373036313739363136323663363533613636363136633733363532633733373436313734363534643735373436313632363936633639373437393361373636393635373732633734373937303635336136363735366536333734363936663665376435643030303030303030303030303030303030303030303030303030303030303030303000000000000000000000000000000000000000000000"</span>
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000"</span>
 }
 </code></pre>
+<p>注： 使用 cita-cli 查询到的结果是 abi 字符串 ethabi 编码后的结果， 使用 cita sdk 查询可以直接得到 string 格式的 abi 字符串。</p>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getbalance"></a><a href="#getbalance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getBalance</h3>
 <p>获取账户余额。</p>
@@ -1060,7 +1026,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 }
 </code></pre>
 <hr>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/architecture/view"><span class="arrow-prev">← </span><span>视图</span></a><a class="docs-next button" href="/zh-CN/next/cita/rpc-guide/rpc-types"><span>JSON-RPC 类型</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#json-rpc">JSON RPC</a><ul class="toc-headings"><li><a href="#peercount">peerCount</a></li><li><a href="#peersinfo">peersInfo</a></li><li><a href="#blocknumber">blockNumber</a></li><li><a href="#sendrawtransaction">sendRawTransaction</a></li><li><a href="#getversion">getVersion</a></li><li><a href="#getblockbyhash">getBlockByHash</a></li><li><a href="#getblockbynumber">getBlockByNumber</a></li><li><a href="#gettransactionreceipt">getTransactionReceipt</a></li><li><a href="#getlogs">getLogs</a></li><li><a href="#call">call</a></li><li><a href="#estimatequota">estimateQuota</a></li><li><a href="#gettransaction">getTransaction</a></li><li><a href="#gettransactioncount">getTransactionCount</a></li><li><a href="#getcode">getCode</a></li><li><a href="#getabi">getAbi</a></li><li><a href="#getbalance">getBalance</a></li><li><a href="#newfilter">newFilter</a></li><li><a href="#newblockfilter">newBlockFilter</a></li><li><a href="#uninstallfilter">uninstallFilter</a></li><li><a href="#getfilterchanges">getFilterChanges</a></li><li><a href="#getfilterlogs">getFilterLogs</a></li><li><a href="#gettransactionproof">getTransactionProof</a></li><li><a href="#getmetadata">getMetaData</a></li><li><a href="#getblockheader">getBlockHeader</a></li><li><a href="#getstateproof">getStateProof</a></li><li><a href="#getstorageat">getStorageAt</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/architecture/view"><span class="arrow-prev">← </span><span>视图</span></a><a class="docs-next button" href="/zh-CN/next/cita/rpc-guide/rpc-types"><span>JSON-RPC 类型</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#json-rpc">JSON RPC</a><ul class="toc-headings"><li><a href="#peercount">peerCount</a></li><li><a href="#peersinfo">peersInfo</a></li><li><a href="#blocknumber">blockNumber</a></li><li><a href="#sendrawtransaction">sendRawTransaction</a></li><li><a href="#getversion">getVersion</a></li><li><a href="#getblockbyhash">getBlockByHash</a></li><li><a href="#getblockbynumber">getBlockByNumber</a></li><li><a href="#gettransactionreceipt">getTransactionReceipt</a></li><li><a href="#getlogs">getLogs</a></li><li><a href="#call">call</a></li><li><a href="#gettransaction">getTransaction</a></li><li><a href="#gettransactioncount">getTransactionCount</a></li><li><a href="#getcode">getCode</a></li><li><a href="#getabi">getAbi</a></li><li><a href="#getbalance">getBalance</a></li><li><a href="#newfilter">newFilter</a></li><li><a href="#newblockfilter">newBlockFilter</a></li><li><a href="#uninstallfilter">uninstallFilter</a></li><li><a href="#getfilterchanges">getFilterChanges</a></li><li><a href="#getfilterlogs">getFilterLogs</a></li><li><a href="#gettransactionproof">getTransactionProof</a></li><li><a href="#getmetadata">getMetaData</a></li><li><a href="#getblockheader">getBlockHeader</a></li><li><a href="#getstateproof">getStateProof</a></li><li><a href="#getstorageat">getStorageAt</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

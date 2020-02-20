@@ -199,31 +199,31 @@ cita      <span class="hljs-number">6202</span>  <span class="hljs-number">6180<
 <p>CITA 在 1.0.1 及以后版本的发布件中提供 docker image 版本，并托管到 docker hub 上，其路径为 <code>cita/cita-release</code> 。发布件的 tag 规则为：</p>
 <p><strong>版本号-签名算法-哈希算法</strong></p>
 <p>如：</p>
-<p><strong>1.0.1-secp256k1-sha3</strong></p>
-<p>可以使用 <code>docker pull</code> 命令将所需要的 CITA 版本的镜像下载到本地，如下载 <code>1.0.1-secp256k1-sha3</code> ：</p>
-<pre><code class="hljs css language-shell">docker pull cita/cita-release:1.0.1-secp256k1-sha3
+<p><strong>20.2.0-secp256k1-sha3</strong></p>
+<p>可以使用 <code>docker pull</code> 命令将所需要的 CITA 版本的镜像下载到本地，如下载 <code>20.2.0-secp256k1-sha3</code> ：</p>
+<pre><code class="hljs css language-shell">docker pull cita/cita-release:20.2.0-secp256k1-sha3
 </code></pre>
 <p>查看下载结果：</p>
 <pre><code class="hljs css language-shell">docker images
 REPOSITORY          TAG                     IMAGE ID            CREATED             SIZE
-cita/cita-release   1.0.1-secp256k1-sha3    ca17a2fad469        2 weeks ago         774MB
+cita/cita-release  20.2.0-secp256k1-sha3    020a7b1d2225        5 days ago          724MB
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="docker-命令运行-cita"></a><a href="#docker-命令运行-cita" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker 命令运行 CITA</h3>
 <p>使用 CITA 启动一条链，包括　<strong>节点配置生成</strong>　与 <strong>启动节点</strong>　两部分。以下将以启动两个节点的链为例说明， 如需启动更多节点，可以参考 <a href="../cita/configuration-guide/chain-config">链级配置</a> 来操作。</p>
 <h4><a class="anchor" aria-hidden="true" id="节点配置生成"></a><a href="#节点配置生成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点配置生成</h4>
 <p>执行命令：</p>
-<pre><code class="hljs css language-shell"> docker run -v "`pwd`":/opt/cita-run cita/cita-release:1.0.1-secp256k1-sha3 cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "192.168.10.96:4000, 192.168.10.96:4001"
+<pre><code class="hljs css language-shell"> docker run -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "192.168.10.96:4000, 192.168.10.96:4001"
 </code></pre>
-<p>这个命分为两部分，前半部分 <code>docker run -v &quot;</code>pwd<code>&quot;:/opt/cita-run cita/cita-release:1.0.1-secp256k1-sha3</code> 为 docker 命令，表示启动一个 docker 容器，而后半部分 <code>cita create --super_admin &quot;0x37d1c7449bfe76fe9c445e626da06265e9377601&quot; --nodes &quot;192.168.10.96:4000, 192.168.10.96:4001&quot;</code> 为需要执行的 CITA 命令，详见 <a href="../cita/configuration-guide/chain-config">链级配置</a> 相关说明。</p>
+<p>这个命分为两部分，前半部分 <code>docker run -v &quot;</code>pwd<code>&quot;:/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3</code> 为 docker 命令，表示启动一个 docker 容器，而后半部分 <code>cita create --super_admin &quot;0x37d1c7449bfe76fe9c445e626da06265e9377601&quot; --nodes &quot;192.168.10.96:4000, 192.168.10.96:4001&quot;</code> 为需要执行的 CITA 命令，详见 <a href="../cita/configuration-guide/chain-config">链级配置</a> 相关说明。</p>
 <p>注意，为了使两个节点的配置运行在两个不同的容器中，所以 <code>--nodes</code> 中的 <code>ip</code> 要写主机的 IP，这不同于在同一个容器中运行两个节点的配置。
 在 Linux 系统下可以通过 <code>ifconfig</code> 命令获得主机 IP，请注意更改以上命令中的主机 IP，以免后续命令不能正确执行。</p>
 <p>命令执行成功后，会在当前目录下生成一个名为 <code>test-chain</code> 的文件夹。</p>
 <h4><a class="anchor" aria-hidden="true" id="启动节点"></a><a href="#启动节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>启动节点</h4>
 <p>启动节点 0：</p>
-<pre><code class="hljs css language-shell">docker run -d -p 192.168.10.96:1337:1337 -p 192.168.10.96:4000:4000 -v "`pwd`":/opt/cita-run cita/cita-release:1.0.1-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/0 &amp;&amp; cita start test-chain/0 &amp;&amp; sleep infinity'
+<pre><code class="hljs css language-shell">docker run -d -p 192.168.10.96:1337:1337 -p 192.168.10.96:4000:4000 -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/0 &amp;&amp; cita start test-chain/0 &amp;&amp; sleep infinity'
 </code></pre>
 <p>启动节点 1：</p>
-<pre><code class="hljs css language-shell">docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/opt/cita-run cita/cita-release:1.0.1-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/1 &amp;&amp; cita start test-chain/1 &amp;&amp; sleep infinity'
+<pre><code class="hljs css language-shell">docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/1 &amp;&amp; cita start test-chain/1 &amp;&amp; sleep infinity'
 </code></pre>
 <p>注意，这里需要暴露 JSON-RPC 的端口外，还需要暴露 CITA 节点网络 (4000, 4001) 的端口，以便两个 CITA 节点可以互联。</p>
 <h4><a class="anchor" aria-hidden="true" id="验证"></a><a href="#验证" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证</h4>

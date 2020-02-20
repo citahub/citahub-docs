@@ -9,14 +9,14 @@ id: java-sdk
 
 * 通过 HTTP 协议，实现了 CITA 所定义的所有 JSON-RPC 方法。
 * 可以通过 Solidity 智能合约生成该合约的 Java 类，方便开发者通过 Java 语言实现对智能合约的部署和合约方法的调用（支持 Solidity 和 Truffle 的格式）。
-* 适配安卓，CITA Android 版钱包 [Cyton Wallet Android](https://github.com/cryptape/cyton-android) 就是基于 cita-sdk-java 开发实现的
+* 适配安卓，CITA Android 版钱包 [Cyton Wallet Android](https://github.com/citahub/cyton-android) 就是基于 cita-sdk-java 开发实现的
 * Java 版本：7 及其以上
 
 ## 功能简介
 
 ### 部署智能合约
 
-与以太坊类似，智能合约是通过发送交易来部署的。CITA 交易对象定义在 [Transaction.java](https://github.com/cryptape/cita-sdk-java/blob/master/core/src/main/java/com/cryptape/cita/protocol/core/methods/request/Transaction.java)。 在 CITA 交易中，有三个特殊的参数：
+与以太坊类似，智能合约是通过发送交易来部署的。CITA 交易对象定义在 [Transaction.java](https://github.com/citahub/cita-sdk-java/blob/master/core/src/main/java/com/citahub/cita/protocol/core/methods/request/Transaction.java)。 在 CITA 交易中，有三个特殊的参数：
 
 * nonce： 随机数或者通过特定的逻辑生成的随机信息，nonce是为了避免重放攻击。
 * quota： 交易执行费用，也就是矿工费，就像以太坊中的 gasPrice * gasLimit。
@@ -70,11 +70,11 @@ id: java-sdk
 
 这个例子通过 `Token.sol`, `Token.bin` and `Token.abi` 这三个文件在 `tests/src/main/resources` 生成对应的 java 类，命令如下：
 
-    `java -jar console/build/libs/console-0.17-all.jar solidity generate tests/src/main/resources/Token.bin tests/src/main/resources/Token.abi -o tests/src/main/java/ -p com.cryptape.cita.tests`
+    `java -jar console/build/libs/console-0.17-all.jar solidity generate tests/src/main/resources/Token.bin tests/src/main/resources/Token.abi -o tests/src/main/java/ -p com.citahub.cita.tests`
     
 
 `Token.java` 会通过以上命令生成， `Token` 可以与 `CitaTransactionManager` 一起使用来和 Token 合约交互。
 
 ## 快速入门
 
-https://github.com/cryptape/cita-sdk-java 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea
+https://github.com/citahub/cita-sdk-java 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入 CITAHub：https://www.citahub.com/#joinArea

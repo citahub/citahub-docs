@@ -7,7 +7,7 @@ title: 协议升级
 
 1. 待所有节点按照 [软件升级说明](./software-upgrade) 升级 CITA 版本完成后，链的超级管理员根据下文中的 **协议升级交易说明** 发送交易，实施协议升级。
 
-2. 普通用户需要将使用的工具以及 SDK 升级至支持新版本协议的版本, 这些内容也会在相关文档中详细描述。
+2. 普通用户需要将使用的工具以及 SDK 升级至支持新版本协议的版本， 这些内容也会在相关文档中详细描述。
 
 > **注意**
 > 
@@ -18,11 +18,11 @@ title: 协议升级
 
 ## 协议升级交易说明
 
-CITA 中内置了专门的 `version_manager` 合约，存放一个单调递增的协议版本号, 超级管理员发送交易变更版本号来, 激活硬分叉, 触发协议升级。
+CITA 中内置了专门的 `version_manager` 合约，存放一个单调递增的协议版本号， 超级管理员发送交易变更版本号来， 激活硬分叉， 触发协议升级。
 
 ### 操作示例
 
-> 接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 交互模式进行演示。
+> 接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 交互模式进行演示。
 
 假设当前的协议版本号为 1， 接下来演示超级管理员如何修改协议版本号:
 
@@ -56,13 +56,13 @@ scm VersionManager getVersion
 
 ## 完整升级示例
 
-1. 假设现在有一条正在运营的四节点 CITA v0.19 的链，当前使用的协议版本为 v0, 每个节点对应一名运维人员, 共 4 名运维人员，还有一个超级管理员。
-2. CITA v0.20 正式发布后, v0.20 支持 v0/v1 两个版本的协议。
+1. 假设现在有一条正在运营的四节点 CITA v0.19 的链，当前使用的协议版本为 v0， 每个节点对应一名运维人员， 共 4 名运维人员，还有一个超级管理员。
+2. CITA v0.20 正式发布后， v0.20 支持 v0/v1 两个版本的协议。
 3. 链的超级管理员通知 4 个节点的运维人员，可以开始升级 CITA v0.20 了，限期 10 天。
-4. 4 个运维人员在这 10 天里的任何时间对自己维护的节点实施 `软件升级` CITA v0.20 的操作。所以这段时间 4 个共识节点会存在 v0.19 和 v0.20 混用的情况。这种情况没有任何问题，过程中业务也不会中断, 此时使用的依然是 v0 协议。
+4. 4 个运维人员在这 10 天里的任何时间对自己维护的节点实施 `软件升级` CITA v0.20 的操作。所以这段时间 4 个共识节点会存在 v0.19 和 v0.20 混用的情况。这种情况没有任何问题，过程中业务也不会中断， 此时使用的依然是 v0 协议。
 5. 10 天的期限结束。4 个节点都升级到 CITA v0.20 了。
 6. 超级管理员开启紧急制动功能, 链的业务暂停，只有超级管理员可以发交易上链。
-7. 超级管理员发交易，升级系统合约。我们提供了脚本 [scripts/amend_sys_cont_to_v0-20.sh](https://github.com/cryptape/cita/blob/v0.20/scripts/amend_sys_cont_to_v0-20.sh) 辅助完成这项工作。
+7. 超级管理员发交易，升级系统合约。我们提供了脚本 [scripts/amend_sys_cont_to_v0-20.sh](https://github.com/citahub/cita/blob/v0.20/scripts/amend_sys_cont_to_v0-20.sh) 辅助完成这项工作。
 8. 超级管理员发送交易，将 `VersionManager` 系统合约中的 `version` 从 0 改为 1 ，完成 `协议升级`。
 9. 超级管理员关闭紧急制动功能，链的业务恢复。
 10. 至此，只有使用 v1 协议的交易才能发送上链，依然使用 v0 协议的交易，发送时将会返回错误。
@@ -83,11 +83,11 @@ v0.19 之前的版本链升级 CITA 最新版本需要重新创建链，无法�
 
 ### 对应 RELEASE 版本
 
-[v0.19](https://github.com/cryptape/cita/releases/tag/v0.19) 及以上版本
+[v0.19](https://github.com/citahub/cita/releases/tag/v0.19) 及以上版本
 
 ### 协议变更
 
-参考 [v0.19](https://github.com/cryptape/cita/releases/tag/v0.19)
+参考 [v0.19](https://github.com/citahub/cita/releases/tag/v0.19)
 
 ### 注意
 
@@ -105,7 +105,7 @@ v0.19 之前的版本链升级 CITA 最新版本需要重新创建链，无法�
 
 ### 对应 RELEASE 版本
 
-[v0.20](https://github.com/cryptape/cita/releases/tag/v0.20) 及以上版本
+[v0.20](https://github.com/citahub/cita/releases/tag/v0.20) 及以上版本
 
 ### 协议变更
 
@@ -116,7 +116,7 @@ v0.19 之前的版本链升级 CITA 最新版本需要重新创建链，无法�
 ### 实施协议升级
 
 1. 安排所有节点升级 CITA 版本至 v0.20 及以上版本。
-2. 升级系统合约。 参数是 `Admin`, `private key`, `chain id`, `version`, `url`, 其中 `version` 指当前链协议版本号。
+2. 升级系统合约。 参数是 `Admin`， `private key`， `chain id`， `version`， `url`， 其中 `version` 指当前链协议版本号。
 
 > 注意：这里的参数仅作为演示使用，请实际操作时替换为目标链的相应参数
 
@@ -126,7 +126,7 @@ v0.19 之前的版本链升级 CITA 最新版本需要重新创建链，无法�
 $ ./env.sh scripts/amend_sys_cont_to_v0-20.sh 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 1 0 http://127.0.0.1:1337
 ```
 
-在 v0.21, v0.22 版本发布包中使用命令：
+在 v0.21， v0.22 版本发布包中使用命令：
 
 ```shell
 $ ./env.sh scripts/amend_system_contracts.sh 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 1 0 http://127.0.0.1:1337
@@ -152,7 +152,7 @@ $ cita-cli scm VersionManager setVersion --admin-private 0x5f0258a4778057a8a7d97
 
 ### 注意
 
-1. 原来的 `to` 字段和 `chain_id` 字段一定不能填，否则会有交易可变性问题, 协议升级之后有相关的检查，发现 `to` 字段和 `chain_id` 字段不为空就报错。
+1. 原来的 `to` 字段和 `chain_id` 字段一定不能填，否则会有交易可变性问题， 协议升级之后有相关的检查，发现 `to` 字段和 `chain_id` 字段不为空就报错。
 2. 因为跨链功能目前还没有正式使用，因此升级后相关工具将不再支持 v0 协议，只支持 v1 协议。
 
 <!--v2 协议-->
@@ -161,23 +161,23 @@ $ cita-cli scm VersionManager setVersion --admin-private 0x5f0258a4778057a8a7d97
 
 v2 之前的版本存在两个问题:
 
-1. 使用自动执行功能时, coinbase 是地址默认值, 并非共识节点地址.
-2. Charge 模型下, 对合约执行 `self-destruct` 操作, 合约账户余额无法返还给 `refund account`.
+1. 使用自动执行功能时， coinbase 是地址默认值， 并非共识节点地址。
+2. Charge 模型下， 对合约执行 `self-destruct` 操作， 合约账户余额无法返还给 `refund account`。
 
-所以我们在协议版本 v2 修复了以上两个问题.
+所以我们在协议版本 v2 修复了以上两个问题。
 
-1. 自动执行功能中的 `coinbase` 是该块对应的出块节点地址,
-2. 对合约执行 `self-destruct` 操作后, 合约账户有余额返还指定的 `refund account`.
+1. 自动执行功能中的 `coinbase` 是该块对应的出块节点地址。
+2. 对合约执行 `self-destruct` 操作后， 合约账户有余额返还指定的 `refund account`。
 
 ### 对应 RELEASE 版本
 
-[v0.24.0](https://github.com/cryptape/cita/releases/tag/v0.24.0) 及其以上版本
+[v0.24.0](https://github.com/citahub/cita/releases/tag/v0.24.0) 及其以上版本
 
 ### 实施协议升级
 
 1. 安排所有节点升级 CITA 版本至 v0.24.0 及以上版本。
-2. 若当前链的协议版本为 v0, **必须** 按照 `v1 协议` 升级说明, 将链协议版本升级到 v1, 并正常出块后, 才可执行 v2 的升级命令。
-3. 使用超级管理员账户，执行如下协议升级命令
+2. 若当前链的协议版本为 v0， **必须** 按照 `v1 协议` 升级说明， 将链协议版本升级到 v1， 并正常出块后， 才可执行 v2 的升级命令。
+3. 使用超级管理员账户，执行如下协议升级命令。
 
 > 注意：这里的 admin-private 私钥仅作为演示使用，请实际操作时替换为目标链的实际私钥。
 

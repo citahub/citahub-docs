@@ -8,7 +8,7 @@ Cyton Wallet 是支持 CITA 的区块链钱包工具，分为 Android 版和 iOS
 
 Cyton Wallet 兼容 Ethereum，可以管理Ethereum资产，比如 ETH、ERC20、ERC721等，同时也支持现有的以太坊 DApp。由于 CITA 兼容以太坊的 EVM，支持 Solidity 开发智能合约，所以在 Ethereum 上任何合约代码都可以直接移植到 CITA 上，CITA 链上的 ERC20 代币和 Ethereum ERC20 代币完全兼容。此外 Cyton 支持基于 CITA 的多链场景，由于 CITA 是开源的高性能区块链内核，通过 chainId 区分不同的 CITA 链，Cyton 可以同时支持多条不同 chainId 的 CITA 链。
 
-Android 版 Cyton 使用基于 Java 和 Kotlin 两种语言混合开发，项目依赖 Java 版的 SDK [cita-sdk-java](https://github.com/cryptape/cita-sdk-java)；iOS版基于最新的 Swift开发，项目依赖 Swift 版 SDK [cita-sdk-swift](https://github.com/cryptape/cita-sdk-swift)，同时 Cyton 依赖区块链缓存服务 [ReBirth](https://github.com/cryptape/re-birth) 提供原生代币和 ERC20 代币交易列表等自定义区块链数据服务。
+Android 版 Cyton 使用基于 Java 和 Kotlin 两种语言混合开发，项目依赖 Java 版的 SDK [cita-sdk-java](https://github.com/citahub/cita-sdk-java)；iOS版基于最新的 Swift开发，项目依赖 Swift 版 SDK [cita-sdk-swift](https://github.com/citahub/cita-sdk-swift)，同时 Cyton 依赖区块链缓存服务 [ReBirth](https://github.com/citahub/re-birth) 提供原生代币和 ERC20 代币交易列表等自定义区块链数据服务。
 
 ## 注意事项
 
@@ -18,7 +18,7 @@ Cyton-Android 项目代码需要用 Android Studio 编译器打开，Gradle 同�
 
 Cyton 首次打开目前仅显示 ETH 代币，其他的 ERC20 代币可以在添加 Token 页面通过输入合约地址添加，如果想要添加 CITA 链的原生代币和 ERC20 代币，只需要输入相应的节点地址和合约地址即可。
 
-Cyton 首页的 DApp 浏览器可以直接输入现有 Ethereum 的 DApp 地址即可访问，如果想要开发基于 CITA 的 DApp，可以参考https://github.com/cryptape/first-forever-demo
+Cyton 首页的 DApp 浏览器可以直接输入现有 Ethereum 的 DApp 地址即可访问，如果想要开发基于 CITA 的 DApp，可以参考https://github.com/citahub/first-forever-demo
 
 ### Cyton-iOS：
 
@@ -36,12 +36,12 @@ iOS 和 Android 下载 ![ios](assets/toolchain-assets/ios.png)
 
 ## Getting Started
 
-cyton-android：https://github.com/cryptape/cyton-android
+cyton-android：https://github.com/citahub/cyton-android
 
-cyton-ios：https://github.com/cryptape/cyton-ios
+cyton-ios：https://github.com/citahub/cyton-ios
 
 ## 期待协作
 
-* https://github.com/cryptape/cyton-android/issues
+* https://github.com/citahub/cyton-android/issues
 
 我们正在招募社区开发者，想要获得更多资讯欢迎申请加入CITAHub：https://www.citahub.com/#joinArea

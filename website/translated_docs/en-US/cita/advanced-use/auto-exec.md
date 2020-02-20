@@ -7,7 +7,7 @@ title: Automated Execution
 
 ## 简述
 
-自动执行是底层的一个扩展功能，只有超级管理员可以注册，注册的自动执行合约需要继承 [`IAutoExec.sol`]，实现 autoExec 函数作为自动执行的入口。
+自动执行是底层的一个扩展功能，只有超级管理员可以注册，注册的自动执行合约需要继承 [IAutoExec.sol](https://github.com/citahub/cita-sys-interaction/blob/master/interface/IAutoExec.sol)，实现 autoExec 函数作为自动执行的入口。
 
 ### 合约信息
 
@@ -39,7 +39,7 @@ $ bin/cita create \
 
 详细步骤见[运行 CITA](../getting-started/run-cita)部分。
 
-其中[测试合约](https://github.com/cryptape/test-contracts/blob/master/AutoExec.sol)函数签名如下:
+其中[测试合约](https://github.com/citahub/test-contracts/blob/master/AutoExec.sol)函数签名如下:
 
     ======= contracts/AutoExec.sol:AutoExec =======
     Function signatures:
@@ -52,7 +52,7 @@ $ bin/cita create \
 * `autoExec()`： 为自动执行的入口，实现对 x 加一
 * `x()`： 表示获取x数值
 
-接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 部署测试合约
 
@@ -227,4 +227,4 @@ $ cita-cli rpc call \
 }
 ```
 
-数值变为 26，自动执行生效。
+数值变为 26，自动执行生效，自动执行结果会随着块高的增加而增加。

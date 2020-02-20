@@ -73,7 +73,7 @@ $ bin/cita create --help
   - `operator` : 运营方名称
   - `website` : 运营方网站
   - `blockInterval` ： 出块间隔，默认 3 秒
-  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由超级管理员设置，详细机制可查看 [配额管理](../economics/quota)；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理](../economics/price)。
+  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由超级管理员设置，详细机制可查看 [配额管理](../economics/quota)；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理](../economics/charge)。
   - `name` : Token 名称
   - `symbol` : Token 符号
   - `avatar` : Token 图标链接

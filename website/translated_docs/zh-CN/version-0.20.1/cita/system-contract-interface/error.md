@@ -253,7 +253,7 @@ original_id: error
     
     ### NotOneOperate
     
-    &gt; deprecation
+    > deprecation
     
     ### NotClose
     

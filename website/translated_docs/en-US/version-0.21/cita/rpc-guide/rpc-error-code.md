@@ -1,6 +1,6 @@
 ---
 id: version-0.21-rpc-error-code
-title: JSON RPC Error code
+title: JSON RPC Error Code
 original_id: rpc-error-code
 ---
 

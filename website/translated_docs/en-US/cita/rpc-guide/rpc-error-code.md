@@ -1,9 +1,9 @@
 ---
 id: rpc-error-code
-title: JSON RPC Error code
+title: JSON-RPC 错误码
 ---
 
-## JSON RPC 标准错误码
+## JSON-RPC 标准错误码
 
 | 错误码    | 错误消息     | 描述               |
 | ------ |:-------- |:---------------- |
@@ -231,5 +231,5 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0
 
 参考文档:
 
-1. [JSON RPC specification](http://www.jsonrpc.org/specification)
-2. [Ethereum wiki/JSON RPC Error Codes Improvement Proposal](https://github.com/ethereum/wiki/wiki/JSON-RPC-Error-Codes-Improvement-Proposal)
+1. [JSON-RPC specification](http://www.jsonrpc.org/specification)
+2. [Ethereum wiki/JSON-RPC Error Codes Improvement Proposal](https://github.com/ethereum/wiki/wiki/JSON-RPC-Error-Codes-Improvement-Proposal)

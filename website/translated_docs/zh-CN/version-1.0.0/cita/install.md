@@ -281,7 +281,7 @@ $ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
     
     返回块高度，表示节点已经开始正常出块。
 
-更多 API（如合约调用、交易查询）请参见 [RPC 调用](../rpc-guide/rpc)。
+更多 API（如合约调用、交易查询）请参见 [RPC 调用](../cita/rpc-guide/rpc)。
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 

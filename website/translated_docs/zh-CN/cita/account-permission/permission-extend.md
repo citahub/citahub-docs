@@ -17,7 +17,7 @@ title: 权限系统插件
 * 角色的授权： 调用权限系统的授权接口，对角色内所包含的所有权限进行操作
 * 角色的鉴权： 调用权限系统的鉴权接口
 
-具体接口定义可查看[角色插件接口](../system-contract-interface/interface#newrole)。
+具体接口定义可查看[角色插件接口](../sys-contract-interface/interface#newrole)。
 
 ## 组插件
 

@@ -72,7 +72,7 @@ $ bin/cita create --help
   * `operator` : 运营方名称
   * `website` : 运营方网站
   * `blockInterval` ： 出块间隔，默认 3 秒
-  * `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由超级管理员设置，详细机制可查看 [配额管理](../economics/quota)；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理](../economics/price)。
+  * `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由超级管理员设置，详细机制可查看 [配额管理](../economics/quota)；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理](../economics/charge)。
   * `name` : Token 名称
   * `symbol` : Token 符号
   * `avatar` : Token 图标链接
@@ -116,14 +116,13 @@ $ bin/cita create --help
 * 除了创世块中的数组，链有时候还需要额外自带一些数据（比如说零知识证明），但是因为数据比较大，无法放入创世块，因此在这里可以通过传递参数指定一个单独的资源目录。
 * 指定该参数后，生成的配置会多一个 resource 目录，用户指定目录下的文件将会被拷贝进来，然后，配置工具会计算该目录下所有文件的 hash 值，作为 genesis.json 中 prevhash 字段中的值。prevhash 默认全部是 0，通过传入此参数，prevhash 的值将发生改变。
 
-### `--grpc_port`、`jsonrpc_port`、`ws_port`
+### `jsonrpc_port`、`ws_port`
 
 指定起始端口号。
 
-* grpc，jsonrpc，ws_port 等参数指定的端口号是一个起始端口号。节点实际使用的端口号，按照节点排列顺序顺延，即 port+n（ n 为节点序号）。比如总共 4 个节点，传递 grpc_port 参数为 7000 ，则 test-chain/0 的 grpc 端口号为 7000，test-chain/1 的 grpc 端口号为 7001，以此类推。
-* grpc_port 存在 `test-chain/*/executor.toml` 中，jsonrpc port 和 ws port 都存在 `test-chain/*/jsonrpc.toml` 中 。
+* jsonrpc，ws_port 等参数指定的端口号是一个起始端口号。节点实际使用的端口号，按照节点排列顺序顺延，即 port+n（ n 为节点序号）。比如总共 4 个节点，传递 jsonrpc_port 参数为 1337 ，则 test-chain/0 的 jsonrpc 端口号为 1337，test-chain/1 的 jsonrpc 端口号为 1338，以此类推。
+* jsonrpc port 和 ws port 存在 `test-chain/*/jsonrpc.toml` 中 。
 * CITA有一些保留端口，设置节点网络端口，或者自定义端口的时候要避免产生端口冲突。保留端口有： 
-  * 默认的 `grpc` 端口：5000 到 5000 + N（N 为节点总数,以下相同）
   * 默认的 `jsonrpc` 端口：1337 到 1337 + N
   * 默认的 `websocket` 端口：4337 到 4337+N
   * 默认的 `rabbitmq` 端口：4369(epmd)/25672(Erlang distribution)/5671，5672(AMQP)/15672(management plugin)
@@ -197,7 +196,7 @@ chain.toml  executor.toml   jsonrpc.toml       privkey
 
 ## 修改个别配置操作示例
 
-起链后，也就是说创世块一旦生成，除 chainName, operator, website 三项可以在运行时更改，其他配置均无法修改。接下来我们用 [cita-cli](https://github.com/cryptape/cita-cli) 来进行演示，以超级管理员修改 `chainName` 作为示例：
+起链后，也就是说创世块一旦生成，除 chainName, operator, website 三项可以在运行时更改，其他配置均无法修改。接下来我们用 [cita-cli](https://github.com/citahub/cita-cli) 来进行演示，以超级管理员修改 `chainName` 作为示例：
 
 确保你的链正常运行，进入 cita-cli 交互式模式，输入命令：
 
@@ -226,7 +225,7 @@ $ rpc getMetaData
     "economicalModel": 1,
     "genesisTimestamp": 1538101178583,
     "operator": "test-operator",
-    "tokenAvatar": "https://cdn.cryptape.com/icon_cita.png",
+    "tokenAvatar": "https://cdn.citahub.com/icon_cita.png",
     "tokenName": "CITA Test Token",
     "tokenSymbol": "CTT",
     "validators": [

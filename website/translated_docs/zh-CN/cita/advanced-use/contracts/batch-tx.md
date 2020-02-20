@@ -47,7 +47,7 @@ title: 批量交易
 
 *首先需要启动一条链，具体方法见快速入门部分*
 
-其中[测试合约](https://github.com/cryptape/cita-contracts/blob/master/tests/contracts/test_batch_tx.sol)函数签名如下:
+其中[测试合约](https://github.com/citahub/cita-contracts/blob/master/tests/contracts/test_batch_tx.sol)函数签名如下:
 
     ======= contracts/test_batch_tx.sol:SelfAdd =======
     Function signatures:
@@ -60,7 +60,7 @@ title: 批量交易
 * `AddOne()`表示对x加一
 * `x()`表示获取x数值
 
-接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 ### 生成随机私钥
 

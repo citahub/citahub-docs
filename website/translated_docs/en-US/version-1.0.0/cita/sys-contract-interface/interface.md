@@ -1952,13 +1952,13 @@ $ scm SysConfig getChainOwner
 ```shell
 $ cita-cli scm VersionManager setVersion \
               --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-              --version 0x0000000000000000000000000000000000000000000000000000000000000002 \
+              --version 2 \
               --url http://127.0.0.1:1337
 ```
 
 ### getVersion
 
-查询当前链协议版本
+查询当前链协议版本，需要在链创建时开启该功能，才能正常使用。详细查看 [链级配置]: ../configuration-guide/chain-config 中的 --enable_version 选项说明。
 
 * 参数
     

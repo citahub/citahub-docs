@@ -28,7 +28,7 @@ title: 软件升级
 2. 下载新版本
 
    ```shell
-   $ wget -P /data/cita-tmp/ https://github.com/cryptape/cita/releases/download/v0.24.0/cita_secp256k1_sha3.tar.gz
+   $ wget -P /data/cita-tmp/ https://github.com/citahub/cita/releases/download/v0.24.0/cita_secp256k1_sha3.tar.gz
    $ tar zxvf /data/cita-tmp/cita_secp256k1_sha3.tar.gz
    ```
 
@@ -47,7 +47,10 @@ title: 软件升级
 5. 覆盖应用程序
 
    ```shell
-   $ cp -rp /data/cita-tmp/cita_secp256k1_sha3/bin/123_0_3216. 启动节点
+   $ cp -rp /data/cita-tmp/cita_secp256k1_sha3/bin/* ./bin/
+   ```
+
+6. 启动节点
 
    ```shell
    $ ./bin/cita start test-chain/0

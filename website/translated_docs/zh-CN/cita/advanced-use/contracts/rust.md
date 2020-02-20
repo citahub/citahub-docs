@@ -7,7 +7,7 @@ CITA 支持用 Rust 编写的原生合约。
 
 ## 依赖说明
 
-Rust 原生智能合约目前需要与 CITA 源码工程一起编译、部署。 因此，首先获得 [CITA 源码库](https://github.com/cryptape/cita)，推荐在 CITA 工程（cita-executor/core/src/native）中编写 Rust 原生合约代码。
+Rust 原生智能合约目前需要与 CITA 源码工程一起编译、部署。 因此，首先获得 [CITA 源码库](https://github.com/citahub/cita)，推荐在 CITA 工程（cita-executor/core/src/native）中编写 Rust 原生合约代码。
 
 *需要有 Rust 编程基础*
 
@@ -54,18 +54,19 @@ pub struct HelloWorld {
 
 ```rust
 impl Contract for HelloWorld {
-    fn exec(&mut self, params: &ActionParams, ext: &mut Ext) -> Result<GasLeft, Error> {
-        if let Some(ref data) = params.data {
-            method_tools::extract_to_u32(&data[..]).and_then(|signature| match signature {
-                0 => self.init(params, ext),
-                // Register function
-                0x832b_4580 => self.balance_get(params, ext),
-                0xaa91_543e => self.update(params, ext),
-                _ => Err(Error::OutOfGas),
-            })
-        } else {
-            Err(evm::Error::OutOfGas)
-        }
+    fn exec(
+        &mut self,
+        params: &VmExecParams,
+        _context: &Context,
+        data_provider: &mut DataProvider,
+    ) -> Result<InterpreterResult, NativeError> {
+        method_tools::extract_to_u32(&params.data[..]).and_then(|signature| match signature {
+            0 => self.init(params, data_provider),
+            // Register function
+            0x832b_4580 => self.balance_get(params, data_provider),
+            0xaa91_543e => self.update(params, data_provider),
+            _ => Err(NativeError::Internal("out of gas".to_string())),
+        })
     }
     fn create(&self) -> Box<Contract> {
         Box::new(HelloWorld::default())
@@ -89,29 +90,41 @@ impl Contract for HelloWorld {
 
 ### 实现合约接口
 
-*对 update 接口进行了说明， balance_get 可自行查看*
+*以下对 update 接口进行说明， balance_get 可自行阅读代码*
 
 接口实现代码如下：
 
 ```rust
-fn update(&mut self, params: &ActionParams, ext: &mut Ext) -> Result<GasLeft, Error> {
+fn update(
+    &mut self,
+    params: &VmExecParams,
+    data_provider: &mut DataProvider,
+) -> Result<InterpreterResult, NativeError> {
     self.output.resize(32, 0);
 
     // Get the params of`update`
-    let data = params.data.to_owned().expect("invalid data");
-    let amount = U256::from(data.get(4..36).expect("no enough data"));
-    let _balance = self.balance.get(ext)?.saturating_add(amount);
+    let amount = U256::from(params.data.get(4..36).expect("no enough data"));
+    let new_balance = self
+        .balance
+        .get(data_provider, &params.storage_address)?
+        .saturating_add(amount);
 
-    self.balance.set(ext, _balance)?;
-    info!("====set balance to {:?}", _balance);
+    self.balance
+        .set(data_provider, &params.storage_address, new_balance)?;
 
-    _balance.to_big_endian(self.output.as_mut_slice());
+    Ok(InterpreterResult::Normal(self.output.clone(), 100, vec![]))
+}
 
-    Ok(GasLeft::NeedsReturn {
-        gas_left: U256::from(100),
-        data: ReturnData::new(self.output.clone(), 0, self.output.len()),
-        apply_state: true,
-    })
+fn balance_get(
+    &mut self,
+    params: &VmExecParams,
+    data_provider: &mut DataProvider,
+) -> Result<InterpreterResult, NativeError> {
+    self.output.resize(32, 0);
+    self.balance
+        .get(data_provider, &params.code_address)?
+        .to_big_endian(self.output.as_mut_slice());
+    Ok(InterpreterResult::Normal(self.output.clone(), 100, vec![]))
 }
 ```
 
@@ -123,7 +136,7 @@ update 方法中的参数 `amount` 需要从 `params` 中解析：
 * 4 到 36 字节表示接口参数，即 `amount` 值
 
 ```rust
-let amount = U256::from(data.get(4..36).expect("no enough data"));
+let amount = U256::from(params.data.get(4..36).expect("no enough data"));
 ```
 
 #### 更新 balance
@@ -131,8 +144,13 @@ let amount = U256::from(data.get(4..36).expect("no enough data"));
 实现 `balance += amount`，如下：
 
 ```rust
-let _balance = self.balance.get(ext)?.saturating_add(amount);
-self.balance.set(ext, _balance)?;
+let new_balance = self
+    .balance
+    .get(data_provider, &params.storage_address)?
+    .saturating_add(amount);
+
+self.balance
+    .set(data_provider, &params.storage_address, new_balance)?;
 ```
 
 #### 处理返回值
@@ -140,13 +158,10 @@ self.balance.set(ext, _balance)?;
 代码如下：
 
 ```rust
-_balance.to_big_endian(self.output.as_mut_slice());
- Ok(GasLeft::NeedsReturn {
-     gas_left: U256::from(100),
-     data: ReturnData::new(self.output.clone(), 0, self.output.len()),
-     apply_state: true,
- })
+Ok(InterpreterResult::Normal(self.output.clone(), 100, vec![]))
 ```
+
+查看 [这里](https://github.com/citahub/test-contracts/blob/master/hello.rs) 阅读合约的完整代码。
 
 ## 注册合约地址
 
@@ -155,15 +170,15 @@ Rust 原生合约当前是随 CITA 直接启动的，并不像 Solidity 合约�
 ```rust
 // here we register contracts with addresses defined in genesis.json.
 {
-    use super::myContract::HelloWorld;
+    use super::hello::HelloWorld;
     factory.register(Address::from(0x500), Box::new(HelloWorld::default()));
 }
 ```
 
-同时还需要在同目录下的代码 `mod.rs`中加入 `rust_hello` 的模块，使得可以编译进 CITA。
+同时还需要在同目录下的代码 `mod.rs`中加入 `hello` 的模块，使得可以编译进 CITA。
 
 ```rust
-pub mod rust_hello;
+pub mod hello;
 ```
 
 ## 编译合约
@@ -176,14 +191,14 @@ pub mod rust_hello;
 
 ## 调用合约
 
-同样通过发交易来调用合约中的 `update` 函数，通过 [JSON-RPC](https://docs.citahub.com/zh-CN/next/cita/rpc-guide/rpc) 的 `call` 方法来验证 `balance` 的值。
+*使用 [cita-cli](https://github.com/citahub/cita-cli) 交互式进行操作*
 
 ### 查询 balance
 
 执行：
 
 ```shell
-curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0x0000000000000000000000000000000000000500", "data":"0x832b4580"}, "latest"],"id":2}' 127.0.0.1:1337
+rpc call --to 0x0000000000000000000000000000000000000500 --data 0x832b4580
 ```
 
 关键信息简释：
@@ -194,15 +209,17 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0x000000
 返回：
 
 ```json
-{"jsonrpc":"2.0","id":2,"result":"0x0000000000000000000000000000000000000000000000000000000000000000"}
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
 ```
 
 ### 调用 update
 
-*使用 [cita-cli](https://github.com/cryptape/cita-cli) 交互式进行操作*
-
 ```shell
-$ rpc sendRawTransaction \
+rpc sendRawTransaction \
     --code "0xaa91543e0000000000000000000000000000000000000000000000000000000000000011" \
     --address 0x0000000000000000000000000000000000000500 \
     --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
@@ -259,13 +276,17 @@ rpc getTransactionReceipt --hash 0x9c6bae3216bbaa755f80e61d00cd3502e151a61bafca6
 ### 再查询 balance
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"call", "params":[{"to":"0x0000000000000000000000000000000000000500", "data":"0x832b4580"}, "latest"],"id":2}' 127.0.0.1:1337
+rpc call --to 0x0000000000000000000000000000000000000500 --data 0x832b4580
 ```
 
 返回：
 
 ```json
-{"jsonrpc":"2.0","id":2,"result":"0x0000000000000000000000000000000000000000000000000000000000000011"}
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0x0000000000000000000000000000000000000000000000000000000000000011"
+}
 ```
 
 符合我们编写的智能合约预期。

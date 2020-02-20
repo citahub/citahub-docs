@@ -16,9 +16,9 @@ title: Emergency Braking
 
 合约地址： `0xffffffffffffffffffffffffffffffffff02000f`
 
-接口签名如下：
+接口签名如下： [紧急制动测试合约](https://github.com/citahub/cita/blob/develop/scripts/contracts/src/system/EmergencyIntervention.sol)
 
-    ======= emergency_brake.sol:EmergencyBrake =======
+    ======= EmergencyIntervention.sol:EmergencyIntervention =======
     ac9f0222: setState(bool)
     c19d93fb: state()
     
@@ -29,7 +29,7 @@ title: Emergency Braking
 
 *首先需要启动一条链，具体方法见快速入门部分*
 
-接下来的测试，用 [cita-cli](https://github.com/cryptape/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
+接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
 - 首先查询链当前状态：
 

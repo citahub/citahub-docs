@@ -33,7 +33,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
     从 Github 仓库下载 CITA 的源代码，然后切换到 CITA 的源代码目录
 
    ```shell
-   $ git clone https://github.com/cryptape/cita.git
+   $ git clone https://github.com/citahub/cita.git
    $ cd cita
    $ git submodule init
    $ git submodule update
@@ -61,9 +61,9 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 > 可选择替换 Rust Crates 的官方源，详细教程可以参考：
 > 
-> * [USTC Mirror Help for Rust Crates]((http://mirrors.ustc.edu.cn/help/crates.io-index.html))
-> * [Source Replacement for Rust Crates]((https://doc.rust-lang.org/cargo/reference/source-replacement.html))
-> * [How to map a configuration file into docker]((https://docs.docker.com/storage/volumes/))
+> * [USTC Mirror Help for Rust Crates](http://mirrors.ustc.edu.cn/help/crates.io-index.html)
+> * [Source Replacement for Rust Crates](https://doc.rust-lang.org/cargo/reference/source-replacement.html)
+> * [How to map a configuration file into docker](https://docs.docker.com/storage/volumes/)
 > 
 > **Docker env 使用说明**
 > 
@@ -74,6 +74,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 >     ```
 > 
 > * 不带任何参数运行 `./env.sh`，将直接获取一个 Docker 环境的 shell。
+> 
 > * 如果 Docker 容器是被 root 用户创建的，后续非 root 用户使用 `./env.sh` 会出现如下错误，因此要保证操作使用的始终是同一个系统用户。
 >     
 >     ```shell
@@ -102,16 +103,16 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 2. 在 4 台服务器上创建目录
 
    ```shell
-   $ mkdir -p /data/cita/
+   $ mkdir -p /data/cita
    ```
 
-3. 将生成的节点拷贝到所有主机 
+3. 将生成的节点拷贝到所有主机
 
    ```shell
-   $ scp -r cita_secp256k1_sha3 192.168.1.100:/data/cita/
-   $ scp -r cita_secp256k1_sha3 192.168.1.101:/data/cita/
-   $ scp -r cita_secp256k1_sha3 192.168.1.102:/data/cita/
-   $ scp -r cita_secp256k1_sha3 192.168.1.103:/data/cita/
+   $ scp -r cita_secp256k1_sha3 192.168.1.100:/data/cita
+   $ scp -r cita_secp256k1_sha3 192.168.1.101:/data/cita
+   $ scp -r cita_secp256k1_sha3 192.168.1.102:/data/cita
+   $ scp -r cita_secp256k1_sha3 192.168.1.103:/data/cita
    ```
 
 4. 启动节点，需要登录到各节点服务器启动对应节点
@@ -120,14 +121,14 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 * node0-192.168.1.100
 * node1-192.168.1.101
-* node3-192.168.1.103
 * node2-192.168.1.102
+* node3-192.168.1.103
     
     启动节点 0
     
     ```shell
     $ ssh root@192.168.1.100
-    $ cd /data/cita/
+    $ cd /data/cita/cita_secp256k1_sha3
     $ ./bin/cita setup test-chain/0
     $ ./bin/cita start test-chain/0
     ```
@@ -136,7 +137,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
     
     ```shell
     $ ssh root@192.168.1.101
-    $ cd /data/cita/
+    $ cd /data/cita/cita_secp256k1_sha3
     $ ./bin/cita setup test-chain/1
     $ ./bin/cita start test-chain/1
     ```
@@ -145,7 +146,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
     
     ```shell
     $ ssh root@192.168.1.102
-    $ cd /data/cita/
+    $ cd /data/cita/cita_secp256k1_sha3
     $ ./bin/cita setup test-chain/2
     $ ./bin/cita start test-chain/2
     ```
@@ -154,7 +155,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
     
     ```shell
     $ ssh root@192.168.1.103
-    $ cd /data/cita/
+    $ cd /data/cita/cita_secp256k1_sha3
     $ ./bin/cita setup test-chain/3
     $ ./bin/cita start test-chain/3
     ```
@@ -172,115 +173,133 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
    cita      6202  6180  0 10:54 ?        00:00:00 cita-bft -c consensus.toml -p privkey
    ```
 
-<!--Docker Compose-->
+<!--Docker Images-->
 
-### Docker Compose 部署
+### Docker Images 下载
 
-将所有节点放在同一个容器中，并且没有对容器没有做网络隔离的情况下，对于复杂的应用场景，会造成一些不便。为了解决这样的问题，我们提供了 `docker-compose`的方式让每个节点单独一个容器，网络也是隔离的。
+CITA 在 1.0.1 及以后版本的发布件中提供 docker image 版本，并托管到 docker hub 上，其路径为 `cita/cita-release` 。发布件的 tag 规则为：
 
-#### 安装 Docker-compose
+**版本号-签名算法-哈希算法**
 
-```shell
-$ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose
-$ docker-compose --version
-```
+如：
 
-#### 准备发布件
+**20.2.0-secp256k1-sha3**
+
+可以使用 `docker pull` 命令将所需要的 CITA 版本的镜像下载到本地，如下载 `20.2.0-secp256k1-sha3` ：
 
 ```shell
-$ latest_release_tag=$(curl --silent "https://api.github.com/repos/cryptape/cita/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-echo "latest release tag: $latest_release_tag"
-
-$ wget https://github.com/cryptape/cita/releases/download/$latest_release_tag/cita_secp256k1_sha3.tar.gz
-$ tar zxvf cita_secp256k1_sha3.tar.gz
-$ cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node0
-$ cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node1
-$ cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node2
-$ cp -r cita_secp256k1_sha3 cita_secp256k1_sha3_node3
-
-$ wget https://raw.githubusercontent.com/cryptape/cita/$latest_release_tag/tests/integrate_test/docker-compose.yaml
+docker pull cita/cita-release:20.2.0-secp256k1-sha3
 ```
 
-#### 启动
+查看下载结果：
 
 ```shell
-$ USER_ID=`id -u $USER` docker-compose up
+docker images
+REPOSITORY          TAG                     IMAGE ID            CREATED             SIZE
+cita/cita-release  20.2.0-secp256k1-sha3    020a7b1d2225        5 days ago          724MB
 ```
 
-#### 后台启动
+### Docker 命令运行 CITA
+
+使用 CITA 启动一条链，包括　**节点配置生成**　与 **启动节点**　两部分。以下将以启动两个节点的链为例说明， 如需启动更多节点，可以参考 [链级配置](../cita/configuration-guide/chain-config) 来操作。
+
+#### 节点配置生成
+
+执行命令：
 
 ```shell
-$ USER_ID=`id -u $USER` docker-compose up -d
+ docker run -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "192.168.10.96:4000, 192.168.10.96:4001"
 ```
 
-##### 停止
+这个命分为两部分，前半部分 `docker run -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3` 为 docker 命令，表示启动一个 docker 容器，而后半部分 `cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "192.168.10.96:4000, 192.168.10.96:4001"` 为需要执行的 CITA 命令，详见 [链级配置](../cita/configuration-guide/chain-config) 相关说明。
+
+注意，为了使两个节点的配置运行在两个不同的容器中，所以 `--nodes` 中的 `ip` 要写主机的 IP，这不同于在同一个容器中运行两个节点的配置。 在 Linux 系统下可以通过 `ifconfig` 命令获得主机 IP，请注意更改以上命令中的主机 IP，以免后续命令不能正确执行。
+
+命令执行成功后，会在当前目录下生成一个名为 `test-chain` 的文件夹。
+
+#### 启动节点
+
+启动节点 0：
 
 ```shell
-$ docker-compose down
+docker run -d -p 192.168.10.96:1337:1337 -p 192.168.10.96:4000:4000 -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/0 && cita start test-chain/0 && sleep infinity'
 ```
 
-##### 进入容器内执行命令
+启动节点 1：
 
 ```shell
-$ docker-compose exec node0 /usr/bin/gosu user /bin/bash
+docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/1 && cita start test-chain/1 && sleep infinity'
 ```
 
-##### 日志
-
-容器默认输出的是 `chain` 微服务的日志
-
-```shell
-$ docker-compose logs -f
-```
-
-也可以直接到挂载目录下查看所有微服务的日志
-
-```shell
-$ tail -100f cita_secp256k1_sha3_node0/test-chain/0/logs/cita-jsonrpc.log
-```
+注意，这里需要暴露 JSON-RPC 的端口外，还需要暴露 CITA 节点网络 (4000, 4001) 的端口，以便两个 CITA 节点可以互联。
 
 #### 验证
 
 * 查询节点个数
     
     Request:
-    
-    ```shell
-    $ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337|jq
-    ```
-    
-    Result:
-    
-    ```json
-    {
+
+```shell
+  curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 192.168.10.96:1337 |jq
+  ```
+
+  Result:
+
+  ```json
+  {
     "jsonrpc": "2.0",
     "id": 74,
-    "result": "0x3"
-    }
-    ```
+    "result": "0x1"
+  }
+  ```
 
 * 查询当前块高度。
-    
-    Request:
-    
-    ```shell
-    $ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337| jq
-    ```
-    
-    Result:
-    
-    ```json
-    {
+
+  Request:
+
+  ```shell
+  curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 192.168.10.96:1337 |jq
+  ```
+
+  Result:
+
+  ```json
+  {
     "jsonrpc": "2.0",
     "id": 83,
     "result": "0x8"
-    }
-    ```
-    
-    返回块高度，表示节点已经开始正常出块。
+  }
+  ```
 
-更多 API（如合约调用、交易查询）请参见 [RPC 调用](../rpc-guide/rpc)。
+  返回块高度，表示节点已经开始正常出块。
+
+更多 API（如合约调用、交易查询）请参见 [RPC 调用]。
+
+### docker-compose 运行 CITA
+
+为了方便运行服务的管理，也可以使用 docker-compose 来运行 CITA。
+
+#### 安装 docker-compose
+
+参考 [docker-compose 安装说明] 来安装 docker-compose.
+
+[docker-compose 安装说明]: https://docs.docker.com/compose/install/
+
+#### 准备 docker-compose.yml
+
+[docker-compose Demo] 是一个启动两个 CITA 节点的样例。
+
+[docker-compose Demo]: https://github.com/citahub/cita/blob/develop/docker/sample/docker-compose.yml
+
+#### 启动 CITA
+
+```shell
+USER_ID=`id -u $USER` docker-compose up
+```
+
+#### 验证
+
+同上文描述。
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 

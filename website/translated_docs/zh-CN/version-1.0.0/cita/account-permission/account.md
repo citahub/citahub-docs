@@ -32,7 +32,7 @@ CITA 实现了基于组的账户系统，组之间为树形的关系，可对应
 * 更新组： 修改组内属性
 * 删除组： 删除叶子组，即不包含子组
 
-具体接口定义可查看[账户系统接口](../system-contract-interface/interface#newgroup)。
+具体接口定义可查看[账户系统接口](../sys-contract-interface/interface#newgroup)。
 
 同时对组的操作范围做了约束：
 

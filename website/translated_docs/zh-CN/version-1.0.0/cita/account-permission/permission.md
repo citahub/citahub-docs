@@ -34,7 +34,7 @@ CITA 的权限系统对用户的操作进行控制，并支持基于角色的权
 * 授予权限： 授予账户权限
 * 取消授权： 撤销对目标账户某种权限
 
-具体接口定义可查看[权限系统接口](../system-contract-interface/interface#newpermission)。
+具体接口定义可查看[权限系统接口](../sys-contract-interface/interface#权限系统合约)。
 
 ## 权限系统配置
 

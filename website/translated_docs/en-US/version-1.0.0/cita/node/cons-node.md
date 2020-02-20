@@ -4,7 +4,7 @@ title: 共识节点管理
 original_id: cons-node
 ---
 
-CITA 采用[共识节点管理系统合约](../system-contract-interface/interface#interface#approveNode)来实现共识节点的管理，通过区块链上的合约可以保证共识节点的安全性及一致性。
+CITA 采用[共识节点管理系统合约](../sys-contract-interface/interface#interface#approveNode)来实现共识节点的管理，通过区块链上的合约可以保证共识节点的安全性及一致性。
 
 在 CITA 初始化创世块阶段，需要初始化一个超级管理员地址，其拥有超级管理员角色，将其写入到每个节点的创世块文件中，共识节点管理合约拥有的一个固定地址也写入其中。创世块内容在初始化以后不允许被修改。区块链正常启动之后，将合约写入到创世块中。链外的操作人员可以通过调用 RPC 接口来实现对共识节点的管理。
 

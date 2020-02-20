@@ -17,12 +17,12 @@ sidebar_label: 快速入门
 
 ### 安装
 
-安装 server 服务, 请查看 [server/README.md](https://github.com/cryptape/cita-monitor/tree/master/server/README.md)
+安装 server 服务, 请查看 [server/README.md](https://github.com/citahub/cita-monitor/tree/master/server/README.md)
 
-安装 agent 服务, 请查看 [agent/README.md](https://github.com/cryptape/cita-monitor/tree/master/agent/README.md)
+安装 agent 服务, 请查看 [agent/README.md](https://github.com/citahub/cita-monitor/tree/master/agent/README.md)
 
 ## 系统架构
 
-![](https://github.com/cryptape/cita-monitor/blob/master/docs/imgs/CITA_Monitor_system_architecture-fs8.png)
+![](https://github.com/citahub/cita-monitor/blob/master/docs/imgs/CITA_Monitor_system_architecture-fs8.png)
 
-更多信息请查看[项目 GitHub Repo](https://github.com/cryptape/cita-monitor)。
+更多信息请查看[项目 GitHub Repo](https://github.com/citahub/cita-monitor)。

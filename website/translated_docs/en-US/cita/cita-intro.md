@@ -3,7 +3,7 @@ id: cita-intro
 title: About CITA
 ---
 
-CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级应用的支持智能合约的高性能区块链内核， 旨在为企业级区块链应用提供一个稳固、高效、灵活、可适应未来的运行平台。 CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network。各组件之间通过消息总线交换信息相互协作。 通过配置和定制相应的服务，CITA 能够满足企业级用户的全部需要。
+CITA 是一个面向企业级应用的支持智能合约的高性能区块链内核， 旨在为企业级区块链应用提供一个稳固、高效、灵活、可适应未来的运行平台。 CITA 将区块链节点的必要功能解耦为六个微服务：RPC，Auth，Consensus，Chain，Executor，Network。各组件之间通过消息总线交换信息相互协作。 通过配置和定制相应的服务，CITA 能够满足企业级用户的全部需要。
 
 ## CITA 的亮点
 
@@ -25,7 +25,7 @@ CITA（ Cryptape Inter-enterprise Trust Automation ）是一个面向企业级�
 
 - **兼容性**
     
-    CITA上支持使用 Solidity， Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppeling，Remix 等）。
+    CITA上支持使用 Solidity， Rust 开发智能合约，同时也支持以太坊的所有开发工具（Truffle，Zeppelin，Remix 等）。
 
 - **链间互动**
     

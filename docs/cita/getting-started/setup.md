@@ -38,18 +38,18 @@ title: 环境准备
 3. 下载 CITA-CLI 安装包
 
    ```shell
-   $ wget https://github.com/citahub/cita-cli/releases/download/20.2.1/cita-cli-x86_64-musl-tls-20.2.1.tar.gz
+   $ wget https://github.com/citahub/cita-cli/releases/download/20.2.2/cita-cli-x86_64-musl-tls-20.2.2.tar.gz
    ```
 
    > 注：这里所下载的是 CITA-CLI 是 Linux 系统下的二进制发布包，如果你使用 macOS，请按以下命令下载对应系统的 CITA-CLI：
    >
-   > $ wget https://github.com/citahub/cita-cli/releases/download/20.2.1/cita-cli-x86_64-mac-osx-tls-20.2.1.tar.gz
+   > $ wget https://github.com/citahub/cita-cli/releases/download/20.2.2/cita-cli-x86_64-mac-osx-tls-20.2.2.tar.gz
    >
 
 4. 解压程序
 
    ```shell
-   $ tar zxvf cita-cli-x86_64-musl-tls-20.2.1.tar.gz
+   $ tar zxvf cita-cli-x86_64-musl-tls-20.2.2.tar.gz
    ```
 
 5. 复制 CITA-CLI 到 系统可执行文件目录下

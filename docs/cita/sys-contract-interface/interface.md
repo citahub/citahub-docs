@@ -1801,26 +1801,6 @@ $ scm SysConfig setWebsite \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
 ```
 
-### setBlockInterval
-
-动态设置出块时间。
-
-* 参数
-
-    `Integer` - 出块时间(毫秒)
-
-* 返回值
-
-    空
-
-* 示例
-
-```shell
-$ scm SysConfig setBlockInterval \
-        --blockInterval 4000 \
-        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-```
-
 ### getPermissionCheck
 
 查询调用合约权限检查是否开启， 默认关闭。

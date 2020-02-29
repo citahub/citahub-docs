@@ -16,7 +16,7 @@ Version: 0.4.24+commit.e67f0147.Linux.g++
 
 ## 编译
 
-* 参考[Solidity 编译器安装]安装 `v0.24.0` 版本。成功后查询版本号:
+* 参考 [Solidity 编译器安装]安装 `v0.24.0` 版本。成功后查询版本号：
 
   ```shell
   $ solc --version

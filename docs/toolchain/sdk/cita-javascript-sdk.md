@@ -6,8 +6,8 @@ id: javascript-sdk
 JavaScript SDK 技术栈为 TypeScript 和 Protocol Buffers，是在 Ethereum [Web3.js](https://github.com/ethereum/web3.js/) 的基础上做了封装并且添加 CITA 的 RPC 请求以及CITA的签名模块。
 cita-sdk-js 用 lerna 作为包管理，主要包含 3 个模块：Signer 签名模块，RPC 模块和 System Contract 模块。
 
-* SDK 代码：[cita-sdk](https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-sdk)  
-* Signer 签名模块代码：[cita-signer](https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-signer)  
+* SDK 代码：[cita-sdk](https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-sdk)
+* Signer 签名模块代码：[cita-signer](https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-signer)
 * RPC 模块代码：[rpc.ts](https://github.com/citahub/cita-sdk-js/blob/develop/packages/cita-sdk/src/base/rpc.ts)
 
 ### 签名模块 Signer
@@ -47,7 +47,7 @@ export const getBlockByNumber = {
 
 ### System Contract
 
-系统合约涉及到管理员合约，quota price 管理，quota 管理。例如如果想调整节点的 quota limit，需要通过系统合约调整，需将系统合约封装到 SDK 中，为保证各个 SDK 统一，会将合约的 ABI 文件，即合约的接口描述文件(通过 ABI 可以知道合约暴露了哪些接口)，存放在 [github.com/citahub/cita-sys-abi](http://github.com/citahub/cita-sys-abi)  并以 submodule 形式引入，之后在 npm script 里添加一条 parse-abi 指令，这条指令会把 cita-sys-abi 转换成 typescript 文件，用于构建 sdk 实例时创建系统合约实例。
+系统合约涉及到管理员合约，quota price 管理，quota 管理。例如如果想调整节点的 quota limit，需要通过系统合约调整，需将系统合约封装到 SDK 中，为保证各个 SDK 统一，会将合约的 ABI 文件，即合约的接口描述文件（通过 ABI 可以知道合约暴露了哪些接口），存放在 [github.com/citahub/cita-sys-abi](http://github.com/citahub/cita-sys-abi) 并以 submodule 形式引入，之后在 npm script 里添加一条 parse-abi 指令，这条指令会把 cita-sys-abi 转换成 typescript 文件，用于构建 sdk 实例时创建系统合约实例。
 
 ## Getting Started
 

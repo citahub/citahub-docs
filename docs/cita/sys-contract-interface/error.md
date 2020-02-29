@@ -13,8 +13,8 @@ event ErrorLog(ErrorType indexed errorType, string msg);
 
 其中:
 
-* `errorType`: 错误类型，存储在 `topics` 字段中
-* `msg`: 错误信息，存储在 `data` 中，遵循 [ABI规范]
+* `errorType`：错误类型，存储在 `topics` 字段中
+* `msg`：错误信息，存储在 `data` 中，遵循 [ABI 规范]
 
 ***
 
@@ -390,5 +390,5 @@ $ cita-cli ethabi decode params \
 
 > 废弃
 
-[ABI规范]: https://solidity.readthedocs.io/en/latest/abi-spec.html
+[ABI 规范]: https://solidity.readthedocs.io/en/latest/abi-spec.html
 [Solidity Event]: https://solidity.readthedocs.io/en/latest/contracts.html#events

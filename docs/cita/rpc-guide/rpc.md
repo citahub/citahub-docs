@@ -19,15 +19,15 @@ title: JSON-RPC 列表
 
 `Quantity` - 本节点连接节点个数
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -51,19 +51,19 @@ Result:
 
 PeerInfo object - 节点信息对象
 
-* amount: `Quantity` - 和该节点相连的节点数量
-* peers: `Object` - 节点信息，包括节点地址和节点 `ip` 地址
-* errorMessage: `String` - 错误信息
+* amount：`Quantity` - 和该节点相连的节点数量
+* peers：`Object` - 节点信息，包括节点地址和节点 `ip` 地址
+* errorMessage：`String` - 错误信息
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"peersInfo","params":[],"id":83}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -95,15 +95,15 @@ Result:
 
 `Quantity` - 链高度
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -131,15 +131,15 @@ const signed_data = "0a9b0412013018fface20420f73b2a8d046060604052341561000f57600
 
 `Data32` - 交易哈希
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"sendRawTransaction","params":["0x0a910212013218fface20420a0492a8302606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da200291241edd3fb02bc1e844e1a6743e8986a61e1d8a584aac26db5fa1ce5b32700eba5d16ba4c754731f43692f3f5299e85176627e55b9f61f5fe3e43572ec8c535b0d9201"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -197,11 +197,11 @@ message UnverifiedTransaction {
 }
 ```
 
-一些交易字段的说明:
+一些交易字段的说明：
 
 * `to` 交易接收地址。
 
-调用合约时即为被调用合约的地址，部署合约时不填写该字段。**注意**地址是长度 40 的十六进制字符(160 位)，前导 0 不能省略，必须补全。
+调用合约时即为被调用合约的地址，部署合约时不填写该字段。**注意**地址是长度 40 的十六进制字符（160 位），前导 0 不能省略，必须补全。
 
 * `nonce` 交易填充字段。
 
@@ -213,11 +213,11 @@ message UnverifiedTransaction {
 
 * `valid_until_block` 交易上链最大区块高度。
 
-区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值，甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态(失败还是拥堵)。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此，需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。
+区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值，甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态（失败还是拥堵）。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此，需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。
 
 `valid_until_block` 字段就是这样一种机制，用来表示用户愿意等待交易上链的最大区块高度。在区块链达到该高度之后，交易就确定不会再上链了，用户可以放心地重新发送交易，或者进行其他的后续处理。实际使用中，**可选值**当前区块高度到当前区块高度 +100 之间。
 
-* `data` 合约对应的 `Bytecode`, 参考:
+* `data` 合约对应的 `Bytecode`, 参考：
 
     - [How-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser](https://ethereum.stackexchange.com/questions/8115/how-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser)
     - [Solidity docs](https://solidity.readthedocs.io/en/develop/)
@@ -240,7 +240,7 @@ message UnverifiedTransaction {
 
 ### getVersion
 
-获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 [链级配置] 中的 `--enable_version` 选项说明。
+获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看[链级配置]中的 `--enable_version` 选项说明。
 
 * 参数
 
@@ -250,15 +250,15 @@ message UnverifiedTransaction {
 
 `String` - 软件版本号
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getVersion","params":[],"id":83}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -279,21 +279,21 @@ Result:
 * 参数
 
 1. `Data32` - 块哈希值
-2. `Boolean` - 是否返回交易信息(True: 返回详细交易列表 | False: 只返回交易哈希)
+2. `Boolean` - 是否返回交易信息（True：返回详细交易列表 | False：只返回交易哈希）
 
 * 返回值
 
 1. `Object` - 块对象，如果不存在，则返回空
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByHash","params":["0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329", true],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -345,15 +345,15 @@ Result:
 * 参数
 
 1. `Quantity` - 高度
-2. `Boolean` - 是否返回交易信息(True: 返回详细交易列表 | False: 只返回交易哈希)
+2. `Boolean` - 是否返回交易信息（True：返回详细交易列表 | False：只返回交易哈希）
 
 * 返回值
 
 结果同 [getBlockByHash](#getblockbyhash)
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0xF9", true],"id":1}' 127.0.0.1:1337 | jq
@@ -389,22 +389,22 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[24
 
 Object - 回执对象
 
-* transactionHash: `Data32` - 交易哈希
-* transactionIndex: `Quantity` - 交易 `index`
-* blockHash: `Data32` - 交易所在块的块哈希
-* blockNumber: `Quantity` - 交易所在块的块高度
-* cumulativeQuotaUsed: `Quantity` - 块中该交易之前(包含该交易)的所有交易消耗的 quota 总量
-* quotaUsed: `Quantity` - 交易消耗的 quota 数量
-* contractAddress: `Data20` - 如果是部署合约, 这个地址指的是新创建出来的合约地址. 否则为空
-* logs: `Array` - 交易产生的日志集合
-* root: `Data32` - 状态树根
-* errorMessage: `String` 错误信息
+* transactionHash：`Data32` - 交易哈希
+* transactionIndex：`Quantity` - 交易 `index`
+* blockHash：`Data32` - 交易所在块的块哈希
+* blockNumber：`Quantity` - 交易所在块的块高度
+* cumulativeQuotaUsed：`Quantity` - 块中该交易之前（包含该交易）的所有交易消耗的 quota 总量
+* quotaUsed：`Quantity` - 交易消耗的 quota 数量
+* contractAddress：`Data20` - 如果是部署合约, 这个地址指的是新创建出来的合约地址，否则为空
+* logs：`Array` - 交易产生的日志集合
+* root：`Data32` - 状态树根
+* errorMessage：`String` 错误信息
 
-回执错误:
+回执错误：
 
 * No transaction permission - 没有发交易权限
 * No contract permission - 没有创建合约权限
-* Not enough base quota - [基础配额] 不够
+* Not enough base quota - [基础配额]不够
 * Block quota limit reached - 达到块配额限制
 * Account quota limit reached - 达到账户配额限制
 * Out of quota - 配额不够
@@ -417,15 +417,15 @@ Object - 回执对象
 * Out of bounds - EVM 内部错误
 * Reverted - EVM 内部错误，[REVERTED instruction](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-140.md)
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionReceipt","params":["0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -460,7 +460,7 @@ Result:
 }
 ```
 
-Error:
+Error：
 
 ```json
 {
@@ -478,7 +478,7 @@ Error:
 }
 ```
 
-如果出现 **Timeout，errorcode 99** ，请查看可能的解决方法[Can't assign requested Address](https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux)
+如果出现 **Timeout，errorcode 99** ，请查看可能的解决方法 [Can't assign requested Address](https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux)
 
 * * *
 
@@ -500,13 +500,13 @@ Error:
 
 示例:
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getLogs","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"],"fromBlock": "0x0"}],"id":74}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -545,15 +545,15 @@ Result:
 
 `Data32` - 交易哈希
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "latest"],"id":2}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -578,22 +578,22 @@ Result:
 
 Object - 交易对象，如果没有则为空
 
-* hash: `Data32` - 交易哈希
-* content: `Data` 交易内容
-* from: `Data20` - 交易发送者
-* blockHash: `Data32` - 交易所在块的块哈希，如果没有，则为空
-* blockNumber: `Quantity` - 交易所在块的块高度，如果没有，则为空
-* index: `Quantity` - 交易在块交易体内的位置，如果没有，则为空
+* hash：`Data32` - 交易哈希
+* content：`Data` 交易内容
+* from：`Data20` - 交易发送者
+* blockHash：`Data32` - 交易所在块的块哈希，如果没有，则为空
+* blockNumber：`Quantity` - 交易所在块的块高度，如果没有，则为空
+* index：`Quantity` - 交易在块交易体内的位置，如果没有，则为空
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransaction","params":["0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -625,15 +625,15 @@ Result:
 
 `Quantity` - 指定账户从块高 0 到指定高度所发送的交易总量
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","latest"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -659,15 +659,15 @@ Result:
 
 `Data` - 合约 `Byte code`
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -692,15 +692,15 @@ Result:
 
 `Data` - 合约 `ABI` 信息
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -723,7 +723,7 @@ Result:
 2. 使用 `solc` 编译合约代码得到 `ABI`内容，并填充 data 字段。
 3. 使用 `cita-cli store abi` 保存 `ABI` 内容。
 
-以 [Test contract] 作为示例:
+以 [Test contract] 作为示例：
 
 * 链上部署该合约，得到合约地址
 * 首先可以通过 `solc` 得到合约的`ABI`
@@ -779,7 +779,7 @@ $ cita-cli rpc getAbi \
 }
 ```
 
-注： 使用 cita-cli 查询到的结果是 abi 字符串的十六进制Ascii编码。
+注：使用 cita-cli 查询到的结果是 abi 字符串的十六进制 Ascii 编码。
 
 * * *
 
@@ -796,13 +796,13 @@ $ cita-cli rpc getAbi \
 
 `Quantity` - 在指定高度的账户余额
 
-示例:
+示例：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -828,13 +828,13 @@ Result:
 
 `Quantity` - 过滤器 id
 
-示例:
+示例：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"newFilter","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"]}],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -859,13 +859,13 @@ Result:
 
 `Quantity` - 过滤器 id
 
-示例:
+示例：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"newBlockFilter","params":[],"id":73}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -889,13 +889,13 @@ Result:
 
 `Boolean` - 卸载成功返回 true，否则 false
 
-示例:
+示例：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":73}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -919,16 +919,16 @@ Result:
 
 `Array` - log 对象集合，如果没有，则为空
 
-* 块过滤器(`BlockFilter`)会返回自上次操作过滤器（调用 newBlockFilter 以及 getFilterChanges）以来产生新块的块哈希值集合
-* 状态过滤器(`NewFilter`)会根据 `Filter` 过滤返回自上次操作过滤器（调用 newFilter, getFilterLogs 以及 getFilterChanges）状态变化
+* 块过滤器（`BlockFilter`）会返回自上次操作过滤器（调用 newBlockFilter 以及 getFilterChanges）以来产生新块的块哈希值集合
+* 状态过滤器（`NewFilter`）会根据 `Filter` 过滤返回自上次操作过滤器（调用 newFilter, getFilterLogs 以及 getFilterChanges）状态变化
 
-示例:
+示例：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}' 127.0.0.1:1337 | jq
 ```
 
-NewFilter Result:
+NewFilter Result：
 
 ```json
 {
@@ -956,7 +956,7 @@ NewFilter Result:
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x3"],"id":74}' 127.0.0.1:1337 | jq
 ```
 
-BlockFilter Result:
+BlockFilter Result：
 
 ```json
 {
@@ -985,7 +985,7 @@ BlockFilter Result:
 
 `Array` - log 对象集合，如果自上次轮询以来没有发生变化，则为空
 
-示例:
+示例：
 
 结果同 [getFilterChanges](#getfilterchanges)
 
@@ -1003,15 +1003,15 @@ BlockFilter Result:
 
 `Data` - 一份包含交易，交易回执，回执树根和块头的证明
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransactionProof","params":["0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -1046,15 +1046,15 @@ Result:
     * `version`, `Integer` - 链版本
     * `economicalModel`, `EconomicalModel` - 链经济模型
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}' 127.0.0.1:1337
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -1097,15 +1097,15 @@ Result:
 
 `Data` - 块头序列化后的字节码
 
-示例:
+示例：
 
-Request:
+Request：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockHeader","params":["latest"],"id":1}' 127.0.0.1:1337
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -1131,13 +1131,13 @@ Result:
 
 `Data` - 某一个值的状态证明，包含合约地址，账户证明，键值证明
 
-示例:
+示例：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getStateProof","params":["0xad54ae137c6c39fa413fa1da7db6463e3ae45664", "0xa40893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423e", "16"],"id":1}' 127.0.0.1:1337
 ```
 
-Result:
+Result：
 
 ```json
 {
@@ -1163,13 +1163,13 @@ Result:
 
 `Data` - 指定高度下，合约 `key` 值对应的 `value` 值
 
-示例:
+示例：
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getStorageAt","params":["0xffffffffffffffffffffffffffffffffff020000", "0x0000000000000000000000000000000000000000000000000000000000000007", "latest"],"id":1}' 127.0.0.1:1337
 ```
 
-Result:
+Result：
 
 ```json
 {

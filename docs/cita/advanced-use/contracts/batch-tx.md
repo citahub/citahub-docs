@@ -11,9 +11,9 @@ title: 批量交易
 
 ### 合约信息
 
-合约地址为: `0xffffffffffffffffffffffffffffffffff02000e`
+合约地址为：`0xffffffffffffffffffffffffffffffffff02000e`
 
-接口签名如下:
+接口签名如下：
 
 ```
 ======= batch_tx.sol:BatchTx =======
@@ -23,18 +23,18 @@ Function signatures:
 
 ### 数据组装规则
 
-参数类型为 `bytes`，encode规则和ABI一致。拼装规则如下:
+参数类型为 `bytes`，encode 规则和 ABI 一致。拼装规则如下：
 
 * 二十字节的目标调用合约的地址
 * 四字节的目标合约的调用数据的长度
     - 四字节的函数签名
-    - ABI格式编码的函数参数
-* 目标合约的调用数据(第一条交易信息结束)
-* ...(第n条交易信息)
+    - ABI 格式编码的函数参数
+* 目标合约的调用数据（第一条交易信息结束）
+* ...（第 n 条交易信息）
 
 拼装之后按照 bytes 的 ABI 编码即可。
 
-以下是两个交易信息的示例:
+以下是两个交易信息的示例：
 
 ```
 897c71052abad4ca9a5059f070d5a3a119d1e1ec
@@ -136,7 +136,7 @@ $ cita-cli rpc getTransactionReceipt \
 }
 ```
 
-其中合约地址为： `0x626a7a06fe11041e71efc24b32e304bba7f6038a`
+其中合约地址为：`0x626a7a06fe11041e71efc24b32e304bba7f6038a`
 
 ### 查询 x 数值
 
@@ -250,7 +250,7 @@ $ cita-cli rpc getTransactionReceipt \
 
 ### 验证结果
 
-查询 x 数值
+查询 x 数值：
 
 ```bash
 $ cita-cli rpc call \

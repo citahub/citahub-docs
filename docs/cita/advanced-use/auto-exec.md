@@ -13,7 +13,7 @@ title: 自动执行
 
 合约地址为: `0xffffffffffffffffffffffffffffffffff020013`
 
-接口签名如下:
+接口签名如下：
 
 ```
 ======= system/AutoExec.sol:AutoExec =======
@@ -40,7 +40,7 @@ $ bin/cita create \
 
 详细步骤见[运行 CITA]部分。
 
-其中[测试合约]函数签名如下:
+其中[测试合约]函数签名如下：
 
 ```
 ======= contracts/AutoExec.sol:AutoExec =======
@@ -51,8 +51,8 @@ Function signatures:
 
 其中：
 
-* `autoExec()`： 为自动执行的入口，实现对 x 加一
-* `x()`： 表示获取x数值
+* `autoExec()`：为自动执行的入口，实现对 x 加一
+* `x()`：表示获取 x 数值
 
 接下来的测试，用 [cita-cli](https://github.com/citahub/cita-cli) 命令行模式（与交互式模式的命令是一致的）进行演示。
 
@@ -113,7 +113,7 @@ $ cita-cli rpc getTransactionReceipt \
 }
 ```
 
-其中合约地址为： `0xd48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b`
+其中合约地址为：`0xd48cc17fdfa7e0af76637c5a9e658bcc9e0e9b8b`
 
 ### 查询 x 数值
 

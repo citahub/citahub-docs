@@ -14,7 +14,7 @@ title: 紧急制动
 
 ### 合约信息
 
-合约地址： `0xffffffffffffffffffffffffffffffffff02000f`
+合约地址：`0xffffffffffffffffffffffffffffffffff02000f`
 
 接口签名如下：
 [紧急制动测试合约]

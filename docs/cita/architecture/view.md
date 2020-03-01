@@ -52,13 +52,13 @@ CITA 采用了 Simple Merkle Tree 来保存交易列表和交易回执。下面�
 
 当 N 个数据元素经过加密后插入 Merkle 树时，你至多计算2*log2(N)次就能检查出任意某数据元素是否在该树中，这使得该数据结构非常高效。同时 Merkle 树可以很好的支持轻节点。
 
-![Merkle Tree](assets/cita-assets/merkle-tree.png)
+![Merkle Tree](../../assets/cita-assets/merkle-tree.png)
 
 ### Merkle Patricia Trie
 
 在 Ethereum 中，使用 Trie 来构建 Merkle tree，即 Merkle Patricia Trie。它是 Ethereum 中主要的数据结构，用来存储所有账号的状态以及交易和交易回执。MPT 支持高效的检索及动态的插入、删除、修改，Ethereum 将其命名为 Merkle Patricia Tree（MPT），其示意图如下：
 
-![Merkle Patricia Trie](assets/cita-assets/merkle-patricia-trie.png)
+![Merkle Patricia Trie](../../assets/cita-assets/merkle-patricia-trie.png)
 
 更多关于 MPT 的介绍可以参考 Ethereum [Patricia-Tree](https://github.com/ethereum/wiki/wiki/Patricia-Tree)。
 

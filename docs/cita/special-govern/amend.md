@@ -7,7 +7,7 @@ title: 数据订正
 
 ## 简述
 
-数据订正功能指的是超级管理员通过发送特定的交易到链上, 修改链上数据.
+数据订正功能指的是超级管理员通过发送特定的交易到链上，修改链上数据。
 
 - Amend 类型交易的发送者必须是超级管理员，否则会提示没有权限执行
 - Amend 类型交易指定目的地址：`0xffffffffffffffffffffffffffffffffff010002`
@@ -16,12 +16,12 @@ title: 数据订正
 
 `Amend` 功能目前可以操作四种数据, 分别是:
 
-- ABI: 表示账户二进制接口信息
-- Code: 表示合约账户的代码
-- Balance: 表示账户 Balance 的数值
-- Key-Value: 表示账户底层 KV 数据库 Key-Value 信息
+- ABI：表示账户二进制接口信息
+- Code：表示合约账户的代码
+- Balance：表示账户 Balance 的数值
+- Key-Value：表示账户底层 KV 数据库 Key-Value 信息
 
-超级管理员可以通过 cita-cli 使用该功能.
+超级管理员可以通过 cita-cli 使用该功能。
 
 ## 操作示例
 
@@ -77,7 +77,7 @@ title: 数据订正
 
 命令参数如下：
 
-- kv-h256: 数据库的 KV 信息，命令中的 kv 参数值为一系列的 Key-Value 对， 前面的 H256 信息 Key，后面的 H256 信息为 Value，交替存放。
+- kv-h256：数据库的 KV 信息，命令中的 kv 参数值为一系列的 Key-Value 对， 前面的 H256 信息 Key，后面的 H256 信息为 Value，交替存放。
 
 示例：
 

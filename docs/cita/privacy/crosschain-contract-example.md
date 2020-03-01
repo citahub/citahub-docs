@@ -48,9 +48,9 @@ sidebar_label: 侧链
 
 目前，侧链使用系统合约 [ChainManager](https://github.com/citahub/cita/blob/develop/scripts/contracts/src/system/ChainManager.sol) 进行管理。
 
-* 生成侧链的验证节点的私钥，使用侧链的验证节点地址，在主链上使用系统合约 `ChainManager` 的方法 `newSideChain` 进行新建侧链，得到侧链的 Id 。
-* 在主链上使用系统合约 `ChainManager` 的方法 `enableSideChain` 启动指定 Id 的侧链。
-* 新建侧链，创世块里的系统合约 `ChainManager` 构造时，使用上一个步骤申请的侧链 Id 、主链的 Id 和主链的验证节点地址作为参数。
+* 生成侧链的验证节点的私钥，使用侧链的验证节点地址，在主链上使用系统合约 `ChainManager` 的方法 `newSideChain` 进行新建侧链，得到侧链的 ID 。
+* 在主链上使用系统合约 `ChainManager` 的方法 `enableSideChain` 启动指定 ID 的侧链。
+* 新建侧链，创世块里的系统合约 `ChainManager` 构造时，使用上一个步骤申请的侧链 ID 、主链的 ID 和主链的验证节点地址作为参数。
 * 启动侧链即可。
 
 ### 部署跨链合约
@@ -60,14 +60,14 @@ sidebar_label: 侧链
 ### 发送跨链交易
 
 调用任意一条链的跨链合约的 `send_to_side_chain` 方法，
-使用接收链（另一条链）的 Id 、接收链跨链合约的合约地址和转移的 token 数量作为参数，
+使用接收链（另一条链）的 ID 、接收链跨链合约的合约地址和转移的 token 数量作为参数，
 发送跨链转移 token 交易，并得到交易 hash 。
 
 在操作步骤中不区分主链和侧链。
 
 ### 使用 Relayer 工具发送跨链交易到目标链
 
-使用跨链交易的交易 hash 、该交易所在链的 Id，和一个配置文件作为入参调用工具：
+使用跨链交易的交易 hash 、该交易所在链的 ID，和一个配置文件作为入参调用工具：
 
 ```shell
 cita-relayer-parser -c SEND_CHAIN_ID -t TX_HASH -f relayer-parser.json
@@ -76,7 +76,7 @@ cita-relayer-parser -c SEND_CHAIN_ID -t TX_HASH -f relayer-parser.json
 其中配置文件 `relayer-parser.json` 目前主要有 2 个参数：
 
 * 工具使用的私钥。
-* 所有相关链的 JSON-RPC 网络地址，使用 Id 作为索引。
+* 所有相关链的 JSON-RPC 网络地址，使用 ID 作为索引。
 
 范例如下：
 
@@ -109,7 +109,7 @@ cita-relayer-parser -c SEND_CHAIN_ID -t TX_HASH -f relayer-parser.json
 该工具主要做的任务为：
 
 * 根据入参，去发送链上查询跨链交易的交易证明数据。
-* 根据跨链交易的交易证明数据，得到转移 token 的接收链的 Id 。
+* 根据跨链交易的交易证明数据，得到转移 token 的接收链的 ID 。
 * 发送证明到接收链上，完成 token 转移。
 
 ### 验证跨链是否成功

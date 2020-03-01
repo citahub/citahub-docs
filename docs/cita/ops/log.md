@@ -24,11 +24,11 @@ cita-auth.log  cita-bft.log  cita-chain.log  cita-executor.log  cita-forever.log
 
 日志优先级定义如下：
 
-* Error: 错误信息，是日志分级的最高等级
-* Warn: 警告信息
-* Info: 默认信息等级
-* Debug: 调试信息
-* Trace: 最低等级
+* Error：错误信息，是日志分级的最高等级
+* Warn：警告信息
+* Info：默认信息等级
+* Debug：调试信息
+* Trace：最低等级
 
 CITA 会打印所设置等级及以上的日志。
 

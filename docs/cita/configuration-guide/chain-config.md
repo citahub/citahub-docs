@@ -59,44 +59,44 @@ $ bin/cita create --help
 
 示例配置项详细解释:
 
-* `SysConfig` : 初始化一些系统信息
-  - `delayBlockNumber` : 表示系统合约在几个块之后生效，默认为 1 个块。当前此功能已废弃。
-  - `checkCallPermission` : 合约调用权限检查开关
-  - `checkSendTxPermission` : 发送交易权限检查开关
-  - `checkCreateContractPermission` : 创建合约权限检查开关
-  - `checkQuota` : 账户配额限制检查开关
-  - `checkFeeBackPlatform` : 出块激励选择开关，默认为 false，表示返回给共识节点，为 true 时返回给运营方地址( chainOwner )
-  - `chainOwner` : 运营方地址，结合 checkFeeBackPlatform 一块使用
-  - `chainName` : 链的名字
-  - `chainId` : 链 Id
-  - `operator` : 运营方名称
-  - `website` : 运营方网站
-  - `blockInterval` ： 出块间隔，默认 3 秒
-  - `economicalModel`： 经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由超级管理员设置，详细机制可查看 [配额管理]；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理]。
-  - `name` : Token 名称
-  - `symbol` : Token 符号
-  - `avatar` : Token 图标链接
-  - `autoExec` : 自动执行开关（默认：false）
-* `QuotaManager` : 初始化配额管理合约的管理地址
-  - `admin` : 默认管理员地址
-* `NodeManager` : 初始化共识节点管理合约
-  - `nodes` : 共识节点地址
-  - `stakes` : 共识节点对应的出块权重
-* `ChainManager` : 初始化链的一些信息，用于跨链。
-  - `parentChainId` : 父链 ID
-  - `parentChainAuthorities` : 父链的共识节点列表
-* `Authorization` : 初始化权限管理合约
-  - `superAdmin` : 超级管理员地址(由 `--super_admin` 统一设置)
-* `Group` : 初始化用户组管理合约
-  - `parent` : 父组的地址
-  - `name` : 组的名称
-  - `accounts` : 组内用户列表
-* `Admin` : 超级管理员合约
-  - `admin` : 超级管理员地址(由 `--super_admin` 统一设置)
-* `VersionManager` : 协议版本管理合约
-  - `version` : 协议版本号
-* `PriceManager`: 配额价格管理合约
-  - `quotaPrice`: 配额价格
+* `SysConfig`：初始化一些系统信息
+  - `delayBlockNumber`：表示系统合约在几个块之后生效，默认为 1 个块。当前此功能已废弃。
+  - `checkCallPermission`：合约调用权限检查开关
+  - `checkSendTxPermission`：发送交易权限检查开关
+  - `checkCreateContractPermission`：创建合约权限检查开关
+  - `checkQuota`：账户配额限制检查开关
+  - `checkFeeBackPlatform`：出块激励选择开关，默认为 false，表示返回给共识节点，为 true 时返回给运营方地址( chainOwner )
+  - `chainOwner`：运营方地址，结合 checkFeeBackPlatform 一块使用
+  - `chainName`：链的名字
+  - `chainId`：链 Id
+  - `operator`：运营方名称
+  - `website`：运营方网站
+  - `blockInterval`：出块间隔，默认 3 秒
+  - `economicalModel`：经济模型。CITA 中存在两种经济模型，Quota(默认) 和 Charge。`economicalModel = 0` 表示 Quota 模型交易只需不超过限额即可，限额由超级管理员设置，详细机制可查看 [配额管理]；`economicalModel = 1` 表示 Charge 型， 交易需要手续费，针对交易的每一步执行进行单步扣费模式，扣除余额，详细机制可查看 [配额价格管理]。
+  - `name`：Token 名称
+  - `symbol`：Token 符号
+  - `avatar`：Token 图标链接
+  - `autoExec`：自动执行开关（默认：false）
+* `QuotaManager`：初始化配额管理合约的管理地址
+  - `admin`：默认管理员地址
+* `NodeManager`：初始化共识节点管理合约
+  - `nodes`：共识节点地址
+  - `stakes`：共识节点对应的出块权重
+* `ChainManager`：初始化链的一些信息，用于跨链。
+  - `parentChainId`：父链 ID
+  - `parentChainAuthorities`：父链的共识节点列表
+* `Authorization`：初始化权限管理合约
+  - `superAdmin`：超级管理员地址(由 `--super_admin` 统一设置)
+* `Group`：初始化用户组管理合约
+  - `parent`：父组的地址
+  - `name`：组的名称
+  - `accounts`：组内用户列表
+* `Admin`：超级管理员合约
+  - `admin`：超级管理员地址(由 `--super_admin` 统一设置)
+* `VersionManager`：协议版本管理合约
+  - `version`：协议版本号
+* `PriceManager`：配额价格管理合约
+  - `quotaPrice`：配额价格
 
 > **注意**
 >
@@ -107,7 +107,7 @@ $ bin/cita create --help
 指定起链的时间戳。
 
 * 具体数值是指自 1970-1-1 以来的毫秒数，默认是取当前的时间，如果时间取在未来，则链起来之后不会出块。
-* 这个值在生成的genesis.json文件中可以查看到。
+* 这个值在生成的 genesis.json 文件中可以查看到。
 
 ### `--resource_dir`
 
@@ -187,13 +187,13 @@ chain.toml  executor.toml   jsonrpc.toml       privkey
 
 相对应给出的参数，生成 4 个节点，`test-chain/*` 里面包含节点的配置文件，具体如下：
 
-* `privkey` : 存放私钥
-* `address` : 存放地址
-* `*.toml` :  各个微服务配置文件，详细说明见微服务说明
+* `privkey`：存放私钥
+* `address`：存放地址
+* `*.toml`： 各个微服务配置文件，详细说明见微服务说明
 * `genesis.json` ： 生成 genesis 块文件， 其中 timestamp 为时间戳，秒为单位；prevhash 指前一个块哈希，这里是默认值；而 alloc 指部署到创世块的合约内容；
 * `test-chain/template` 目录下是模板文件，包括这个链的共识节点地址 `test-chain/template/authorities.list`，系统参数 `test-chain/template/init_data.yml`, 节点端口地址 `test-chain/template/nodes.list` 等信息
-* `logs` : 记录链运行的日志信息
-* `data` : 数据存储
+* `logs`：记录链运行的日志信息
+* `data`：数据存储
 
 ## 修改个别配置操作示例
 

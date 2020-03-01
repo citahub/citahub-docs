@@ -208,7 +208,7 @@ CITA 采用的微服务架构，微服务之间通过消息总线通信。消息
 案例：3 个共识 0.20.2， 一个共识 0.19，一个老版本节点不能参加共识，但是可以同步数据，而且可以参与投票。
 
 #### cita链有指令可以查询版本号吗？
-在 v0.23.0 及以后版本，如果打开了 --enable_version 配置，可以通过 JSON-RPC 接口 getVersion 获取，详细见[这里](https://docs.citahub.com/zh-CN/next/cita/rpc-guide/rpc#getversion)。其他版本需要通过运行 binary 文件方式, 运行 cita-jsonrpc --version 查看。
+在 v0.23.0 及以后版本，如果打开了 --enable_version 配置，可以通过 JSON-RPC 接口 getVersion 获取，详细见 [这里](https://docs.citahub.com/zh-CN/next/cita/rpc-guide/rpc#getversion)。其他版本需要通过运行 binary 文件方式, 运行 cita-jsonrpc --version 查看。
 
 #### 升级后 chain-id 会变化吗？
 不变。

@@ -7,7 +7,7 @@ CITA 的共识模块主要是保证多个节点对于交易的顺序和 Block �
 
 ## 共识的架构
 
-共识主要有MQ(消息队列)通讯模块、交易池、定时模块、WAL(write ahead log)、算法逻辑模块。
+共识主要有MQ（消息队列）通讯模块、交易池、定时模块、WAL（write ahead log）、算法逻辑模块。
 
 ```
    +-------------+       +-------------+       +-----+
@@ -22,13 +22,13 @@ CITA 的共识模块主要是保证多个节点对于交易的顺序和 Block �
      +--------+           +-----------+
 ```
 
-**MQ通讯模块**： CITA的消息通过MQ进行周转，MQ通讯模块负责订阅、发布基于MQ的消息。
+**MQ 通讯模块**：CITA 的消息通过 MQ 进行周转，MQ 通讯模块负责订阅、发布基于 MQ 的消息。
 
-**交易池**： 交易池订阅和存储交易信息，并提供交易的打包、生成Block。还进行交易的持久化，实现快速确认的功能。
+**交易池**： 交易池订阅和存储交易信息，并提供交易的打包、生成 Block。还进行交易的持久化，实现快速确认的功能。
 
 **定时模块**： 提供算法定时服务。使用者向定时模块发送定时请求，定时模块在时间到达后，发送确认信息。
 
-**WAL**： WAL提供预写日志(write ahead log)的服务，持久化各个节点的投票。用来进行节点崩溃后恢复。
+**WAL**： WAL 提供预写日志（write ahead log）的服务，持久化各个节点的投票。用来进行节点崩溃后恢复。
 
 **算法逻辑模块**： 分布式算法逻辑的实现模块，接受共识其它模块发送过来的信息，根据自身的算法要求，进行算法逻辑相应的处理。
 
@@ -41,23 +41,23 @@ CITA 的共识模块主要是保证多个节点对于交易的顺序和 Block �
 
 ## 基本步骤
 
-虽然分布式算法多种多样，具体落实在CITA中，基本上需要进行如下的步骤：
+虽然分布式算法多种多样，具体落实在 CITA 中，基本上需要进行如下的步骤：
 
 - 共识模块从消息队列中订阅交易信息，放入交易池。如果应用有快速确认的需求，交易池可以对交易进行持久化。
-- 共识算法根据配置和算法要求，选择一个出块的节点。该出块节点把块的哈希值（Block.Hash）作为共识的主要信息通过MQ通讯模块向其它的节点进行广播。
-- 当出块节点进过一轮或者多轮投票，收到算法要求的法定多数的投票返回时，向Chain模块确认出块，否则进入重新选择出块节点的计算，由下一个出块节点继续出块。
-- 接收Chain返回的状态信息，作为出块成功的标志。
+- 共识算法根据配置和算法要求，选择一个出块的节点。该出块节点把块的哈希值（Block.Hash）作为共识的主要信息通过 MQ 通讯模块向其它的节点进行广播。
+- 当出块节点进过一轮或者多轮投票，收到算法要求的法定多数的投票返回时，向 Chain 模块确认出块，否则进入重新选择出块节点的计算，由下一个出块节点继续出块。
+- 接收 Chain 返回的状态信息，作为出块成功的标志。
 - 出块成功后，从交易池删除已经达成共识的交易。
 
 ## CITA-BFT 共识算法
 
-CITA-BFT是一种专为区块链设计的高性能共识算法，基于半同步网络假设（*部分同步网络*：存在一个确定的消息传播时延上限 δ，但是 δ 未知；或者 δ 已知，但是只在某些未知的时间段才有该时延限制），CITA-BFT在保证活性和安全性（Liveness & Safety）的前提下能够容忍 1/3 的拜占庭节点。
-CITA共识节点通过点对点共识消息交换协议对每一个区块交换投票信息，迅速形成多数共识。投票结果最后会被记录在区块里。CITA支持独有的低延迟技术，能够实现毫秒级交易确认延迟。
+CITA-BFT 是一种专为区块链设计的高性能共识算法，基于半同步网络假设（*部分同步网络*：存在一个确定的消息传播时延上限 δ，但是 δ 未知；或者 δ 已知，但是只在某些未知的时间段才有该时延限制），CITA-BFT 在保证活性和安全性（Liveness & Safety）的前提下能够容忍 1/3 的拜占庭节点。
+CITA 共识节点通过点对点共识消息交换协议对每一个区块交换投票信息，迅速形成多数共识。投票结果最后会被记录在区块里。CITA 支持独有的低延迟技术，能够实现毫秒级交易确认延迟。
 
 ### 基本约定
 
 1. 规定 H 为当前高度，R 为当前轮次，N 为该轮参与共识的节点数量，B 为当前区块，在每一个高度下，达成共识至少需要一轮；
-2. 一个包含 +2/3 的对应于处在 <H, R> 的特定区块或者 nil（空区块）的预投票的集合，称之为锁变化证明(Proof-of-lock-change)，简称 PoLC。
+2. 一个包含 +2/3 的对应于处在 <H, R> 的特定区块或者 nil（空区块）的预投票的集合，称之为锁变化证明（Proof-of-lock-change），简称 PoLC。
 
 ### 状态
 
@@ -89,7 +89,7 @@ CITA共识节点通过点对点共识消息交换协议对每一个区块交换�
 新一轮开始时，共识节点处于 Propose<H, R> 状态，共识节点通过计算 (H+R) % N 确定本轮的 proposer<H, R>，接着重置并启动一个计时器 T0 （T0 = 3s） ：
 
 * 如果该共识节点就是本轮的 proposer<H, R>，就广播这一轮的提议 proposal<H, R, B>
-* 如果该共识节点不是本轮的 proposer<H, R>，就重置并启动一个计时器 T1（T1 = T0 * 24 / 30 * (R + 1) ）
+* 如果该共识节点不是本轮的 proposer<H, R>，就重置并启动一个计时器 T1（T1 = T0 * 24 / 30 * (R + 1)）
 
 共识节点进入 ProposeWait<H, R> 状态。
 
@@ -147,65 +147,65 @@ PRECOMMIT<H, R> → PRECOMMITWAIT<H, R>
 
 ### 常数
 
-* INIT_HEIGHT ：初始块高度，设置为1
-* INIT_ROUND ：初始轮次，设置为0
-* TIMEOUT_RETRANSE_MULTIPLE ：超时重发常数，设置为15
-* TIMEOUT_LOW_ROUND_MESSAGE_MULTIPLE ：向低轮次广播控制常数，设置为20
-* THREAD_POOL_NUM ：线程池内线程数量，设置为10
+* INIT_HEIGHT：初始块高度，设置为1
+* INIT_ROUND：初始轮次，设置为0
+* TIMEOUT_RETRANSE_MULTIPLE：超时重发常数，设置为15
+* TIMEOUT_LOW_ROUND_MESSAGE_MULTIPLE：向低轮次广播控制常数，设置为20
+* THREAD_POOL_NUM：线程池内线程数量，设置为10
 
 ### BLOCK 结构
 
-* version ：版本号
-* header ：BlockHeader 结构
-* body ：BlockBody 结构
+* version：版本号
+* header：BlockHeader 结构
+* body：BlockBody 结构
 
 ### BlockHeader 结构
 
-* prevhash ：上一个块的哈希值
-* timestamp ：Unix 时间戳
-* proof ：Proof 结构，出块人签名
-* commit ：Commit 结构，Chain 处理结果
-* height ：uint64 块号
+* prevhash：上一个块的哈希值
+* timestamp：Unix 时间戳
+* proof：Proof 结构，出块人签名
+* commit：Commit 结构，Chain 处理结果
+* height：uint64 块号
 
 ### BlockBody 结构
 
-* transactions ：交易列表
+* transactions：交易列表
 
 ### Commit 结构
 
-* stateRoot ：状态 root
-* transcationsRoot ：交易列表 root
-* receiptsRoot ：交易回执 root
+* stateRoot：状态 root
+* transcationsRoot：交易列表 root
+* receiptsRoot：交易回执 root
 
 ### BFT 结构
 
-* pub_sender ：发送消息信道
-* pub_recver ：接收消息信道
-* timer_seter ：
-* timer_notify ：
-* params ：BFT 参数
-* height ：当前高度
-* round ：当前轮次
-* step ：当前阶段
-* proof ：投给特定 proposal 的投票的签名
-* pre_hash ：上一个块的哈希
-* votes ：投票集合
-* proposals ：提议集合
-* proposal ：提议的 hash
-* lock_round ：锁定的轮次
-* locked_vote ：锁定的投票
-* locked_block ：锁定的区块
-* wal_log ：日志
-* send_filter ：投票查重
-* last_commit_round ：上一次提交的轮次
-* htime ：新的高度开始的时间
-* auth_manage ：权限管理
-* consensus_power ：是否可以参与共识
-* unverified_message ：交易消息未确认块
-* block_txs ：交易区块
-* block_proof ：上一个高度的共识结果
-* is_snapshot ：是否做了快照
-* is_cleared ：数据是否被清理
+* pub_sender：发送消息信道
+* pub_recver：接收消息信道
+* timer_seter：
+* timer_notify：
+* params：BFT 参数
+* height：当前高度
+* round：当前轮次
+* step：当前阶段
+* proof：投给特定 proposal 的投票的签名
+* pre_hash：上一个块的哈希
+* votes：投票集合
+* proposals：提议集合
+* proposal：提议的 hash
+* lock_round：锁定的轮次
+* locked_vote：锁定的投票
+* locked_block：锁定的区块
+* wal_log：日志
+* send_filter：投票查重
+* last_commit_round：上一次提交的轮次
+* htime：新的高度开始的时间
+* auth_manage：权限管理
+* consensus_power：是否可以参与共识
+* unverified_message：交易消息未确认块
+* block_txs：交易区块
+* block_proof：上一个高度的共识结果
+* is_snapshot：是否做了快照
+* is_cleared：数据是否被清理
 
 ### PROPOSER 选择
 
@@ -215,10 +215,10 @@ PRECOMMIT<H, R> → PRECOMMITWAIT<H, R>
 
 首先获取当前轮次下 precommit 投票集合并创建名为 commits 的 hashmap 。commits 收集与输入 hash 相同的投票，并计算投票数量。如果数量不满足 +2/3 则返回空，否则返回 proof。proof 的构成如下：
 
-* proof.height ：proof 对应的高度
-* proof.round ：proof 对应的轮次
-* proof.proposal ：proof 对应的提议
-* proof.commits ：投给 proof.proposal 的每一个投票的签名
+* proof.height：proof 对应的高度
+* proof.round：proof 对应的轮次
+* proof.proposal：proof 对应的提议
+* proof.commits：投给 proof.proposal 的每一个投票的签名
 
 ### 并行处理
 

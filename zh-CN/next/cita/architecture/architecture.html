@@ -148,40 +148,40 @@
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="protocolbuffer"></a><a href="#protocolbuffer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ProtocolBuffer</h2>
 <p>ProtocolBuffer 是一种用于序列化结构数据的语言无关、平台无关的扩展机制， 经常被用于跨进程、跨机器的应用程序间的数据通信，特别是微服务间的数据通 信。它的编译器接受接口描述语言（<a href="https://en.wikipedia.org/wiki/Interface_description_language">IDL</a>）作为输入，通过不同语言的插件，可以编译成各自语言的本地代码。</p>
-<p>CITA 采用了 ProtocolBuffer 作为数据序列化的方法。一方面，序列化/反序列化 性能高，另一方面，不同微服务间可以通过接口描述语言很方便的集成到 CITA 的微服务架构中。</p>
+<p>CITA 采用了 ProtocolBuffer 作为数据序列化的方法。一方面，序列化/反序列化性能高，另一方面，不同微服务间可以通过接口描述语言很方便的集成到 CITA 的微服务架构中。</p>
 <h2><a class="anchor" aria-hidden="true" id="block"></a><a href="#block" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Block</h2>
 <p>Block 结构</p>
 <ul>
-<li>version: u32</li>
-<li>header: BlockHeader 结构</li>
-<li>body: BlockBody 结构</li>
+<li>version：u32</li>
+<li>header：BlockHeader 结构</li>
+<li>body：BlockBody 结构</li>
 </ul>
 <p>BlockHeader 结构</p>
 <ul>
-<li>prevhash: 上一个块的 Keccak 256-bit 哈希值</li>
-<li>timestamp: Unix 时间戳</li>
-<li>proof: Proof 结构，出块人签名</li>
-<li>commit: Commit 结构，Chain 处理结果</li>
-<li>height: uint64 块号</li>
+<li>prevhash：上一个块的 Keccak 256-bit 哈希值</li>
+<li>timestamp：Unix 时间戳</li>
+<li>proof：Proof 结构，出块人签名</li>
+<li>commit：Commit 结构，Chain 处理结果</li>
+<li>height：uint64 块号</li>
 </ul>
 <p>BlockBody 结构</p>
 <ul>
-<li>transactions: 交易列表</li>
+<li>transactions：交易列表</li>
 </ul>
 <p>Commit 结构</p>
 <ul>
-<li>stateRoot: Keccak 256-bit，状态 root</li>
-<li>transactionsRoot: Keccak 256-bit，交易列表 root</li>
-<li>receiptsRoot: Keccak 256-bit，交易回执 root</li>
+<li>stateRoot：Keccak 256-bit，状态 root</li>
+<li>transactionsRoot：Keccak 256-bit，交易列表 root</li>
+<li>receiptsRoot：Keccak 256-bit，交易回执 root</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="transaction"></a><a href="#transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transaction</h2>
 <p>Transaction 结构</p>
 <ul>
-<li>to: 160-bit address；如果为空表示创建合约</li>
-<li>content: bytes，交易 data</li>
-<li>valid_until_block: 交易超时设置</li>
-<li>signature: bytes，签名</li>
-<li>crypto: 签名类型</li>
+<li>to：160-bit address；如果为空表示创建合约</li>
+<li>content：bytes，交易 data</li>
+<li>valid_until_block：交易超时设置</li>
+<li>signature：bytes，签名</li>
+<li>crypto：签名类型</li>
 </ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/ops/service-monitor"><span class="arrow-prev">← </span><span>服务监控</span></a><a class="docs-next button" href="/zh-CN/next/cita/architecture/comp"><span>系统组件</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#微服务">微服务</a></li><li><a href="#flow-chart">Flow Chart</a></li><li><a href="#timing-diagram">Timing Diagram</a></li><li><a href="#protocolbuffer">ProtocolBuffer</a></li><li><a href="#block">Block</a></li><li><a href="#transaction">Transaction</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {

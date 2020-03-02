@@ -86,7 +86,7 @@
 <li><p>使用场景</p>
 <p>创建一条新的区块链。</p></li>
 <li><p>示例</p>
-<p>生成一条包含 4 个节点的区块链 <code>test</code>，节点间连接端口分别为 4000 , 4001 , 4002 , 4003。</p>
+<p>生成一条包含 4 个节点的区块链 <code>test</code>，节点间连接端口分别为 4000、4001、4002、4003。</p>
 <blockquote>
 <p>特别说明：所有在 <code>create</code> 命令中指定的节点，均为共识节点。</p>
 </blockquote>
@@ -102,12 +102,12 @@
 <li><p>说明</p>
 <p>新添加一个区块链节点配置。</p>
 <p>可以通过 <code>bin/cita append --help</code> 获得 <code>append</code> 命令帮助信息，其中：</p>
-<p><code>--chain_name</code>： 指定所添加新节点的链名称。</p>
-<p><code>--node</code>： 指定所添加新节点的 IP:PORT 。</p>
-<p><code>--address</code>： 指定所添加新节点的地址。</p>
-<p><code>--enable_tls</code>: 是否开通节点间通讯加密。需要与链的其它节点保持一致，否则无法通信。</p>
-<p><code>--enable_version</code>: 是否使能 JSON-RPC 接口 <code>getVersion</code>　。</p>
-<p><code>--stdout</code>: 是否将 CITA 日志输出到标准输出。</p>
+<p><code>--chain_name</code>：指定所添加新节点的链名称。</p>
+<p><code>--node</code>：指定所添加新节点的 IP:PORT 。</p>
+<p><code>--address</code>：指定所添加新节点的地址。</p>
+<p><code>--enable_tls</code>：是否开通节点间通讯加密。需要与链的其它节点保持一致，否则无法通信。</p>
+<p><code>--enable_version</code>：是否使能 JSON-RPC 接口 <code>getVersion</code>。</p>
+<p><code>--stdout</code>：是否将 CITA 日志输出到标准输出。</p>
 <p>注意，当指定 <code>--address</code> 时，需要 <strong>手工</strong> 将 <code>address</code> 对应的 <code>privkey</code> 添加到生成后的节点目录下。</p></li>
 <li><p>使用场景</p>
 <p>区块链配置已经生成，需要新加入一个节点。</p></li>
@@ -126,7 +126,7 @@
 <h3><a class="anchor" aria-hidden="true" id="port"></a><a href="#port" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>port</h3>
 <ul>
 <li><p>说明</p>
-<p>使用 <code>cita</code> 命令运行 CITA 时，会默认启动 <code>docker</code> 容器； <code>port</code> 命令可以将容器内的端口映射到宿主机。</p>
+<p>使用 <code>cita</code> 命令运行 CITA 时，会默认启动 <code>docker</code> 容器；<code>port</code> 命令可以将容器内的端口映射到宿主机。</p>
 <p>方便用户在宿主机上使用 CITA 提供的 JSON-RPC 服务。</p>
 <blockquote>
 <p>特别说明：</p>

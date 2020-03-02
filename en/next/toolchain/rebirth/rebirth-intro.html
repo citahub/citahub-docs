@@ -83,7 +83,7 @@
 <li>server 进程：提供 rest api 服务，可用于 Microscope 和 Cyton Wallet。</li>
 <li>队列服务：把放在队列中的信息进行处理：包括获取新块，获取交易回执，
 <ul>
-<li>从块高获取块信息, 处理，存储</li>
+<li>从块高获取块信息，处理，存储</li>
 <li>里面的交易要 getTransactionReceipt 获取交易回执，里面有 errorMessage 等信息，还有 EventLog 信息在里面</li>
 </ul></li>
 </ul>
@@ -94,7 +94,7 @@
 <li>workers 队列任务处理</li>
 <li>models 模型
 <ul>
-<li>models/cita_sync 是跟CITA链交互的部分</li>
+<li>models/cita_sync 是跟 CITA 链交互的部分</li>
 <li>persist.rb 里面都是 从链上获取信息 → 处理 → 存储 的部分</li>
 </ul></li>
 <li>serializers

@@ -76,18 +76,18 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">设置 Quota Limit</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="概述"></a><a href="#概述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>概述</h2>
-<p>无论是 Quota 模式还是 Charge 模式，系统都需要对区块内交易总体消耗的资源进行限制。当链进行初始化配置时 <code>checkQuota = True.</code> 时，还可以对账户的单次交易消耗的资源消耗进行限制。设计目的是防止区块链网络发生蓄意攻击或资源滥用。</p>
-<p>CITA 是通过配额管理合约实现对区块以及账户单笔交易 Quota 消耗上限的管理:</p>
+<p>无论是 Quota 模式还是 Charge 模式，系统都需要对区块内交易总体消耗的资源进行限制。当链进行初始化配置时 <code>checkQuota = True</code> 时，还可以对账户的单次交易消耗的资源消耗进行限制。设计目的是防止区块链网络发生蓄意攻击或资源滥用。</p>
+<p>CITA 是通过配额管理合约实现对区块以及账户单笔交易 Quota 消耗上限的管理：</p>
 <ul>
 <li><p>参数设置：</p>
 <ul>
-<li><code>BQL(BlockQuotaLimit)</code> : 表示单个区块内全部交易可消耗的 quota 的上限， 默认 1073741824</li>
-<li><code>AQL(AccountQuotaLimit)</code> : 表示账户单笔交易可消耗的 quota 的上限， 默认 268435456。此限制默认是关掉的，如需开启，需要在对链进行初始化配置时设置 <code>checkQuota = True.</code></li>
+<li><code>BQL(BlockQuotaLimit)</code>：表示单个区块内全部交易可消耗的 quota 的上限，默认 1073741824</li>
+<li><code>AQL(AccountQuotaLimit)</code>：表示账户单笔交易可消耗的 quota 的上限，默认 268435456。此限制默认是关掉的，如需开启，需要在对链进行初始化配置时设置 <code>checkQuota = True</code></li>
 </ul></li>
 <li><p>操作：</p>
 <ul>
 <li>设置区块限额：BQL</li>
-<li>设置账户单笔交易限额: AQL
+<li>设置账户单笔交易限额：AQL
 <ul>
 <li>默认的账户配额</li>
 <li>设置指定账号配额</li>
@@ -109,7 +109,7 @@
   <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000040000000"</span>
 }
 </code></pre>
-<p>超级管理员修改块配额， 输入命令：</p>
+<p>超级管理员修改块配额，输入命令：</p>
 <pre><code class="hljs css language-shell">scm QuotaManager setBQL --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 </code></pre>
 <p>查询修改后的块配额：</p>

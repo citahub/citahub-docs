@@ -102,8 +102,8 @@ contract HelloWorld {
 </code></pre>
 <p>包括：</p>
 <ul>
-<li>合约变量 balance ： 与 Solidity 对应</li>
-<li>output 变量： 操作 update 操作的返回值，执行结果或者错误信息</li>
+<li>合约变量 balance：与 Solidity 对应</li>
+<li>output 变量：操作 update 操作的返回值，执行结果或者错误信息</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="定义合约"></a><a href="#定义合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>定义合约</h3>
 <p>实现 <code>Rust</code> 原生合约至少需要实现 <code>exec</code> 与 <code>create</code> 这两个方法：</p>
@@ -137,8 +137,8 @@ contract HelloWorld {
 </code></pre>
 <p>前面的字符串称为方法的签名，可以任意指定，需要保证每个方法签名唯一（建议同 Solidity 函数签名计算方法相同）：</p>
 <ul>
-<li><code>update</code>: 对应 Solidity 中函数，更新 balance</li>
-<li><code>balance_get</code>: 获取 balance 值</li>
+<li><code>update</code>：对应 Solidity 中函数，更新 balance</li>
+<li><code>balance_get</code>：获取 balance 值</li>
 </ul>
 <p>接下来，我们来具体实现这两个函数接口。</p>
 <h3><a class="anchor" aria-hidden="true" id="实现合约接口"></a><a href="#实现合约接口" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实现合约接口</h3>
@@ -198,7 +198,7 @@ contract HelloWorld {
 <p>代码如下：</p>
 <pre><code class="hljs css language-rust"><span class="hljs-literal">Ok</span>(InterpreterResult::Normal(<span class="hljs-keyword">self</span>.output.clone(), <span class="hljs-number">100</span>, <span class="hljs-built_in">vec!</span>[]))
 </code></pre>
-<p>查看 <a href="https://github.com/citahub/test-contracts/blob/master/hello.rs">这里</a> 阅读合约的完整代码。</p>
+<p>查看<a href="https://github.com/citahub/test-contracts/blob/master/hello.rs">这里</a>阅读合约的完整代码。</p>
 <h2><a class="anchor" aria-hidden="true" id="注册合约地址"></a><a href="#注册合约地址" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>注册合约地址</h2>
 <p>Rust 原生合约当前是随 CITA 直接启动的，并不像 Solidity 合约发送交易来部署合约。 在 <code>factory.rs</code>（cita-executor/core/src/contracts/native）中加入合约的注册代码便可。</p>
 <pre><code class="hljs css language-rust"><span class="hljs-comment">// here we register contracts with addresses defined in genesis.json.</span>
@@ -207,7 +207,7 @@ contract HelloWorld {
     factory.register(Address::from(<span class="hljs-number">0x500</span>), <span class="hljs-built_in">Box</span>::new(HelloWorld::default()));
 }
 </code></pre>
-<p>同时还需要在同目录下的代码 <code>mod.rs</code>中加入 <code>hello</code> 的模块，使得可以编译进 CITA。</p>
+<p>同时还需要在同目录下的代码 <code>mod.rs</code> 中加入 <code>hello</code> 的模块，使得可以编译进 CITA。</p>
 <pre><code class="hljs css language-rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">mod</span> hello;
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="编译合约"></a><a href="#编译合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编译合约</h2>
@@ -222,8 +222,8 @@ contract HelloWorld {
 </code></pre>
 <p>关键信息简释：</p>
 <ul>
-<li><code>to</code>: 合约地址，与前文注册的地址一致</li>
-<li><code>data</code>: 调用的方法签名，与前文函数签名对应</li>
+<li><code>to</code>：合约地址，与前文注册的地址一致</li>
+<li><code>data</code>：调用的方法签名，与前文函数签名对应</li>
 </ul>
 <p>返回：</p>
 <pre><code class="hljs css language-json">{
@@ -240,9 +240,9 @@ contract HelloWorld {
 </code></pre>
 <p>关键信息简释：</p>
 <ul>
-<li>code: 前 4 个 bytes 为函数签名，后 32 bytes 为 update 参数。相当于执行 <code>HelloWorld.update(11)</code></li>
-<li>address: 前文注册的合约地址</li>
-<li>private-key: 发交易需要的私钥</li>
+<li>code：前 4 个 bytes 为函数签名，后 32 bytes 为 update 参数。相当于执行 <code>HelloWorld.update(11)</code></li>
+<li>address：前文注册的合约地址</li>
+<li>private-key：发交易需要的私钥</li>
 </ul>
 <p>返回：</p>
 <pre><code class="hljs css language-json">{

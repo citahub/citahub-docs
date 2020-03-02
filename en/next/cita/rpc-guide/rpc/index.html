@@ -93,11 +93,11 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
 <li>返回值</li>
 </ul>
 <p><code>Quantity</code> - 本节点连接节点个数</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">74</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
@@ -116,15 +116,15 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
 </ul>
 <p>PeerInfo object - 节点信息对象</p>
 <ul>
-<li>amount: <code>Quantity</code> - 和该节点相连的节点数量</li>
-<li>peers: <code>Object</code> - 节点信息，包括节点地址和节点 <code>ip</code> 地址</li>
-<li>errorMessage: <code>String</code> - 错误信息</li>
+<li>amount：<code>Quantity</code> - 和该节点相连的节点数量</li>
+<li>peers：<code>Object</code> - 节点信息，包括节点地址和节点 <code>ip</code> 地址</li>
+<li>errorMessage：<code>String</code> - 错误信息</li>
 </ul>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"peersInfo","params":[],"id":83}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>:<span class="hljs-number">83</span>,
@@ -150,11 +150,11 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
 <li>返回值</li>
 </ul>
 <p><code>Quantity</code> - 链高度</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">83</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
@@ -176,11 +176,11 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
 <li>返回值</li>
 </ul>
 <p><code>Data32</code> - 交易哈希</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"sendRawTransaction","params":["0x0a910212013218fface20420a0492a8302606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da200291241edd3fb02bc1e844e1a6743e8986a61e1d8a584aac26db5fa1ce5b32700eba5d16ba4c754731f43692f3f5299e85176627e55b9f61f5fe3e43572ec8c535b0d9201"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -230,11 +230,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
     Crypto crypto = <span class="hljs-number">3</span>;
 }
 </code></pre>
-<p>一些交易字段的说明:</p>
+<p>一些交易字段的说明：</p>
 <ul>
 <li><code>to</code> 交易接收地址。</li>
 </ul>
-<p>调用合约时即为被调用合约的地址，部署合约时不填写该字段。<strong>注意</strong>地址是长度 40 的十六进制字符(160 位)，前导 0 不能省略，必须补全。</p>
+<p>调用合约时即为被调用合约的地址，部署合约时不填写该字段。<strong>注意</strong>地址是长度 40 的十六进制字符（160 位），前导 0 不能省略，必须补全。</p>
 <ul>
 <li><code>nonce</code> 交易填充字段。</li>
 </ul>
@@ -246,10 +246,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li><code>valid_until_block</code> 交易上链最大区块高度。</li>
 </ul>
-<p>区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值，甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态(失败还是拥堵)。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此，需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。</p>
+<p>区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值，甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态（失败还是拥堵）。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此，需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。</p>
 <p><code>valid_until_block</code> 字段就是这样一种机制，用来表示用户愿意等待交易上链的最大区块高度。在区块链达到该高度之后，交易就确定不会再上链了，用户可以放心地重新发送交易，或者进行其他的后续处理。实际使用中，<strong>可选值</strong>当前区块高度到当前区块高度 +100 之间。</p>
 <ul>
-<li><p><code>data</code> 合约对应的 <code>Bytecode</code>, 参考:</p>
+<li><p><code>data</code> 合约对应的 <code>Bytecode</code>, 参考：</p>
 <ul>
 <li><a href="https://ethereum.stackexchange.com/questions/8115/how-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser">How-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser</a></li>
 <li><a href="https://solidity.readthedocs.io/en/develop/">Solidity docs</a></li>
@@ -270,7 +270,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </blockquote>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getversion"></a><a href="#getversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getVersion</h3>
-<p>获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看 <a href="../configuration-guide/chain-config">链级配置</a> 中的 <code>--enable_version</code> 选项说明。</p>
+<p>获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看<a href="../configuration-guide/chain-config">链级配置</a>中的 <code>--enable_version</code> 选项说明。</p>
 <ul>
 <li>参数</li>
 </ul>
@@ -279,11 +279,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>String</code> - 软件版本号</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getVersion","params":[],"id":83}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>:<span class="hljs-number">83</span>,
@@ -300,7 +300,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </ul>
 <ol>
 <li><code>Data32</code> - 块哈希值</li>
-<li><code>Boolean</code> - 是否返回交易信息(True: 返回详细交易列表 | False: 只返回交易哈希)</li>
+<li><code>Boolean</code> - 是否返回交易信息（True：返回详细交易列表 | False：只返回交易哈希）</li>
 </ol>
 <ul>
 <li>返回值</li>
@@ -308,11 +308,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ol>
 <li><code>Object</code> - 块对象，如果不存在，则返回空</li>
 </ol>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBlockByHash","params":["0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329", true],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -360,14 +360,14 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </ul>
 <ol>
 <li><code>Quantity</code> - 高度</li>
-<li><code>Boolean</code> - 是否返回交易信息(True: 返回详细交易列表 | False: 只返回交易哈希)</li>
+<li><code>Boolean</code> - 是否返回交易信息（True：返回详细交易列表 | False：只返回交易哈希）</li>
 </ol>
 <ul>
 <li>返回值</li>
 </ul>
 <p>结果同 <a href="#getblockbyhash">getBlockByHash</a></p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0xF9", true],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
 <ul>
@@ -394,22 +394,22 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </ul>
 <p>Object - 回执对象</p>
 <ul>
-<li>transactionHash: <code>Data32</code> - 交易哈希</li>
-<li>transactionIndex: <code>Quantity</code> - 交易 <code>index</code></li>
-<li>blockHash: <code>Data32</code> - 交易所在块的块哈希</li>
-<li>blockNumber: <code>Quantity</code> - 交易所在块的块高度</li>
-<li>cumulativeQuotaUsed: <code>Quantity</code> - 块中该交易之前(包含该交易)的所有交易消耗的 quota 总量</li>
-<li>quotaUsed: <code>Quantity</code> - 交易消耗的 quota 数量</li>
-<li>contractAddress: <code>Data20</code> - 如果是部署合约, 这个地址指的是新创建出来的合约地址. 否则为空</li>
-<li>logs: <code>Array</code> - 交易产生的日志集合</li>
-<li>root: <code>Data32</code> - 状态树根</li>
-<li>errorMessage: <code>String</code> 错误信息</li>
+<li>transactionHash：<code>Data32</code> - 交易哈希</li>
+<li>transactionIndex：<code>Quantity</code> - 交易 <code>index</code></li>
+<li>blockHash：<code>Data32</code> - 交易所在块的块哈希</li>
+<li>blockNumber：<code>Quantity</code> - 交易所在块的块高度</li>
+<li>cumulativeQuotaUsed：<code>Quantity</code> - 块中该交易之前（包含该交易）的所有交易消耗的 quota 总量</li>
+<li>quotaUsed：<code>Quantity</code> - 交易消耗的 quota 数量</li>
+<li>contractAddress：<code>Data20</code> - 如果是部署合约, 这个地址指的是新创建出来的合约地址，否则为空</li>
+<li>logs：<code>Array</code> - 交易产生的日志集合</li>
+<li>root：<code>Data32</code> - 状态树根</li>
+<li>errorMessage：<code>String</code> 错误信息</li>
 </ul>
-<p>回执错误:</p>
+<p>回执错误：</p>
 <ul>
 <li>No transaction permission - 没有发交易权限</li>
 <li>No contract permission - 没有创建合约权限</li>
-<li>Not enough base quota - <a href="../faq#什么是交易的基础配额">基础配额</a> 不够</li>
+<li>Not enough base quota - <a href="../faq#什么是交易的基础配额">基础配额</a>不够</li>
 <li>Block quota limit reached - 达到块配额限制</li>
 <li>Account quota limit reached - 达到账户配额限制</li>
 <li>Out of quota - 配额不够</li>
@@ -422,11 +422,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>Out of bounds - EVM 内部错误</li>
 <li>Reverted - EVM 内部错误，<a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-140.md">REVERTED instruction</a></li>
 </ul>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransactionReceipt","params":["0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>:<span class="hljs-number">1</span>,
@@ -458,7 +458,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
     }
 }
 </code></pre>
-<p>Error:</p>
+<p>Error：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-string">"0xbb6f8266fae605da373c2526c386fe07542b4957"</span>,
     <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x0"</span>,
@@ -473,7 +473,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
     <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x0"</span>
 }
 </code></pre>
-<p>如果出现 <strong>Timeout，errorcode 99</strong> ，请查看可能的解决方法<a href="https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux">Can't assign requested Address</a></p>
+<p>如果出现 <strong>Timeout，errorcode 99</strong> ，请查看可能的解决方法 <a href="https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux">Can't assign requested Address</a></p>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getlogs"></a><a href="#getlogs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getLogs</h3>
 <p>根据 <code>Topic</code> 查询 <code>logs</code>。</p>
@@ -493,10 +493,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li><code>data</code>- 根据索引数组筛选的日志数据</li>
 </ul>
 <p>示例:</p>
-<p>Request:</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getLogs","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"],"fromBlock": "0x0"}],"id":74}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>:<span class="hljs-number">74</span>,
@@ -531,11 +531,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Data32</code> - 交易哈希</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "latest"],"id":2}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
@@ -557,18 +557,18 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </ul>
 <p>Object - 交易对象，如果没有则为空</p>
 <ul>
-<li>hash: <code>Data32</code> - 交易哈希</li>
-<li>content: <code>Data</code> 交易内容</li>
-<li>from: <code>Data20</code> - 交易发送者</li>
-<li>blockHash: <code>Data32</code> - 交易所在块的块哈希，如果没有，则为空</li>
-<li>blockNumber: <code>Quantity</code> - 交易所在块的块高度，如果没有，则为空</li>
-<li>index: <code>Quantity</code> - 交易在块交易体内的位置，如果没有，则为空</li>
+<li>hash：<code>Data32</code> - 交易哈希</li>
+<li>content：<code>Data</code> 交易内容</li>
+<li>from：<code>Data20</code> - 交易发送者</li>
+<li>blockHash：<code>Data32</code> - 交易所在块的块哈希，如果没有，则为空</li>
+<li>blockNumber：<code>Quantity</code> - 交易所在块的块高度，如果没有，则为空</li>
+<li>index：<code>Quantity</code> - 交易在块交易体内的位置，如果没有，则为空</li>
 </ul>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransaction","params":["0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -596,11 +596,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Quantity</code> - 指定账户从块高 0 到指定高度所发送的交易总量</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -622,11 +622,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Data</code> - 合约 <code>Byte code</code></p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -647,11 +647,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Data</code> - 合约 <code>ABI</code> 信息</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -668,7 +668,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>使用 <code>solc</code> 编译合约代码得到 <code>ABI</code>内容，并填充 data 字段。</li>
 <li>使用 <code>cita-cli store abi</code> 保存 <code>ABI</code> 内容。</li>
 </ol>
-<p>以 <a href="https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol">Test contract</a> 作为示例:</p>
+<p>以 <a href="https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol">Test contract</a> 作为示例：</p>
 <ul>
 <li>链上部署该合约，得到合约地址</li>
 <li>首先可以通过 <code>solc</code> 得到合约的<code>ABI</code></li>
@@ -709,7 +709,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
     <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x5b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d"</span>
 }
 </code></pre>
-<p>注： 使用 cita-cli 查询到的结果是 abi 字符串的十六进制Ascii编码。</p>
+<p>注：使用 cita-cli 查询到的结果是 abi 字符串的十六进制 Ascii 编码。</p>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getbalance"></a><a href="#getbalance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getBalance</h3>
 <p>获取账户余额。</p>
@@ -724,10 +724,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Quantity</code> - 在指定高度的账户余额</p>
-<p>示例:</p>
+<p>示例：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -748,10 +748,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Quantity</code> - 过滤器 id</p>
-<p>示例:</p>
+<p>示例：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"newFilter","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"]}],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>:<span class="hljs-number">1</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
@@ -770,10 +770,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Quantity</code> - 过滤器 id</p>
-<p>示例:</p>
+<p>示例：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"newBlockFilter","params":[],"id":73}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>:<span class="hljs-number">1</span>,
     <span class="hljs-attr">"jsonrpc"</span>:  <span class="hljs-string">"2.0"</span>,
@@ -793,10 +793,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Boolean</code> - 卸载成功返回 true，否则 false</p>
-<p>示例:</p>
+<p>示例：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":73}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>:<span class="hljs-number">1</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
@@ -817,13 +817,13 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </ul>
 <p><code>Array</code> - log 对象集合，如果没有，则为空</p>
 <ul>
-<li>块过滤器(<code>BlockFilter</code>)会返回自上次操作过滤器（调用 newBlockFilter 以及 getFilterChanges）以来产生新块的块哈希值集合</li>
-<li>状态过滤器(<code>NewFilter</code>)会根据 <code>Filter</code> 过滤返回自上次操作过滤器（调用 newFilter, getFilterLogs 以及 getFilterChanges）状态变化</li>
+<li>块过滤器（<code>BlockFilter</code>）会返回自上次操作过滤器（调用 newBlockFilter 以及 getFilterChanges）以来产生新块的块哈希值集合</li>
+<li>状态过滤器（<code>NewFilter</code>）会根据 <code>Filter</code> 过滤返回自上次操作过滤器（调用 newFilter, getFilterLogs 以及 getFilterChanges）状态变化</li>
 </ul>
-<p>示例:</p>
+<p>示例：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>NewFilter Result:</p>
+<p>NewFilter Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>:<span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>:<span class="hljs-number">74</span>,
@@ -846,7 +846,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </code></pre>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x3"],"id":74}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>BlockFilter Result:</p>
+<p>BlockFilter Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
@@ -871,7 +871,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Array</code> - log 对象集合，如果自上次轮询以来没有发生变化，则为空</p>
-<p>示例:</p>
+<p>示例：</p>
 <p>结果同 <a href="#getfilterchanges">getFilterChanges</a></p>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="gettransactionproof"></a><a href="#gettransactionproof" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTransactionProof</h3>
@@ -886,11 +886,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Data</code> - 一份包含交易，交易回执，回执树根和块头的证明</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransactionProof","params":["0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -923,11 +923,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li><code>economicalModel</code>, <code>EconomicalModel</code> - 链经济模型</li>
 </ul></li>
 </ul>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}'</span> 127.0.0.1:1337</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
@@ -966,11 +966,11 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Data</code> - 块头序列化后的字节码</p>
-<p>示例:</p>
-<p>Request:</p>
+<p>示例：</p>
+<p>Request：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBlockHeader","params":["latest"],"id":1}'</span> 127.0.0.1:1337</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -992,10 +992,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Data</code> - 某一个值的状态证明，包含合约地址，账户证明，键值证明</p>
-<p>示例:</p>
+<p>示例：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getStateProof","params":["0xad54ae137c6c39fa413fa1da7db6463e3ae45664", "0xa40893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423e", "16"],"id":1}'</span> 127.0.0.1:1337</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
@@ -1017,10 +1017,10 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <li>返回值</li>
 </ul>
 <p><code>Data</code> - 指定高度下，合约 <code>key</code> 值对应的 <code>value</code> 值</p>
-<p>示例:</p>
+<p>示例：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getStorageAt","params":["0xffffffffffffffffffffffffffffffffff020000", "0x0000000000000000000000000000000000000000000000000000000000000007", "latest"],"id":1}'</span> 127.0.0.1:1337</span>
 </code></pre>
-<p>Result:</p>
+<p>Result：</p>
 <pre><code class="hljs css language-json">{
     <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,

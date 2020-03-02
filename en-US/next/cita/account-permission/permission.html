@@ -86,36 +86,36 @@
 </ul>
 <p>由此可表示三种类别的权限：</p>
 <ul>
-<li>发交易： 由系统内置的的合约地址标识，权限属性为空</li>
-<li>创建合约： 由系统内置的的合约地址标识，权限属性为空</li>
-<li>调用合约： 分为两类：
+<li>发交易：由系统内置的的合约地址标识，权限属性为空</li>
+<li>创建合约：由系统内置的的合约地址标识，权限属性为空</li>
+<li>调用合约：
 <ul>
-<li>内置的权限： 由系统内置的合约地址标识，权限属性包含系统合约的地址和函数签名</li>
+<li>内置的权限：由系统内置的合约地址标识，权限属性包含系统合约的地址和函数签名</li>
 <li>用户自定义的权限：由用户创建权限时生成的合约地址标识，权限属性包含参数所表示的地址和函数签名</li>
 </ul></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="权限系统操作"></a><a href="#权限系统操作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>权限系统操作</h2>
 <p>使用权限系统可进行的一些操作如下：</p>
 <ul>
-<li>创建权限： 生成权限的标识，属性包含参数所表示的合约地址、函数签名及名称</li>
-<li>更新权限： 修改权限的属性</li>
-<li>删除权限： 删除权限</li>
-<li>授予权限： 授予账户权限</li>
-<li>取消授权： 撤销对目标账户某种权限</li>
+<li>创建权限：生成权限的标识，属性包含参数所表示的合约地址、函数签名及名称</li>
+<li>更新权限：修改权限的属性</li>
+<li>删除权限：删除权限</li>
+<li>授予权限：授予账户权限</li>
+<li>取消授权：撤销对目标账户某种权限</li>
 </ul>
 <p>具体接口定义可查看<a href="../sys-contract-interface/interface#权限系统合约">权限系统接口</a>。</p>
 <h2><a class="anchor" aria-hidden="true" id="权限系统配置"></a><a href="#权限系统配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>权限系统配置</h2>
 <p>CITA 在起链的时候可以对权限系统进行配置，默认是关闭的（即没有权限检查）。有三个配置项：</p>
 <ul>
-<li><code>checkCallPermission</code>: 表示对合约调用的权限进行检查</li>
-<li><code>checkSendTxPermission</code>: 表示对发送交易的权限进行检查</li>
-<li><code>checkCreateContractPermission</code>: 表示对创建合约的权限进行检查</li>
+<li><code>checkCallPermission</code>：表示对合约调用的权限进行检查</li>
+<li><code>checkSendTxPermission</code>：表示对发送交易的权限进行检查</li>
+<li><code>checkCreateContractPermission</code>：表示对创建合约的权限进行检查</li>
 </ul>
 <p><strong>注意：</strong></p>
 <p>这里的 <code>checkCallPermission</code> 与 JSON-RPC 中的 Call 并不同， JSON-RPC 中的 Call 是指对链上数据的查询，是读数据而非写数据。而这里的<code>checkCallPermission</code> 是指通过发送交易的方式调用合约接口，是指写数据的操作。</p>
 <p>更多信息查看<a href="../configuration-guide/chain-config">链级配置</a>。</p>
 <h2><a class="anchor" aria-hidden="true" id="系统内置权限"></a><a href="#系统内置权限" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>系统内置权限</h2>
-<p>用户可自定义权限，其中系统内置了几种权限(禁止对其进行删除操作)，如下所示：</p>
+<p>用户可自定义权限，其中系统内置了几种权限（禁止对其进行删除操作），如下所示：</p>
 <table>
 <thead>
 <tr><th>name</th><th>permission</th></tr>
@@ -150,7 +150,7 @@
 <p>对应地址信息可查看<a href="../addresses#已使用地址列表">已使用地址列表</a>。</p>
 <h2><a class="anchor" aria-hidden="true" id="操作示例"></a><a href="#操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作示例</h2>
 <h3><a class="anchor" aria-hidden="true" id="修改系统配置"></a><a href="#修改系统配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>修改系统配置</h3>
-<p>通过以下命令生成配置文件(打开所有权限系统配置)：</p>
+<p>通过以下命令生成配置文件（打开所有权限系统配置）：</p>
 <pre><code class="hljs css language-bash">$ bin/cita create \
     --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> \
     --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span> \

@@ -79,28 +79,28 @@
 <h2><a class="anchor" aria-hidden="true" id="简述"></a><a href="#简述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>简述</h2>
 <p>批量交易是由系统合约实现的，通过组装数据调用其接口来完成。</p>
 <h3><a class="anchor" aria-hidden="true" id="合约信息"></a><a href="#合约信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约信息</h3>
-<p>合约地址为: <code>0xffffffffffffffffffffffffffffffffff02000e</code></p>
-<p>接口签名如下:</p>
+<p>合约地址为：<code>0xffffffffffffffffffffffffffffffffff02000e</code></p>
+<p>接口签名如下：</p>
 <pre><code class="hljs">======= batch_tx.sol:BatchTx =======
 Function signatures:
 82cc3327: multiTxs(bytes)
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="数据组装规则"></a><a href="#数据组装规则" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据组装规则</h3>
-<p>参数类型为 <code>bytes</code>，encode规则和ABI一致。拼装规则如下:</p>
+<p>参数类型为 <code>bytes</code>，encode 规则和 ABI 一致。拼装规则如下：</p>
 <ul>
 <li>二十字节的目标调用合约的地址</li>
 <li>四字节的目标合约的调用数据的长度
 <ul>
 <li>四字节的函数签名</li>
-<li>ABI格式编码的函数参数</li>
+<li>ABI 格式编码的函数参数</li>
 </ul></li>
 </ul>
 <ul>
-<li>目标合约的调用数据(第一条交易信息结束)</li>
-<li>...(第n条交易信息)</li>
+<li>目标合约的调用数据（第一条交易信息结束）</li>
+<li>...（第 n 条交易信息）</li>
 </ul>
 <p>拼装之后按照 bytes 的 ABI 编码即可。</p>
-<p>以下是两个交易信息的示例:</p>
+<p>以下是两个交易信息的示例：</p>
 <pre><code class="hljs">897c71052abad4ca9a5059f070d5a3a119d1e1ec
 00000004
 2d910f2c
@@ -178,7 +178,7 @@ Function signatures:
   }
 }
 </code></pre>
-<p>其中合约地址为： <code>0x626a7a06fe11041e71efc24b32e304bba7f6038a</code></p>
+<p>其中合约地址为：<code>0x626a7a06fe11041e71efc24b32e304bba7f6038a</code></p>
 <h3><a class="anchor" aria-hidden="true" id="查询-x-数值"></a><a href="#查询-x-数值" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询 x 数值</h3>
 <pre><code class="hljs css language-bash">$ cita-cli rpc call \
     --to 0x626a7a06fe11041e71efc24b32e304bba7f6038a \
@@ -271,7 +271,7 @@ Function signatures:
 </code></pre>
 <p>这里从 <code>logs</code> 已经可以看出两条交易都已经执行成功</p>
 <h3><a class="anchor" aria-hidden="true" id="验证结果"></a><a href="#验证结果" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证结果</h3>
-<p>查询 x 数值</p>
+<p>查询 x 数值：</p>
 <pre><code class="hljs css language-bash">$ cita-cli rpc call \
     --to 0x626a7a06fe11041e71efc24b32e304bba7f6038a \
     --data 0x0c55699c \

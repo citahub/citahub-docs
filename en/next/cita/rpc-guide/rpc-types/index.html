@@ -93,17 +93,17 @@
 <h3><a class="anchor" aria-hidden="true" id="quantity"></a><a href="#quantity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Quantity</code></h3>
 <p>大整数类型。</p>
 <ul>
-<li><p>作为参数传入时:</p>
+<li><p>作为参数传入时：</p>
 <ul>
-<li><p><code>0x</code> 开头的十六进制的字符串(仅包含 <code>0-9</code> 和 <code>a-f</code> 字符)</p></li>
+<li><p><code>0x</code> 开头的十六进制的字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）</p></li>
 <li><p>必须为字符串格式，即左右有双引号</p></li>
 <li><p>不可以为空字符串</p></li>
-<li><p>不可以 <code>0x</code> ，<code>0</code> 必须写做 <code>0x0</code></p></li>
-<li><p>(不建议)目前兼容使用大写 <code>0X</code> 开头</p></li>
-<li><p>(不建议)目前兼容使用大写 <code>A-F</code> 字符</p></li>
-<li><p>(不建议)目前兼容十进制字符串(不用 <code>0x</code> 开头且仅含有字符 <code>0-9</code>)</p></li>
-<li><p>(不建议)目前兼容数据高位填充 <code>0</code></p></li>
-<li><p>示例:</p>
+<li><p>不可以 <code>0x</code>，<code>0</code> 必须写做 <code>0x0</code></p></li>
+<li><p>（不建议）目前兼容使用大写 <code>0X</code> 开头</p></li>
+<li><p>（不建议）目前兼容使用大写 <code>A-F</code> 字符</p></li>
+<li><p>（不建议）目前兼容十进制字符串（不用 <code>0x</code> 开头且仅含有字符 <code>0-9</code>）</p></li>
+<li><p>（不建议）目前兼容数据高位填充 <code>0</code></p></li>
+<li><p>示例：</p>
 <ul>
 <li>(Good)  <code>&quot;0xab5801a7&quot;</code></li>
 <li>(Bad)   <code>&quot;0Xab5801a7&quot;</code></li>
@@ -115,16 +115,16 @@
 <li>(Wrong) <code>&quot;ab5801a7&quot;</code></li>
 </ul></li>
 </ul></li>
-<li><p>作为返回值时:</p>
+<li><p>作为返回值时：</p>
 <p>带 <code>0x</code> 前缀紧凑型的十六进制小写字符串</p></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="integer"></a><a href="#integer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Integer</code></h3>
 <p>一般整数类型。</p>
 <ul>
-<li><p>作为参数传入时:</p>
+<li><p>作为参数传入时：</p>
 <ul>
 <li><p>十进制数值</p></li>
-<li><p>示例:</p>
+<li><p>示例：</p>
 <ul>
 <li>(Good)  <code>2874671527</code></li>
 <li>(Wrong) <code>&quot;2874671527&quot;</code></li>
@@ -132,7 +132,7 @@
 <li>(Wrong) <code>0xab5801a7</code></li>
 </ul></li>
 </ul></li>
-<li><p>作为返回值时:</p>
+<li><p>作为返回值时：</p>
 <ul>
 <li>十进制数值</li>
 </ul></li>
@@ -140,14 +140,14 @@
 <h3><a class="anchor" aria-hidden="true" id="data"></a><a href="#data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Data</code></h3>
 <p>不定长二进制数据类型。</p>
 <ul>
-<li><p>作为参数传入时:</p>
+<li><p>作为参数传入时：</p>
 <ul>
-<li><p><code>0x</code> 开头的十六进制的字符串(仅包含 <code>0-9</code> 和 <code>a-f</code> 字符)</p></li>
+<li><p><code>0x</code> 开头的十六进制的字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）</p></li>
 <li><p>必须为偶数个字符</p></li>
 <li><p>使用 <code>0x</code> 表示空数据</p></li>
-<li><p>(不建议)目前兼容使用大写 <code>0X</code> 开头</p></li>
-<li><p>(不建议)目前兼容使用大写 <code>A-F</code> 字符</p></li>
-<li><p>示例:</p>
+<li><p>（不建议）目前兼容使用大写 <code>0X</code> 开头</p></li>
+<li><p>（不建议）目前兼容使用大写 <code>A-F</code> 字符</p></li>
+<li><p>示例：</p>
 <ul>
 <li>(Good)    <code>&quot;0x&quot;</code></li>
 <li>(Bad)     <code>&quot;0Xab5801a7&quot;</code></li>
@@ -158,25 +158,25 @@
 <li>(Wrong)   <code>&quot;ab5801a7&quot;</code></li>
 </ul></li>
 </ul></li>
-<li><p>作为返回值时:</p>
+<li><p>作为返回值时：</p>
 <ul>
-<li><code>0x</code> 开头的十六进制的字符串(仅包含 <code>0-9</code> 和 <code>a-f</code> 字符)</li>
+<li><code>0x</code> 开头的十六进制的字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）</li>
 </ul></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="data20-data32"></a><a href="#data20-data32" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Data20</code> / <code>Data32</code></h3>
 <p>定长二进制数据。 <code>Data20</code> 为 20 字节， <code>Data32</code> 为 32 字节。</p>
 <ul>
-<li><p>作为参数传入时:</p>
+<li><p>作为参数传入时：</p>
 <ul>
-<li><p><code>0x</code> 开头的十六进制的定长字符串(仅包含 <code>0-9</code> 和 <code>a-f</code> 字符)</p></li>
+<li><p><code>0x</code> 开头的十六进制的定长字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）</p></li>
 <li><p>需要补 <code>0</code> 填充完整</p>
 <ul>
-<li><code>Data20</code> 有 40 个字符(不包括前缀)</li>
-<li><code>Data32</code> 有 64 个字符(不包括前缀)</li>
+<li><code>Data20</code> 有 40 个字符（不包括前缀）</li>
+<li><code>Data32</code> 有 64 个字符（不包括前缀）</li>
 </ul></li>
-<li><p>(不建议)目前兼容使用大写 <code>0X</code> 开头</p></li>
-<li><p>(不建议)目前兼容使用大写 <code>A-F</code> 字符</p></li>
-<li><p>示例:</p>
+<li><p>（不建议）目前兼容使用大写 <code>0X</code> 开头</p></li>
+<li><p>（不建议）目前兼容使用大写 <code>A-F</code> 字符</p></li>
+<li><p>示例：</p>
 <ul>
 <li>(Good) <code>&quot;0x00000000000000000000000000000000ab5801a7&quot;</code></li>
 <li>(Bad) <code>&quot;0X00000000000000000000000000000000ab5801a7&quot;</code></li>
@@ -185,13 +185,13 @@
 <li>(Wrong) <code>0x00000000000000000000000000000000ab5801a7</code></li>
 </ul></li>
 </ul></li>
-<li><p>作为返回值时:</p>
+<li><p>作为返回值时：</p>
 <ul>
 <li><code>0x</code> 开头的十六进制的定长字符串（仅包含 <code>0-9</code> 和 <code>a-f</code> 字符）</li>
 </ul></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="boolean"></a><a href="#boolean" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Boolean</code></h3>
-<p>布尔类型， <code>true</code> 或者 <code>false</code>。</p>
+<p>布尔类型，<code>true</code> 或者 <code>false</code>。</p>
 <h3><a class="anchor" aria-hidden="true" id="string"></a><a href="#string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>String</code></h3>
 <p>字符串类型。</p>
 <h3><a class="anchor" aria-hidden="true" id="tag"></a><a href="#tag" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Tag</code></h3>
@@ -212,7 +212,7 @@
 <h2><a class="anchor" aria-hidden="true" id="复合类型"></a><a href="#复合类型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>复合类型</h2>
 <h3><a class="anchor" aria-hidden="true" id="blocknumber"></a><a href="#blocknumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>BlockNumber</code></h3>
 <ul>
-<li><code>Quantity | BlockTag</code> ： 通常可以为空，为空时默认值为 <code>&quot;latest&quot;</code></li>
+<li><code>Quantity | BlockTag</code>：通常可以为空，为空时默认值为 <code>&quot;latest&quot;</code></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="callrequest"></a><a href="#callrequest" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>CallRequest</code></h3>
 <ul>
@@ -227,7 +227,7 @@
 <li><code>address</code>: <code>Data20 | [Data20]</code> - <strong>可选</strong> 合约地址或者产生日志合约地址的集合</li>
 <li><code>topics</code>: <code>[Data32 | [Data32]]</code> - <strong>可选</strong> 由日志索引(topic)或者多个索引组成的数组集合</li>
 </ul>
-<p><code>Topics</code> 索引数组是顺序相关的, 过滤器通过设置索引数组来过滤交易日志内容, 示例如下:</p>
+<p><code>Topics</code> 索引数组是顺序相关的, 过滤器通过设置索引数组来过滤交易日志内容, 示例如下：</p>
 <ul>
 <li><code>[]</code>: 不设置任何索引</li>
 <li><code>[A]</code>: <code>topics</code>第一个索引是 <code>A</code>, 其余索引无限制</li>
@@ -237,13 +237,13 @@
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="block"></a><a href="#block" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Block</code></h3>
 <ul>
-<li><code>version</code> - 块的版本号(默认为0)</li>
+<li><code>version</code> - 块的版本号（默认为 0）</li>
 <li><code>hash</code> - 块哈希值</li>
 <li><code>header</code>- 块头部
 <ul>
 <li><code>timestamp</code> - 块内时间戳</li>
 <li><code>prevHash</code>- 前一个块的哈希值</li>
-<li><code>number</code> - 块高(十六进制)</li>
+<li><code>number</code> - 块高（十六进制）</li>
 <li><code>stateRoot</code>- 状态树根</li>
 <li><code>transactionsRoot</code> - 交易树根</li>
 <li><code>receiptsRoot</code>- 回执树根</li>
@@ -253,7 +253,7 @@
 <li><code>BFT</code>
 <ul>
 <li><code>proposal</code>- 提议内容哈希值</li>
-<li><code>height</code> - 块高(十进制)</li>
+<li><code>height</code> - 块高（十进制）</li>
 <li><code>round</code> - 投票轮数</li>
 <li><code>commits</code>- 投票人地址和投票内容签名</li>
 </ul></li>

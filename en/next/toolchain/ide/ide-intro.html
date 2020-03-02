@@ -80,19 +80,19 @@
 <ul>
 <li>browser 内置常用的模板合约，首先从内置合约模板中选择合适的模板开始开发</li>
 <li>Compile 本地编译，选择当前 solidity 版本，与合约 pragma 一致</li>
-<li>进入右侧的 Run 标签, 在 Deploy to CITA 中填入相关信息
+<li>进入右侧的 Run 标签，在 Deploy to CITA 中填入相关信息
 <ul>
 <li>勾选 Auto ValidUntilBlock 则发送交易前会自动更新 validUntilBlock 字段</li>
 <li>勾选 store ABI on chain 则会在合约部署成功后将合约 ABI 存储到 CITA 上</li>
-<li>此处特别注意 Quota 的设置, 一般合约需要较多 Quota, 若 quota 不足, 在交易信息打印的时候可以查看 Error Message 获知</li>
+<li>此处特别注意 Quota 的设置，一般合约需要较多 Quota，若 quota 不足，在交易信息打印的时候可以查看 Error Message 获知</li>
 </ul></li>
-<li>点击 Load Contracts 加载当前编译完成的合约, 并选择要部署的合约</li>
+<li>点击 Load Contracts 加载当前编译完成的合约，并选择要部署的合约</li>
 <li>点击 Deploy to CITA 发起部署合约的交易</li>
-<li>观察控制台的输出, 交易详细信息会显示在控制台上, 当流程结束时, 会输出交易 hash 和合约地址, 并且以链接形式支持到 Microscope 查看</li>
+<li>观察控制台的输出， 交易详细信息会显示在控制台上，当流程结束时，会输出交易 hash 和合约地址，并且以链接形式支持到 Microscope 查看</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="开发"></a><a href="#开发" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>开发</h2>
 <ul>
-<li>CITA IDE 是在 Solidity Remix 项目基础上定制, 并保持其新特性的同步, 因此开发中要注意代码的分离</li>
+<li>CITA IDE 是在 Solidity Remix 项目基础上定制，并保持其新特性的同步，因此开发中要注意代码的分离</li>
 <li>技术栈主要是 React</li>
 <li>CITA IDE 内置合约通过脚本形式同步 CITA 的治理合约和 OpenZepplin 的模板合约</li>
 </ul>

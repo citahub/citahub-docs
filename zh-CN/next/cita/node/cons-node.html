@@ -79,14 +79,14 @@
 <p>在 CITA 初始化创世块阶段，需要初始化一个超级管理员地址，其拥有超级管理员角色，将其写入到每个节点的创世块文件中，共识节点管理合约拥有的一个固定地址也写入其中。创世块内容在初始化以后不允许被修改。区块链正常启动之后，将合约写入到创世块中。链外的操作人员可以通过调用 RPC 接口来实现对共识节点的管理。</p>
 <p>对于共识节点的管理，包括添加、删除及设置共识节点出块权重。下面我们将用具体的示例来阐述。</p>
 <ul>
-<li>增加共识节点 - 操作只可由超级管理员执行;</li>
-<li>删除共识节点 - 操作只可由超级管理员执行;</li>
+<li>增加共识节点 - 操作只可由超级管理员执行；</li>
+<li>删除共识节点 - 操作只可由超级管理员执行；</li>
 <li>设置共识节点权重。</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="增加共识节点"></a><a href="#增加共识节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>增加共识节点</h2>
-<p>节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由超级管理员(拥有超级管理员角色的账号)确认才完成了添加操作。</p>
+<p>节点需先被添加成为普通节点（参考普通节点管理），才能申请成为共识节点，由超级管理员（拥有超级管理员角色的账号）确认才完成了添加操作。</p>
 <p>从普通节点升级到共识节点，具体操作需要用到上面合约方法 <code>approveNode(address)</code>。</p>
-<p>共识节点管理合约是系统合约，默认将放在创世块上，下面使用 <a href="https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html">solc</a> 命令(solidity 的命令行编译器，在 CITA 镜像中已安装)查看共识节点管理合约的 hash：</p>
+<p>共识节点管理合约是系统合约，默认将放在创世块上，下面使用 <a href="https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html">solc</a> 命令（solidity 的命令行编译器，在 CITA 镜像中已安装）查看共识节点管理合约的 hash：</p>
 <pre><code class="hljs css language-bash">$ solc --hashes system/node_manager.sol --allow-paths .
 contract address: 0xffffffffffffffffffffffffffffffffff020001
 Function signatures:
@@ -122,7 +122,7 @@ Function signatures:
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
     --url http://127.0.0.1:1337
 </code></pre>
-<p>其中 <code>--admin-privkey</code> 是超级管理员私钥，系统默认的超级管理员私钥可以看 <a href="../getting-started/run-cita">超级管理员账户信息</a>。</p>
+<p>其中 <code>--admin-privkey</code> 是超级管理员私钥，系统默认的超级管理员私钥可以看<a href="../getting-started/run-cita">超级管理员账户信息</a>。</p>
 <p>输出：</p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
@@ -209,7 +209,7 @@ Function signatures:
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
     --url http://127.0.0.1:1337
 </code></pre>
-<p>其中 <code>--admin-privkey</code> 是超级管理员私钥，系统默认的超级管理员私钥可以看 <a href="../getting-started/run-cita">超级管理员账户信息</a>。</p>
+<p>其中 <code>--admin-privkey</code> 是超级管理员私钥，系统默认的超级管理员私钥可以看<a href="../getting-started/run-cita">超级管理员账户信息</a>。</p>
 <p>输出：</p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
@@ -279,7 +279,7 @@ Function signatures:
 <h2><a class="anchor" aria-hidden="true" id="设置共识节点的出块权重"></a><a href="#设置共识节点的出块权重" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>设置共识节点的出块权重</h2>
 <p>CITA 作为许可链共识节点采用轮流出块的方式进行出块。作为公有许可链可以根据节点的出块权重分配出块权，超级管理员可以设置每个出块节点的 Stake 来调整出块权重。</p>
 <p>出块权重按照每个出块节点所占的千分比进行分配，对于小数部分采用的 <a href="https://en.wikipedia.org/wiki/Largest_remainder_method">Largest_remainder_method</a> 算法进行分配。 每次出块时，查询共识节点的权重，根据权重计算出每个节点在 1000 个块中可以出的块个数，这 1000 个块算为一个 epoch，再将这1000个块出块顺序以创世块的时间戳为种子进行随机排序。 如果在同一个 epoch 中出块节点列表和权重没有变化，共识将会按照此顺序进行出块；如果节点列表和权重有变化，将按照新的顺序进行出块。</p>
-<p><a href="../sys-contract-interface/interface#setstake">setStake 接口</a> 可对共识节点出块权重进行配置。 <a href="https://docs.citahub.com/zh-CN/cita/sys-contract-interface/interface#stakepermillage">stakePermillage 接口</a> 可查询共识节点出块权重千分比（目前只对 Charge 模型开放）。</p>
+<p><a href="../sys-contract-interface/interface#setstake">setStake 接口</a>可对共识节点出块权重进行配置。 <a href="https://docs.citahub.com/zh-CN/cita/sys-contract-interface/interface#stakepermillage">stakePermillage 接口</a>可查询共识节点出块权重千分比（目前只对 Charge 模型开放）。</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/next/cita/node/ordi-node"><span class="arrow-prev">← </span><span>普通节点管理</span></a><a class="docs-next button" href="/zh-CN/next/cita/economics/model"><span>选择经济模型</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#增加共识节点">增加共识节点</a><ul class="toc-headings"><li><a href="#查看当前的共识节点列表">查看当前的共识节点列表：</a></li><li><a href="#approve-节点">approve 节点</a></li><li><a href="#查看当前的共识节点数">查看当前的共识节点数</a></li></ul></li><li><a href="#删除共识节点">删除共识节点</a><ul class="toc-headings"><li><a href="#获取当前的共识节点列表">获取当前的共识节点列表：</a></li><li><a href="#删除共识节点-1">删除共识节点</a></li><li><a href="#查看当前的共识节点数-1">查看当前的共识节点数</a></li></ul></li><li><a href="#设置共识节点的出块权重">设置共识节点的出块权重</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

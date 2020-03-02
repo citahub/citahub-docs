@@ -9,10 +9,10 @@ title: 零知识证明
 
 示例中使用的环境如下：
 
-* [Rust]: `rustc 1.34.1 (fc50f328b 2019-04-24)`
-* [CITA]: develop commit 为 `87e11818081a9d2a883341bebf2aeb95c59c15fd`
-* [zktx]: master commit 为 `03fcc4b02432f42e53563deccdaaa767fd7a0ad6`
-* [zktx_example]: master commit 为 `b37ec8fe88fb2d8a48a4651419ed0c536d047c73`
+* [Rust]：`rustc 1.34.1 (fc50f328b 2019-04-24)`
+* [CITA]：develop commit 为 `87e11818081a9d2a883341bebf2aeb95c59c15fd`
+* [zktx]：master commit 为 `03fcc4b02432f42e53563deccdaaa767fd7a0ad6`
+* [zktx_example]：master commit 为 `b37ec8fe88fb2d8a48a4651419ed0c536d047c73`
 
 ### 准备工作
 

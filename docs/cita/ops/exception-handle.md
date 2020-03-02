@@ -26,7 +26,7 @@ cita 6195 6180 0 10:54 ? 00:00:00 cita-chain -c chain.toml
 cita 6202 6180 0 10:54 ? 00:00:00 cita-bft -c consensus.toml -p privkey
 ```
 
-* 查看日志是否有异常输出 （逐个应用排查）
+* 查看日志是否有异常输出（逐个应用排查）
 
 ```shell
 bin/cita logs test-chain/0 bft

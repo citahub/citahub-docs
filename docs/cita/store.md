@@ -9,7 +9,7 @@ title: 存证
 
 ### 账户信息
 
-账户地址为: `0xffffffffffffffffffffffffffffffffff010000`
+账户地址为：`0xffffffffffffffffffffffffffffffffff010000`
 
 注：
 CITA 系统会将所有发送至该账户地址的交易默认为 **存证** 交易。

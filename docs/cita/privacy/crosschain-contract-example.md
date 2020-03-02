@@ -28,7 +28,7 @@ sidebar_label: 侧链
 
 `send_to_side_chain` 中 `destFuncHasher` 是 `recv_from_side_chain` 的 function signature 。用来确保发送方和接受方的合约是匹配的。
 
-`txDataSize` 是跨链传递的数据的大小。即 `send_to_side_chain` 除去前两个参数（固定必须的参数）之后所有参数的总大小，这些参数需要以bytes的方式传递。
+`txDataSize` 是跨链传递的数据的大小。即 `send_to_side_chain` 除去前两个参数（固定必须的参数）之后所有参数的总大小，这些参数需要以 bytes 的方式传递。
 
 `nonce` 是为了防止跨链交易重放攻击增加的，作用同 `CITA` 交易中的 `nonce` 。
 
@@ -124,9 +124,9 @@ cita-relayer-parser -c SEND_CHAIN_ID -t TX_HASH -f relayer-parser.json
 将这个证明发送到主链上的`ChainManager`系统合约中的`verifyState`，对证明进行校验之后会进行后续处理。
 
 ### relay block header
-`state proof`功能需要将侧链的block header同步到主链。
+`state proof`功能需要将侧链的 block header 同步到主链。
 
-relayer可以在侧链上调用`getBlockHeader`，获取指定高度的侧链的`block header`，然后将数据发送到主链上的`ChainManager`系统合约`verifyBlockHeader`。
+relayer 可以在侧链上调用`getBlockHeader`，获取指定高度的侧链的`block header`，然后将数据发送到主链上的`ChainManager`系统合约`verifyBlockHeader`。
 
 `ChainManager`系统合约验证之后，保存侧链每个高度的`state root`，用来验证用户提交的`state proof`。
 
@@ -135,6 +135,6 @@ relayer可以在侧链上调用`getBlockHeader`，获取指定高度的侧链的
 ### 侧链交易的确定性
 考虑极端的情况，侧链可能随时退出。
 
-因此用户在侧链上发生的交易，必须等交易所在的block的header同步到主链，交易才算确定。
+因此用户在侧链上发生的交易，必须等交易所在的 block 的 header 同步到主链，交易才算确定。
 
 这样即使侧链退出，也可以用过`state proof`的方式在主链上恢复对应的资产。

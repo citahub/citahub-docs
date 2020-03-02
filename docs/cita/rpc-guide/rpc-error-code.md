@@ -196,7 +196,7 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[24
 }
 ```
 
-* 参数个数不正确：
+* 参数个数不正确
 
 ```shell
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransaction","params":["0x0063187e6a84ae731cf9",true],"id":2}' 127.0.0.1:1337 | jq
@@ -229,7 +229,7 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0
 }
 ```
 
-参考文档:
+参考文档：
 
 1. [JSON-RPC specification](http://www.jsonrpc.org/specification)
 2. [Ethereum wiki/JSON-RPC Error Codes Improvement Proposal](https://github.com/ethereum/wiki/wiki/JSON-RPC-Error-Codes-Improvement-Proposal)

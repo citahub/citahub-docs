@@ -10,9 +10,9 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ## 环境要求
 
-* 操作系统: 参见 [适用操作系统声明]
-* 软件依赖: 参见 [软件依赖声明]
-* 客户端工具: 参见 [安装 CITA 客户端工具]
+* 操作系统：参见 [适用操作系统声明]
+* 软件依赖：参见 [软件依赖声明]
+* 客户端工具：参见 [安装 CITA 客户端工具]
 
 ## 部署 CITA
 
@@ -210,7 +210,7 @@ cita/cita-release  20.2.0-secp256k1-sha3    020a7b1d2225        5 days ago      
 
 ### Docker 命令运行 CITA
 
-使用 CITA 启动一条链，包括　**节点配置生成**　与 **启动节点**　两部分。以下将以启动两个节点的链为例说明， 如需启动更多节点，可以参考 [链级配置] 来操作。
+使用 CITA 启动一条链，包括**节点配置生成**与**启动节点**两部分。以下将以启动两个节点的链为例说明， 如需启动更多节点，可以参考 [链级配置] 来操作。
 
 #### 节点配置生成
 
@@ -241,19 +241,19 @@ docker run -d -p 192.168.10.96:1337:1337 -p 192.168.10.96:4000:4000 -v "`pwd`":/
 docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/opt/cita-run cita/cita-release:20.2.0-secp256k1-sha3 /bin/bash -c 'cita setup test-chain/1 && cita start test-chain/1 && sleep infinity'
 ```
 
-注意，这里需要暴露 JSON-RPC 的端口外，还需要暴露 CITA 节点网络 (4000, 4001) 的端口，以便两个 CITA 节点可以互联。
+注意，这里需要暴露 JSON-RPC 的端口外，还需要暴露 CITA 节点网络（4000、4001）的端口，以便两个 CITA 节点可以互联。
 
 #### 验证
 
 * 查询节点个数
 
-  Request:
+  Request：
 
   ```shell
   curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 192.168.10.96:1337 |jq
   ```
 
-  Result:
+  Result：
 
   ```json
   {
@@ -265,13 +265,13 @@ docker run -d -p 192.168.10.96:1338:1338 -p 192.168.10.96:4001:4001 -v "`pwd`":/
 
 * 查询当前块高度。
 
-  Request:
+  Request：
 
   ```shell
   curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 192.168.10.96:1337 |jq
   ```
 
-  Result:
+  Result：
 
   ```json
   {

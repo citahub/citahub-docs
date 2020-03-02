@@ -7,10 +7,10 @@ CITA 实现了基于组的账户系统，组之间为树形的关系，可对应
 
 ## 账户概述
 
-账户(account)： 链上唯一的标识，表现为地址。权限管理的主体对象。
+账户（account）：链上唯一的标识，表现为地址。权限管理的主体对象。
 
-* 外部账户(external owned account)： 拥有公私钥对，可发送交易的用户。
-* 合约账户(contract account)： 拥有相关的代码(code)及存储(storage)。
+* 外部账户（external owned account）：拥有公私钥对，可发送交易的用户。
+* 合约账户（contract account）：拥有相关的代码（code）及存储（storage）。
 
 ## 账户系统概述
 
@@ -27,9 +27,9 @@ CITA 实现了基于组的账户系统，组之间为树形的关系，可对应
 
 使用账户系统可进行的一些操作如下：
 
-* 新建组： 生成组的标识，属性包含参数所表述的父组、组内用户及名称
-* 更新组： 修改组内属性
-* 删除组： 删除叶子组，即不包含子组
+* 新建组：生成组的标识，属性包含参数所表述的父组、组内用户及名称
+* 更新组：修改组内属性
+* 删除组：删除叶子组，即不包含子组
 
 具体接口定义可查看[账户系统接口]。
 
@@ -70,7 +70,7 @@ $ scm GroupManagement newGroup \
 * `e1c4021742730ded647590a1686d5c4bfcbae0b0`
 * `45a50f45cb81c8aedeab917ea0cd3c9178ebdcae`
 
-回执输出:
+回执输出：
 
 ```json
 {
@@ -139,7 +139,7 @@ $ scm GroupManagement newGroup \
 ```
 
 到这里，我们已经成功新建了一个组。
-从 `log` 中可知，新组的地址是: `0xce6cd8f8562e31d44b1101986204cec34b1df025`。
+从 `log` 中可知，新组的地址是：`0xce6cd8f8562e31d44b1101986204cec34b1df025`。
 
 ### 查询所有组信息
 
@@ -183,7 +183,7 @@ $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 ### 查询组内账户
 
-查询组账户
+查询组账户：
 
 ```shell
 $ scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025

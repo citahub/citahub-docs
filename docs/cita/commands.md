@@ -23,7 +23,7 @@ title: 命令说明
 
 * 示例
 
-  生成一条包含 4 个节点的区块链 `test`，节点间连接端口分别为 4000 , 4001 , 4002 , 4003。
+  生成一条包含 4 个节点的区块链 `test`，节点间连接端口分别为 4000、4001、4002、4003。
 
   > 特别说明：所有在 `create` 命令中指定的节点，均为共识节点。
 
@@ -46,17 +46,17 @@ title: 命令说明
 
   可以通过 `bin/cita append --help` 获得 `append` 命令帮助信息，其中：
 
-  `--chain_name`： 指定所添加新节点的链名称。
+  `--chain_name`：指定所添加新节点的链名称。
 
-  `--node`： 指定所添加新节点的 IP:PORT 。
+  `--node`：指定所添加新节点的 IP:PORT 。
 
-  `--address`： 指定所添加新节点的地址。
+  `--address`：指定所添加新节点的地址。
 
-  `--enable_tls`: 是否开通节点间通讯加密。需要与链的其它节点保持一致，否则无法通信。
+  `--enable_tls`：是否开通节点间通讯加密。需要与链的其它节点保持一致，否则无法通信。
 
-  `--enable_version`: 是否使能 JSON-RPC 接口 `getVersion`　。
+  `--enable_version`：是否使能 JSON-RPC 接口 `getVersion`。
 
-  `--stdout`: 是否将 CITA 日志输出到标准输出。
+  `--stdout`：是否将 CITA 日志输出到标准输出。
 
   注意，当指定 `--address` 时，需要 **手工** 将 `address` 对应的 `privkey` 添加到生成后的节点目录下。
 
@@ -85,7 +85,7 @@ title: 命令说明
 
 * 说明
 
-  使用 `cita` 命令运行 CITA 时，会默认启动 `docker` 容器； `port` 命令可以将容器内的端口映射到宿主机。
+  使用 `cita` 命令运行 CITA 时，会默认启动 `docker` 容器；`port` 命令可以将容器内的端口映射到宿主机。
 
   方便用户在宿主机上使用 CITA 提供的 JSON-RPC 服务。
 
@@ -97,7 +97,7 @@ title: 命令说明
 
   * 在 macOS 下启动时，发现默认的 `1337` 有冲突，需要更换其它的端口；
   * 在 macOS 下启动，需要映射其它更多端口到宿主机。
-   
+
 * 示例
 
   映射 `1337, 1338, 1339, 1340` 4 个端口到宿主机。
@@ -263,7 +263,7 @@ title: 命令说明
   2019-05-23 - 14:39:56 | cita_forever::proces - 84    | INFO  - process id: 2858
   2019-05-23 - 14:39:56 | cita_forever::proces - 98    | INFO  - cita-bft started
   ```
-   
+
 ## 其它命令
 
 ### backup

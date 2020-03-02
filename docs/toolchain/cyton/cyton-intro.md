@@ -8,7 +8,7 @@ Cyton Wallet 是支持 CITA 的区块链钱包工具，分为 Android 版和 iOS
 
 Cyton Wallet 兼容 Ethereum，可以管理Ethereum资产，比如 ETH、ERC20、ERC721等，同时也支持现有的以太坊 DApp。由于 CITA 兼容以太坊的 EVM，支持 Solidity 开发智能合约，所以在 Ethereum 上任何合约代码都可以直接移植到 CITA 上，CITA 链上的 ERC20 代币和 Ethereum ERC20 代币完全兼容。此外 Cyton 支持基于 CITA 的多链场景，由于 CITA 是开源的高性能区块链内核，通过 chainId 区分不同的 CITA 链，Cyton 可以同时支持多条不同 chainId 的 CITA 链。
 
-Android 版 Cyton 使用基于 Java 和 Kotlin 两种语言混合开发，项目依赖 Java 版的 SDK [cita-sdk-java](https://github.com/citahub/cita-sdk-java)；iOS版基于最新的 Swift开发，项目依赖 Swift 版 SDK [cita-sdk-swift](https://github.com/citahub/cita-sdk-swift)，同时 Cyton 依赖区块链缓存服务 [ReBirth](https://github.com/citahub/re-birth) 提供原生代币和 ERC20 代币交易列表等自定义区块链数据服务。
+Android 版 Cyton 使用基于 Java 和 Kotlin 两种语言混合开发，项目依赖 Java 版的 SDK [cita-sdk-java](https://github.com/citahub/cita-sdk-java)；iOS版基于最新的 Swift 开发，项目依赖 Swift 版 SDK [cita-sdk-swift](https://github.com/citahub/cita-sdk-swift)，同时 Cyton 依赖区块链缓存服务 [ReBirth](https://github.com/citahub/re-birth) 提供原生代币和 ERC20 代币交易列表等自定义区块链数据服务。
 
 ## 注意事项
 
@@ -30,7 +30,7 @@ Cyton-iOS 项目代码需要使用 Xcode 10.0 及以上版本打开，同时需�
 
 ## 下载体验
 
-iOS 和 Android 下载 
+iOS 和 Android 下载
 ![ios](assets/toolchain-assets/ios.png)
 
 ![android](assets/toolchain-assets/android.png)

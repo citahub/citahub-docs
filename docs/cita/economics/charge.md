@@ -26,8 +26,8 @@ $ bin/cita create --init_token 0x2540BE400 --contract_arguments SysConfig.econom
 CITA 提供灵活的分发方式，以适配多样的业务需求：
 
 * 超级管理员可以通过发交易的方式进行分配；
-* 也可以使用我们提供的 [水龙头工具](https://github.com/citahub/testnet-faucet-mri)，让用户自己领取代币；
-* 也可以采用类似挖矿奖励的方式分发。CITA 采用了 [系统自动执行合约](https://docs.citahub.com/zh-CN/cita/system/auto-exec) 的机制，可以实现每区块自动执行一个代币分发合约，向相关节点分发奖励。运营方可以在创世块创建足够多的系统代币，锁定到一个激励合约，并在激励合约中编写按照选举合约结果分发出块奖励的命令。
+* 也可以使用我们提供的[水龙头工具](https://github.com/citahub/testnet-faucet-mri)，让用户自己领取代币；
+* 也可以采用类似挖矿奖励的方式分发。CITA 采用了 [系统自动执行合约] 的机制，可以实现每区块自动执行一个代币分发合约，向相关节点分发奖励。运营方可以在创世块创建足够多的系统代币，锁定到一个激励合约，并在激励合约中编写按照选举合约结果分发出块奖励的命令。
 
 注意：Charge 模型下，矿工默认是只有交易手续费作为激励，若需要出块激励，则需要在上层用合约实现第 3 种分发方式设置出块奖励。
 
@@ -39,9 +39,9 @@ CITA 提供灵活的分发方式，以适配多样的业务需求：
 
 * 手续费：用户以原生代币进行支付。
 * quotaUsed：虚拟机中的每个命令都被设置了相应的 Quota 消耗值。quotaUsed 是所有被执行的指令的 Quota 消耗值总和。
-* quotaPrice：单位 quota 需要消耗的原生代币数量。quotaPrice 默认为 1000000，而且为了更好的满足运营方的需求，我们提供了设置 `quotaPrice` 的接口，拥有权限的超级管理员在起链后可以通过发送交易动态的来设置 quotaPrice 的值。具体操作示例可参考下面的修改 quotaPrice 操作示例。
+* quotaPrice：单位 quota 需要消耗的原生代币数量。quotaPrice 默认为1000000，而且为了更好的满足运营方的需求，我们提供了设置 `quotaPrice` 的接口，拥有权限的超级管理员在起链后可以通过发送交易动态的来设置 quotaPrice的值。具体操作示例可参考下面的修改 quotaPrice 操作示例。
 
-系统规定 1 native-token（原生代币）= 10^18 quota，运营方可以通过调节 Quota Price 高低来调整原生代币的使用价值。
+系统规定 1 native-token（原生代币） = 10^18 quota，运营方可以通过调节 Quota Price 高低来调整原生代币的使用价值。
 
 交易手续费默认是返还给打包该块的共识节点，但运营方也可以通过设置 `checkFeeBackPlatform` 和 `chainOwner`，将出块奖励返还给一个特定的地址。具体操作示例参考下面的设置交易手续费返还的地址操作示例。
 
@@ -235,6 +235,7 @@ $ ./bin/cita create \
    }
    ```
 
-   可以看到余额发生了变化，返还地址的余额从 0 变成了 `0x18cbe50900`（十进制 106500000000）， 查看交易回执中的 quotaUsed 为 0x1a004（十进制 106500）。
+   可以看到余额发生了变化，返还地址的余额从 0 变成了 `0x18cbe50900` (十进制 106500000000 )， 查看交易回执中的 quotaUsed 为 0x1a004（十进制 106500 )。
 
 [链级配置]: ../configuration-guide/chain-config
+[系统自动执行合约]: ../advanced-use/contracts/auto-exec

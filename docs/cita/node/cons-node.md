@@ -284,4 +284,4 @@ CITA 作为许可链共识节点采用轮流出块的方式进行出块。作为
 [超级管理员账户信息]: ../getting-started/run-cita
 [cita-cli]: https://github.com/citahub/cita-cli
 [Largest_remainder_method]: https://en.wikipedia.org/wiki/Largest_remainder_method
-[stakePermillage 接口]: https://docs.citahub.com/zh-CN/cita/sys-contract-interface/interface#stakepermillage
+[stakePermillage 接口]: ../sys-contract-interface/interface#stakepermillage

@@ -89,7 +89,7 @@ CITA 共识节点通过点对点共识消息交换协议对每一个区块交换
 新一轮开始时，共识节点处于 Propose<H, R> 状态，共识节点通过计算 (H+R) % N 确定本轮的 proposer<H, R>，接着重置并启动一个计时器 T0 （T0 = 3s）：
 
 * 如果该共识节点就是本轮的 proposer<H, R>，就广播这一轮的提议 proposal<H, R, B>
-* 如果该共识节点不是本轮的 proposer<H, R>，就重置并启动一个计时器 T1（T1 = T0 * 24 / 30 * (R + 1) ）
+* 如果该共识节点不是本轮的 proposer<H, R>，就重置并启动一个计时器 T1（T1 = T0 * 24 / 30 * (R + 1)）
 
 共识节点进入 ProposeWait<H, R> 状态。
 
@@ -192,7 +192,7 @@ PRECOMMIT<H, R> → PRECOMMITWAIT<H, R>
 * votes：投票集合
 * proposals：提议集合
 * proposal：提议的 hash
-* lock_roun：锁定的轮次
+* lock_round：锁定的轮次
 * locked_vote：锁定的投票
 * locked_block：锁定的区块
 * wal_log：日志

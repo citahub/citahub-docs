@@ -296,5 +296,5 @@ rpc call --to 0x0000000000000000000000000000000000000500 --data 0x832b4580
 符合我们编写的智能合约预期。
 
 [CITA 源码库]: https://github.com/citahub/cita
-[JSON-RPC]: https://docs.citahub.com/zh-CN/next/cita/rpc-guide/rpc
+[JSON-RPC]: ../../rpc-guide/rpc
 [cita-cli]: https://github.com/citahub/cita-cli

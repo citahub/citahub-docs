@@ -266,7 +266,7 @@ Result:
     "jsonrpc":"2.0",
     "id":83,
     "result":{
-        "softwareVersion":"v0.22.0"
+        "softwareVersion":"20.2.0"
     }
 }
 ```

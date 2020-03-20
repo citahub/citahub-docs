@@ -150,7 +150,7 @@ $ curl -X GET --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "1",
+    "id": 1,
     "error": {
         "code": -32600,
         "message": "Invalid request"
@@ -163,18 +163,19 @@ $ curl -X GET --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":"
 * 应使用 `peerCount` 方法，而不是 `perCount`：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"perCount","params":[],"id":74}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"perCount","params":[],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "id": "74",
-    "error": {
-        "code": -32601,
-        "message": "Method not found"
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32601,
+    "message": "Method not found"
+  }
 }
+
 ```
 
 ### 非法参数
@@ -205,7 +206,7 @@ $ curl -X POST --data '{"jsonrpc":"2.0","method":"getTransaction","params":["0x0
 ```json
 {
     "jsonrpc": "2.0",
-    "id": 2,
+    "id": 1,
     "error": {
         "code": -32602,
         "message": "Invalid JSON-RPC params length"

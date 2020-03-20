@@ -29,14 +29,14 @@ https://testnet.citahub.com
 Request:
 
 ```shell
-curl -sS -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":83}' https://testnet.citahub.com | jq
+curl -sS -X POST --data '{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}' https://testnet.citahub.com | jq
 ```
 Result:
 
 ```json
 {
   "jsonrpc": "2.0",
-  "id": 83,
+  "id": 1,
   "result": {
     "chainId": 0,
     "chainIdV1": "0x1",
@@ -63,14 +63,14 @@ Result:
 Request:
 
 ```shell
-curl -sS -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0",true],"id":83}' https://testnet.citahub.com | jq
+curl -sS -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0",true],"id":1}' https://testnet.citahub.com | jq
 ```
 Result:
 
 ```json
 {
   "jsonrpc": "2.0",
-  "id": 83,
+  "id": 1,
   "result": {
     "version": 0,
     "hash": "0x577da8e94c9f256adef23ce144bec5aa95d34375ab5c36610b6975cbb54d4196",
@@ -98,7 +98,7 @@ Result:
 Request:
 
 ```shell
-curl -sS -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' https://testnet.citahub.com | jq
+curl -sS -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":1}' https://testnet.citahub.com | jq
 ```
 
 Result:
@@ -106,7 +106,7 @@ Result:
 ```json
 {
   "jsonrpc": "2.0",
-  "id": 83,
+  "id": 1,
   "result": "0xd8c2dd"
 }
 ```
@@ -115,14 +115,14 @@ Result:
 Request:
 
 ```shell
-curl -sS -X POST --data '{"jsonrpc":"2.0","method":"getVersion","params":[],"id":83}' https://testnet.citahub.com | jq
+curl -sS -X POST --data '{"jsonrpc":"2.0","method":"getVersion","params":[],"id":1}' https://testnet.citahub.com | jq
 ```
 Result:
 
 ```json
 {
   "jsonrpc": "2.0",
-  "id": 83,
+  "id": 1,
   "result": {
     "softwareVersion": "v20.2.0"
   }

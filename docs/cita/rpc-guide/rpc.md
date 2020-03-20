@@ -24,14 +24,14 @@ title: JSON-RPC 列表
 Request：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":74}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"peerCount","params":[],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 Result：
 
 ```json
 {
-    "id": 74,
+    "id": 1,
     "jsonrpc": "2.0",
     "result": "0x3"
 }
@@ -60,25 +60,26 @@ PeerInfo object - 节点信息对象
 Request：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"peersInfo","params":[],"id":83}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"peersInfo","params":[],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 Result：
 
 ```json
 {
-    "jsonrpc":"2.0",
-    "id":83,
-    "result":{
-        "amount":3,
-        "peers":{
-            "0x2aaeacf658e49f58973b4ef6f37a5c574a28822c":"127.0.0.1",
-            "0x3ea53608732da3761ef41805da73f0d45d3e8e09":"127.0.0.1",
-            "0x01cb0a8012b75ea156eaef3e827547f760dd917a":"127.0.0.1"
-        },
-        "errorMessage":null
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "amount": 3,
+    "peers": {
+     "0x2aaeacf658e49f58973b4ef6f37a5c574a28822c": "127.0.0.1",
+     "0x3ea53608732da3761ef41805da73f0d45d3e8e09": "127.0.0.1",
+     "0x01cb0a8012b75ea156eaef3e827547f760dd917a": "127.0.0.1"
+    },
+    "errorMessage": null
+  }
 }
+
 ```
 
 * * *
@@ -100,14 +101,14 @@ Result：
 Request：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":83}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 Result：
 
 ```json
 {
-    "id": 83,
+    "id": 1,
     "jsonrpc": "2.0",
     "result": "0x1d10"
 }
@@ -255,18 +256,18 @@ message UnverifiedTransaction {
 Request：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"getVersion","params":[],"id":83}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"getVersion","params":[],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 Result：
 
 ```json
 {
-    "jsonrpc":"2.0",
-    "id":83,
-    "result":{
-        "softwareVersion":"v0.22.0"
-    }
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "softwareVersion": "20.2.0"
+  }
 }
 ```
 
@@ -429,33 +430,33 @@ Result：
 
 ```json
 {
-    "jsonrpc":"2.0",
-    "id":1,
+    "jsonrpc": "2.0",
+    "id": 1,
     "result":{
-        "transactionHash":"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
-        "transactionIndex":"0x0",
-        "blockHash":"0xe068cf7299450b78fe97ed370fd9ebe09ecbd6786968e474fae862ccbd5c5020",
-        "blockNumber":"0xa",
-        "cumulativeQuotaUsed":"0x17a0f",
-        "quotaUsed":"0x17a0f",
-        "contractAddress":"0xea4f6bc98b456ef085da5c424db710489848cab5",
+        "transactionHash": "0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
+        "transactionIndex": "0x0",
+        "blockHash": "0xe068cf7299450b78fe97ed370fd9ebe09ecbd6786968e474fae862ccbd5c5020",
+        "blockNumber": "0xa",
+        "cumulativeQuotaUsed": "0x17a0f",
+        "quotaUsed": "0x17a0f",
+        "contractAddress": "0xea4f6bc98b456ef085da5c424db710489848cab5",
         "logs":[
             {
-                "address":"0xea4f6bc98b456ef085da5c424db710489848cab5",
+                "address": "0xea4f6bc98b456ef085da5c424db710489848cab5",
                 "topics":[
                     "0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"
                 ],
-                "data":"0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064",
-                "blockHash":"0xe068cf7299450b78fe97ed370fd9ebe09ecbd6786968e474fae862ccbd5c5020",
-                "blockNumber":"0xa",
-                "transactionHash":"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
-                "transactionIndex":"0x0",
-                "logIndex":"0x0",
-                "transactionLogIndex":"0x0"
+                "data": "0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064",
+                "blockHash": "0xe068cf7299450b78fe97ed370fd9ebe09ecbd6786968e474fae862ccbd5c5020",
+                "blockNumber": "0xa",
+                "transactionHash": "0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
+                "transactionIndex": "0x0",
+                "logIndex": "0x0",
+                "transactionLogIndex": "0x0"
             }
         ],
-        "root":"0xe702d654a292a8d074fd5ba3769b3dead8095d2a8f2207b3a69bd49c91a178af",
-        "logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100040000000010000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        "root": "0xe702d654a292a8d074fd5ba3769b3dead8095d2a8f2207b3a69bd49c91a178af",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100040000000010000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
     }
 }
 ```
@@ -503,28 +504,28 @@ Error：
 Request：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"getLogs","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"],"fromBlock": "0x0"}],"id":74}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"getLogs","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"],"fromBlock": "0x0"}],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 Result：
 
 ```json
 {
-    "jsonrpc":"2.0",
-    "id":74,
+    "jsonrpc": "2.0",
+    "id": 1,
     "result":[
         {
-            "address":"0xea4f6bc98b456ef085da5c424db710489848cab5",
+            "address": "0xea4f6bc98b456ef085da5c424db710489848cab5",
             "topics":[
                 "0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"
             ],
-            "data":"0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064",
-            "blockHash":"0x3e83b74560860344f4c48d7b8089a18173aecd96b6b2148653c61b5d3f559764",
-            "blockNumber":"0x4",
-            "transactionHash":"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
-            "transactionIndex":"0x0",
-            "logIndex":"0x0",
-            "transactionLogIndex":"0x0"
+            "data": "0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064",
+            "blockHash": "0x3e83b74560860344f4c48d7b8089a18173aecd96b6b2148653c61b5d3f559764",
+            "blockNumber": "0x4",
+            "transactionHash": "0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
+            "transactionIndex": "0x0",
+            "logIndex": "0x0",
+            "transactionLogIndex": "0x0"
         }
     ]
 }
@@ -550,7 +551,7 @@ Result：
 Request：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "latest"],"id":2}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "latest"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 Result：
@@ -558,7 +559,7 @@ Result：
 ```json
 {
     "jsonrpc": "2.0",
-    "id": 2,
+    "id": 1,
     "result": "0x0000000000000000000000000000000000000000000000000000000000000064"
 }
 
@@ -752,7 +753,7 @@ $ cita-cli store abi \
 
 ```json
 {
-    "id": 3,
+    "id": 4,
     "jsonrpc": "2.0",
     "result": {
         "hash": "0x3690665c3ce5548e74113ab88b1bc81b72f48564211f1341735b9fb17914ff91",
@@ -838,7 +839,7 @@ Result：
 
 ```json
 {
-    "id":1,
+    "id": 1,
     "jsonrpc": "2.0",
     "result": "0x1"
 }
@@ -862,14 +863,14 @@ Result：
 示例：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"newBlockFilter","params":[],"id":73}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"newBlockFilter","params":[],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 Result：
 
 ```json
 {
-    "id":1,
+    "id": 1,
     "jsonrpc":  "2.0",
     "result": "0x1"
 }
@@ -892,14 +893,14 @@ Result：
 示例：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":73}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 Result：
 
 ```json
 {
-    "id":1,
+    "id": 1,
     "jsonrpc": "2.0",
     "result": true
 }
@@ -925,35 +926,35 @@ Result：
 示例：
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":74}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 NewFilter Result：
 
 ```json
 {
-    "jsonrpc":"2.0",
-    "id":74,
+    "jsonrpc": "2.0",
+    "id": 1,
     "result":[
         {
-            "address":"0xea4f6bc98b456ef085da5c424db710489848cab5",
+            "address": "0xea4f6bc98b456ef085da5c424db710489848cab5",
             "topics":[
                 "0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"
             ],
-            "data":"0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064",
-            "blockHash":"0x3e83b74560860344f4c48d7b8089a18173aecd96b6b2148653c61b5d3f559764",
-            "blockNumber":"0x4",
-            "transactionHash":"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
-            "transactionIndex":"0x0",
-            "logIndex":"0x0",
-            "transactionLogIndex":"0x0"
+            "data": "0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064",
+            "blockHash": "0x3e83b74560860344f4c48d7b8089a18173aecd96b6b2148653c61b5d3f559764",
+            "blockNumber": "0x4",
+            "transactionHash": "0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af",
+            "transactionIndex": "0x0",
+            "logIndex": "0x0",
+            "transactionLogIndex": "0x0"
         }
     ]
 }
 ```
 
 ```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x3"],"id":74}' 127.0.0.1:1337 | jq
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x3"],"id":1}' 127.0.0.1:1337 | jq
 ```
 
 BlockFilter Result：

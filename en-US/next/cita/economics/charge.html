@@ -76,19 +76,22 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Charge 模式</h1></header><article><div><span><p>Charge 模式，链上是存在原生代币的，运营方不仅可以对原生代币自身的一些属性如名字，标识等，请参考 <a href="../configuration-guide/chain-config">链级配置</a> 进行配置，也可以对代币总量，代币的分发方式，代币的流转模型进行个性化定制。</p>
+<p>代币在链上是以最小单位 <code>wei</code> 计量的，比如 <code>getBalance</code> 查询到的账户的余额就是以 <code>wei</code> 为单位的数值。</p>
+<p>在浏览器和钱包中，为了显示上的方便，会采用一个更大的单位 <code>CTT</code> 。这个单位的名字可以由链的运营方自定义，<code>CTT</code> 是默认的名字。两个单位之间的换算关系为 <code>1 CTT = 10^18 wei</code>。</p>
+<p>注意：后续文档中，除非特殊说明，代币默认采用的单位都是 <code>wei</code> 。</p>
 <p>概括的来说，系统会将用户发送交易（转账，部署合约，调用合约）需要消耗的 Quota 换算成原生代币，并收取该数量的原生代币作为交易手续费，这部分交易手续费可以给到负责出块的共识节点（矿工），也可以给到一个特定的地址（由超级管理员设置）。除了用交易手续费来奖励负责出块的共识节点（矿工）之外，还可以设置一定的出块奖励给矿工，这一部分奖励可以通过上层合约实现，以便更好地根据实际业务场景进行设计和调整。下面我们将展开更多细节。</p>
 <h2><a class="anchor" aria-hidden="true" id="代币总量设置"></a><a href="#代币总量设置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>代币总量设置</h2>
 <p>在生成链配置的时候可以通过 <code>--init_token</code> 选项来指定代币发行总量，这部分代币将会在链启动后，存到 <code>superadmin</code> 账户，代币将由 <code>superadmin</code> 统一再分配。</p>
 <p>若没有指定 <code>init_token</code> ，系统会默认将代币总量设置为 <code>0xffffffffffffffffffffffffff</code> 。</p>
 <h3><a class="anchor" aria-hidden="true" id="设置代币总量操作示例"></a><a href="#设置代币总量操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>设置代币总量操作示例：</h3>
-<p>设置链的代币总量为 10_000_000_000 (0x2540BE400)：</p>
-<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita create --init_token 0x2540BE400 --contract_arguments SysConfig.economicalModel=1 --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
+<p>设置链的代币总量为 10_000_000_000 CTT，即 10^28 (0x204fce5e3e25026110000000) wei：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita create --init_token 0x204fce5e3e25026110000000 --contract_arguments SysConfig.economicalModel=1 --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="代币分发方式"></a><a href="#代币分发方式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>代币分发方式</h2>
 <p>CITA 提供灵活的分发方式，以适配多样的业务需求：</p>
 <ul>
 <li>超级管理员可以通过发交易的方式进行分配；</li>
-<li>也可以使用我们提供的<a href="https://github.com/citahub/testnet-faucet-mri">水龙头工具</a>，让用户自己领取代币；</li>
+<li>也可以使用我们提供的<a href="https://github.com/citahub/cita-testnet-faucet">水龙头工具</a>，让用户自己领取代币；</li>
 <li>也可以采用类似挖矿奖励的方式分发。CITA 采用了 <a href="../advanced-use/contracts/auto-exec">系统自动执行合约</a> 的机制，可以实现每区块自动执行一个代币分发合约，向相关节点分发奖励。运营方可以在创世块创建足够多的系统代币，锁定到一个激励合约，并在激励合约中编写按照选举合约结果分发出块奖励的命令。</li>
 </ul>
 <p>注意：Charge 模型下，矿工默认是只有交易手续费作为激励，若需要出块激励，则需要在上层用合约实现第 3 种分发方式设置出块奖励。</p>
@@ -97,10 +100,10 @@
 <p>在 CITA 中，<code>手续费 = quotaUsed * quotaPrice</code></p>
 <ul>
 <li>手续费：用户以原生代币进行支付。</li>
-<li>quotaUsed：虚拟机中的每个命令都被设置了相应的 Quota 消耗值。quotaUsed 是所有被执行的指令的 Quota 消耗值总和。</li>
+<li>quotaUsed：虚拟机中的每个命令都被设置了相应的 quota 消耗值。quotaUsed 是所有被执行的指令的 Quota 消耗值总和。</li>
 <li>quotaPrice：单位 quota 需要消耗的原生代币数量。quotaPrice 默认为1000000，而且为了更好的满足运营方的需求，我们提供了设置 <code>quotaPrice</code> 的接口，拥有权限的超级管理员在起链后可以通过发送交易动态的来设置 quotaPrice的值。具体操作示例可参考下面的修改 quotaPrice 操作示例。</li>
 </ul>
-<p>系统规定 1 native-token（原生代币） = 10^18 quota，运营方可以通过调节 Quota Price 高低来调整原生代币的使用价值。</p>
+<p>运营方可以通过调节 Quota Price 高低来调整原生代币的使用价值。</p>
 <p>交易手续费默认是返还给打包该块的共识节点，但运营方也可以通过设置 <code>checkFeeBackPlatform</code> 和 <code>chainOwner</code>，将出块奖励返还给一个特定的地址。具体操作示例参考下面的设置交易手续费返还的地址操作示例。</p>
 <h3><a class="anchor" aria-hidden="true" id="修改-quotaprice-操作示例"></a><a href="#修改-quotaprice-操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>修改 quotaPrice 操作示例</h3>
 <p>默认的 <code>quotaPrice</code> 默认为 1000000， 接下来演示超级管理员如何修改 quotaPrice。</p>

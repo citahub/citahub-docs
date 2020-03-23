@@ -32,8 +32,6 @@ tx_verify_thread_num = 4
 tx_verify_cache_size = 100000
 tx_pool_limit = 0
 wal_enable = false
-prof_start = 0
-prof_duration = 0
 ```
 
 * `count_per_batch`：表示批量处理阈值
@@ -42,8 +40,6 @@ prof_duration = 0
 * `tx_verify_cache_size`：交易验证缓存结果大小，缓存交易验证结果，减少重复计算
 * `tx_pool_limit`：交易池数量上限，默认是 0，表示无上限
 * `wal_enable`：交易持久化开关，开启后，交易池交易进行持久化，节点重启后池内交易不丢失
-* `prof_start`：性能采样分析参数，表示进行启动多久之后进行性能采样，单位是秒。
-* `prof_duration`：性能采样分析参数，表示采样持续时间，单位是秒，为 0，表示不采样。
 
 ## Consensus
 
@@ -51,8 +47,6 @@ prof_duration = 0
 
 * '-c, --config=[FILE]'：自定义配置文件
 * '-p, --private=[FILE]'：设置私钥文件
-* '--prof-start=[0]'：指定分析的开始时间，0 表示没有
-* '--prof-duration=[0]'：指定分析的持续时间，0 表示没有
 * '-s, --stdout'：日志输出到控制台
 
 
@@ -118,11 +112,7 @@ jsonrpc.toml 是 RPC 微服务的配置文件， CITA 支持 JsonRpc 和 Websock
 
 ```toml
 backlog_capacity = 1000
-
-[profile_config]
-flag_prof_start = 0
-enable = false
-flag_prof_duration = 0
+enable_version = false
 
 [http_config]
 allow_origin = "*"
@@ -167,10 +157,7 @@ count_per_batch = 30
 ```
 
 * `backlog_capacity`：连接容量大小
-* `profile_config`：性能采样分析
-    - `flag_prof_start`：进程启动多久后开始性能采样
-    - `enable`：开关
-    - `flag_prof_duration`：性能采样分析持续时间
+* `enable_version`：是否使能 JSON-RPC 接口 `getVersion`
 * `http_config`：
     - `allow_origin`：响应头。`*` 表示可以被任意外域访问
     - `timeout`：超时时间

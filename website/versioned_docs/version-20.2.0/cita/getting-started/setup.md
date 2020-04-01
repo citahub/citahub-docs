@@ -6,7 +6,7 @@ original_id: setup
 
 ## 适用操作系统声明
 
-系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
+系统支持以及版本建议：CentOS（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
 
 
 ## 硬件配置建议

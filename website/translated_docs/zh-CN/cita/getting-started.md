@@ -10,7 +10,7 @@ CITA 是一个开源的区块链内核，任何人都可以基于 CITA 来搭建
 
 ## 适用操作系统声明
 
-系统支持以及版本建议：Centos（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
+系统支持以及版本建议：CentOS（7.2+）、Ubuntu（16.04、18.04）、Redhat (7.4)
 
 如果你使用的是 macOS, 可以直接参考 [这里](https://github.com/cryptape/homebrew-cita) 来安装试用 CITA。
 

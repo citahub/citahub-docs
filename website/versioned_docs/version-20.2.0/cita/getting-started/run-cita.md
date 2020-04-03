@@ -37,7 +37,7 @@ $ cita-cli key create
    $ cd cita_secp256k1_sha3
    ```
 
-2. 初始化链(注意：如果使用的系统是 centos 7 请先关闭 selinux 再执行如下命令)：
+2. 初始化链(注意：如果使用的系统是 CentOS 7 请先关闭 selinux 再执行如下命令)：
 
    ```shell
    $ bin/cita create --super_admin "0x37d1c7449bfe76fe9c445e626da06265e9377601" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"

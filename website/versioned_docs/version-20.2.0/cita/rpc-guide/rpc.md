@@ -822,7 +822,7 @@ Result:
 
 * 参数
 
-1. `Filter` - 过滤器对象，详见 `Filter` 的说明。 由于是获取上次操作以来的状态改变，所以 Filter 中的 `from_block` 以及 `to_block` 没有作用，可以不用设置。
+1. `Filter` - 过滤器对象，详见 `Filter` 的说明。 由于是获取上次操作以来的状态改变，所以 Filter 中的 `fromBlock` 以及 `toBlock` 没有作用，可以不用设置。
 
 
 * 返回值

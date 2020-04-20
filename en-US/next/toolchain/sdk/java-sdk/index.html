@@ -95,16 +95,23 @@
 <pre><code class="hljs">$solc example.sol --bin
 </code></pre>
 <p>根据生成的二进制文件和其他3个参数构造一个交易，代码如下：</p>
-<pre><code class="hljs">long currentHeight = currentBlockNumber();
+<pre><code class="hljs">String contractCode = &quot;6080604052600160005534801561001557600080fd5b5060df806100246000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058202dd6056ea84968f05202910ca070fe13f6f46ff5507867f313d9c98bf2d2e55c0029&quot;;
+CITAj service = CITAj.build(new HttpService(&quot;https://testnet.citahub.com&quot;));
+AppMetaData appMetaData;
+appMetaData = service.appMetaData(DefaultBlockParameter.valueOf(&quot;latest&quot;)).send();
+String chainIdHex = appMetaData.getAppMetaDataResult().getChainIdV1();
+BigInteger chainId = new BigInteger(chainIdHex.substring(2), 16);
+int version = appMetaData.getAppMetaDataResult().getVersion();
+long currentHeight = service.appBlockNumber().send().getBlockNumber().longValue();
 long validUntilBlock = currentHeight + 80;
 Random random = new Random(System.currentTimeMillis());
 String nonce = String.valueOf(Math.abs(random.nextLong()));
 long quota = 1000000;
-Transaction tx = Transaction.createContractTransaction(nonce, quota, validUntilBlock, contractCode);
+Transaction tx = Transaction.createContractTransaction(nonce, quota, validUntilBlock, version, chainId, &quot;0&quot;, contractCode);
 </code></pre>
 <p>用发送者的私钥对交易进行签名然后发送到 CITA 网络，代码如下：</p>
-<pre><code class="hljs">String rawTx = tx.sign(privateKey);
-CITAj service = CITAj.build(new HttpService(ipAddr + &quot;:&quot; + port));
+<pre><code class="hljs">String privateKey = &quot;0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6&quot;; // your private key
+String rawTx = tx.sign(privateKey);
 AppSendTransaction result = service.appSendRawTransaction(rawTx).send();
 </code></pre>
 <p>请注意因为 CITA 只支持 <code>sendRawTransaction</code> 方法而不是 <code>sendTransaction</code> ，所以所有发送给 CITA 的交易都需要被签名。</p>
@@ -121,11 +128,11 @@ String txHash = result.getSendTransactionResult().getHash();TransactionReceipt t
 Transaction tx = Transaction.createFunctionCallTransaction(contractAddress, nonce, quota, validUntilBlock, functionCallData);String rawTx = tx.sign(privateKey);String txHash =  service.appSendRawTransaction(rawTx).send().getSendTransactionResult().getHash();
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="通过-cita-sdk-java-中的-wrapper-与智能合约交互"></a><a href="#通过-cita-sdk-java-中的-wrapper-与智能合约交互" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>通过 cita-sdk-java 中的 wrapper 与智能合约交互</h3>
-<p>以上例子展示了直接通过合约二进制码和函数的编码构造交易，并且发送与链上合约进行交互。除此方法以外，cita-sdk-java 提供了 codeGen 工具可以通过 solidity 合约生成 java 类。通过 cita-sdk-java 生成的 java 类，可以方便对合约进行部署和函数调用。 在 release 页面下载 cita-sdk-java 的 jar 包，或者在源项目中运行 <code>gradle shadowJar</code> 生成 jar 包，jar包会在 <code>console/build/libs</code> 中生成，名字是 <code>console-version-all.jar</code>。 solidity 合约转化为 java 类操作如下：</p>
-<pre><code class="hljs">$ java -jar console-0.17-all.jar solidity generate [--javaTypes|--solidityTypes] /path/to/{smart-contract}.bin /path/to/{smart-contract}.abi -o /path/to/src/main/java -p {package-path}
+<p>以上例子展示了直接通过合约二进制码和函数的编码构造交易，并且发送与链上合约进行交互。除此方法以外，cita-sdk-java 提供了 codeGen 工具可以通过 solidity 合约生成 java 类。通过 cita-sdk-java 生成的 java 类，可以方便对合约进行部署和函数调用。 在 release 页面下载 cita-sdk-java 的 jar 包，或者在源项目中运行 <code>gradle shadowJar</code> 生成 jar 包，jar包会在 <code>build/libs</code> 中生成，名字是 <code>cita-sdk-$version.jar</code>。 solidity 合约转化为 java 类操作如下：</p>
+<pre><code class="hljs">$ java -jar cita-sdk-20.2.0.jar solidity generate [--javaTypes|--solidityTypes] /path/to/{smart-contract}.bin /path/to/{smart-contract}.abi -o /path/to/src/main/java -p {package-path}
 </code></pre>
 <p>这个例子通过 <code>Token.sol</code>，<code>Token.bin</code> and <code>Token.abi</code> 这三个文件在 <code>tests/src/main/resources</code> 生成对应的 java 类，命令如下：</p>
-<pre><code class="hljs">`java -jar console/build/libs/console-0.17-all.jar solidity generate tests/src/main/resources/Token.bin tests/src/main/resources/Token.abi -o tests/src/main/java/ -p com.citahub.cita.tests`
+<pre><code class="hljs">`java -jar build/libs/cita-sdk-20.2.0.jar solidity generate tests/src/main/resources/Token.bin tests/src/main/resources/Token.abi -o tests/src/main/java/ -p com.citahub.cita.tests`
 </code></pre>
 <p><code>Token.java</code> 会通过以上命令生成，<code>Token</code> 可以与 <code>CitaTransactionManager</code> 一起使用来和 Token 合约交互。</p>
 <h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h2>

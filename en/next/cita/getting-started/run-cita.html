@@ -100,7 +100,7 @@
 <li><p>进入 CITA 目录：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> cita_secp256k1_sha3</span>
 </code></pre></li>
-<li><p>初始化链：</p>
+<li><p>初始化链(注意：如果使用的系统是 CentOS 7 请先关闭 selinux 再执行如下命令)：</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> bin/cita create --super_admin <span class="hljs-string">"0x37d1c7449bfe76fe9c445e626da06265e9377601"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
 </code></pre>
 <p>其中：</p>

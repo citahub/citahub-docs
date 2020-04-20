@@ -96,18 +96,25 @@
 <pre><code class="hljs"><span class="hljs-meta"><span class="hljs-meta-keyword">$solc</span> example.sol --bin</span>
 </code></pre>
 <p>根据生成的二进制文件和其他3个参数构造一个交易，代码如下：</p>
-<pre><code class="hljs">long currentHeight = current<span class="hljs-constructor">BlockNumber()</span>;
+<pre><code class="hljs">String contractCode = <span class="hljs-string">"6080604052600160005534801561001557600080fd5b5060df806100246000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058202dd6056ea84968f05202910ca070fe13f6f46ff5507867f313d9c98bf2d2e55c0029"</span>;
+CITAj service = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">CITAj</span>.</span></span>build(<span class="hljs-keyword">new</span> <span class="hljs-constructor">HttpService(<span class="hljs-string">"https://testnet.citahub.com"</span>)</span>);
+AppMetaData appMetaData;
+appMetaData = service.app<span class="hljs-constructor">MetaData(DefaultBlockParameter.<span class="hljs-params">valueOf</span>(<span class="hljs-string">"latest"</span>)</span>).send<span class="hljs-literal">()</span>;
+String chainIdHex = appMetaData.get<span class="hljs-constructor">AppMetaDataResult()</span>.get<span class="hljs-constructor">ChainIdV1()</span>;
+BigInteger chainId = <span class="hljs-keyword">new</span> <span class="hljs-constructor">BigInteger(<span class="hljs-params">chainIdHex</span>.<span class="hljs-params">substring</span>(2)</span>, <span class="hljs-number">16</span>);
+<span class="hljs-built_in">int</span> version = appMetaData.get<span class="hljs-constructor">AppMetaDataResult()</span>.get<span class="hljs-constructor">Version()</span>;
+long currentHeight = service.app<span class="hljs-constructor">BlockNumber()</span>.send<span class="hljs-literal">()</span>.get<span class="hljs-constructor">BlockNumber()</span>.long<span class="hljs-constructor">Value()</span>;
 long validUntilBlock = currentHeight + <span class="hljs-number">80</span>;
 Random random = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Random(System.<span class="hljs-params">currentTimeMillis</span>()</span>);
 String nonce = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">String</span>.</span></span>value<span class="hljs-constructor">Of(Math.<span class="hljs-params">abs</span>(<span class="hljs-params">random</span>.<span class="hljs-params">nextLong</span>()</span>));
 long quota = <span class="hljs-number">1000000</span>;
-Transaction tx = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Transaction</span>.</span></span>create<span class="hljs-constructor">ContractTransaction(<span class="hljs-params">nonce</span>, <span class="hljs-params">quota</span>, <span class="hljs-params">validUntilBlock</span>, <span class="hljs-params">contractCode</span>)</span>;
+Transaction tx = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Transaction</span>.</span></span>create<span class="hljs-constructor">ContractTransaction(<span class="hljs-params">nonce</span>, <span class="hljs-params">quota</span>, <span class="hljs-params">validUntilBlock</span>, <span class="hljs-params">version</span>, <span class="hljs-params">chainId</span>, <span class="hljs-string">"0"</span>, <span class="hljs-params">contractCode</span>)</span>;
 </code></pre>
 <p>用发送者的私钥对交易进行签名然后发送到 CITA 网络，代码如下：</p>
-<pre><code class="hljs">String rawTx = tx.sign(privateKey);
-CITAj<span class="hljs-built_in"> service </span>= CITAj.build(new HttpService(ipAddr + <span class="hljs-string">":"</span> + port));
-AppSendTransaction result = service.appSendRawTransaction(rawTx).send();
-</code></pre>
+<pre><code class="hljs">String privateKey = <span class="hljs-string">"0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6"</span>; <span class="hljs-comment">// your private key</span>
+String rawTx = tx.sign(privateKey);
+AppSendTransaction result = <span class="hljs-class"><span class="hljs-keyword">service</span>.<span class="hljs-title">appSendRawTransaction</span>(rawTx).send();
+</span></code></pre>
 <p>请注意因为 CITA 只支持 <code>sendRawTransaction</code> 方法而不是 <code>sendTransaction</code> ，所以所有发送给 CITA 的交易都需要被签名。</p>
 <h3><a class="anchor" aria-hidden="true" id="调用智能合约的函数"></a><a href="#调用智能合约的函数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用智能合约的函数</h3>
 <p>在 CITA 中，正如智能合约的部署，智能合约中函数的调用也是通过发送交易来实现的，调用合约函数的交易是通过两个参数构造的：</p>
@@ -123,12 +130,12 @@ Transaction tx = <span class="hljs-module-access"><span class="hljs-module"><spa
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="通过-cita-sdk-java-中的-wrapper-与智能合约交互"></a><a href="#通过-cita-sdk-java-中的-wrapper-与智能合约交互" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>通过 cita-sdk-java 中的 wrapper 与智能合约交互</h3>
 <p>以上例子展示了直接通过合约二进制码和函数的编码构造交易，并且发送与链上合约进行交互。除此方法以外，cita-sdk-java 提供了 codeGen 工具可以通过 solidity 合约生成 java 类。通过 cita-sdk-java 生成的 java 类，可以方便对合约进行部署和函数调用。
-在 release 页面下载 cita-sdk-java 的 jar 包，或者在源项目中运行 <code>gradle shadowJar</code> 生成 jar 包，jar包会在 <code>console/build/libs</code> 中生成，名字是 <code>console-version-all.jar</code>。
+在 release 页面下载 cita-sdk-java 的 jar 包，或者在源项目中运行 <code>gradle shadowJar</code> 生成 jar 包，jar包会在 <code>build/libs</code> 中生成，名字是 <code>cita-sdk-$version.jar</code>。
 solidity 合约转化为 java 类操作如下：</p>
-<pre><code class="hljs">$ java -jar console-0.17-all.jar solidity generate [<span class="hljs-params">--javaTypes</span>|<span class="hljs-params">--solidityTypes</span>] <span class="hljs-string">/path/to/</span>{smart-contract}<span class="hljs-string">.bin</span> <span class="hljs-string">/path/to/</span>{smart-contract}<span class="hljs-string">.abi</span> -o <span class="hljs-string">/path/to/src/main/java</span> -p {package-path}
+<pre><code class="hljs">$ java -jar cita-sdk-20.2.0.jar solidity generate [<span class="hljs-params">--javaTypes</span>|<span class="hljs-params">--solidityTypes</span>] <span class="hljs-string">/path/to/</span>{smart-contract}<span class="hljs-string">.bin</span> <span class="hljs-string">/path/to/</span>{smart-contract}<span class="hljs-string">.abi</span> -o <span class="hljs-string">/path/to/src/main/java</span> -p {package-path}
 </code></pre>
 <p>这个例子通过 <code>Token.sol</code>，<code>Token.bin</code> and <code>Token.abi</code> 这三个文件在 <code>tests/src/main/resources</code> 生成对应的 java 类，命令如下：</p>
-<pre><code class="hljs">`java -jar console<span class="hljs-meta-keyword">/build/</span>libs/console<span class="hljs-number">-0.17</span>-all.jar solidity generate tests<span class="hljs-meta-keyword">/src/</span>main<span class="hljs-meta-keyword">/resources/</span>Token.bin tests<span class="hljs-meta-keyword">/src/</span>main<span class="hljs-meta-keyword">/resources/</span>Token.abi -o tests<span class="hljs-meta-keyword">/src/</span>main<span class="hljs-meta-keyword">/java/</span> -p com.citahub.cita.tests`
+<pre><code class="hljs">`java -jar build<span class="hljs-regexp">/libs/</span>cita-sdk-<span class="hljs-number">20.2</span>.<span class="hljs-number">0</span>.jar solidity generate tests<span class="hljs-regexp">/src/m</span>ain<span class="hljs-regexp">/resources/</span>Token.bin tests<span class="hljs-regexp">/src/m</span>ain<span class="hljs-regexp">/resources/</span>Token.abi -o tests<span class="hljs-regexp">/src/m</span>ain<span class="hljs-regexp">/java/</span> -p com.citahub.cita.tests`
 </code></pre>
 <p><code>Token.java</code> 会通过以上命令生成，<code>Token</code> 可以与 <code>CitaTransactionManager</code> 一起使用来和 Token 合约交互。</p>
 <h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h2>

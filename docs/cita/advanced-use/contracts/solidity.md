@@ -28,7 +28,7 @@ Version: 0.4.24+commit.e67f0147.Linux.g++
   $ ./env.sh solc --version
   ```
 
-本文档使用[测试合约]来演示合约在 CITA 上的部署和调用过程。
+本文档使用[测试合约 SimpleStorage.sol]来演示合约在 CITA 上的部署和调用过程。
 
 ## 准备工作
 
@@ -155,8 +155,13 @@ $ cita-cli rpc getTransactionReceipt \
 ## 调用
 
 ### 调用 set 函数
-
-调用测试合约 set 方法，传入参数为 1 ：
+如上操作：[函数签名]
+ ```
+ 60fe47b1: set(uint256)
+ ```
+ 调用测试合约 SimpleStorage.sol set 方法类型为 uint256 转为十六进制形式表示为 64位，传入参数 1：
+ 传入值结果为：0000000000000000000000000000000000000000000000000000000000000001；
+ code 结果为 方法签名 + 传入值，即 0x60fe47b10000000000000000000000000000000000000000000000000000000000000001。
 
 ```bash
 $ cita-cli rpc sendRawTransaction \
@@ -233,10 +238,11 @@ $ cita-cli rpc call \
 }
 ```
 
-可以看出结果已经是 1 了。
+查看结果更新为 1。
 
 [Solidity 官方文档]: https://solidity.readthedocs.io/en/v0.4.24/
 [Solidity 编译器安装]: https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html
 [cita-cli]: https://github.com/citahub/cita-cli
 [快速入门]: ../../getting-started/setup
-[测试合约]: https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol
+[测试合约 SimpleStorage.sol]: https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol
+[函数签名]: ./solidity#获得合约的相关信息

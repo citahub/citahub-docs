@@ -360,18 +360,6 @@ Request：
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0xF9", true],"id":1}' 127.0.0.1:1337 | jq
 ```
 
-* Invalid Params
-
-```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0XF9", true],"id":1}' 127.0.0.1:1337 | jq
-```
-
-或者
-
-```shell
-$ curl -X POST --data '{"jsonrpc":"2.0","method":"getBlockByNumber","params":[249, true],"id":1}' 127.0.0.1:1337 | jq
-```
-
 高度参数可以用 0x 开头的十六进制。0x 开头或者十进制整数都是错误的参数格式。
 
 结果同 [getBlockByHash](#getblockbyhash)

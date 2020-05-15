@@ -49,7 +49,7 @@ const siteConfig = {
     theme: 'default',
   },
 
-  scripts: ['https://buttons.github.io/buttons.js', baseUrl + 'javascript/index.js'],
+  scripts: [baseUrl + 'javascript/index.js'],
   onPageNav: 'separate',
   docsSideNavCollapsible: true,
   cleanUrl: true,

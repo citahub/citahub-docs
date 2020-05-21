@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Solidity 合约开发 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="CITA 是兼容 EVM 的，所以支持使用 Solidity 编写智能合约。 目前支持的 Solidity 版本为：
 "/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="Solidity 合约开发 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="CITA 是兼容 EVM 的，所以支持使用 Solidity 编写智能合约。 目前支持的 Solidity 版本为：
-"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
         document.addEventListener('DOMContentLoaded', function() {
           addBackToTop(
             {"zIndex":100}
@@ -91,7 +91,7 @@
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh solc --version</span>
 </code></pre></li>
 </ul>
-<p>本文档使用[测试合约]来演示合约在 CITA 上的部署和调用过程。</p>
+<p>本文档使用[测试合约 SimpleStorage.sol]来演示合约在 CITA 上的部署和调用过程。</p>
 <h2><a class="anchor" aria-hidden="true" id="准备工作"></a><a href="#准备工作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>准备工作</h2>
 <h3><a class="anchor" aria-hidden="true" id="起链"></a><a href="#起链" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>起链</h3>
 <p>查看[快速入门]启动一条链。</p>
@@ -178,8 +178,15 @@ Function signature<span class="hljs-variable">s:</span>
 <p>得到合约地址为 <code>0x5839153e0efe76efe0c974b728c4f49ca7ed75cc</code></p>
 <h2><a class="anchor" aria-hidden="true" id="调用"></a><a href="#调用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用</h2>
 <h3><a class="anchor" aria-hidden="true" id="调用-set-函数"></a><a href="#调用-set-函数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用 set 函数</h3>
-<p>调用测试合约 set 方法，传入参数为 1 ：</p>
-<pre><code class="hljs css language-bash">$ cita-cli rpc sendRawTransaction \
+<p>如上操作：<a href="./solidity#获得合约的相关信息">函数签名</a></p>
+<pre><code class="hljs"> 60fe47b1: set(uint256)
+ ```
+ 调用测试合约 SimpleStorage.sol set 方法类型为 uint256 转为十六进制形式表示为 64位，传入参数 1：
+ 传入值结果为：0000000000000000000000000000000000000000000000000000000000000001；
+ code 结果为 方法签名 + 传入值，即 0x60fe47b10000000000000000000000000000000000000000000000000000000000000001。
+
+```bash
+$ cita-cli rpc sendRawTransaction \
     --code 0x60fe47b10000000000000000000000000000000000000000000000000000000000000001 \
     --private-key 0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002 \
     --address 0x5839153e0efe76efe0c974b728c4f49ca7ed75cc \
@@ -235,7 +242,7 @@ Function signature<span class="hljs-variable">s:</span>
   <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000001"</span>
 }
 </code></pre>
-<p>可以看出结果已经是 1 了。</p>
+<p>查看结果更新为 1。</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en-US/next/cita/store"><span class="arrow-prev">← </span><span>存证</span></a><a class="docs-next button" href="/en-US/next/cita/advanced-use/contracts/rust"><span>Rust 原生合约开发</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#编写">编写</a></li><li><a href="#编译">编译</a></li><li><a href="#准备工作">准备工作</a><ul class="toc-headings"><li><a href="#起链">起链</a></li><li><a href="#生成账户">生成账户</a></li><li><a href="#获得合约的相关信息">获得合约的相关信息</a></li></ul></li><li><a href="#合约">合约</a></li><li><a href="#调用">调用</a><ul class="toc-headings"><li><a href="#调用-set-函数">调用 set 函数</a></li><li><a href="#调用-get-方法">调用 get 方法</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

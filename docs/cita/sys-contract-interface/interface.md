@@ -185,7 +185,7 @@ $ cita-cli scm EmergencyBrake setState \
 
 ### newGroup
 
-创建一个用户组。
+创建一个账户组。
 
 * 参数
 
@@ -275,11 +275,11 @@ $ scm GroupManagement newGroup \
 }
 
 ```
-从 log 中可知，新用户组的地址是: 0xce6cd8f8562e31d44b1101986204cec34b1df025
+从 log 中可知，新账户组的地址是: 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 ### deleteGroup
 
-删除用户组。
+删除账户组。
 
 * 参数
 
@@ -302,7 +302,7 @@ $ scm GroupManagement deleteGroup \
 
 ### updateGroupName
 
-更新用户组名称。
+更新账户组名称。
 
 * 参数
 
@@ -327,7 +327,7 @@ $ scm GroupManagement updateGroupName \
 
 ### addAccounts
 
-添加用户。
+添加账户。
 
 * 参数
 
@@ -352,7 +352,7 @@ $ scm GroupManagement updateGroupName \
 
 ### deleteAccounts
 
-删除用户。
+删除账户。
 
 * 参数
 
@@ -456,7 +456,7 @@ $ scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
 
 ### queryAccounts
 
-查询组内所有用户。
+查询组内所有账户。
 
 * 参数
 

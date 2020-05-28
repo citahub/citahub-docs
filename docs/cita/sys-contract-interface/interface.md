@@ -2,6 +2,11 @@
 id: interface
 title: 接口列表
 ---
+系统合约： 由 [Solidity] 编写，并且[合约地址]固定，预先集成在 CITA 中的智能合约。
+
+[Solidity]: https://solidity.readthedocs.io/en/v0.4.24/
+[合约地址]: ../addresses.md
+
 
 ## 超级管理员合约
 

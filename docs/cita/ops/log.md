@@ -69,13 +69,14 @@ CITA 节点需要长时间持续运行，因此日志文件会越来越大，需
 为了适应不同场景的需要，CITA 的日志分割功能采用比较灵活的方式。
 
 通过向进程发信号，触发日志分割和日志文件的转储，保证切换期间没有日志丢失。
-对于一个节点内的多个微服务，有如下的命令封装：
+### 方法一
+对于一个节点内的多个微服务的日志进行分割。
 
 ```
 bin/cita logrotate test-chain/0
 ```
 
-效果如下：
+返回结果如下：
 
 ```
 ./test-chain/0/logs/cita-auth.log
@@ -102,3 +103,29 @@ find ./test-chain/*/logs | grep `date "+%Y-%m-%d"`
 然后可以根据用户的需要，移动到专门的备份的地方，压缩保存，甚至直接删除。
 如果用户想要定时备份/清理日志，可以将上述命令设置为系统的周期任务。
 更多详细的用法请参见 cron 或者 logrotate 工具的文档。
+### 方法二
+对某一微服务的日志进行分割。
+```
+./bin/cita top test-chain/0
+```
+返回结果如：
+```
+user        2475       1  0 18:33 ?        00:00:00 cita-forever
+user        2486    2475 11 18:33 ?        00:00:00 cita-auth -c auth.toml
+user        2487    2475  7 18:33 ?        00:00:00 cita-bft -c consensus.toml -p privkey
+user        2490    2475 10 18:33 ?        00:00:00 cita-chain -c chain.toml
+user        2483    2475 27 18:33 ?        00:00:01 cita-executor -c executor.toml
+user        2489    2475  1 18:33 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml
+user        2488    2475 10 18:33 ?        00:00:00 cita-network -c network.toml
+```
+将其中一个节点的 executor.log 进行切割
+```
+kill -10 2483
+
+```
+返回结果如下：
+```
+cita-auth.log  cita-chain.log     cita-executor_2020-06-09_09-36-10.log  cita-jsonrpc.log
+cita-bft.log   cita-executor.log  cita-forever.log                       cita-network.log
+```
+

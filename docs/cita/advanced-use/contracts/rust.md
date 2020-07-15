@@ -169,7 +169,7 @@ Ok(InterpreterResult::Normal(self.output.clone(), 100, vec![]))
 ## 注册合约地址
 
 Rust 原生合约当前是随 CITA 直接启动的，并不像 Solidity 合约发送交易来部署合约。
-在 `factory.rs`（cita-executor/core/src/contracts/native）中加入合约的注册代码便可。
+在 `factory.rs`（cita-executor/core/src/contracts/native）的Default实现中加入合约的注册代码便可。
 
 ```rust
 // here we register contracts with addresses defined in genesis.json.
@@ -223,10 +223,7 @@ rpc call --to 0x0000000000000000000000000000000000000500 --data 0x832b4580
 ### 调用 update
 
 ```shell
-rpc sendRawTransaction \
-    --code "0xaa91543e0000000000000000000000000000000000000000000000000000000000000011" \
-    --address 0x0000000000000000000000000000000000000500 \
-    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+rpc sendRawTransaction --code "0xaa91543e0000000000000000000000000000000000000000000000000000000000000011" --address 0x0000000000000000000000000000000000000500 --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
 关键信息简释：

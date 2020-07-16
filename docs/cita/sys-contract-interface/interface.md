@@ -211,7 +211,8 @@ $ cita-cli scm GroupManagement newGroup \
       --origin 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009 \
       --name 7770660000000000000000000000000000000000000000000000000000000000 \
       --accounts "[e1c4021742730ded647590a1686d5c4bfcbae0b0,45a50f45cb81c8aedeab917ea0cd3c9178ebdcae]" \
-      --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+      --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+      --url http://127.0.0.1:1337
 ```
 
 ```json
@@ -302,7 +303,8 @@ $ cita-cli scm GroupManagement newGroup \
 $ cita-cli scm GroupManagement deleteGroup \
         --origin 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009 \
         --target 0xce6cd8f8562e31d44b1101986204cec34b1df025 \
-         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### updateGroupName
@@ -328,6 +330,7 @@ $ cita-cli scm GroupManagement updateGroupName \
         --origin 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009 \ --target 0xce6cd8f8562e31d44b1101986204cec34b1df025 \
         --name 8880660000000000000000000000000000000000000000000000000000000000 \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### addAccounts
@@ -352,7 +355,8 @@ $ cita-cli scm GroupManagement updateGroupName \
  $ cita-cli scm GroupManagement addAccounts \
          --origin 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009 \ --target 0xce6cd8f8562e31d44b1101986204cec34b1df025 \
          --accounts '[887d3378018c45ec72bed1947d34ac59a4402ddb,f7636f910e2fff0014d693498fe43d2e539b8742]' \
-          --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+         --url http://127.0.0.1:1337
 ```
 
 ### deleteAccounts
@@ -379,6 +383,7 @@ $ cita-cli scm GroupManagement deleteAccounts \
         --target 0xce6cd8f8562e31d44b1101986204cec34b1df025 \
         --accounts '[887d3378018c45ec72bed1947d34ac59a4402ddb,f7636f910e2fff0014d693498fe43d2e539b8742]' \
         --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### checkScope
@@ -399,6 +404,7 @@ $ cita-cli scm GroupManagement deleteAccounts \
 $ cita-cli scm GroupManagement checkScope \
         --origin 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009 \
         --target 0xce6cd8f8562e31d44b1101986204cec34b1df025 \
+        --url http://127.0.0.1:1337
 ```
 
 ### queryGroups
@@ -416,7 +422,7 @@ $ cita-cli scm GroupManagement checkScope \
 * 示例
 
 ```shell
-$ cita-cli scm GroupManagement queryGroups
+$ cita-cli scm GroupManagement queryGroups --url http://127.0.0.1:1337
 ```
 
 ## 组合约
@@ -438,7 +444,7 @@ $ cita-cli scm GroupManagement queryGroups
 * 示例
 
 ```shell
-$ cita-cli scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
+$ cita-cli scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df025 --url http://127.0.0.1:1337
 ```
 
 ### queryName
@@ -456,7 +462,7 @@ $ cita-cli scm Group queryInfo --address 0xce6cd8f8562e31d44b1101986204cec34b1df
 * 示例
 
 ```shell
-$ cita-cli scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
+$ cita-cli scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df025 --url http://127.0.0.1:1337
 ```
 
 ### queryAccounts
@@ -474,7 +480,7 @@ $ cita-cli scm Group queryName --address 0xce6cd8f8562e31d44b1101986204cec34b1df
 * 示例
 
 ```shell
-$ cita-cli scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
+$ cita-cli scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34b1df025 --url http://127.0.0.1:1337
 ```
 
 ### queryChild
@@ -492,7 +498,7 @@ $ cita-cli scm Group queryAccounts --address 0xce6cd8f8562e31d44b1101986204cec34
 * 示例
 
 ```shell
-$ cita-cli scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
+$ cita-cli scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009 --url http://127.0.0.1:1337
 ```
 
 ### queryChildLength
@@ -510,7 +516,7 @@ $ cita-cli scm Group queryChild --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF02
 * 示例
 
 ```shell
-$ cita-cli scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009
+$ cita-cli scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffffFFfF020009 --url http://127.0.0.1:1337
 ```
 
 ### queryParent
@@ -528,7 +534,7 @@ $ cita-cli scm Group queryChildLength --address 0xfFFfFFFFFffFFfffFFFFfffffFffff
 * 示例
 
 ```shell
-$ cita-cli scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025
+$ cita-cli scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1df025 --url http://127.0.0.1:1337
 ```
 
 ### inGroup
@@ -548,7 +554,8 @@ $ cita-cli scm Group queryParent --address 0xce6cd8f8562e31d44b1101986204cec34b1
 ```shell
 $ cita-cli scm Group inGroup \
         --account 0xce6cd8f8562e31d44b1101986204cec34b1df025 \
-        --address 0xffffffffffffffffffffffffffffffffff020009
+        --address 0xffffffffffffffffffffffffffffffffff020009 \
+        --url http://127.0.0.1:1337
 ```
 
 ## 共识节点
@@ -570,7 +577,9 @@ $ cita-cli scm Group inGroup \
 ```shell
 $ cita-cli scm NodeManager approveNode \
         --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
-        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
+      
 ```
 
 ### deleteNode
@@ -590,7 +599,8 @@ $ cita-cli scm NodeManager approveNode \
 ```shell
 $ cita-cli scm NodeManager deleteNode \
         --address 0x59a316df602568957f47973332f1f85ae1e2e75e \
-        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### listNode
@@ -608,7 +618,7 @@ $ cita-cli scm NodeManager deleteNode \
 * 示例
 
 ```shell
-$ cita-cli scm NodeManager listNode
+$ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 ```
 
 ### setStake
@@ -631,7 +641,8 @@ $ cita-cli scm NodeManager listNode
 $ cita-cli scm NodeManager setStake \
         --address 0xae0f69a2d95146d104365e0502a0d521717ced7f \
         --stake 0000000000000000000000000000000000000000000000000000000000000002 \
-        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### getStatus
@@ -649,7 +660,7 @@ $ cita-cli scm NodeManager setStake \
 * 示例
 
 ```shell
-$ cita-cli scm NodeManager getStatus --address 0xae0f69a2d95146d104365e0502a0d521717ced7f
+$ cita-cli scm NodeManager getStatus --address 0xae0f69a2d95146d104365e0502a0d521717ced7f --url http://127.0.0.1:1337
 ```
 
 ### listStake
@@ -667,7 +678,7 @@ $ cita-cli scm NodeManager getStatus --address 0xae0f69a2d95146d104365e0502a0d52
 * 示例
 
 ```shell
-$ cita-cli scm NodeManager listStake
+$ cita-cli scm NodeManager listStake --url http://127.0.0.1:1337
 ```
 
 ### stakePermillage
@@ -685,7 +696,7 @@ $ cita-cli scm NodeManager listStake
 * 示例
 
 ```shell
-$ cita-cli scm NodeManager stakePermillage --address 0xae0f69a2d95146d104365e0502a0d521717ced7f
+$ cita-cli scm NodeManager stakePermillage --address 0xae0f69a2d95146d104365e0502a0d521717ced7f --url http://127.0.0.1:1337
 ```
 
 ## 权限系统合约
@@ -713,13 +724,14 @@ $ cita-cli scm PermissionManagement newPermission \
         --name 0000000000000000000000000000000000000000000000000000000060fe47b1 \
         --contracts '[5839153e0efe76efe0c974b728c4f49ca7ed75cc]' \
         --function-hashes '[60fe47b1]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6\
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 获取回执：
 
 ```shell
-$ cita-cli rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e0212279981b548c9884f018b8f
+$ cita-cli rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3b61e0212279981b548c9884f018b8f --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -809,7 +821,8 @@ $ cita-cli rpc getTransactionReceipt --hash 0x2bf039eeeefbfb0724fcdebdcbc74de0f3
 $ cita-cli scm PermissionManagement updatePermissionName \
         --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
         --name 0000000000000000000000000000000000000000000000000000000060fe47b2 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### addResources
@@ -834,7 +847,8 @@ $ cita-cli scm PermissionManagement addResources \
         --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
         --contracts '[1e041ec9a18590924d84a1f011eb0749c03fc41a]' \
         --function-hashes '[60fe47b1]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### deleteResources
@@ -860,7 +874,8 @@ $ cita-cli scm PermissionManagement deleteResources \
         --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
         --contracts '[1e041ec9a18590924d84a1f011eb0749c03fc41a]' \
         --function-hashes '[60fe47b1]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### setAuthorizations
@@ -883,7 +898,8 @@ $ cita-cli scm PermissionManagement deleteResources \
 $ cita-cli scm PermissionManagement setAuthorizations \
     --permissions '[ffffffffffffffffffffffffffffffffff021000,ffffffffffffffffffffffffffffffffff021001]' \
     --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
-    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
 ```
 
 ### setAuthorization
@@ -906,7 +922,8 @@ $ cita-cli scm PermissionManagement setAuthorizations \
 $ cita-cli scm PermissionManagement setAuthorization \
         --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
         --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### cancelAuthorizations
@@ -929,7 +946,8 @@ $ cita-cli scm PermissionManagement setAuthorization \
 $ cita-cli scm PermissionManagement cancelAuthorizations \
     --permissions '[ffffffffffffffffffffffffffffffffff021000,ffffffffffffffffffffffffffffffffff021001]' \
     --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
-    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
 ```
 
 ### cancelAuthorization
@@ -952,7 +970,8 @@ $ cita-cli scm PermissionManagement cancelAuthorizations \
 $ cita-cli scm PermissionManagement cancelAuthorization \
         --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
         --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### clearAuthorization
@@ -990,6 +1009,7 @@ $ cita-cli scm Permission inPermission \
         --contract 0x1e041ec9a18590924d84a1f011eb0749c03fc41a \
         --function-hash 0x60fe47b1 \
         --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
+        --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1021,7 +1041,7 @@ $ cita-cli scm Permission inPermission \
 * 示例
 
 ```shell
-$ cita-cli scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
+$ cita-cli scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1049,7 +1069,7 @@ $ cita-cli scm Permission queryInfo --permission 0xca645d2b0d2e4c451a2dd546dbd7a
 * 示例
 
 ```shell
-$ cita-cli scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
+$ cita-cli scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1081,7 +1101,7 @@ $ cita-cli scm Permission queryName --permission 0xca645d2b0d2e4c451a2dd546dbd7a
 * 示例
 
 ```shell
-$ cita-cli scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee
+$ cita-cli scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1115,6 +1135,7 @@ $ cita-cli scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546d
 $ cita-cli scm QuotaManager setBQL \
         --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 \
         --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### setDefaultAQL
@@ -1135,6 +1156,7 @@ $ cita-cli scm QuotaManager setBQL \
 $ cita-cli scm QuotaManager setDefaultAQL \
     --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 \
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
 ```
 
 ### setAQL
@@ -1155,6 +1177,7 @@ $ cita-cli scm QuotaManager setDefaultAQL \
 $ cita-cli scm QuotaManager setAQL \
     --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 \
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
 ```
 
 ### getAccounts
@@ -1172,7 +1195,7 @@ $ cita-cli scm QuotaManager setAQL \
 * 示例
 
 ```shell
-$ cita-cli scm QuotaManager getAccounts
+$ cita-cli scm QuotaManager getAccounts --url http://127.0.0.1:1337
 ```
 
 ### getQuotas
@@ -1190,7 +1213,7 @@ $ cita-cli scm QuotaManager getAccounts
 * 示例
 
 ```shell
-$ cita-cli scm QuotaManager getQuotas
+$ cita-cli scm QuotaManager getQuotas --url http://127.0.0.1:1337
 ```
 
 ### getBQL
@@ -1208,7 +1231,7 @@ $ cita-cli scm QuotaManager getQuotas
 * 示例
 
 ```shell
-$ cita-cli scm QuotaManager getBQL
+$ cita-cli scm QuotaManager getBQL --url http://127.0.0.1:1337
 ```
 
 ```json
@@ -1234,7 +1257,7 @@ $ cita-cli scm QuotaManager getBQL
 * 示例
 
 ```shell
-$ cita-cli scm QuotaManager getDefaultAQL
+$ cita-cli scm QuotaManager getDefaultAQL --url http://127.0.0.1:1337
 ```
 
 ```json
@@ -1260,7 +1283,7 @@ $ cita-cli scm QuotaManager getDefaultAQL
 * 示例
 
 ```shell
-$ cita-cli scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523
+$ cita-cli scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523 --url http://127.0.0.1:1337
 ```
 
 ```json
@@ -1302,7 +1325,8 @@ $ cita-cli scm QuotaManager getAQL --address 0x4b5ae4567ad5d9fb92bc9afd6a657e6fa
 ```shell
 $ cita-cli scm PriceManager setQuotaPrice \
               --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
-              --price 0x0000000000000000000000000000000000000000000000000000000000000002
+              --price 0x0000000000000000000000000000000000000000000000000000000000000002 \
+              --url http://127.0.0.1:1337
 ```
 
 ### getQuotaPrice
@@ -1320,8 +1344,8 @@ $ cita-cli scm PriceManager setQuotaPrice \
 * 示例
 
 ```shell
-$ cita-cli scm PriceManager getQuotaPrice
-```
+$ cita-cli scm PriceManager getQuotaPrice --url http://127.0.0.1:1337
+``` 
 
 输出：
 
@@ -1351,7 +1375,7 @@ $ cita-cli scm PriceManager getQuotaPrice
 * 示例
 
 ```shell
-$ cita-cli scm RoleManagement queryRoles --account 0x101e99e1a654a99308175042aff4833a6528be74
+$ cita-cli scm RoleManagement queryRoles --account 0x101e99e1a654a99308175042aff4833a6528be74 --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1379,7 +1403,7 @@ $ cita-cli scm RoleManagement queryRoles --account 0x101e99e1a654a99308175042aff
 * 示例
 
 ```shell
-$ cita-cli scm RoleManagement queryAccounts --address 0x558c280233cee856fb53931eb18747a40e688a43
+$ cita-cli scm RoleManagement queryAccounts --address 0x558c280233cee856fb53931eb18747a40e688a43 --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1414,7 +1438,8 @@ $ cita-cli scm RoleManagement queryAccounts --address 0x558c280233cee856fb53931e
 $ cita-cli scm RoleManagement newRole \
         --name 73747564656e7400000000000000000000000000000000000000000000000000 \
         --permissions '[ca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee, 1acec7eaba22b46ba5d2a7c0bfc94a7741dfd32b]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 回执输出：
@@ -1492,7 +1517,8 @@ $ cita-cli scm RoleManagement newRole \
 $ cita-cli scm RoleManagement updateRoleName \
         --name 0000000000000000000000000000000000000000000000000000000060fe47b1 \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### addPermissions
@@ -1515,7 +1541,8 @@ $ cita-cli scm RoleManagement updateRoleName \
 $ cita-cli scm RoleManagement addPermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
         --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### deletePermissions
@@ -1538,7 +1565,8 @@ $ cita-cli scm RoleManagement addPermissions \
 $ cita-cli scm RoleManagement deletePermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
         --permissions '[558c280233cee856fb53931eb18747a40e688a43]' \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e66
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### setRole
@@ -1561,7 +1589,8 @@ $ cita-cli scm RoleManagement deletePermissions \
 $ cita-cli scm RoleManagement setRole \
         --account 0x101e99e1a654a99308175042aff4833a6528be74 \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### cancelRole
@@ -1584,7 +1613,8 @@ $ cita-cli scm RoleManagement setRole \
 $ cita-cli scm RoleManagement cancelRole \
         --account 0x101e99e1a654a99308175042aff4833a6528be74 \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### clearRole
@@ -1604,7 +1634,8 @@ $ cita-cli scm RoleManagement cancelRole \
 ```shell
 $ cita-cli scm RoleManagement clearRole \
         --account 0x101e99e1a654a99308175042aff4833a6528be74 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### deleteRole
@@ -1624,7 +1655,8 @@ $ cita-cli scm RoleManagement clearRole \
 ```shell
 $ cita-cli scm RoleManagement deleteRole \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
-        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ## 角色合约
@@ -1644,7 +1676,7 @@ $ cita-cli scm RoleManagement deleteRole \
 * 示例
 
 ```shell
-$ cita-cli scm Role queryName --address 0x558c280233cee856fb53931eb18747a40e688a43
+$ cita-cli scm Role queryName --address 0x558c280233cee856fb53931eb18747a40e688a43 --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1672,7 +1704,7 @@ $ cita-cli scm Role queryName --address 0x558c280233cee856fb53931eb18747a40e688a
 * 示例
 
 ```shell
-$ cita-cli scm Role queryPermissions --address 0x558c280233cee856fb53931eb18747a40e688a43
+$ cita-cli scm Role queryPermissions --address 0x558c280233cee856fb53931eb18747a40e688a43 --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1700,7 +1732,7 @@ $ cita-cli scm Role queryPermissions --address 0x558c280233cee856fb53931eb18747a
 * 示例
 
 ```shell
-$ cita-cli scm Role lengthOfPermissions --address 0x558c280233cee856fb53931eb18747a40e688a43
+$ cita-cli scm Role lengthOfPermissions --address 0x558c280233cee856fb53931eb18747a40e688a43 --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1731,7 +1763,8 @@ $ cita-cli scm Role lengthOfPermissions --address 0x558c280233cee856fb53931eb187
 ```shell
 $ cita-cli scm Role inPermissions \
         --address 0x558c280233cee856fb53931eb18747a40e688a43 \
-        --permission 0x1acec7eaba22b46ba5d2a7c0bfc94a7741dfd32b
+        --permission 0x1acec7eaba22b46ba5d2a7c0bfc94a7741dfd32b \
+        --url http://127.0.0.1:1337
 ```
 
 输出：
@@ -1763,7 +1796,8 @@ $ cita-cli scm Role inPermissions \
 ```shell
 $ cita-cli  scm SysConfig setChainName \
         --chain-name "AAA" \
-        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### setOperator
@@ -1783,7 +1817,8 @@ $ cita-cli  scm SysConfig setChainName \
 ```shell
 $ cita-cli scm SysConfig setOperator \
         --operator "CITA" \
-        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### setWebsite
@@ -1803,7 +1838,8 @@ $ cita-cli scm SysConfig setOperator \
 ```shell
 $ cita-cli scm SysConfig setWebsite \
         --website "https://github.com/citahub" \
-        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+        --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+        --url http://127.0.0.1:1337
 ```
 
 ### getPermissionCheck
@@ -1821,7 +1857,7 @@ $ cita-cli scm SysConfig setWebsite \
 * 示例
 
 ```shell
-$ cita-cli scm SysConfig getPermissionCheck
+$ cita-cli scm SysConfig getPermissionCheck --url http://127.0.0.1:1337
 ```
 
 ### getSendTxPermissionCheck
@@ -1839,7 +1875,7 @@ $ cita-cli scm SysConfig getPermissionCheck
 * 示例
 
 ```shell
-$ cita-cli scm SysConfig getSendTxPermissionCheck
+$ cita-cli scm SysConfig getSendTxPermissionCheck --url http://127.0.0.1:1337
 ```
 
 ### getCreateContractPermissionCheck
@@ -1857,7 +1893,7 @@ $ cita-cli scm SysConfig getSendTxPermissionCheck
 * 示例
 
 ```shell
-$ cita-cli scm SysConfig getCreateContractPermissionCheck
+$ cita-cli scm SysConfig getCreateContractPermissionCheck --url http://127.0.0.1:1337
 ```
 
 ### getQuotaCheck
@@ -1875,7 +1911,7 @@ $ cita-cli scm SysConfig getCreateContractPermissionCheck
 * 示例
 
 ```shell
-$ cita-cli scm SysConfig getQuotaCheck
+$ cita-cli scm SysConfig getQuotaCheck --url http://127.0.0.1:1337
 ```
 
 ### getFeeBackPlatformCheck
@@ -1893,8 +1929,8 @@ $ cita-cli scm SysConfig getQuotaCheck
 * 示例
 
 ```shell
-$ cita-cli scm SysConfig getFeeBackPlatformCheck
-```
+$ cita-cli scm SysConfig getFeeBackPlatformCheck --url http://127.0.0.1:1337
+``` 
 
 ### getChainOwner
 
@@ -1911,7 +1947,7 @@ $ cita-cli scm SysConfig getFeeBackPlatformCheck
 * 示例
 
 ```shell
-$ cita-cli scm SysConfig getChainOwner
+$ cita-cli scm SysConfig getChainOwner --url http://127.0.0.1:1337
 ```
 
 ## 协议版本管理合约

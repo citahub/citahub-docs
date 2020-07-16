@@ -6,6 +6,7 @@ function htmlToElements(html) {
   template.innerHTML = html;
   return template.content.firstChild;
 }
+
 const items = [
   {
     name: "DApp",
@@ -118,7 +119,7 @@ const items = [
   {
     name: "CITA Web Debugger",
     href:
-      "https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-web-debugger",
+        "https://github.com/citahub/cita-sdk-js/tree/develop/packages/cita-web-debugger",
     shape: "rect",
     left: "83.5%",
     top: "32.5%",
@@ -174,27 +175,27 @@ function CoordinatesMaps(items, srcUrl) {
   this.mapClassName = "mapItem";
 }
 
-CoordinatesMaps.prototype.getMapString = function() {
+CoordinatesMaps.prototype.getMapString = function () {
   return this.items
-    .map(
-      function(item) {
-        return `<div style="position: absolute;width: ${item.width};
+      .map(
+          function (item) {
+            return `<div style="position: absolute;width: ${item.width};
      height: ${item.height};left: ${item.left};top: ${item.top}"
                       data-name="${item.name}"
                       class="${this.mapClassName}" >
                 </div>`;
-      }.bind(this)
-    )
-    .reduce(function(s, cul) {
-      return s + cul;
-    }, "");
+          }.bind(this)
+      )
+      .reduce(function (s, cul) {
+        return s + cul;
+      }, "");
 };
-CoordinatesMaps.prototype.showItem = function(item) {
-  const found = this.items.find(function(i) {
+CoordinatesMaps.prototype.showItem = function (item) {
+  const found = this.items.find(function (i) {
     return i.name === item.dataset.name;
   });
   const tooltipDom = htmlToElements(`<div class="tooltip"><a  href="${
-    found.href
+      found.href
   }" target="_blank">
       ${found.logo && `<img src="${found.logo}" alt="" width="80px">`}
       <div class="title">${found.title}</div>
@@ -209,64 +210,68 @@ CoordinatesMaps.prototype.showItem = function(item) {
   }
 };
 
-CoordinatesMaps.prototype.hideItem = function(item) {
+CoordinatesMaps.prototype.hideItem = function (item) {
   // item.querySelector(".tooltip").classList.remove("on");
   item.querySelector(".tooltip") && item.querySelector(".tooltip").remove();
 };
 
-CoordinatesMaps.prototype.bindOne = function(item) {
+CoordinatesMaps.prototype.bindOne = function (item) {
+  function findTooltip(node) {
+    return node.classList.contains("tooltip") ||
+        node.parentNode.classList.contains("tooltip") ||
+        node.parentNode.parentNode.classList.contains("tooltip")
+  }
+
   item.addEventListener(
-    "mouseover",
-    function(e) {
-      if (document.querySelectorAll(".tooltip").length > 0) {
-        return;
-      }
-      this.showItem(item);
-    }.bind(this)
+      "mouseover",
+      function (e) {
+        if (document.querySelectorAll(".tooltip").length > 0) {
+          return;
+        }
+        this.showItem(item);
+      }.bind(this)
   );
 
   item.addEventListener(
-    "mouseout",
-    function(e) {
-      if (
-        e.target.classList.contains("tooltip") ||
-        e.target.parentNode.classList.contains("tooltip") ||
-        e.target.parentNode.parentNode.classList.contains("tooltip")
-      ) {
-        e.stopPropagation();
-        this.showItem(item);
-        return;
-      }
-      this.hideItem(item);
-    }.bind(this)
+      "mouseout",
+      function (e) {
+        console.log(e)
+        if ( (e.relatedTarget && findTooltip(e.relatedTarget)) || (e.toElement && findTooltip(e.toElement))  ) {
+          console.log(1)
+          e.stopPropagation();
+          this.showItem(item);
+          return;
+        }
+        this.hideItem(item);
+      }.bind(this)
   );
 };
 
-CoordinatesMaps.prototype.bindEvent = function() {
+CoordinatesMaps.prototype.bindEvent = function () {
   if (this.map) {
     this.map.querySelectorAll("." + this.mapClassName).forEach(
-      function(item) {
-        this.bindOne(item);
-      }.bind(this)
+        function (item) {
+          this.bindOne(item);
+        }.bind(this)
     );
   }
 };
 
-CoordinatesMaps.prototype.getMap = function() {
+CoordinatesMaps.prototype.getMap = function () {
   const mapDom = this.getMapString();
   this.map = htmlToElements(
-    '<div id="firstPageMap" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0">' +
+      '<div id="firstPageMap" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0">' +
       mapDom +
       "</div>"
   );
 };
 
-CoordinatesMaps.prototype.ready = function() {
+CoordinatesMaps.prototype.ready = function () {
   this.parent.classList.add("firstPageImageParent");
   this.parent.append(this.map);
 };
 
-CoordinatesMaps.prototype.init = function() {
+CoordinatesMaps.prototype.init = function () {
   if (this.target) {
     this.getMap();
     this.bindEvent();
@@ -300,21 +305,24 @@ function addGA() {
   if (window.location.href.indexOf("docs.citahub.com") > -1) {
     var googleScript = document.createElement("script");
     googleScript.src =
-      "https://www.googletagmanager.com/gtag/js?id=UA-134504127-3";
+        "https://www.googletagmanager.com/gtag/js?id=UA-134504127-3";
     googleScript.async = true;
-    googleScript.onload = function() {
+    googleScript.onload = function () {
       window.dataLayer = window.dataLayer || [];
+
       function gtag() {
         dataLayer.push(arguments);
       }
+
       gtag("js", new Date());
       gtag("config", "UA-134504127-3");
     };
     document.body.append(googleScript);
   }
 }
+
 function addBaiduTongji() {
-  if(window.location.href.indexOf('docs.citahub.com') > -1) {
+  if (window.location.href.indexOf('docs.citahub.com') > -1) {
     var _hmt = _hmt || [];
     (function () {
       var hm = document.createElement("script");
@@ -328,8 +336,8 @@ function addBaiduTongji() {
 window.onload = () => {
   const welcome = "/welcome";
   const logoEl =
-    document.querySelector(".fixedHeaderContainer a[href='/en-US']") ||
-    document.querySelector(".fixedHeaderContainer a[href='/zh-CN']");
+      document.querySelector(".fixedHeaderContainer a[href='/en-US']") ||
+      document.querySelector(".fixedHeaderContainer a[href='/zh-CN']");
   logoEl.setAttribute("href", logoEl.href + welcome);
 
   // add edit on github

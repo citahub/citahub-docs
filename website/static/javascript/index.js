@@ -229,9 +229,9 @@ CoordinatesMaps.prototype.bindOne = function(item) {
     "mouseout",
     function(e) {
       if (
-        e.toElement.classList.contains("tooltip") ||
-        e.toElement.parentNode.classList.contains("tooltip") ||
-        e.toElement.parentNode.parentNode.classList.contains("tooltip")
+        e.target.classList.contains("tooltip") ||
+        e.target.parentNode.classList.contains("tooltip") ||
+        e.target.parentNode.parentNode.classList.contains("tooltip")
       ) {
         e.stopPropagation();
         this.showItem(item);

@@ -235,9 +235,7 @@ CoordinatesMaps.prototype.bindOne = function (item) {
   item.addEventListener(
       "mouseout",
       function (e) {
-        console.log(e)
         if ( (e.relatedTarget && findTooltip(e.relatedTarget)) || (e.toElement && findTooltip(e.toElement))  ) {
-          console.log(1)
           e.stopPropagation();
           this.showItem(item);
           return;

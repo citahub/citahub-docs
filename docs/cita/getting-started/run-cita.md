@@ -3,6 +3,10 @@ id: run-cita
 title: 运行 CITA
 ---
 
+## 下载 cita-cli
+下载最新版本 cita-cli：https://github.com/citahub/cita-cli/releases
+使用说明详见：https://github.com/citahub/cita-cli
+
 ## 创建超级管理员账户地址、私钥、公钥
 
 执行命令：

@@ -59,6 +59,12 @@ $ cita-cli key create
 
 第一次启动 CITA 时需要使用 `setup` 命令初始化每个节点，之后重新启动不需要再次操作。
 更多信息可查看 `bin/cita help` 中 `setup` 部分。
+> * 注：setup 或 start 节点时，节点号后面存证多余的"/"， 会报错
+错误写法示例： 
+```shell 
+$ bin/cita setup test-chain/0/
+$ bin/cita start test-chain/0/
+```
 
 1. 启动节点 0
 

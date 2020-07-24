@@ -65,7 +65,6 @@
         "type": "subcategory",
         "ids": [
           "cita/privacy/privacy-intro",
-          "cita/privacy/zktx",
           "cita/privacy/crosschain-contract-example"
         ]
       },

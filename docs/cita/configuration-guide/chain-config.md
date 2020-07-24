@@ -126,6 +126,11 @@ $ bin/cita create --help
   * 默认的 `jsonrpc` 端口：1337 到 1337 + N
   * 默认的 `websocket` 端口：4337 到 4337 + N
   * 默认的 `rabbitmq` 端口：4369(epmd)/25672(Erlang distribution)/5671，5672(AMQP)/15672(management plugin)
+ 
+示例，将 jsonrpc 的端口改为从2337开始：
+```shell
+bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --jsonrpc_port 2337
+```
 
 ### `--enable_tls`
 
@@ -152,8 +157,12 @@ $ bin/cita create --help
 
 设置链的初始 Native Token 数量。
 
-* 设置链的初始 Native Token 数量，`INIT_TOKEN` 为 16 进制数据；
+* 设置链的初始 Native Token 数量，`INIT_TOKEN` 为 16 进制数据，最大 token 值为 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff；
 * 设置后，会在创世块中，给 `superadmin` 帐户存入 `INIT_TOKEN` 数量的原生代币。
+示例：
+```shell
+bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --init_token "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+```
 
 ## 初始化配置操作示例
 

@@ -114,11 +114,12 @@ CITA 每个微服务的日志信息都会被记录到一个单独的日志文件
 <p>CITA 节点需要长时间持续运行，因此日志文件会越来越大，需要定期清理。
 或者需要将某一段比较重要的日志单独备份。这都会涉及到日志分割的功能。
 为了适应不同场景的需要，CITA 的日志分割功能采用比较灵活的方式。</p>
-<p>通过向进程发信号，触发日志分割和日志文件的转储，保证切换期间没有日志丢失。
-对于一个节点内的多个微服务，有如下的命令封装：</p>
+<p>通过向进程发信号，触发日志分割和日志文件的转储，保证切换期间没有日志丢失。</p>
+<h3><a class="anchor" aria-hidden="true" id="方法一"></a><a href="#方法一" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>方法一</h3>
+<p>对于一个节点内的多个微服务的日志进行分割。</p>
 <pre><code class="hljs">bin/cita logrotate test-chain/<span class="hljs-number">0</span>
 </code></pre>
-<p>效果如下：</p>
+<p>返回结果如下：</p>
 <pre><code class="hljs">./test-chain/<span class="hljs-number">0</span>/logs/cita-auth.log
 ./test-chain/<span class="hljs-number">0</span>/logs/cita-auth_2018<span class="hljs-number">-04</span><span class="hljs-number">-02</span>_11<span class="hljs-number">-34</span><span class="hljs-number">-51.</span>log
 ./test-chain/<span class="hljs-number">0</span>/logs/cita-chain.log
@@ -139,7 +140,28 @@ CITA 每个微服务的日志信息都会被记录到一个单独的日志文件
 <p>然后可以根据用户的需要，移动到专门的备份的地方，压缩保存，甚至直接删除。
 如果用户想要定时备份/清理日志，可以将上述命令设置为系统的周期任务。
 更多详细的用法请参见 cron 或者 logrotate 工具的文档。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/cita/advanced-use/contracts/batch-tx"><span class="arrow-prev">← </span><span>批量交易</span></a><a class="docs-next button" href="/en/next/cita/ops/exception-handle"><span>异常排查</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#日志位置">日志位置</a></li><li><a href="#日志优先级">日志优先级</a></li><li><a href="#日志分割">日志分割</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h3><a class="anchor" aria-hidden="true" id="方法二"></a><a href="#方法二" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>方法二</h3>
+<p>对某一微服务的日志进行分割。</p>
+<pre><code class="hljs">./bin/cita top test-chain/<span class="hljs-number">0</span>
+</code></pre>
+<p>返回结果如：</p>
+<pre><code class="hljs">user        2475       1  0 18:33 ?        00:00:00 cita-forever<span class="hljs-built_in">
+user </span>       2486    2475 11 18:33 ?        00:00:00 cita-auth -c auth.toml<span class="hljs-built_in">
+user </span>       2487    2475  7 18:33 ?        00:00:00 cita-bft -c consensus.toml -p privkey<span class="hljs-built_in">
+user </span>       2490    2475 10 18:33 ?        00:00:00 cita-chain -c chain.toml<span class="hljs-built_in">
+user </span>       2483    2475 27 18:33 ?        00:00:01 cita-executor -c executor.toml<span class="hljs-built_in">
+user </span>       2489    2475  1 18:33 ?        00:00:00 cita-jsonrpc -c jsonrpc.toml<span class="hljs-built_in">
+user </span>       2488    2475 10 18:33 ?        00:00:00 cita-network -c network.toml
+</code></pre>
+<p>将其中一个节点的 executor.log 进行切割</p>
+<pre><code class="hljs">kill <span class="hljs-number">-10</span> <span class="hljs-number">2483</span>
+
+</code></pre>
+<p>返回结果如下：</p>
+<pre><code class="hljs">cita-auth.<span class="hljs-built_in">log</span>  cita-chain.<span class="hljs-built_in">log</span>     cita-executor_2020<span class="hljs-number">-06</span><span class="hljs-number">-09</span>_09<span class="hljs-number">-36</span><span class="hljs-number">-10.</span><span class="hljs-built_in">log</span>  cita-jsonrpc.<span class="hljs-built_in">log</span>
+cita-bft.<span class="hljs-built_in">log</span>   cita-executor.<span class="hljs-built_in">log</span>  cita-<span class="hljs-keyword">forever</span>.<span class="hljs-built_in">log</span>                       cita-network.<span class="hljs-built_in">log</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/cita/advanced-use/contracts/batch-tx"><span class="arrow-prev">← </span><span>批量交易</span></a><a class="docs-next button" href="/en/next/cita/ops/exception-handle"><span>异常排查</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#日志位置">日志位置</a></li><li><a href="#日志优先级">日志优先级</a></li><li><a href="#日志分割">日志分割</a><ul class="toc-headings"><li><a href="#方法一">方法一</a></li><li><a href="#方法二">方法二</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

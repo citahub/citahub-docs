@@ -3,36 +3,6 @@ id: run-cita
 title: 运行 CITA
 ---
 
-## 下载 cita-cli
-下载最新版本 cita-cli：https://github.com/citahub/cita-cli/releases
-使用说明详见：https://github.com/citahub/cita-cli
-
-## 创建超级管理员账户地址、私钥、公钥
-
-执行命令：
-
-```shell
-$ cita-cli key create
-```
-
-命令返回：
-
-```json
-{
-  "address": "0x37d1c7449bfe76fe9c445e626da06265e9377601",
-  "private": "0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002",
-  "public": "0x9dc6fc7856f5271e6e8c45e5c5fe22d2ff699ac3b24497599be77803d3c25fb4e2fe7da616c65a291910c947c89923009f354634421bddd0a25cd0a509bcf6a9"
-}
-```
-
-> 注：此处为示例公私钥对，不要在生产环境复制使用，其中：
->
-> * "address"，帐号地址；
-> * "private"，帐号私钥；
-> * "public"，帐户公钥。
->
-> 由于每次执行命令生成的结果都不同，以下所有的示例操作均使用本次生成的结果。
-
 ## 配置 CITA
 
 1. 进入 CITA 目录：

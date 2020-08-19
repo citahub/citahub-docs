@@ -81,7 +81,10 @@
 <ul>
 <li><p>参数设置：</p>
 <ul>
-<li><code>BQL(BlockQuotaLimit)</code>：表示单个区块内全部交易可消耗的 quota 的上限，默认 1073741824</li>
+<li><code>BQL(BlockQuotaLimit)</code>：表示单个区块内全部交易可消耗的 quota 的上限，
+默认值为：0x40000000 (十进制表示为：1073741824)；
+最小可设置值为：0x10000000 (十进制表示为：268435456，即 2 的 28 次方)；
+最大可设置值为：0x7fffffffffffffff (十进制表示为：9223372036854775807，即 2 的 63 次方减 1)。</li>
 <li><code>AQL(AccountQuotaLimit)</code>：表示账户单笔交易可消耗的 quota 的上限，默认 268435456。此限制默认是关掉的，如需开启，需要在对链进行初始化配置时设置 <code>checkQuota = True</code></li>
 </ul></li>
 <li><p>操作：</p>

@@ -8,6 +8,7 @@
         "type": "subcategory",
         "ids": [
           "cita/getting-started/setup",
+          "cita/getting-started/run-cli",
           "cita/getting-started/run-cita",
           "cita/getting-started/basic-usage"
         ]

@@ -168,9 +168,7 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
 <ul>
 <li>参数</li>
 </ul>
-<ol>
-<li><code>Data</code>, 签名后的交易数据</li>
-</ol>
+<p><code>Data</code>, 签名后的交易数据</p>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> signed_data = <span class="hljs-string">"0a9b0412013018fface20420f73b2a8d046060604052341561000f57600080fd5b5b60646000819055507f8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3336064604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b5b610178806100956000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b1146100495780636d4ce63c1461006c575b600080fd5b341561005457600080fd5b61006a6004808035906020019091905050610095565b005b341561007757600080fd5b61007f610142565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055507ffd28ec3ec2555238d8ad6f9faf3e4cd10e574ce7e7ef28b73caa53f9512f65b93382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b50565b6000805490505b905600a165627a7a72305820631927ec00e7a86b68950c2304ba2614a8dcb84780b339fc2bfe442bba418ce800291241884bfdfd8e417ab286fd761d42b71a9544071d91084c56f9063471ce82e266122a8f9a24614e1cf75070eea301bf1e7a65857def86093b6892e09ae7d0bcdff901"</span>
 </code></pre>
 <ul>
@@ -179,6 +177,9 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
 <p><code>Data32</code> - 交易哈希</p>
 <p>示例：</p>
 <p>Request：</p>
+<blockquote>
+<p>注意：测试时不能直接复制如下参数中的数据，因为签名后的交易数据包含交易上链最大区块高度等信息。</p>
+</blockquote>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"sendRawTransaction","params":["0x0a910212013218fface20420a0492a8302606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da200291241edd3fb02bc1e844e1a6743e8986a61e1d8a584aac26db5fa1ce5b32700eba5d16ba4c754731f43692f3f5299e85176627e55b9f61f5fe3e43572ec8c535b0d9201"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
 </code></pre>
 <p>Result：</p>
@@ -202,9 +203,9 @@ Methods Name Changed ！ For the user of V0.16 and older versions: Please pay at
 }
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="关于签名交易"></a><a href="#关于签名交易" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>关于签名交易</h4>
-<ol>
-<li>了解一下 CITA 交易结构</li>
-</ol>
+<ul>
+<li>CITA 交易结构</li>
+</ul>
 <pre><code class="hljs css language-protobuf"><span class="hljs-comment">// Transaction</span>
 syntax = <span class="hljs-string">"proto3"</span>;
 <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Crypto</span> </span>{

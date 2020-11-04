@@ -242,7 +242,7 @@ message UnverifiedTransaction {
 
 ### getVersion
 
-获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看[链级配置]中的 `--enable_version` 选项说明。
+获取当前 CITA 软件的版本号，默认关闭，如果使用需要在链创建时开启该功能。详细查看[链级配置]中的 `--enable_version` 选项说明。
 
 * 参数
 

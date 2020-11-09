@@ -13,18 +13,20 @@ https://testnet.citahub.com
 ### 查询测试链的信息
 * 返回值
 
-    * `chainId`, `Integer` - `version < 1` 时的 `chain_id`, 用来防止重放攻击
-    * `chainIdV1`, `Quantity` - `version > 1` 时的 `chain_id`,不同链的 chainId 建议设置为不同值
-    * `chainName`, `String` - 链名称
-    * `operator`, `String` - 链的运营者
-    * `genesisTimestamp`, `Integer` - 创世块时间戳
-    * `validators`, `[Data20]` - 验证者地址集合
-    * `blockInterval` `Integer` - 出块间隔
-    * `tokenName`, `String` - Token 名称
-    * `tokenSymbol`, `String` - Token 标识
-    * `tokenAvatar`, `String` - Token 标志
-    * `version`, `Integer` - 链版本
-    * `economicalModel`, `EconomicalModel` - 链经济模型
+    * `chainId` - `Integer` - `version < 1` 时的 `chain_id`
+    * `chainIdV1` - `Quantity` - `version > 1` 时的 `chain_id` 用来防止重放攻击，不同链的 chainId 建议设置为不同值
+    * `chainName` - `String` - 链名称 
+    * `operator` - `String` - 链的运营者
+    * `genesisTimestamp` - `Integer` - 创世块时间戳
+    * `validators` - `[Data20]` - 验证者地址集合
+    * `blockInterval` - `Integer` - 出块间隔
+    * `tokenName` - `String` - Token 名称
+    * `tokenSymbol` - `String` - Token 标识
+    * `tokenAvatar` - `String` - Token 标志
+    * `version` - `Integer` - 链版本
+    * `economicalModel` - `EconomicalModel` - 链经济模型
+    
+示例：
 
 Request:
 

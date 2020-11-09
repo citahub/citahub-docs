@@ -13,18 +13,20 @@ https://testnet.citahub.com
 ### 查询测试链的信息
 * 返回值
 
-    * `chainId`, `Integer` - `version < 1` 时的 `chain_id`, 用来防止重放攻击
-    * `chainIdV1`, `Quantity` - `version > 1` 时的 `chain_id`
-    * `chainName`, `String` - 链名称
-    * `operator`, `String` - 链的运营者
-    * `genesisTimestamp`, `Integer` - 创世块时间戳
-    * `validators`, `[Data20]` - 验证者地址集合
-    * `blockInterval` `Integer` - 出块间隔
-    * `tokenName`, `String` - Token 名称
-    * `tokenSymbol`, `String` - Token 标识
-    * `tokenAvatar`, `String` - Token 标志
-    * `version`, `Integer` - 链版本
-    * `economicalModel`, `EconomicalModel` - 链经济模型
+    * `chainId` - `Integer` - `version < 1` 时的 `chain_id`
+    * `chainIdV1` - `Quantity` - `version > 1` 时的 `chain_id` 用来防止重放攻击，不同链的 chainId 建议设置为不同值
+    * `chainName` - `String` - 链名称 
+    * `operator` - `String` - 链的运营者
+    * `genesisTimestamp` - `Integer` - 创世块时间戳
+    * `validators` - `[Data20]` - 验证者地址集合
+    * `blockInterval` - `Integer` - 出块间隔
+    * `tokenName` - `String` - Token 名称
+    * `tokenSymbol` - `String` - Token 标识
+    * `tokenAvatar` - `String` - Token 标志
+    * `version` - `Integer` - 链版本
+    * `economicalModel` - `EconomicalModel` - 链经济模型
+    
+示例：
 
 Request:
 
@@ -35,28 +37,28 @@ Result:
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": {
-    "chainId": 0,
-    "chainIdV1": "0x1",
-    "chainName": "test-chain",
-    "operator": "test-operator",
-    "website": "https://www.example.com",
-    "genesisTimestamp": 1541058686340,
-    "validators": [
-      "0xc489d5cb6f497e4708cc8c3805473b9528f83c7a",
-      "0x497c68f02bbe335cc879356af120371ebf6cbc29",
-      "0x6fbb4c8bb76ace631d634545fe39cbee979dd08e",
-      "0x3c0f681e13f18b51d5350823eae45cb502231cf4"
-    ],
-    "blockInterval": 3000,
-    "tokenName": "CITA Test Token",
-    "tokenSymbol": "CTT",
-    "tokenAvatar": "https://cdn.citahub.com/icon_cita.png",
-    "version": 2,
-    "economicalModel": 1
-  }
+   "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "blockInterval": 3000,
+      "chainId": 0,
+      "chainIdV1": "0x1",
+      "chainName": "test-chain",
+      "economicalModel": 1,
+      "genesisTimestamp": 1541058686340,
+      "operator": "Rivtower",
+      "tokenAvatar": "https://cdn.citahub.com/icon_cita.png",
+      "tokenName": "CITA Test Token",
+      "tokenSymbol": "CTT",
+      "validators": [
+        "0xc489d5cb6f497e4708cc8c3805473b9528f83c7a",
+        "0x497c68f02bbe335cc879356af120371ebf6cbc29",
+        "0x6fbb4c8bb76ace631d634545fe39cbee979dd08e",
+        "0x3c0f681e13f18b51d5350823eae45cb502231cf4"
+      ],
+      "version": 2,
+      "website": "https://www.citahub.com"
+    }
 }
 ```
 ### 查看测试链创世块信息

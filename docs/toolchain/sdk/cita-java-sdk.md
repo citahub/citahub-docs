@@ -26,7 +26,7 @@ id: java-sdk
 通过 solc 生成智能合约的二进制文件，命令如下：
 
 ```
-$solc example.sol --bin
+$ solc example.sol --bin
 ```
 
 根据生成的二进制文件和其他3个参数构造一个交易，代码如下：
@@ -86,7 +86,7 @@ $ java -jar cita-sdk-20.2.0.jar solidity generate [--javaTypes|--solidityTypes] 
 这个例子通过 `Token.sol`，`Token.bin` and `Token.abi` 这三个文件在 `tests/src/main/resources` 生成对应的 java 类，命令如下：
 
 ```
-`java -jar build/libs/cita-sdk-20.2.0.jar solidity generate tests/src/main/resources/Token.bin tests/src/main/resources/Token.abi -o tests/src/main/java/ -p com.citahub.cita.tests`
+$ java -jar build/libs/cita-sdk-20.2.0.jar solidity generate tests/src/main/resources/Token.bin tests/src/main/resources/Token.abi -o tests/src/main/java/ -p com.citahub.cita.tests
 ```
 
 `Token.java` 会通过以上命令生成，`Token` 可以与 `CitaTransactionManager` 一起使用来和 Token 合约交互。

@@ -92,7 +92,7 @@
 <li>valid_until_block：超时机制，valid_until_block 可以定义的范围是 (currentHeight，currentHeight + 100]。交易在 <code>valid_until_block</code>之后会作废。</li>
 </ul>
 <p>以下是一个智能合约部署的例子。 通过 solc 生成智能合约的二进制文件，命令如下：</p>
-<pre><code class="hljs">$solc example.sol --bin
+<pre><code class="hljs">$ solc example.sol --bin
 </code></pre>
 <p>根据生成的二进制文件和其他3个参数构造一个交易，代码如下：</p>
 <pre><code class="hljs">String contractCode = &quot;6080604052600160005534801561001557600080fd5b5060df806100246000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058202dd6056ea84968f05202910ca070fe13f6f46ff5507867f313d9c98bf2d2e55c0029&quot;;
@@ -132,7 +132,7 @@ Transaction tx = Transaction.createFunctionCallTransaction(contractAddress, nonc
 <pre><code class="hljs">$ java -jar cita-sdk-20.2.0.jar solidity generate [--javaTypes|--solidityTypes] /path/to/{smart-contract}.bin /path/to/{smart-contract}.abi -o /path/to/src/main/java -p {package-path}
 </code></pre>
 <p>这个例子通过 <code>Token.sol</code>，<code>Token.bin</code> and <code>Token.abi</code> 这三个文件在 <code>tests/src/main/resources</code> 生成对应的 java 类，命令如下：</p>
-<pre><code class="hljs">`java -jar build/libs/cita-sdk-20.2.0.jar solidity generate tests/src/main/resources/Token.bin tests/src/main/resources/Token.abi -o tests/src/main/java/ -p com.citahub.cita.tests`
+<pre><code class="hljs">$ java -jar build/libs/cita-sdk-20.2.0.jar solidity generate tests/src/main/resources/Token.bin tests/src/main/resources/Token.abi -o tests/src/main/java/ -p com.citahub.cita.tests
 </code></pre>
 <p><code>Token.java</code> 会通过以上命令生成，<code>Token</code> 可以与 <code>CitaTransactionManager</code> 一起使用来和 Token 合约交互。</p>
 <h2><a class="anchor" aria-hidden="true" id="快速入门"></a><a href="#快速入门" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>快速入门</h2>

@@ -272,7 +272,7 @@ syntax = <span class="hljs-string">"proto3"</span>;
 </blockquote>
 <hr>
 <h3><a class="anchor" aria-hidden="true" id="getversion"></a><a href="#getversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getVersion</h3>
-<p>获取当前 CITA 软件的版本号，该接口设置了使能开关，需要在链创建时通过使能选项开启该功能，才能正常使用。详细查看<a href="../configuration-guide/chain-config">链级配置</a>中的 <code>--enable_version</code> 选项说明。</p>
+<p>获取当前 CITA 软件的版本号，默认关闭，如果使用需要在链创建时开启该功能。详细查看<a href="../configuration-guide/chain-config">链级配置</a>中的 <code>--enable_version</code> 选项说明。</p>
 <ul>
 <li>参数</li>
 </ul>
@@ -903,18 +903,18 @@ syntax = <span class="hljs-string">"proto3"</span>;
 <ul>
 <li><p>返回值</p>
 <ul>
-<li><code>chainId</code>, <code>Integer</code> - <code>version &lt; 1</code> 时的 <code>chain_id</code>, 用来防止重放攻击</li>
-<li><code>chainIdV1</code>, <code>Quantity</code> - <code>version &gt; 1</code> 时的 <code>chain_id</code></li>
-<li><code>chainName</code>, <code>String</code> - 链名称</li>
-<li><code>operator</code>, <code>String</code> - 链的运营者</li>
-<li><code>genesisTimestamp</code>, <code>Integer</code> - 创世块时间戳</li>
-<li><code>validators</code>, <code>[Data20]</code> - 验证者地址集合</li>
-<li><code>blockInterval</code> <code>Integer</code> - 出块间隔</li>
-<li><code>tokenName</code>, <code>String</code> - Token 名称</li>
-<li><code>tokenSymbol</code>, <code>String</code> - Token 标识</li>
-<li><code>tokenAvatar</code>, <code>String</code> - Token 标志</li>
-<li><code>version</code>, <code>Integer</code> - 链版本</li>
-<li><code>economicalModel</code>, <code>EconomicalModel</code> - 链经济模型</li>
+<li><code>chainId</code> - <code>Integer</code> - <code>version &lt; 1</code> 时的 <code>chain_id</code></li>
+<li><code>chainIdV1</code> - <code>Quantity</code> - <code>version &gt; 1</code> 时的 <code>chain_id</code> 用来防止重放攻击，不同链的 chainId 建议设置为不同值</li>
+<li><code>chainName</code> - <code>String</code> - 链名称</li>
+<li><code>operator</code> - <code>String</code> - 链的运营者</li>
+<li><code>genesisTimestamp</code> - <code>Integer</code> - 创世块时间戳</li>
+<li><code>validators</code> - <code>[Data20]</code> - 验证者地址集合</li>
+<li><code>blockInterval</code> - <code>Integer</code> - 出块间隔</li>
+<li><code>tokenName</code> - <code>String</code> - Token 名称</li>
+<li><code>tokenSymbol</code> - <code>String</code> - Token 标识</li>
+<li><code>tokenAvatar</code> - <code>String</code> - Token 标志</li>
+<li><code>version</code> - <code>Integer</code> - 链版本</li>
+<li><code>economicalModel</code> - <code>EconomicalModel</code> - 链经济模型</li>
 </ul></li>
 </ul>
 <p>示例：</p>

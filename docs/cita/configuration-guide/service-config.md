@@ -166,7 +166,7 @@ count_per_batch = 30
     - `listen_ip`：监听 IP 地址
 * `ws_config`：
     - `panic_on_internal`：出现内部错误的时候，是否退出，默认 true
-    - `fragments_grow`：当 fragments_capacity 达到时，是否重新分配，默认为 true
+    - `fragments_grow`：当连接处理的片段数达到fragments_capacity时，是否重新分配，默认为 true
     - `panic_on_protocol`：出现协议错误时，是否退出，默认 false
     - `enable`：默认开启
     - `in_buffer_capacity`：不动态增加情况下，输入缓存大小，默认 2048

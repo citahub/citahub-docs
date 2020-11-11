@@ -179,7 +179,7 @@ Rust 原生合约当前是随 CITA 直接启动的，并不像 Solidity 合约�
 }
 ```
 
-同时还需要在同目录下的代码 `mod.rs` 中加入 `hello` 的模块，使得可以编译进 CITA。
+同时还需要在同目录下的代码 `mod.rs` 中加入 `hello` 的模块，使得合约可以编译进 CITA。
 
 ```rust
 pub mod hello;

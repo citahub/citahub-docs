@@ -211,7 +211,7 @@ chain.toml  executor.toml   jsonrpc.toml       privkey
 确保你的链正常运行，进入 cita-cli 交互式模式，输入命令：
 
 ```shell
-$ scm SysConfig setChainName --chain-name "AAA" --admin-private \ 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+$ scm SysConfig setChainName --chain-name "AAA" --admin-private  0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
 查询交易回执无误后，我们成功的把链名称从默认的 `test-chain` 更改为 `AAA`。

@@ -141,7 +141,7 @@ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nod
 
 ### `--enable_version`
 
-是否使能 JSON-RPC 接口 `getVersion`。
+是否能使用 JSON-RPC 接口 `getVersion`。
 
 * 配置当前链是否能够通过 JSON-RPC 的 `getVersion` 接口来获得当前链的 CITA 软件版本号。不加此选项默认为不开启这个接口。
 * 创建链时加上此选项，会在 `test-chain/*/jsonrpc.toml` 配置文件中增加 `enable_version = true` 的配置项。

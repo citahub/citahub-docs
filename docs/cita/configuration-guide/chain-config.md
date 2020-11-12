@@ -141,7 +141,7 @@ bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nod
 
 ### `--enable_version`
 
-是否使能 JSON-RPC 接口 `getVersion`。
+是否能使用 JSON-RPC 接口 `getVersion`。
 
 * 配置当前链是否能够通过 JSON-RPC 的 `getVersion` 接口来获得当前链的 CITA 软件版本号。不加此选项默认为不开启这个接口。
 * 创建链时加上此选项，会在 `test-chain/*/jsonrpc.toml` 配置文件中增加 `enable_version = true` 的配置项。
@@ -211,7 +211,7 @@ chain.toml  executor.toml   jsonrpc.toml       privkey
 确保你的链正常运行，进入 cita-cli 交互式模式，输入命令：
 
 ```shell
-$ scm SysConfig setChainName --chain-name "AAA" --admin-private \ 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
+$ scm SysConfig setChainName --chain-name "AAA" --admin-private  0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6
 ```
 
 查询交易回执无误后，我们成功的把链名称从默认的 `test-chain` 更改为 `AAA`。

@@ -398,6 +398,7 @@ Object - 回执对象
 * Block quota limit reached - 达到块配额限制
 * Account quota limit reached - 达到账户配额限制
 * Out of quota - 配额不够
+* Cost of transaction exceeds sender balance - 账户余额不足
 * Jump position wasn't marked with JUMPDEST instruction - EVM 内部错误
 * Instruction is not supported - EVM 内部错误
 * Not enough stack elements to execute instruction - EVM 内部错误
@@ -1025,7 +1026,7 @@ Result：
 
     * `chainId` - `Integer` - `version < 1` 时的 `chain_id`
     * `chainIdV1` - `Quantity` - `version > 1` 时的 `chain_id` 用来防止重放攻击，不同链的 chainId 建议设置为不同值
-    * `chainName` - `String` - 链名称 
+    * `chainName` - `String` - 链名称
     * `operator` - `String` - 链的运营者
     * `genesisTimestamp` - `Integer` - 创世块时间戳
     * `validators` - `[Data20]` - 验证者地址集合

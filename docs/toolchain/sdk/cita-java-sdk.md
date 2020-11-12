@@ -9,7 +9,7 @@ id: java-sdk
 
 * 通过 HTTP 协议，实现了 CITA 所定义的所有 JSON-RPC 方法。
 * 可以通过 Solidity 智能合约生成该合约的 Java 类，方便开发者通过 Java 语言实现对智能合约的部署和合约方法的调用（支持 Solidity 和 Truffle 的格式）。
-* 适配安卓，CITA Android 版钱包 [Cyton Wallet Android](https://github.com/citahub/cyton-android) 就是基于 cita-sdk-java 开发实现的
+* 适配安卓，CITA Android 版多链客户端 [Cyton Wallet Android](https://github.com/citahub/cyton-android) 就是基于 cita-sdk-java 开发实现的
 * Java 版本：7 及其以上
 
 ## 功能简介

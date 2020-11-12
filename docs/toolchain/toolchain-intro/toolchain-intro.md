@@ -7,7 +7,7 @@ sidebar_label: Toolchain 简介
 ## 介绍
 
 CITA Toolchain 作为 CITA 生态中的重要组成部分，目的是使开发者在使用 CITA 或基于 CITA 构建应用时更加方便。
-跟 CITA 直接进行数据交互的有 CITA SDK、CITA CLI。CITA SDK 是 Toolchain 的核心，它将 CITA 上重复繁琐的操作进行封装，暴露简单的接口给开发者，开发者可借助此 SDK 构建应用，官方在 CITA SDK 基础上构建了 4 个工具：ReBirth、CITA IDE、CITA Truffle Box、CITA Web Debugger。CITA CLI 是一个非常友好的系统运维工具。除此之外我们还提供与 CITA 适配的钱包 Cyton 和浏览器 Microscope.
+跟 CITA 直接进行数据交互的有 CITA SDK、CITA CLI。CITA SDK 是 Toolchain 的核心，它将 CITA 上重复繁琐的操作进行封装，暴露简单的接口给开发者，开发者可借助此 SDK 构建应用，官方在 CITA SDK 基础上构建了 4 个工具：ReBirth、CITA IDE、CITA Truffle Box、CITA Web Debugger。CITA CLI 是一个非常友好的系统运维工具。除此之外我们还提供与 CITA 适配的多链客户端 Cyton 和浏览器 Microscope.
 
 ### CITA SDK
 

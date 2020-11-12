@@ -57,12 +57,12 @@ CITA Truffle Box 是基于 Truffle Box 定制的适配 CITA 的 DApp 全能开�
 
 CITA Web Debugger 是一个基于 Chrome 浏览器的插件，用于 DApp 调试。
 
-### Cyton Wallet | DApp 钱包
+### Cyton Wallet | DApp 多链客户端
 
 [![](https://img.shields.io/badge/Cyton(Android)-GitHub-lightgrey.svg)](https://github.com/citahub/cyton-android)
 [![](https://img.shields.io/badge/Cyton(iOS)-GitHub-lightgrey.svg)](https://github.com/citahub/cyton-ios)
 
-Cyton Wallet 分为 Android 版和 iOS 版，提供账户管理功能，Token 管理及转账功能，内置 DApp 浏览器功能，开发者可基于 Cyton Wallet 进行二次开发构建区块链钱包。
+Cyton Wallet 分为 Android 版和 iOS 版，提供账户管理功能，Token 管理及转账功能，内置 DApp 浏览器功能，开发者可基于 Cyton Wallet 进行二次开发构建区块链多链客户端。
 
 ### Microscope | 区块链浏览器
 

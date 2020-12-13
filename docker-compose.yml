@@ -1,8 +1,11 @@
 version: "3"
 
 services:
-  docusaurus:
-    build: .
+  
+  backend:
+    build: ./
+    image: citahub/docs
+    hostname: citahub-docs-backend
     ports:
       - 3000:3000
       - 35729:35729

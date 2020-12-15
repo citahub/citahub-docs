@@ -627,9 +627,9 @@ $ cita-cli scm NodeManager listNode --url http://127.0.0.1:1337
 
 * 参数
 
-    `address` - The node address to be setted.
+    `address` - The node address to be set.
 
-    `uint64` - The stake to be setted.
+    `uint64` - The stake to be set.
 
 * 返回值
 
@@ -884,9 +884,9 @@ $ cita-cli scm PermissionManagement deleteResources \
 
 * 参数
 
-    `address` - The account to be setted
+    `address` - The account to be set
 
-    `address[]` - The permissions to be setted
+    `address[]` - The permissions to be set
 
 * 返回值
 
@@ -908,9 +908,9 @@ $ cita-cli scm PermissionManagement setAuthorizations \
 
 * 参数
 
-    `address` - The account to be setted
+    `address` - The account to be set
 
-    `address` - The permission to be setted
+    `address` - The permission to be set
 
 * 返回值
 
@@ -1123,7 +1123,7 @@ $ cita-cli scm Permission queryResource --permission 0xca645d2b0d2e4c451a2dd546d
 
 * 参数
 
-    `uint` - The value to be setted
+    `uint` - The value to be set
 
 * 返回值
 
@@ -1165,7 +1165,8 @@ $ cita-cli scm QuotaManager setDefaultAQL \
 
 * 参数
 
-    `uint` - The value to be setted
+    `uint` - The value to be set
+    `address` - The account address to be set
 
 * 返回值
 
@@ -1176,13 +1177,14 @@ $ cita-cli scm QuotaManager setDefaultAQL \
 ```shell
 $ cita-cli scm QuotaManager setAQL \
     --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 \
+    --address 0x2a08afc9adf9d3e5c1c69d07085fb1f4e641ea02 \
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
     --url http://127.0.0.1:1337
 ```
 
 ### getAccounts
 
-查询所有指定账号。
+返回管理员地址和设置了setAQL的账户地址
 
 * 参数
 

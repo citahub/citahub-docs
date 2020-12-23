@@ -57,6 +57,8 @@ title: 数据订正
 ./cita-cli rpc getCode --address 0xa4691ea78dbc3c1fa5fcc78c67ffbffe8c6bdeb7 --url http://127.0.0.1:1337
 ```
 
+ > 注：如果新旧合约持久化数据的类型和顺序不变，可以通过 Amend 实现旧合约升级到新合约。
+
 ### Amend Balance
 
 示例：

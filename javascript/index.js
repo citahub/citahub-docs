@@ -41,7 +41,7 @@ const items = [
     width: "8%",
     height: "9%",
     logo: "https://www.citahub.com/images/component/tool_cyton.png",
-    title: "Cyton 多链钱包",
+    title: "Cyton 多链客户端",
     subTitle: ''
   },
   {

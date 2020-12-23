@@ -499,8 +499,8 @@
 <p>设置共识节点 stake 。</p>
 <ul>
 <li><p>参数</p>
-<p><code>address</code> - The node address to be setted.</p>
-<p><code>uint64</code> - The stake to be setted.</p></li>
+<p><code>address</code> - The node address to be set.</p>
+<p><code>uint64</code> - The stake to be set.</p></li>
 <li><p>返回值</p>
 <p><code>bool</code> - True, if successfully, otherwise false.</p></li>
 <li><p>示例</p></li>
@@ -680,8 +680,8 @@
 <p>多次授权。</p>
 <ul>
 <li><p>参数</p>
-<p><code>address</code> - The account to be setted</p>
-<p><code>address[]</code> - The permissions to be setted</p></li>
+<p><code>address</code> - The account to be set</p>
+<p><code>address[]</code> - The permissions to be set</p></li>
 <li><p>返回值</p>
 <p><code>bool</code> - True, if successfully, otherwise false.</p></li>
 <li><p>示例</p></li>
@@ -696,8 +696,8 @@
 <p>授权。</p>
 <ul>
 <li><p>参数</p>
-<p><code>address</code> - The account to be setted</p>
-<p><code>address</code> - The permission to be setted</p></li>
+<p><code>address</code> - The account to be set</p>
+<p><code>address</code> - The permission to be set</p></li>
 <li><p>返回值</p>
 <p><code>bool</code> - True, if successfully, otherwise false.</p></li>
 <li><p>示例</p></li>
@@ -836,7 +836,7 @@
 <p>设置区块配额上限。</p>
 <ul>
 <li><p>参数</p>
-<p><code>uint</code> - The value to be setted</p></li>
+<p><code>uint</code> - The value to be set</p></li>
 <li><p>返回值</p>
 <p><code>bool</code> - True, if successfully, otherwise false.</p></li>
 <li><p>示例</p></li>
@@ -864,18 +864,19 @@
 <p>设置指定账号配额上限。</p>
 <ul>
 <li><p>参数</p>
-<p><code>uint</code> - The value to be setted</p></li>
+<p><code>uint</code> - The value to be set <code>address</code> - The account address to be set</p></li>
 <li><p>返回值</p>
 <p><code>bool</code> - True, if successfully, otherwise false.</p></li>
 <li><p>示例</p></li>
 </ul>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli scm QuotaManager setAQL \</span>
     --quota-limit 0x0000000000000000000000000000000000000000000000000000000020000000 \
+    --address 0x2a08afc9adf9d3e5c1c69d07085fb1f4e641ea02 \
     --admin-private 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
     --url http://127.0.0.1:1337
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="getaccounts"></a><a href="#getaccounts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAccounts</h3>
-<p>查询所有指定账号。</p>
+<p>返回管理员地址和设置了setAQL的账户地址</p>
 <ul>
 <li><p>参数</p>
 <p>空</p></li>

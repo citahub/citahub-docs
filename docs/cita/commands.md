@@ -54,7 +54,7 @@ title: 命令说明
 
   `--enable_tls`：是否开通节点间通讯加密。需要与链的其它节点保持一致，否则无法通信。
 
-  `--enable_version`：是否使能 JSON-RPC 接口 `getVersion`。
+  `--enable_version`：是否能使用 JSON-RPC 接口 `getVersion`。
 
   `--stdout`：是否将 CITA 日志输出到标准输出。
 

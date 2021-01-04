@@ -24,14 +24,15 @@ title: 运行 CITA
    > * 注1：以上是简单的配置，系统会默认一些参数，更多自定义参数请见[链级配置]；
    > * 注2：以上操作是在一台服务器上部署 4 个 CITA 节点，如要将节点部署到多台服务器，初始化链时 --nodes 需要填写服务器真实 IP:PORT；
    > * 注3：如果未安装 CITA 的 Docker 环境，会自动拉取镜像，并启动 CITA 容器。
+   > * 注4：Linux中需设置安全配置为关闭;SELINUX=disabled
 
 ## 启动 CITA
 
 第一次启动 CITA 时需要使用 `setup` 命令初始化每个节点，之后重新启动不需要再次操作。
 更多信息可查看 `bin/cita help` 中 `setup` 部分。
 > * 注：setup 或 start 节点时，节点号后面存证多余的"/"， 会报错
-错误写法示例： 
-```shell 
+错误写法示例：
+```shell
 $ bin/cita setup test-chain/0/
 $ bin/cita start test-chain/0/
 ```

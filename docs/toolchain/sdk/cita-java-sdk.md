@@ -68,7 +68,9 @@ AppSendTransaction result = service.appSendRawTransaction(rawTx).send();
 
 ```
 //得到回执和回执中的合约部署地址
-String txHash = result.getSendTransactionResult().getHash();TransactionReceipt txReceipt = service.appGetTransactionReceipt(txHash).send().getTransactionReceipt();String contractAddress = txReceipt.getContractAddress();
+String txHash = result.getSendTransactionResult().getHash();
+TransactionReceipt txReceipt = service.appGetTransactionReceipt(txHash).send().getTransactionReceipt();
+String contractAddress = txReceipt.getContractAddress();
 //对交易签名并且发送
 Transaction tx = Transaction.createFunctionCallTransaction(contractAddress, nonce, quota, validUntilBlock, functionCallData);String rawTx = tx.sign(privateKey);String txHash =  service.appSendRawTransaction(rawTx).send().getSendTransactionResult().getHash();
 ```

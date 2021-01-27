@@ -31,6 +31,11 @@ $ bin/cita create --help
 
 * 安全起见，我们建议的流程是：先由每个共识节点单独生成各自的私钥和地址，私钥请务必由自己妥善保管；地址交由负责起链的超级管理员，通过该命令写到链上。起链后，生成的 `test-chain/*/privkey` 文件为空，由各节点独自将自己的私钥填写进来。
 * 没有传递参数的话，默认会自动生成对应节点数量的私钥/地址对：地址写到链上；私钥存放在各个节点的 `test-chain/*/privkey` 文件里。
+* authorities 参数输入的地址个数需要和创建节点的个数保持一致。
+示例：
+```shell
+bin/cita create --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523" --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003" --authorities  "0xdf1a8092cee9cda9f934d6b9a409d76ee7316157,0x20eee1af109ed45975ce2130663062e9b5ac14a6,0x05e6035013baba0b22b747eaf9c03b8b980642bf,0xf5d04f876eddf6bdb521ca7d66a0bf1c9504c111" 
+```
 
 ### `--chain_name`
 

@@ -135,7 +135,7 @@
       "cita/faq",
       "cita/glossary"
     ],
-    "CITA2.0": ["cita/cita2.0"],
+    "CITA2.0": ["cita2.0"],
     "Toolchain": [
       "toolchain/toolchain-intro/toolchain-intro",
       {

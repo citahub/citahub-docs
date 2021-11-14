@@ -115,20 +115,20 @@ $ ls 0
 </ul>
 <p>jsonrpc.toml 是 RPC 微服务的配置文件， CITA 支持 JsonRpc 和 Websocket 两种通信协议，该文件主要是协议配置相关。如下:</p>
 <pre><code class="hljs css language-toml"><span class="hljs-attr">backlog_capacity</span> = <span class="hljs-number">1000</span>
-<span class="hljs-section">
-[profile_config]</span>
+
+<span class="hljs-section">[profile_config]</span>
 <span class="hljs-attr">flag_prof_start</span> = <span class="hljs-number">0</span>
 <span class="hljs-attr">enable</span> = <span class="hljs-literal">false</span>
 <span class="hljs-attr">flag_prof_duration</span> = <span class="hljs-number">0</span>
-<span class="hljs-section">
-[http_config]</span>
+
+<span class="hljs-section">[http_config]</span>
 <span class="hljs-attr">allow_origin</span> = <span class="hljs-string">"*"</span>
 <span class="hljs-attr">timeout</span> = <span class="hljs-number">3</span>
 <span class="hljs-attr">enable</span> = <span class="hljs-literal">true</span>
 <span class="hljs-attr">listen_port</span> = <span class="hljs-string">"1337"</span>
 <span class="hljs-attr">listen_ip</span> = <span class="hljs-string">"0.0.0.0"</span>
-<span class="hljs-section">
-[ws_config]</span>
+
+<span class="hljs-section">[ws_config]</span>
 <span class="hljs-attr">panic_on_internal</span> = <span class="hljs-literal">true</span>
 <span class="hljs-attr">fragments_grow</span> = <span class="hljs-literal">true</span>
 <span class="hljs-attr">panic_on_protocol</span> = <span class="hljs-literal">false</span>
@@ -157,8 +157,8 @@ $ ls 0
 <span class="hljs-attr">in_buffer_grow</span> = <span class="hljs-literal">true</span>
 <span class="hljs-attr">panic_on_shutdown</span> = <span class="hljs-literal">false</span>
 <span class="hljs-attr">panic_on_encoding</span> = <span class="hljs-literal">false</span>
-<span class="hljs-section">
-[new_tx_flow_config]</span>
+
+<span class="hljs-section">[new_tx_flow_config]</span>
 <span class="hljs-attr">buffer_duration</span> = <span class="hljs-number">30000000</span>
 <span class="hljs-attr">count_per_batch</span> = <span class="hljs-number">30</span>
 </code></pre>
@@ -228,16 +228,16 @@ $ ls 0
 <span class="hljs-attr">max_connects</span> = <span class="hljs-number">100</span>
 <span class="hljs-attr">enable_discovery</span> = <span class="hljs-literal">true</span>
 <span class="hljs-attr">port</span> = <span class="hljs-number">4000</span>
-<span class="hljs-section">
-[[peers]]</span>
+
+<span class="hljs-section">[[peers]]</span>
 <span class="hljs-attr">ip</span> = <span class="hljs-string">"127.0.0.1"</span>
 <span class="hljs-attr">port</span> = <span class="hljs-number">4001</span>
-<span class="hljs-section">
-[[peers]]</span>
+
+<span class="hljs-section">[[peers]]</span>
 <span class="hljs-attr">ip</span> = <span class="hljs-string">"127.0.0.1"</span>
 <span class="hljs-attr">port</span> = <span class="hljs-number">4002</span>
-<span class="hljs-section">
-[[peers]]</span>
+
+<span class="hljs-section">[[peers]]</span>
 <span class="hljs-attr">ip</span> = <span class="hljs-string">"127.0.0.1"</span>
 <span class="hljs-attr">port</span> = <span class="hljs-number">4003</span>
 </code></pre>
@@ -268,44 +268,44 @@ $ ls 0
 <pre><code class="hljs css language-toml"><span class="hljs-attr">name</span>=<span class="hljs-string">"cita-forever"</span>
 <span class="hljs-attr">command</span> = <span class="hljs-string">"cita-forever"</span>
 <span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-forever.pid"</span>
-<span class="hljs-section">
-[[process]]</span>
+
+<span class="hljs-section">[[process]]</span>
 <span class="hljs-attr">name</span> = <span class="hljs-string">"cita-auth"</span>
 <span class="hljs-attr">command</span> = <span class="hljs-string">"cita-auth"</span>
 <span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"auth.toml"</span>]
 <span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-auth.pid"</span>
 <span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
-<span class="hljs-section">
-[[process]]</span>
+
+<span class="hljs-section">[[process]]</span>
 <span class="hljs-attr">name</span> = <span class="hljs-string">"cita-network"</span>
 <span class="hljs-attr">command</span> = <span class="hljs-string">"cita-network"</span>
 <span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"network.toml"</span>]
 <span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-network.pid"</span>
 <span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
-<span class="hljs-section">
-[[process]]</span>
+
+<span class="hljs-section">[[process]]</span>
 <span class="hljs-attr">name</span> = <span class="hljs-string">"cita-bft"</span>
 <span class="hljs-attr">command</span> = <span class="hljs-string">"cita-bft"</span>
 <span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"consensus.toml"</span>,<span class="hljs-string">"-p"</span>,<span class="hljs-string">"privkey"</span>]
 <span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-bft.pid"</span>
 <span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
-<span class="hljs-section">
-[[process]]</span>
+
+<span class="hljs-section">[[process]]</span>
 <span class="hljs-attr">name</span> = <span class="hljs-string">"cita-jsonrpc"</span>
 <span class="hljs-attr">command</span> = <span class="hljs-string">"cita-jsonrpc"</span>
 <span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"jsonrpc.toml"</span>]
 <span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-jsonrpc.pid"</span>
 <span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
-<span class="hljs-section">
 
-[[process]]</span>
+
+<span class="hljs-section">[[process]]</span>
 <span class="hljs-attr">name</span> = <span class="hljs-string">"cita-chain"</span>
 <span class="hljs-attr">command</span> = <span class="hljs-string">"cita-chain"</span>
 <span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"chain.toml"</span>]
 <span class="hljs-attr">pidfile</span> = <span class="hljs-string">".cita-chain.pid"</span>
 <span class="hljs-attr">respawn</span> = <span class="hljs-number">3</span>
-<span class="hljs-section">
-[[process]]</span>
+
+<span class="hljs-section">[[process]]</span>
 <span class="hljs-attr">name</span> = <span class="hljs-string">"cita-executor"</span>
 <span class="hljs-attr">command</span> = <span class="hljs-string">"cita-executor"</span>
 <span class="hljs-attr">args</span> = [<span class="hljs-string">"-c"</span>,<span class="hljs-string">"executor.toml"</span>]

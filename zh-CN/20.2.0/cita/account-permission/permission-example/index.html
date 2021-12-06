@@ -1,0 +1,412 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>权限系统使用示例 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="本次示例演示如何在 CITA 开启权限系统的情况下如何部署合约以及调用合约。
+"/><meta name="docsearch:version" content="20.2.0"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="权限系统使用示例 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="本次示例演示如何在 CITA 开启权限系统的情况下如何部署合约以及调用合约。
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>20.2.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/citahub/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/20.2.0/cita/account-permission/permission-example">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">权限系统使用示例</h1></header><article><div><span><p>本次示例演示如何在 CITA 开启权限系统的情况下如何部署合约以及调用合约。</p>
+<h2><a class="anchor" aria-hidden="true" id="修改系统配置"></a><a href="#修改系统配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>修改系统配置</h2>
+<p>通过以下命令生成配置文件(打开所有权限系统配置)：</p>
+<pre><code class="hljs css language-bash">$ bin/cita create \
+    --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> \
+    --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span> \
+    --contract_arguments SysConfig.checkCallPermission=<span class="hljs-literal">true</span> SysConfig.checkSendTxPermission=<span class="hljs-literal">true</span> SysConfig.checkCreateContractPermission=<span class="hljs-literal">true</span>
+</code></pre>
+<p>启动链接下来的步骤见<a href="../getting-started">快速搭链</a>部分。接下来的测试，用 <a href="https://github.com/cryptape/cita-cli">cita-cli</a> 命令行模式（与交互式模式的命令是一致的）进行演示。</p>
+<h2><a class="anchor" aria-hidden="true" id="生成普通账户"></a><a href="#生成普通账户" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成普通账户</h2>
+<pre><code class="hljs css language-bash">$ cita-cli key create
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x37d1c7449bfe76fe9c445e626da06265e9377601"</span>,
+  <span class="hljs-attr">"private"</span>: <span class="hljs-string">"0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002"</span>,
+  <span class="hljs-attr">"public"</span>: <span class="hljs-string">"0x9dc6fc7856f5271e6e8c45e5c5fe22d2ff699ac3b24497599be77803d3c25fb4e2fe7da616c65a291910c947c89923009f354634421bddd0a25cd0a509bcf6a9"</span>
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="部署合约"></a><a href="#部署合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署合约</h2>
+<p>使用<a href="https://github.com/cryptape/test-contracts/blob/master/SimpleStorage.sol">测试合约</a></p>
+<h3><a class="anchor" aria-hidden="true" id="获得合约的相关信息"></a><a href="#获得合约的相关信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获得合约的相关信息</h3>
+<ul>
+<li>字节码</li>
+</ul>
+<pre><code class="hljs css language-bash">$ solc SimpleStorage.sol --bin
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">======= SimpleStorage.sol:SimpleStorage =======
+Binary:
+608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029
+</code></pre>
+<ul>
+<li>函数签名</li>
+</ul>
+<pre><code class="hljs css language-bash">$ solc SimpleStorage.sol --hashes
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">======= SimpleStorage.sol:SimpleStorage =======
+Function signatures:
+6d4ce63c: get()
+60fe47b1: set(uint256)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="部署合约-1"></a><a href="#部署合约-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署合约</h3>
+<p>由于设置了权限的检查开关，所有用户默认是没有发交易及创建合约的权限的。首先需要通过 superAdmin 对其授 sendTx 发送交易及 createContract 创建合约权限。</p>
+<ul>
+<li>授予发送交易和创建合约权限</li>
+</ul>
+<p>发送交易权限地址为 <code>0xffffffffffffffffffffffffffffffffff021000</code>，创建合约权限地址为 <code>0xffffffffffffffffffffffffffffffffff021001</code></p>
+<p>由管理员进行操作。调用 <code>setAuthorizations</code>接口。</p>
+<pre><code class="hljs css language-bash">$ cita-cli scm PermissionManagement setAuthorizations \
+    --permissions <span class="hljs-string">'[ffffffffffffffffffffffffffffffffff021000,ffffffffffffffffffffffffffffffffff021001]'</span> \
+    --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
+    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x8addbd232737efb41e2aa45b481fe578b93f4bfb8dd6a971aad5e7593c3c47d2"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<p>查看 receipt 信息：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x8addbd232737efb41e2aa45b481fe578b93f4bfb8dd6a971aad5e7593c3c47d2 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x5956727ccb1de4876be148ef6fa54c764544cfd78cdc48b083603b40fbb71b8b"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x14"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x27a38"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x27a38"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020006"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x5956727ccb1de4876be148ef6fa54c764544cfd78cdc48b083603b40fbb71b8b"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x14"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0xef79a70821e438468db437d5f7401aecaf406a2cba3c7e7fd4339ef895dbb97e"</span>,
+          <span class="hljs-string">"0x00000000000000000000000037d1c7449bfe76fe9c445e626da06265e9377601"</span>,
+          <span class="hljs-string">"0x000000000000000000000000ffffffffffffffffffffffffffffffffff021000"</span>
+        ],
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x8addbd232737efb41e2aa45b481fe578b93f4bfb8dd6a971aad5e7593c3c47d2"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+      },
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020006"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x5956727ccb1de4876be148ef6fa54c764544cfd78cdc48b083603b40fbb71b8b"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x14"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x1"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0xef79a70821e438468db437d5f7401aecaf406a2cba3c7e7fd4339ef895dbb97e"</span>,
+          <span class="hljs-string">"0x00000000000000000000000037d1c7449bfe76fe9c445e626da06265e9377601"</span>,
+          <span class="hljs-string">"0x000000000000000000000000ffffffffffffffffffffffffffffffffff021001"</span>
+        ],
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x8addbd232737efb41e2aa45b481fe578b93f4bfb8dd6a971aad5e7593c3c47d2"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x1"</span>
+      }
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000400001000000200000000000000000000020000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000000000100000000000000000000000000000000000000008800080000000000000000000000002000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x8addbd232737efb41e2aa45b481fe578b93f4bfb8dd6a971aad5e7593c3c47d2"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>授予权限成功。</p>
+<ul>
+<li>部署合约</li>
+</ul>
+<p>由测试用户进行操作</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc sendRawTransaction \
+    --code 0x608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029 \
+    --private-key 0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<p>获取 receipt 信息：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x8cf225903eb7c49b0494f991941dcb4d401b2c51c321defa931914fb8f0aa87b"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0xf2"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-string">"0x5839153e0efe76efe0c974b728c4f49ca7ed75cc"</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0xaef9"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0xaef9"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>得到合约地址为 <code>0x5839153e0efe76efe0c974b728c4f49ca7ed75cc</code></p>
+<p>如果用户想要调用测试合约的接口，需要根据接口生成一个新的权限，然后由 admin 把权限赋予用户。</p>
+<h2><a class="anchor" aria-hidden="true" id="生成新的权限"></a><a href="#生成新的权限" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成新的权限</h2>
+<p>由管理员进行操作</p>
+<pre><code class="hljs css language-bash">$ cita-cli scm PermissionManagement newPermission \
+    --name 0000000000000000000000000000000000000000000000000000000060fe47b1 \
+    --contracts <span class="hljs-string">'[5839153e0efe76efe0c974b728c4f49ca7ed75cc]'</span> \
+    --<span class="hljs-keyword">function</span>-hashes <span class="hljs-string">'[60fe47b1]'</span> \
+    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x239fb9c6121d6c512e4b8e3422da378e6d329c4d5073fd7b83ee67d28cc89565"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<p>获取 receipt 信息：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x239fb9c6121d6c512e4b8e3422da378e6d329c4d5073fd7b83ee67d28cc89565 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xea33ec74f7ce12fae0a6c5df4137d3234e120a8c6cfd2c557052184409729c98"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x282"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x2290fe"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x2290fe"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xea33ec74f7ce12fae0a6c5df4137d3234e120a8c6cfd2c557052184409729c98"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x282"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000010000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc000000000000000000000000000000000000000000000000000000000000000160fe47b100000000000000000000000000000000000000000000000000000000"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0xb533e8b79dc7485ba7e4435e3395df911c1a3c767225941003d88a7812d216f7"</span>
+        ],
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x239fb9c6121d6c512e4b8e3422da378e6d329c4d5073fd7b83ee67d28cc89565"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+      },
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020005"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xea33ec74f7ce12fae0a6c5df4137d3234e120a8c6cfd2c557052184409729c98"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x282"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000010000000000000000000000005839153e0efe76efe0c974b728c4f49ca7ed75cc000000000000000000000000000000000000000000000000000000000000000160fe47b100000000000000000000000000000000000000000000000000000000"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x1"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x792f7322d94960c6e90863b5aef39075ca54620cfa13a822081d733f79c48f91"</span>,
+          <span class="hljs-string">"0x000000000000000000000000ca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000060fe47b1"</span>
+        ],
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x239fb9c6121d6c512e4b8e3422da378e6d329c4d5073fd7b83ee67d28cc89565"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x1"</span>
+      }
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000020000000000000000000000000000008000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000080000000000000000040000000000000000040000000000000000001000000000000000000000000000000000000000000000000008000000800000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000200000000000000000000000000000000000000000000000000000000000000000000100000000000000000000100000000000000000000000000000800000002000000000000100000000100000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x239fb9c6121d6c512e4b8e3422da378e6d329c4d5073fd7b83ee67d28cc89565"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>从 logs[0] 中获得新权限的地址为 <code>0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee</code></p>
+<h2><a class="anchor" aria-hidden="true" id="使用新权限"></a><a href="#使用新权限" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用新权限</h2>
+<h3><a class="anchor" aria-hidden="true" id="把新权限赋予测试用户"></a><a href="#把新权限赋予测试用户" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>把新权限赋予测试用户</h3>
+<p>由管理员进行操作。</p>
+<pre><code class="hljs css language-bash">$ cita-cli scm PermissionManagement setAuthorization \
+    --permission 0xca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee \
+    --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
+    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xc088f083c8ac7d89bd7056d09629f59c1f67cd6c97120807cee782c8200402e1"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<p>获取 receipt 信息：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0xc088f083c8ac7d89bd7056d09629f59c1f67cd6c97120807cee782c8200402e1 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xbaf441b79671f0333adf1511361d258dcc606b3ecc6c42ac04d7e31794e1726b"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x554"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x13587"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x13587"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xffffffffffffffffffffffffffffffffff020006"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xbaf441b79671f0333adf1511361d258dcc606b3ecc6c42ac04d7e31794e1726b"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x554"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0xef79a70821e438468db437d5f7401aecaf406a2cba3c7e7fd4339ef895dbb97e"</span>,
+          <span class="hljs-string">"0x00000000000000000000000037d1c7449bfe76fe9c445e626da06265e9377601"</span>,
+          <span class="hljs-string">"0x000000000000000000000000ca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee"</span>
+        ],
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xc088f083c8ac7d89bd7056d09629f59c1f67cd6c97120807cee782c8200402e1"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+      }
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400001000004200000000000000000000020000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000900080000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xc088f083c8ac7d89bd7056d09629f59c1f67cd6c97120807cee782c8200402e1"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询账户权限"></a><a href="#查询账户权限" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询账户权限</h3>
+<p>查询测试账号的权限：</p>
+<pre><code class="hljs css language-bash">$ cita-cli scm Authorization queryPermissions \
+    --account 0x37d1c7449bfe76fe9c445e626da06265e9377601 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000003000000000000000000000000ffffffffffffffffffffffffffffffffff021000000000000000000000000000ffffffffffffffffffffffffffffffffff021001000000000000000000000000ca645d2b0d2e4c451a2dd546dbd7ab8c29c3dcee"</span>
+}
+</code></pre>
+<p>已经可以看到新添加的权限了。</p>
+<h2><a class="anchor" aria-hidden="true" id="调用测试合约"></a><a href="#调用测试合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用测试合约</h2>
+<p>调用测试合约 set 方法，传入参数为 1 ：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc sendRawTransaction \
+    --code 0x60fe47b10000000000000000000000000000000000000000000000000000000000000001 \
+    --private-key 0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002 \
+    --address 0x5839153e0efe76efe0c974b728c4f49ca7ed75cc \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<p>查看 receipt 信息：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x2984cd1ad2beaf267d3bff78e8dcb64bbf75bcc9721007d0f2a7c4a01ac68a1b"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x152e"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x4f51"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x4f51"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>从 <code>errorMessage</code> 中已经可以看出交易成功了。</p>
+<p>通过调用 get 方法查询结果：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc call \
+    --to 0x5839153e0efe76efe0c974b728c4f49ca7ed75cc \
+    --data 0x6d4ce63c \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000001"</span>
+}
+</code></pre>
+<p>可以看出结果已经是 1 了。</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#修改系统配置">修改系统配置</a></li><li><a href="#生成普通账户">生成普通账户</a></li><li><a href="#部署合约">部署合约</a><ul class="toc-headings"><li><a href="#获得合约的相关信息">获得合约的相关信息</a></li><li><a href="#部署合约-1">部署合约</a></li></ul></li><li><a href="#生成新的权限">生成新的权限</a></li><li><a href="#使用新权限">使用新权限</a><ul class="toc-headings"><li><a href="#把新权限赋予测试用户">把新权限赋予测试用户</a></li><li><a href="#查询账户权限">查询账户权限</a></li></ul></li><li><a href="#调用测试合约">调用测试合约</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2021 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:zh-CN","version:20.2.0"]}
+              });
+            </script></body></html>

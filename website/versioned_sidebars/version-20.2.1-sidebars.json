@@ -1,0 +1,229 @@
+{
+  "version-20.2.1-docs": {
+    "Welcome": [
+      "version-20.2.1-welcome"
+    ],
+    "CITA": [
+      "version-20.2.1-cita/cita-intro",
+      {
+        "label": "Getting Started",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/getting-started/setup",
+          "version-20.2.1-cita/getting-started/run-cli",
+          "version-20.2.1-cita/getting-started/run-cita",
+          "version-20.2.1-cita/getting-started/basic-usage"
+        ]
+      },
+      {
+        "label": "Configuration Guide",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/configuration-guide/chain-config",
+          "version-20.2.1-cita/configuration-guide/service-config",
+          "version-20.2.1-cita/configuration-guide/algorithm-config"
+        ]
+      },
+      "version-20.2.1-cita/install",
+      {
+        "label": "Upgrade Guide",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/upgrade/upgrade-overview",
+          "version-20.2.1-cita/upgrade/software-upgrade",
+          "version-20.2.1-cita/upgrade/protocol-upgrade"
+        ]
+      },
+      "version-20.2.1-cita/commands",
+      {
+        "label": "Node Management",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/node/node-intro",
+          "version-20.2.1-cita/node/ordi-node",
+          "version-20.2.1-cita/node/cons-node"
+        ]
+      },
+      {
+        "label": "Economics Model",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/economics/model",
+          "version-20.2.1-cita/economics/quotalimit",
+          "version-20.2.1-cita/economics/quota",
+          "version-20.2.1-cita/economics/charge"
+        ]
+      },
+      {
+        "label": "Account & Permission",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/account-permission/account",
+          "version-20.2.1-cita/account-permission/permission",
+          "version-20.2.1-cita/account-permission/permission-extend"
+        ]
+      },
+      {
+        "label": "Privacy Protection",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/privacy/privacy-intro",
+          "version-20.2.1-cita/privacy/crosschain-contract-example"
+        ]
+      },
+      {
+        "label": "Special Govern",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/special-govern/emg-brake",
+          "version-20.2.1-cita/special-govern/amend"
+        ]
+      },
+      {
+        "label": "Data Management",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/data/sync",
+          "version-20.2.1-cita/data/migration",
+          "version-20.2.1-cita/data/snapshot"
+        ]
+      },
+      "version-20.2.1-cita/store",
+      {
+        "label": "Advanced Use",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/advanced-use/contracts/solidity",
+          "version-20.2.1-cita/advanced-use/contracts/rust",
+          "version-20.2.1-cita/advanced-use/auto-exec",
+          "version-20.2.1-cita/advanced-use/chain-gov",
+          "version-20.2.1-cita/advanced-use/contracts/batch-tx"
+        ]
+      },
+      {
+        "label": "Ops",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/ops/log",
+          "version-20.2.1-cita/ops/exception-handle",
+          "version-20.2.1-cita/ops/service-monitor"
+        ]
+      },
+      {
+        "label": "Architecture",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/architecture/architecture",
+          "version-20.2.1-cita/architecture/comp",
+          "version-20.2.1-cita/architecture/cons",
+          "version-20.2.1-cita/architecture/transaction-process",
+          "version-20.2.1-cita/architecture/view"
+        ]
+      },
+      {
+        "label": "JSON-RPC",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/rpc-guide/rpc",
+          "version-20.2.1-cita/rpc-guide/rpc-types",
+          "version-20.2.1-cita/rpc-guide/rpc-error-code"
+        ]
+      },
+      {
+        "label": "System Contract Interface",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-cita/sys-contract-interface/interface",
+          "version-20.2.1-cita/sys-contract-interface/error"
+        ]
+      },
+      "version-20.2.1-cita/addresses",
+      "version-20.2.1-cita/faq",
+      "version-20.2.1-cita/glossary"
+    ],
+    "CITA2.0": [
+      "version-20.2.1-cita2.0"
+    ],
+    "Toolchain": [
+      "version-20.2.1-toolchain/toolchain-intro/toolchain-intro",
+      {
+        "label": "CITA-CLI",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/cli/cli-intro"
+        ]
+      },
+      {
+        "label": "SDK",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/sdk/javascript-sdk",
+          "version-20.2.1-toolchain/sdk/java-sdk",
+          "version-20.2.1-toolchain/sdk/swift-sdk",
+          "version-20.2.1-toolchain/sdk/ruby-sdk",
+          "version-20.2.1-toolchain/sdk/rust-sdk"
+        ]
+      },
+      {
+        "label": "ReBirth",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/rebirth/rebirth-intro"
+        ]
+      },
+      {
+        "label": "Cyton",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/cyton/cyton-intro"
+        ]
+      },
+      {
+        "label": "Microscope",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/microscope/microscope-intro"
+        ]
+      },
+      {
+        "label": "CITA IDE",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/ide/ide-intro"
+        ]
+      },
+      {
+        "label": "CITA Truffle Box",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/truffle-box/truffle-box-intro"
+        ]
+      },
+      {
+        "label": "CITA Web Debugger",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/web-debugger/web-debugger-intro"
+        ]
+      },
+      {
+        "label": "CITA Testnet",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/testnet/testchain"
+        ]
+      },
+      {
+        "label": "CITA Monitor",
+        "type": "subcategory",
+        "ids": [
+          "version-20.2.1-toolchain/monitor/monitor-intro",
+          "version-20.2.1-toolchain/monitor/monitor-start"
+        ]
+      }
+    ],
+    "Contributing": [
+      "version-20.2.1-contributing"
+    ]
+  }
+}

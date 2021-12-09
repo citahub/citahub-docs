@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>cita2.0/runner-local · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="本地运行
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="cita2.0/runner-local · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="本地运行
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/citahub/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/></a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/next/cita2.0/runner-local">English</a></li><li><a href="/zh-CN/next/cita2.0/runner-local">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA2.0</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            // var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              // if (checkActiveCategory){
+              //   for (var j = 0; j < links.length; j++) {
+              //     if (links[j].classList.contains('navListItemActive')){
+              //       coll[i].nextElementSibling.classList.toggle('hide');
+              //       coll[i].childNodes[1].classList.toggle('rotate');
+              //       checkActiveCategory = false;
+              //       break;
+              //     }
+              //   }
+              // }
+              // keep subcategory open if necessary hacked by wu 2019-06-10
+              for (var j = 0; j < links.length; j++) {
+                if (links[j].classList.contains('navListItemActive')){
+                  coll[i].nextElementSibling.classList.toggle('hide');
+                  coll[i].childNodes[1].classList.toggle('rotate');
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/citahub/edit/master/docs/cita2.0/runner-local.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">cita2.0/runner-local</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="本地运行"></a><a href="#本地运行" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>本地运行</h1>
+<p><a href="https://github.com/cita-cloud/runner_local">runner_local</a>是CITA2.0的本地运行版本，可以方便不熟悉k8s运行环境的用户在本地体验CITA2.0。</p>
+<h2><a class="anchor" aria-hidden="true" id="获取工程及子模块文件"></a><a href="#获取工程及子模块文件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取工程及子模块文件</h2>
+<ul>
+<li>首先使用<code>git clone</code>命令获取<code>runner_local</code>文件，命令如下：</li>
+</ul>
+<pre><code class="hljs">$ git <span class="hljs-keyword">clone</span> <span class="hljs-title">git</span>@github.com:cita-cloud/runner_local.git
+</code></pre>
+<ul>
+<li><p>使用<code>git checkout</code>切换到需要使用的版本分支。</p></li>
+<li><p>适用以下命令获取runner_local中的各个子模块</p></li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">$</span> <span class="hljs-comment">git</span> <span class="hljs-comment">submodule</span> <span class="hljs-comment">update</span> --<span class="hljs-comment">init</span> --<span class="hljs-comment">remote</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="生成配置"></a><a href="#生成配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成配置</h2>
+<p>使用<a href="https://github.com/cita-cloud/cloud-config">cloud-config</a>生成链的配置文件。</p>
+<ul>
+<li>安装依赖</li>
+</ul>
+<pre><code class="hljs">$ curl --proto <span class="hljs-string">'=https'</span> --tlsv1.<span class="hljs-number">2</span> -sSf http<span class="hljs-variable">s:</span>//<span class="hljs-keyword">sh</span>.rustup.rs | <span class="hljs-keyword">sh</span>
+
+$ apt install -<span class="hljs-keyword">y</span> --<span class="hljs-keyword">no</span>-install-recommends <span class="hljs-keyword">make</span> git protobuf-<span class="hljs-keyword">compiler</span> libssl-dev pkg-config clang
+</code></pre>
+<ul>
+<li>安装<code>cloud-config</code></li>
+</ul>
+<pre><code class="hljs">$ cargo install --path<span class="hljs-built_in"> config
+</span></code></pre>
+<ul>
+<li>使用<code>cloud-config create-dev</code>命令生成配置</li>
+</ul>
+<pre><code class="hljs">$ cloud-config create-dev --help
+cloud-config-create-dev
+
+create<span class="hljs-built_in"> config </span><span class="hljs-keyword">in</span> env dev
+
+USAGE:
+    cloud-config create-dev [FLAGS] [OPTIONS]
+
+FLAGS:
+    -h, --help       <span class="hljs-builtin-name">Print</span> help information
+        --is-bft     is consensus bft
+        --is-tls     is<span class="hljs-built_in"> network </span>tls
+    -V, --version    <span class="hljs-builtin-name">Print</span> version information
+
+OPTIONS:
+    --chain-name &lt;CHAIN_NAME&gt;      <span class="hljs-builtin-name">set</span> chain name [default: test-chain]
+    --config-dir &lt;CONFIG_DIR&gt;      <span class="hljs-builtin-name">set</span><span class="hljs-built_in"> config </span>file directory,<span class="hljs-built_in"> default </span>means current directory[default: .]
+    --log-level &lt;LOG_LEVEL&gt;        log level [default: <span class="hljs-builtin-name">info</span>]
+    --peers-count &lt;PEERS_COUNT&gt;    <span class="hljs-builtin-name">set</span> initial node number [default: 4]
+</code></pre>
+<pre><code class="hljs">$ <span class="hljs-string">cloud-config </span><span class="hljs-built_in">create-dev</span> <span class="hljs-built_in">--is-bft</span> <span class="hljs-built_in">--config-dir</span> <span class="hljs-string">tmp
+</span></code></pre>
+<ul>
+<li>查看生成的配置</li>
+</ul>
+<pre><code class="hljs">$ tree tmp/ -L <span class="hljs-number">1</span>
+tmp
+├── test-chain
+├── test-chain<span class="hljs-number">-0</span>
+├── test-chain<span class="hljs-number">-1</span>
+├── test-chain<span class="hljs-number">-2</span>
+└── test-chain<span class="hljs-number">-3</span>
+
+<span class="hljs-number">5</span> directories, <span class="hljs-number">0</span> files
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="编译和使用"></a><a href="#编译和使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编译和使用</h2>
+<p>编译工程</p>
+<pre><code class="hljs">$ make <span class="hljs-built_in">release</span>
+</code></pre>
+<p>编译的二进制和配置文件会放到 target/install 目录下，编译完成后切换至该目录。</p>
+<pre><code class="hljs">$ cd <span class="hljs-keyword">target</span>/<span class="hljs-keyword">install</span>
+</code></pre>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>在使用前请先参阅<code>快速入门</code>-<code>环境准备</code>-<code>cloud-cli</code>，安装<code>CITA2.0</code>命令行工具<code>cloud-cli</code>，可以方便地对链进行常用操作。</p>
+</blockquote>
+<ul>
+<li>启动链</li>
+</ul>
+<pre><code class="hljs">$ ./scripts/env.sh <span class="hljs-keyword">start</span> config/<span class="hljs-keyword">test</span>-<span class="hljs-keyword">chain</span><span class="hljs-number">-0</span> <span class="hljs-number">50000</span> &amp;&amp; ./scripts/env.sh <span class="hljs-keyword">start</span> config/<span class="hljs-keyword">test</span>-<span class="hljs-keyword">chain</span><span class="hljs-number">-1</span> <span class="hljs-number">51000</span> &amp;&amp; ./scripts/env.sh <span class="hljs-keyword">start</span> config/<span class="hljs-keyword">test</span>-<span class="hljs-keyword">chain</span><span class="hljs-number">-2</span> <span class="hljs-number">52000</span> &amp;&amp; ./scripts/env.sh <span class="hljs-keyword">start</span> config/<span class="hljs-keyword">test</span>-<span class="hljs-keyword">chain</span><span class="hljs-number">-3</span> <span class="hljs-number">53000</span>
+</code></pre>
+<p>启动成功后就可以使用<code>cloud-cli</code>与链进行交互了，链的操作与使用<code>k8s</code>运行的<code>CITA2.0</code>一样，参阅<code>快速入门</code>中<code>基本操作</code>、<code>账户操作</code>、<code>发送交易</code>三节。</p>
+<ul>
+<li>停止链</li>
+</ul>
+<pre><code class="hljs">$ ./scripts/env.<span class="hljs-keyword">sh</span> <span class="hljs-keyword">stop</span>
+</code></pre>
+<ul>
+<li>删除链文件</li>
+</ul>
+<pre><code class="hljs">$ ./scripts/env.<span class="hljs-keyword">sh</span> clean config/<span class="hljs-keyword">test</span>-chain-0 &amp;&amp; ./scripts/env.<span class="hljs-keyword">sh</span> clean config/<span class="hljs-keyword">test</span>-chain-1 &amp;&amp; ./scripts/env.<span class="hljs-keyword">sh</span> clean config/<span class="hljs-keyword">test</span>-chain-2 &amp;&amp; ./scripts/env.<span class="hljs-keyword">sh</span> clean config/<span class="hljs-keyword">test</span>-chain-3
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/en/next/cita2.0/getting-started/send-transaction"><span class="arrow-prev">← </span><span>发送交易</span></a><a class="docs-next button" href="/en/next/cita2.0/getting-started/environmental-preparation"><span>环境准备</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#获取工程及子模块文件">获取工程及子模块文件</a></li><li><a href="#生成配置">生成配置</a></li><li><a href="#编译和使用">编译和使用</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2021 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en","version:next"]}
+              });
+            </script></body></html>

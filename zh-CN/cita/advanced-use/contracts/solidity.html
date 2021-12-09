@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Solidity 合约开发 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="CITA 是兼容 EVM 的，所以支持使用 Solidity 编写智能合约。 目前支持的 Solidity 版本为：
+"/><meta name="docsearch:version" content="20.2.1"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="Solidity 合约开发 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="CITA 是兼容 EVM 的，所以支持使用 Solidity 编写智能合约。 目前支持的 Solidity 版本为：
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>20.2.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/citahub/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/cita/advanced-use/contracts/solidity">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/welcome">CITAHub 文档概览</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/cita-intro">关于 CITA</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">快速入门<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/getting-started/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/getting-started/run-cli">运行 cita-cli</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/getting-started/run-cita">运行 CITA</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/getting-started/basic-usage">基本操作</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">配置说明<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/configuration-guide/chain-config">链级配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/configuration-guide/service-config">微服务配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/configuration-guide/algorithm-config">Algorithm Config</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/cita/install">部署指南</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">升级说明<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/upgrade/upgrade-overview">升级概述</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/upgrade/software-upgrade">软件升级</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/upgrade/protocol-upgrade">协议升级</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/cita/commands">命令说明</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">节点管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/node/node-intro">节点分类</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/node/ordi-node">普通节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/node/cons-node">共识节点管理</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">经济模型<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/economics/model">选择经济模型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/economics/quotalimit">设置 Quota Limit</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/economics/quota">配额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/economics/charge">Charge 模式</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">账户与权限管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/account-permission/account">账户系统</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/account-permission/permission">权限系统</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/account-permission/permission-extend">权限系统插件</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">隐私保护<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/privacy/privacy-intro">隐私保护概述</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/privacy/crosschain-contract-example">侧链</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">特殊治理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/special-govern/emg-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/special-govern/amend">数据订正</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">数据管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/data/sync">数据同步</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/data/migration">数据迁移</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/data/snapshot">快照</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/cita/store">存证</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">进阶使用<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/cita/advanced-use/contracts/solidity">Solidity 合约开发</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/advanced-use/contracts/rust">Rust 原生合约开发</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/advanced-use/auto-exec">自动执行</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/advanced-use/chain-gov">Chain Gov</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/advanced-use/contracts/batch-tx">批量交易</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">运维<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/ops/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/ops/exception-handle">异常排查</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/ops/service-monitor">Service Monitor</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">架构设计<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/architecture">系统架构</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/comp">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/cons">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/architecture/view">视图</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">JSON RPC<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/rpc-guide/rpc">JSON-RPC 列表</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/rpc-guide/rpc-types">JSON-RPC 类型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/rpc-guide/rpc-error-code">JSON-RPC 错误码</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">系统合约接口<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita/sys-contract-interface/interface">接口列表</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/sys-contract-interface/error">错误类型</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/cita/addresses">系统保留地址</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/cita/glossary">词汇表</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA2.0<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/cita2.0">关于 CITA2.0</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/toolchain-intro/toolchain-intro">Toolchain 简介</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA-CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/cli/cli-intro">CITA-CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">SDK<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/javascript-sdk">Javascript Sdk</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/java-sdk">Java Sdk</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/swift-sdk">Swift Sdk</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/ruby-sdk">Ruby Sdk</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/sdk/rust-sdk">Rust Sdk</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">ReBirth<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/rebirth/rebirth-intro">ReBirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">Cyton<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">Microscope<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA IDE<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA Truffle Box<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA Web Debugger<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/web-debugger/web-debugger-intro">CITA Web Debugger 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA Testnet<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/testnet/testchain">测试链</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA Monitor<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/monitor/monitor-intro">简介</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/toolchain/monitor/monitor-start">快速入门</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/contributing">贡献代码</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            // var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              // if (checkActiveCategory){
+              //   for (var j = 0; j < links.length; j++) {
+              //     if (links[j].classList.contains('navListItemActive')){
+              //       coll[i].nextElementSibling.classList.toggle('hide');
+              //       coll[i].childNodes[1].classList.toggle('rotate');
+              //       checkActiveCategory = false;
+              //       break;
+              //     }
+              //   }
+              // }
+              // keep subcategory open if necessary hacked by wu 2019-06-10
+              for (var j = 0; j < links.length; j++) {
+                if (links[j].classList.contains('navListItemActive')){
+                  coll[i].nextElementSibling.classList.toggle('hide');
+                  coll[i].childNodes[1].classList.toggle('rotate');
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Solidity 合约开发</h1></header><article><div><span><p>CITA 是兼容 EVM 的，所以支持使用 Solidity 编写智能合约。 目前支持的 Solidity 版本为：</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">Version</span>: 0<span class="hljs-selector-class">.4</span><span class="hljs-selector-class">.24</span>+<span class="hljs-selector-tag">commit</span><span class="hljs-selector-class">.e67f0147</span><span class="hljs-selector-class">.Linux</span><span class="hljs-selector-class">.g</span>++
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="编写"></a><a href="#编写" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编写</h2>
+<p>合约的编写可参考 <a href="https://solidity.readthedocs.io/en/v0.4.24/">Solidity 官方文档</a>。</p>
+<h2><a class="anchor" aria-hidden="true" id="编译"></a><a href="#编译" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编译</h2>
+<ul>
+<li><p>参考 <a href="https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html">Solidity 编译器安装</a>安装 <code>v0.24.0</code> 版本。成功后查询版本号：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> solc --version</span>
+</code></pre></li>
+<li><p>CITA 的 build 镜像也集成了 Solidity 编译器，下载 CITA 源码后可查询版本号：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./env.sh solc --version</span>
+</code></pre></li>
+</ul>
+<p>本文档使用<a href="https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol">测试合约 SimpleStorage.sol</a>来演示合约在 CITA 上的部署和调用过程。</p>
+<h2><a class="anchor" aria-hidden="true" id="准备工作"></a><a href="#准备工作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>准备工作</h2>
+<h3><a class="anchor" aria-hidden="true" id="起链"></a><a href="#起链" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>起链</h3>
+<p>查看<a href="../../getting-started/setup">快速入门</a>启动一条链。</p>
+<h3><a class="anchor" aria-hidden="true" id="生成账户"></a><a href="#生成账户" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成账户</h3>
+<p>使用 <a href="https://github.com/citahub/cita-cli">cita-cli</a> 生成一个测试账户：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cita-cli key create</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x37d1c7449bfe76fe9c445e626da06265e9377601"</span>,
+  <span class="hljs-attr">"private"</span>: <span class="hljs-string">"0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002"</span>,
+  <span class="hljs-attr">"public"</span>: <span class="hljs-string">"0x9dc6fc7856f5271e6e8c45e5c5fe22d2ff699ac3b24497599be77803d3c25fb4e2fe7da616c65a291910c947c89923009f354634421bddd0a25cd0a509bcf6a9"</span>
+}
+</code></pre>
+<p>也可使用其他方式生成。</p>
+<p><strong>注意：私钥与链一致，默认是 secp256k1</strong></p>
+<h3><a class="anchor" aria-hidden="true" id="获得合约的相关信息"></a><a href="#获得合约的相关信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获得合约的相关信息</h3>
+<p>使用 <code>solc</code> 命令得到一些部署和调用需要的信息：</p>
+<ul>
+<li><p>字节码</p>
+<p>部署合约需要字节码信息。</p>
+<pre><code class="hljs css language-bash">$ solc SimpleStorage.sol --bin
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">======= SimpleStorage.sol:SimpleStorage =======
+Binary:
+<span class="hljs-number">608060405234801561001057600080</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">5060</span>df<span class="hljs-number">8061001</span>f<span class="hljs-number">6000396000</span>f<span class="hljs-number">3006080604052600436106049576000357</span><span class="hljs-keyword">c</span><span class="hljs-number">0100000000000000000000000000000000000000000000000000000000900463</span>ffffffff<span class="hljs-number">16806360</span>fe<span class="hljs-number">47</span>b<span class="hljs-number">114604e5780636</span>d<span class="hljs-number">4</span>ce<span class="hljs-number">63</span><span class="hljs-keyword">c</span><span class="hljs-number">146078575</span>b<span class="hljs-number">600080</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">348015605957600080</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">5060766004803603810190808035906020019092919050505060</span>a<span class="hljs-number">0565</span>b<span class="hljs-number">005</span>b<span class="hljs-number">348015608357600080</span>fd<span class="hljs-number">5</span>b<span class="hljs-number">50608</span>a<span class="hljs-number">60</span>aa<span class="hljs-number">565</span>b<span class="hljs-number">6040518082815260200191505060405180910390</span>f<span class="hljs-number">35</span>b<span class="hljs-number">8060008190555050565</span>b<span class="hljs-number">600080549050905600</span>a<span class="hljs-number">165627</span>a<span class="hljs-number">7</span>a<span class="hljs-number">723058205</span>aed<span class="hljs-number">214856</span>a<span class="hljs-number">5</span><span class="hljs-keyword">c</span><span class="hljs-number">433292</span>a<span class="hljs-number">354261</span><span class="hljs-keyword">c</span><span class="hljs-number">9</span>eb<span class="hljs-number">88</span>eed<span class="hljs-number">1396</span><span class="hljs-keyword">c</span><span class="hljs-number">83</span>dabbe<span class="hljs-number">105</span>bde<span class="hljs-number">142e49838</span>ac<span class="hljs-number">0029</span>
+</code></pre></li>
+<li><p>函数签名</p>
+<p>调用合约需要函数签名信息。</p>
+<pre><code class="hljs css language-bash">$ solc SimpleStorage.sol --hashes
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs">======= SimpleStorage.<span class="hljs-keyword">so</span><span class="hljs-variable">l:SimpleStorage</span> =======
+Function signature<span class="hljs-variable">s:</span>
+<span class="hljs-number">6</span>d4ce63c: <span class="hljs-built_in">get</span>()
+<span class="hljs-number">60</span>fe47b1: <span class="hljs-keyword">set</span>(uint256)
+</code></pre></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="合约"></a><a href="#合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约</h2>
+<p>由测试用户进行操作：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc sendRawTransaction \
+    --code 0x608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205aed214856a5c433292a354261c9eb88eed1396c83dabbe105bde142e49838ac0029 \
+    --private-key 0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<p>获取 receipt 信息：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x8cf225903eb7c49b0494f991941dcb4d401b2c51c321defa931914fb8f0aa87b"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0xf2"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-string">"0x5839153e0efe76efe0c974b728c4f49ca7ed75cc"</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0xaef9"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0xaef9"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x8bca970a8836f291ca86d33beccb147c3d7b04b361589d41bd928db683d731aa"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>得到合约地址为 <code>0x5839153e0efe76efe0c974b728c4f49ca7ed75cc</code></p>
+<h2><a class="anchor" aria-hidden="true" id="调用"></a><a href="#调用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用</h2>
+<h3><a class="anchor" aria-hidden="true" id="调用-set-函数"></a><a href="#调用-set-函数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用 set 函数</h3>
+<p>如上操作：<a href="./solidity#获得合约的相关信息">函数签名</a></p>
+<pre><code class="hljs"><span class="hljs-number">60fe47</span>b1: <span class="hljs-keyword">set</span>(<span class="hljs-built_in">uint</span>256)
+</code></pre>
+<p>调用测试合约 SimpleStorage.sol set 方法类型为 uint256 转为十六进制形式表示为 64位，传入参数 1： 传入值结果为：0000000000000000000000000000000000000000000000000000000000000001； code 结果为 方法签名 + 传入值，即 0x60fe47b10000000000000000000000000000000000000000000000000000000000000001。</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc sendRawTransaction \
+    --code 0x60fe47b10000000000000000000000000000000000000000000000000000000000000001 \
+    --private-key 0x3ef2627393529fed043c7dbfd9358a4ae47a88a59949b07e7631722fd6959002 \
+    --address 0x5839153e0efe76efe0c974b728c4f49ca7ed75cc \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<p>查看 receipt 信息：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x2984cd1ad2beaf267d3bff78e8dcb64bbf75bcc9721007d0f2a7c4a01ac68a1b"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x152e"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x4f51"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x4f51"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xa9179ed4226e16c332fc0b70a136f4b7dec59b8dd964c22381e24a35e22d0d2b"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>从 <code>errorMessage</code> 中已经可以看出交易成功了。</p>
+<h3><a class="anchor" aria-hidden="true" id="调用-get-方法"></a><a href="#调用-get-方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>调用 get 方法</h3>
+<p>查询结果看是否设置成功：</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc call \
+    --to 0x5839153e0efe76efe0c974b728c4f49ca7ed75cc \
+    --data 0x6d4ce63c \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000001"</span>
+}
+</code></pre>
+<p>查看结果更新为 1。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/cita/store"><span class="arrow-prev">← </span><span>存证</span></a><a class="docs-next button" href="/zh-CN/cita/advanced-use/contracts/rust"><span>Rust 原生合约开发</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#编写">编写</a></li><li><a href="#编译">编译</a></li><li><a href="#准备工作">准备工作</a><ul class="toc-headings"><li><a href="#起链">起链</a></li><li><a href="#生成账户">生成账户</a></li><li><a href="#获得合约的相关信息">获得合约的相关信息</a></li></ul></li><li><a href="#合约">合约</a></li><li><a href="#调用">调用</a><ul class="toc-headings"><li><a href="#调用-set-函数">调用 set 函数</a></li><li><a href="#调用-get-方法">调用 get 方法</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2021 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:zh-CN","version:20.2.1"]}
+              });
+            </script></body></html>

@@ -82,7 +82,7 @@
 <h3><a class="anchor" aria-hidden="true" id="quota-模式"></a><a href="#quota-模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quota 模式</h3>
 <p>无代币的模式，系统默认模式。系统仅对用户交易消耗的资源进行统计。</p>
 <ul>
-<li><strong>参数设置</strong>。通过设置 quota Limit，系统可以对区块内交易总体消耗的资源进行限制，也可以对账户的单次交易设定资源消耗的限制。详细内容与操作参见 <a href="./quota">Quota 模式</a>。</li>
+<li><strong>参数设置</strong>。通过设置 Quota Limit，系统可以对区块内交易总体消耗的资源进行限制，也可以对单个账户设定一个块内交易资源消耗的限制。详细内容与操作参见 <a href="./quota">Quota 模式</a>。</li>
 <li><strong>场景举例</strong>：
 <ul>
 <li>几个企业组成一个联盟运行区块链，每一个成员既是“矿工”（维护区块链账本），又是用户（消耗计算资源）。矿工“无偿”工作，旨在维护系统稳定。这种场景可以选择 Quota 模式。</li>
@@ -91,7 +91,7 @@
 <h3><a class="anchor" aria-hidden="true" id="charge-模式"></a><a href="#charge-模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Charge 模式</h3>
 <p>有代币的模式，链上发行原生代币。系统先对用户交易消耗的资源进行统计 (quotaUsed)，并换算为原生代币对用户进行收费。收取的费用有多种灵活的分配方式，方便用户根据业务场景进行定制。</p>
 <ul>
-<li><strong>参数设置</strong>。与 Quota 模式一样，charge 模式也可以通过设置 quota Limit，对区块内交易总体消耗的资源进行限制，对账户的单次交易设定资源消耗的限制。并且可以灵活的设置代币总量和分发方式。在链的运行过程中，还可以通过通过设置gasPrice对手续费进行调控。详细内容与操作参见 <a href="./charge">Charge 模式</a>。</li>
+<li><strong>参数设置</strong>。与 Quota 模式一样，charge 模式也可以通过设置 Quota Limit，对区块内交易总体消耗的资源进行限制，对账户的单次交易设定资源消耗的限制。并且可以灵活的设置代币总量和分发方式。在链的运行过程中，还可以通过通过设置 QuotaPrice 对手续费进行调控。详细内容与操作参见 <a href="./charge">Charge 模式</a>。</li>
 <li><strong>场景举例</strong>：
 <ul>
 <li>场景一：矿工和用户分属不同的参与方
@@ -108,13 +108,13 @@
 </ul></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="起链前对链进行配置"></a><a href="#起链前对链进行配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>起链前对链进行配置</h2>
-<p>在对链进行初始化配置时，需要对这两种经济模型进行选择，我们在链级配置文档中可以看到，<code>SysConfig.economicalModel</code>字段中：<code>economicalModel = 0</code> 表示 Quota 模型；<code>economicalModel = 1</code> 表示 Charge 模型。链一旦启动，经济模型的选择将不可以更改。如果选择了 Charge 模式，代币的总量也需要在起链前设置好，具体操作可以参考 <a href="./charge">代币总量设置</a>。</p>
+<p>在对链进行初始化配置时，需要对这两种经济模型进行选择，我们在链级配置文档中可以看到，<code>SysConfig.economicalModel</code>字段中：<code>economicalModel = 0</code> 表示 Quota 模型；<code>economicalModel = 1</code> 表示 Charge 模型。链一旦启动，经济模型的选择将不可以更改。如果选择了 Charge 模式，代币的总量也需要在起链前设置好，具体操作可以参考<a href="./charge">代币总量设置</a>。</p>
 <p><strong>选择经济模型的示例操作：</strong></p>
 <ul>
-<li><p>以下命令生成一条包含四个节点的新链，经济模型<strong>默认</strong>为 <code>Quota</code>, 端口默认 4000 , 4001 , 4002 , 4003， 默认超级管理员，所有权限控制关闭。</p>
+<li><p>以下命令生成一条包含四个节点的新链，经济模型<strong>默认</strong>为 <code>Quota</code>, 端口默认 4000、4001、4002、4003，默认超级管理员，所有权限控制关闭。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span></span>
 </code></pre></li>
-<li><p>以下命令生成一条包含四个节点的新链，经济模型为 Charge，端口默认 4000 , 4001 , 4002 , 4003， 默认超级管理员, 所有权限控制关闭。</p>
+<li><p>以下命令生成一条包含四个节点的新链，经济模型为 Charge，端口默认 4000、4001、4002、4003，默认超级管理员, 所有权限控制关闭。</p>
 <pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> ./bin/cita create --super_admin <span class="hljs-string">"0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"</span> --nodes <span class="hljs-string">"127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"</span> --contract_argument SysConfig.economicalModel=1</span>
 </code></pre></li>
 </ul>

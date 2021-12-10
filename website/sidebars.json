@@ -1,6 +1,8 @@
 {
   "docs": {
-    "Welcome": ["welcome"],
+    "Welcome": [
+      "welcome"
+    ],
     "CITA": [
       "cita/cita-intro",
       {
@@ -121,7 +123,11 @@
       {
         "label": "JSON-RPC",
         "type": "subcategory",
-        "ids": ["cita/rpc-guide/rpc", "cita/rpc-guide/rpc-types", "cita/rpc-guide/rpc-error-code"]
+        "ids": [
+          "cita/rpc-guide/rpc",
+          "cita/rpc-guide/rpc-types",
+          "cita/rpc-guide/rpc-error-code"
+        ]
       },
       {
         "label": "System Contract Interface",
@@ -135,7 +141,67 @@
       "cita/faq",
       "cita/glossary"
     ],
-    "CITA2.0": ["cita2.0"],
+    "CITA2.0": [
+      "cita2.0/introduction",
+      {
+        "label": "Getting Started2",
+        "type": "subcategory",
+        "ids": [
+          "cita2.0/getting-started/environmental-preparation",
+          "cita2.0/getting-started/run-cita2.0",
+          "cita2.0/getting-started/basic-usage",
+          "cita2.0/getting-started/account-usage",
+          "cita2.0/getting-started/send-transaction"
+        ]
+      },
+      "cita2.0/runner-local",
+      {
+        "label": "Configuration Guide2",
+        "type": "subcategory",
+        "ids": [
+          "cita2.0/configuration-guide/chain-config",
+          "cita2.0/configuration-guide/auxiliary-command",
+          "cita2.0/configuration-guide/node-config",
+          "cita2.0/configuration-guide/service-config"
+        ]
+      },
+      {
+        "label": "Install",
+        "type": "subcategory",
+        "ids": [
+          "cita2.0/install/persistent-storage",
+          "cita2.0/install/network",
+          "cita2.0/install/single-cluster",
+          "cita2.0/install/multi-cluster"
+        ]
+      },
+      {
+        "label": "Node Management2",
+        "type": "subcategory",
+        "ids": [
+          "cita2.0/node/node-intro",
+          "cita2.0/node/ordi-node",
+          "cita2.0/node/cons-node"
+        ]
+      },
+      {
+        "label": "Special Govern2",
+        "type": "subcategory",
+        "ids": [
+          "cita2.0/governance/update-admin",
+          "cita2.0/governance/block-interval",
+          "cita2.0/governance/emg-brake"
+        ]
+      },
+      {
+        "label": "RPC",
+        "type": "subcategory",
+        "ids": [
+          "cita2.0/rpc-guide/rpc"
+        ]
+      },
+      "cita2.0/glossary"
+    ],
     "Toolchain": [
       "toolchain/toolchain-intro/toolchain-intro",
       {

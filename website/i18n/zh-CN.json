@@ -3928,7 +3928,13 @@
       "Architecture": "架构设计",
       "Protocol Upgrade": "协议升级",
       "Reference": "参考",
-      "Protocol-upgrade": "协议升级"
+      "Protocol-upgrade": "协议升级",
+      "Getting Started2": "快速入门",
+      "Configuration Guide2": "配置说明",
+      "Install": "部署指南",
+      "Node Management2": "节点管理",
+      "Special Govern2": "特殊治理",
+      "RPC": "RPC"
     }
   },
   "pages-strings": {

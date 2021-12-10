@@ -162,6 +162,78 @@
       "cita/upgrade/upgrade-overview": {
         "title": "升级概述"
       },
+      "cita2.0/configuration-guide/auxiliary-command": {
+        "title": "辅助命令"
+      },
+      "cita2.0/configuration-guide/chain-config": {
+        "title": "链级配置"
+      },
+      "cita2.0/configuration-guide/node-config": {
+        "title": "节点配置"
+      },
+      "cita2.0/configuration-guide/service-config": {
+        "title": "微服务配置"
+      },
+      "cita2.0/getting-started/account-usag": {
+        "title": "账户操作"
+      },
+      "cita2.0/getting-started/basic-usage": {
+        "title": "基本操作"
+      },
+      "cita2.0/getting-started/environmental-preparation": {
+        "title": "环境准备"
+      },
+      "cita2.0/getting-started/run-cita2.0": {
+        "title": "运行CITA2.0"
+      },
+      "cita2.0/getting-started/send-transaction": {
+        "title": "发送交易"
+      },
+      "cita2.0/glossary": {
+        "title": "词汇表"
+      },
+      "cita2.0/governance/block-interval": {
+        "title": "出块时间间隔"
+      },
+      "cita2.0/governance/emg-brake": {
+        "title": "紧急制动"
+      },
+      "cita2.0/governance/update-admin": {
+        "title": "更新管理员"
+      },
+      "cita2.0/install": {
+        "title": "部署指南"
+      },
+      "cita2.0/install/multi-cluster": {
+        "title": "多集群"
+      },
+      "cita2.0/install/network": {
+        "title": "网络"
+      },
+      "cita2.0/install/persistent-storage": {
+        "title": "持久化存储"
+      },
+      "cita2.0/install/single-cluster": {
+        "title": "单集群"
+      },
+      "cita2.0/introduction": {
+        "title": "关于 CITA2.0"
+      },
+      "cita2.0/node/cons-node": {
+        "title": "共识节点管理"
+      },
+      "cita2.0/node/node-intro": {
+        "title": "节点分类"
+      },
+      "cita2.0/node/ordi-node": {
+        "title": "普通节点管理"
+      },
+      "cita2.0/rpc-guide/rpc": {
+        "title": "RPC列表"
+      },
+      "cita2.0/runner-local": {
+        "title": "本地运行"
+      },
       "contributing": {
         "title": "Contributing"
       },
@@ -3908,6 +3980,7 @@
     "categories": {
       "Welcome": "Welcome",
       "CITA": "CITA",
+      "CITA2.0": "CITA2.0",
       "Toolchain": "Toolchain",
       "Contributing": "Contributing",
       "Getting Started": "Getting Started",

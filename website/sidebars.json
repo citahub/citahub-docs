@@ -144,7 +144,7 @@
     "CITA2.0": [
       "cita2.0/introduction",
       {
-        "label": "Getting Started2",
+        "label": "Getting Started",
         "type": "subcategory",
         "ids": [
           "cita2.0/getting-started/environmental-preparation",
@@ -156,7 +156,7 @@
       },
       "cita2.0/runner-local",
       {
-        "label": "Configuration Guide2",
+        "label": "Configuration Guide",
         "type": "subcategory",
         "ids": [
           "cita2.0/configuration-guide/chain-config",
@@ -176,7 +176,7 @@
         ]
       },
       {
-        "label": "Node Management2",
+        "label": "Node Management",
         "type": "subcategory",
         "ids": [
           "cita2.0/node/node-intro",
@@ -185,7 +185,7 @@
         ]
       },
       {
-        "label": "Special Govern2",
+        "label": "Special Govern",
         "type": "subcategory",
         "ids": [
           "cita2.0/governance/update-admin",

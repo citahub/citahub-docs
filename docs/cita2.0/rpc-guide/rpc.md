@@ -2,6 +2,7 @@
 id: rpc
 title: RPC列表
 ---
+## RPC
 
 ### GetPeerCount
 

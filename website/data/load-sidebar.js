@@ -22,7 +22,13 @@ const collect = {
       "Architecture": "Architecture",
       "Protocol Upgrade": "Protocol Upgrade",
       "Reference": "Reference",
-      "Protocol-upgrade": "Protocol Upgrade"
+      "Protocol-upgrade": "Protocol Upgrade",
+      "Getting Started2": "Getting Started2",
+      "Configuration Guide2": "Configuration Guide2",
+      "Install": "Install",
+      "Node Management2": "Node Management2",
+      "Special Govern2": "Special Govern2",
+      "RPC": "RPC"
     }
   },
 }

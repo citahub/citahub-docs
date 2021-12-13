@@ -1,8 +1,8 @@
 ---
-id: rpc
+id: version-21.12.0-rpc
 title: RPC列表
+original_id: rpc
 ---
-## RPC
 
 ### GetPeerCount
 

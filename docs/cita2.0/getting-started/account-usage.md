@@ -1,5 +1,5 @@
 ---
-id: account-usag
+id: account-usage
 title: 账户操作
 ---
 

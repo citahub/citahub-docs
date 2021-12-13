@@ -22,6 +22,8 @@ $ cldi peer-count
 peer_count: 2
 ```
 
+* * *
+
 ### GetBlockNumber
 
 返回当前块高度。
@@ -43,6 +45,7 @@ block_number: 58014
 
 `cloud-cli`的`-p`参数表示获取`Pending`状态的块高；不加该参数表示获取`latest`状态的块高。
 
+* * *
 
 ### GetTransaction
 
@@ -82,6 +85,8 @@ tx: {
 }
 ```
 
+* * *
+
 ### GetSystemConfig
 
 查询链上系统配置数据。
@@ -111,6 +116,8 @@ $ cldi system-config
 }
 ```
 
+* * *
+
 ### GetVersion
 
 获取当前软件的版本号。
@@ -135,6 +142,8 @@ $ ./grpcurl -emit-defaults -plaintext -d '' \
 }
 ```
 
+* * *
+
 ### GetBlockHash
 
 获取指定块高的块哈希值。
@@ -153,6 +162,8 @@ $ ./grpcurl -emit-defaults -plaintext -d '' \
 $ cldi block-hash 22629
 hash: 0x5a8747d1b1f4c8ba53ca7b01b33f4e2044974a26b4a239bf3ab8df6dadef0f89
 ```
+
+* * *
 
 ### GetTransactionBlockNumber
 
@@ -178,6 +189,8 @@ $ ./grpcurl -emit-defaults -plaintext -d '{"hash": "fJkDwCaMi7mOnHTVQ/IcGNr83aoU
 }
 ```
 
+* * *
+
 ### GetTransactionIndex
 
 获取指定交易在块中的序号。
@@ -202,6 +215,8 @@ $ ./grpcurl -emit-defaults -plaintext -d '{"hash": "fJkDwCaMi7mOnHTVQ/IcGNr83aoU
 }
 ```
 
+* * *
+
 ### GetTransactionCount
 
 获取账户发出的交易数量
@@ -225,6 +240,8 @@ $ ./grpcurl -emit-defaults -plaintext -d '{"address": "AQEBAQEBAQEBAQEBAQEBAQEBA
   "nonce": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
 }
 ```
+
+* * *
 
 ### GetBlockByHash
 
@@ -254,6 +271,8 @@ $ cldi get-block -h 0x5a8747d1b1f4c8ba53ca7b01b33f4e2044974a26b4a239bf3ab8df6dad
 }
 ```
 
+* * *
+
 ### GetBlockByNumber
 
 根据块高度查询块。
@@ -282,6 +301,8 @@ $ cldi get-block -n 22629
 }
 ```
 
+* * *
+
 ### SendRawTransaction
 
 发送交易。
@@ -302,6 +323,8 @@ $ cldi get-block -n 22629
 $ cldi send -t 0x253479ef7f0209ad761960e9f41bb18d1113b2bb 0x4f2be91f
 tx_hash: 0x9684414367bd24f06dc129c097186e4a1668c0888354d32ce58e9aeb199397e3
 ```
+
+* * *
 
 ### GetTransactionReceipt
 
@@ -334,6 +357,8 @@ $ cldi receipt 0xf62b9116c0a62a592a2fee55e714e1501fb84075770c2fbff0b484c75f61e40
 }
 ```
 
+* * *
+
 ### GetCode
 
 * 参数
@@ -350,6 +375,8 @@ $ cldi receipt 0xf62b9116c0a62a592a2fee55e714e1501fb84075770c2fbff0b484c75f61e40
 $ cldi get-code 0x253479ef7f0209ad761960e9f41bb18d1113b2bb
 code: 0x6080604052600436106053576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306661abd1460585780634f2be91f146080578063d826f88f146094575b600080fd5b348015606357600080fd5b50606a60a8565b6040518082815260200191505060405180910390f35b348015608b57600080fd5b50609260ae565b005b348015609f57600080fd5b5060a660c0565b005b60005481565b60016000808282540192505081905550565b600080819055505600a165627a7a72305820faa1d1f51d7b5ca2b200e0f6cdef4f2d7e44ee686209e300beb1146f40d32dee0029
 ```
+
+* * *
 
 ### GetBalance
 
@@ -369,6 +396,8 @@ code: 0x6080604052600436106053576000357c0100000000000000000000000000000000000000
 $ cldi get-balance 0x415f568207900b6940477396fcd2c201efe49beb
 balance: 0x0000000000000000000000000000000000000000000000000000000000000000
 ```
+
+* * *
 
 ### GetAbi
 

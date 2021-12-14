@@ -1,0 +1,1043 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>JSON-RPC 列表 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="
+Methods Name Changed ！ For the user of V0.16 and older versions: Please pay attention that we deprecated the pre-fix in the name of JSON-RPC interfaces, which makes it looks more tidy and easier to use.
+
+"/><meta name="docsearch:version" content="20.2.1"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="JSON-RPC 列表 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="
+Methods Name Changed ！ For the user of V0.16 and older versions: Please pay attention that we deprecated the pre-fix in the name of JSON-RPC interfaces, which makes it looks more tidy and easier to use.
+
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/zh-CN"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/zh-CN/versions"><h3>20.2.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/zh-CN/community" target="_self">社区</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/citahub/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/en-US/20.2.1/cita/rpc-guide/rpc">English</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>CITA</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">欢迎<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/welcome">CITAHub 文档概览</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/cita-intro">关于 CITA</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">快速入门<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/getting-started/setup">Setup</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/getting-started/run-cli">运行 cita-cli</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/getting-started/run-cita">运行 CITA</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/getting-started/basic-usage">基本操作</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">配置说明<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/configuration-guide/chain-config">链级配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/configuration-guide/service-config">微服务配置</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/configuration-guide/algorithm-config">Algorithm Config</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/install">部署指南</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">升级说明<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/upgrade/upgrade-overview">升级概述</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/upgrade/software-upgrade">软件升级</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/upgrade/protocol-upgrade">协议升级</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/commands">命令说明</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">节点管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/node/node-intro">节点分类</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/node/ordi-node">普通节点管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/node/cons-node">共识节点管理</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">经济模型<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/economics/model">选择经济模型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/economics/quotalimit">设置 Quota Limit</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/economics/quota">配额管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/economics/charge">Charge 模式</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">账户与权限管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/account-permission/account">账户系统</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/account-permission/permission">权限系统</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/account-permission/permission-extend">权限系统插件</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">隐私保护<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/privacy/privacy-intro">隐私保护概述</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/privacy/crosschain-contract-example">侧链</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">特殊治理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/special-govern/emg-brake">紧急制动</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/special-govern/amend">数据订正</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">数据管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/data/sync">数据同步</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/data/migration">数据迁移</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/data/snapshot">快照</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/store">存证</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">进阶使用<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/advanced-use/contracts/solidity">Solidity 合约开发</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/advanced-use/contracts/rust">Rust 原生合约开发</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/advanced-use/auto-exec">自动执行</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/advanced-use/chain-gov">Chain Gov</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/advanced-use/contracts/batch-tx">批量交易</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">运维<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/ops/log">日志管理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/ops/exception-handle">异常排查</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/ops/service-monitor">Service Monitor</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">架构设计<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/architecture/architecture">系统架构</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/architecture/comp">系统组件</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/architecture/cons">共识</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/architecture/transaction-process">交易处理</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/architecture/view">视图</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">JSON RPC<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/zh-CN/20.2.1/cita/rpc-guide/rpc">JSON-RPC 列表</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/rpc-guide/rpc-types">JSON-RPC 类型</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/rpc-guide/rpc-error-code">JSON-RPC 错误码</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">系统合约接口<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/sys-contract-interface/interface">接口列表</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/sys-contract-interface/error">错误类型</a></li></ul></div><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/addresses">系统保留地址</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita/glossary">词汇表</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CITA2.0<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/cita2.0">关于 CITA2.0</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">工具链<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/toolchain-intro/toolchain-intro">Toolchain 简介</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA-CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/cli/cli-intro">CITA-CLI 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">SDK<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/sdk/javascript-sdk">Javascript Sdk</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/sdk/java-sdk">Java Sdk</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/sdk/swift-sdk">Swift Sdk</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/sdk/ruby-sdk">Ruby Sdk</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/sdk/rust-sdk">Rust Sdk</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">ReBirth<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/rebirth/rebirth-intro">ReBirth 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">Cyton<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/cyton/cyton-intro">Cyton 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">Microscope<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/microscope/microscope-intro">Microscope 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA IDE<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/ide/ide-intro">CITA IDE 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA Truffle Box<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/truffle-box/truffle-box-intro">CITA Truffle Box 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA Web Debugger<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/web-debugger/web-debugger-intro">CITA Web Debugger 简介</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA Testnet<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/testnet/testchain">测试链</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle collapsible">CITA Monitor<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h4><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/monitor/monitor-intro">简介</a></li><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/toolchain/monitor/monitor-start">快速入门</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">贡献代码<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/zh-CN/20.2.1/contributing">贡献代码</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            // var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              // if (checkActiveCategory){
+              //   for (var j = 0; j < links.length; j++) {
+              //     if (links[j].classList.contains('navListItemActive')){
+              //       coll[i].nextElementSibling.classList.toggle('hide');
+              //       coll[i].childNodes[1].classList.toggle('rotate');
+              //       checkActiveCategory = false;
+              //       break;
+              //     }
+              //   }
+              // }
+              // keep subcategory open if necessary hacked by wu 2019-06-10
+              for (var j = 0; j < links.length; j++) {
+                if (links[j].classList.contains('navListItemActive')){
+                  coll[i].nextElementSibling.classList.toggle('hide');
+                  coll[i].childNodes[1].classList.toggle('rotate');
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">JSON-RPC 列表</h1></header><article><div><span><blockquote>
+<p><strong>Methods Name Changed ！</strong> For the user of V0.16 and older versions: Please pay attention that we deprecated the pre-fix in the name of JSON-RPC interfaces, which makes it looks more tidy and easier to use.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="json-rpc"></a><a href="#json-rpc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON RPC</h2>
+<h3><a class="anchor" aria-hidden="true" id="peercount"></a><a href="#peercount" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>peerCount</h3>
+<p>当前节点连接数。</p>
+<ul>
+<li>参数</li>
+</ul>
+<p>无</p>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Quantity</code> - 本节点连接节点个数</p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"peerCount","params":[],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x3"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="peersinfo"></a><a href="#peersinfo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>peersInfo</h3>
+<p>获取与本节点相连的其它节点信息。</p>
+<ul>
+<li>参数</li>
+</ul>
+<p>无</p>
+<ul>
+<li>返回值</li>
+</ul>
+<p>PeerInfo object - 节点信息对象</p>
+<ul>
+<li>amount：<code>Quantity</code> - 和该节点相连的节点数量</li>
+<li>peers：<code>Object</code> - 节点信息，包括节点地址和节点 <code>ip</code> 地址</li>
+<li>errorMessage：<code>String</code> - 错误信息</li>
+</ul>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"peersInfo","params":[],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"amount"</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">"peers"</span>: {
+     <span class="hljs-attr">"0x2aaeacf658e49f58973b4ef6f37a5c574a28822c"</span>: <span class="hljs-string">"127.0.0.1"</span>,
+     <span class="hljs-attr">"0x3ea53608732da3761ef41805da73f0d45d3e8e09"</span>: <span class="hljs-string">"127.0.0.1"</span>,
+     <span class="hljs-attr">"0x01cb0a8012b75ea156eaef3e827547f760dd917a"</span>: <span class="hljs-string">"127.0.0.1"</span>
+    },
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>
+  }
+}
+
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="blocknumber"></a><a href="#blocknumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>blockNumber</h3>
+<p>返回当前块高度。</p>
+<ul>
+<li>参数</li>
+</ul>
+<p>无</p>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Quantity</code> - 链高度</p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"blockNumber","params":[],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x1d10"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="sendrawtransaction"></a><a href="#sendrawtransaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sendRawTransaction</h3>
+<p>发送交易。</p>
+<ul>
+<li>参数</li>
+</ul>
+<p><code>Data</code>, 签名后的交易数据</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> signed_data = <span class="hljs-string">"0a9b0412013018fface20420f73b2a8d046060604052341561000f57600080fd5b5b60646000819055507f8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3336064604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b5b610178806100956000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b1146100495780636d4ce63c1461006c575b600080fd5b341561005457600080fd5b61006a6004808035906020019091905050610095565b005b341561007757600080fd5b61007f610142565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055507ffd28ec3ec2555238d8ad6f9faf3e4cd10e574ce7e7ef28b73caa53f9512f65b93382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b50565b6000805490505b905600a165627a7a72305820631927ec00e7a86b68950c2304ba2614a8dcb84780b339fc2bfe442bba418ce800291241884bfdfd8e417ab286fd761d42b71a9544071d91084c56f9063471ce82e266122a8f9a24614e1cf75070eea301bf1e7a65857def86093b6892e09ae7d0bcdff901"</span>
+</code></pre>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Data32</code> - 交易哈希</p>
+<p>示例：</p>
+<p>Request：</p>
+<blockquote>
+<p>注意：测试时不能直接复制如下参数中的数据，因为签名后的交易数据包含交易上链最大区块高度等信息。</p>
+</blockquote>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"sendRawTransaction","params":["0x0a910212013218fface20420a0492a8302606060405234156100105760006000fd5b610015565b60e0806100236000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604b5780636d4ce63c14606c576045565b60006000fd5b341560565760006000fd5b606a60048080359060200190919050506093565b005b341560775760006000fd5b607d60a3565b6040518082815260200191505060405180910390f35b8060006000508190909055505b50565b6000600060005054905060b1565b905600a165627a7a72305820942223976c6dd48a3aa1d4749f45ad270915cfacd9c0bf3583c018d4c86f9da200291241edd3fb02bc1e844e1a6743e8986a61e1d8a584aac26db5fa1ce5b32700eba5d16ba4c754731f43692f3f5299e85176627e55b9f61f5fe3e43572ec8c535b0d9201"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x4b5d67c1debdd5899fc7b5cd77e71987b8a2d174b361ca2dd4d713434b4ff037"</span>,
+        <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+    }
+}
+</code></pre>
+<p>如果是近期发送的重复交易，则会提示重复交易：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"error"</span>: {
+        <span class="hljs-attr">"code"</span>: <span class="hljs-number">-32006</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Dup"</span>
+    }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="关于签名交易"></a><a href="#关于签名交易" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>关于签名交易</h4>
+<ul>
+<li>CITA 交易结构</li>
+</ul>
+<pre><code class="hljs css language-protobuf"><span class="hljs-comment">// Transaction</span>
+syntax = <span class="hljs-string">"proto3"</span>;
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Crypto</span> </span>{
+    DEFAULT = <span class="hljs-number">0</span>;
+    RESERVED = <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Transaction</span> </span>{
+    <span class="hljs-built_in">string</span> to = <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">string</span> nonce = <span class="hljs-number">2</span>;
+    <span class="hljs-built_in">uint64</span> quota = <span class="hljs-number">3</span>;
+    <span class="hljs-built_in">uint64</span> valid_until_block = <span class="hljs-number">4</span>;
+    <span class="hljs-built_in">bytes</span> data = <span class="hljs-number">5</span>;
+    <span class="hljs-built_in">bytes</span> value = <span class="hljs-number">6</span>;
+    <span class="hljs-built_in">uint32</span> chain_id = <span class="hljs-number">7</span>;
+    <span class="hljs-built_in">uint32</span> version = <span class="hljs-number">8</span>;
+    <span class="hljs-built_in">bytes</span> to_v1 = <span class="hljs-number">9</span>;
+    <span class="hljs-built_in">bytes</span> chain_id_v1 = <span class="hljs-number">10</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">UnverifiedTransaction</span> </span>{
+    Transaction transaction = <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">bytes</span> signature = <span class="hljs-number">2</span>;
+    Crypto crypto = <span class="hljs-number">3</span>;
+}
+</code></pre>
+<p>一些交易字段的说明：</p>
+<ul>
+<li><code>to</code> 交易接收地址。</li>
+</ul>
+<p>调用合约时即为被调用合约的地址，部署合约时不填写该字段。<strong>注意</strong>地址是长度 40 的十六进制字符（160 位），前导 0 不能省略，必须补全。</p>
+<ul>
+<li><code>nonce</code> 交易填充字段。</li>
+</ul>
+<p>区块链为了防止重放攻击，会拒绝接收重复的交易。如果交易中仅包含有效的交易数据，会存在两个正常交易完全一样的情况。比如两次转账，如果转账人，收款人和金额都一样，那么两个交易就完全一样。因此需要用户在交易中填充一些内容，使得两个交易不一样。填充内容的形式为字符串，最大长度 128，具体内容用户自己定义。</p>
+<ul>
+<li><code>quota</code> 交易配额。</li>
+</ul>
+<p>合约执行是图灵完备的，这也意味着交易执行过程中可能出现死循环等无法终止的情况。因此，每个交易都要填写一个配额，交易执行过程中不断消耗配额，配额耗光后，交易终止执行。</p>
+<ul>
+<li><code>valid_until_block</code> 交易上链最大区块高度。</li>
+</ul>
+<p>区块链发送交易和得到交易执行结果是一个异步过程，交易进入交易池即返回交易哈希值。后面需要用户轮询交易什么时候真正上链。由于不同时间系统的拥堵情况，等待时间并不是一个确定值，甚至有可能在后续环节发生错误，最终没有上链。因此用户轮询一段时间之后，发现交易还没有上链，这时无法确定交易的状态（失败还是拥堵）。发送交易操作没有幂等性，因此无法通过重复发送交易来解决这个问题。因此，需要一个类似超时的机制，保证等待一段时间之后，交易的状态就确定是失败的。</p>
+<p><code>valid_until_block</code> 字段就是这样一种机制，用来表示用户愿意等待交易上链的最大区块高度。在区块链达到该高度之后，交易就确定不会再上链了，用户可以放心地重新发送交易，或者进行其他的后续处理。实际使用中，<strong>可选值</strong>当前区块高度到当前区块高度 +100 之间。</p>
+<ul>
+<li><p><code>data</code> 合约对应的 <code>Bytecode</code>, 参考：</p>
+<ul>
+<li><a href="https://ethereum.stackexchange.com/questions/8115/how-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser">How-to-get-the-bytecode-of-a-transaction-using-the-solidity-browser</a></li>
+<li><a href="https://solidity.readthedocs.io/en/develop/">Solidity docs</a></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="构造签名"></a><a href="#构造签名" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>构造签名</h4>
+<ol>
+<li>构造 <code>Transaction</code> 对象 <code>tx</code>，填充 <code>to(to_v1)</code> , <code>nonce</code>, <code>valid_until_block</code>, <code>quota</code>, <code>data</code>, <code>value</code>, <code>chain_id(chain_id_v1)</code>, <code>version</code> 8 个字段。</li>
+<li><code>tx</code> 对象 <code>protobuf</code> 序列化后按照指定的哈希算法做哈希计算, 得到 <code>hash</code> 值。</li>
+<li>由发送者使用私钥对 <code>hash</code> 进行签名, 得到 <code>signature</code>。</li>
+<li>构造 <code>UnverifiedTransaction</code> , 使用 <code>hash</code>, <code>signature</code>, <code>Crypto</code> 填充构造出 <code>unverify_tx</code>。</li>
+<li><code>unverify_tx</code> 对象 <code>protobuf</code> 序列化。</li>
+</ol>
+<blockquote>
+<p>填充 to 或者 to_v1, chain_id 或者 chain_id_v1 取决于链的协议版本</p>
+<p>version &lt; 1 : 填充 to, chain_id</p>
+<p>version &gt; 1 : 填充 to_v1, chain_id_v1</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getversion"></a><a href="#getversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getVersion</h3>
+<p>获取当前 CITA 软件的版本号，默认关闭，如果使用需要在链创建时开启该功能。详细查看<a href="../configuration-guide/chain-config">链级配置</a>中的 <code>--enable_version</code> 选项说明。</p>
+<ul>
+<li>参数</li>
+</ul>
+<p>无</p>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>String</code> - 软件版本号</p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getVersion","params":[],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"softwareVersion"</span>: <span class="hljs-string">"20.2.0"</span>
+  }
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getblockbyhash"></a><a href="#getblockbyhash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getBlockByHash</h3>
+<p>根据块哈希值查询块。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data32</code> - 块哈希值</li>
+<li><code>Boolean</code> - 是否返回交易信息（True：返回详细交易列表 | False：只返回交易哈希）</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<ol>
+<li><code>Object</code> - 块对象，如果不存在，则返回空</li>
+</ol>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBlockByHash","params":["0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329", true],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"version"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x5038c222d460c32fd06df36d58bb7cf5c368a55e207a46ecb18695451bfe4069"</span>,
+        <span class="hljs-attr">"header"</span>: {
+            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1499756200950</span>,
+            <span class="hljs-attr">"prevHash"</span>: <span class="hljs-string">"0xb28ec1911d375350664b9673a61d952e9a748f3e63606f1440f313c4911fde58"</span>,
+            <span class="hljs-attr">"proof"</span>: {
+                <span class="hljs-attr">"proposal"</span>: <span class="hljs-string">"0x0f25d396361c7d54bb16389f6a14bf95207915f91d180d382093e19adfc4133b"</span>,
+                <span class="hljs-attr">"height"</span>: <span class="hljs-number">902</span>,
+                <span class="hljs-attr">"round"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-attr">"commits"</span>: {
+                    <span class="hljs-attr">"0x2b027dacd33a41ddb09e21805778f19951776ed5"</span>: <span class="hljs-string">"0x1532c58faedf9e103dd84aa6aacbd2121aa3a8102faa506e7e152fb10e45bafd31b1c3d372cf5d42f8b27a8bfea112ae194de76d99206f73837ad8c30267e6a501"</span>,
+                    <span class="hljs-attr">"0x2d74a106464fbdf94e47bb28605a1aa244ab7788"</span>: <span class="hljs-string">"0x2ec53371cee732d59d23a58cf6cf53d818fb906fdeb5b0521a3a4cdbb75cf29658a1ff5fa95e4dc71563cbed10070c68e2eec0f812fa3be8e019b6df6e9ea66201"</span>,
+                    <span class="hljs-attr">"0x3efd4959af72e1214ab83caa0f04a0cc3e54d383"</span>: <span class="hljs-string">"0xb051f0cc41bc3caed472d3c7a35e06d805e8f6d15ccb3efc257d71ee96932c5877a8e52fc29cb3bef73e0edbad62c617c4dd16763709b2604ab8b1db2d87736301"</span>,
+                    <span class="hljs-attr">"0x5223818f7096520bfad68ce3d5ac959267dbc45f"</span>: <span class="hljs-string">"0x1cf6f8dc9654d461a317db199de0ed0d2d008762833b3358e269ceb3c412b60b3f1a2bd08f969e0dc1c9ebe1a0710002f853438a6ef3ea048de9b4e67387827400"</span>
+                }
+            },
+            <span class="hljs-attr">"stateRoot"</span>: <span class="hljs-string">"0xe29266e5574bc0c848b513d36403d4da71f99f328d3324e8d3134809c33d4fb4"</span>,
+            <span class="hljs-attr">"transactionsRoot"</span>: <span class="hljs-string">"0xf31e32611322f410f430ef8141c2237c19dd1034eddef8dedba692ec9851799b"</span>,
+            <span class="hljs-attr">"receiptsRoot"</span>: <span class="hljs-string">"0x9646cf2572734b4b13fe1616446ab2658e208cfdbaf25e47ebea9b6327e10c5b"</span>,
+            <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x0"</span>,
+            <span class="hljs-attr">"number"</span>: <span class="hljs-string">"0x387"</span>,
+            <span class="hljs-attr">"proposer"</span>:<span class="hljs-string">"0xe6d430a2d830236d3774d148cbee72bbf26cd481"</span>
+        },
+        <span class="hljs-attr">"body"</span>: {
+            <span class="hljs-attr">"transactions"</span>: [
+                {
+                    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0xf31e32611322f410f430ef8141c2237c19dd1034eddef8dedba692ec9851799b"</span>,
+                    <span class="hljs-attr">"content"</span>:<span class="hljs-string">"0x0a28356230373365393233333934346235653732396534366436313866306438656466336439633334611a80040aba030a28356230373365393233333934346235653732396534366436313866306438656466336439633334611a87030a013010a08d0622fd026060604052341561000c57fe5b5b7f4f8cfde3439a1a302c21ca51eec26086efbfd940b8c0279889fc6bb6e73ecc6633604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a15b5b60fd806100806000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b11460445780636d4ce63c146061575bfe5b3415604b57fe5b605f60048080359060200190919050506084565b005b3415606857fe5b606e60c6565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055505b50565b600060005490505b905600a165627a7a7230582079ba3769927f0f8cf4bec7ce02513b56823c8fc3f4047989951e042a9a04651900292080808080101241d51ca7a0171113478f47357a71c240bd0431f52639741a6721725de276a88d2e723b12f4bbeb1cdddea63f947ddb9db6e2667f08a03af1577c42d3c1a3dc5a7c01208080808010"</span>
+                }
+            ]
+        }
+    }
+}
+
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getblockbynumber"></a><a href="#getblockbynumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getBlockByNumber</h3>
+<p>根据块高度查询块。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Quantity</code> - 高度</li>
+<li><code>Boolean</code> - 是否返回交易信息（True：返回详细交易列表 | False：只返回交易哈希）</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p>结果同 <a href="#getblockbyhash">getBlockByHash</a></p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBlockByNumber","params":["0xF9", true],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>高度参数可以用 0x 开头的十六进制。0x 开头或者十进制整数都是错误的参数格式。</p>
+<p>结果同 <a href="#getblockbyhash">getBlockByHash</a></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="gettransactionreceipt"></a><a href="#gettransactionreceipt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTransactionReceipt</h3>
+<p>根据交易哈希获取交易回执。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data32</code> - 交易哈希</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p>Object - 回执对象</p>
+<ul>
+<li>transactionHash：<code>Data32</code> - 交易哈希</li>
+<li>transactionIndex：<code>Quantity</code> - 交易 <code>index</code></li>
+<li>blockHash：<code>Data32</code> - 交易所在块的块哈希</li>
+<li>blockNumber：<code>Quantity</code> - 交易所在块的块高度</li>
+<li>cumulativeQuotaUsed：<code>Quantity</code> - 块中该交易之前（包含该交易）的所有交易消耗的 quota 总量</li>
+<li>quotaUsed：<code>Quantity</code> - 交易消耗的 quota 数量</li>
+<li>contractAddress：<code>Data20</code> - 如果是部署合约, 这个地址指的是新创建出来的合约地址，否则为空</li>
+<li>logs：<code>Array</code> - 交易产生的日志集合</li>
+<li>root：<code>Data32</code> - 状态树根</li>
+<li>errorMessage：<code>String</code> 错误信息</li>
+</ul>
+<p>回执错误：</p>
+<ul>
+<li>No transaction permission - 没有发交易权限</li>
+<li>No contract permission - 没有创建合约权限</li>
+<li>Not enough base quota - <a href="../faq#什么是交易的基础配额">基础配额</a>不够</li>
+<li>Block quota limit reached - 达到块配额限制</li>
+<li>Account quota limit reached - 达到账户配额限制</li>
+<li>Out of quota - 配额不够</li>
+<li>Cost of transaction exceeds sender balance - 账户余额不足</li>
+<li>Jump position wasn't marked with JUMPDEST instruction - EVM 内部错误</li>
+<li>Instruction is not supported - EVM 内部错误</li>
+<li>Not enough stack elements to execute instruction - EVM 内部错误</li>
+<li>Execution would exceed defined Stack Limit - EVM 内部错误</li>
+<li>EVM internal error - EVM 内部错误</li>
+<li>Mutable call in static context - EVM 内部错误</li>
+<li>Out of bounds - EVM 内部错误</li>
+<li>Reverted - EVM 内部错误，<a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-140.md">REVERTED instruction</a></li>
+</ul>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransactionReceipt","params":["0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xe068cf7299450b78fe97ed370fd9ebe09ecbd6786968e474fae862ccbd5c5020"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0xa"</span>,
+        <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x17a0f"</span>,
+        <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x17a0f"</span>,
+        <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-string">"0xea4f6bc98b456ef085da5c424db710489848cab5"</span>,
+        <span class="hljs-attr">"logs"</span>:[
+            {
+                <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xea4f6bc98b456ef085da5c424db710489848cab5"</span>,
+                <span class="hljs-attr">"topics"</span>:[
+                    <span class="hljs-string">"0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"</span>
+                ],
+                <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064"</span>,
+                <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xe068cf7299450b78fe97ed370fd9ebe09ecbd6786968e474fae862ccbd5c5020"</span>,
+                <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0xa"</span>,
+                <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af"</span>,
+                <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+                <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+                <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+            }
+        ],
+        <span class="hljs-attr">"root"</span>: <span class="hljs-string">"0xe702d654a292a8d074fd5ba3769b3dead8095d2a8f2207b3a69bd49c91a178af"</span>,
+        <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100040000000010000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>
+    }
+}
+</code></pre>
+<p>Error：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-string">"0xbb6f8266fae605da373c2526c386fe07542b4957"</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0x0"</span>,
+    <span class="hljs-attr">"logs"</span>: [],
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329"</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-string">"No contract permission."</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x1da3"</span>,
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0x0"</span>
+}
+</code></pre>
+<p>如果出现 <strong>Timeout，errorcode 99</strong> ，请查看可能的解决方法 <a href="https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux">Can't assign requested Address</a></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getlogs"></a><a href="#getlogs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getLogs</h3>
+<p>根据 <code>Topic</code> 查询 <code>logs</code>。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Filter</code> - 过滤器对象，详见 <code>Filter</code> 的说明</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Array</code> - 日志对象集合，如果没有则为空</p>
+<ul>
+<li><code>address</code> - 合约地址</li>
+<li><code>topics</code>- 用来构造过滤器的索引数组</li>
+<li><code>data</code>- 根据索引数组筛选的日志数据</li>
+</ul>
+<p>示例:</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getLogs","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"],"fromBlock": "0x0"}],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>:[
+        {
+            <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xea4f6bc98b456ef085da5c424db710489848cab5"</span>,
+            <span class="hljs-attr">"topics"</span>:[
+                <span class="hljs-string">"0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"</span>
+            ],
+            <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064"</span>,
+            <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x3e83b74560860344f4c48d7b8089a18173aecd96b6b2148653c61b5d3f559764"</span>,
+            <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x4"</span>,
+            <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af"</span>,
+            <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+            <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+            <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+        }
+    ]
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="call"></a><a href="#call" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>call</h3>
+<p>合约中读操作类接口调用。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>CallRequest</code> - <code>Call</code> 请求对象，详见 <code>CallRequest</code> 的说明</li>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Data32</code> - 交易哈希</p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"call","params":[{"from":"0xca35b7d915458ef540ade6068dfe2f44e8fa733c","to":"0xea4f6bc98b456ef085da5c424db710489848cab5","data":"0x6d4ce63c"}, "latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000064"</span>
+}
+
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="gettransaction"></a><a href="#gettransaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTransaction</h3>
+<p>根据交易哈希查询交易。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data32</code> - 交易哈希值</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p>Object - 交易对象，如果没有则为空</p>
+<ul>
+<li>hash：<code>Data32</code> - 交易哈希</li>
+<li>content：<code>Data</code> 交易内容</li>
+<li>from：<code>Data20</code> - 交易发送者</li>
+<li>blockHash：<code>Data32</code> - 交易所在块的块哈希，如果没有，则为空</li>
+<li>blockNumber：<code>Quantity</code> - 交易所在块的块高度，如果没有，则为空</li>
+<li>index：<code>Quantity</code> - 交易在块交易体内的位置，如果没有，则为空</li>
+</ul>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransaction","params":["0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x019abfa50cbb6df5b6dc41eabba47db4e7eb1787a96fd5836820d581287e0236"</span>,
+        <span class="hljs-attr">"content"</span>: <span class="hljs-string">"0x0a9b0412013018fface20420f73b2a8d046060604052341561000f57600080fd5b5b60646000819055507f8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3336064604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b5b610178806100956000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b1146100495780636d4ce63c1461006c575b600080fd5b341561005457600080fd5b61006a6004808035906020019091905050610095565b005b341561007757600080fd5b61007f610142565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055507ffd28ec3ec2555238d8ad6f9faf3e4cd10e574ce7e7ef28b73caa53f9512f65b93382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15b50565b6000805490505b905600a165627a7a72305820631927ec00e7a86b68950c2304ba2614a8dcb84780b339fc2bfe442bba418ce800291241884bfdfd8e417ab286fd761d42b71a9544071d91084c56f9063471ce82e266122a8f9a24614e1cf75070eea301bf1e7a65857def86093b6892e09ae7d0bcdff901"</span>,
+        <span class="hljs-attr">"from"</span>: <span class="hljs-string">"0x5b073e9233944b5e729e46d618f0d8edf3d9c34a"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x1da3"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x296474ecb4c2c8c92b0ba7800a01530b70a6f2b6e76e5c2ed2f89356429ef329"</span>,
+        <span class="hljs-attr">"index"</span>: <span class="hljs-string">"0x0"</span>
+    }
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="gettransactioncount"></a><a href="#gettransactioncount" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTransactionCount</h3>
+<p>获取指定账户发送交易的数量。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data20</code> - 账户地址</li>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Quantity</code> - 指定账户从块高 0 到指定高度所发送的交易总量</p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransactionCount","params":["0x5b073e9233944b5e729e46d618f0d8edf3d9c34a","latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x1"</span>
+}
+
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getcode"></a><a href="#getcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getCode</h3>
+<p>获取合约 <code>Byte code</code>。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data20</code> - 合约地址</li>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Data</code> - 合约 <code>Byte code</code></p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getCode","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x60606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b11460445780636d4ce63c146061575bfe5b3415604b57fe5b605f60048080359060200190919050506084565b005b3415606857fe5b606e60c6565b6040518082815260200191505060405180910390f35b7fc6d8c0af6d21f291e7c359603aa97e0ed500f04db6e983b9fce75a91c6b8da6b816040518082815260200191505060405180910390a1806000819055505b50565b600060005490505b905600a165627a7a7230582079ba3769927f0f8cf4bec7ce02513b56823c8fc3f4047989951e042a9a0465190029"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getabi"></a><a href="#getabi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAbi</h3>
+<p>获取合约 <code>ABI</code>。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data20</code> - 合约地址</li>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Data</code> - 合约 <code>ABI</code> 信息</p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getAbi","params":["0x73552bc4e960a1d53013b40074569ea05b950b4d", "latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x4ed3885e000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001275b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d00000000000000000000000000000000000000000000000000"</span>
+}
+
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="保存-abi-和读取-abi-说明"></a><a href="#保存-abi-和读取-abi-说明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>保存 <code>ABI</code> 和读取 <code>ABI</code> 说明</h4>
+<p>默认将接收方地址为<code>0xffffffffffffffffffffffffffffffffff010001</code> 的交易视为保存合约 <code>ABI</code> 交易类型。</p>
+<h4><a class="anchor" aria-hidden="true" id="保存-abi"></a><a href="#保存-abi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>保存 ABI</h4>
+<p>主要步骤：</p>
+<ol>
+<li>部署合约，得到合约地址。</li>
+<li>使用 <code>solc</code> 编译合约代码得到 <code>ABI</code>内容，并填充 data 字段。</li>
+<li>使用 <code>cita-cli store abi</code> 保存 <code>ABI</code> 内容。</li>
+</ol>
+<p>以 <a href="https://github.com/citahub/test-contracts/blob/master/SimpleStorage.sol">Test contract</a> 作为示例：</p>
+<ul>
+<li>链上部署该合约，得到合约地址</li>
+<li>首先可以通过 <code>solc</code> 得到合约的<code>ABI</code></li>
+</ul>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> solc SimpleStorage.sol --abi</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">[{<span class="hljs-attr">"constant"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"inputs"</span>:[{<span class="hljs-attr">"name"</span>:<span class="hljs-string">"x"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"uint256"</span>}],<span class="hljs-attr">"name"</span>:<span class="hljs-string">"set"</span>,<span class="hljs-attr">"outputs"</span>:[],<span class="hljs-attr">"payable"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"stateMutability"</span>:<span class="hljs-string">"nonpayable"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"function"</span>},{<span class="hljs-attr">"constant"</span>:<span class="hljs-literal">true</span>,<span class="hljs-attr">"inputs"</span>:[],<span class="hljs-attr">"name"</span>:<span class="hljs-string">"get"</span>,<span class="hljs-attr">"outputs"</span>:[{<span class="hljs-attr">"name"</span>:<span class="hljs-string">""</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"uint256"</span>}],<span class="hljs-attr">"payable"</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">"stateMutability"</span>:<span class="hljs-string">"view"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"function"</span>}]
+</code></pre>
+<ul>
+<li>Store ABI</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli store abi \
+    --content <span class="hljs-string">'[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]'</span> \
+    --address 0xcf73525b380c5b706f35c1ff02aa798cc9950860 \
+    --private-key 0x5f0258a4778057a8a7d97809bd209055b2fbafa654ce7d31ec7191066b9225e6 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x3690665c3ce5548e74113ab88b1bc81b72f48564211f1341735b9fb17914ff91"</span>,
+        <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+    }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="查询-abi"></a><a href="#查询-abi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询 ABI</h4>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getAbi \
+    --address 0xcf73525b380c5b706f35c1ff02aa798cc9950860 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x5b7b22636f6e7374616e74223a66616c73652c22696e70757473223a5b7b226e616d65223a2278222c2274797065223a2275696e74323536227d5d2c226e616d65223a22736574222c226f757470757473223a5b5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a226e6f6e70617961626c65222c2274797065223a2266756e6374696f6e227d2c7b22636f6e7374616e74223a747275652c22696e70757473223a5b5d2c226e616d65223a22676574222c226f757470757473223a5b7b226e616d65223a22222c2274797065223a2275696e74323536227d5d2c2270617961626c65223a66616c73652c2273746174654d75746162696c697479223a2276696577222c2274797065223a2266756e6374696f6e227d5d"</span>
+}
+</code></pre>
+<p>注：使用 cita-cli 查询到的结果是 abi 字符串的十六进制 Ascii 编码。</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getbalance"></a><a href="#getbalance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getBalance</h3>
+<p>获取账户余额。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data20</code> - 账户地址</li>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Quantity</code> - 在指定高度的账户余额</p>
+<p>示例：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBalance","params":["0xea4f6bc98b456ef085da5c424db710489848cab5", "latest"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="newfilter"></a><a href="#newfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>newFilter</h3>
+<p>基于给定的 <code>Filter</code> 建立过滤器，监听合约状态变化。合约状态发生改变时，可以调用 <code>getFilterChanges</code> 查看状态变化内容。 当 <code>60s</code> 内不对 <code>filter id</code> 进行操作时，系统会清除建立的过滤器。若要继续使用需重新建立</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Filter</code> - 过滤器对象，详见 <code>Filter</code> 的说明。 由于是获取上次操作以来的状态改变，所以 Filter 中的 <code>fromBlock</code> 以及 <code>toBlock</code> 没有作用，可以不用设置。</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Quantity</code> - 过滤器 id</p>
+<p>示例：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"newFilter","params":[{"topics":["0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"]}],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x1"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="newblockfilter"></a><a href="#newblockfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>newBlockFilter</h3>
+<p>创建新块产生过滤器，当新块产生时，记录块哈希值。调用 <code>getFilterChanges</code> 查看 <code>newFilter</code> 创建时高度之后的块哈希列表。 当 <code>60s</code> 内不对 <code>filter id</code> 进行操作时，系统会清除建立的过滤器。若要继续使用需重新建立</p>
+<ul>
+<li>参数</li>
+</ul>
+<p>无</p>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Quantity</code> - 过滤器 id</p>
+<p>示例：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"newBlockFilter","params":[],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"jsonrpc"</span>:  <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x1"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="uninstallfilter"></a><a href="#uninstallfilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>uninstallFilter</h3>
+<p>卸载 <code>filter</code> 过滤器，在没有监听任务的时候，调用该方法卸载过滤器。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Quantity</code> - 过滤器 id</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Boolean</code> - 卸载成功返回 true，否则 false</p>
+<p>示例：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"uninstallFilter","params":["0xb"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getfilterchanges"></a><a href="#getfilterchanges" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getFilterChanges</h3>
+<p>获取最近一次监听内容。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Quantity</code> - 过滤器 id</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Array</code> - log 对象集合，如果没有，则为空</p>
+<ul>
+<li>块过滤器（<code>BlockFilter</code>）会返回自上次操作过滤器（调用 newBlockFilter 以及 getFilterChanges）以来产生新块的块哈希值集合</li>
+<li>状态过滤器（<code>NewFilter</code>）会根据 <code>Filter</code> 过滤返回自上次操作过滤器（调用 newFilter, getFilterLogs 以及 getFilterChanges）状态变化</li>
+</ul>
+<p>示例：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x16"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>NewFilter Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>:[
+        {
+            <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0xea4f6bc98b456ef085da5c424db710489848cab5"</span>,
+            <span class="hljs-attr">"topics"</span>:[
+                <span class="hljs-string">"0x8fb1356be6b2a4e49ee94447eb9dcb8783f51c41dcddfe7919f945017d163bf3"</span>
+            ],
+            <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x0000000000000000000000005b073e9233944b5e729e46d618f0d8edf3d9c34a0000000000000000000000000000000000000000000000000000000000000064"</span>,
+            <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x3e83b74560860344f4c48d7b8089a18173aecd96b6b2148653c61b5d3f559764"</span>,
+            <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x4"</span>,
+            <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0xb38e5b6572b2613cab8088f93e6835576209f2b796104779b4a43fa5adc737af"</span>,
+            <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+            <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+            <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+        }
+    ]
+}
+</code></pre>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getFilterChanges","params":["0x3"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>BlockFilter Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: [
+        <span class="hljs-string">"0x2a5da766caf9a83139b15249bbe56f48f51df3124610e007156af8117817c966"</span>,
+        <span class="hljs-string">"0x77eb877cfd841e996d078ff43e81a3700adda27ce9895d224e02a9b78aa01aaa"</span>,
+        <span class="hljs-string">"0x8780527ca2f34c52006b2e1af3b7e6c8f5f26bd1c02c78e0e751f0f44bf66fcf"</span>,
+        <span class="hljs-string">"0x63d7057e10d1441911864167cece31d5065b7efb062cac172d262ed93a749e84"</span>
+    ]
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getfilterlogs"></a><a href="#getfilterlogs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getFilterLogs</h3>
+<p>指定过滤器筛选 log 并返回。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Quantity</code> - 过滤器 id</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Array</code> - log 对象集合，如果自上次轮询以来没有发生变化，则为空</p>
+<p>示例：</p>
+<p>结果同 <a href="#getfilterchanges">getFilterChanges</a></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="gettransactionproof"></a><a href="#gettransactionproof" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTransactionProof</h3>
+<p>根据交易哈希获取交易执行证明。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data32</code> - 交易哈希</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Data</code> - 一份包含交易，交易回执，回执树根和块头的证明</p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getTransactionProof","params":["0x37f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4"],"id":1}'</span> 127.0.0.1:1337 | jq</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xf9070df903f2a09a9102d68052de36b825d5b1f4dc9512684a8b1a61add6337e455ef69eb304e7a044d0da81e6ebd0928c084692e5aacb6f0e56dbd0a064c9639adb7ef9f6fd3b41a037f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4a02c533219294c9fce960e0749b017a3ce281eb45facaa138123240336fef8327db90100000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000400000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000005b88ffffffffffffffff826d7b86016242114b6f80b902530ace0442000000000000003078306139383765623937646438323539626433623063386665303832303333333762336631386536613161653735613035636261383032336135346563303564355a00000000000000000000000000000004000000000000002a000000000000003078316666333830313730633765633338613831643731636663636433343765653033386464646237304100000000000000cf81312f4118a72b53f35ecd99817cb499597f1ff7132df672e58cbb615180e8535eebe2040d6303b50c55cbe01d01de49512b6dbffc363dd950a4a919b9693b002a000000000000003078383665373133326164326535323433326466323537633630373638373962626334393962343365624100000000000000f75f5b766676560d6e1a116c29ac6176070c5448c453dc68202b4ac7d388c3cc0edf07d2e0c171710c6ec30735d06590b7fa8e3c094a9275df1bfddf026f1a94002a000000000000003078373661393566333633313532666133353338623530366362636539333764343138613164643131644100000000000000cba1c56842458c11245ba64b0fc3f93dc90682b12407623634433a6a22a741af356a2df0603ab6d300b7c8638db7c56761a716d4948da10be177b36193c058e7012a0000000000000030783362313836653138643263353530383661343230323338373239613238303761393364366163633941000000000000000727955db4413d3c7f476d94d7570ae6d6ed4177fff682fde08ee21b1e46e47073d39d22218b55bb56e1e620fb4a5f17c998d9b80892a27fd73d947756483085001002f901e5826d7bb9010000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000040000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000f8dbf8d99473552bc4e960a1d53013b40074569ea05b950b4de1a002d96cafa1b66d774136b3051a7a5675d5cb23a055bfe1410019ec924f4f93acb8a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000073552bc4e960a1d53013b40074569ea05b950b4d00000000000000000000000000000000000000000000000000000000ec90a79a0000000000000000000000000000000000000000000000000000000000000000c001c0f9012c31808398967f9473552bc4e960a1d53013b40074569ea05b950b4d80b8644c6e5926000000000000000000000000000000000000000000000000000000000000000000000000000000000000000073552bc4e960a1d53013b40074569ea05b950b4d000000000000000000000000000000000000000000000000000000000000000281aeb84182e91042d0201d5f3c8def6f7b09a46a02c6d4a9890e878406498f47fc78719a6d86ee0cfb7bba33228649790c7340ea975dbe59b7fd6a0f267de972b1008dbf0180a037f1261203d7b81a5a5cfc4a5c4abf15297555a47fd8686580d5a211876516c4b840c7561cde2792e85c76bf423cf9c339bd085f6ca686e2fe5cb5092c6bff210786790cac0bf6472e6837282bef5e19416e791f5dbf6abbb33e04e4b291d6ef4e1b80"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getmetadata"></a><a href="#getmetadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getMetaData</h3>
+<p>根据高度查询链上元数据。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li><p>返回值</p>
+<ul>
+<li><code>chainId</code> - <code>Integer</code> - <code>version &lt; 1</code> 时的 <code>chain_id</code></li>
+<li><code>chainIdV1</code> - <code>Quantity</code> - <code>version &gt; 1</code> 时的 <code>chain_id</code> 用来防止重放攻击，不同链的 chainId 建议设置为不同值</li>
+<li><code>chainName</code> - <code>String</code> - 链名称</li>
+<li><code>operator</code> - <code>String</code> - 链的运营者</li>
+<li><code>genesisTimestamp</code> - <code>Integer</code> - 创世块时间戳</li>
+<li><code>validators</code> - <code>[Data20]</code> - 验证者地址集合</li>
+<li><code>blockInterval</code> - <code>Integer</code> - 出块间隔</li>
+<li><code>tokenName</code> - <code>String</code> - Token 名称</li>
+<li><code>tokenSymbol</code> - <code>String</code> - Token 标识</li>
+<li><code>tokenAvatar</code> - <code>String</code> - Token 标志</li>
+<li><code>version</code> - <code>Integer</code> - 链版本</li>
+<li><code>economicalModel</code> - <code>EconomicalModel</code> - 链经济模型</li>
+</ul></li>
+</ul>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getMetaData","params":["latest"],"id":1}'</span> 127.0.0.1:1337</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"blockInterval"</span>: <span class="hljs-number">3000</span>,
+        <span class="hljs-attr">"chainId"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"chainIdV1"</span>: <span class="hljs-string">"0x1"</span>,
+        <span class="hljs-attr">"chainName"</span>: <span class="hljs-string">"test-chain"</span>,
+        <span class="hljs-attr">"economicalModel"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"genesisTimestamp"</span>: <span class="hljs-number">1541058686340</span>,
+        <span class="hljs-attr">"operator"</span>: <span class="hljs-string">"test-operator"</span>,
+        <span class="hljs-attr">"tokenAvatar"</span>: <span class="hljs-string">"https://cdn.citahub.com/icon_cita.png"</span>,
+        <span class="hljs-attr">"tokenName"</span>: <span class="hljs-string">"CITA Test Token"</span>,
+        <span class="hljs-attr">"tokenSymbol"</span>: <span class="hljs-string">"CTT"</span>,
+        <span class="hljs-attr">"validators"</span>: [
+            <span class="hljs-string">"0xc489d5cb6f497e4708cc8c3805473b9528f83c7a"</span>,
+            <span class="hljs-string">"0x497c68f02bbe335cc879356af120371ebf6cbc29"</span>,
+            <span class="hljs-string">"0x6fbb4c8bb76ace631d634545fe39cbee979dd08e"</span>,
+            <span class="hljs-string">"0x3c0f681e13f18b51d5350823eae45cb502231cf4"</span>
+        ],
+        <span class="hljs-attr">"version"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"website"</span>: <span class="hljs-string">"https://www.example.com"</span>
+    }
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getblockheader"></a><a href="#getblockheader" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getBlockHeader</h3>
+<p>根据块高度获取块头，为侧链设计。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Data</code> - 块头序列化后的字节码</p>
+<p>示例：</p>
+<p>Request：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getBlockHeader","params":["latest"],"id":1}'</span> 127.0.0.1:1337</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xf90405a09e0de735f97a187a7283e72f334b387ab666d162094a47ca0aacc4fe2daba5eba0eb31a422e6241fabb1f875be997f5a59f840c6887384ad443fa34889e11dc887a056e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421a056e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421b90100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000388ffffffffffffffff80860165132998dd80b902530ace0442000000000000003078393835633635353039613538393634386138313930363262363166393361356263343132326538346330643866373066383434393234653664626131366166370200000000000000000000000000000004000000000000002a000000000000003078336537356436306637393863366564663763623532396231326564316261373062303166323938654100000000000000f7ac260d88a06e58e455c9e35a6e455f36db576158622ead6e1b19fa512278ef5b0c71a1b9359f97f744934430935e9367ddbdd29b5afc05891786714d42b5b9002a00000000000000307835396463373465306436366538653338366336353966303030616339306436323134326233333563410000000000000049853ccffbff1524c132de60eaf0d053864db0d31ca33cb0358097177c2ac89a7d0e471e3f0552b2472aef7151627c28941cd36781e0abf8fde8b8bca6662665002a0000000000000030783866613166633631326666633435663538386564306561653938376233656532643031616262656441000000000000003134f9bde5d8de7fc35186506295a0560a11397602c3cd3ffd50aef80b3df7ec6797b7966dc648ef19be06cb050cd1f1f271a782a12a7ddc312890d02c047156012a000000000000003078343435386466626535323163393064356436316639633566333466636338666431643966313133664100000000000000fe398b42155b78b5b3670f3093a00361d9d3d4e56ceace1ec9176467f77ab1d47a280531adcb758f9292d4c91dfbda247c601d37b0877fd5b5dc6b2cda5a9b7c001002943e75d60f798c6edf7cb529b12ed1ba70b01f298e"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getstateproof"></a><a href="#getstateproof" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getStateProof</h3>
+<p>获取指定高度状态里，某个键值的状态证明，为侧链设计。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data20</code> - 合约地址</li>
+<li><code>Data32</code> - <code>key</code> 值和键值对的位置</li>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Data</code> - 某一个值的状态证明，包含合约地址，账户证明，键值证明</p>
+<p>示例：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getStateProof","params":["0xad54ae137c6c39fa413fa1da7db6463e3ae45664", "0xa40893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423e", "16"],"id":1}'</span> 127.0.0.1:1337</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0xf902a594ad54ae137c6c39fa413fa1da7db6463e3ae45664f901eeb90114f9011180a088e2efeed0516020141cbbba149711e0ce67634363097a441520704040aa8dd9a0479ca451cdb343dd2eedbf313e805983e87c0f4f16e9c14f28ab3f1750eb1b8e80a0dd94e00536c62d8c801b8496fb0834ab7225954bac452a7d14c0f4a35df81074a07c689f1111314c391b164c458f902366bb18b90a53d9000a1ffd41abc96373d380808080a0b219eebc746ca232aa4a839213565d1932b4b952c93c5aa585e226ac5412d836a0b758264786a8fb6eaa6f7f2185a3f38111de3c532517ef4e46b99b80e4866d27a093ddedf515207b9a68b50f5f344aae23e709316d96345b146746ae2e511893178080a03b5530655278a731d4c895c92359fb217c64f9fde0c6945339863638396627f480b853f851808080808080808080808080a0d7a0fd35748eceb8fc8040517033416adcfb5523f4abe9789b749700c36b4ba5a0e4fe51db54afdd475e2c50888623567385f2b3694ffdb33c92a1bc782de44be7808080b880f87e942054ae137c6c39fa413fa1da7db6463e3ae45664b867f8658080a0a860517f2f639d5c3e9e8a8c04ef6c71018e18cd0881099776a73653973f90a4a00f1cd9fb6dda499878b60cdb90cf0acf25424afb5583131e4dff5e512cd64a4da0c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470a0a40893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423ef87cb853f851a02c839c2946385ef0a820355b6969c49c97bdaa6a19b02384bcc39c992046d6b9808080808080808080a051be428c087e3544a47f273c93ffcb9999267593d3b36042a9d3e96ed068fceb808080808080a6e5a0340893b0c723e74515c3164afb5b2a310dd5854fac8823bfbffa1d912e98423e83827a02"</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="getstorageat"></a><a href="#getstorageat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getStorageAt</h3>
+<p>获取合约中在指定高度的 <code>Key</code> 对应值。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li><code>Data20</code> - 合约地址</li>
+<li><code>Data32</code> - <code>key</code>值和相对位置</li>
+<li><code>BlockNumber</code> - 块高度</li>
+</ol>
+<ul>
+<li>返回值</li>
+</ul>
+<p><code>Data</code> - 指定高度下，合约 <code>key</code> 值对应的 <code>value</code> 值</p>
+<p>示例：</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> curl -X POST --data <span class="hljs-string">'{"jsonrpc":"2.0","method":"getStorageAt","params":["0xffffffffffffffffffffffffffffffffff020000", "0x0000000000000000000000000000000000000000000000000000000000000007", "latest"],"id":1}'</span> 127.0.0.1:1337</span>
+</code></pre>
+<p>Result：</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x000000000000000000000000ffffffffffffffffffffffffffffffffff02000d"</span>
+}
+</code></pre>
+<hr>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/zh-CN/20.2.1/cita/architecture/view"><span class="arrow-prev">← </span><span>视图</span></a><a class="docs-next button" href="/zh-CN/20.2.1/cita/rpc-guide/rpc-types"><span>JSON-RPC 类型</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#json-rpc">JSON RPC</a><ul class="toc-headings"><li><a href="#peercount">peerCount</a></li><li><a href="#peersinfo">peersInfo</a></li><li><a href="#blocknumber">blockNumber</a></li><li><a href="#sendrawtransaction">sendRawTransaction</a></li><li><a href="#getversion">getVersion</a></li><li><a href="#getblockbyhash">getBlockByHash</a></li><li><a href="#getblockbynumber">getBlockByNumber</a></li><li><a href="#gettransactionreceipt">getTransactionReceipt</a></li><li><a href="#getlogs">getLogs</a></li><li><a href="#call">call</a></li><li><a href="#gettransaction">getTransaction</a></li><li><a href="#gettransactioncount">getTransactionCount</a></li><li><a href="#getcode">getCode</a></li><li><a href="#getabi">getAbi</a></li><li><a href="#getbalance">getBalance</a></li><li><a href="#newfilter">newFilter</a></li><li><a href="#newblockfilter">newBlockFilter</a></li><li><a href="#uninstallfilter">uninstallFilter</a></li><li><a href="#getfilterchanges">getFilterChanges</a></li><li><a href="#getfilterlogs">getFilterLogs</a></li><li><a href="#gettransactionproof">getTransactionProof</a></li><li><a href="#getmetadata">getMetaData</a></li><li><a href="#getblockheader">getBlockHeader</a></li><li><a href="#getstateproof">getStateProof</a></li><li><a href="#getstorageat">getStorageAt</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2021 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:zh-CN","version:20.2.1"]}
+              });
+            </script></body></html>

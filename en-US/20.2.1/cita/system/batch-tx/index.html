@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>批量交易 · CITAHub Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="CITA 支持批量交易，目前只能进行批量合约的调用。
+"/><meta name="docsearch:version" content="20.2.1"/><meta name="docsearch:language" content="en-US"/><meta property="og:title" content="批量交易 · CITAHub Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.citahub.com//index.html"/><meta property="og:description" content="CITA 支持批量交易，目前只能进行批量合约的调用。
+"/><meta property="og:image" content="https://docs.citahub.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.citahub.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/citahub_logo.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/javascript/index.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en-US"><img class="logo" src="/img/citahub_logo.svg" alt="CITAHub Docs"/><h2 class="headerTitleWithLogo">CITAHub Docs</h2></a><a href="/en-US/versions"><h3>20.2.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/en-US/community" target="_self">Community</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/citahub/citahub-docs" target="_self">GitHub</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/zh-CN/20.2.1/cita/system/batch-tx">中文</a></li><li><a href="https://crowdin.com/project/citahub-docs" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/citahub-docs/en-US" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">批量交易</h1></header><article><div><span><p><code>CITA</code> 支持批量交易，目前只能进行批量合约的调用。</p>
+<h2><a class="anchor" aria-hidden="true" id="简述"></a><a href="#简述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>简述</h2>
+<p>批量交易是由系统合约实现的，通过组装数据调用其接口来完成。</p>
+<h3><a class="anchor" aria-hidden="true" id="合约信息"></a><a href="#合约信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约信息</h3>
+<p>合约地址为: <code>0xffffffffffffffffffffffffffffffffff02000e</code></p>
+<p>接口签名如下:</p>
+<pre><code class="hljs">======= batch_tx.sol:BatchTx =======
+Function signatures:
+82cc3327: multiTxs(bytes)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="数据组装规则"></a><a href="#数据组装规则" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据组装规则</h3>
+<p>参数类型为 <code>bytes</code>，encode规则和ABI一致。拼装规则如下:</p>
+<ul>
+<li>二十字节的目标调用合约的地址</li>
+<li>四字节的目标合约的调用数据的长度
+<ul>
+<li>四字节的函数签名</li>
+<li>ABI格式编码的函数参数</li>
+</ul></li>
+<li>目标合约的调用数据(第一条交易信息结束)</li>
+<li>...(第n条交易信息)</li>
+</ul>
+<p>拼装之后按照 bytes 的 ABI 编码即可。</p>
+<p>以下是两个交易信息的示例:</p>
+<pre><code class="hljs">897c71052abad4ca9a5059f070d5a3a119d1e1ec
+00000004
+2d910f2c
+897c71052abad4ca9a5059f070d5a3a119d1e1ec
+00000004
+2d910f2c
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="操作示例"></a><a href="#操作示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>操作示例</h2>
+<p><em>首先需要启动一条链，具体方法见快速入门部分</em></p>
+<p>其中<a href="https://github.com/cryptape/cita-contracts/blob/master/tests/contracts/test_batch_tx.sol">测试合约</a>函数签名如下:</p>
+<pre><code class="hljs">======= contracts/test_batch_tx.sol:SelfAdd =======
+Function signatures:
+2d910f2c: AddOne()
+0c55699c: x()
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><code>AddOne()</code>表示对x加一</li>
+<li><code>x()</code>表示获取x数值</li>
+</ul>
+<p>接下来的测试，用 <a href="https://github.com/cryptape/cita-cli">cita-cli</a> 命令行模式（与交互式模式的命令是一致的）进行演示。</p>
+<h3><a class="anchor" aria-hidden="true" id="生成随机私钥"></a><a href="#生成随机私钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成随机私钥</h3>
+<pre><code class="hljs css language-bash">$ cita-cli key create
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x1828c1cd16bd1f3b50f21137ddeaec5c099c4bbf"</span>,
+  <span class="hljs-attr">"private"</span>: <span class="hljs-string">"0x989ac80f54d2fe79e1cd1b5a425df11177ed40ef8b3e8cfab8e7f65742e61cb9"</span>,
+  <span class="hljs-attr">"public"</span>: <span class="hljs-string">"0xf088eb444f9262cf3c9662802104bfceaf62e7c00e7161f661c640e05422f01397b3c7b104ae7262b02a4a91823bcd62002328ec795b5396c4bd72bf8fa78320"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="部署测试合约"></a><a href="#部署测试合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>部署测试合约</h3>
+<ul>
+<li>发送交易</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc sendRawTransaction \
+    --code 0x608060405234801561001057600080fd5b5060fd8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630c55699c14604e5780632d910f2c146076575b600080fd5b348015605957600080fd5b506060608a565b6040518082815260200191505060405180910390f35b348015608157600080fd5b5060886090565b005b60005481565b600160008082825401925050819055506000547f11c1a8e7158fead62641b1e07f61c32daccb5a0432cabfe33a43e8de610042f160405160405180910390a25600a165627a7a7230582021264d3aa498b31d10a5a7086d3e3ba4fb8c23f5a30b64ef8426b19ae2de29870029 \
+    --private-key 0x989ac80f54d2fe79e1cd1b5a425df11177ed40ef8b3e8cfab8e7f65742e61cb9 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x6054cd8ba0754eb352ddd283193d3233be559296a7c15cfd50797216cc9b331f"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<ul>
+<li>获取 receipt</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x6054cd8ba0754eb352ddd283193d3233be559296a7c15cfd50797216cc9b331f \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0xc4359ce5b1bf054d84f970e4250c79cb3c82cc04695c717370850b088fd059b6"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0xf97"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-string">"0x626a7a06fe11041e71efc24b32e304bba7f6038a"</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0xc66f"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0xc66f"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x6054cd8ba0754eb352ddd283193d3233be559296a7c15cfd50797216cc9b331f"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>其中合约地址为： <code>0x626a7a06fe11041e71efc24b32e304bba7f6038a</code></p>
+<h3><a class="anchor" aria-hidden="true" id="查询-x-数值"></a><a href="#查询-x-数值" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询 x 数值</h3>
+<pre><code class="hljs css language-bash">$ cita-cli rpc call \
+    --to 0x626a7a06fe11041e71efc24b32e304bba7f6038a \
+    --data 0x0c55699c \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>
+}
+</code></pre>
+<p>数值为 0</p>
+<h3><a class="anchor" aria-hidden="true" id="batch-transaction"></a><a href="#batch-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Batch Transaction</h3>
+<p>测试批量调用测试合约的 <code>AddOne()</code> 函数，预期结果为 x 数值变为 2 。</p>
+<ul>
+<li>发送交易</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli scm BatchTx multiTxs \
+    --tx-code 0x626a7a06fe11041e71efc24b32e304bba7f6038a2d910f2c \
+    --tx-code 0x626a7a06fe11041e71efc24b32e304bba7f6038a2d910f2c \
+    --private-key 0x989ac80f54d2fe79e1cd1b5a425df11177ed40ef8b3e8cfab8e7f65742e61cb9 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"0x945bdff33136e7e0392fef1c59ffd66aed45cf87db9b5684d31759aa32abb4d8"</span>,
+    <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+  }
+}
+</code></pre>
+<ul>
+<li>获取receipt</li>
+</ul>
+<pre><code class="hljs css language-bash">$ cita-cli rpc getTransactionReceipt \
+    --<span class="hljs-built_in">hash</span> 0x945bdff33136e7e0392fef1c59ffd66aed45cf87db9b5684d31759aa32abb4d8 \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x6e786244053a3fa51d93d1c31a4b504673b011ce7c3b1ae3447bdee11e51a386"</span>,
+    <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x10d1"</span>,
+    <span class="hljs-attr">"contractAddress"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"cumulativeQuotaUsed"</span>: <span class="hljs-string">"0xd224"</span>,
+    <span class="hljs-attr">"errorMessage"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"quotaUsed"</span>: <span class="hljs-string">"0xd224"</span>,
+    <span class="hljs-attr">"logs"</span>: [
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x626a7a06fe11041e71efc24b32e304bba7f6038a"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x6e786244053a3fa51d93d1c31a4b504673b011ce7c3b1ae3447bdee11e51a386"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x10d1"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x11c1a8e7158fead62641b1e07f61c32daccb5a0432cabfe33a43e8de610042f1"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000001"</span>
+        ],
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x945bdff33136e7e0392fef1c59ffd66aed45cf87db9b5684d31759aa32abb4d8"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x0"</span>
+      },
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"0x626a7a06fe11041e71efc24b32e304bba7f6038a"</span>,
+        <span class="hljs-attr">"blockHash"</span>: <span class="hljs-string">"0x6e786244053a3fa51d93d1c31a4b504673b011ce7c3b1ae3447bdee11e51a386"</span>,
+        <span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">"0x10d1"</span>,
+        <span class="hljs-attr">"data"</span>: <span class="hljs-string">"0x"</span>,
+        <span class="hljs-attr">"logIndex"</span>: <span class="hljs-string">"0x1"</span>,
+        <span class="hljs-attr">"topics"</span>: [
+          <span class="hljs-string">"0x11c1a8e7158fead62641b1e07f61c32daccb5a0432cabfe33a43e8de610042f1"</span>,
+          <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000002"</span>
+        ],
+        <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x945bdff33136e7e0392fef1c59ffd66aed45cf87db9b5684d31759aa32abb4d8"</span>,
+        <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>,
+        <span class="hljs-attr">"transactionLogIndex"</span>: <span class="hljs-string">"0x1"</span>
+      }
+    ],
+    <span class="hljs-attr">"logsBloom"</span>: <span class="hljs-string">"0x04000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000020000400000040000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000800000000000000000000000000000000000000000000400000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000040000000000000000000000000000000000000000000008000000000000000000000"</span>,
+    <span class="hljs-attr">"root"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"0x945bdff33136e7e0392fef1c59ffd66aed45cf87db9b5684d31759aa32abb4d8"</span>,
+    <span class="hljs-attr">"transactionIndex"</span>: <span class="hljs-string">"0x0"</span>
+  }
+}
+</code></pre>
+<p>这里从 <code>logs</code> 已经可以看出两条交易都已经执行成功</p>
+<h3><a class="anchor" aria-hidden="true" id="验证结果"></a><a href="#验证结果" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证结果</h3>
+<p>查询 x 数值</p>
+<pre><code class="hljs css language-bash">$ cita-cli rpc call \
+    --to 0x626a7a06fe11041e71efc24b32e304bba7f6038a \
+    --data 0x0c55699c \
+    --url http://127.0.0.1:1337
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+  <span class="hljs-attr">"result"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000002"</span>
+}
+</code></pre>
+<p>数值变为 2</p>
+<p>批量交易成功执行。</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#简述">简述</a><ul class="toc-headings"><li><a href="#合约信息">合约信息</a></li><li><a href="#数据组装规则">数据组装规则</a></li></ul></li><li><a href="#操作示例">操作示例</a><ul class="toc-headings"><li><a href="#生成随机私钥">生成随机私钥</a></li><li><a href="#部署测试合约">部署测试合约</a></li><li><a href="#查询-x-数值">查询 x 数值</a></li><li><a href="#batch-transaction">Batch Transaction</a></li><li><a href="#验证结果">验证结果</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/citahub_logo.svg" alt="CITAHub Docs" width="66" height="58"/></a><div><h5>More</h5><a href="https://github.com/cryptape/cita">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/cryptape/cita/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2021 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '54b71429d181fd36fdc0781f1fda5e53',
+                indexName: 'citahub',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en-US","version:20.2.1"]}
+              });
+            </script></body></html>

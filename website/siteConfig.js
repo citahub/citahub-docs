@@ -8,16 +8,16 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const baseUrl = '/'
+const baseUrl = '/citahub-docs/'
 
 const siteConfig = {
   title: 'CITAHub Docs',
   tagline: 'Documents of CITAHub',
-  url: 'https://docs.citahub.com/',
+  url: 'https://citahub.github.io/',
   baseUrl,
   customDocsPath: 'docs/',
   docsUrl: '',
-  cname: 'docs.citahub.com',
+  cname: 'citahub.github.io',
   projectName: 'citahub-docs',
   organizationName: 'citahub',
   editUrl: 'https://github.com/citahub/edit/master/docs/',
